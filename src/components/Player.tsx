@@ -8,6 +8,7 @@ import { isCorrect, type Response } from "@/lib/engine/grade";
 import { enqueue, pendingCount, startBackgroundSync } from "@/lib/outbox";
 import { questionSpeech, speakable } from "@/lib/speech";
 import { useSpeech } from "@/lib/use-speech";
+import { Scratchpad } from "./Scratchpad";
 import { Visual } from "./visuals/Visual";
 
 type Confidence = "LOW" | "MEDIUM" | "HIGH";
@@ -43,6 +44,8 @@ export function Player({ student, questions, reasons = {}, save = true }: Props)
   const [result, setResult] = useState<{ correct: boolean; confidence: Confidence } | null>(null);
   const [showExplanation, setShowExplanation] = useState(false);
   const [pending, setPending] = useState(0);
+  // How the child is working this question out. Reset for every question.
+  const [scratch, setScratch] = useState({ open: false, strokes: 0, paper: false });
 
   // endItemId stays the same for the whole session, so each new end marker replaces the last one in the upload queue.
   const session = useRef({ id: "", endItemId: "", startedAt: "", startedMs: 0, active: false });
@@ -89,6 +92,7 @@ export function Player({ student, questions, reasons = {}, save = true }: Props)
     setDigits("");
     setResult(null);
     setShowExplanation(false);
+    setScratch({ open: false, strokes: 0, paper: false });
     setPhase("answering");
     timing.current = { shownAt: clock(), firstActionMs: null, listens: 0 };
     speak(questionSpeech(questions[i]));
@@ -108,14 +112,15 @@ export function Player({ student, questions, reasons = {}, save = true }: Props)
     speak(questionSpeech(question));
   };
 
-  const response: Response | null =
-    question?.answer.type === "choice"
-      ? choice === null
+  const response: Response | null = !question
+    ? null
+    : question.answer.type === "numeric"
+      ? digits === ""
         ? null
-        : { type: "choice", index: choice }
-      : digits === ""
+        : { type: "numeric", value: Number(digits) }
+      : choice === null
         ? null
-        : { type: "numeric", value: Number(digits) };
+        : { type: question.answer.type === "choice" ? "choice" : "step", index: choice };
 
   const submit = (confidence: Confidence) => {
     if (!response) return;
@@ -140,6 +145,8 @@ export function Player({ student, questions, reasons = {}, save = true }: Props)
         answeredAt: new Date().toISOString(),
         localDate: localDateOf(new Date(), Intl.DateTimeFormat().resolvedOptions().timeZone),
         selectionReason: reasons[question.id]?.slice(0, 200),
+        scratchpad: scratch.strokes > 0 ? "DIGITAL" : scratch.paper ? "PAPER" : "NONE",
+        scratchpadStrokes: scratch.strokes,
       });
     }
 
@@ -206,7 +213,12 @@ export function Player({ student, questions, reasons = {}, save = true }: Props)
   }
 
   const answer = question.answer;
-  const correctLabel = answer.type === "choice" ? answer.choices[answer.correctIndex] : `${answer.value}${answer.unit ? ` ${answer.unit}` : ""}`;
+  const correctLabel =
+    answer.type === "choice"
+      ? answer.choices[answer.correctIndex]
+      : answer.type === "findTheBug"
+        ? `Step ${answer.bugIndex + 1}`
+        : `${answer.value}${answer.unit ? ` ${answer.unit}` : ""}`;
 
   return (
     <Shell onLeave={markSessionEnd} pending={pending} progress={{ current: index + 1, total: questions.length }}>
@@ -226,7 +238,62 @@ export function Player({ student, questions, reasons = {}, save = true }: Props)
         )}
       </article>
 
-      {answer.type === "choice" ? (
+      <div className="mt-3 flex flex-wrap gap-2">
+        <button
+          onClick={() => setScratch((sc) => ({ ...sc, open: !sc.open }))}
+          aria-pressed={scratch.open}
+          className={`rounded-2xl border-2 px-4 py-2 text-lg font-bold ${scratch.open ? "border-gold bg-gold text-ink" : "border-white/15 bg-bg-hill"}`}
+        >
+          ✏️ {scratch.open ? "Hide scratchpad" : "Scratchpad"}
+        </button>
+        <button
+          onClick={() => setScratch((sc) => ({ ...sc, paper: !sc.paper }))}
+          aria-pressed={scratch.paper}
+          className={`rounded-2xl border-2 px-4 py-2 text-lg font-bold ${scratch.paper ? "border-gold bg-gold text-ink" : "border-white/15 bg-bg-hill"}`}
+        >
+          📝 {scratch.paper ? "Using paper" : "I'm using paper"}
+        </button>
+      </div>
+      {/* Kept mounted while hidden so drawings survive closing and reopening; a new key clears it per question. */}
+      <div hidden={!scratch.open}>
+        <Scratchpad key={question.id} onStrokesChange={(strokes) => setScratch((sc) => ({ ...sc, strokes }))} />
+      </div>
+
+      {answer.type === "findTheBug" ? (
+        <ol className="mt-4 grid gap-3" aria-label={`${answer.solver}'s steps`}>
+          {answer.steps.map((step, i) => {
+            const picked = choice === i;
+            const reveal = phase === "feedback";
+            const tone = reveal
+              ? i === answer.bugIndex
+                ? "border-danger bg-danger/20"
+                : picked
+                  ? "border-gold/60 bg-bg-hill"
+                  : "border-white/10 bg-bg-hill opacity-70"
+              : picked
+                ? "border-gold bg-gold/20"
+                : "border-white/15 bg-bg-hill";
+            return (
+              <li key={i}>
+                <button
+                  disabled={reveal}
+                  onClick={() => {
+                    markAction();
+                    setChoice(i);
+                  }}
+                  className={`flex w-full items-start gap-3 rounded-2xl border-4 px-4 py-3 text-left text-xl font-bold active:translate-y-0.5 ${tone}`}
+                >
+                  <span className="shrink-0 rounded-full bg-cream px-3 py-1 text-base font-extrabold text-ink">Step {i + 1}</span>
+                  <span>
+                    {step}
+                    {reveal && i === answer.bugIndex && <span className="mt-2 block text-lg font-semibold text-moss-light">Should be: {answer.fix}</span>}
+                  </span>
+                </button>
+              </li>
+            );
+          })}
+        </ol>
+      ) : answer.type === "choice" ? (
         <div className="mt-4 grid gap-3 sm:grid-cols-2">
           {answer.choices.map((label, i) => {
             const picked = choice === i;
@@ -259,7 +326,7 @@ export function Player({ student, questions, reasons = {}, save = true }: Props)
       ) : (
         <NumberPad
           value={digits}
-          unit={answer.unit}
+          unit={answer.type === "numeric" ? answer.unit : undefined}
           disabled={phase === "feedback"}
           onChange={(v) => {
             markAction();
@@ -292,7 +359,8 @@ export function Player({ student, questions, reasons = {}, save = true }: Props)
                 {result.confidence === "HIGH" ? "You felt really sure. Let's look at it together. 🔍" : "Let's check it together. 🔍"}
               </p>
               <p className="mt-2 text-xl">
-                The answer is <strong className="text-moss-light">{correctLabel}</strong>.
+                {answer.type === "findTheBug" ? "The first mistake is in " : "The answer is "}
+                <strong className="text-moss-light">{correctLabel}</strong>.
               </p>
             </>
           )}

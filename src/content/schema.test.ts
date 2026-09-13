@@ -46,6 +46,14 @@ describe("QuestionSchema", () => {
     );
   });
 
+  it("accepts a find-the-bug answer and rejects a bug index past the last step or a fix identical to the wrong step", () => {
+    const bug = { type: "findTheBug", solver: "Sam", steps: ["2 + 2 = 4.", "4 + 1 = 6.", "So the answer is 6."], bugIndex: 1, fix: "4 + 1 = 5." };
+    expect(messages({ ...valid, answer: bug })).toEqual([]);
+    expect(messages({ ...valid, answer: { ...bug, bugIndex: 3 } })).toContain("bugIndex 3 is out of range for 3 steps");
+    expect(messages({ ...valid, answer: { ...bug, fix: "4 + 1 = 6." } })).toContain("The fix must differ from the wrong step");
+    expect(messages({ ...valid, answer: { ...bug, steps: ["a", "a", "b"], bugIndex: 0, fix: "c" } })).toContain("Steps must be unique");
+  });
+
   it("rejects clock times that do not exist", () => {
     expect(messages({ ...valid, visual: { kind: "clock", hour: 13, minute: 0 } })).not.toHaveLength(0);
   });

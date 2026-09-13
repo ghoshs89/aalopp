@@ -16,6 +16,26 @@ Attribution convention used below: "Parent decision" means the parent chose it; 
 
 ---
 
+## 2026-09-13  Milestone  Phase 4 built and verified locally (not yet deployed)
+What: Scratchpad (`src/components/Scratchpad.tsx`) with pen colors, undo, clear, palm rejection when a stylus is used, and an "I'm using paper" toggle; Find the Bug answer type with 21 generated questions (`scripts/generate/debugging.ts`, `content/questions/generated-debugging.json`) and skill `CS-DEBUG`; migration `20260913180000_attempt_scratchpad` applied to the production database; grown-ups Answers tab shows ✏️ strokes or 📝 paper.
+Verified by: `npm test` 79 passed including the 30-day simulation; `npm run content:check` 37 skills and 247 questions; typecheck, lint and `npm run build` clean; `prisma migrate diff --from-config-datasource` empty after the migration; a probe sync against Supabase stored step answers, `DIGITAL` with 9 strokes and `PAPER`, and an old-format answer with nulls (probe data deleted); headless Chrome at phone (384 px) and iPad (820 px) drew with mouse and touch, undo removed a stroke, the scratchpad started hidden on the next question, no sideways scroll, no console errors; independent blind solve agreed on 21 of 21 Find the Bug questions.
+Not verified: a real stylus (Apple Pencil or S Pen) and palm rejection on a physical device.
+
+## 2026-09-13  Decision  Find the Bug question design
+What: New answer type `findTheBug` in `src/content/schema.ts`: a named solver's steps (3 to 6), `bugIndex` for the first wrong step, and `fix` (what that step should say). The child taps a step; the response type is `step`. Later steps may build on the mistake, so the question always asks for the first wrong step. Questions carry skill `CS-DEBUG` plus the math skill involved, and are generated from common child errors (forgetting to carry, subtracting the smaller digit from the bigger, reading the minute hand's number as minutes, measuring from the wrong end of a ruler, wrong coin values, 45 + 30 minutes written as 3:75).
+Reason: Assistant design for the "Find the Bug" item in the approved plan, which asked for flawed solutions with a marked bug step; it builds the checking habit in `Aishik-Support-Plan.md`.
+Alternatives rejected: Multiple choice "which step is wrong" (same interaction with less context); allowing solutions with no mistake (deferred; too confusing at this age to start).
+
+## 2026-09-13  Decision  Scratchpad records how, never what
+What: Each answer stores `scratchpad` (`NONE`, `DIGITAL` or `PAPER`) and `scratchpadStrokes`. The drawing itself is never saved or uploaded. If both paper and drawing are used, `DIGITAL` is recorded. The scratchpad is hidden until opened and cleared for every question.
+Reason: Assistant recommendation: the parent needs to know whether working out happened, not the scribbles; storing images of a child's drawings adds privacy exposure and database size for little value.
+Alternatives rejected: Saving drawings to Supabase Storage; not recording scratchpad use at all.
+
+## 2026-09-13  Decision  Phase 4 is the next phase
+What: Build Phase 4 (scratchpad and Find the Bug) before Phase 3 (parent dashboard).
+Reason: Parent decision ("Continue to Phase 4"), following the assistant's proposal that the dashboard needs a couple of weeks of real answers while the scratchpad is useful immediately.
+Alternatives rejected: Phase 3 first (little real data yet); another content batch first.
+
 ## 2026-09-13  Milestone  Session handoff written
 What: Ran the `/handoff` procedure: verification commands, DEVLOG reconciled (backfilled decisions, a milestone and dead ends not yet logged), `docs/HANDOFF.md` rewritten, `CLAUDE.md` checked. Not committed; committing is the parent's step.
 Verified by: `npm test` (15 files, 72 tests), `npm run content:check` (36 skills, 226 questions, all reviewed), `npm run typecheck` and `npm run lint`, all exit 0 on 2026-09-13.

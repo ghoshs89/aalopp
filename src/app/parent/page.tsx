@@ -114,7 +114,7 @@ async function AnswersTab({ studentId }: { studentId: string }) {
             <th className="p-3">Question</th>
             <th className="p-3">Result</th>
             <th className="p-3">Sure?</th>
-            <th className="p-3">Time</th>
+            <th className="p-3" title="Seconds taken, times the question was read aloud (🔊), scratchpad strokes (✏️) or paper (📝)">Time and tools</th>
             <th className="p-3">Why it was picked</th>
           </tr>
         </thead>
@@ -127,6 +127,7 @@ async function AnswersTab({ studentId }: { studentId: string }) {
               <td className="p-3 text-lg">{a.confidence ? CONFIDENCE_FACE[a.confidence] : ""}</td>
               <td className="p-3 whitespace-nowrap">
                 {Math.round(a.totalMs / 1000)}s{a.listenCount > 0 ? ` · 🔊${a.listenCount}` : ""}
+                {a.scratchpad === "DIGITAL" ? ` · ✏️${a.scratchpadStrokes ?? ""}` : a.scratchpad === "PAPER" ? " · 📝" : ""}
               </td>
               <td className="p-3 text-cream-dim">{a.selectionReason ?? "Before adaptive practice"}</td>
             </tr>

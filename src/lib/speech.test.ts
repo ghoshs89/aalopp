@@ -20,6 +20,11 @@ describe("questionSpeech", () => {
     expect(questionSpeech(robot)).toBe(robot.speech);
   });
 
+  it("reads every step of a find-the-bug question in order", () => {
+    const q = questionsById.get("dbg-ruler-truck-offset")!;
+    expect(questionSpeech(q)).toBe(`${q.prompt} Step 1: The truck starts at 2. Step 2: The truck ends at 7. Step 3: So the truck is 7 inches long.`);
+  });
+
   it("does not read choices for numeric questions", () => {
     const q = questionsById.get("md-beach-drive-minutes")!;
     expect(questionSpeech(q)).toBe(q.prompt);

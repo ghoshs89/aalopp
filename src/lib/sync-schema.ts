@@ -3,6 +3,7 @@ import { z } from "zod";
 export const ResponseSchema = z.discriminatedUnion("type", [
   z.object({ type: z.literal("choice"), index: z.int().min(0) }),
   z.object({ type: z.literal("numeric"), value: z.number() }),
+  z.object({ type: z.literal("step"), index: z.int().min(0) }),
 ]);
 
 export const AttemptItemSchema = z.object({
@@ -21,6 +22,9 @@ export const AttemptItemSchema = z.object({
   // Optional so an older copy of the app cached on a device can still upload; the server falls back to the UTC date.
   localDate: z.iso.date().optional(),
   selectionReason: z.string().max(200).optional(),
+  // How the child worked it out. Drawings themselves are never uploaded.
+  scratchpad: z.enum(["NONE", "DIGITAL", "PAPER"]).optional(),
+  scratchpadStrokes: z.int().min(0).max(100_000).optional(),
 });
 
 export const SessionEndItemSchema = z.object({

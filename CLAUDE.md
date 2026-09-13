@@ -5,7 +5,7 @@
 Adaptive learning app for one learner: Aishik, age 5.5, working around grade 3 (MAP Math and Reading RIT 186). Parents use it from laptops, tablets and phones around the house. The plan and phase status live in `docs/ROADMAP.md`.
 
 ### Current focus
-Read `docs/HANDOFF.md` first for the live state of the work, then `docs/ROADMAP.md` for the plan. Phases 0, 1 and 2 are done and live; the proposed next phase is Phase 4 (scratchpad and Find the Bug), pending parent confirmation.
+Read `docs/HANDOFF.md` first for the live state of the work, then `docs/ROADMAP.md` for the plan. Phases 0, 1 and 2 are done and live. Phase 4 (scratchpad and Find the Bug) is built and verified locally, with its migration applied, but not yet committed or deployed.
 
 ## Stack
 - Next.js 16 App Router, TypeScript strict, Tailwind v4. Hosted on Vercel.
@@ -28,6 +28,8 @@ Read `docs/HANDOFF.md` first for the live state of the work, then `docs/ROADMAP.
 - Process over speed. Never reward fast answers in ratings or UI; no visible timers for the child.
 - Soft gates only: mix in applied-convention items (time, money, measurement, graphs), never lock him out of reasoning content.
 - Every prompt must be readable aloud (TTS). Use the `speech` field when emoji or symbols would read badly.
+- Scratchpad drawings are never stored or uploaded; only the mode (none, digital, paper) and stroke count are saved.
+- Find the Bug questions ask for the first wrong step; every step before `bugIndex` must be fully true, or the blind solve will flag a second candidate.
 - Child-facing screens: large tap targets, minimal text, warm framing of mistakes ("let's check it together").
 - No em dashes in UI strings, logs or content. The content schema enforces this.
 

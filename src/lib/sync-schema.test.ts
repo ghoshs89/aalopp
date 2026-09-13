@@ -28,6 +28,14 @@ describe("SyncRequestSchema", () => {
     expect(SyncRequestSchema.safeParse({ items: [{ ...attempt, selectionReason: "x".repeat(201) }] }).success).toBe(false);
   });
 
+  it("accepts step responses and how the child worked it out, but never drawings", () => {
+    const item = { ...attempt, questionId: "dbg-add-47-38-carry", response: { type: "step", index: 2 }, scratchpad: "DIGITAL", scratchpadStrokes: 14 };
+    expect(SyncRequestSchema.safeParse({ items: [item] }).success).toBe(true);
+    expect(SyncRequestSchema.safeParse({ items: [{ ...item, scratchpad: "CRAYON" }] }).success).toBe(false);
+    const parsed = SyncRequestSchema.parse({ items: [{ ...item, drawing: "data:image/png;base64,AAAA" }] });
+    expect(parsed.items[0]).not.toHaveProperty("drawing");
+  });
+
   it("rejects device-side correctness, bad ids and empty batches", () => {
     expect(SyncRequestSchema.safeParse({ items: [] }).success).toBe(false);
     expect(SyncRequestSchema.safeParse({ items: [{ ...attempt, id: "not-a-uuid" }] }).success).toBe(false);

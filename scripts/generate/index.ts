@@ -1,6 +1,7 @@
 import { writeFileSync } from "node:fs";
 import path from "node:path";
 import type { Question } from "../../src/content/schema";
+import { debuggingQuestions } from "./debugging";
 import { geometryQuestions } from "./geometry";
 import { logicQuestions } from "./logic";
 import { measurementQuestions } from "./measurement";
@@ -12,6 +13,7 @@ export const GENERATED: Record<string, () => Question[]> = {
   "generated-numbers.json": numberQuestions,
   "generated-geometry.json": geometryQuestions,
   "generated-logic.json": logicQuestions,
+  "generated-debugging.json": debuggingQuestions,
 };
 
 export function renderFile(questions: Question[]): string {

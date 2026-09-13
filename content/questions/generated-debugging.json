@@ -1,0 +1,759 @@
+[
+  {
+    "id": "dbg-add-47-38-carry",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/debugging.ts"
+    },
+    "skills": [
+      "CS-DEBUG",
+      "MATH-OA-ADD-SUB",
+      "MATH-NBT-PLACE-VALUE"
+    ],
+    "language": "en",
+    "prompt": "Sam worked out 47 + 38. One step has a mistake. Tap the first step that is wrong.",
+    "answer": {
+      "type": "findTheBug",
+      "solver": "Sam",
+      "steps": [
+        "Add the ones: 7 + 8 = 15.",
+        "15 ones is 1 ten and 5 ones. Write 5 and carry 1 ten.",
+        "Add the tens: 4 + 3 = 7.",
+        "So 47 + 38 = 75."
+      ],
+      "bugIndex": 2,
+      "fix": "Add the tens: 4 + 3 + 1 = 8."
+    },
+    "explanation": "Step 3 should say: Add the tens: 4 + 3 + 1 = 8. Any step after it that used the mistake is wrong too. The right answer is 85.",
+    "difficulty": {
+      "band": 2,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "dbg-add-35-49-ones",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/debugging.ts"
+    },
+    "skills": [
+      "CS-DEBUG",
+      "MATH-OA-ADD-SUB"
+    ],
+    "language": "en",
+    "prompt": "Mia worked out 35 + 49. One step has a mistake. Tap the first step that is wrong.",
+    "answer": {
+      "type": "findTheBug",
+      "solver": "Mia",
+      "steps": [
+        "Add the ones: 5 + 9 = 13.",
+        "13 ones is 1 ten and 3 ones. Write 3 and carry 1 ten.",
+        "Add the tens: 3 + 4 + 1 = 8.",
+        "So 35 + 49 = 83."
+      ],
+      "bugIndex": 0,
+      "fix": "Add the ones: 5 + 9 = 14."
+    },
+    "explanation": "Step 1 should say: Add the ones: 5 + 9 = 14. Any step after it that used the mistake is wrong too. The right answer is 84.",
+    "difficulty": {
+      "band": 2,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "dbg-add-68-25-carry",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/debugging.ts"
+    },
+    "skills": [
+      "CS-DEBUG",
+      "MATH-OA-ADD-SUB",
+      "MATH-NBT-PLACE-VALUE"
+    ],
+    "language": "en",
+    "prompt": "Leo worked out 68 + 25. One step has a mistake. Tap the first step that is wrong.",
+    "answer": {
+      "type": "findTheBug",
+      "solver": "Leo",
+      "steps": [
+        "Add the ones: 8 + 5 = 13.",
+        "13 ones is 1 ten and 3 ones. Write 3 and carry 1 ten.",
+        "Add the tens: 6 + 2 = 8.",
+        "So 68 + 25 = 83."
+      ],
+      "bugIndex": 2,
+      "fix": "Add the tens: 6 + 2 + 1 = 9."
+    },
+    "explanation": "Step 3 should say: Add the tens: 6 + 2 + 1 = 9. Any step after it that used the mistake is wrong too. The right answer is 93.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "dbg-sub-63-27-flipped",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/debugging.ts"
+    },
+    "skills": [
+      "CS-DEBUG",
+      "MATH-OA-ADD-SUB"
+    ],
+    "language": "en",
+    "prompt": "Ava worked out 63 - 27. One step has a mistake. Tap the first step that is wrong.",
+    "answer": {
+      "type": "findTheBug",
+      "solver": "Ava",
+      "steps": [
+        "Take the smaller from the bigger in the ones: 7 - 3 = 4.",
+        "Take away the tens: 6 - 2 = 4.",
+        "So 63 - 27 = 44."
+      ],
+      "bugIndex": 0,
+      "fix": "You cannot take 7 from 3, so trade 1 ten for 10 ones. Then 13 - 7 = 6."
+    },
+    "explanation": "Step 1 should say: You cannot take 7 from 3, so trade 1 ten for 10 ones. Then 13 - 7 = 6. Any step after it that used the mistake is wrong too. The right answer is 36.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "dbg-sub-52-18-trade",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/debugging.ts"
+    },
+    "skills": [
+      "CS-DEBUG",
+      "MATH-OA-ADD-SUB",
+      "MATH-NBT-PLACE-VALUE"
+    ],
+    "language": "en",
+    "prompt": "Kai worked out 52 - 18. One step has a mistake. Tap the first step that is wrong.",
+    "answer": {
+      "type": "findTheBug",
+      "solver": "Kai",
+      "steps": [
+        "You cannot take 8 from 2, so trade 1 ten for 10 ones.",
+        "Now there are 12 ones: 12 - 8 = 4.",
+        "Take away the tens: 5 - 1 = 4.",
+        "So 52 - 18 = 44."
+      ],
+      "bugIndex": 2,
+      "fix": "There are 4 tens left: 4 - 1 = 3."
+    },
+    "explanation": "Step 3 should say: There are 4 tens left: 4 - 1 = 3. Any step after it that used the mistake is wrong too. The right answer is 34.",
+    "difficulty": {
+      "band": 4,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "dbg-sub-81-46-flipped",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/debugging.ts"
+    },
+    "skills": [
+      "CS-DEBUG",
+      "MATH-OA-ADD-SUB"
+    ],
+    "language": "en",
+    "prompt": "Zoe worked out 81 - 46. One step has a mistake. Tap the first step that is wrong.",
+    "answer": {
+      "type": "findTheBug",
+      "solver": "Zoe",
+      "steps": [
+        "Take the smaller from the bigger in the ones: 6 - 1 = 5.",
+        "Take away the tens: 8 - 4 = 4.",
+        "So 81 - 46 = 45."
+      ],
+      "bugIndex": 0,
+      "fix": "You cannot take 6 from 1, so trade 1 ten for 10 ones. Then 11 - 6 = 5."
+    },
+    "explanation": "Step 1 should say: You cannot take 6 from 1, so trade 1 ten for 10 ones. Then 11 - 6 = 5. Any step after it that used the mistake is wrong too. The right answer is 35.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "dbg-count-nickels",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/debugging.ts"
+    },
+    "skills": [
+      "CS-DEBUG",
+      "MATH-MD-COINS",
+      "MATH-NBT-SKIP-COUNT"
+    ],
+    "language": "en",
+    "prompt": "Noah worked out how much 5 nickels are worth, counting by 5s. One step has a mistake. Tap the first step that is wrong.",
+    "visual": {
+      "kind": "coins",
+      "currency": "USD",
+      "coins": [
+        "nickel",
+        "nickel",
+        "nickel",
+        "nickel",
+        "nickel"
+      ]
+    },
+    "answer": {
+      "type": "findTheBug",
+      "solver": "Noah",
+      "steps": [
+        "1 nickel: 5 cents.",
+        "2 nickels: 10 cents.",
+        "3 nickels: 20 cents.",
+        "4 nickels: 25 cents.",
+        "5 nickels: 30 cents."
+      ],
+      "bugIndex": 2,
+      "fix": "3 nickels: 15 cents."
+    },
+    "explanation": "Step 3 should say: 3 nickels: 15 cents. Any step after it that used the mistake is wrong too. The right answer is 25 cents.",
+    "difficulty": {
+      "band": 2,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "dbg-count-dimes",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/debugging.ts"
+    },
+    "skills": [
+      "CS-DEBUG",
+      "MATH-MD-COINS",
+      "MATH-NBT-SKIP-COUNT"
+    ],
+    "language": "en",
+    "prompt": "Lily worked out how much 4 dimes are worth, counting by 10s. One step has a mistake. Tap the first step that is wrong.",
+    "visual": {
+      "kind": "coins",
+      "currency": "USD",
+      "coins": [
+        "dime",
+        "dime",
+        "dime",
+        "dime"
+      ]
+    },
+    "answer": {
+      "type": "findTheBug",
+      "solver": "Lily",
+      "steps": [
+        "1 dime: 10 cents.",
+        "2 dimes: 25 cents.",
+        "3 dimes: 35 cents.",
+        "4 dimes: 45 cents."
+      ],
+      "bugIndex": 1,
+      "fix": "2 dimes: 20 cents."
+    },
+    "explanation": "Step 2 should say: 2 dimes: 20 cents. Any step after it that used the mistake is wrong too. The right answer is 40 cents.",
+    "difficulty": {
+      "band": 2,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "dbg-us-coin-values",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/debugging.ts"
+    },
+    "skills": [
+      "CS-DEBUG",
+      "MATH-MD-COINS"
+    ],
+    "language": "en",
+    "prompt": "Sam worked out how much a quarter, a dime and a nickel are worth together. One step has a mistake. Tap the first step that is wrong.",
+    "visual": {
+      "kind": "coins",
+      "currency": "USD",
+      "coins": [
+        "quarter",
+        "dime",
+        "nickel"
+      ]
+    },
+    "answer": {
+      "type": "findTheBug",
+      "solver": "Sam",
+      "steps": [
+        "A quarter is 25 cents.",
+        "A dime is 5 cents.",
+        "A nickel is 5 cents.",
+        "Together: 25 + 5 + 5 = 35 cents."
+      ],
+      "bugIndex": 1,
+      "fix": "A dime is 10 cents."
+    },
+    "explanation": "Step 2 should say: A dime is 10 cents. Any step after it that used the mistake is wrong too. The right answer is 40 cents.",
+    "difficulty": {
+      "band": 2,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "dbg-ca-coin-values",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/debugging.ts"
+    },
+    "skills": [
+      "CS-DEBUG",
+      "MATH-MD-COINS",
+      "MATH-MD-MONEY"
+    ],
+    "language": "en",
+    "prompt": "Mia worked out how much a loonie, a toonie and a quarter are worth together. One step has a mistake. Tap the first step that is wrong.",
+    "visual": {
+      "kind": "coins",
+      "currency": "CAD",
+      "coins": [
+        "loonie",
+        "toonie",
+        "quarter"
+      ]
+    },
+    "answer": {
+      "type": "findTheBug",
+      "solver": "Mia",
+      "steps": [
+        "A quarter is 25 cents.",
+        "A loonie is 1 dollar.",
+        "A toonie is 1 dollar too.",
+        "Together: $1 + $1 + 25 cents = $2.25."
+      ],
+      "bugIndex": 2,
+      "fix": "A toonie is 2 dollars."
+    },
+    "explanation": "Step 3 should say: A toonie is 2 dollars. Any step after it that used the mistake is wrong too. The right answer is $3.25.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "dbg-clock-minutes-4-20",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/debugging.ts"
+    },
+    "skills": [
+      "CS-DEBUG",
+      "MATH-MD-TIME-5MIN"
+    ],
+    "language": "en",
+    "prompt": "Leo worked out what time this clock shows. One step has a mistake. Tap the first step that is wrong.",
+    "visual": {
+      "kind": "clock",
+      "hour": 4,
+      "minute": 20
+    },
+    "answer": {
+      "type": "findTheBug",
+      "solver": "Leo",
+      "steps": [
+        "The short hand is just past 4, so the hour is 4.",
+        "The long hand points to 4.",
+        "That means 4 minutes.",
+        "So the time is 4:04."
+      ],
+      "bugIndex": 2,
+      "fix": "Count by 5s for each number up to 4: that means 20 minutes."
+    },
+    "explanation": "Step 3 should say: Count by 5s for each number up to 4: that means 20 minutes. Any step after it that used the mistake is wrong too. The right answer is 4:20.",
+    "difficulty": {
+      "band": 2,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "dbg-clock-minutes-9-35",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/debugging.ts"
+    },
+    "skills": [
+      "CS-DEBUG",
+      "MATH-MD-TIME-5MIN"
+    ],
+    "language": "en",
+    "prompt": "Ava worked out what time this clock shows. One step has a mistake. Tap the first step that is wrong.",
+    "visual": {
+      "kind": "clock",
+      "hour": 9,
+      "minute": 35
+    },
+    "answer": {
+      "type": "findTheBug",
+      "solver": "Ava",
+      "steps": [
+        "The short hand is past 9 but has not reached 10, so the hour is 9.",
+        "The long hand points to 7.",
+        "That means 7 minutes.",
+        "So the time is 9:07."
+      ],
+      "bugIndex": 2,
+      "fix": "Count by 5s for each number up to 7: that means 35 minutes."
+    },
+    "explanation": "Step 3 should say: Count by 5s for each number up to 7: that means 35 minutes. Any step after it that used the mistake is wrong too. The right answer is 9:35.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "dbg-clock-hour-too-soon",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/debugging.ts"
+    },
+    "skills": [
+      "CS-DEBUG",
+      "MATH-MD-TIME-5MIN",
+      "MATH-MD-TIME-HALF-QUARTER"
+    ],
+    "language": "en",
+    "prompt": "Kai worked out what time this clock shows. One step has a mistake. Tap the first step that is wrong.",
+    "visual": {
+      "kind": "clock",
+      "hour": 2,
+      "minute": 50
+    },
+    "answer": {
+      "type": "findTheBug",
+      "solver": "Kai",
+      "steps": [
+        "The long hand points to 10. Counting by 5s, that is 50 minutes.",
+        "The short hand is almost at 3, so the hour is 3.",
+        "So the time is 3:50."
+      ],
+      "bugIndex": 1,
+      "fix": "The short hand has not reached 3 yet, so the hour is still 2."
+    },
+    "explanation": "Step 2 should say: The short hand has not reached 3 yet, so the hour is still 2. Any step after it that used the mistake is wrong too. The right answer is 2:50.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "dbg-elapsed-past-sixty",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/debugging.ts"
+    },
+    "skills": [
+      "CS-DEBUG",
+      "MATH-MD-TIME-ELAPSED"
+    ],
+    "language": "en",
+    "prompt": "Zoe worked out what time a 30 minute race ends if it starts at 3:45. One step has a mistake. Tap the first step that is wrong.",
+    "visual": {
+      "kind": "clock",
+      "hour": 3,
+      "minute": 45
+    },
+    "answer": {
+      "type": "findTheBug",
+      "solver": "Zoe",
+      "steps": [
+        "The race starts at 3:45.",
+        "Add 30 minutes to the minutes: 45 + 30 = 75.",
+        "So the race ends at 3:75."
+      ],
+      "bugIndex": 2,
+      "fix": "75 minutes is 1 hour and 15 minutes past 3:00, so the race ends at 4:15."
+    },
+    "explanation": "Step 3 should say: 75 minutes is 1 hour and 15 minutes past 3:00, so the race ends at 4:15. The right answer is 4:15.",
+    "difficulty": {
+      "band": 4,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "dbg-ruler-truck-offset",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/debugging.ts"
+    },
+    "skills": [
+      "CS-DEBUG",
+      "MATH-MD-LENGTH"
+    ],
+    "language": "en",
+    "prompt": "Noah worked out how long the truck is. One step has a mistake. Tap the first step that is wrong.",
+    "visual": {
+      "kind": "ruler",
+      "unit": "in",
+      "length": 8,
+      "start": 2,
+      "end": 7,
+      "object": "truck"
+    },
+    "answer": {
+      "type": "findTheBug",
+      "solver": "Noah",
+      "steps": [
+        "The truck starts at 2.",
+        "The truck ends at 7.",
+        "So the truck is 7 inches long."
+      ],
+      "bugIndex": 2,
+      "fix": "Count the jumps from 2 to 7: the truck is 5 inches long."
+    },
+    "explanation": "Step 3 should say: Count the jumps from 2 to 7: the truck is 5 inches long. The right answer is 5 inches.",
+    "difficulty": {
+      "band": 2,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "dbg-ruler-bus-cm-offset",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/debugging.ts"
+    },
+    "skills": [
+      "CS-DEBUG",
+      "MATH-MD-LENGTH",
+      "MATH-OA-ADD-SUB"
+    ],
+    "language": "en",
+    "prompt": "Lily worked out how long the bus is. One step has a mistake. Tap the first step that is wrong.",
+    "visual": {
+      "kind": "ruler",
+      "unit": "cm",
+      "length": 12,
+      "start": 3,
+      "end": 11,
+      "object": "bus"
+    },
+    "answer": {
+      "type": "findTheBug",
+      "solver": "Lily",
+      "steps": [
+        "The bus starts at 3.",
+        "The bus ends at 11.",
+        "11 + 3 = 14, so the bus is 14 centimeters long."
+      ],
+      "bugIndex": 2,
+      "fix": "11 - 3 = 8, so the bus is 8 centimeters long."
+    },
+    "explanation": "Step 3 should say: 11 - 3 = 8, so the bus is 8 centimeters long. The right answer is 8 centimeters.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "dbg-array-cars",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/debugging.ts"
+    },
+    "skills": [
+      "CS-DEBUG",
+      "MATH-OA-ARRAYS"
+    ],
+    "language": "en",
+    "prompt": "Sam worked out how many cars are parked. One step has a mistake. Tap the first step that is wrong.",
+    "visual": {
+      "kind": "grid",
+      "rows": [
+        [
+          "🚗",
+          "🚗",
+          "🚗",
+          "🚗"
+        ],
+        [
+          "🚗",
+          "🚗",
+          "🚗",
+          "🚗"
+        ],
+        [
+          "🚗",
+          "🚗",
+          "🚗",
+          "🚗"
+        ]
+      ]
+    },
+    "answer": {
+      "type": "findTheBug",
+      "solver": "Sam",
+      "steps": [
+        "There are 3 rows with 4 cars in each row.",
+        "Add 4 three times: 4 + 4 + 4.",
+        "4 + 4 = 8, and 8 + 4 = 16.",
+        "So there are 16 cars."
+      ],
+      "bugIndex": 2,
+      "fix": "4 + 4 = 8, and 8 + 4 = 12."
+    },
+    "explanation": "Step 3 should say: 4 + 4 = 8, and 8 + 4 = 12. Any step after it that used the mistake is wrong too. The right answer is 12 cars.",
+    "difficulty": {
+      "band": 2,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "dbg-calendar-week-later",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/debugging.ts"
+    },
+    "skills": [
+      "CS-DEBUG",
+      "MATH-MD-CALENDAR",
+      "MATH-OA-ADD-SUB"
+    ],
+    "language": "en",
+    "prompt": "Mia worked out the date of the next soccer game, which is one week after the game on October 17. One step has a mistake. Tap the first step that is wrong.",
+    "answer": {
+      "type": "findTheBug",
+      "solver": "Mia",
+      "steps": [
+        "The soccer game is on October 17.",
+        "One week is 7 days.",
+        "17 + 7 = 23, so the next game is on October 23."
+      ],
+      "bugIndex": 2,
+      "fix": "17 + 7 = 24, so the next game is on October 24."
+    },
+    "explanation": "Step 3 should say: 17 + 7 = 24, so the next game is on October 24. The right answer is October 24.",
+    "difficulty": {
+      "band": 2,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "dbg-bead-pattern",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/debugging.ts"
+    },
+    "skills": [
+      "CS-DEBUG",
+      "LOGIC-PATTERN"
+    ],
+    "language": "en",
+    "prompt": "Leo worked out which bead comes next in the pattern. One step has a mistake. Tap the first step that is wrong.",
+    "visual": {
+      "kind": "emoji",
+      "lines": [
+        "🔴 🔵 🔵 🔴 🔵 🔵 🔴 ❓"
+      ]
+    },
+    "answer": {
+      "type": "findTheBug",
+      "solver": "Leo",
+      "steps": [
+        "The pattern starts red, blue, blue.",
+        "Then red, blue, blue repeats again.",
+        "After a red bead comes another red bead.",
+        "So the next bead is red."
+      ],
+      "bugIndex": 2,
+      "fix": "After a red bead comes a blue bead."
+    },
+    "explanation": "Step 3 should say: After a red bead comes a blue bead. Any step after it that used the mistake is wrong too. The right answer is blue.",
+    "difficulty": {
+      "band": 2,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "dbg-change-from-ten",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/debugging.ts"
+    },
+    "skills": [
+      "CS-DEBUG",
+      "MATH-MD-MONEY"
+    ],
+    "language": "en",
+    "prompt": "Ava worked out the change from $10 for a toy that costs $6.50. One step has a mistake. Tap the first step that is wrong.",
+    "answer": {
+      "type": "findTheBug",
+      "solver": "Ava",
+      "steps": [
+        "The toy costs $6.50.",
+        "You pay with a $10 bill.",
+        "10 - 6 = 4, so the change is $4.50."
+      ],
+      "bugIndex": 2,
+      "fix": "Count up from $6.50: 50 cents makes $7, then $3 more makes $10. The change is $3.50."
+    },
+    "explanation": "Step 3 should say: Count up from $6.50: 50 cents makes $7, then $3 more makes $10. The change is $3.50. The right answer is $3.50.",
+    "difficulty": {
+      "band": 4,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "dbg-place-value-zero",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/debugging.ts"
+    },
+    "skills": [
+      "CS-DEBUG",
+      "MATH-NBT-PLACE-VALUE"
+    ],
+    "language": "en",
+    "prompt": "Kai worked out what the number 406 means. One step has a mistake. Tap the first step that is wrong.",
+    "answer": {
+      "type": "findTheBug",
+      "solver": "Kai",
+      "steps": [
+        "In 406, the 4 is in the hundreds place.",
+        "The 0 is in the tens place, so there are no tens.",
+        "The 6 is in the ones place.",
+        "So 406 = 400 + 60."
+      ],
+      "bugIndex": 3,
+      "fix": "So 406 = 400 + 6."
+    },
+    "explanation": "Step 4 should say: So 406 = 400 + 6. The right answer is 400 + 6.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  }
+]

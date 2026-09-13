@@ -144,7 +144,17 @@ const NumericAnswer = z.object({
   unit: z.string().min(1).optional(),
 });
 
-export const AnswerSchema = z.discriminatedUnion("type", [ChoiceAnswer, NumericAnswer]);
+// Someone's worked solution, shown step by step. The child taps the first step that is wrong.
+const FindTheBugAnswer = z.object({
+  type: z.literal("findTheBug"),
+  solver: z.string().min(1),
+  steps: z.array(z.string().min(1)).min(3).max(6),
+  bugIndex: z.int().min(0),
+  /** What the wrong step should have said. */
+  fix: z.string().min(1),
+});
+
+export const AnswerSchema = z.discriminatedUnion("type", [ChoiceAnswer, NumericAnswer, FindTheBugAnswer]);
 
 export const DifficultySchema = z.object({
   // 1 = easy warm-up, 5 = hardest in the current pool. Seeds the rating; never learned from one child.
@@ -183,6 +193,18 @@ export const QuestionSchema = z
       }
       if (new Set(choices).size !== choices.length) {
         ctx.addIssue({ code: "custom", path: ["answer", "choices"], message: "Choices must be unique" });
+      }
+    }
+    if (q.answer.type === "findTheBug") {
+      const { steps, bugIndex, fix } = q.answer;
+      if (bugIndex >= steps.length) {
+        ctx.addIssue({ code: "custom", path: ["answer", "bugIndex"], message: `bugIndex ${bugIndex} is out of range for ${steps.length} steps` });
+      }
+      if (new Set(steps).size !== steps.length) {
+        ctx.addIssue({ code: "custom", path: ["answer", "steps"], message: "Steps must be unique" });
+      }
+      if (steps[bugIndex] === fix) {
+        ctx.addIssue({ code: "custom", path: ["answer", "fix"], message: "The fix must differ from the wrong step" });
       }
     }
     if (q.difficulty.basis === "kangaroo-points" && q.difficulty.points === undefined) {

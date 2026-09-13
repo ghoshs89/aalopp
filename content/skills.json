@@ -38,5 +38,6 @@
   { "code": "CS-RULE-PATH", "name": "Finding a path that follows a rule", "domain": "LOGIC_CS", "strand": "LOGIC_CS", "tier": 2, "isConvention": false, "prerequisites": ["CS-SEQUENCE", "LOGIC-PATTERN"] },
   { "code": "CS-CONDITIONAL", "name": "If-then rules", "domain": "LOGIC_CS", "strand": "LOGIC_CS", "tier": 2, "isConvention": false, "prerequisites": ["CS-SEQUENCE"] },
   { "code": "CS-SORTING", "name": "Sorting and putting things in order", "domain": "LOGIC_CS", "strand": "LOGIC_CS", "tier": 2, "isConvention": false, "prerequisites": ["LOGIC-ORDER"] },
-  { "code": "CS-SHORTEST-PATH", "name": "Finding the shortest route on a map", "domain": "LOGIC_CS", "strand": "LOGIC_CS", "tier": 2, "isConvention": false, "prerequisites": ["CS-SEQUENCE", "MATH-OA-ADD-SUB"] }
+  { "code": "CS-SHORTEST-PATH", "name": "Finding the shortest route on a map", "domain": "LOGIC_CS", "strand": "LOGIC_CS", "tier": 2, "isConvention": false, "prerequisites": ["CS-SEQUENCE", "MATH-OA-ADD-SUB"] },
+  { "code": "CS-DEBUG", "name": "Finding the mistake in a worked solution", "domain": "LOGIC_CS", "strand": "LOGIC_CS", "tier": 2, "isConvention": false, "prerequisites": ["CS-SEQUENCE", "MATH-OA-ADD-SUB"] }
 ]

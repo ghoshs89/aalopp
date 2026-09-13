@@ -58,6 +58,8 @@ export async function saveSyncItems(db: PrismaClient, items: SyncItem[]): Promis
         answeredAt: new Date(item.answeredAt),
         localDate: item.localDate ?? item.answeredAt.slice(0, 10),
         selectionReason: item.selectionReason ?? null,
+        scratchpad: item.scratchpad ?? null,
+        scratchpadStrokes: item.scratchpadStrokes ?? null,
       },
       update: {},
     });

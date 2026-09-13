@@ -11,6 +11,7 @@ export function speakable(text: string): string {
 /** What the read-aloud button says: the prompt, then the choices if every choice still has words once symbols are removed. */
 export function questionSpeech(question: Question): string {
   const prompt = question.speech ?? speakable(question.prompt);
+  if (question.answer.type === "findTheBug") return `${prompt} ${question.answer.steps.map((s, i) => `Step ${i + 1}: ${speakable(s)}`).join(" ")}`;
   if (question.answer.type !== "choice") return prompt;
   const choices = question.answer.choices.map(speakable);
   if (choices.some((c) => c === "")) return prompt;

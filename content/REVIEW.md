@@ -69,3 +69,13 @@ Result: it agreed with the answer key on 38 of 39 and flagged 3 questions, all f
 | `kl12-symmetric-butterfly` | The colored dots stand for wing colors, but the prompt never said so | Prompt now says the dots beside each butterfly show its wing spots |
 
 Re-check: the three fixed questions were solved again by a separate agent without the answer key. All 3 agreed with the key at high confidence, with no issues. All 39 hand-typed questions now meet the review rule and stay reviewed.
+
+## 2026-09-13: Find the Bug batch (21 questions, Phase 4)
+
+File: `generated-debugging.json`, written by `scripts/generate/debugging.ts`. Each question shows a named child's worked steps with one injected mistake; the generator computes the correct values and asserts that the wrong step differs from its fix and that steps are unique.
+
+Independent blind solve: an agent found the first wrong step without the key and agreed on 21 of 21, all at high confidence. It flagged two items:
+- `dbg-elapsed-past-sixty`: a warning that step 2 (45 + 30 = 75) is correct and step 3 is the mistake. The key already says step 3; no change needed.
+- `dbg-calendar-week-later`: step 3 said "the next game" while the question asked only for a date. The question now asks for "the date of the next soccer game, which is one week after the game on October 17". The steps and the answer did not change.
+
+Also changed after the solve, without affecting any answer: explanations now start "Step N should say" instead of repeating "Step N is the first mistake", which the answer screen already says; and for clock times past the half hour, step 1 says the short hand "is past 9 but has not reached 10" instead of "just past 9".

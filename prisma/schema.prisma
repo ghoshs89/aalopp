@@ -9,6 +9,12 @@ datasource db {
   provider = "postgresql"
 }
 
+enum ScratchpadMode {
+  NONE
+  DIGITAL
+  PAPER
+}
+
 enum Confidence {
   LOW
   MEDIUM
@@ -54,6 +60,9 @@ model Attempt {
   localDate     String?
   /// Why the selector picked this question, shown on the grown-ups page.
   selectionReason String?
+  /// NONE, DIGITAL (drew on the scratchpad) or PAPER (said they worked on paper). Drawings are not stored.
+  scratchpad    ScratchpadMode?
+  scratchpadStrokes Int?
   receivedAt    DateTime        @default(now())
 
   @@index([studentId, answeredAt])
