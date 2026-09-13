@@ -1,91 +1,93 @@
-# Session Handoff  2026-09-13  Phases 0 to 2 and 4 live; next is real-device stylus testing, then Phase 3 after real use
+# Session Handoff  2026-09-13  All planned phases built and live; next is real use, device testing and fixes
 
 > Read this fully before acting. It is the state of the work as of the end of the last session. Assume you have no memory of that session and may be a different model. This document plus the repository should be enough to resume.
 >
 > Before trusting any claim below, the previous session should have verified it against the repo, not the conversation. If a section says "assumed", treat it as unconfirmed.
 
 ## How this was verified
-Commands run on 2026-09-13 from the repo root (`aalopp/`) after the Phase 4 changes, all exit code 0:
-- `npm test`: pass. 16 test files, 79 tests (includes `src/lib/engine/simulation.test.ts`).
-- `npm run content:check`: pass. 37 skills, 247 questions, all `"reviewed"`.
+Commands run at handoff time on 2026-09-13 from the repo root (`aalopp/`), all exit code 0:
+- `npm test`: pass. 20 test files, 106 tests (includes the 30-day simulation and a 10-learner quota stress test).
+- `npm run content:check`: pass. 48 skills, 328 questions, all `"reviewed"`. By band: 1: 53, 2: 121, 3: 96, 4: 48, 5: 10.
 - `npm run typecheck`: pass. No errors.
 - `npm run lint`: pass. No problems.
-- `npm run build`: compiled successfully.
 
-Repo state: Phase 4 committed as `1e8d91e` and pushed; this docs update is committed on top of it. No em dashes in `CLAUDE.md`, `docs/` or `content/REVIEW.md`.
+Repo state: `main` level with `origin/main`; the last code commit is `b56be0c`, followed by this handoff's docs commit. No em dashes in `CLAUDE.md`, `docs/` or `content/REVIEW.md`.
 
 ## 1. Current state
 - Works and verified:
-  - Live at `https://aalopp.vercel.app`: Phases 0, 1, 2 and 4. Vercel reported "Deployment has completed" for `1e8d91e` (Phase 4), and `/api/health` returned 200 afterwards.
-  - Both family Google accounts sign in on production (new `auth.users` sign-ins at 14:45 and 14:46 UTC on 2026-09-13, each with an active `auth.sessions` row).
-  - All 247 questions passed an independent blind solve (187 generated, 39 hand-typed, 21 Find the Bug). Record in `content/REVIEW.md`.
-  - Phase 4 locally: scratchpad and Find the Bug work in headless Chrome at 384 px and 820 px wide (mouse and touch strokes, undo, hidden per question, correct and wrong feedback, no sideways scroll, no console errors).
-  - Production database already has the Phase 4 migration `20260913180000_attempt_scratchpad` (nullable columns, so the live Phase 2 code is unaffected). `prisma migrate diff --from-config-datasource --to-schema prisma/schema.prisma` printed an empty migration. A probe sync saved `step` answers and scratchpad fields, then the probe student was deleted.
-- In progress: nothing. Phase 4 is committed and deployed.
+  - Live at `https://aalopp.vercel.app`. Vercel commit status "Deployment has completed" was checked after every phase: Phase 4 `1e8d91e`, Phase 3 `692a08e`, content batch 2 `c87a25b`, Phase 5 `a2af948`, reading and languages `b56be0c`. After the last deploy: `/api/health` returned 200 with `CRON_SECRET`, `/dev/dashboard` returned 404, and `/parent/report` redirected signed-out visitors to `/login`.
+  - Every phase in `docs/ROADMAP.md` is done: 0 content format, 1 player, 2 adaptive practice, 3 parent dashboard, 4 scratchpad and Find the Bug, 5 ingestion tool, content batch 2, and the later items (reading, Spanish, French, spoken answers, break offers).
+  - Production database has all 5 migrations (`20260913000000_init` through `20260913200000_parent_notes`); after the last schema change `prisma migrate diff --from-config-datasource --to-schema prisma/schema.prisma` printed an empty migration. Row Level Security is on for every table, including `ParentNote` (the publishable key read an empty list with a probe row present).
+  - All 328 questions passed an independent blind solve (187 + 39 + 21 + 39 + 42 across five rounds). Record in `content/REVIEW.md`.
+  - Both family Google accounts sign in on production (verified earlier on 2026-09-13).
+- In progress: nothing.
 - Broken or known failing: none observed.
-- Assumed, not verified:
-  - A real stylus (Apple Pencil, S Pen) draws with pressure, and palm rejection works on a physical tablet. Only mouse and emulated touch were tested.
-  - The offline answer queue after a real Wi-Fi drop (never exercised on a device).
-  - The Vercel cron calls `/api/health` daily (route works by hand; no cron run observed).
-  - Real usage by Aishik: only the parent's test sessions exist.
+- Assumed, not verified (each is a likely source of the "issues to work out later" the parent expects):
+  - Parent dashboard, notes form and printable report in a real signed-in session. They were checked only through `/dev/dashboard` with simulated data and by route checks; they need sign-in and the PIN.
+  - Scratchpad with a real stylus and palm rejection on a physical tablet.
+  - Spanish and French voices on the family's devices. `pickVoice` falls back to any voice for the language, then the default voice; a device without those voices will mispronounce.
+  - Speech recognition of a child's voice, in any language.
+  - The offline answer queue after a real Wi-Fi drop.
+  - The Vercel cron calling `/api/health` daily.
+  - Real usage by Aishik: only the parent's test sessions exist, so every engine threshold is tuned on simulation only.
 
 ## 2. Decisions made this session
 All are in `docs/DEVLOG.md` with reasons and attribution. Treat as settled; do not reopen without new cause.
-- Revised build plan (thin vertical slices) instead of the original AALOPP specification. Assistant review, parent approved.
-- Hosting: Vercel and Supabase; TrueNAS pulls backups (planned). Parent decision.
-- Google sign-in with `ALLOWED_EMAILS` (both family accounts) and `PARENT_PIN`. Parent confirmed the second account.
-- Row Level Security on every table with no policies; all data access server-side through Prisma 7.10.0.
-- Content review rule: a question is `"reviewed"` only after an independent blind solve; parent spot-checks. Parent's reason: "Time constraints."
-- Generators compute answers; mixed US and Canadian units (parent decision, reason not stated).
-- Engine: mastery at 4 of the last 5 right on 2 or more device-local days; reviews after 1, 3, 7 and 14 days; caps of 2 retries, 3 reviews and 2 per skill; 2 stretch slots; at least 3 everyday-skill questions; every strand starts at level 2; tuned with `src/lib/engine/simulation.test.ts`.
-- Sessions are 8 questions with a quiet 12 minute cap and no visible timer.
-- Phase 4 before Phase 3 (parent decision). Scratchpad stores only mode and stroke count, never drawings. Find the Bug asks for the first wrong step, with skill `CS-DEBUG`.
-- Migrations run on every production deploy and must stay compatible with the previous deployment.
-- `docs/ROADMAP.md` is the in-repo plan.
+- The parent authorized finishing all phases without waiting for input and committing and pushing after each phase passed its checks.
+- Earlier: revised build plan; Vercel and Supabase hosting with TrueNAS backup planned; Google sign-in with `ALLOWED_EMAILS` and `PARENT_PIN`; RLS with server-side Prisma 7.10.0; blind-solve review rule (parent's reason "Time constraints."); generators compute answers; mixed US and Canadian units; mastery and review rules; session caps; 8-question sessions with a quiet 12 minute cap; migrations stay compatible with the previous deployment.
+- Phase 4: scratchpad stores mode and stroke count only; Find the Bug asks for the first wrong step.
+- Phase 3: bars and lines instead of a radar chart; status on the skill map is stripe plus icon plus label; layered SVG skill map instead of React Flow; browser print instead of a PDF library.
+- Selector fix: stretch slots yield to the everyday-skills quota.
+- Phase 5: a repo command producing drafts, not an in-app AI vision pipeline (no API key; drafts still need a blind solve).
+- Languages: speech input optional and experimental, nothing recorded; break offers after 3 wrong in a row instead of fatigue detection.
 
 ## 3. Constraints and invariants the next session must not violate
-Standing rules in `CLAUDE.md`: Row Level Security on every table with server-side data access only, no `any`, skill state replayed never stored, no em dashes anywhere, process over speed.
-- Never edit `content/questions/generated-*.json` by hand. Change `scripts/generate/*.ts` and run `npm run content:generate`; otherwise `scripts/generate/generate.test.ts` fails.
-- A new question file must be imported in `src/content/bank.ts`, or `src/content/bank.test.ts` fails and the file never reaches production.
-- Only `"reviewed"` questions reach the child (`src/app/play/[studentId]/page.tsx`). Do not mark a question reviewed without an independent blind solve, and log each round in `content/REVIEW.md`.
-- Migrations deploy automatically on push (`vercel-build`). Breaking compatibility with the previous deployment makes live answer uploads fail during the rollout.
-- Keep `Attempt.localDate` nullable until older app versions cached on devices are gone; `src/lib/sync.ts` fills it.
-- Do not record a reason in `docs/DEVLOG.md` that the parent did not give. Write "not stated" or "pending".
-- Do not commit or push unless the parent asks; the `/handoff` procedure never commits.
-- Rerun `src/lib/engine/simulation.test.ts` after changing any engine cap.
+Standing rules in `CLAUDE.md`: RLS on every table with server-side data access only, no `any`, skill state replayed never stored, no em dashes anywhere, process over speed, soft gates only, drawings never stored, passages never read aloud, spoken answers optional, breaks offered never forced.
+- Never edit `content/questions/generated-*.json` by hand; change `scripts/generate/*.ts` and run `npm run content:generate`, or `scripts/generate/generate.test.ts` fails.
+- A new question file must be imported in `src/content/bank.ts`, or `src/content/bank.test.ts` fails.
+- Only `"reviewed"` questions reach the child. Do not mark a question reviewed without an independent blind solve, and log each round in `content/REVIEW.md`.
+- Migrations deploy automatically on push through `vercel-build`; keep them compatible with the previous deployment and enable RLS on new tables.
+- Keep `Attempt.localDate` nullable until old app versions cached on devices are gone.
+- Do not record a reason in `docs/DEVLOG.md` that the parent did not give.
+- The autonomous commit-and-push authorization covered finishing the phases; for new work, confirm with the parent before committing unless they say otherwise.
+- Rerun `src/lib/engine/simulation.test.ts` after changing any engine cap; it caught a real quota bug this session.
 
 ## 4. Next steps, prioritized
-- Try Phase 4 on a real tablet or phone with a stylus | strokes appear with varying width, a resting palm does not draw, the Answers tab shows ✏️ and 📝 | `src/components/Scratchpad.tsx`, `src/app/parent/page.tsx`.
-- Phase 3, parent dashboard | after 1 to 2 weeks of real answers | `src/app/parent/page.tsx`, `src/components/parent/SkillProgress.tsx`, `src/lib/engine/skill-state.ts`; scratchpad use per skill is now available in `Attempt.scratchpad`.
-- Tune the engine from real data | after a week or more of use; compare real accuracy and review share with the simulation | `src/lib/engine/select-session.ts`, `src/lib/engine/simulation.test.ts`.
-- Content batch 2, including more Find the Bug questions | in about 3 to 4 weeks | `scripts/generate/`.
+- Parent walkthrough of the live app | parent has played a session on a tablet and a phone, opened every grown-ups tab, saved a note and printed the report | `https://aalopp.vercel.app`; collect issues into `docs/HANDOFF.md` section 5.
+- Fix whatever the walkthrough finds | each issue has a test or screenshot showing it fixed | usually `src/components/Player.tsx`, `src/app/parent/page.tsx`, `src/components/parent/`.
+- Device checks | stylus strokes and palm rejection, Spanish and French voices, 🎤 on a phone, Wi-Fi drop recovery | `src/components/Scratchpad.tsx`, `src/lib/use-speech.ts`, `src/lib/use-speech-input.ts`, `src/lib/outbox.ts`.
+- Set up the TrueNAS backup | a nightly dump appears on the NAS and in Google Drive, and a test restore matches the row counts | `docs/backup-truenas.md` (needs the parent at the NAS).
+- Tune the engine from real data | after one to two weeks of Aishik's answers; compare accuracy, review share and break offers with the simulation | `src/lib/engine/select-session.ts`, `src/lib/engine/breaks.ts`, `src/lib/engine/simulation.test.ts`.
+- Content batch 3 | when the Skills tab shows most skills mastered or the pool feels repetitive; also turn contest PDFs into drafts | `scripts/generate/`, `npm run content:ingest`.
 
 ## 5. Open questions and blockers
-- Parent action, not blocking code: set up the TrueNAS backup (`docs/backup-truenas.md`); until then answer data exists only in Supabase, whose free plan has no downloadable backups.
-- Parent action: repeat the Wi-Fi drop test on a phone.
 - Parent input: is 8 questions the right session length? Asked, not yet answered.
-- Parent spot-check suggestions: `mdl-bus-cm-offset`, `lgr-cars-4x4`, `lsp-zoo-best-route`, `mdc-ca-piggy-bank`, `gs-fan-triangles-4`, `lrv-undo-the-walk`, `bb-beaver-color-path`, `kl12-folded-rope-cut`, `kl12-symmetric-butterfly`, plus two Find the Bug items: `dbg-sub-52-18-trade`, `dbg-elapsed-past-sixty`.
+- Parent action: TrueNAS backup not set up; answer data exists only in Supabase, whose free plan has no downloadable backups.
+- Parent action: Wi-Fi drop test on a phone.
+- Parent input, optional: which issues to prioritize from the walkthrough.
+- Parent spot-check suggestions: `mdl-bus-cm-offset`, `lgr-cars-4x4`, `lsp-zoo-best-route`, `mdc-ca-piggy-bank`, `gs-fan-triangles-4`, `lrv-undo-the-walk`, `dbg-sub-52-18-trade`, `b2l-five-car-race`, `b2f-not-equal-parts`, `read-soccer-brown-socks`, `lang-fr-phrase-please`.
 
 ## 6. Dead ends
-Also in `docs/DEVLOG.md`.
-- Detecting a new deployment by matching `/_next/static/chunks/` in page HTML. Next.js 16 uses `/_next/static/immutable/chunks/`. Use `gh api repos/ghoshs89/aalopp/commits/<sha>/status` instead.
-- `npx prisma migrate diff --from-migrations` needs a shadow database. Use `--from-empty` or `--from-config-datasource` as described in the DEVLOG entry.
-- Editing the single-line JSON content files with Python slice indexes produced invalid JSON. Replace exact unique strings, and guard with `json.loads` before writing.
+Also in `docs/DEVLOG.md` where durable.
+- Detecting a deployment from `/_next/static/chunks/` in page HTML; Next.js 16 uses `/_next/static/immutable/chunks/`. Use `gh api repos/ghoshs89/aalopp/commits/<sha>/status`.
+- `npx prisma migrate diff --from-migrations` needs a shadow database; use `--from-empty` or `--from-config-datasource`.
+- Python one-off edit scripts with `'...parent\\'s...'` quoting failed with a syntax error before writing anything, twice; the commit went out without its docs the first time. Use double-quoted strings for text with apostrophes, or write the script to a file and check it runs before committing.
+- Headless Chrome browser tests stall when many speech utterances queue; stub `window.speechSynthesis` in the test page.
+- Reading pixels from the scratchpad canvas while it is hidden throws (width 0); check `canvas.width` first.
 
 ## 7. Orientation for a cold reader
 `CLAUDE.md` covers the stack, commands and standing rules; `docs/ROADMAP.md` covers the plan. This section is only what matters for resuming.
 - Where things live:
-  - Child flow: `src/app/play/[studentId]/page.tsx` loads attempts and calls `selectSession` (`src/lib/engine/select-session.ts`), which uses `computeSkillStates` (`src/lib/engine/skill-state.ts`), then renders `src/components/Player.tsx`.
+  - Child flow: `src/app/play/[studentId]/page.tsx` loads attempts and calls `selectSession` (`src/lib/engine/select-session.ts`, which uses `computeSkillStates` in `skill-state.ts`), then renders `src/components/Player.tsx` (scratchpad, Find the Bug, passages, hear-it, 🎤, break offer).
   - Answers: `src/lib/outbox.ts` (IndexedDB queue), then `src/app/api/sync/route.ts` and `src/lib/sync.ts`.
-  - Grown-ups page: `src/app/parent/page.tsx` (PIN lock in `src/lib/parent-lock.ts`), Skills tab in `src/components/parent/SkillProgress.tsx`.
-  - Content: `content/`, validated by `src/content/schema.ts` and `src/content/graph.ts`, bundled by `src/content/bank.ts`; generators in `scripts/generate/`.
-  - Local previews without sign-in: `/dev/player?ids=<id,id>` and `/dev/skills` under `npm run dev` (404 in production). Example for Phase 4: `/dev/player?ids=dbg-sub-52-18-trade,dbg-ruler-truck-offset`.
-  - Phase 4: `src/components/Scratchpad.tsx` (canvas, pointer events), find-the-bug rendering and scratchpad state in `src/components/Player.tsx`, generator `scripts/generate/debugging.ts`.
-- Accounts and services: GitHub `ghoshs89/aalopp` (`gh` is logged in on the parent's Mac); Vercel project `aalopp`; Supabase project whose ref starts with `strk`; Google Cloud OAuth client in Testing mode with both family accounts as test users.
+  - Grown-ups: `src/app/parent/page.tsx` (tabs), `src/lib/parent-session.ts` (PIN check and data loading), `src/lib/engine/insights.ts` (dashboard numbers), `src/components/parent/` (charts, skill map, skill progress), `src/app/parent/notes-actions.ts`, `src/app/parent/report/page.tsx`.
+  - Content: `content/`, validated by `src/content/schema.ts` and `src/content/graph.ts`, bundled by `src/content/bank.ts`; generators in `scripts/generate/` (measurement, numbers, geometry, logic, debugging, batch2, languages); ingestion in `scripts/ingest/`, drafts in `content/drafts/`.
+  - Local previews without sign-in (404 in production): `/dev/player?ids=<id,id>`, `/dev/skills`, `/dev/dashboard`.
+- Accounts and services: GitHub `ghoshs89/aalopp` (`gh` logged in on the parent's Mac); Vercel project `aalopp`; Supabase project whose ref starts with `strk`; Google Cloud OAuth client in Testing mode with both family accounts as test users.
 - Environment gotchas:
   - Secrets are in `.env.local` (git-ignored): the four Supabase values, `ALLOWED_EMAILS` (both accounts) and `CRON_SECRET`. `PARENT_PIN` is not set locally, so the grown-ups page shows a notice in local development.
-  - Supabase's copy button includes the variable name. Pasting it after `NAME=` produced `DATABASE_URL=DATABASE_URL="..."` once. Check for that if a connection fails with host `base`.
-  - Prisma CLI reads `DIRECT_URL` (session pooler, port 5432) through `prisma.config.ts`; the app uses `DATABASE_URL` (transaction pooler, port 6543).
-  - `npm run typecheck` runs `next typegen` first; plain `tsc` fails on typed routes without it.
-  - The shell is zsh: an unmatched glob aborts a command chain, and a variable holding several words is passed as one argument. Use `xargs`.
-- Where the original context came from: the parent's folder one level above the repo holds `Aishik-Support-Plan.md` (assessment and goals), the IXL report PDF, `bebras_100_questions.md` and `BRIGHT STEPS/` (the earlier practice pages the first content came from).
+  - Prisma CLI reads `DIRECT_URL` (session pooler) through `prisma.config.ts`; the app uses `DATABASE_URL` (transaction pooler).
+  - `npm run typecheck` runs `next typegen` first. `next build` type-checks `scripts/` too, so a type error there fails the Vercel build.
+  - zsh: an unmatched glob aborts a command chain, and a variable holding several words is one argument.
+  - Headless Chrome for screenshots lives in the session scratchpad with `puppeteer-core`; it is not a repo dependency.
+- Source material one folder above the repo: `Aishik-Support-Plan.md`, the IXL report PDF, `bebras_100_questions.md`, `BRIGHT STEPS/`.

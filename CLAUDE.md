@@ -5,7 +5,7 @@
 Adaptive learning app for one learner: Aishik, age 5.5, working around grade 3 (MAP Math and Reading RIT 186). Parents use it from laptops, tablets and phones around the house. The plan and phase status live in `docs/ROADMAP.md`.
 
 ### Current focus
-Read `docs/HANDOFF.md` first for the live state of the work, then `docs/ROADMAP.md` for the plan. Phases 0, 1 and 2 are done and live. Phase 4 (scratchpad and Find the Bug) is also live. The parent authorized finishing all remaining phases autonomously (Phase 3 dashboard, content batch 2, Phase 5 ingestion, reading and languages, fatigue detection), committing and pushing after each phase passes its checks; see `docs/DEVLOG.md` 2026-09-13.
+Read `docs/HANDOFF.md` first for the live state of the work, then `docs/ROADMAP.md` for the plan. Phases 0, 1 and 2 are done and live. All planned phases (0 to 5, content batches 1 and 2, reading and languages, break offers) are built and live as of 2026-09-13. Next: the parent's walkthrough, real-device checks and fixes, then tuning from real data. The autonomous commit-and-push authorization covered finishing the phases; confirm before committing new work unless the parent says otherwise.
 
 ## Stack
 - Next.js 16 App Router, TypeScript strict, Tailwind v4. Hosted on Vercel.

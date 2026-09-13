@@ -16,6 +16,19 @@ Attribution convention used below: "Parent decision" means the parent chose it; 
 
 ---
 
+## 2026-09-13  Milestone  All planned phases complete and live
+What: Every phase in `docs/ROADMAP.md` is built and deployed. Final bank: 48 skills, 328 reviewed questions (bands 1 to 5: 53, 121, 96, 48, 10). Session handoff rewritten for the next stage: real use, device testing and fixes.
+Verified by: at handoff `npm test` (20 files, 106 tests), `npm run content:check`, `npm run typecheck` and `npm run lint` all exit 0; Vercel commit status "Deployment has completed" for b56be0c; `/api/health` 200, `/dev/dashboard` 404 and `/parent/report` redirecting to `/login` when signed out.
+Not verified: see `docs/HANDOFF.md` section 1, "Assumed, not verified" (signed-in dashboard, stylus, language voices, child speech recognition, Wi-Fi drop recovery, cron runs, real usage).
+
+## 2026-09-13  Milestone  Reading and languages deployed
+What: Commit b56be0c pushed to `main`.
+Verified by: GitHub commit status from Vercel for b56be0c reported "Deployment has completed".
+
+## 2026-09-13  Dead end  One-off Python edit scripts with escaped apostrophes
+What: Twice, a docs update script used a single-quoted Python string containing an escaped apostrophe and failed with a syntax error before writing anything. The first time, the Phase 3 code commit went out before the failure was noticed, and the docs followed in a separate commit.
+Instead: use double-quoted strings for text with apostrophes, and confirm the script printed its success line before committing.
+
 ## 2026-09-13  Milestone  Reading, Spanish, French and break suggestions built
 What: 42 generated questions (`scripts/generate/languages.ts`, `generated-languages.json`): 10 reading comprehension questions on 4 original passages, and 16 each in Spanish and French (hear a word and pick the picture, name a picture or color, count, phrases). Six skills in the new `LANGUAGE` strand. Schema fields `passage`, `listen` and `voiceAnswer`. Read-aloud speaks the English prompt, then the word to hear and any Spanish or French choices in a voice for that language (`src/lib/use-speech.ts`, `pickVoice` in `src/lib/voices.ts`); passages are never read aloud. An optional 🎤 on spoken-answer questions uses the browser's speech recognition (`src/lib/use-speech-input.ts`) and selects the matching choice (`matchSpokenChoice`); the confidence tap still confirms it. After 3 wrong answers in a row the child is offered a break once per session (`src/lib/engine/breaks.ts`).
 Verified by: independent blind solve agreed on 42 of 42 (translations, articles and passage answers checked); its only flags were "words" in prompts that play a single word, now reworded; `npm test` 106 passed (voice picking, spoken matching, break rule, read-aloud parts); content check 48 skills and 328 questions; typecheck, lint and build clean; headless Chrome at phone width showed the passage card and hear-it button, the break offer appeared exactly after the third wrong answer and "Keep going" continued, and the 🎤 button appeared on a French question.
@@ -42,7 +55,7 @@ Reason: Assistant decision under the parent's instruction to finish all phases. 
 Alternatives rejected: Claude vision extraction behind an upload page (no key, untestable now, can be added later on top of `DraftQuestionSchema`); OCR for scanned PDFs (heavy dependency; noted in the drafts README).
 
 ## 2026-09-13  Milestone  Content batch 2: 39 questions and 5 grade 3 skills
-What: `scripts/generate/batch2.ts` writes `generated-batch2.json`: multiplication, division (including leftovers), fractions (halves, thirds, quarters; unequal parts), area and perimeter, harder logic (5-car ordering, 4 by 4 grid, counting arrangements and handshakes) and 6 more Find the Bug items. New skills `MATH-OA-MULT`, `MATH-OA-DIVIDE`, `MATH-NF-FRACTIONS`, `MATH-MD-AREA-PERIMETER` (everyday skill) and `LOGIC-COUNT-WAYS`. Bank now 42 skills and 286 questions; band 5 grew from 3 to 12 questions.
+What: `scripts/generate/batch2.ts` writes `generated-batch2.json`: multiplication, division (including leftovers), fractions (halves, thirds, quarters; unequal parts), area and perimeter, harder logic (5-car ordering, 4 by 4 grid, counting arrangements and handshakes) and 6 more Find the Bug items. New skills `MATH-OA-MULT`, `MATH-OA-DIVIDE`, `MATH-NF-FRACTIONS`, `MATH-MD-AREA-PERIMETER` (everyday skill) and `LOGIC-COUNT-WAYS`. Bank now 42 skills and 286 questions; band 5 grew from 3 to 10 questions. (Corrected at handoff: an earlier version of this entry said 12.)
 Verified by: independent blind solve agreed on 39 of 39; generator uniqueness checks caught a 5-car race whose clues had no solution (clue changed before the solve); `npm test` 88 passed; typecheck, lint and build clean; phone-width overflow check on the new pictures passed. Details in `content/REVIEW.md`.
 
 ## 2026-09-13  Decision  Reserve room for the everyday-skills quota before stretch slots

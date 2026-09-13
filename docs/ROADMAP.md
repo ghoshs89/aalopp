@@ -2,7 +2,7 @@
 
 The living plan. It replaces the original planning file at `~/.claude/plans/what-do-you-think-melodic-harp.md`, which exists only on the parent's Mac and still describes phases that are now done. Decisions and their reasons are in `docs/DEVLOG.md`; the latest session state is in `docs/HANDOFF.md`.
 
-Last updated: 2026-09-13 (Phase 4 live).
+Last updated: 2026-09-13. All planned phases are built and live; next is real use, device testing and fixes (see `docs/HANDOFF.md`).
 
 ## Goal
 A practice app for one learner, Aishik (age 5.5, working around grade 3: MAP Math and Reading RIT 186, IXL Math about 290 with Measurement and Data as the weakest strand). He uses it on laptops, tablets and phones around the house. Source material: `../Aishik-Support-Plan.md` (one folder above the repo).
