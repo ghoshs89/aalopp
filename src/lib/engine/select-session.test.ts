@@ -31,11 +31,15 @@ describe("selectSession", () => {
   });
 
   it("prefers new questions over ones already answered correctly", () => {
+    // A fixed pool of 20 keeps this independent of how many questions the bank holds.
+    const pool = questions.slice(0, 20);
     const answeredAt = new Date("2026-09-01");
-    const history: PastAttempt[] = questions.slice(0, 32).map((q) => ({ questionId: q.id, isCorrect: true, answeredAt }));
-    const plan = selectSession(questions, skills, history, seeded(3));
-    const fresh = new Set(questions.slice(32).map((q) => q.id));
-    expect(plan.questionIds.filter((id) => fresh.has(id))).toHaveLength(questions.length - 32);
+    const history: PastAttempt[] = pool.slice(0, 13).map((q) => ({ questionId: q.id, isCorrect: true, answeredAt }));
+    const plan = selectSession(pool, skills, history, seeded(3));
+    const fresh = new Set(pool.slice(13).map((q) => q.id));
+    const convention = pool.filter((q) => isConvention(q.id));
+    // Every new question is picked unless the convention quota had to pull in a review instead.
+    expect(plan.questionIds.filter((id) => fresh.has(id)).length).toBeGreaterThanOrEqual(Math.min(7, SESSION_SIZE - Math.max(0, 3 - convention.filter((q) => fresh.has(q.id)).length)));
     for (const id of plan.questionIds) expect(plan.reasons[id]).toBe(fresh.has(id) ? "new" : "review");
   });
 

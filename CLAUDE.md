@@ -12,10 +12,11 @@ Adaptive learning app for one learner: Aishik, age 5.5, working around grade 3 (
 ## Commands
 - `npm test`: unit tests plus a full validation of `content/`
 - `npm run content:check`: validate content and print coverage by strand, band and review status
+- `npm run content:generate`: rebuild `content/questions/generated-*.json`
 - `npm run typecheck`, `npm run lint`
 
 ## Content
-- Questions live in `content/questions/*.json`, skills and prerequisites in `content/skills.json`. Schema: `src/content/schema.ts`. Cross-file checks (unknown skills, cycles, duplicate ids, copy-pasted prompts): `src/content/graph.ts`.
+- Questions live in `content/questions/*.json`, skills and prerequisites in `content/skills.json`. Files named `generated-*.json` come from `scripts/generate/` (`npm run content:generate`); change the generator, never the JSON. Prefer generators that compute answers and assert uniqueness over hand-typed answers. Schema: `src/content/schema.ts`. Cross-file checks (unknown skills, cycles, duplicate ids, copy-pasted prompts): `src/content/graph.ts`.
 - Every new question must pass `npm run content:check`. Verify the answer by hand; AI-drafted items go in as `"reviewStatus": "draft"` until a parent checks them.
 - Difficulty is seeded from outside evidence (Kangaroo points, contest position, author estimate) and is never learned from Aishik's own answers.
 - Log fixes and exclusions of source material in `content/REVIEW.md`.

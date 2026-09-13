@@ -1,5 +1,6 @@
 import type { Visual as VisualData } from "@/content/schema";
 import { barChartTicks, clockHandAngles, emojiFontSize, pointOnDial } from "./geometry";
+import { CalendarVisual, CoinsVisual, NetworkVisual, PictureGraphVisual, RulerVisual } from "./MoreVisuals";
 
 export function Visual({ visual }: { visual: VisualData }) {
   switch (visual.kind) {
@@ -27,6 +28,16 @@ export function Visual({ visual }: { visual: VisualData }) {
           dangerouslySetInnerHTML={{ __html: visual.svg }}
         />
       );
+    case "coins":
+      return <CoinsVisual visual={visual} />;
+    case "ruler":
+      return <RulerVisual visual={visual} />;
+    case "pictureGraph":
+      return <PictureGraphVisual visual={visual} />;
+    case "calendar":
+      return <CalendarVisual visual={visual} />;
+    case "network":
+      return <NetworkVisual visual={visual} />;
   }
 }
 

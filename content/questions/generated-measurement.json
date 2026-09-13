@@ -1,0 +1,2070 @@
+[
+  {
+    "id": "mdh-breakfast-seven",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/measurement.ts"
+    },
+    "skills": [
+      "MATH-MD-TIME-HOUR"
+    ],
+    "language": "en",
+    "prompt": "Breakfast is at the time on this clock. What time is it?",
+    "visual": {
+      "kind": "clock",
+      "hour": 7,
+      "minute": 0
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "7 o'clock",
+        "12:07",
+        "8 o'clock",
+        "6 o'clock"
+      ],
+      "correctIndex": 0
+    },
+    "explanation": "The short hand tells the hour, and it points to 7. The long hand points straight up to 12, which means exactly on the hour. It is 7 o'clock.",
+    "difficulty": {
+      "band": 1,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "mdh-noon-lunch",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/measurement.ts"
+    },
+    "skills": [
+      "MATH-MD-TIME-HOUR"
+    ],
+    "language": "en",
+    "prompt": "Lunch is at the time on this clock. What time is it?",
+    "visual": {
+      "kind": "clock",
+      "hour": 12,
+      "minute": 0
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "12 o'clock",
+        "12:12",
+        "1 o'clock",
+        "11 o'clock"
+      ],
+      "correctIndex": 0
+    },
+    "explanation": "The short hand tells the hour, and it points to 12. The long hand points straight up to 12, which means exactly on the hour. It is 12 o'clock.",
+    "difficulty": {
+      "band": 1,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "mdh-soccer-nine",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/measurement.ts"
+    },
+    "skills": [
+      "MATH-MD-TIME-HOUR"
+    ],
+    "language": "en",
+    "prompt": "The soccer game starts at the time on this clock. What time is it?",
+    "visual": {
+      "kind": "clock",
+      "hour": 9,
+      "minute": 0
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "12:09",
+        "10 o'clock",
+        "8 o'clock",
+        "9 o'clock"
+      ],
+      "correctIndex": 3
+    },
+    "explanation": "The short hand tells the hour, and it points to 9. The long hand points straight up to 12, which means exactly on the hour. It is 9 o'clock.",
+    "difficulty": {
+      "band": 1,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "mdh-hands-six",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/measurement.ts"
+    },
+    "skills": [
+      "MATH-MD-TIME-HOUR"
+    ],
+    "language": "en",
+    "prompt": "The short hand points to 6 and the long hand points to 12. What time is it?",
+    "visual": {
+      "kind": "clock",
+      "hour": 6,
+      "minute": 0
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "12:06",
+        "7 o'clock",
+        "6 o'clock",
+        "5 o'clock"
+      ],
+      "correctIndex": 2
+    },
+    "explanation": "The short hand tells the hour, and it points to 6. The long hand points straight up to 12, which means exactly on the hour. It is 6 o'clock.",
+    "difficulty": {
+      "band": 1,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "mdq-half-past-eleven",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/measurement.ts"
+    },
+    "skills": [
+      "MATH-MD-TIME-HALF-QUARTER"
+    ],
+    "language": "en",
+    "prompt": "The race starts at half past the hour. What time does the clock show?",
+    "visual": {
+      "kind": "clock",
+      "hour": 11,
+      "minute": 30
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "11:30",
+        "12:30",
+        "11:06",
+        "11:45"
+      ],
+      "correctIndex": 0
+    },
+    "explanation": "The long hand points to 6, which is 30 minutes. The short hand is halfway between 11 and 12, so the hour is 11. It is 11:30, or half past 11.",
+    "difficulty": {
+      "band": 2,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "mdq-quarter-past-six",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/measurement.ts"
+    },
+    "skills": [
+      "MATH-MD-TIME-HALF-QUARTER"
+    ],
+    "language": "en",
+    "prompt": "Dinner is at the time on this clock. What time is it?",
+    "visual": {
+      "kind": "clock",
+      "hour": 6,
+      "minute": 15
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "6:15",
+        "7:15",
+        "6:03",
+        "6:30"
+      ],
+      "correctIndex": 0
+    },
+    "explanation": "The long hand points to 3, which is 15 minutes. The short hand is just past 6, so the hour is 6. It is 6:15, or quarter past 6.",
+    "difficulty": {
+      "band": 2,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "mdq-quarter-to-four",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/measurement.ts"
+    },
+    "skills": [
+      "MATH-MD-TIME-HALF-QUARTER"
+    ],
+    "language": "en",
+    "prompt": "Soccer practice ends at the time on this clock. What time is it?",
+    "visual": {
+      "kind": "clock",
+      "hour": 3,
+      "minute": 45
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "4:45",
+        "3:09",
+        "3:00",
+        "3:45"
+      ],
+      "correctIndex": 3
+    },
+    "explanation": "The long hand points to 9, which is 45 minutes. The short hand is almost at 4 but has not reached it, so the hour is still 3. It is 3:45, which people also call quarter to 4.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "md5-pit-stop",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/measurement.ts"
+    },
+    "skills": [
+      "MATH-MD-TIME-5MIN"
+    ],
+    "language": "en",
+    "prompt": "The pit stop crew starts work at the time on this clock. What time is it?",
+    "visual": {
+      "kind": "clock",
+      "hour": 2,
+      "minute": 25
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "2:05",
+        "1:25",
+        "2:25",
+        "5:10"
+      ],
+      "correctIndex": 2
+    },
+    "explanation": "The long hand points to 5. Count by fives for each number: 5, 10, 15, 20, 25. That is 25 minutes. The short hand is just past 2, so the hour is 2. It is 2:25.",
+    "difficulty": {
+      "band": 2,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "md5-soccer-practice",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/measurement.ts"
+    },
+    "skills": [
+      "MATH-MD-TIME-5MIN"
+    ],
+    "language": "en",
+    "prompt": "Soccer practice starts at the time on this clock. What time does it start?",
+    "visual": {
+      "kind": "clock",
+      "hour": 7,
+      "minute": 50
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "7:10",
+        "7:50",
+        "8:50",
+        "10:35"
+      ],
+      "correctIndex": 1
+    },
+    "explanation": "The long hand points to 10. Count by fives for each number: 5, 10, 15, 20, 25, 30, 35, 40, 45, 50. That is 50 minutes. The short hand is past 7 and moving toward 8, but it has not reached 8 yet, so the hour is still 7. It is 7:50.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "md5-car-show-doors",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/measurement.ts"
+    },
+    "skills": [
+      "MATH-MD-TIME-5MIN"
+    ],
+    "language": "en",
+    "prompt": "The doors of the car show open at this time. What time do they open?",
+    "visual": {
+      "kind": "clock",
+      "hour": 10,
+      "minute": 5
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "10:01",
+        "9:05",
+        "10:05",
+        "1:50"
+      ],
+      "correctIndex": 2
+    },
+    "explanation": "The long hand points to 1. Count by fives for each number: 5. That is 5 minutes. The short hand is just past 10, so the hour is 10. It is 10:05.",
+    "difficulty": {
+      "band": 2,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "md5-chess-club",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/measurement.ts"
+    },
+    "skills": [
+      "MATH-MD-TIME-5MIN"
+    ],
+    "language": "en",
+    "prompt": "Chess club begins at the time on this clock. What time is it?",
+    "visual": {
+      "kind": "clock",
+      "hour": 4,
+      "minute": 40
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "4:08",
+        "4:40",
+        "5:40",
+        "8:20"
+      ],
+      "correctIndex": 1
+    },
+    "explanation": "The long hand points to 8. Count by fives for each number: 5, 10, 15, 20, 25, 30, 35, 40. That is 40 minutes. The short hand is past 4 and moving toward 5, but it has not reached 5 yet, so the hour is still 4. It is 4:40.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "md5-bus-arrives",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/measurement.ts"
+    },
+    "skills": [
+      "MATH-MD-TIME-5MIN"
+    ],
+    "language": "en",
+    "prompt": "The school bus arrives at the time on this clock. What time does it arrive?",
+    "visual": {
+      "kind": "clock",
+      "hour": 11,
+      "minute": 35
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "11:07",
+        "11:35",
+        "12:35",
+        "7:55"
+      ],
+      "correctIndex": 1
+    },
+    "explanation": "The long hand points to 7. Count by fives for each number: 5, 10, 15, 20, 25, 30, 35. That is 35 minutes. The short hand is past 11 and moving toward 12, but it has not reached 12 yet, so the hour is still 11. It is 11:35.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "md5-race-finish",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/measurement.ts"
+    },
+    "skills": [
+      "MATH-MD-TIME-5MIN"
+    ],
+    "language": "en",
+    "prompt": "The last race car crosses the finish line at this time. What time is it?",
+    "visual": {
+      "kind": "clock",
+      "hour": 8,
+      "minute": 55
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "8:11",
+        "8:55",
+        "9:55",
+        "11:40"
+      ],
+      "correctIndex": 1
+    },
+    "explanation": "The long hand points to 11. Count by fives for each number: 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55. That is 55 minutes. The short hand is past 8 and moving toward 9, but it has not reached 9 yet, so the hour is still 8. It is 8:55.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "mde-go-kart-30",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/measurement.ts"
+    },
+    "skills": [
+      "MATH-MD-TIME-ELAPSED"
+    ],
+    "language": "en",
+    "prompt": "A go-kart ride starts at the time on the clock and lasts 30 minutes. What time does it end?",
+    "visual": {
+      "kind": "clock",
+      "hour": 1,
+      "minute": 45
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "1:15",
+        "3:15",
+        "2:05",
+        "2:15"
+      ],
+      "correctIndex": 3
+    },
+    "explanation": "From 1:45, 15 minutes gets to 2:00. 15 more minutes makes 2:15. It ends at 2:15.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "mde-car-wash-50",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/measurement.ts"
+    },
+    "skills": [
+      "MATH-MD-TIME-ELAPSED"
+    ],
+    "language": "en",
+    "prompt": "The car wash starts at the time on the clock. It takes 50 minutes. What time is it done?",
+    "visual": {
+      "kind": "clock",
+      "hour": 9,
+      "minute": 20
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "9:10",
+        "11:10",
+        "10:10",
+        "10:00"
+      ],
+      "correctIndex": 2
+    },
+    "explanation": "From 9:20, 40 minutes gets to 10:00. 10 more minutes makes 10:10. It ends at 10:10.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "mde-soccer-game-75",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/measurement.ts"
+    },
+    "skills": [
+      "MATH-MD-TIME-ELAPSED"
+    ],
+    "language": "en",
+    "prompt": "A soccer game starts at the time on the clock. It lasts 1 hour and 15 minutes. What time does it end?",
+    "visual": {
+      "kind": "clock",
+      "hour": 3,
+      "minute": 35
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "5:50",
+        "4:50",
+        "4:40"
+      ],
+      "correctIndex": 1
+    },
+    "explanation": "1 hour after 3:35 is 4:35. 15 more minutes makes 4:50. It ends at 4:50.",
+    "difficulty": {
+      "band": 4,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "mde-road-trip-noon",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/measurement.ts"
+    },
+    "skills": [
+      "MATH-MD-TIME-ELAPSED"
+    ],
+    "language": "en",
+    "prompt": "The family leaves for the lake at the time on the clock. The drive takes 35 minutes. What time do they arrive?",
+    "visual": {
+      "kind": "clock",
+      "hour": 11,
+      "minute": 40
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "11:15",
+        "12:15",
+        "1:15",
+        "12:05"
+      ],
+      "correctIndex": 1
+    },
+    "explanation": "From 11:40, 20 minutes gets to 12:00. 15 more minutes makes 12:15. It ends at 12:15.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "mde-chess-tournament",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/measurement.ts"
+    },
+    "skills": [
+      "MATH-MD-TIME-ELAPSED"
+    ],
+    "language": "en",
+    "prompt": "A chess tournament starts at the time on the clock. It lasts 2 hours and 40 minutes. What time does it end?",
+    "visual": {
+      "kind": "clock",
+      "hour": 6,
+      "minute": 10
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "8:50",
+        "9:50",
+        "8:40"
+      ],
+      "correctIndex": 0
+    },
+    "explanation": "2 hours after 6:10 is 8:10. 40 more minutes makes 8:50. It ends at 8:50.",
+    "difficulty": {
+      "band": 4,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "mde-minutes-race-day",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/measurement.ts"
+    },
+    "skills": [
+      "MATH-MD-TIME-ELAPSED"
+    ],
+    "language": "en",
+    "prompt": "The race starts at 4:15 and ends at 5:05. How many minutes long is the race?",
+    "answer": {
+      "type": "numeric",
+      "value": 50,
+      "unit": "minutes"
+    },
+    "explanation": "From 4:15 to 5:00 is 45 minutes. From 5:00 to 5:05 is 5 more minutes. 45 + 5 = 50 minutes.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "mde-minutes-swim",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/measurement.ts"
+    },
+    "skills": [
+      "MATH-MD-TIME-ELAPSED"
+    ],
+    "language": "en",
+    "prompt": "Swim lessons start at 9:40 and end at 10:25. How many minutes long are they?",
+    "answer": {
+      "type": "numeric",
+      "value": 45,
+      "unit": "minutes"
+    },
+    "explanation": "From 9:40 to 10:00 is 20 minutes. From 10:00 to 10:25 is 25 more minutes. 20 + 25 = 45 minutes.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "mdc-us-sticker-money",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/measurement.ts"
+    },
+    "skills": [
+      "MATH-MD-COINS"
+    ],
+    "language": "en",
+    "prompt": "How much money are these US coins worth altogether?",
+    "visual": {
+      "kind": "coins",
+      "currency": "USD",
+      "coins": [
+        "quarter",
+        "dime",
+        "dime",
+        "nickel",
+        "penny",
+        "penny"
+      ]
+    },
+    "answer": {
+      "type": "numeric",
+      "value": 52,
+      "unit": "cents"
+    },
+    "explanation": "Remember: a quarter is 25 cents, a dime is 10 cents, a nickel is 5 cents, a penny is 1 cent. Start with the biggest coins and count up: 25, 35, 45, 50, 51, 52. The total is 52 cents.",
+    "difficulty": {
+      "band": 2,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "mdc-us-two-quarters",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/measurement.ts"
+    },
+    "skills": [
+      "MATH-MD-COINS"
+    ],
+    "language": "en",
+    "prompt": "How much money are these US coins worth altogether?",
+    "visual": {
+      "kind": "coins",
+      "currency": "USD",
+      "coins": [
+        "quarter",
+        "quarter",
+        "dime",
+        "nickel"
+      ]
+    },
+    "answer": {
+      "type": "numeric",
+      "value": 65,
+      "unit": "cents"
+    },
+    "explanation": "Remember: a quarter is 25 cents, a dime is 10 cents, a nickel is 5 cents. Start with the biggest coins and count up: 25, 50, 60, 65. The total is 65 cents.",
+    "difficulty": {
+      "band": 2,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "mdc-us-mixed-pile",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/measurement.ts"
+    },
+    "skills": [
+      "MATH-MD-COINS"
+    ],
+    "language": "en",
+    "prompt": "How much money are these US coins worth altogether?",
+    "visual": {
+      "kind": "coins",
+      "currency": "USD",
+      "coins": [
+        "dime",
+        "dime",
+        "dime",
+        "nickel",
+        "nickel",
+        "penny",
+        "penny",
+        "penny",
+        "penny"
+      ]
+    },
+    "answer": {
+      "type": "numeric",
+      "value": 44,
+      "unit": "cents"
+    },
+    "explanation": "Remember: a dime is 10 cents, a nickel is 5 cents, a penny is 1 cent. Start with the biggest coins and count up: 10, 20, 30, 35, 40, 41, 42, 43, 44. The total is 44 cents.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "mdc-ca-small-change",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/measurement.ts"
+    },
+    "skills": [
+      "MATH-MD-COINS"
+    ],
+    "language": "en",
+    "prompt": "How much money are these Canadian coins worth altogether?",
+    "visual": {
+      "kind": "coins",
+      "currency": "CAD",
+      "coins": [
+        "quarter",
+        "quarter",
+        "quarter",
+        "dime",
+        "dime"
+      ]
+    },
+    "answer": {
+      "type": "numeric",
+      "value": 95,
+      "unit": "cents"
+    },
+    "explanation": "Remember: a quarter is 25 cents, a dime is 10 cents. Start with the biggest coins and count up: 25, 50, 75, 85, 95. The total is 95 cents.",
+    "difficulty": {
+      "band": 2,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "mdc-ca-toonie-loonie",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/measurement.ts"
+    },
+    "skills": [
+      "MATH-MD-COINS"
+    ],
+    "language": "en",
+    "prompt": "How much money are these Canadian coins worth altogether?",
+    "visual": {
+      "kind": "coins",
+      "currency": "CAD",
+      "coins": [
+        "toonie",
+        "loonie",
+        "quarter"
+      ]
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "$3.00",
+        "$4.25",
+        "$3.25",
+        "$3.35"
+      ],
+      "correctIndex": 2
+    },
+    "explanation": "Remember: a toonie is 2 dollars, a loonie is 1 dollar, a quarter is 25 cents. Start with the biggest coins and count up: $2.00, $3.00, $3.25. The total is $3.25.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "mdc-ca-piggy-bank",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/measurement.ts"
+    },
+    "skills": [
+      "MATH-MD-COINS"
+    ],
+    "language": "en",
+    "prompt": "How much money are these Canadian coins worth altogether?",
+    "visual": {
+      "kind": "coins",
+      "currency": "CAD",
+      "coins": [
+        "loonie",
+        "loonie",
+        "quarter",
+        "dime",
+        "nickel"
+      ]
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "$2.15",
+        "$3.40",
+        "$2.40",
+        "$2.50"
+      ],
+      "correctIndex": 2
+    },
+    "explanation": "Remember: a loonie is 1 dollar, a quarter is 25 cents, a dime is 10 cents, a nickel is 5 cents. Start with the biggest coins and count up: $1.00, $2.00, $2.25, $2.35, $2.40. The total is $2.40.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "mdc-us-nickel-or-dime",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/measurement.ts"
+    },
+    "skills": [
+      "MATH-MD-COINS"
+    ],
+    "language": "en",
+    "prompt": "The nickel is bigger than the dime. Which coin is worth more money?",
+    "visual": {
+      "kind": "coins",
+      "currency": "USD",
+      "coins": [
+        "nickel",
+        "dime"
+      ]
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "The nickel",
+        "They are worth the same",
+        "The dime"
+      ],
+      "correctIndex": 2
+    },
+    "explanation": "A dime is worth 10 cents and a nickel is worth 5 cents. The dime is smaller, but it is worth more. Size does not tell you the value of a coin.",
+    "difficulty": {
+      "band": 1,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "mdc-ca-which-is-two-dollars",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/measurement.ts"
+    },
+    "skills": [
+      "MATH-MD-COINS"
+    ],
+    "language": "en",
+    "prompt": "Which Canadian coin is worth 2 dollars?",
+    "visual": {
+      "kind": "coins",
+      "currency": "CAD",
+      "coins": [
+        "loonie",
+        "toonie",
+        "quarter"
+      ]
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "The loonie",
+        "The quarter",
+        "The toonie"
+      ],
+      "correctIndex": 2
+    },
+    "explanation": "The toonie is worth 2 dollars. The loonie is worth 1 dollar, and a quarter is worth 25 cents. Toonie sounds like two!",
+    "difficulty": {
+      "band": 1,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "mdm-toy-car-ten-dollars",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/measurement.ts"
+    },
+    "skills": [
+      "MATH-MD-MONEY"
+    ],
+    "language": "en",
+    "prompt": "A toy car costs $6. You pay with a $10 bill. How much change do you get?",
+    "answer": {
+      "type": "numeric",
+      "value": 4,
+      "unit": "dollars"
+    },
+    "explanation": "Count up from 6 to 10: 7, 8, 9, 10. That is 4 dollars of change.",
+    "difficulty": {
+      "band": 1,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "mdm-sticker-two-quarters",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/measurement.ts"
+    },
+    "skills": [
+      "MATH-MD-MONEY",
+      "MATH-MD-COINS"
+    ],
+    "language": "en",
+    "prompt": "A racing sticker costs 35 cents. You pay with 2 quarters. How much change do you get?",
+    "answer": {
+      "type": "numeric",
+      "value": 15,
+      "unit": "cents"
+    },
+    "explanation": "Two quarters are 25 + 25 = 50 cents. 50 - 35 = 15 cents of change.",
+    "difficulty": {
+      "band": 2,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "mdm-juice-with-toonie",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/measurement.ts"
+    },
+    "skills": [
+      "MATH-MD-MONEY",
+      "MATH-MD-COINS"
+    ],
+    "language": "en",
+    "prompt": "In Canada, a juice box costs $1.50. You pay with a toonie. How much change do you get?",
+    "speech": "In Canada, a juice box costs one dollar and fifty cents. You pay with a toonie. How much change do you get?",
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "$1.50",
+        "25 cents",
+        "50 cents",
+        "$1"
+      ],
+      "correctIndex": 2
+    },
+    "explanation": "A toonie is 2 dollars. From $1.50, add 50 cents to get to $2.00. The change is 50 cents.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "mdm-model-car-change",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/measurement.ts"
+    },
+    "skills": [
+      "MATH-MD-MONEY"
+    ],
+    "language": "en",
+    "prompt": "A model car costs $7.25. You pay with a $10 bill. How much change do you get?",
+    "speech": "A model car costs seven dollars and twenty-five cents. You pay with a ten dollar bill. How much change do you get?",
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "$3.25",
+        "$2.25",
+        "$3.75",
+        "$2.75"
+      ],
+      "correctIndex": 3
+    },
+    "explanation": "Count up from $7.25. Add 75 cents to reach $8.00. Then add $2 to reach $10.00. 75 cents and $2 make $2.75.",
+    "difficulty": {
+      "band": 4,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "mdm-soccer-gear-left",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/measurement.ts"
+    },
+    "skills": [
+      "MATH-MD-MONEY",
+      "MATH-OA-ADD-SUB"
+    ],
+    "language": "en",
+    "prompt": "A soccer ball costs $12 and shin guards cost $9. You have $25. How much money is left after buying both?",
+    "answer": {
+      "type": "numeric",
+      "value": 4,
+      "unit": "dollars"
+    },
+    "explanation": "First add the prices: 12 + 9 = 21 dollars. Then 25 - 21 = 4 dollars left.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "mdl-pencil-inches",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/measurement.ts"
+    },
+    "skills": [
+      "MATH-MD-LENGTH"
+    ],
+    "language": "en",
+    "prompt": "How long is the pencil?",
+    "visual": {
+      "kind": "ruler",
+      "unit": "in",
+      "length": 6,
+      "start": 0,
+      "end": 5,
+      "object": "pencil"
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "6 inches",
+        "5 inches",
+        "4 inches"
+      ],
+      "correctIndex": 1
+    },
+    "explanation": "The pencil starts at 0 and ends at 5. So it is 5 inches long.",
+    "difficulty": {
+      "band": 1,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "mdl-truck-inches-offset",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/measurement.ts"
+    },
+    "skills": [
+      "MATH-MD-LENGTH"
+    ],
+    "language": "en",
+    "prompt": "The truck does not start at 0. How long is it?",
+    "visual": {
+      "kind": "ruler",
+      "unit": "in",
+      "length": 8,
+      "start": 2,
+      "end": 7,
+      "object": "truck"
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "7 inches",
+        "6 inches",
+        "4 inches",
+        "5 inches"
+      ],
+      "correctIndex": 3
+    },
+    "explanation": "The truck starts at 2, not 0. Count the jumps from 2 to 7: 3, 4, 5, 6, 7. That is 5 jumps, so it is 5 inches long. The number at the end is not the length unless the truck starts at 0.",
+    "difficulty": {
+      "band": 2,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "mdl-key-inches-offset",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/measurement.ts"
+    },
+    "skills": [
+      "MATH-MD-LENGTH"
+    ],
+    "language": "en",
+    "prompt": "The key does not start at 0. How long is it?",
+    "visual": {
+      "kind": "ruler",
+      "unit": "in",
+      "length": 6,
+      "start": 3,
+      "end": 5,
+      "object": "key"
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "5 inches",
+        "3 inches",
+        "1 inch",
+        "2 inches"
+      ],
+      "correctIndex": 3
+    },
+    "explanation": "The key starts at 3, not 0. Count the jumps from 3 to 5: 4, 5. That is 2 jumps, so it is 2 inches long. The number at the end is not the length unless the key starts at 0.",
+    "difficulty": {
+      "band": 2,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "mdl-crayon-cm",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/measurement.ts"
+    },
+    "skills": [
+      "MATH-MD-LENGTH"
+    ],
+    "language": "en",
+    "prompt": "How long is the crayon?",
+    "visual": {
+      "kind": "ruler",
+      "unit": "cm",
+      "length": 12,
+      "start": 0,
+      "end": 9,
+      "object": "crayon"
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "10 centimeters",
+        "9 centimeters",
+        "8 centimeters"
+      ],
+      "correctIndex": 1
+    },
+    "explanation": "The crayon starts at 0 and ends at 9. So it is 9 centimeters long.",
+    "difficulty": {
+      "band": 1,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "mdl-bus-cm-offset",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/measurement.ts"
+    },
+    "skills": [
+      "MATH-MD-LENGTH"
+    ],
+    "language": "en",
+    "prompt": "The bus does not start at 0. How long is it?",
+    "visual": {
+      "kind": "ruler",
+      "unit": "cm",
+      "length": 15,
+      "start": 4,
+      "end": 12,
+      "object": "bus"
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "12 centimeters",
+        "9 centimeters",
+        "8 centimeters",
+        "7 centimeters"
+      ],
+      "correctIndex": 2
+    },
+    "explanation": "The bus starts at 4, not 0. Count the jumps from 4 to 12: 5, 6, 7, 8, 9, 10, 11, 12. That is 8 jumps, so it is 8 centimeters long. The number at the end is not the length unless the bus starts at 0.",
+    "difficulty": {
+      "band": 2,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "mdl-car-cm-offset",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/measurement.ts"
+    },
+    "skills": [
+      "MATH-MD-LENGTH"
+    ],
+    "language": "en",
+    "prompt": "The car does not start at 0. How long is it?",
+    "visual": {
+      "kind": "ruler",
+      "unit": "cm",
+      "length": 10,
+      "start": 1,
+      "end": 7,
+      "object": "car"
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "7 centimeters",
+        "6 centimeters",
+        "5 centimeters"
+      ],
+      "correctIndex": 1
+    },
+    "explanation": "The car starts at 1, not 0. Count the jumps from 1 to 7: 2, 3, 4, 5, 6, 7. That is 6 jumps, so it is 6 centimeters long. The number at the end is not the length unless the car starts at 0.",
+    "difficulty": {
+      "band": 2,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "mdp-tigers-goals",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/measurement.ts"
+    },
+    "skills": [
+      "MATH-MD-PICTURE-GRAPH",
+      "MATH-NBT-SKIP-COUNT"
+    ],
+    "language": "en",
+    "prompt": "How many goals did the Tigers score?",
+    "visual": {
+      "kind": "pictureGraph",
+      "title": "Goals scored this season",
+      "icon": "⚽",
+      "perIcon": 2,
+      "rows": [
+        {
+          "label": "Lions",
+          "count": 6
+        },
+        {
+          "label": "Tigers",
+          "count": 10
+        },
+        {
+          "label": "Bears",
+          "count": 4
+        },
+        {
+          "label": "Eagles",
+          "count": 8
+        }
+      ]
+    },
+    "answer": {
+      "type": "numeric",
+      "value": 10,
+      "unit": "goals"
+    },
+    "explanation": "The key says each ball means 2 goals. The Tigers have 5 balls. Count by 2s: 2, 4, 6, 8, 10. That is 10 goals.",
+    "difficulty": {
+      "band": 2,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "mdp-eagles-more-than-bears",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/measurement.ts"
+    },
+    "skills": [
+      "MATH-MD-PICTURE-GRAPH",
+      "MATH-OA-ADD-SUB"
+    ],
+    "language": "en",
+    "prompt": "How many more goals did the Eagles score than the Bears?",
+    "visual": {
+      "kind": "pictureGraph",
+      "title": "Goals scored this season",
+      "icon": "⚽",
+      "perIcon": 2,
+      "rows": [
+        {
+          "label": "Lions",
+          "count": 6
+        },
+        {
+          "label": "Tigers",
+          "count": 10
+        },
+        {
+          "label": "Bears",
+          "count": 4
+        },
+        {
+          "label": "Eagles",
+          "count": 8
+        }
+      ]
+    },
+    "answer": {
+      "type": "numeric",
+      "value": 4,
+      "unit": "goals"
+    },
+    "explanation": "Each ball is 2 goals. Eagles: 4 balls = 8 goals. Bears: 2 balls = 4 goals. 8 - 4 = 4.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "mdp-fewest-goals",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/measurement.ts"
+    },
+    "skills": [
+      "MATH-MD-PICTURE-GRAPH"
+    ],
+    "language": "en",
+    "prompt": "Which team scored the fewest goals?",
+    "visual": {
+      "kind": "pictureGraph",
+      "title": "Goals scored this season",
+      "icon": "⚽",
+      "perIcon": 2,
+      "rows": [
+        {
+          "label": "Lions",
+          "count": 6
+        },
+        {
+          "label": "Tigers",
+          "count": 10
+        },
+        {
+          "label": "Bears",
+          "count": 4
+        },
+        {
+          "label": "Eagles",
+          "count": 8
+        }
+      ]
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "Bears",
+        "Lions",
+        "Tigers",
+        "Eagles"
+      ],
+      "correctIndex": 0
+    },
+    "explanation": "The row with the fewest balls shows the fewest goals. The Bears have only 2 balls, which is 4 goals.",
+    "difficulty": {
+      "band": 1,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "mdp-cars-tuesday",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/measurement.ts"
+    },
+    "skills": [
+      "MATH-MD-PICTURE-GRAPH",
+      "MATH-NBT-SKIP-COUNT"
+    ],
+    "language": "en",
+    "prompt": "How many cars were in the parking lot on Tuesday?",
+    "visual": {
+      "kind": "pictureGraph",
+      "title": "Cars in the parking lot",
+      "icon": "🚗",
+      "perIcon": 5,
+      "rows": [
+        {
+          "label": "Mon",
+          "count": 15
+        },
+        {
+          "label": "Tue",
+          "count": 25
+        },
+        {
+          "label": "Wed",
+          "count": 10
+        },
+        {
+          "label": "Thu",
+          "count": 20
+        }
+      ]
+    },
+    "answer": {
+      "type": "numeric",
+      "value": 25,
+      "unit": "cars"
+    },
+    "explanation": "Each car picture means 5 cars. Tuesday has 5 pictures. Count by fives: 5, 10, 15, 20, 25. That is 25 cars.",
+    "difficulty": {
+      "band": 2,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "mdp-cars-mon-and-wed",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/measurement.ts"
+    },
+    "skills": [
+      "MATH-MD-PICTURE-GRAPH",
+      "MATH-OA-ADD-SUB"
+    ],
+    "language": "en",
+    "prompt": "How many cars were there on Monday and Wednesday together?",
+    "visual": {
+      "kind": "pictureGraph",
+      "title": "Cars in the parking lot",
+      "icon": "🚗",
+      "perIcon": 5,
+      "rows": [
+        {
+          "label": "Mon",
+          "count": 15
+        },
+        {
+          "label": "Tue",
+          "count": 25
+        },
+        {
+          "label": "Wed",
+          "count": 10
+        },
+        {
+          "label": "Thu",
+          "count": 20
+        }
+      ]
+    },
+    "answer": {
+      "type": "numeric",
+      "value": 25,
+      "unit": "cars"
+    },
+    "explanation": "Monday: 3 pictures = 15 cars. Wednesday: 2 pictures = 10 cars. 15 + 10 = 25.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "mdp-which-day-twenty",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/measurement.ts"
+    },
+    "skills": [
+      "MATH-MD-PICTURE-GRAPH"
+    ],
+    "language": "en",
+    "prompt": "On which day were there 20 cars?",
+    "visual": {
+      "kind": "pictureGraph",
+      "title": "Cars in the parking lot",
+      "icon": "🚗",
+      "perIcon": 5,
+      "rows": [
+        {
+          "label": "Mon",
+          "count": 15
+        },
+        {
+          "label": "Tue",
+          "count": 25
+        },
+        {
+          "label": "Wed",
+          "count": 10
+        },
+        {
+          "label": "Thu",
+          "count": 20
+        }
+      ]
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday"
+      ],
+      "correctIndex": 3
+    },
+    "explanation": "20 cars is 20 ÷ 5 = 4 pictures, because each picture means 5. The row with 4 pictures is Thursday.",
+    "difficulty": {
+      "band": 2,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "mdp-chess-total",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/measurement.ts"
+    },
+    "skills": [
+      "MATH-MD-PICTURE-GRAPH",
+      "MATH-OA-ADD-SUB"
+    ],
+    "language": "en",
+    "prompt": "How many chess pieces were captured in all?",
+    "visual": {
+      "kind": "pictureGraph",
+      "title": "Chess pieces captured",
+      "icon": "♟️",
+      "perIcon": 1,
+      "rows": [
+        {
+          "label": "Pawns",
+          "count": 4
+        },
+        {
+          "label": "Knights",
+          "count": 2
+        },
+        {
+          "label": "Bishops",
+          "count": 1
+        },
+        {
+          "label": "Rooks",
+          "count": 3
+        }
+      ]
+    },
+    "answer": {
+      "type": "numeric",
+      "value": 10,
+      "unit": "pieces"
+    },
+    "explanation": "Each picture is 1 piece. Add the rows: 4 + 2 + 1 + 3 = 10.",
+    "difficulty": {
+      "band": 1,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "mdb-red-or-blue",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/measurement.ts"
+    },
+    "skills": [
+      "MATH-MD-BAR-GRAPH",
+      "MATH-OA-ADD-SUB"
+    ],
+    "language": "en",
+    "prompt": "How many children chose red or blue?",
+    "visual": {
+      "kind": "barChart",
+      "title": "Favorite car colors in our class",
+      "unit": "children",
+      "bars": [
+        {
+          "label": "Silver",
+          "value": 6
+        },
+        {
+          "label": "Red",
+          "value": 9
+        },
+        {
+          "label": "Blue",
+          "value": 4
+        },
+        {
+          "label": "Black",
+          "value": 7
+        }
+      ]
+    },
+    "answer": {
+      "type": "numeric",
+      "value": 13,
+      "unit": "children"
+    },
+    "explanation": "The Red bar reaches 9 and the Blue bar reaches 4. 9 + 4 = 13.",
+    "difficulty": {
+      "band": 2,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "mdb-fewer-blue-than-black",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/measurement.ts"
+    },
+    "skills": [
+      "MATH-MD-BAR-GRAPH",
+      "MATH-OA-ADD-SUB"
+    ],
+    "language": "en",
+    "prompt": "How many fewer children chose blue than black?",
+    "visual": {
+      "kind": "barChart",
+      "title": "Favorite car colors in our class",
+      "unit": "children",
+      "bars": [
+        {
+          "label": "Silver",
+          "value": 6
+        },
+        {
+          "label": "Red",
+          "value": 9
+        },
+        {
+          "label": "Blue",
+          "value": 4
+        },
+        {
+          "label": "Black",
+          "value": 7
+        }
+      ]
+    },
+    "answer": {
+      "type": "numeric",
+      "value": 3,
+      "unit": "children"
+    },
+    "explanation": "Black reaches 7 and Blue reaches 4. 7 - 4 = 3 fewer.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "mdb-pages-wednesday",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/measurement.ts"
+    },
+    "skills": [
+      "MATH-MD-BAR-GRAPH",
+      "MATH-NBT-SKIP-COUNT"
+    ],
+    "language": "en",
+    "prompt": "This graph counts by 2s. How many pages were read on Wednesday?",
+    "visual": {
+      "kind": "barChart",
+      "title": "Pages read this week",
+      "unit": "pages",
+      "bars": [
+        {
+          "label": "Mon",
+          "value": 12
+        },
+        {
+          "label": "Tue",
+          "value": 8
+        },
+        {
+          "label": "Wed",
+          "value": 14
+        },
+        {
+          "label": "Thu",
+          "value": 6
+        }
+      ]
+    },
+    "answer": {
+      "type": "numeric",
+      "value": 14,
+      "unit": "pages"
+    },
+    "explanation": "The numbers on the side go up by 2. The Wednesday bar stops at the line marked 14, so 14 pages were read.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "mdb-tournament-total",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/measurement.ts"
+    },
+    "skills": [
+      "MATH-MD-BAR-GRAPH",
+      "MATH-OA-ADD-SUB"
+    ],
+    "language": "en",
+    "prompt": "How many goals did all the teams score altogether?",
+    "visual": {
+      "kind": "barChart",
+      "title": "Goals in the tournament",
+      "unit": "goals",
+      "bars": [
+        {
+          "label": "Stars",
+          "value": 3
+        },
+        {
+          "label": "Rockets",
+          "value": 5
+        },
+        {
+          "label": "Sharks",
+          "value": 4
+        },
+        {
+          "label": "Comets",
+          "value": 2
+        }
+      ]
+    },
+    "answer": {
+      "type": "numeric",
+      "value": 14,
+      "unit": "goals"
+    },
+    "explanation": "Read each bar: Stars 3, Rockets 5, Sharks 4, Comets 2. Add them: 3 + 5 + 4 + 2 = 14.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "mdcal-soccer-weekday",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/measurement.ts"
+    },
+    "skills": [
+      "MATH-MD-CALENDAR"
+    ],
+    "language": "en",
+    "prompt": "The soccer game is on the day with the ball. What day of the week is it?",
+    "visual": {
+      "kind": "calendar",
+      "month": "October 2026",
+      "firstWeekday": 4,
+      "days": 31,
+      "marks": [
+        {
+          "day": 17,
+          "emoji": "⚽"
+        },
+        {
+          "day": 23,
+          "emoji": "🎂"
+        },
+        {
+          "day": 9,
+          "emoji": "⭐"
+        }
+      ]
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "Sunday",
+        "Friday",
+        "Monday",
+        "Saturday"
+      ],
+      "correctIndex": 3
+    },
+    "explanation": "Find the ball on the 17th. Look straight up that column to the top. It says Sat, which means Saturday.",
+    "difficulty": {
+      "band": 1,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "mdcal-count-saturdays",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/measurement.ts"
+    },
+    "skills": [
+      "MATH-MD-CALENDAR"
+    ],
+    "language": "en",
+    "prompt": "How many Saturdays are in October 2026?",
+    "visual": {
+      "kind": "calendar",
+      "month": "October 2026",
+      "firstWeekday": 4,
+      "days": 31,
+      "marks": [
+        {
+          "day": 17,
+          "emoji": "⚽"
+        },
+        {
+          "day": 23,
+          "emoji": "🎂"
+        },
+        {
+          "day": 9,
+          "emoji": "⭐"
+        }
+      ]
+    },
+    "answer": {
+      "type": "numeric",
+      "value": 5,
+      "unit": "Saturdays"
+    },
+    "explanation": "Look down the Sat column: 3, 10, 17, 24, 31. That is 5 Saturdays.",
+    "difficulty": {
+      "band": 2,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "mdcal-chess-club-tuesdays",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/measurement.ts"
+    },
+    "skills": [
+      "MATH-MD-CALENDAR"
+    ],
+    "language": "en",
+    "prompt": "Chess club meets every Tuesday. How many times does it meet in October 2026?",
+    "visual": {
+      "kind": "calendar",
+      "month": "October 2026",
+      "firstWeekday": 4,
+      "days": 31,
+      "marks": [
+        {
+          "day": 17,
+          "emoji": "⚽"
+        },
+        {
+          "day": 23,
+          "emoji": "🎂"
+        },
+        {
+          "day": 9,
+          "emoji": "⭐"
+        }
+      ]
+    },
+    "answer": {
+      "type": "numeric",
+      "value": 4,
+      "unit": "times"
+    },
+    "explanation": "The Tuesdays are 6, 13, 20, 27. That is 4 meetings.",
+    "difficulty": {
+      "band": 2,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "mdcal-days-until-party",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/measurement.ts"
+    },
+    "skills": [
+      "MATH-MD-CALENDAR",
+      "MATH-OA-ADD-SUB"
+    ],
+    "language": "en",
+    "prompt": "Today is the day with the star. The birthday party is on the day with the cake. How many days until the party?",
+    "visual": {
+      "kind": "calendar",
+      "month": "October 2026",
+      "firstWeekday": 4,
+      "days": 31,
+      "marks": [
+        {
+          "day": 17,
+          "emoji": "⚽"
+        },
+        {
+          "day": 23,
+          "emoji": "🎂"
+        },
+        {
+          "day": 9,
+          "emoji": "⭐"
+        }
+      ]
+    },
+    "answer": {
+      "type": "numeric",
+      "value": 14,
+      "unit": "days"
+    },
+    "explanation": "The star is on the 9th and the cake is on the 23rd. 23 - 9 = 14 days. That is exactly 2 weeks, because each row is one week.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "mdcal-week-after-soccer",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/measurement.ts"
+    },
+    "skills": [
+      "MATH-MD-CALENDAR"
+    ],
+    "language": "en",
+    "prompt": "The next soccer game is one week after the game with the ball. What date is it?",
+    "visual": {
+      "kind": "calendar",
+      "month": "October 2026",
+      "firstWeekday": 4,
+      "days": 31,
+      "marks": [
+        {
+          "day": 17,
+          "emoji": "⚽"
+        },
+        {
+          "day": 23,
+          "emoji": "🎂"
+        },
+        {
+          "day": 9,
+          "emoji": "⭐"
+        }
+      ]
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "October 24",
+        "October 18",
+        "October 23",
+        "October 25"
+      ],
+      "correctIndex": 0
+    },
+    "explanation": "One week is 7 days. On a calendar that is one row straight down. 17 + 7 = 24, so the date is October 24.",
+    "difficulty": {
+      "band": 2,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "mdcal-last-friday",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/measurement.ts"
+    },
+    "skills": [
+      "MATH-MD-CALENDAR"
+    ],
+    "language": "en",
+    "prompt": "What is the date of the last Friday in October 2026?",
+    "visual": {
+      "kind": "calendar",
+      "month": "October 2026",
+      "firstWeekday": 4,
+      "days": 31,
+      "marks": [
+        {
+          "day": 17,
+          "emoji": "⚽"
+        },
+        {
+          "day": 23,
+          "emoji": "🎂"
+        },
+        {
+          "day": 9,
+          "emoji": "⭐"
+        }
+      ]
+    },
+    "answer": {
+      "type": "numeric",
+      "value": 30
+    },
+    "explanation": "Go down the Fri column to the bottom. The last number in that column is 30.",
+    "difficulty": {
+      "band": 2,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  }
+]

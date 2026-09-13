@@ -1,0 +1,1195 @@
+[
+  {
+    "id": "gs-fan-triangles-2",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/geometry.ts"
+    },
+    "skills": [
+      "MATH-GEO-SHAPES"
+    ],
+    "language": "en",
+    "prompt": "How many triangles can you find in this picture? Remember to count the big ones made of smaller pieces.",
+    "visual": {
+      "kind": "svg",
+      "alt": "A big triangle split into 2 thinner triangles by lines from the top corner.",
+      "svg": "<svg viewBox=\"0 0 300 200\" width=\"300\" height=\"200\" xmlns=\"http://www.w3.org/2000/svg\"><polygon points=\"150,15 20,185 280,185\" fill=\"#fff4c9\" stroke=\"#1d2f4b\" stroke-width=\"3\"/><line x1=\"150\" y1=\"15\" x2=\"20\" y2=\"185\" stroke=\"#1d2f4b\" stroke-width=\"3\"/><line x1=\"150\" y1=\"15\" x2=\"150\" y2=\"185\" stroke=\"#1d2f4b\" stroke-width=\"3\"/><line x1=\"150\" y1=\"15\" x2=\"280\" y2=\"185\" stroke=\"#1d2f4b\" stroke-width=\"3\"/></svg>"
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "2",
+        "4",
+        "3"
+      ],
+      "correctIndex": 2
+    },
+    "explanation": "Count by size. There are 2 small triangles. Triangles made of 2 pieces side by side: 1. Altogether: 2 + 1 = 3.",
+    "difficulty": {
+      "band": 2,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "gs-fan-triangles-3",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/geometry.ts"
+    },
+    "skills": [
+      "MATH-GEO-SHAPES"
+    ],
+    "language": "en",
+    "prompt": "How many triangles can you find in this picture? Remember to count the big ones made of smaller pieces.",
+    "visual": {
+      "kind": "svg",
+      "alt": "A big triangle split into 3 thinner triangles by lines from the top corner.",
+      "svg": "<svg viewBox=\"0 0 300 200\" width=\"300\" height=\"200\" xmlns=\"http://www.w3.org/2000/svg\"><polygon points=\"150,15 20,185 280,185\" fill=\"#fff4c9\" stroke=\"#1d2f4b\" stroke-width=\"3\"/><line x1=\"150\" y1=\"15\" x2=\"20\" y2=\"185\" stroke=\"#1d2f4b\" stroke-width=\"3\"/><line x1=\"150\" y1=\"15\" x2=\"106.66666666666667\" y2=\"185\" stroke=\"#1d2f4b\" stroke-width=\"3\"/><line x1=\"150\" y1=\"15\" x2=\"193.33333333333334\" y2=\"185\" stroke=\"#1d2f4b\" stroke-width=\"3\"/><line x1=\"150\" y1=\"15\" x2=\"280\" y2=\"185\" stroke=\"#1d2f4b\" stroke-width=\"3\"/></svg>"
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "3",
+        "5",
+        "7",
+        "6"
+      ],
+      "correctIndex": 3
+    },
+    "explanation": "Count by size. There are 3 small triangles. Triangles made of 2 pieces side by side: 2. Triangles made of 3 pieces side by side: 1. Altogether: 3 + 2 + 1 = 6.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "gs-fan-triangles-4",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/geometry.ts"
+    },
+    "skills": [
+      "MATH-GEO-SHAPES"
+    ],
+    "language": "en",
+    "prompt": "How many triangles can you find in this picture? Remember to count the big ones made of smaller pieces.",
+    "visual": {
+      "kind": "svg",
+      "alt": "A big triangle split into 4 thinner triangles by lines from the top corner.",
+      "svg": "<svg viewBox=\"0 0 300 200\" width=\"300\" height=\"200\" xmlns=\"http://www.w3.org/2000/svg\"><polygon points=\"150,15 20,185 280,185\" fill=\"#fff4c9\" stroke=\"#1d2f4b\" stroke-width=\"3\"/><line x1=\"150\" y1=\"15\" x2=\"20\" y2=\"185\" stroke=\"#1d2f4b\" stroke-width=\"3\"/><line x1=\"150\" y1=\"15\" x2=\"85\" y2=\"185\" stroke=\"#1d2f4b\" stroke-width=\"3\"/><line x1=\"150\" y1=\"15\" x2=\"150\" y2=\"185\" stroke=\"#1d2f4b\" stroke-width=\"3\"/><line x1=\"150\" y1=\"15\" x2=\"215\" y2=\"185\" stroke=\"#1d2f4b\" stroke-width=\"3\"/><line x1=\"150\" y1=\"15\" x2=\"280\" y2=\"185\" stroke=\"#1d2f4b\" stroke-width=\"3\"/></svg>"
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "4",
+        "9",
+        "10",
+        "11"
+      ],
+      "correctIndex": 2
+    },
+    "explanation": "Count by size. There are 4 small triangles. Triangles made of 2 pieces side by side: 3. Triangles made of 3 pieces side by side: 2. Triangles made of 4 pieces side by side: 1. Altogether: 4 + 3 + 2 + 1 = 10.",
+    "difficulty": {
+      "band": 4,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "gs-squares-in-grid-2",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/geometry.ts"
+    },
+    "skills": [
+      "MATH-GEO-SHAPES"
+    ],
+    "language": "en",
+    "prompt": "How many squares are in this picture? Count squares of every size.",
+    "visual": {
+      "kind": "svg",
+      "alt": "A square split into a 2 by 2 grid of small squares.",
+      "svg": "<svg viewBox=\"0 0 200 200\" width=\"200\" height=\"200\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"10\" y=\"10\" width=\"180\" height=\"180\" fill=\"#e3f1ff\"/><line x1=\"10\" y1=\"10\" x2=\"10\" y2=\"190\" stroke=\"#1d2f4b\" stroke-width=\"3\"/><line x1=\"10\" y1=\"10\" x2=\"190\" y2=\"10\" stroke=\"#1d2f4b\" stroke-width=\"3\"/><line x1=\"100\" y1=\"10\" x2=\"100\" y2=\"190\" stroke=\"#1d2f4b\" stroke-width=\"3\"/><line x1=\"10\" y1=\"100\" x2=\"190\" y2=\"100\" stroke=\"#1d2f4b\" stroke-width=\"3\"/><line x1=\"190\" y1=\"10\" x2=\"190\" y2=\"190\" stroke=\"#1d2f4b\" stroke-width=\"3\"/><line x1=\"10\" y1=\"190\" x2=\"190\" y2=\"190\" stroke=\"#1d2f4b\" stroke-width=\"3\"/></svg>"
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "5",
+        "4",
+        "6"
+      ],
+      "correctIndex": 0
+    },
+    "explanation": "Squares 1 by 1: 4. Squares 2 by 2: 1. Add them: 4 + 1 = 5.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "gs-squares-in-grid-3",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/geometry.ts"
+    },
+    "skills": [
+      "MATH-GEO-SHAPES"
+    ],
+    "language": "en",
+    "prompt": "How many squares are in this picture? Count squares of every size.",
+    "visual": {
+      "kind": "svg",
+      "alt": "A square split into a 3 by 3 grid of small squares.",
+      "svg": "<svg viewBox=\"0 0 200 200\" width=\"200\" height=\"200\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"10\" y=\"10\" width=\"180\" height=\"180\" fill=\"#e3f1ff\"/><line x1=\"10\" y1=\"10\" x2=\"10\" y2=\"190\" stroke=\"#1d2f4b\" stroke-width=\"3\"/><line x1=\"10\" y1=\"10\" x2=\"190\" y2=\"10\" stroke=\"#1d2f4b\" stroke-width=\"3\"/><line x1=\"70\" y1=\"10\" x2=\"70\" y2=\"190\" stroke=\"#1d2f4b\" stroke-width=\"3\"/><line x1=\"10\" y1=\"70\" x2=\"190\" y2=\"70\" stroke=\"#1d2f4b\" stroke-width=\"3\"/><line x1=\"130\" y1=\"10\" x2=\"130\" y2=\"190\" stroke=\"#1d2f4b\" stroke-width=\"3\"/><line x1=\"10\" y1=\"130\" x2=\"190\" y2=\"130\" stroke=\"#1d2f4b\" stroke-width=\"3\"/><line x1=\"190\" y1=\"10\" x2=\"190\" y2=\"190\" stroke=\"#1d2f4b\" stroke-width=\"3\"/><line x1=\"10\" y1=\"190\" x2=\"190\" y2=\"190\" stroke=\"#1d2f4b\" stroke-width=\"3\"/></svg>"
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "9",
+        "14",
+        "13",
+        "15"
+      ],
+      "correctIndex": 1
+    },
+    "explanation": "Squares 1 by 1: 9. Squares 2 by 2: 4. Squares 3 by 3: 1. Add them: 9 + 4 + 1 = 14.",
+    "difficulty": {
+      "band": 5,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "gsy-mirror-letter-a",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/geometry.ts"
+    },
+    "skills": [
+      "MATH-GEO-SYMMETRY"
+    ],
+    "language": "en",
+    "prompt": "Which letter looks exactly the same when you hold it up to a mirror?",
+    "visual": {
+      "kind": "emoji",
+      "lines": [
+        "A   F   G   J"
+      ]
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "F",
+        "G",
+        "J",
+        "A"
+      ],
+      "correctIndex": 3
+    },
+    "explanation": "Imagine a line straight down the middle of each letter. A has the same shape on both sides of that line, so its mirror picture matches. F, G, J would face the other way in a mirror.",
+    "difficulty": {
+      "band": 1,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "gsy-mirror-letter-t",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/geometry.ts"
+    },
+    "skills": [
+      "MATH-GEO-SYMMETRY"
+    ],
+    "language": "en",
+    "prompt": "Which letter looks exactly the same when you hold it up to a mirror?",
+    "visual": {
+      "kind": "emoji",
+      "lines": [
+        "R   P   T   L"
+      ]
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "T",
+        "R",
+        "P",
+        "L"
+      ],
+      "correctIndex": 0
+    },
+    "explanation": "Imagine a line straight down the middle of each letter. T has the same shape on both sides of that line, so its mirror picture matches. R, P, L would face the other way in a mirror.",
+    "difficulty": {
+      "band": 2,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "gsy-mirror-letter-w",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/geometry.ts"
+    },
+    "skills": [
+      "MATH-GEO-SYMMETRY"
+    ],
+    "language": "en",
+    "prompt": "Which letter looks exactly the same when you hold it up to a mirror?",
+    "visual": {
+      "kind": "emoji",
+      "lines": [
+        "S   N   W   Z"
+      ]
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "S",
+        "W",
+        "N",
+        "Z"
+      ],
+      "correctIndex": 1
+    },
+    "explanation": "Imagine a line straight down the middle of each letter. W has the same shape on both sides of that line, so its mirror picture matches. S, N, Z would face the other way in a mirror. S, N and Z look the same when you spin them halfway around, but not in a mirror.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "gsy-square-lines",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/geometry.ts"
+    },
+    "skills": [
+      "MATH-GEO-SYMMETRY"
+    ],
+    "language": "en",
+    "prompt": "A line of symmetry folds a shape into two matching halves. How many lines of symmetry does a square have?",
+    "visual": {
+      "kind": "svg",
+      "alt": "A square.",
+      "svg": "<svg viewBox=\"0 0 160 160\" width=\"160\" height=\"160\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"20\" y=\"20\" width=\"120\" height=\"120\" fill=\"#e3f1ff\" stroke=\"#1d2f4b\" stroke-width=\"4\"/></svg>"
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "4",
+        "2",
+        "1",
+        "8"
+      ],
+      "correctIndex": 0
+    },
+    "explanation": "A square folds into matching halves 4 ways: top to bottom, side to side, and along both diagonals from corner to corner. Try it with a paper square!",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "gsy-rectangle-lines",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/geometry.ts"
+    },
+    "skills": [
+      "MATH-GEO-SYMMETRY"
+    ],
+    "language": "en",
+    "prompt": "How many lines of symmetry does this long rectangle have?",
+    "visual": {
+      "kind": "svg",
+      "alt": "A rectangle twice as wide as it is tall.",
+      "svg": "<svg viewBox=\"0 0 260 150\" width=\"260\" height=\"150\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"20\" y=\"35\" width=\"220\" height=\"80\" fill=\"#e3f1ff\" stroke=\"#1d2f4b\" stroke-width=\"4\"/></svg>"
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "2",
+        "4",
+        "1",
+        "0"
+      ],
+      "correctIndex": 0
+    },
+    "explanation": "It folds into matching halves top to bottom and side to side. Folding corner to corner does not work for a long rectangle: the halves do not line up. So it has 2 lines of symmetry.",
+    "difficulty": {
+      "band": 4,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "g3d-map-small",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/geometry.ts"
+    },
+    "skills": [
+      "MATH-GEO-3D-COUNT",
+      "MATH-GEO-VIEWS"
+    ],
+    "language": "en",
+    "prompt": "This is a cube building seen from above. Each number tells how many cubes are stacked on that square. How many cubes are there in all?",
+    "visual": {
+      "kind": "grid",
+      "rows": [
+        [
+          "2",
+          "1"
+        ],
+        [
+          "1",
+          "1"
+        ]
+      ]
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "5",
+        "4",
+        "7",
+        "2"
+      ],
+      "correctIndex": 0
+    },
+    "explanation": "Add the stacks: 2 + 1 + 1 + 1 = 5. The number of squares (4) is not the answer, because some stacks are taller than 1.",
+    "difficulty": {
+      "band": 2,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "g3d-map-steps",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/geometry.ts"
+    },
+    "skills": [
+      "MATH-GEO-3D-COUNT",
+      "MATH-GEO-VIEWS"
+    ],
+    "language": "en",
+    "prompt": "This is a cube building seen from above. Each number tells how many cubes are stacked on that square. How many cubes are there in all?",
+    "visual": {
+      "kind": "grid",
+      "rows": [
+        [
+          "3",
+          "2",
+          "1"
+        ],
+        [
+          "2",
+          "1",
+          "1"
+        ]
+      ]
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "10",
+        "6",
+        "9",
+        "12"
+      ],
+      "correctIndex": 0
+    },
+    "explanation": "Add the stacks: 3 + 2 + 1 + 2 + 1 + 1 = 10. The number of squares (6) is not the answer, because some stacks are taller than 1.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "g3d-map-hill",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/geometry.ts"
+    },
+    "skills": [
+      "MATH-GEO-3D-COUNT",
+      "MATH-GEO-VIEWS"
+    ],
+    "language": "en",
+    "prompt": "This is a cube building seen from above. Each number tells how many cubes are stacked on that square. How many cubes are there in all?",
+    "visual": {
+      "kind": "grid",
+      "rows": [
+        [
+          "1",
+          "2",
+          "1"
+        ],
+        [
+          "2",
+          "3",
+          "2"
+        ],
+        [
+          "1",
+          "2",
+          "1"
+        ]
+      ]
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "9",
+        "14",
+        "15",
+        "17"
+      ],
+      "correctIndex": 2
+    },
+    "explanation": "Add the stacks: 1 + 2 + 1 + 2 + 3 + 2 + 1 + 2 + 1 = 15. The number of squares (9) is not the answer, because some stacks are taller than 1.",
+    "difficulty": {
+      "band": 4,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "g3d-map-tallest-front",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/geometry.ts"
+    },
+    "skills": [
+      "MATH-GEO-VIEWS"
+    ],
+    "language": "en",
+    "prompt": "This map shows a cube building from above. Each number is how many cubes are stacked there. From the front, how many cubes tall does the building look?",
+    "visual": {
+      "kind": "grid",
+      "rows": [
+        [
+          "1",
+          "3",
+          "2"
+        ],
+        [
+          "2",
+          "1",
+          "1"
+        ]
+      ]
+    },
+    "answer": {
+      "type": "numeric",
+      "value": 3,
+      "unit": "cubes"
+    },
+    "explanation": "From the front you see the tallest stack in each column. The tallest stack anywhere is 3, so the building looks 3 cubes tall.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "g3d-layers-box",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/geometry.ts"
+    },
+    "skills": [
+      "MATH-GEO-3D-COUNT",
+      "MATH-OA-EQUAL-GROUPS"
+    ],
+    "language": "en",
+    "prompt": "A box of cubes has 3 layers. Each layer is 2 cubes long and 2 cubes wide. How many cubes are in the box?",
+    "answer": {
+      "type": "numeric",
+      "value": 12,
+      "unit": "cubes"
+    },
+    "explanation": "One layer is 2 rows of 2, which is 4 cubes. There are 3 layers: 4 + 4 + 4 = 12 cubes.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "g3d-long-box",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/geometry.ts"
+    },
+    "skills": [
+      "MATH-GEO-3D-COUNT",
+      "MATH-OA-ARRAYS"
+    ],
+    "language": "en",
+    "prompt": "A block is built from cubes. It is 3 cubes long, 2 cubes wide and 2 cubes tall. How many cubes does it use?",
+    "answer": {
+      "type": "numeric",
+      "value": 12,
+      "unit": "cubes"
+    },
+    "explanation": "The bottom layer is 3 long and 2 wide: 3 + 3 = 6 cubes. It is 2 layers tall: 6 + 6 = 12 cubes.",
+    "difficulty": {
+      "band": 4,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "gvw-can-from-top",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/geometry.ts"
+    },
+    "skills": [
+      "MATH-GEO-VIEWS"
+    ],
+    "language": "en",
+    "prompt": "You look straight down at a soup can from the top. What shape do you see?",
+    "visual": {
+      "kind": "emoji",
+      "lines": [
+        "🥫"
+      ]
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "A rectangle",
+        "A triangle",
+        "A square",
+        "A circle"
+      ],
+      "correctIndex": 3
+    },
+    "explanation": "The top of a can is round, so from straight above you see a circle. From the side, you would see a rectangle.",
+    "difficulty": {
+      "band": 1,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "gvw-cone-from-side",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/geometry.ts"
+    },
+    "skills": [
+      "MATH-GEO-VIEWS"
+    ],
+    "language": "en",
+    "prompt": "A traffic cone is standing on the road. What shape does it look like from the side?",
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "A circle",
+        "A square",
+        "A triangle",
+        "A rectangle"
+      ],
+      "correctIndex": 2
+    },
+    "explanation": "A cone is wide at the bottom and comes to a point at the top. From the side, that looks like a triangle. From the top, it would look like a circle.",
+    "difficulty": {
+      "band": 2,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "gse-three-squares-count",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/geometry.ts"
+    },
+    "skills": [
+      "MATH-GEO-SHARED-EDGES",
+      "MATH-NBT-COUNTING"
+    ],
+    "language": "en",
+    "prompt": "How many sticks were used to make these 3 squares?",
+    "visual": {
+      "kind": "svg",
+      "alt": "Three squares in a row made of sticks, sharing sides.",
+      "svg": "<svg viewBox=\"0 0 200 80\" width=\"200\" height=\"80\" xmlns=\"http://www.w3.org/2000/svg\"><line x1=\"16.0\" y1=\"10.0\" x2=\"64.0\" y2=\"10.0\" stroke=\"#9a5b2a\" stroke-width=\"7\" stroke-linecap=\"round\"/><line x1=\"16.0\" y1=\"70.0\" x2=\"64.0\" y2=\"70.0\" stroke=\"#9a5b2a\" stroke-width=\"7\" stroke-linecap=\"round\"/><line x1=\"76.0\" y1=\"10.0\" x2=\"124.0\" y2=\"10.0\" stroke=\"#9a5b2a\" stroke-width=\"7\" stroke-linecap=\"round\"/><line x1=\"76.0\" y1=\"70.0\" x2=\"124.0\" y2=\"70.0\" stroke=\"#9a5b2a\" stroke-width=\"7\" stroke-linecap=\"round\"/><line x1=\"136.0\" y1=\"10.0\" x2=\"184.0\" y2=\"10.0\" stroke=\"#9a5b2a\" stroke-width=\"7\" stroke-linecap=\"round\"/><line x1=\"136.0\" y1=\"70.0\" x2=\"184.0\" y2=\"70.0\" stroke=\"#9a5b2a\" stroke-width=\"7\" stroke-linecap=\"round\"/><line x1=\"10.0\" y1=\"16.0\" x2=\"10.0\" y2=\"64.0\" stroke=\"#9a5b2a\" stroke-width=\"7\" stroke-linecap=\"round\"/><line x1=\"70.0\" y1=\"16.0\" x2=\"70.0\" y2=\"64.0\" stroke=\"#9a5b2a\" stroke-width=\"7\" stroke-linecap=\"round\"/><line x1=\"130.0\" y1=\"16.0\" x2=\"130.0\" y2=\"64.0\" stroke=\"#9a5b2a\" stroke-width=\"7\" stroke-linecap=\"round\"/><line x1=\"190.0\" y1=\"16.0\" x2=\"190.0\" y2=\"64.0\" stroke=\"#9a5b2a\" stroke-width=\"7\" stroke-linecap=\"round\"/></svg>"
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "10",
+        "12",
+        "9",
+        "11"
+      ],
+      "correctIndex": 0
+    },
+    "explanation": "Count the top sticks (3), the bottom sticks (3), and the standing sticks (4). 3 + 3 + 4 = 10. It is not 12, because squares next to each other share a stick.",
+    "difficulty": {
+      "band": 2,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "gse-five-squares-no-picture",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/geometry.ts"
+    },
+    "skills": [
+      "MATH-GEO-SHARED-EDGES"
+    ],
+    "language": "en",
+    "prompt": "3 squares in a row, sharing sides, use 10 sticks. How many sticks do 5 squares in a row use?",
+    "answer": {
+      "type": "numeric",
+      "value": 16,
+      "unit": "sticks"
+    },
+    "explanation": "The first square needs 4 sticks. Every new square shares one side, so it only needs 3 more. 4 + 3 + 3 + 3 + 3 = 16 sticks.",
+    "difficulty": {
+      "band": 4,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "gse-two-by-two-grid",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/geometry.ts"
+    },
+    "skills": [
+      "MATH-GEO-SHARED-EDGES"
+    ],
+    "language": "en",
+    "prompt": "How many sticks make this 2 by 2 window?",
+    "visual": {
+      "kind": "svg",
+      "alt": "Four squares arranged in a 2 by 2 grid, made of sticks.",
+      "svg": "<svg viewBox=\"0 0 140 140\" width=\"140\" height=\"140\" xmlns=\"http://www.w3.org/2000/svg\"><line x1=\"16.0\" y1=\"10.0\" x2=\"64.0\" y2=\"10.0\" stroke=\"#9a5b2a\" stroke-width=\"7\" stroke-linecap=\"round\"/><line x1=\"10.0\" y1=\"16.0\" x2=\"10.0\" y2=\"64.0\" stroke=\"#9a5b2a\" stroke-width=\"7\" stroke-linecap=\"round\"/><line x1=\"76.0\" y1=\"10.0\" x2=\"124.0\" y2=\"10.0\" stroke=\"#9a5b2a\" stroke-width=\"7\" stroke-linecap=\"round\"/><line x1=\"10.0\" y1=\"76.0\" x2=\"10.0\" y2=\"124.0\" stroke=\"#9a5b2a\" stroke-width=\"7\" stroke-linecap=\"round\"/><line x1=\"16.0\" y1=\"70.0\" x2=\"64.0\" y2=\"70.0\" stroke=\"#9a5b2a\" stroke-width=\"7\" stroke-linecap=\"round\"/><line x1=\"70.0\" y1=\"16.0\" x2=\"70.0\" y2=\"64.0\" stroke=\"#9a5b2a\" stroke-width=\"7\" stroke-linecap=\"round\"/><line x1=\"76.0\" y1=\"70.0\" x2=\"124.0\" y2=\"70.0\" stroke=\"#9a5b2a\" stroke-width=\"7\" stroke-linecap=\"round\"/><line x1=\"70.0\" y1=\"76.0\" x2=\"70.0\" y2=\"124.0\" stroke=\"#9a5b2a\" stroke-width=\"7\" stroke-linecap=\"round\"/><line x1=\"16.0\" y1=\"130.0\" x2=\"64.0\" y2=\"130.0\" stroke=\"#9a5b2a\" stroke-width=\"7\" stroke-linecap=\"round\"/><line x1=\"130.0\" y1=\"16.0\" x2=\"130.0\" y2=\"64.0\" stroke=\"#9a5b2a\" stroke-width=\"7\" stroke-linecap=\"round\"/><line x1=\"76.0\" y1=\"130.0\" x2=\"124.0\" y2=\"130.0\" stroke=\"#9a5b2a\" stroke-width=\"7\" stroke-linecap=\"round\"/><line x1=\"130.0\" y1=\"76.0\" x2=\"130.0\" y2=\"124.0\" stroke=\"#9a5b2a\" stroke-width=\"7\" stroke-linecap=\"round\"/></svg>"
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "16",
+        "12",
+        "6",
+        "10"
+      ],
+      "correctIndex": 1
+    },
+    "explanation": "Each long line across is 2 sticks, and there are 3 lines across: 6 sticks. Each long line down is also 2 sticks, and there are 3 lines down: 6 sticks. 6 + 6 = 12.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "gse-two-triangles",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/geometry.ts"
+    },
+    "skills": [
+      "MATH-GEO-SHARED-EDGES"
+    ],
+    "language": "en",
+    "prompt": "One triangle needs 3 sticks. Two triangles that share one side make a diamond. How many sticks does the diamond need?",
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "6",
+        "5",
+        "4",
+        "3"
+      ],
+      "correctIndex": 1
+    },
+    "explanation": "The first triangle uses 3 sticks. The second triangle borrows the shared side, so it needs only 2 new sticks. 3 + 2 = 5 sticks.",
+    "difficulty": {
+      "band": 2,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "gse-triangle-row",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/geometry.ts"
+    },
+    "skills": [
+      "MATH-GEO-SHARED-EDGES"
+    ],
+    "language": "en",
+    "prompt": "How many sticks were used to make this row of 4 triangles?",
+    "visual": {
+      "kind": "svg",
+      "alt": "Four triangles in a row, alternating point up and point down, sharing sides.",
+      "svg": "<svg viewBox=\"0 0 195 80\" width=\"195\" height=\"80\" xmlns=\"http://www.w3.org/2000/svg\"><line x1=\"13.0\" y1=\"64.8\" x2=\"42.0\" y2=\"15.2\" stroke=\"#9a5b2a\" stroke-width=\"7\" stroke-linecap=\"round\"/><line x1=\"48.0\" y1=\"15.2\" x2=\"77.0\" y2=\"64.8\" stroke=\"#9a5b2a\" stroke-width=\"7\" stroke-linecap=\"round\"/><line x1=\"16.0\" y1=\"70.0\" x2=\"74.0\" y2=\"70.0\" stroke=\"#9a5b2a\" stroke-width=\"7\" stroke-linecap=\"round\"/><line x1=\"83.0\" y1=\"64.8\" x2=\"112.0\" y2=\"15.2\" stroke=\"#9a5b2a\" stroke-width=\"7\" stroke-linecap=\"round\"/><line x1=\"51.0\" y1=\"10.0\" x2=\"109.0\" y2=\"10.0\" stroke=\"#9a5b2a\" stroke-width=\"7\" stroke-linecap=\"round\"/><line x1=\"118.0\" y1=\"15.2\" x2=\"147.0\" y2=\"64.8\" stroke=\"#9a5b2a\" stroke-width=\"7\" stroke-linecap=\"round\"/><line x1=\"86.0\" y1=\"70.0\" x2=\"144.0\" y2=\"70.0\" stroke=\"#9a5b2a\" stroke-width=\"7\" stroke-linecap=\"round\"/><line x1=\"153.0\" y1=\"64.8\" x2=\"182.0\" y2=\"15.2\" stroke=\"#9a5b2a\" stroke-width=\"7\" stroke-linecap=\"round\"/><line x1=\"121.0\" y1=\"10.0\" x2=\"179.0\" y2=\"10.0\" stroke=\"#9a5b2a\" stroke-width=\"7\" stroke-linecap=\"round\"/></svg>"
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "9",
+        "12",
+        "8",
+        "10"
+      ],
+      "correctIndex": 0
+    },
+    "explanation": "The first triangle needs 3 sticks. Each new triangle shares a side with the one before, so it only needs 2 more. 3 + 2 + 2 + 2 = 9 sticks.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "gtu-quarter-clockwise",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/geometry.ts"
+    },
+    "skills": [
+      "MATH-GEO-TURNS"
+    ],
+    "language": "en",
+    "prompt": "The arrow points up. It makes a quarter turn clockwise, the way clock hands move. Which way does it point now?",
+    "visual": {
+      "kind": "emoji",
+      "lines": [
+        "⬆️"
+      ]
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "⬆️ Up",
+        "⬇️ Down",
+        "⬅️ Left",
+        "➡️ Right"
+      ],
+      "correctIndex": 3
+    },
+    "explanation": "Turn one quarter at a time: right. It ends up pointing right.",
+    "difficulty": {
+      "band": 2,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "gtu-half-turn",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/geometry.ts"
+    },
+    "skills": [
+      "MATH-GEO-TURNS"
+    ],
+    "language": "en",
+    "prompt": "The arrow points right. It makes a half turn. Which way does it point now?",
+    "visual": {
+      "kind": "emoji",
+      "lines": [
+        "➡️"
+      ]
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "⬆️ Up",
+        "➡️ Right",
+        "⬇️ Down",
+        "⬅️ Left"
+      ],
+      "correctIndex": 3
+    },
+    "explanation": "Turn one quarter at a time: down, then left. It ends up pointing left.",
+    "difficulty": {
+      "band": 2,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "gtu-quarter-counter",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/geometry.ts"
+    },
+    "skills": [
+      "MATH-GEO-TURNS"
+    ],
+    "language": "en",
+    "prompt": "The arrow points left. It makes a quarter turn counterclockwise, the opposite way from clock hands. Which way does it point now?",
+    "visual": {
+      "kind": "emoji",
+      "lines": [
+        "⬅️"
+      ]
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "⬆️ Up",
+        "⬇️ Down",
+        "➡️ Right",
+        "⬅️ Left"
+      ],
+      "correctIndex": 1
+    },
+    "explanation": "Turn one quarter at a time: down. It ends up pointing down.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "gtu-three-quarter",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/geometry.ts"
+    },
+    "skills": [
+      "MATH-GEO-TURNS"
+    ],
+    "language": "en",
+    "prompt": "The arrow points up. It makes three quarter turns clockwise. Which way does it point now?",
+    "visual": {
+      "kind": "emoji",
+      "lines": [
+        "⬆️"
+      ]
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "⬆️ Up",
+        "⬅️ Left",
+        "➡️ Right",
+        "⬇️ Down"
+      ],
+      "correctIndex": 1
+    },
+    "explanation": "Turn one quarter at a time: right, then down, then left. It ends up pointing left.",
+    "difficulty": {
+      "band": 4,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "gtu-race-car-two-rights",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/geometry.ts"
+    },
+    "skills": [
+      "MATH-GEO-TURNS",
+      "LOGIC-VISUALIZE"
+    ],
+    "language": "en",
+    "prompt": "A race car drives north. It turns right, and then turns right again. Which way is it driving now?",
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "North",
+        "East",
+        "West",
+        "South"
+      ],
+      "correctIndex": 3
+    },
+    "explanation": "Facing north, a right turn faces east. Another right turn faces south. Two right turns make a half turn, so the car now drives the opposite way.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "gtu-minute-hand-quarter",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/geometry.ts"
+    },
+    "skills": [
+      "MATH-GEO-TURNS",
+      "MATH-MD-TIME-HALF-QUARTER"
+    ],
+    "language": "en",
+    "prompt": "The minute hand points to 12. It makes a quarter turn clockwise, the way clock hands move. Which number does it point to now?",
+    "visual": {
+      "kind": "clock",
+      "hour": 12,
+      "minute": 0
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "6",
+        "9",
+        "4",
+        "3"
+      ],
+      "correctIndex": 3
+    },
+    "explanation": "A whole turn goes all the way around the clock. A quarter turn is one of four equal parts: from 12 to 3. That is also why 15 minutes is called a quarter of an hour.",
+    "difficulty": {
+      "band": 2,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "gfl-b-left-right",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/geometry.ts"
+    },
+    "skills": [
+      "MATH-GEO-TURNS",
+      "MATH-GEO-SYMMETRY"
+    ],
+    "language": "en",
+    "prompt": "Flip the letter b over, left to right, like looking in a mirror. Which letter do you get?",
+    "visual": {
+      "kind": "emoji",
+      "lines": [
+        "b"
+      ]
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "d",
+        "p",
+        "q",
+        "b"
+      ],
+      "correctIndex": 0
+    },
+    "explanation": "In b, the round part is on the right. A left to right flip moves the round part to the left, and the tall line stays tall. That is d.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "gfl-p-top-bottom",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/geometry.ts"
+    },
+    "skills": [
+      "MATH-GEO-TURNS",
+      "MATH-GEO-SYMMETRY"
+    ],
+    "language": "en",
+    "prompt": "Flip the letter p over, top to bottom. Which letter do you get?",
+    "visual": {
+      "kind": "emoji",
+      "lines": [
+        "p"
+      ]
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "d",
+        "b",
+        "q",
+        "p"
+      ],
+      "correctIndex": 1
+    },
+    "explanation": "In p, the line hangs down and the round part is on the right. A top to bottom flip makes the line go up, and the round part stays on the right. That is b.",
+    "difficulty": {
+      "band": 4,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "gfo-one-fold-one-hole",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/geometry.ts"
+    },
+    "skills": [
+      "MATH-GEO-FOLDING"
+    ],
+    "language": "en",
+    "prompt": "Fold a paper in half once. Punch 1 hole through both layers. Unfold it. How many holes are there?",
+    "speech": "Fold a paper in half once. Punch 1 hole through both layers. Unfold it. How many holes are there?",
+    "visual": {
+      "kind": "emoji",
+      "lines": [
+        "📄 ➔ fold ➔ 🕳️ ➔ unfold"
+      ]
+    },
+    "answer": {
+      "type": "numeric",
+      "value": 2,
+      "unit": "holes"
+    },
+    "explanation": "Folding once makes 2 layers. The hole goes through both layers, so there are 2 holes when you unfold it.",
+    "difficulty": {
+      "band": 1,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "gfo-two-folds-one-hole",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/geometry.ts"
+    },
+    "skills": [
+      "MATH-GEO-FOLDING"
+    ],
+    "language": "en",
+    "prompt": "Fold a paper in half, then in half again. Punch 1 hole through all the layers. Unfold it. How many holes are there?",
+    "answer": {
+      "type": "numeric",
+      "value": 4,
+      "unit": "holes"
+    },
+    "explanation": "The first fold makes 2 layers. Folding again doubles that to 4 layers. One punch goes through all 4, so there are 4 holes.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "gfo-three-folds-one-hole",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/geometry.ts"
+    },
+    "skills": [
+      "MATH-GEO-FOLDING",
+      "MATH-OA-EQUAL-GROUPS"
+    ],
+    "language": "en",
+    "prompt": "Fold a paper in half 3 times. Punch 1 hole through all the layers. Unfold it. How many holes are there?",
+    "answer": {
+      "type": "numeric",
+      "value": 8,
+      "unit": "holes"
+    },
+    "explanation": "Each fold doubles the layers: 1 fold makes 2, 2 folds make 4, 3 folds make 8. One punch makes a hole in all 8 layers.",
+    "difficulty": {
+      "band": 4,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "gfo-two-folds-two-holes",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/geometry.ts"
+    },
+    "skills": [
+      "MATH-GEO-FOLDING",
+      "MATH-OA-EQUAL-GROUPS"
+    ],
+    "language": "en",
+    "prompt": "Fold a paper in half, then in half again. Punch 2 holes through all the layers. Unfold it. How many holes are there?",
+    "answer": {
+      "type": "numeric",
+      "value": 8,
+      "unit": "holes"
+    },
+    "explanation": "Two folds make 4 layers. Each punch goes through all 4 layers, and there are 2 punches: 4 + 4 = 8 holes.",
+    "difficulty": {
+      "band": 4,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "gfo-corner-to-corner",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/geometry.ts"
+    },
+    "skills": [
+      "MATH-GEO-FOLDING",
+      "MATH-GEO-SHAPES"
+    ],
+    "language": "en",
+    "prompt": "Fold a square napkin in half from one corner to the opposite corner. What shape do you get?",
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "A smaller square",
+        "A triangle",
+        "A rectangle",
+        "A circle"
+      ],
+      "correctIndex": 1
+    },
+    "explanation": "A fold from corner to corner goes along the diagonal. Half of a square cut along its diagonal is a triangle.",
+    "difficulty": {
+      "band": 2,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "gfo-edge-to-edge",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/geometry.ts"
+    },
+    "skills": [
+      "MATH-GEO-FOLDING",
+      "MATH-GEO-SHAPES"
+    ],
+    "language": "en",
+    "prompt": "Fold a square napkin in half so one edge meets the opposite edge. What shape do you get?",
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "A triangle",
+        "A rectangle",
+        "A smaller square",
+        "A circle"
+      ],
+      "correctIndex": 1
+    },
+    "explanation": "Folding edge to edge keeps the full width but makes it half as tall. A shape that is longer one way than the other, with square corners, is a rectangle.",
+    "difficulty": {
+      "band": 2,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  }
+]

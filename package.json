@@ -12,7 +12,8 @@
     "typecheck": "next typegen && tsc --noEmit",
     "postinstall": "prisma generate",
     "vercel-build": "prisma generate && prisma migrate deploy && next build",
-    "db:seed": "tsx --env-file=.env.local prisma/seed.ts"
+    "db:seed": "tsx --env-file=.env.local prisma/seed.ts",
+    "content:generate": "tsx scripts/generate/index.ts"
   },
   "dependencies": {
     "@prisma/adapter-pg": "7.10.0",

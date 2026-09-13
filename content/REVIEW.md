@@ -35,3 +35,23 @@ The file has only 7 distinct questions; the rest are copies (Tasks 4 to 25, 26 t
 
 ### `measurement-cars.json` (16 new)
 Original car-themed Measurement and Data items (clocks, money, rulers, bar graphs), targeting the weakest IXL strand. Answers checked by hand. Uses US-style money and inches, matching IXL's flagged skills.
+
+## 2026-09-13: Generated batch (187 questions, 12 new skills)
+
+Files: `generated-measurement.json` (56), `generated-numbers.json` (41), `generated-geometry.json` (37), `generated-logic.json` (53). Written by the scripts in `scripts/generate/`; never edit the JSON by hand. Run `npm run content:generate`, and a test fails if the JSON is out of date.
+
+How answers were checked:
+1. **Computed, not typed.** Clock times, coin totals, ruler lengths, graph readings and calendar dates (October 2026) come from the data. Matchstick and hole-punch counts follow formulas. Ordering clues and grid puzzles run through a solver that must find exactly one solution, and shortest routes use Dijkstra's algorithm, checked for a unique best route.
+2. **Independent blind solve.** Two separate agents solved all 187 questions without the answer key. They agreed with the computed answer on 187 of 187.
+3. **Wording flags from the solvers, all fixed:**
+   - Balance blocks: "a 5" was unclear; it now uses a balance scale with gram weights.
+   - Tally marks: the prompt gave the answer away; hint removed.
+   - Minute hand quarter turn: no direction given, and a counterclockwise turn gave another listed choice; now says clockwise.
+   - Tunnel cars: the picture put the blue car in front, contradicting the text; redrawn with the dead end marked.
+   - Undo the walk: two choices both returned the robot home; the second one was replaced.
+   - Triangle row: the drawing's code had 3 sticks drawn twice (looked right, but sloppy); now exactly 9.
+   - Pages graph "counts by 2s": false alarm; the axis does count by 2s above 10.
+4. **Caught by the generators themselves:** the first 4 by 4 number puzzle had 2 solutions, and the first vehicle puzzle had none. Both were rebuilt. A later check replaced a ⭐ for the 🔷 in the "4 square corners" path, since a square turned on its corner also has square corners.
+5. **Visual check:** every emoji and grid question, plus each new picture type (coins, rulers, picture graphs, calendar, route maps, tally marks, matchsticks), was screenshot at phone width. Nothing is cut off. The bus 🚌 in the vehicle puzzle looked too much like the taxi on Apple devices and was swapped for a tractor 🚜.
+
+Review status: shipped as reviewed under the spot-check policy (parent spot-checks a sample rather than approving each item).

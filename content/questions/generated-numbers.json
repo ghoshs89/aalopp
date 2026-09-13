@@ -1,0 +1,1190 @@
+[
+  {
+    "id": "nco-soccer-balls-fives",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/numbers.ts"
+    },
+    "skills": [
+      "MATH-NBT-COUNTING",
+      "MATH-NBT-SKIP-COUNT"
+    ],
+    "language": "en",
+    "prompt": "How many soccer balls are there? The rows can help you count.",
+    "visual": {
+      "kind": "emoji",
+      "lines": [
+        "⚽⚽⚽⚽⚽",
+        "⚽⚽⚽⚽⚽",
+        "⚽⚽⚽"
+      ]
+    },
+    "answer": {
+      "type": "numeric",
+      "value": 13
+    },
+    "explanation": "Count one row at a time and keep a running total: 5, 10, 13. There are 13.",
+    "difficulty": {
+      "band": 1,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "nco-cars-tens",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/numbers.ts"
+    },
+    "skills": [
+      "MATH-NBT-COUNTING",
+      "MATH-NBT-SKIP-COUNT"
+    ],
+    "language": "en",
+    "prompt": "How many cars are in the parking lot? Each full row has 10.",
+    "visual": {
+      "kind": "emoji",
+      "lines": [
+        "🚗🚗🚗🚗🚗🚗🚗🚗🚗🚗",
+        "🚗🚗🚗🚗🚗🚗🚗🚗🚗🚗",
+        "🚗🚗🚗🚗"
+      ]
+    },
+    "answer": {
+      "type": "numeric",
+      "value": 24
+    },
+    "explanation": "Count one row at a time and keep a running total: 10, 20, 24. There are 24.",
+    "difficulty": {
+      "band": 2,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "nco-stars-pairs",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/numbers.ts"
+    },
+    "skills": [
+      "MATH-NBT-COUNTING",
+      "MATH-NBT-SKIP-COUNT"
+    ],
+    "language": "en",
+    "prompt": "How many stars are there? Try counting by 2s.",
+    "visual": {
+      "kind": "emoji",
+      "lines": [
+        "⭐⭐",
+        "⭐⭐",
+        "⭐⭐",
+        "⭐⭐",
+        "⭐⭐",
+        "⭐"
+      ]
+    },
+    "answer": {
+      "type": "numeric",
+      "value": 11
+    },
+    "explanation": "Count one row at a time and keep a running total: 2, 4, 6, 8, 10, 11. There are 11.",
+    "difficulty": {
+      "band": 1,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "nco-tally-marks",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/numbers.ts"
+    },
+    "skills": [
+      "MATH-NBT-COUNTING",
+      "MATH-MD-PICTURE-GRAPH"
+    ],
+    "language": "en",
+    "prompt": "Tally marks are drawn in groups of 5: four marks, then a fifth mark across them. How many cars do these tally marks count?",
+    "visual": {
+      "kind": "svg",
+      "alt": "Tally marks: two groups of five, each with four lines crossed by a fifth, then three more lines.",
+      "svg": "<svg viewBox=\"0 0 258 90\" width=\"258\" height=\"90\" xmlns=\"http://www.w3.org/2000/svg\"><line x1=\"16\" y1=\"14\" x2=\"16\" y2=\"76\" stroke=\"#1d2f4b\" stroke-width=\"5\" stroke-linecap=\"round\"/><line x1=\"32\" y1=\"14\" x2=\"32\" y2=\"76\" stroke=\"#1d2f4b\" stroke-width=\"5\" stroke-linecap=\"round\"/><line x1=\"48\" y1=\"14\" x2=\"48\" y2=\"76\" stroke=\"#1d2f4b\" stroke-width=\"5\" stroke-linecap=\"round\"/><line x1=\"64\" y1=\"14\" x2=\"64\" y2=\"76\" stroke=\"#1d2f4b\" stroke-width=\"5\" stroke-linecap=\"round\"/><line x1=\"8\" y1=\"66\" x2=\"72\" y2=\"24\" stroke=\"#d84957\" stroke-width=\"5\" stroke-linecap=\"round\"/><line x1=\"102\" y1=\"14\" x2=\"102\" y2=\"76\" stroke=\"#1d2f4b\" stroke-width=\"5\" stroke-linecap=\"round\"/><line x1=\"118\" y1=\"14\" x2=\"118\" y2=\"76\" stroke=\"#1d2f4b\" stroke-width=\"5\" stroke-linecap=\"round\"/><line x1=\"134\" y1=\"14\" x2=\"134\" y2=\"76\" stroke=\"#1d2f4b\" stroke-width=\"5\" stroke-linecap=\"round\"/><line x1=\"150\" y1=\"14\" x2=\"150\" y2=\"76\" stroke=\"#1d2f4b\" stroke-width=\"5\" stroke-linecap=\"round\"/><line x1=\"94\" y1=\"66\" x2=\"158\" y2=\"24\" stroke=\"#d84957\" stroke-width=\"5\" stroke-linecap=\"round\"/><line x1=\"188\" y1=\"14\" x2=\"188\" y2=\"76\" stroke=\"#1d2f4b\" stroke-width=\"5\" stroke-linecap=\"round\"/><line x1=\"204\" y1=\"14\" x2=\"204\" y2=\"76\" stroke=\"#1d2f4b\" stroke-width=\"5\" stroke-linecap=\"round\"/><line x1=\"220\" y1=\"14\" x2=\"220\" y2=\"76\" stroke=\"#1d2f4b\" stroke-width=\"5\" stroke-linecap=\"round\"/></svg>"
+    },
+    "answer": {
+      "type": "numeric",
+      "value": 13,
+      "unit": "cars"
+    },
+    "explanation": "Each full group is 5. Two groups make 10. Three more marks make 11, 12, 13. The tally shows 13 cars.",
+    "difficulty": {
+      "band": 2,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "nsc-by-twos",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/numbers.ts"
+    },
+    "skills": [
+      "MATH-NBT-SKIP-COUNT"
+    ],
+    "language": "en",
+    "prompt": "Count by 2s. Which number is missing?",
+    "visual": {
+      "kind": "grid",
+      "rows": [
+        [
+          "14",
+          "16",
+          "?",
+          "20"
+        ]
+      ],
+      "highlight": {
+        "row": 0,
+        "col": 2
+      }
+    },
+    "answer": {
+      "type": "numeric",
+      "value": 18
+    },
+    "explanation": "Each number is 2 more than the one before it. 16 + 2 = 18.",
+    "difficulty": {
+      "band": 1,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "nsc-by-fives",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/numbers.ts"
+    },
+    "skills": [
+      "MATH-NBT-SKIP-COUNT"
+    ],
+    "language": "en",
+    "prompt": "Count by 5s. Which number comes next?",
+    "visual": {
+      "kind": "grid",
+      "rows": [
+        [
+          "35",
+          "40",
+          "45",
+          "?"
+        ]
+      ],
+      "highlight": {
+        "row": 0,
+        "col": 3
+      }
+    },
+    "answer": {
+      "type": "numeric",
+      "value": 50
+    },
+    "explanation": "Each number is 5 more than the one before it. 45 + 5 = 50.",
+    "difficulty": {
+      "band": 1,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "nsc-by-tens",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/numbers.ts"
+    },
+    "skills": [
+      "MATH-NBT-SKIP-COUNT"
+    ],
+    "language": "en",
+    "prompt": "Count by 10s. Which number is missing?",
+    "visual": {
+      "kind": "grid",
+      "rows": [
+        [
+          "70",
+          "80",
+          "?",
+          "100"
+        ]
+      ],
+      "highlight": {
+        "row": 0,
+        "col": 2
+      }
+    },
+    "answer": {
+      "type": "numeric",
+      "value": 90
+    },
+    "explanation": "Each number is 10 more than the one before it. 80 + 10 = 90.",
+    "difficulty": {
+      "band": 1,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "nsc-back-by-fives",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/numbers.ts"
+    },
+    "skills": [
+      "MATH-NBT-SKIP-COUNT"
+    ],
+    "language": "en",
+    "prompt": "Count backwards by 5s. Which number is missing?",
+    "visual": {
+      "kind": "grid",
+      "rows": [
+        [
+          "60",
+          "55",
+          "?",
+          "45"
+        ]
+      ],
+      "highlight": {
+        "row": 0,
+        "col": 2
+      }
+    },
+    "answer": {
+      "type": "numeric",
+      "value": 50
+    },
+    "explanation": "Each number is 5 less than the one before it. 55 - 5 = 50.",
+    "difficulty": {
+      "band": 2,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "nsc-by-threes",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/numbers.ts"
+    },
+    "skills": [
+      "MATH-NBT-SKIP-COUNT"
+    ],
+    "language": "en",
+    "prompt": "These numbers go up by the same amount each time. Which number is missing?",
+    "visual": {
+      "kind": "grid",
+      "rows": [
+        [
+          "3",
+          "6",
+          "9",
+          "?",
+          "15"
+        ]
+      ],
+      "highlight": {
+        "row": 0,
+        "col": 3
+      }
+    },
+    "answer": {
+      "type": "numeric",
+      "value": 12
+    },
+    "explanation": "Each number is 3 more than the one before it. 9 + 3 = 12.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "nsc-by-quarters",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/numbers.ts"
+    },
+    "skills": [
+      "MATH-NBT-SKIP-COUNT"
+    ],
+    "language": "en",
+    "prompt": "Count by 25s, like counting quarters. Which number comes next?",
+    "visual": {
+      "kind": "grid",
+      "rows": [
+        [
+          "25",
+          "50",
+          "75",
+          "?"
+        ]
+      ],
+      "highlight": {
+        "row": 0,
+        "col": 3
+      }
+    },
+    "answer": {
+      "type": "numeric",
+      "value": 100
+    },
+    "explanation": "Each number is 25 more than the one before it. 75 + 25 = 100.",
+    "difficulty": {
+      "band": 2,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "noe-which-is-odd",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/numbers.ts"
+    },
+    "skills": [
+      "MATH-NBT-ODD-EVEN"
+    ],
+    "language": "en",
+    "prompt": "Which number is odd?",
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "37",
+        "14",
+        "22",
+        "50"
+      ],
+      "correctIndex": 0
+    },
+    "explanation": "Look at the ones digit. Numbers ending in 1, 3, 5, 7 or 9 are odd. 37 ends in 7, so it is odd. The others end in 0, 2 or 4, so they are even.",
+    "difficulty": {
+      "band": 1,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "noe-which-is-even",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/numbers.ts"
+    },
+    "skills": [
+      "MATH-NBT-ODD-EVEN"
+    ],
+    "language": "en",
+    "prompt": "Which number is even?",
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "9",
+        "15",
+        "33",
+        "28"
+      ],
+      "correctIndex": 3
+    },
+    "explanation": "Even numbers end in 0, 2, 4, 6 or 8. 28 ends in 8, so it is even.",
+    "difficulty": {
+      "band": 1,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "noe-socks-in-pairs",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/numbers.ts"
+    },
+    "skills": [
+      "MATH-NBT-ODD-EVEN"
+    ],
+    "language": "en",
+    "prompt": "Can you put 7 soccer socks into pairs with none left over?",
+    "visual": {
+      "kind": "emoji",
+      "lines": [
+        "🧦🧦🧦🧦🧦🧦🧦"
+      ]
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "Yes, they all make pairs",
+        "No, one sock is left over"
+      ],
+      "correctIndex": 1
+    },
+    "explanation": "Make pairs: 2, 4, 6. That uses 6 socks, and 1 sock has no partner. 7 is an odd number, and odd numbers always have one left over.",
+    "difficulty": {
+      "band": 1,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "noe-red-jersey",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/numbers.ts"
+    },
+    "skills": [
+      "MATH-NBT-ODD-EVEN"
+    ],
+    "language": "en",
+    "prompt": "Players with odd jersey numbers wear red. Maya is number 8, Leo is number 12, Sam is number 7, Ava is number 20. Who wears red?",
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "Maya",
+        "Leo",
+        "Sam",
+        "Ava"
+      ],
+      "correctIndex": 2
+    },
+    "explanation": "Sam is number 7, which is odd. 8, 12, 20 are all even.",
+    "difficulty": {
+      "band": 2,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "noe-odd-plus-odd",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/numbers.ts"
+    },
+    "skills": [
+      "MATH-NBT-ODD-EVEN",
+      "MATH-OA-ADD-SUB"
+    ],
+    "language": "en",
+    "prompt": "3 and 5 are both odd. Is 3 + 5 odd or even?",
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "Even",
+        "Odd"
+      ],
+      "correctIndex": 0
+    },
+    "explanation": "3 + 5 = 8, and 8 is even. Try it with dots: the extra dot from 3 and the extra dot from 5 make a pair. Odd plus odd is always even.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "noe-evens-between",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/numbers.ts"
+    },
+    "skills": [
+      "MATH-NBT-ODD-EVEN"
+    ],
+    "language": "en",
+    "prompt": "How many even numbers are there between 11 and 19?",
+    "answer": {
+      "type": "numeric",
+      "value": 4
+    },
+    "explanation": "The numbers between 11 and 19 are 12 to 18. The even ones are 12, 14, 16, 18. That is 4.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "npv-value-of-four",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/numbers.ts"
+    },
+    "skills": [
+      "MATH-NBT-PLACE-VALUE"
+    ],
+    "language": "en",
+    "prompt": "In the number 347, what is the 4 worth?",
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "4",
+        "400",
+        "40",
+        "7"
+      ],
+      "correctIndex": 2
+    },
+    "explanation": "In 347, the 3 is in the hundreds place, the 4 is in the tens place, and the 7 is in the ones place. 4 tens is 40.",
+    "difficulty": {
+      "band": 2,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "npv-build-528",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/numbers.ts"
+    },
+    "skills": [
+      "MATH-NBT-PLACE-VALUE"
+    ],
+    "language": "en",
+    "prompt": "What number has 5 hundreds, 2 tens and 8 ones?",
+    "answer": {
+      "type": "numeric",
+      "value": 528
+    },
+    "explanation": "5 hundreds is 500, 2 tens is 20, and 8 ones is 8. 500 + 20 + 8 = 528.",
+    "difficulty": {
+      "band": 1,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "npv-biggest-number",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/numbers.ts"
+    },
+    "skills": [
+      "MATH-NBT-PLACE-VALUE"
+    ],
+    "language": "en",
+    "prompt": "Which number is the biggest?",
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "389",
+        "398",
+        "839",
+        "893"
+      ],
+      "correctIndex": 3
+    },
+    "explanation": "Compare the hundreds first. 839 and 893 both have 8 hundreds, more than the others. Then compare the tens: 9 tens is more than 3 tens, so 893 is the biggest.",
+    "difficulty": {
+      "band": 2,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "npv-ten-more-495",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/numbers.ts"
+    },
+    "skills": [
+      "MATH-NBT-PLACE-VALUE",
+      "MATH-OA-ADD-SUB"
+    ],
+    "language": "en",
+    "prompt": "What is 10 more than 495?",
+    "answer": {
+      "type": "numeric",
+      "value": 505
+    },
+    "explanation": "Adding 10 adds one to the tens. 495 has 9 tens, and one more ten makes 10 tens, which is another hundred. So 495 becomes 505.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "npv-hundred-less-612",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/numbers.ts"
+    },
+    "skills": [
+      "MATH-NBT-PLACE-VALUE",
+      "MATH-OA-ADD-SUB"
+    ],
+    "language": "en",
+    "prompt": "What is 100 less than 612?",
+    "answer": {
+      "type": "numeric",
+      "value": 512
+    },
+    "explanation": "Taking away 100 takes one from the hundreds. 6 hundreds becomes 5 hundreds, and the tens and ones stay the same. 612 becomes 512.",
+    "difficulty": {
+      "band": 2,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "npv-largest-from-cards",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/numbers.ts"
+    },
+    "skills": [
+      "MATH-NBT-PLACE-VALUE"
+    ],
+    "language": "en",
+    "prompt": "Use each card once: 4, 0, 7. What is the largest 3-digit number you can make?",
+    "visual": {
+      "kind": "grid",
+      "rows": [
+        [
+          "4",
+          "0",
+          "7"
+        ]
+      ]
+    },
+    "answer": {
+      "type": "numeric",
+      "value": 740
+    },
+    "explanation": "Put the biggest digit in the hundreds place, then the next biggest, then the smallest. That makes 740.",
+    "difficulty": {
+      "band": 2,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "npv-smallest-with-zero",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/numbers.ts"
+    },
+    "skills": [
+      "MATH-NBT-PLACE-VALUE"
+    ],
+    "language": "en",
+    "prompt": "Use each card once: 4, 0, 7. What is the smallest 3-digit number you can make?",
+    "visual": {
+      "kind": "grid",
+      "rows": [
+        [
+          "4",
+          "0",
+          "7"
+        ]
+      ]
+    },
+    "answer": {
+      "type": "numeric",
+      "value": 407
+    },
+    "explanation": "The smallest digit is 0, but a 3-digit number cannot start with 0 (047 is really just 47). So start with the next smallest, 4, then put 0, then 7. That makes 407.",
+    "difficulty": {
+      "band": 4,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "nas-47-plus-38",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/numbers.ts"
+    },
+    "skills": [
+      "MATH-OA-ADD-SUB"
+    ],
+    "language": "en",
+    "prompt": "What is 47 + 38?",
+    "answer": {
+      "type": "numeric",
+      "value": 85
+    },
+    "explanation": "Add the ones: 7 + 8 = 15. Write 5 and carry 1 ten. Add the tens: 4 + 3 + 1 = 8. The answer is 85.",
+    "difficulty": {
+      "band": 2,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "nas-63-minus-27",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/numbers.ts"
+    },
+    "skills": [
+      "MATH-OA-ADD-SUB"
+    ],
+    "language": "en",
+    "prompt": "What is 63 - 27?",
+    "answer": {
+      "type": "numeric",
+      "value": 36
+    },
+    "explanation": "You cannot take 7 from 3, so trade 1 ten for 10 ones: 13 - 7 = 6. Now there are 5 tens: 5 - 2 = 3. The answer is 36.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "nas-125-plus-46",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/numbers.ts"
+    },
+    "skills": [
+      "MATH-OA-ADD-SUB"
+    ],
+    "language": "en",
+    "prompt": "What is 125 + 46?",
+    "answer": {
+      "type": "numeric",
+      "value": 171
+    },
+    "explanation": "Ones: 5 + 6 = 11, write 1 and carry 1. Tens: 2 + 4 + 1 = 7. Hundreds: 1. The answer is 171.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "nas-200-minus-85",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/numbers.ts"
+    },
+    "skills": [
+      "MATH-OA-ADD-SUB"
+    ],
+    "language": "en",
+    "prompt": "What is 200 - 85?",
+    "answer": {
+      "type": "numeric",
+      "value": 115
+    },
+    "explanation": "Count up from 85: 15 more gets to 100, and 100 more gets to 200. 15 + 100 = 115.",
+    "difficulty": {
+      "band": 4,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "nas-car-miles",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/numbers.ts"
+    },
+    "skills": [
+      "MATH-OA-ADD-SUB"
+    ],
+    "language": "en",
+    "prompt": "A car drove 58 miles in the morning and 47 miles in the afternoon. How many miles did it drive in all?",
+    "answer": {
+      "type": "numeric",
+      "value": 105
+    },
+    "explanation": "58 + 47: 58 + 40 = 98, then 98 + 7 = 105 miles.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "nas-empty-seats",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/numbers.ts"
+    },
+    "skills": [
+      "MATH-OA-ADD-SUB"
+    ],
+    "language": "en",
+    "prompt": "A small soccer stadium has 150 seats. 68 seats have people in them. How many seats are empty?",
+    "answer": {
+      "type": "numeric",
+      "value": 82
+    },
+    "explanation": "150 - 68: count up from 68. 2 more is 70, 30 more is 100, 50 more is 150. 2 + 30 + 50 = 82 empty seats.",
+    "difficulty": {
+      "band": 4,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "nmu-blank-plus-17",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/numbers.ts"
+    },
+    "skills": [
+      "MATH-OA-UNKNOWN"
+    ],
+    "language": "en",
+    "prompt": "What number goes in the box? ☐ + 17 = 40",
+    "speech": "What number plus 17 equals 40?",
+    "answer": {
+      "type": "numeric",
+      "value": 23
+    },
+    "explanation": "Think: what plus 17 makes 40? Take 17 away from 40: 40 - 17 = 23. Check: 23 + 17 = 40.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "nmu-52-minus-blank",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/numbers.ts"
+    },
+    "skills": [
+      "MATH-OA-UNKNOWN"
+    ],
+    "language": "en",
+    "prompt": "What number goes in the box? 52 - ☐ = 30",
+    "speech": "52 minus what number equals 30?",
+    "answer": {
+      "type": "numeric",
+      "value": 22
+    },
+    "explanation": "How far is it from 30 up to 52? 52 - 30 = 22. Check: 52 - 22 = 30.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "nmu-balance-blocks",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/numbers.ts"
+    },
+    "skills": [
+      "MATH-OA-UNKNOWN",
+      "MATH-OA-EQUAL-GROUPS"
+    ],
+    "language": "en",
+    "prompt": "A balance scale is level. One side has two blue blocks and a 5 gram weight. The other side has a 13 gram weight. Both blue blocks weigh the same. How many grams does one blue block weigh?",
+    "visual": {
+      "kind": "emoji",
+      "lines": [
+        "🟦 🟦 + 5 g   ⚖️   13 g"
+      ]
+    },
+    "answer": {
+      "type": "numeric",
+      "value": 4,
+      "unit": "grams"
+    },
+    "explanation": "Take the 5 gram weight off the left side, and take 5 grams off the right side too, so it stays level: two blocks balance 13 - 5 = 8 grams. Two equal blocks make 8 grams, so one block weighs 4 grams.",
+    "difficulty": {
+      "band": 4,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "nmu-think-of-a-number",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/numbers.ts"
+    },
+    "skills": [
+      "MATH-OA-UNKNOWN"
+    ],
+    "language": "en",
+    "prompt": "I think of a number. I add 9 and get 25. What was my number?",
+    "answer": {
+      "type": "numeric",
+      "value": 16
+    },
+    "explanation": "Undo the adding by taking away: 25 - 9 = 16. Check: 16 + 9 = 25.",
+    "difficulty": {
+      "band": 2,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "nar-parked-3-by-4",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/numbers.ts"
+    },
+    "skills": [
+      "MATH-OA-ARRAYS"
+    ],
+    "language": "en",
+    "prompt": "The cars are parked in rows. How many cars are there?",
+    "visual": {
+      "kind": "grid",
+      "rows": [
+        [
+          "🚗",
+          "🚗",
+          "🚗",
+          "🚗"
+        ],
+        [
+          "🚗",
+          "🚗",
+          "🚗",
+          "🚗"
+        ],
+        [
+          "🚗",
+          "🚗",
+          "🚗",
+          "🚗"
+        ]
+      ]
+    },
+    "answer": {
+      "type": "numeric",
+      "value": 12
+    },
+    "explanation": "There are 3 rows with 4 in each row. Count by 4s, one row at a time: 4, 8, 12. That is 12.",
+    "difficulty": {
+      "band": 1,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "nar-balls-2-by-6",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/numbers.ts"
+    },
+    "skills": [
+      "MATH-OA-ARRAYS"
+    ],
+    "language": "en",
+    "prompt": "The soccer balls are in 2 rows. How many balls are there?",
+    "visual": {
+      "kind": "grid",
+      "rows": [
+        [
+          "⚽",
+          "⚽",
+          "⚽",
+          "⚽",
+          "⚽",
+          "⚽"
+        ],
+        [
+          "⚽",
+          "⚽",
+          "⚽",
+          "⚽",
+          "⚽",
+          "⚽"
+        ]
+      ]
+    },
+    "answer": {
+      "type": "numeric",
+      "value": 12
+    },
+    "explanation": "There are 2 rows with 6 in each row. Count by 6s, one row at a time: 6, 12. That is 12.",
+    "difficulty": {
+      "band": 2,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "nar-pawns-5-by-3",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/numbers.ts"
+    },
+    "skills": [
+      "MATH-OA-ARRAYS"
+    ],
+    "language": "en",
+    "prompt": "The chess pawns are lined up in rows. How many pawns are there?",
+    "visual": {
+      "kind": "grid",
+      "rows": [
+        [
+          "♟️",
+          "♟️",
+          "♟️"
+        ],
+        [
+          "♟️",
+          "♟️",
+          "♟️"
+        ],
+        [
+          "♟️",
+          "♟️",
+          "♟️"
+        ],
+        [
+          "♟️",
+          "♟️",
+          "♟️"
+        ],
+        [
+          "♟️",
+          "♟️",
+          "♟️"
+        ]
+      ]
+    },
+    "answer": {
+      "type": "numeric",
+      "value": 15
+    },
+    "explanation": "There are 5 rows with 3 in each row. Count by 3s, one row at a time: 3, 6, 9, 12, 15. That is 15.",
+    "difficulty": {
+      "band": 2,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "nar-parking-lot-rows",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/numbers.ts"
+    },
+    "skills": [
+      "MATH-OA-ARRAYS"
+    ],
+    "language": "en",
+    "prompt": "A parking lot has 4 rows. Each row has 5 cars. How many cars are in the parking lot?",
+    "answer": {
+      "type": "numeric",
+      "value": 20
+    },
+    "explanation": "Count by 5s for each row: 5, 10, 15, 20. There are 20 cars.",
+    "difficulty": {
+      "band": 2,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "nar-share-rows",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/numbers.ts"
+    },
+    "skills": [
+      "MATH-OA-ARRAYS",
+      "MATH-OA-EQUAL-GROUPS"
+    ],
+    "language": "en",
+    "prompt": "18 toy cars are put into 3 equal rows. How many cars are in each row?",
+    "answer": {
+      "type": "numeric",
+      "value": 6
+    },
+    "explanation": "Try counting by the same number 3 times until you reach 18. Counting by 6s: 6, 12, 18. So each row has 6 cars.",
+    "difficulty": {
+      "band": 4,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "nar-same-as-4-rows-of-3",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/numbers.ts"
+    },
+    "skills": [
+      "MATH-OA-ARRAYS"
+    ],
+    "language": "en",
+    "prompt": "Which is the same as 4 rows with 3 cars in each row?",
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "4 + 3",
+        "4 + 4 + 4 + 4",
+        "3 + 4 + 3",
+        "3 + 3 + 3 + 3"
+      ],
+      "correctIndex": 3
+    },
+    "explanation": "Each row has 3 cars, and there are 4 rows. So add 3 four times: 3 + 3 + 3 + 3 = 12.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "neg-soccer-teams",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/numbers.ts"
+    },
+    "skills": [
+      "MATH-OA-EQUAL-GROUPS"
+    ],
+    "language": "en",
+    "prompt": "There are 4 soccer teams. Each team has 5 players. How many players are there?",
+    "answer": {
+      "type": "numeric",
+      "value": 20
+    },
+    "explanation": "Add 5 for each team: 5 + 5 + 5 + 5 = 20 players.",
+    "difficulty": {
+      "band": 2,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "neg-share-cars",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/numbers.ts"
+    },
+    "skills": [
+      "MATH-OA-EQUAL-GROUPS"
+    ],
+    "language": "en",
+    "prompt": "15 toy cars are shared equally between 3 friends. How many cars does each friend get?",
+    "answer": {
+      "type": "numeric",
+      "value": 5
+    },
+    "explanation": "Hand out one car at a time to each friend. After 5 rounds, all 15 cars are gone: 5 + 5 + 5 = 15. Each friend gets 5.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  }
+]

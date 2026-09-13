@@ -1,0 +1,2133 @@
+[
+  {
+    "id": "lpa-car-abb",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/logic.ts"
+    },
+    "skills": [
+      "LOGIC-PATTERN"
+    ],
+    "language": "en",
+    "prompt": "The cars follow a pattern. Which car comes next?",
+    "visual": {
+      "kind": "emoji",
+      "lines": [
+        "🚗 🚙 🚙 🚗 🚙 🚙 🚗 ❓"
+      ]
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "🚗",
+        "🚙",
+        "🚕",
+        "🚌"
+      ],
+      "correctIndex": 1
+    },
+    "explanation": "The pattern is one red car, then two blue cars, over and over. After the red car in spot 7 come two blue cars, so the next car is blue.",
+    "difficulty": {
+      "band": 2,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "lpa-balls-abc-middle",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/logic.ts"
+    },
+    "skills": [
+      "LOGIC-PATTERN"
+    ],
+    "language": "en",
+    "prompt": "Which ball is missing from the pattern?",
+    "visual": {
+      "kind": "emoji",
+      "lines": [
+        "⚽ 🏀 🎾 ⚽ 🏀 ❓ ⚽"
+      ]
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "🎾",
+        "⚽",
+        "🏀",
+        "🏈"
+      ],
+      "correctIndex": 0
+    },
+    "explanation": "The pattern repeats soccer ball, basketball, tennis ball. The missing spot comes right after a basketball, so it is a tennis ball.",
+    "difficulty": {
+      "band": 2,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "lpa-growing-numbers",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/logic.ts"
+    },
+    "skills": [
+      "LOGIC-PATTERN",
+      "MATH-OA-ADD-SUB"
+    ],
+    "language": "en",
+    "prompt": "What number comes next? 1, 3, 6, 10, ?",
+    "answer": {
+      "type": "numeric",
+      "value": 15
+    },
+    "explanation": "Look at how much it grows each time: +2, +3, +4. Next it grows by 5. 10 + 5 = 15.",
+    "difficulty": {
+      "band": 4,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "lpa-doubling",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/logic.ts"
+    },
+    "skills": [
+      "LOGIC-PATTERN",
+      "MATH-OA-ADD-SUB"
+    ],
+    "language": "en",
+    "prompt": "What number comes next? 2, 4, 8, 16, ?",
+    "answer": {
+      "type": "numeric",
+      "value": 32
+    },
+    "explanation": "Each number is double the one before: 2 + 2 = 4, 4 + 4 = 8, 8 + 8 = 16. So next is 16 + 16 = 32.",
+    "difficulty": {
+      "band": 4,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "lpa-tenth-shape",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/logic.ts"
+    },
+    "skills": [
+      "LOGIC-PATTERN",
+      "MATH-NBT-SKIP-COUNT"
+    ],
+    "language": "en",
+    "prompt": "This pattern keeps going: triangle, square, square, triangle, square, square. What is the 10th shape?",
+    "visual": {
+      "kind": "emoji",
+      "lines": [
+        "🔺 🟦 🟦 🔺 🟦 🟦 ..."
+      ]
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "A triangle 🔺",
+        "A square 🟦"
+      ],
+      "correctIndex": 0
+    },
+    "explanation": "The pattern repeats every 3 shapes, and each group starts with a triangle. Triangles are in spots 1, 4, 7 and 10. So the 10th shape is a triangle.",
+    "difficulty": {
+      "band": 4,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "lor-race-last",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/logic.ts"
+    },
+    "skills": [
+      "LOGIC-ORDER"
+    ],
+    "language": "en",
+    "prompt": "Four toy cars had a race. Yellow finished first. Red finished before Blue. Green finished after Blue. Which car finished last?",
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "Yellow",
+        "Red",
+        "Blue",
+        "Green"
+      ],
+      "correctIndex": 3
+    },
+    "explanation": "Yellow is first. Red is before Blue, and Blue is before Green, so the rest go Red, Blue, Green. The order is Yellow, Red, Blue, Green. Green is last.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "lor-second-tallest",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/logic.ts"
+    },
+    "skills": [
+      "LOGIC-ORDER"
+    ],
+    "language": "en",
+    "prompt": "Mia is taller than Leo. Leo is taller than Ava. Sam is shorter than Ava. Who is the second tallest?",
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "Mia",
+        "Leo",
+        "Ava",
+        "Sam"
+      ],
+      "correctIndex": 1
+    },
+    "explanation": "Line them up from tallest to shortest: Mia, Leo, Ava, Sam. The second one is Leo.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "lor-book-shelves",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/logic.ts"
+    },
+    "skills": [
+      "LOGIC-ORDER"
+    ],
+    "language": "en",
+    "prompt": "Three books sit on three shelves, one book on each. The soccer book is on the bottom shelf. The chess book is higher than the car book. Which book is on the middle shelf?",
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "The chess book",
+        "The soccer book",
+        "The car book"
+      ],
+      "correctIndex": 2
+    },
+    "explanation": "The soccer book takes the bottom. The chess book must be above the car book, so the chess book is on top and the car book is in the middle.",
+    "difficulty": {
+      "band": 2,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "lor-lunch-line",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/logic.ts"
+    },
+    "skills": [
+      "LOGIC-ORDER"
+    ],
+    "language": "en",
+    "prompt": "Ann, Tom, Kim and Joe stand in a line. Ann is first. Tom is not second. Kim stands right behind Tom. Where in line is Joe?",
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "second",
+        "first",
+        "third",
+        "fourth"
+      ],
+      "correctIndex": 0
+    },
+    "explanation": "Ann is first. Tom cannot be second, and Kim must be right behind Tom, so Tom is third and Kim is fourth. That leaves Joe in the second spot. The line is Ann, Joe, Tom, Kim.",
+    "difficulty": {
+      "band": 4,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "lgr-balls-3x3",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/logic.ts"
+    },
+    "skills": [
+      "LOGIC-GRID"
+    ],
+    "language": "en",
+    "prompt": "Every row and every column needs one soccer ball, one basketball and one tennis ball. What goes in the box with the question mark?",
+    "visual": {
+      "kind": "grid",
+      "rows": [
+        [
+          "⚽",
+          " ",
+          "🎾"
+        ],
+        [
+          "?",
+          "🎾",
+          "⚽"
+        ],
+        [
+          "🎾",
+          "⚽",
+          " "
+        ]
+      ],
+      "highlight": {
+        "row": 1,
+        "col": 0
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "Soccer ball ⚽",
+        "Basketball 🏀",
+        "Tennis ball 🎾"
+      ],
+      "correctIndex": 1
+    },
+    "explanation": "Look at the row and the column that cross at the question mark. Together they already have 🎾 ⚽. The only one missing is 🏀.",
+    "difficulty": {
+      "band": 2,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "lgr-numbers-4x4",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/logic.ts"
+    },
+    "skills": [
+      "LOGIC-GRID"
+    ],
+    "language": "en",
+    "prompt": "Every row and every column needs the numbers 1, 2, 3 and 4 once each. What number goes in the box with the question mark?",
+    "visual": {
+      "kind": "grid",
+      "rows": [
+        [
+          "1",
+          "?",
+          "3",
+          "4"
+        ],
+        [
+          " ",
+          "3",
+          " ",
+          "1"
+        ],
+        [
+          "3",
+          " ",
+          "1",
+          " "
+        ],
+        [
+          "2",
+          "1",
+          " ",
+          "3"
+        ]
+      ],
+      "highlight": {
+        "row": 0,
+        "col": 1
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "2",
+        "1",
+        "3",
+        "4"
+      ],
+      "correctIndex": 0
+    },
+    "explanation": "Look at the row and the column that cross at the question mark. Together they already have 1 3 4. The only one missing is 2.",
+    "difficulty": {
+      "band": 4,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "lgr-cars-4x4",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/logic.ts"
+    },
+    "skills": [
+      "LOGIC-GRID"
+    ],
+    "language": "en",
+    "prompt": "Every row and every column needs one of each vehicle: red car, taxi, blue car and tractor. What goes in the box with the question mark?",
+    "visual": {
+      "kind": "grid",
+      "rows": [
+        [
+          "🚗",
+          " ",
+          " ",
+          "🚜"
+        ],
+        [
+          " ",
+          "🚜",
+          "🚗",
+          " "
+        ],
+        [
+          "?",
+          " ",
+          "🚕",
+          " "
+        ],
+        [
+          " ",
+          "🚗",
+          " ",
+          "🚙"
+        ]
+      ],
+      "highlight": {
+        "row": 2,
+        "col": 0
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "Red car 🚗",
+        "Taxi 🚕",
+        "Blue car 🚙",
+        "Tractor 🚜"
+      ],
+      "correctIndex": 3
+    },
+    "explanation": "This one takes a few steps. Fill in the boxes that have only one possible answer first, then use those to fill more. The finished row is 🚜 🚙 🚕 🚗, so the question mark is 🚜.",
+    "difficulty": {
+      "band": 5,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "lgr-chess-knight-square",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/logic.ts"
+    },
+    "skills": [
+      "LOGIC-GRID"
+    ],
+    "language": "en",
+    "prompt": "On a chess board, each square has a name: the letter on top, then the number on the side. What square is the knight on?",
+    "visual": {
+      "kind": "grid",
+      "rows": [
+        [
+          " ",
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        [
+          "4",
+          "·",
+          "·",
+          "·",
+          "·"
+        ],
+        [
+          "3",
+          "·",
+          "·",
+          "♞",
+          "·"
+        ],
+        [
+          "2",
+          "·",
+          "·",
+          "·",
+          "·"
+        ],
+        [
+          "1",
+          "·",
+          "·",
+          "·",
+          "·"
+        ]
+      ]
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "B3",
+        "C3",
+        "C2",
+        "3C"
+      ],
+      "correctIndex": 1
+    },
+    "explanation": "Go up from the knight to the letters: C. Go across from the knight to the numbers: 3. Letter first, then number: C3.",
+    "difficulty": {
+      "band": 2,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "lgr-chess-rook-moves",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/logic.ts"
+    },
+    "skills": [
+      "LOGIC-GRID",
+      "LOGIC-VISUALIZE"
+    ],
+    "language": "en",
+    "prompt": "The rook is on A1. It moves 2 squares up and then 3 squares to the right. What square is it on now?",
+    "visual": {
+      "kind": "grid",
+      "rows": [
+        [
+          " ",
+          "A",
+          "B",
+          "C",
+          "D"
+        ],
+        [
+          "4",
+          "·",
+          "·",
+          "·",
+          "·"
+        ],
+        [
+          "3",
+          "·",
+          "·",
+          "·",
+          "·"
+        ],
+        [
+          "2",
+          "·",
+          "·",
+          "·",
+          "·"
+        ],
+        [
+          "1",
+          "♜",
+          "·",
+          "·",
+          "·"
+        ]
+      ]
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "D3",
+        "C3",
+        "D2",
+        "B4"
+      ],
+      "correctIndex": 0
+    },
+    "explanation": "Start at A1. Two squares up goes to A2, then A3. Three squares right goes to B3, C3, D3. It lands on D3.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "lvz-die-bottom",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/logic.ts"
+    },
+    "skills": [
+      "LOGIC-VISUALIZE",
+      "MATH-OA-UNKNOWN"
+    ],
+    "language": "en",
+    "prompt": "On a normal die, the numbers on opposite sides always add up to 7. The top of the die shows 2. What number is on the bottom?",
+    "visual": {
+      "kind": "emoji",
+      "lines": [
+        "🎲"
+      ]
+    },
+    "answer": {
+      "type": "numeric",
+      "value": 5
+    },
+    "explanation": "Top and bottom are opposite sides, so they add up to 7. 2 + ? = 7, and 7 - 2 = 5.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "lvz-pizza-two-cuts",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/logic.ts"
+    },
+    "skills": [
+      "LOGIC-VISUALIZE"
+    ],
+    "language": "en",
+    "prompt": "You cut a round pizza with 2 straight cuts. Both cuts go through the very middle, and they cross. How many pieces do you get?",
+    "visual": {
+      "kind": "emoji",
+      "lines": [
+        "🍕"
+      ]
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "2",
+        "3",
+        "6",
+        "4"
+      ],
+      "correctIndex": 3
+    },
+    "explanation": "The first cut makes 2 halves. The second cut crosses it in the middle and cuts both halves in two. 2 + 2 = 4 pieces.",
+    "difficulty": {
+      "band": 2,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "lvz-two-gears",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/logic.ts"
+    },
+    "skills": [
+      "LOGIC-VISUALIZE"
+    ],
+    "language": "en",
+    "prompt": "Two gears touch. The first gear turns clockwise. Which way does the second gear turn?",
+    "visual": {
+      "kind": "emoji",
+      "lines": [
+        "⚙️⚙️"
+      ]
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "Counterclockwise, the other way",
+        "Clockwise, the same way",
+        "It does not turn"
+      ],
+      "correctIndex": 0
+    },
+    "explanation": "Where two gears touch, their teeth push each other in opposite directions. So the second gear turns counterclockwise.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "lvz-three-gears",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/logic.ts"
+    },
+    "skills": [
+      "LOGIC-VISUALIZE",
+      "MATH-NBT-ODD-EVEN"
+    ],
+    "language": "en",
+    "prompt": "Three gears are in a row, and each one touches the next. The first gear turns clockwise. Which way does the third gear turn?",
+    "visual": {
+      "kind": "emoji",
+      "lines": [
+        "⚙️⚙️⚙️"
+      ]
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "Clockwise, the same way",
+        "Counterclockwise, the other way",
+        "It does not turn"
+      ],
+      "correctIndex": 0
+    },
+    "explanation": "Each gear turns the opposite way from the one it touches. First: clockwise. Second: counterclockwise. Third: clockwise again.",
+    "difficulty": {
+      "band": 4,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "lcs-robot-right-up",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/logic.ts"
+    },
+    "skills": [
+      "CS-SEQUENCE"
+    ],
+    "language": "en",
+    "prompt": "The robot follows these arrows, one square for each arrow: ➡️ ⬆️. What does it land on?",
+    "speech": "The robot follows the arrows, one square for each arrow. What does it land on?",
+    "visual": {
+      "kind": "grid",
+      "rows": [
+        [
+          "🍎",
+          "·",
+          "🍌",
+          "·"
+        ],
+        [
+          "·",
+          "🤖",
+          "·",
+          "🍒"
+        ],
+        [
+          "🍇",
+          "·",
+          "·",
+          "⭐"
+        ]
+      ]
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "Apple 🍎",
+        "Cherry 🍒",
+        "Grapes 🍇",
+        "Banana 🍌"
+      ],
+      "correctIndex": 3
+    },
+    "explanation": "Start at the robot and move one square for each arrow: right, then up. The robot lands on the banana.",
+    "difficulty": {
+      "band": 1,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "lcs-robot-three-steps",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/logic.ts"
+    },
+    "skills": [
+      "CS-SEQUENCE"
+    ],
+    "language": "en",
+    "prompt": "The robot follows these arrows, one square for each arrow: ➡️ ➡️ ⬇️. What does it land on?",
+    "speech": "The robot follows the arrows, one square for each arrow. What does it land on?",
+    "visual": {
+      "kind": "grid",
+      "rows": [
+        [
+          "🍎",
+          "·",
+          "🍌",
+          "·"
+        ],
+        [
+          "·",
+          "🤖",
+          "·",
+          "🍒"
+        ],
+        [
+          "🍇",
+          "·",
+          "·",
+          "⭐"
+        ]
+      ]
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "Apple 🍎",
+        "Banana 🍌",
+        "Cherry 🍒",
+        "Star ⭐"
+      ],
+      "correctIndex": 3
+    },
+    "explanation": "Start at the robot and move one square for each arrow: right, then right, then down. The robot lands on the star.",
+    "difficulty": {
+      "band": 2,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "lcs-robot-down-left",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/logic.ts"
+    },
+    "skills": [
+      "CS-SEQUENCE"
+    ],
+    "language": "en",
+    "prompt": "The robot follows these arrows, one square for each arrow: ⬇️ ⬅️. What does it land on?",
+    "speech": "The robot follows the arrows, one square for each arrow. What does it land on?",
+    "visual": {
+      "kind": "grid",
+      "rows": [
+        [
+          "🍎",
+          "·",
+          "🍌",
+          "·"
+        ],
+        [
+          "·",
+          "🤖",
+          "·",
+          "🍒"
+        ],
+        [
+          "🍇",
+          "·",
+          "·",
+          "⭐"
+        ]
+      ]
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "Apple 🍎",
+        "Banana 🍌",
+        "Cherry 🍒",
+        "Grapes 🍇"
+      ],
+      "correctIndex": 3
+    },
+    "explanation": "Start at the robot and move one square for each arrow: down, then left. The robot lands on the grapes.",
+    "difficulty": {
+      "band": 2,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "lcs-robot-avoid-rocks",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/logic.ts"
+    },
+    "skills": [
+      "CS-SEQUENCE",
+      "CS-RULE-PATH"
+    ],
+    "language": "en",
+    "prompt": "The robot must reach the star without bumping into a rock. Which list of arrows works?",
+    "speech": "The robot must reach the star without bumping into a rock. Which list of arrows works?",
+    "visual": {
+      "kind": "grid",
+      "rows": [
+        [
+          "🤖",
+          "·",
+          "🪨"
+        ],
+        [
+          "🪨",
+          "·",
+          "·"
+        ],
+        [
+          "·",
+          "·",
+          "⭐"
+        ]
+      ]
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "⬇️ ⬇️ ➡️ ➡️",
+        "➡️ ➡️ ⬇️ ⬇️",
+        "➡️ ⬇️ ⬇️ ⬅️",
+        "➡️ ⬇️ ➡️ ⬇️"
+      ],
+      "correctIndex": 3
+    },
+    "explanation": "Try each list with your finger. ➡️ ⬇️ ➡️ ⬇️ goes right, down, right, down and never touches a rock. Going down first hits a rock, going right twice hits a rock, and the last list ends in the wrong corner.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "lcd-color-code-goal",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/logic.ts"
+    },
+    "skills": [
+      "CS-ENCODING"
+    ],
+    "language": "en",
+    "prompt": "Each color stands for a letter: red = G, blue = O, green = A, yellow = L. What word do these colors spell?",
+    "visual": {
+      "kind": "emoji",
+      "lines": [
+        "🔴 🔵 🟢 🟡"
+      ]
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "GOAL",
+        "GAOL",
+        "LOGA",
+        "GOLA"
+      ],
+      "correctIndex": 0
+    },
+    "explanation": "Change each color into its letter, in order: red is G, blue is O, green is A, yellow is L. The word is GOAL.",
+    "difficulty": {
+      "band": 2,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "lcd-shift-code-car",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/logic.ts"
+    },
+    "skills": [
+      "CS-ENCODING"
+    ],
+    "language": "en",
+    "prompt": "In this secret code, every letter is changed to the next letter of the alphabet: A becomes B, B becomes C, and so on. The secret word is DBS. What was the real word?",
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "ECT",
+        "BAR",
+        "CAR",
+        "CAT"
+      ],
+      "correctIndex": 2
+    },
+    "explanation": "To decode, go back one letter: D becomes C, B becomes A, S becomes R. The real word is CAR.",
+    "difficulty": {
+      "band": 4,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "lcd-number-code-encode",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/logic.ts"
+    },
+    "skills": [
+      "CS-ENCODING"
+    ],
+    "language": "en",
+    "prompt": "A = 1, B = 2, C = 3, D = 4, E = 5. How do you write the word DEED in this number code?",
+    "visual": {
+      "kind": "grid",
+      "rows": [
+        [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E"
+        ],
+        [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5"
+        ]
+      ]
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "4 5 1 4",
+        "4 5 5 4",
+        "4 5 4 5",
+        "5 4 4 5"
+      ],
+      "correctIndex": 1
+    },
+    "explanation": "Change each letter to its number, in order: D is 4, E is 5, E is 5, D is 4. So DEED is 4 5 5 4.",
+    "difficulty": {
+      "band": 2,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "lrv-tunnel-back-out",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/logic.ts"
+    },
+    "skills": [
+      "CS-REVERSE",
+      "LOGIC-VISUALIZE"
+    ],
+    "language": "en",
+    "prompt": "Three cars drive into a narrow dead-end tunnel, one behind the other: first the red car, then the taxi, then the blue car. They have to back out. Which car comes out first?",
+    "visual": {
+      "kind": "emoji",
+      "lines": [
+        "dead end 🧱 🚗 🚕 🚙 ⬅️ way in"
+      ]
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "The red car 🚗",
+        "The blue car 🚙",
+        "The taxi 🚕"
+      ],
+      "correctIndex": 1
+    },
+    "explanation": "The red car went in first, so it is deepest in the tunnel. The blue car went in last, so it is closest to the opening. Backing out, they leave in reverse order: 🚙 🚕 🚗. The blue car comes out first.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "lrv-undo-the-walk",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/logic.ts"
+    },
+    "skills": [
+      "CS-REVERSE",
+      "CS-SEQUENCE"
+    ],
+    "language": "en",
+    "prompt": "A robot walked ⬆️ ⬆️ ➡️. Which arrows bring it back to where it started?",
+    "speech": "A robot walked up, up, right. Which arrows bring it back to where it started?",
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "⬅️ ⬇️ ⬇️",
+        "➡️ ⬆️ ⬆️",
+        "⬆️ ⬆️ ➡️",
+        "⬅️ ⬆️ ⬆️"
+      ],
+      "correctIndex": 0
+    },
+    "explanation": "Undo the last step first, and turn each arrow around. The last step was right, so first go left. Then undo the two ups by going down twice: ⬅️ ⬇️ ⬇️.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "lrv-same-backwards",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/logic.ts"
+    },
+    "skills": [
+      "CS-REVERSE"
+    ],
+    "language": "en",
+    "prompt": "Which word is spelled the same forwards and backwards?",
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "LEMON",
+        "LADDER",
+        "LOVE",
+        "LEVEL"
+      ],
+      "correctIndex": 3
+    },
+    "explanation": "Read each word from the last letter to the first. LEVEL backwards is L, E, V, E, L: the same word! LEMON backwards is NOMEL, so it changes.",
+    "difficulty": {
+      "band": 2,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "lrp-ball-path",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/logic.ts"
+    },
+    "skills": [
+      "CS-RULE-PATH",
+      "LOGIC-PATTERN"
+    ],
+    "language": "en",
+    "prompt": "A soccer player may only step on balls in this order: soccer ball, basketball, soccer ball, basketball, and so on. Which path can she take?",
+    "visual": {
+      "kind": "emoji",
+      "lines": [
+        "A: ⚽ 🏀 🏀 ⚽ 🏀",
+        "B: ⚽ 🏀 ⚽ 🏀 ⚽",
+        "C: 🏀 ⚽ 🏀 ⚽ 🏀",
+        "D: ⚽ ⚽ 🏀 ⚽ 🏀"
+      ]
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "Path A",
+        "Path C",
+        "Path D",
+        "Path B"
+      ],
+      "correctIndex": 3
+    },
+    "explanation": "Check each step against the rule. Path B goes soccer, basket, soccer, basket, soccer, which matches every step. The other paths have two of the same ball in a row or start with the wrong ball.",
+    "difficulty": {
+      "band": 2,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "lrp-even-stones",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/logic.ts"
+    },
+    "skills": [
+      "CS-RULE-PATH",
+      "MATH-NBT-ODD-EVEN"
+    ],
+    "language": "en",
+    "prompt": "A frog may only hop on stones with even numbers. Which path is safe?",
+    "visual": {
+      "kind": "emoji",
+      "lines": [
+        "A: 2  4  7  8",
+        "B: 3  4  6  8",
+        "C: 2  6  8  10",
+        "D: 2  4  6  9"
+      ]
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "Path A",
+        "Path C",
+        "Path B",
+        "Path D"
+      ],
+      "correctIndex": 1
+    },
+    "explanation": "Path C is 2, 6, 8, 10, and every one of those is even. Path A has 7, Path B has 3, and Path D has 9, which are odd.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "lif-rain-or-shine",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/logic.ts"
+    },
+    "skills": [
+      "CS-CONDITIONAL"
+    ],
+    "language": "en",
+    "prompt": "The rule is: if it is raining, play chess inside. Otherwise, play soccer outside. Today it is sunny. What do they play?",
+    "visual": {
+      "kind": "emoji",
+      "lines": [
+        "☀️"
+      ]
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "Chess inside ♟️",
+        "Both",
+        "Nothing",
+        "Soccer outside ⚽"
+      ],
+      "correctIndex": 3
+    },
+    "explanation": "The rule only says chess if it is raining. It is sunny, so the otherwise part happens: soccer outside.",
+    "difficulty": {
+      "band": 1,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "lif-traffic-light-steps",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/logic.ts"
+    },
+    "skills": [
+      "CS-CONDITIONAL",
+      "CS-SEQUENCE"
+    ],
+    "language": "en",
+    "prompt": "A toy car reads one light at a time. If the light is green, it moves 2 steps. If the light is red, it waits. How many steps does it move in all?",
+    "visual": {
+      "kind": "emoji",
+      "lines": [
+        "🟢 🔴 🟢 🟢"
+      ]
+    },
+    "answer": {
+      "type": "numeric",
+      "value": 6,
+      "unit": "steps"
+    },
+    "explanation": "Go one light at a time: green, 2 steps; red, wait; green, 2 steps; green, 2 steps. There are 3 green lights: 2 + 2 + 2 = 6 steps.",
+    "difficulty": {
+      "band": 2,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "lif-beep-boop",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/logic.ts"
+    },
+    "skills": [
+      "CS-CONDITIONAL",
+      "MATH-NBT-ODD-EVEN"
+    ],
+    "language": "en",
+    "prompt": "A robot looks at numbers. If the number is even, it says BEEP. If the number is odd, it says BOOP. What does it say for 4, 7, 10?",
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "BOOP BEEP BOOP",
+        "BEEP BEEP BEEP",
+        "BEEP BOOP BEEP",
+        "BEEP BEEP BOOP"
+      ],
+      "correctIndex": 2
+    },
+    "explanation": "4 is even: BEEP. 7 is odd: BOOP. 10 is even: BEEP. So it says BEEP BOOP BEEP.",
+    "difficulty": {
+      "band": 2,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "lif-number-machine-twice",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/logic.ts"
+    },
+    "skills": [
+      "CS-CONDITIONAL",
+      "MATH-OA-ADD-SUB"
+    ],
+    "language": "en",
+    "prompt": "A number machine has a rule: if the number is bigger than 5, add 1. Otherwise, double it. Put in 3, then put the answer back in. What comes out the second time?",
+    "answer": {
+      "type": "numeric",
+      "value": 7
+    },
+    "explanation": "First time: 3 is not bigger than 5, so double it: 6. Second time: 6 is bigger than 5, so add 1: 7.",
+    "difficulty": {
+      "band": 4,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "lif-fruit-sorter",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/logic.ts"
+    },
+    "skills": [
+      "CS-CONDITIONAL",
+      "CS-SORTING"
+    ],
+    "language": "en",
+    "prompt": "A sorting machine sends red fruit to the left bin and all other fruit to the right bin. How many fruits go to the left bin?",
+    "visual": {
+      "kind": "emoji",
+      "lines": [
+        "🍎 🍌 🍓 🍒 🍋 🍎"
+      ]
+    },
+    "answer": {
+      "type": "numeric",
+      "value": 4,
+      "unit": "fruits"
+    },
+    "explanation": "The red fruits are the apples, the strawberry and the cherries: 🍎 🍓 🍒 🍎. That is 4. The banana and lemon go right.",
+    "difficulty": {
+      "band": 2,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "lso-third-fastest",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/logic.ts"
+    },
+    "skills": [
+      "CS-SORTING",
+      "LOGIC-ORDER"
+    ],
+    "language": "en",
+    "prompt": "Race times in seconds: Zoom 42, Blaze 38, Turbo 45, Dash 40. The smallest time is the fastest. Who came in third?",
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "Blaze",
+        "Turbo",
+        "Zoom",
+        "Dash"
+      ],
+      "correctIndex": 2
+    },
+    "explanation": "Sort from smallest time to biggest: Blaze (38), Dash (40), Zoom (42), Turbo (45). Third in that list is Zoom.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "lso-smallest-to-largest",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/logic.ts"
+    },
+    "skills": [
+      "CS-SORTING",
+      "MATH-NBT-PLACE-VALUE"
+    ],
+    "language": "en",
+    "prompt": "Which list puts 27, 72, 7 and 70 in order from smallest to largest?",
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "7, 27, 70, 72",
+        "7, 70, 27, 72",
+        "72, 70, 27, 7",
+        "7, 27, 72, 70"
+      ],
+      "correctIndex": 0
+    },
+    "explanation": "7 has only ones, so it is smallest. 27 has 2 tens. 70 and 72 both have 7 tens, and 70 has fewer ones. So: 7, 27, 70, 72.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "lso-middle-length",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/logic.ts"
+    },
+    "skills": [
+      "CS-SORTING"
+    ],
+    "language": "en",
+    "prompt": "Line these up from shortest to longest: bus 12 feet, car 5 feet, truck 9 feet, scooter 2 feet, van 7 feet. Which one is in the middle?",
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "The van",
+        "The bus",
+        "The car",
+        "The truck"
+      ],
+      "correctIndex": 0
+    },
+    "explanation": "Shortest to longest: scooter (2), car (5), van (7), truck (9), bus (12). There are 5, so the middle one is the 3rd: the van.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "lso-swap-neighbors-pass",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/logic.ts"
+    },
+    "skills": [
+      "CS-SORTING",
+      "CS-SEQUENCE"
+    ],
+    "language": "en",
+    "prompt": "A sorting robot walks along the cards 3, 1, 4, 2 from left to right. At each pair of neighbors, if the left card is bigger, it swaps them. What order are the cards in after one walk?",
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "1, 2, 3, 4",
+        "1, 3, 2, 4",
+        "1, 3, 4, 2",
+        "3, 1, 2, 4"
+      ],
+      "correctIndex": 1
+    },
+    "explanation": "Start: 3, 1, 4, 2. Compare 3 and 1: swap, giving 1, 3, 4, 2. Compare 3 and 4: no swap. Compare 4 and 2: swap, giving 1, 3, 2, 4. One walk is not enough to finish sorting!",
+    "difficulty": {
+      "band": 4,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "lsp-home-to-field",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/logic.ts"
+    },
+    "skills": [
+      "CS-SHORTEST-PATH",
+      "MATH-OA-ADD-SUB"
+    ],
+    "language": "en",
+    "prompt": "The numbers on the roads show how many minutes each road takes. What is the fastest way from home to the soccer field?",
+    "visual": {
+      "kind": "network",
+      "nodes": [
+        {
+          "id": "H",
+          "label": "🏠",
+          "x": 0,
+          "y": 50
+        },
+        {
+          "id": "S",
+          "label": "🏫",
+          "x": 50,
+          "y": 0
+        },
+        {
+          "id": "P",
+          "label": "⚽",
+          "x": 100,
+          "y": 50
+        },
+        {
+          "id": "L",
+          "label": "🏪",
+          "x": 50,
+          "y": 100
+        }
+      ],
+      "edges": [
+        {
+          "from": "H",
+          "to": "S",
+          "weight": 3
+        },
+        {
+          "from": "S",
+          "to": "P",
+          "weight": 4
+        },
+        {
+          "from": "H",
+          "to": "L",
+          "weight": 2
+        },
+        {
+          "from": "L",
+          "to": "P",
+          "weight": 6
+        }
+      ]
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "Past school",
+        "Past the store",
+        "They take the same time"
+      ],
+      "correctIndex": 0
+    },
+    "explanation": "Past school: 3 + 4 = 7 minutes. Past the store: 2 + 6 = 8 minutes. Going past school is faster.",
+    "difficulty": {
+      "band": 2,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "lsp-race-shortest-distance",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/logic.ts"
+    },
+    "skills": [
+      "CS-SHORTEST-PATH",
+      "MATH-OA-ADD-SUB"
+    ],
+    "language": "en",
+    "prompt": "The numbers show how long each road is. What is the shortest distance from home to the finish flag?",
+    "visual": {
+      "kind": "network",
+      "nodes": [
+        {
+          "id": "H",
+          "label": "🏠",
+          "x": 0,
+          "y": 50
+        },
+        {
+          "id": "A",
+          "label": "A",
+          "x": 35,
+          "y": 0
+        },
+        {
+          "id": "B",
+          "label": "B",
+          "x": 35,
+          "y": 100
+        },
+        {
+          "id": "C",
+          "label": "C",
+          "x": 70,
+          "y": 50
+        },
+        {
+          "id": "R",
+          "label": "🏁",
+          "x": 100,
+          "y": 50
+        }
+      ],
+      "edges": [
+        {
+          "from": "H",
+          "to": "A",
+          "weight": 4
+        },
+        {
+          "from": "H",
+          "to": "B",
+          "weight": 2
+        },
+        {
+          "from": "A",
+          "to": "C",
+          "weight": 1
+        },
+        {
+          "from": "B",
+          "to": "C",
+          "weight": 5
+        },
+        {
+          "from": "A",
+          "to": "B",
+          "weight": 1
+        },
+        {
+          "from": "C",
+          "to": "R",
+          "weight": 2
+        }
+      ]
+    },
+    "answer": {
+      "type": "numeric",
+      "value": 6
+    },
+    "explanation": "The shortest way is 🏠 ➔ B ➔ A ➔ C ➔ 🏁: 2 + 1 + 1 + 2 = 6. It looks longer on the map, but the numbers are smaller. Going straight through A costs 7.",
+    "difficulty": {
+      "band": 4,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "lsp-zoo-best-route",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/logic.ts"
+    },
+    "skills": [
+      "CS-SHORTEST-PATH",
+      "MATH-OA-ADD-SUB"
+    ],
+    "language": "en",
+    "prompt": "The numbers show how many minutes each road takes. Which route gets from home to the zoo fastest?",
+    "visual": {
+      "kind": "network",
+      "nodes": [
+        {
+          "id": "H",
+          "label": "🏠",
+          "x": 0,
+          "y": 50
+        },
+        {
+          "id": "A",
+          "label": "A",
+          "x": 30,
+          "y": 0
+        },
+        {
+          "id": "B",
+          "label": "B",
+          "x": 30,
+          "y": 100
+        },
+        {
+          "id": "C",
+          "label": "C",
+          "x": 65,
+          "y": 0
+        },
+        {
+          "id": "D",
+          "label": "D",
+          "x": 65,
+          "y": 100
+        },
+        {
+          "id": "Z",
+          "label": "🦁",
+          "x": 100,
+          "y": 50
+        }
+      ],
+      "edges": [
+        {
+          "from": "H",
+          "to": "A",
+          "weight": 5
+        },
+        {
+          "from": "H",
+          "to": "B",
+          "weight": 3
+        },
+        {
+          "from": "A",
+          "to": "C",
+          "weight": 2
+        },
+        {
+          "from": "B",
+          "to": "D",
+          "weight": 6
+        },
+        {
+          "from": "B",
+          "to": "A",
+          "weight": 1
+        },
+        {
+          "from": "C",
+          "to": "Z",
+          "weight": 4
+        },
+        {
+          "from": "D",
+          "to": "Z",
+          "weight": 2
+        },
+        {
+          "from": "C",
+          "to": "D",
+          "weight": 3
+        }
+      ]
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "🏠 ➔ A ➔ C ➔ 🦁",
+        "🏠 ➔ B ➔ D ➔ 🦁",
+        "🏠 ➔ B ➔ A ➔ C ➔ 🦁",
+        "🏠 ➔ B ➔ A ➔ C ➔ D ➔ 🦁"
+      ],
+      "correctIndex": 2
+    },
+    "explanation": "Add up each route. 🏠 ➔ B ➔ A ➔ C ➔ 🦁 takes 10. 🏠 ➔ A ➔ C ➔ 🦁 takes 11. 🏠 ➔ B ➔ D ➔ 🦁 takes 11. 🏠 ➔ B ➔ A ➔ C ➔ D ➔ 🦁 takes 11. The fastest takes 10 minutes.",
+    "difficulty": {
+      "band": 5,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "lcd-bead-code",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/logic.ts"
+    },
+    "skills": [
+      "CS-ENCODING"
+    ],
+    "language": "en",
+    "prompt": "A = 1, B = 2, C = 3, D = 4, E = 5. What word is 2 5 1 4?",
+    "visual": {
+      "kind": "grid",
+      "rows": [
+        [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E"
+        ],
+        [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5"
+        ]
+      ]
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "BADE",
+        "DAEB",
+        "DEAB",
+        "BEAD"
+      ],
+      "correctIndex": 3
+    },
+    "explanation": "Change each number to its letter, in order: 2 is B, 5 is E, 1 is A, 4 is D. The word is BEAD.",
+    "difficulty": {
+      "band": 2,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "lcd-flag-code-stop",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/logic.ts"
+    },
+    "skills": [
+      "CS-ENCODING"
+    ],
+    "language": "en",
+    "prompt": "Race flags send a secret word. Red = S, green = T, blue = O, yellow = P. What word do these flags spell?",
+    "visual": {
+      "kind": "emoji",
+      "lines": [
+        "🟥 🟩 🟦 🟨"
+      ]
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "STOP",
+        "POTS",
+        "TOPS",
+        "SPOT"
+      ],
+      "correctIndex": 0
+    },
+    "explanation": "Read the flags from left to right and change each color to its letter: S, T, O, P. The word is STOP.",
+    "difficulty": {
+      "band": 2,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "lrv-plate-stack",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/logic.ts"
+    },
+    "skills": [
+      "CS-REVERSE"
+    ],
+    "language": "en",
+    "prompt": "Plates are stacked one at a time: green first, then blue, then yellow, then red on top. You can only take the top plate. Which plate do you take third?",
+    "visual": {
+      "kind": "emoji",
+      "lines": [
+        "🔴",
+        "🟡",
+        "🔵",
+        "🟢"
+      ]
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "Green 🟢",
+        "Yellow 🟡",
+        "Red 🔴",
+        "Blue 🔵"
+      ],
+      "correctIndex": 3
+    },
+    "explanation": "The last plate put on is the first one off. Taking plates off goes red, yellow, blue, green. The third plate taken is blue.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "lrv-number-backwards",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/logic.ts"
+    },
+    "skills": [
+      "CS-REVERSE",
+      "MATH-NBT-PLACE-VALUE"
+    ],
+    "language": "en",
+    "prompt": "Write the number 385 backwards, digit by digit. What number do you get?",
+    "answer": {
+      "type": "numeric",
+      "value": 583
+    },
+    "explanation": "Read the digits from right to left: 5, 8, 3. That makes 583.",
+    "difficulty": {
+      "band": 2,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "lrp-count-by-fives-path",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/logic.ts"
+    },
+    "skills": [
+      "CS-RULE-PATH",
+      "MATH-NBT-SKIP-COUNT"
+    ],
+    "language": "en",
+    "prompt": "A kangaroo may only hop to a stone that is exactly 5 more than the stone it is on. Which path works all the way?",
+    "visual": {
+      "kind": "emoji",
+      "lines": [
+        "A: 5  10  15  20  25",
+        "B: 5  10  12  15  20",
+        "C: 5  15  20  25  30",
+        "D: 10  15  20  24  30"
+      ]
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "Path B",
+        "Path A",
+        "Path C",
+        "Path D"
+      ],
+      "correctIndex": 1
+    },
+    "explanation": "Path A goes 5, 10, 15, 20, 25, adding 5 every hop. Path B jumps from 10 to 12, Path C jumps from 5 to 15, and Path D jumps from 20 to 24.",
+    "difficulty": {
+      "band": 2,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "lrp-four-sides-path",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/logic.ts"
+    },
+    "skills": [
+      "CS-RULE-PATH",
+      "MATH-GEO-SHAPES"
+    ],
+    "language": "en",
+    "prompt": "You may only step on shapes with 4 straight sides and 4 square corners. Which path is safe?",
+    "visual": {
+      "kind": "emoji",
+      "lines": [
+        "A: 🟦 🟩 🔺 🟨",
+        "B: 🟦 🟨 🟩 🟧",
+        "C: 🟩 ⚪ 🟦 🟨",
+        "D: ⭐ 🟦 🟩 🟨"
+      ]
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "Path A",
+        "Path C",
+        "Path D",
+        "Path B"
+      ],
+      "correctIndex": 3
+    },
+    "explanation": "Every shape on Path B is a square with 4 sides and 4 square corners. Path A has a triangle. Path C has a circle. Path D has a star.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "lif-two-button-door",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/logic.ts"
+    },
+    "skills": [
+      "CS-CONDITIONAL"
+    ],
+    "language": "en",
+    "prompt": "A garage door opens only if you press the red button AND the green button together. Which one opens the door?",
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "Press only red",
+        "Press red and green",
+        "Press only green",
+        "Press neither"
+      ],
+      "correctIndex": 1
+    },
+    "explanation": "AND means both things must happen. Pressing just one button is not enough. Only pressing red and green together opens the door.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "lso-abc-order-second",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/logic.ts"
+    },
+    "skills": [
+      "CS-SORTING"
+    ],
+    "language": "en",
+    "prompt": "Put these words in ABC order: ZEBRA, APPLE, MANGO, BANANA. Which word comes second?",
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "BANANA",
+        "ZEBRA",
+        "APPLE",
+        "MANGO"
+      ],
+      "correctIndex": 0
+    },
+    "explanation": "Look at the first letter of each word: A, B, M, Z. In ABC order that is APPLE, BANANA, MANGO, ZEBRA. The second word is BANANA.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "lsp-direct-road-trap",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/logic.ts"
+    },
+    "skills": [
+      "CS-SHORTEST-PATH",
+      "MATH-OA-ADD-SUB"
+    ],
+    "language": "en",
+    "prompt": "The straight road from home to the park is 9 minutes. The road through the market is 3 minutes plus 4 minutes. What is the fastest time to the park?",
+    "visual": {
+      "kind": "network",
+      "nodes": [
+        {
+          "id": "H",
+          "label": "🏠",
+          "x": 0,
+          "y": 80
+        },
+        {
+          "id": "M",
+          "label": "🏪",
+          "x": 50,
+          "y": 0
+        },
+        {
+          "id": "P",
+          "label": "🌳",
+          "x": 100,
+          "y": 80
+        }
+      ],
+      "edges": [
+        {
+          "from": "H",
+          "to": "P",
+          "weight": 9
+        },
+        {
+          "from": "H",
+          "to": "M",
+          "weight": 3
+        },
+        {
+          "from": "M",
+          "to": "P",
+          "weight": 4
+        }
+      ]
+    },
+    "answer": {
+      "type": "numeric",
+      "value": 7,
+      "unit": "minutes"
+    },
+    "explanation": "The straight road looks shorter, but check the numbers. Through the market: 3 + 4 = 7 minutes. Straight: 9 minutes. 7 is less, so the fastest time is 7 minutes.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "lsp-city-blocks",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/logic.ts"
+    },
+    "skills": [
+      "CS-SHORTEST-PATH",
+      "LOGIC-GRID"
+    ],
+    "language": "en",
+    "prompt": "In the city you can only walk along the streets. School is 3 blocks right and 2 blocks up from home. What is the fewest number of blocks you can walk to get there?",
+    "visual": {
+      "kind": "grid",
+      "rows": [
+        [
+          "·",
+          "·",
+          "·",
+          "🏫"
+        ],
+        [
+          "·",
+          "·",
+          "·",
+          "·"
+        ],
+        [
+          "🏠",
+          "·",
+          "·",
+          "·"
+        ]
+      ]
+    },
+    "answer": {
+      "type": "numeric",
+      "value": 5,
+      "unit": "blocks"
+    },
+    "explanation": "You have to go 3 blocks right and 2 blocks up no matter which streets you pick, as long as you never walk backwards. 3 + 2 = 5 blocks.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "lsp-minutes-saved",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/logic.ts"
+    },
+    "skills": [
+      "CS-SHORTEST-PATH",
+      "MATH-OA-ADD-SUB"
+    ],
+    "language": "en",
+    "prompt": "Going past the school takes 3 + 4 minutes. Going past the store takes 2 + 6 minutes. How many minutes do you save by taking the faster way?",
+    "answer": {
+      "type": "numeric",
+      "value": 1,
+      "unit": "minutes"
+    },
+    "explanation": "Past the school: 3 + 4 = 7 minutes. Past the store: 2 + 6 = 8 minutes. 8 - 7 = 1 minute saved.",
+    "difficulty": {
+      "band": 4,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  }
+]

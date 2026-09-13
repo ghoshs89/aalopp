@@ -58,12 +58,78 @@ const SvgVisual = z.object({
   alt: z.string().min(1),
 });
 
+export const COIN_VALUES_CENTS = {
+  USD: { penny: 1, nickel: 5, dime: 10, quarter: 25 },
+  CAD: { nickel: 5, dime: 10, quarter: 25, loonie: 100, toonie: 200 },
+} as const;
+
+const CoinsVisual = z
+  .object({
+    kind: z.literal("coins"),
+    currency: z.enum(["USD", "CAD"]),
+    coins: z.array(z.enum(["penny", "nickel", "dime", "quarter", "loonie", "toonie"])).min(1).max(12),
+  })
+  .refine((v) => v.coins.every((c) => c in COIN_VALUES_CENTS[v.currency]), {
+    message: "Coin does not exist in that currency (no Canadian pennies, no US loonies)",
+    path: ["coins"],
+  });
+
+const RulerVisual = z
+  .object({
+    kind: z.literal("ruler"),
+    unit: z.enum(["in", "cm"]),
+    length: z.int().min(4).max(15),
+    start: z.int().min(0),
+    end: z.int().min(1),
+    object: z.enum(["car", "pencil", "crayon", "truck", "key", "bus"]),
+  })
+  .refine((v) => v.start < v.end && v.end <= v.length, { message: "Object must sit on the ruler", path: ["end"] });
+
+const PictureGraphVisual = z
+  .object({
+    kind: z.literal("pictureGraph"),
+    title: z.string().min(1),
+    icon: z.string().min(1),
+    perIcon: z.int().min(1).max(10),
+    rows: z.array(z.object({ label: z.string().min(1), count: z.int().min(0) })).min(2),
+  })
+  .refine((v) => v.rows.every((r) => r.count % v.perIcon === 0), {
+    message: "Every count must be a whole number of icons",
+    path: ["rows"],
+  });
+
+const CalendarVisual = z.object({
+  kind: z.literal("calendar"),
+  month: z.string().min(1),
+  // 0 = Sunday. The first day of the month falls on this weekday.
+  firstWeekday: z.int().min(0).max(6),
+  days: z.int().min(28).max(31),
+  marks: z.array(z.object({ day: z.int().min(1).max(31), emoji: z.string().min(1) })).default([]),
+});
+
+const NetworkVisual = z
+  .object({
+    kind: z.literal("network"),
+    // Positions are 0 to 100 in both directions.
+    nodes: z.array(z.object({ id: z.string().min(1), label: z.string().min(1), x: z.number().min(0).max(100), y: z.number().min(0).max(100) })).min(2),
+    edges: z.array(z.object({ from: z.string().min(1), to: z.string().min(1), weight: z.int().min(1) })).min(1),
+  })
+  .refine((v) => v.edges.every((e) => v.nodes.some((n) => n.id === e.from) && v.nodes.some((n) => n.id === e.to)), {
+    message: "Every edge must connect two nodes that exist",
+    path: ["edges"],
+  });
+
 export const VisualSchema = z.discriminatedUnion("kind", [
   EmojiVisual,
   GridVisual,
   ClockVisual,
   BarChartVisual,
   SvgVisual,
+  CoinsVisual,
+  RulerVisual,
+  PictureGraphVisual,
+  CalendarVisual,
+  NetworkVisual,
 ]);
 
 const ChoiceAnswer = z.object({
