@@ -51,7 +51,7 @@ How answers were checked:
    - Undo the walk: two choices both returned the robot home; the second one was replaced.
    - Triangle row: the drawing's code had 3 sticks drawn twice (looked right, but sloppy); now exactly 9.
    - Pages graph "counts by 2s": false alarm; the axis does count by 2s above 10.
-4. **Caught by the generators themselves:** the first 4 by 4 number puzzle had 2 solutions, and the first vehicle puzzle had none. Both were rebuilt. A later check replaced a ⭐ for the 🔷 in the "4 square corners" path, since a square turned on its corner also has square corners.
+4. **Caught by the generators themselves:** the first 4 by 4 number puzzle had 2 solutions, and the first vehicle puzzle had none. Both were rebuilt. A later check swapped the 🔷 in the "4 square corners" path for a ⭐, since a square turned on its corner also has square corners.
 5. **Visual check:** every emoji and grid question, plus each new picture type (coins, rulers, picture graphs, calendar, route maps, tally marks, matchsticks), was screenshot at phone width. Nothing is cut off. The bus 🚌 in the vehicle puzzle looked too much like the taxi on Apple devices and was swapped for a tractor 🚜.
 
 Review status: shipped as reviewed under the spot-check policy (parent spot-checks a sample rather than approving each item).

@@ -7,7 +7,7 @@ Adaptive learning app for one learner: Aishik, age 5.5, working around grade 3 (
 ## Stack
 - Next.js 16 App Router, TypeScript strict, Tailwind v4. Hosted on Vercel.
 - Supabase: Postgres (via Prisma), Auth (Google), Storage. RLS enabled on every table; all data access is server-side.
-- Zod for content and input validation. Vitest for tests. TrueNAS pulls nightly backups (see `docs/backup-truenas.md` once written).
+- Zod for content and input validation. Vitest for tests. TrueNAS pulls nightly backups (see `docs/backup-truenas.md`).
 
 ## Commands
 - `npm test`: unit tests plus a full validation of `content/`
@@ -17,7 +17,7 @@ Adaptive learning app for one learner: Aishik, age 5.5, working around grade 3 (
 
 ## Content
 - Questions live in `content/questions/*.json`, skills and prerequisites in `content/skills.json`. Files named `generated-*.json` come from `scripts/generate/` (`npm run content:generate`); change the generator, never the JSON. Prefer generators that compute answers and assert uniqueness over hand-typed answers. Schema: `src/content/schema.ts`. Cross-file checks (unknown skills, cycles, duplicate ids, copy-pasted prompts): `src/content/graph.ts`.
-- Every new question must pass `npm run content:check`. Verify the answer by hand; AI-drafted items go in as `"reviewStatus": "draft"` until a parent checks them.
+- Every new question must pass `npm run content:check`. Review policy (parent decision, 2026-09-13): questions whose answers are computed by a generator and confirmed by an independent blind solve may ship as `"reviewed"`, and the parent spot-checks a sample. Hand-typed questions without that check go in as `"draft"`.
 - Difficulty is seeded from outside evidence (Kangaroo points, contest position, author estimate) and is never learned from Aishik's own answers.
 - Log fixes and exclusions of source material in `content/REVIEW.md`.
 
