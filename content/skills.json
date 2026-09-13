@@ -1,0 +1,31 @@
+[
+  { "code": "MATH-NBT-COUNTING", "name": "Counting objects carefully", "domain": "MATHEMATICS", "strand": "NUMBER_BASE_TEN", "tier": 1, "isConvention": false, "prerequisites": [] },
+  { "code": "MATH-NBT-PLACE-VALUE", "name": "Place value", "domain": "MATHEMATICS", "strand": "NUMBER_BASE_TEN", "tier": 1, "isConvention": false, "prerequisites": ["MATH-NBT-COUNTING"] },
+
+  { "code": "MATH-OA-ADD-SUB", "name": "Adding and subtracting", "domain": "MATHEMATICS", "strand": "OPERATIONS_ALGEBRA", "tier": 1, "isConvention": false, "prerequisites": ["MATH-NBT-COUNTING"] },
+  { "code": "MATH-OA-EQUAL-GROUPS", "name": "Equal groups and balance", "domain": "MATHEMATICS", "strand": "OPERATIONS_ALGEBRA", "tier": 1, "isConvention": false, "prerequisites": ["MATH-OA-ADD-SUB"] },
+  { "code": "MATH-OA-UNKNOWN", "name": "Finding a missing number", "domain": "MATHEMATICS", "strand": "OPERATIONS_ALGEBRA", "tier": 2, "isConvention": false, "prerequisites": ["MATH-OA-ADD-SUB"] },
+
+  { "code": "MATH-GEO-SHAPES", "name": "Recognizing and counting shapes", "domain": "MATHEMATICS", "strand": "GEOMETRY_SPATIAL", "tier": 1, "isConvention": false, "prerequisites": [] },
+  { "code": "MATH-GEO-SYMMETRY", "name": "Symmetry", "domain": "MATHEMATICS", "strand": "GEOMETRY_SPATIAL", "tier": 1, "isConvention": false, "prerequisites": ["MATH-GEO-SHAPES"] },
+  { "code": "MATH-GEO-3D-COUNT", "name": "Counting blocks in 3D builds", "domain": "MATHEMATICS", "strand": "GEOMETRY_SPATIAL", "tier": 1, "isConvention": false, "prerequisites": ["MATH-GEO-SHAPES", "MATH-NBT-COUNTING"] },
+  { "code": "MATH-GEO-VIEWS", "name": "Views and shadows of 3D objects", "domain": "MATHEMATICS", "strand": "GEOMETRY_SPATIAL", "tier": 2, "isConvention": false, "prerequisites": ["MATH-GEO-SHAPES"] },
+  { "code": "MATH-GEO-SHARED-EDGES", "name": "Shapes that share sides", "domain": "MATHEMATICS", "strand": "GEOMETRY_SPATIAL", "tier": 2, "isConvention": false, "prerequisites": ["MATH-GEO-SHAPES", "MATH-OA-ADD-SUB"] },
+
+  { "code": "MATH-MD-TIME-HOUR", "name": "Telling time to the hour", "domain": "MATHEMATICS", "strand": "MEASUREMENT_DATA", "tier": 1, "isConvention": true, "prerequisites": ["MATH-NBT-COUNTING"] },
+  { "code": "MATH-MD-TIME-HALF-QUARTER", "name": "Telling time to the half and quarter hour", "domain": "MATHEMATICS", "strand": "MEASUREMENT_DATA", "tier": 1, "isConvention": true, "prerequisites": ["MATH-MD-TIME-HOUR"] },
+  { "code": "MATH-MD-TIME-ELAPSED", "name": "How much time has passed", "domain": "MATHEMATICS", "strand": "MEASUREMENT_DATA", "tier": 2, "isConvention": true, "prerequisites": ["MATH-MD-TIME-HALF-QUARTER", "MATH-OA-ADD-SUB"] },
+  { "code": "MATH-MD-MONEY", "name": "Money: dollars and cents", "domain": "MATHEMATICS", "strand": "MEASUREMENT_DATA", "tier": 1, "isConvention": true, "prerequisites": ["MATH-OA-ADD-SUB"] },
+  { "code": "MATH-MD-LENGTH", "name": "Measuring length with a ruler", "domain": "MATHEMATICS", "strand": "MEASUREMENT_DATA", "tier": 1, "isConvention": true, "prerequisites": ["MATH-NBT-COUNTING"] },
+  { "code": "MATH-MD-BAR-GRAPH", "name": "Reading bar graphs", "domain": "MATHEMATICS", "strand": "MEASUREMENT_DATA", "tier": 1, "isConvention": true, "prerequisites": ["MATH-NBT-COUNTING"] },
+
+  { "code": "LOGIC-PATTERN", "name": "Repeating patterns", "domain": "LOGIC_CS", "strand": "LOGIC_CS", "tier": 1, "isConvention": false, "prerequisites": [] },
+  { "code": "LOGIC-ORDER", "name": "Ordering from clues", "domain": "LOGIC_CS", "strand": "LOGIC_CS", "tier": 1, "isConvention": false, "prerequisites": [] },
+  { "code": "LOGIC-GRID", "name": "Grid logic puzzles", "domain": "LOGIC_CS", "strand": "LOGIC_CS", "tier": 2, "isConvention": false, "prerequisites": ["LOGIC-PATTERN"] },
+  { "code": "LOGIC-VISUALIZE", "name": "Picturing what happens next", "domain": "LOGIC_CS", "strand": "LOGIC_CS", "tier": 2, "isConvention": false, "prerequisites": [] },
+
+  { "code": "CS-SEQUENCE", "name": "Following step-by-step instructions", "domain": "LOGIC_CS", "strand": "LOGIC_CS", "tier": 1, "isConvention": false, "prerequisites": [] },
+  { "code": "CS-ENCODING", "name": "Codes and secret messages", "domain": "LOGIC_CS", "strand": "LOGIC_CS", "tier": 1, "isConvention": false, "prerequisites": ["CS-SEQUENCE"] },
+  { "code": "CS-REVERSE", "name": "Reversing a sequence", "domain": "LOGIC_CS", "strand": "LOGIC_CS", "tier": 2, "isConvention": false, "prerequisites": ["CS-SEQUENCE"] },
+  { "code": "CS-RULE-PATH", "name": "Finding a path that follows a rule", "domain": "LOGIC_CS", "strand": "LOGIC_CS", "tier": 2, "isConvention": false, "prerequisites": ["CS-SEQUENCE", "LOGIC-PATTERN"] }
+]

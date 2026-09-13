@@ -1,0 +1,185 @@
+[
+  {
+    "id": "md-car-show-clock-hour",
+    "source": { "kind": "original" },
+    "skills": ["MATH-MD-TIME-HOUR"],
+    "prompt": "The car show starts at the time on this clock. What time does it start?",
+    "visual": { "kind": "clock", "hour": 7, "minute": 0 },
+    "answer": { "type": "choice", "choices": ["6:00", "7:00", "12:07", "8:00"], "correctIndex": 1 },
+    "explanation": "The short hand shows the hour, and it points to 7. The long hand points straight up to 12, which means 0 minutes. So it is 7:00.",
+    "difficulty": { "band": 1, "basis": "author-estimate" },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "md-car-wash-clock-half",
+    "source": { "kind": "original" },
+    "skills": ["MATH-MD-TIME-HALF-QUARTER"],
+    "prompt": "The car wash opens at the time on this clock. What time does it open?",
+    "visual": { "kind": "clock", "hour": 4, "minute": 30 },
+    "answer": { "type": "choice", "choices": ["5:30", "6:20", "4:30", "4:06"], "correctIndex": 2 },
+    "explanation": "The long hand points to 6, which is 30 minutes. The short hand is halfway between 4 and 5, so the hour is still 4. It is 4:30.",
+    "difficulty": { "band": 2, "basis": "author-estimate" },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "md-race-clock-quarter",
+    "source": { "kind": "original" },
+    "skills": ["MATH-MD-TIME-HALF-QUARTER"],
+    "prompt": "The go-kart race begins at the time on this clock. What time is it?",
+    "visual": { "kind": "clock", "hour": 2, "minute": 15 },
+    "answer": { "type": "choice", "choices": ["2:15", "3:15", "2:03", "3:10"], "correctIndex": 0 },
+    "explanation": "The long hand points to 3. Count by fives around the clock: 5, 10, 15. That is 15 minutes. The short hand is just past 2, so it is 2:15.",
+    "difficulty": { "band": 2, "basis": "author-estimate" },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "md-race-ends-elapsed",
+    "source": { "kind": "original" },
+    "skills": ["MATH-MD-TIME-ELAPSED"],
+    "prompt": "A car race starts at the time on this clock. It lasts 2 hours and 30 minutes. What time does it end?",
+    "visual": { "kind": "clock", "hour": 3, "minute": 0 },
+    "answer": { "type": "choice", "choices": ["4:30", "5:00", "5:30", "6:30"], "correctIndex": 2 },
+    "explanation": "The race starts at 3:00. Two hours later it is 5:00. Thirty more minutes makes it 5:30.",
+    "difficulty": { "band": 3, "basis": "author-estimate" },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "md-beach-drive-minutes",
+    "source": { "kind": "original" },
+    "skills": ["MATH-MD-TIME-ELAPSED"],
+    "prompt": "The family car leaves home at 9:15 and gets to the beach at 10:00. How many minutes is the drive?",
+    "answer": { "type": "numeric", "value": 45, "unit": "minutes" },
+    "explanation": "From 9:15 to 9:30 is 15 minutes. From 9:30 to 10:00 is 30 more minutes. 15 + 30 = 45 minutes.",
+    "difficulty": { "band": 3, "basis": "author-estimate" },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "md-four-toy-cars-cost",
+    "source": { "kind": "original" },
+    "skills": ["MATH-MD-MONEY", "MATH-OA-EQUAL-GROUPS"],
+    "prompt": "One toy race car costs $3. How much do 4 toy race cars cost?",
+    "visual": { "kind": "emoji", "lines": ["🏎️ $3   🏎️ $3   🏎️ $3   🏎️ $3"] },
+    "answer": { "type": "numeric", "value": 12, "unit": "dollars" },
+    "explanation": "Add $3 four times: 3 + 3 + 3 + 3 = 12. Four cars cost $12.",
+    "difficulty": { "band": 2, "basis": "author-estimate" },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "md-quarters-car-sticker",
+    "source": { "kind": "original" },
+    "skills": ["MATH-MD-MONEY"],
+    "prompt": "You have 3 quarters. A car sticker costs 50 cents. How much money do you have left after you buy it?",
+    "visual": { "kind": "emoji", "lines": ["🪙 25¢   🪙 25¢   🪙 25¢", "Sticker: 50¢"] },
+    "answer": { "type": "choice", "choices": ["15 cents", "25 cents", "35 cents", "50 cents"], "correctIndex": 1 },
+    "explanation": "Each quarter is worth 25 cents, so 3 quarters are 25 + 25 + 25 = 75 cents. After paying 50 cents, 75 - 50 = 25 cents are left.",
+    "difficulty": { "band": 2, "basis": "author-estimate" },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "md-car-wash-change",
+    "source": { "kind": "original" },
+    "skills": ["MATH-MD-MONEY"],
+    "prompt": "A car wash costs $8. Dad pays with a $20 bill. How much change does he get back?",
+    "visual": { "kind": "emoji", "lines": ["🚗🧽 $8", "💵 $20"] },
+    "answer": { "type": "numeric", "value": 12, "unit": "dollars" },
+    "explanation": "Count up from 8 to 20. From 8 to 10 is 2, and from 10 to 20 is 10. 2 + 10 = 12, so the change is $12.",
+    "difficulty": { "band": 2, "basis": "author-estimate" },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "md-model-car-price-difference",
+    "source": { "kind": "original" },
+    "skills": ["MATH-MD-MONEY"],
+    "prompt": "The red model car costs $1.25. The blue model car costs $1.50. How much more does the blue car cost?",
+    "speech": "The red model car costs one dollar and twenty-five cents. The blue model car costs one dollar and fifty cents. How much more does the blue car cost?",
+    "answer": { "type": "choice", "choices": ["25 cents", "50 cents", "75 cents", "$1.25"], "correctIndex": 0 },
+    "explanation": "Both cars cost 1 dollar plus some cents. Compare the cents: 50 - 25 = 25. The blue car costs 25 cents more.",
+    "difficulty": { "band": 3, "basis": "author-estimate" },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "md-ruler-car-from-zero",
+    "source": { "kind": "original" },
+    "skills": ["MATH-MD-LENGTH"],
+    "prompt": "How long is the toy car?",
+    "visual": {
+      "kind": "svg",
+      "alt": "A toy car above a ruler. The car starts at 0 and ends at 4 inches.",
+      "svg": "<svg viewBox=\"0 0 360 130\" width=\"360\" height=\"130\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"30\" y=\"22\" width=\"200\" height=\"34\" rx=\"12\" fill=\"#d84957\"/><rect x=\"80\" y=\"10\" width=\"90\" height=\"22\" rx=\"8\" fill=\"#d84957\"/><circle cx=\"70\" cy=\"58\" r=\"10\" fill=\"#1d2f4b\"/><circle cx=\"190\" cy=\"58\" r=\"10\" fill=\"#1d2f4b\"/><rect x=\"20\" y=\"76\" width=\"320\" height=\"44\" fill=\"#ffe08a\" stroke=\"#9a7b1f\"/><g stroke=\"#1d2f4b\" stroke-width=\"2\"><line x1=\"30\" y1=\"76\" x2=\"30\" y2=\"96\"/><line x1=\"80\" y1=\"76\" x2=\"80\" y2=\"96\"/><line x1=\"130\" y1=\"76\" x2=\"130\" y2=\"96\"/><line x1=\"180\" y1=\"76\" x2=\"180\" y2=\"96\"/><line x1=\"230\" y1=\"76\" x2=\"230\" y2=\"96\"/><line x1=\"280\" y1=\"76\" x2=\"280\" y2=\"96\"/><line x1=\"330\" y1=\"76\" x2=\"330\" y2=\"96\"/></g><g font-family=\"sans-serif\" font-size=\"14\" text-anchor=\"middle\" fill=\"#1d2f4b\"><text x=\"30\" y=\"113\">0</text><text x=\"80\" y=\"113\">1</text><text x=\"130\" y=\"113\">2</text><text x=\"180\" y=\"113\">3</text><text x=\"230\" y=\"113\">4</text><text x=\"280\" y=\"113\">5</text><text x=\"330\" y=\"113\">6</text></g><text x=\"336\" y=\"70\" font-family=\"sans-serif\" font-size=\"12\" text-anchor=\"end\" fill=\"#1d2f4b\">inches</text></svg>"
+    },
+    "answer": { "type": "choice", "choices": ["3 inches", "4 inches", "5 inches", "6 inches"], "correctIndex": 1 },
+    "explanation": "The car starts at 0 and its front ends at 4. So the car is 4 inches long.",
+    "difficulty": { "band": 1, "basis": "author-estimate" },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "md-ruler-car-not-from-zero",
+    "source": { "kind": "original" },
+    "skills": ["MATH-MD-LENGTH"],
+    "prompt": "This toy car is not lined up with 0. How long is it?",
+    "visual": {
+      "kind": "svg",
+      "alt": "A toy car above a ruler. The car starts at 1 inch and ends at 4 inches.",
+      "svg": "<svg viewBox=\"0 0 360 130\" width=\"360\" height=\"130\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"80\" y=\"22\" width=\"150\" height=\"34\" rx=\"12\" fill=\"#2878e3\"/><rect x=\"115\" y=\"10\" width=\"70\" height=\"22\" rx=\"8\" fill=\"#2878e3\"/><circle cx=\"112\" cy=\"58\" r=\"10\" fill=\"#1d2f4b\"/><circle cx=\"198\" cy=\"58\" r=\"10\" fill=\"#1d2f4b\"/><rect x=\"20\" y=\"76\" width=\"320\" height=\"44\" fill=\"#ffe08a\" stroke=\"#9a7b1f\"/><g stroke=\"#1d2f4b\" stroke-width=\"2\"><line x1=\"30\" y1=\"76\" x2=\"30\" y2=\"96\"/><line x1=\"80\" y1=\"76\" x2=\"80\" y2=\"96\"/><line x1=\"130\" y1=\"76\" x2=\"130\" y2=\"96\"/><line x1=\"180\" y1=\"76\" x2=\"180\" y2=\"96\"/><line x1=\"230\" y1=\"76\" x2=\"230\" y2=\"96\"/><line x1=\"280\" y1=\"76\" x2=\"280\" y2=\"96\"/><line x1=\"330\" y1=\"76\" x2=\"330\" y2=\"96\"/></g><g font-family=\"sans-serif\" font-size=\"14\" text-anchor=\"middle\" fill=\"#1d2f4b\"><text x=\"30\" y=\"113\">0</text><text x=\"80\" y=\"113\">1</text><text x=\"130\" y=\"113\">2</text><text x=\"180\" y=\"113\">3</text><text x=\"230\" y=\"113\">4</text><text x=\"280\" y=\"113\">5</text><text x=\"330\" y=\"113\">6</text></g><text x=\"336\" y=\"70\" font-family=\"sans-serif\" font-size=\"12\" text-anchor=\"end\" fill=\"#1d2f4b\">inches</text></svg>"
+    },
+    "answer": { "type": "choice", "choices": ["3 inches", "4 inches", "5 inches", "1 inch"], "correctIndex": 0 },
+    "explanation": "The car starts at 1 and ends at 4. Count the jumps from 1 to 4: 2, 3, 4. That is 3 jumps, so the car is 3 inches long. The number under the front of the car is not the length unless the car starts at 0.",
+    "difficulty": { "band": 2, "basis": "author-estimate" },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "md-cars-bumper-to-bumper",
+    "source": { "kind": "original" },
+    "skills": ["MATH-MD-LENGTH", "MATH-OA-EQUAL-GROUPS"],
+    "prompt": "Three toy cars are parked bumper to bumper. Each car is 4 inches long. How long is the whole line of cars?",
+    "visual": { "kind": "emoji", "lines": ["🚙🚙🚙"] },
+    "answer": { "type": "numeric", "value": 12, "unit": "inches" },
+    "explanation": "Each car adds 4 inches. 4 + 4 + 4 = 12, so the line is 12 inches long. That is exactly 1 foot!",
+    "difficulty": { "band": 2, "basis": "author-estimate" },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "md-bar-graph-most-cars",
+    "source": { "kind": "original" },
+    "skills": ["MATH-MD-BAR-GRAPH"],
+    "prompt": "We counted car colors on our walk. Which color did we see the most?",
+    "visual": { "kind": "barChart", "title": "Cars we saw on our walk", "unit": "cars", "bars": [{ "label": "Red", "value": 5 }, { "label": "Blue", "value": 3 }, { "label": "White", "value": 7 }, { "label": "Black", "value": 4 }] },
+    "answer": { "type": "choice", "choices": ["Red", "Blue", "White", "Black"], "correctIndex": 2 },
+    "explanation": "The tallest bar shows the most cars. The White bar goes up to 7, which is higher than all the others.",
+    "difficulty": { "band": 1, "basis": "author-estimate" },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "md-bar-graph-how-many-more",
+    "source": { "kind": "original" },
+    "skills": ["MATH-MD-BAR-GRAPH", "MATH-OA-ADD-SUB"],
+    "prompt": "Look at the graph of cars we saw. How many more white cars than blue cars did we see?",
+    "visual": { "kind": "barChart", "title": "Cars we saw on our walk", "unit": "cars", "bars": [{ "label": "Red", "value": 5 }, { "label": "Blue", "value": 3 }, { "label": "White", "value": 7 }, { "label": "Black", "value": 4 }] },
+    "answer": { "type": "numeric", "value": 4, "unit": "cars" },
+    "explanation": "The White bar shows 7 and the Blue bar shows 3. 7 - 3 = 4 more white cars.",
+    "difficulty": { "band": 2, "basis": "author-estimate" },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "md-bar-graph-total",
+    "source": { "kind": "original" },
+    "skills": ["MATH-MD-BAR-GRAPH", "MATH-OA-ADD-SUB"],
+    "prompt": "Look at the graph of cars we saw. How many cars did we see in all?",
+    "visual": { "kind": "barChart", "title": "Cars we saw on our walk", "unit": "cars", "bars": [{ "label": "Red", "value": 5 }, { "label": "Blue", "value": 3 }, { "label": "White", "value": 7 }, { "label": "Black", "value": 4 }] },
+    "answer": { "type": "numeric", "value": 19, "unit": "cars" },
+    "explanation": "Add every bar: 5 + 3 + 7 + 4. A trick: 3 + 7 = 10 and 5 + 4 = 9. 10 + 9 = 19 cars.",
+    "difficulty": { "band": 3, "basis": "author-estimate" },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "md-bar-graph-race-laps-tie",
+    "source": { "kind": "original" },
+    "skills": ["MATH-MD-BAR-GRAPH"],
+    "prompt": "The graph shows how many laps each toy car finished. Which two cars finished the same number of laps?",
+    "visual": { "kind": "barChart", "title": "Laps finished in the toy race", "unit": "laps", "bars": [{ "label": "Lightning", "value": 6 }, { "label": "Rocket", "value": 9 }, { "label": "Turbo", "value": 6 }, { "label": "Comet", "value": 2 }] },
+    "answer": { "type": "choice", "choices": ["Rocket and Comet", "Lightning and Turbo", "Lightning and Rocket", "Turbo and Comet"], "correctIndex": 1 },
+    "explanation": "Lightning and Turbo both have bars that stop at 6. Bars of the same height mean the same number of laps.",
+    "difficulty": { "band": 2, "basis": "author-estimate" },
+    "reviewStatus": "reviewed"
+  }
+]

@@ -1,0 +1,208 @@
+[
+  {
+    "id": "kl12-castle-triangles",
+    "source": { "kind": "kangaroo-style", "ref": "BRIGHT STEPS/kangaroo.html #1" },
+    "skills": ["MATH-GEO-SHAPES"],
+    "prompt": "Look at the castle. How many triangles can you find?",
+    "visual": { "kind": "emoji", "lines": ["🔺          🔺", "🧱          🧱", "🧱    🔺    🧱", "🧱🧱🧱🧱🧱"] },
+    "answer": { "type": "choice", "choices": ["2 triangles", "3 triangles", "4 triangles", "5 triangles", "6 triangles"], "correctIndex": 1 },
+    "explanation": "There is 1 triangle on top of each side tower. That makes 2. There is 1 more over the door in the middle. 2 + 1 = 3 triangles.",
+    "difficulty": { "band": 1, "basis": "kangaroo-points", "points": 3 },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "kl12-ladybug-shortest-path",
+    "source": { "kind": "kangaroo-style", "ref": "BRIGHT STEPS/kangaroo.html #2" },
+    "skills": ["LOGIC-ORDER"],
+    "prompt": "The ladybug wants to crawl to the flower. Which path is the shortest?",
+    "visual": { "kind": "emoji", "lines": ["Path A: 🐞 ➔ 3 steps ➔ 🌸", "Path B: 🐞 ➔ 5 steps ➔ 🌸", "Path C: 🐞 ➔ 4 steps ➔ 🌸", "Path D: 🐞 ➔ 6 steps ➔ 🌸", "Path E: 🐞 ➔ 7 steps ➔ 🌸"] },
+    "answer": { "type": "choice", "choices": ["Path A", "Path B", "Path C", "Path D", "Path E"], "correctIndex": 0 },
+    "explanation": "Path A has only 3 steps. Every other path has more steps, so Path A is the shortest.",
+    "difficulty": { "band": 1, "basis": "kangaroo-points", "points": 3 },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "kl12-necklace-bead",
+    "source": { "kind": "kangaroo-style", "ref": "BRIGHT STEPS/kangaroo.html #3" },
+    "skills": ["LOGIC-PATTERN"],
+    "prompt": "Look at the bead pattern on the necklace. Which bead goes in the empty space?",
+    "visual": { "kind": "emoji", "lines": ["🔴 🔵 🔴 🔵 🔴 ❓ 🔴 🔵"] },
+    "answer": { "type": "choice", "choices": ["Red bead 🔴", "Blue bead 🔵", "Green bead 🟢", "Yellow bead 🟡", "Purple bead 🟣"], "correctIndex": 1 },
+    "explanation": "The pattern goes red, blue, red, blue. After a red bead comes a blue bead.",
+    "difficulty": { "band": 1, "basis": "kangaroo-points", "points": 3 },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "kl12-block-staircase",
+    "source": { "kind": "kangaroo-style", "ref": "BRIGHT STEPS/kangaroo.html #4" },
+    "skills": ["MATH-GEO-3D-COUNT"],
+    "prompt": "Sam built a staircase out of blocks. How many blocks did he use?",
+    "visual": { "kind": "emoji", "lines": ["🧱", "🧱🧱", "🧱🧱🧱"] },
+    "answer": { "type": "choice", "choices": ["3 blocks", "4 blocks", "5 blocks", "6 blocks", "7 blocks"], "correctIndex": 3 },
+    "explanation": "Count one row at a time. The top row has 1 block, the middle row has 2, and the bottom row has 3. 1 + 2 + 3 = 6 blocks.",
+    "difficulty": { "band": 1, "basis": "kangaroo-points", "points": 3 },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "kl12-symmetric-butterfly",
+    "source": { "kind": "kangaroo-style", "ref": "BRIGHT STEPS/kangaroo.html #5" },
+    "skills": ["MATH-GEO-SYMMETRY"],
+    "prompt": "Which butterfly has the same color on its left wing and its right wing?",
+    "visual": { "kind": "emoji", "lines": ["A:  🟡 🦋 🟢", "B:  🔴 🦋 🔴", "C:  🟢 🦋 🔴"] },
+    "answer": { "type": "choice", "choices": ["Butterfly A", "Butterfly B", "Butterfly C", "All of them", "None of them"], "correctIndex": 1 },
+    "explanation": "Butterfly B has red on the left and red on the right. The two sides match, so it is symmetric.",
+    "difficulty": { "band": 1, "basis": "kangaroo-points", "points": 3 },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "kl12-apples-strawberries",
+    "source": { "kind": "kangaroo-style", "ref": "BRIGHT STEPS/kangaroo.html #6" },
+    "skills": ["MATH-OA-EQUAL-GROUPS"],
+    "prompt": "One apple weighs the same as two strawberries. How many strawberries weigh the same as three apples?",
+    "visual": { "kind": "emoji", "lines": ["⚖️  🍎  =  🍓 🍓", "⚖️  🍎 🍎 🍎  =  ❓"] },
+    "answer": { "type": "choice", "choices": ["3 strawberries", "4 strawberries", "5 strawberries", "6 strawberries", "8 strawberries"], "correctIndex": 3 },
+    "explanation": "Each apple matches 2 strawberries. Three apples match 2 + 2 + 2 = 6 strawberries.",
+    "difficulty": { "band": 1, "basis": "kangaroo-points", "points": 3 },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "kl12-balloons",
+    "source": { "kind": "kangaroo-style", "ref": "BRIGHT STEPS/kangaroo.html #8" },
+    "skills": ["MATH-NBT-COUNTING"],
+    "prompt": "Anna has some balloons. How many balloons does she have?",
+    "visual": { "kind": "emoji", "lines": ["🎈🎈🎈🎈🎈🎈🎈"] },
+    "answer": { "type": "choice", "choices": ["5 balloons", "6 balloons", "7 balloons", "8 balloons", "9 balloons"], "correctIndex": 2 },
+    "explanation": "Touch each balloon as you count so you do not count one twice. There are 7 balloons.",
+    "difficulty": { "band": 1, "basis": "kangaroo-points", "points": 3 },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "kl12-fruit-grid",
+    "source": { "kind": "kangaroo-style", "ref": "BRIGHT STEPS/kangaroo.html #11" },
+    "skills": ["LOGIC-GRID"],
+    "prompt": "Every row and every column needs one apple, one banana and one cherry. What goes in the box with the question mark?",
+    "visual": { "kind": "grid", "rows": [["🍎", "🍌", "🍒"], ["🍌", "🍒", "🍎"], ["🍒", "?", "🍌"]], "highlight": { "row": 2, "col": 1 } },
+    "answer": { "type": "choice", "choices": ["Apple 🍎", "Banana 🍌", "Cherry 🍒", "Orange 🍊", "Pear 🍐"], "correctIndex": 0 },
+    "explanation": "The bottom row already has a cherry and a banana, so it is missing an apple. The middle column has a banana and a cherry, so it needs an apple too.",
+    "difficulty": { "band": 2, "basis": "kangaroo-points", "points": 4 },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "kl12-smallest-number-cards",
+    "source": { "kind": "kangaroo-style", "ref": "BRIGHT STEPS/kangaroo.html #12" },
+    "skills": ["MATH-NBT-PLACE-VALUE"],
+    "prompt": "Leo has three number cards: 1, 3 and 5. What is the smallest 3-digit number he can make using each card once?",
+    "visual": { "kind": "grid", "rows": [["1", "3", "5"]] },
+    "answer": { "type": "choice", "choices": ["135", "153", "315", "351", "531"], "correctIndex": 0 },
+    "explanation": "Put the smallest digit in the hundreds place, the next smallest in the tens place, and the biggest in the ones place. That makes 135.",
+    "difficulty": { "band": 2, "basis": "kangaroo-points", "points": 4 },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "kl12-folded-rope-cut",
+    "source": { "kind": "kangaroo-style", "ref": "BRIGHT STEPS/kangaroo.html #13" },
+    "skills": ["LOGIC-VISUALIZE"],
+    "prompt": "A rope is folded in half. Then it is cut once, straight across the middle of the folded rope. How many pieces of rope are there now?",
+    "visual": { "kind": "emoji", "lines": ["🪢  ➔  ✂️"] },
+    "answer": { "type": "choice", "choices": ["1 piece", "2 pieces", "3 pieces", "4 pieces", "5 pieces"], "correctIndex": 2 },
+    "explanation": "The folded rope has a bend at one end and two loose ends at the other. The cut makes one bent piece with the fold in it, plus two short pieces that have the loose ends. That is 3 pieces. Try it with a piece of string!",
+    "difficulty": { "band": 2, "basis": "kangaroo-points", "points": 4 },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "kl12-oldest-child",
+    "source": { "kind": "kangaroo-style", "ref": "BRIGHT STEPS/kangaroo.html #14" },
+    "skills": ["LOGIC-ORDER"],
+    "prompt": "Anna is 3 years older than Bob. Cody is 2 years older than Bob. Who is the oldest?",
+    "visual": { "kind": "emoji", "lines": ["👧 Anna   👦 Bob   🧒 Cody"] },
+    "answer": { "type": "choice", "choices": ["Anna", "Bob", "Cody", "They are all the same age", "Not enough clues"], "correctIndex": 0 },
+    "explanation": "Bob is the youngest. Anna is 3 years older than Bob and Cody is only 2 years older than Bob, so Anna is the oldest.",
+    "difficulty": { "band": 2, "basis": "kangaroo-points", "points": 4 },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "kl12-clock-two-hours-later",
+    "source": { "kind": "kangaroo-style", "ref": "BRIGHT STEPS/kangaroo.html #15" },
+    "skills": ["MATH-MD-TIME-HOUR", "MATH-OA-ADD-SUB"],
+    "prompt": "The clock shows 3 o'clock. What time will it be 2 hours later?",
+    "visual": { "kind": "clock", "hour": 3, "minute": 0 },
+    "answer": { "type": "choice", "choices": ["1 o'clock", "2 o'clock", "4 o'clock", "5 o'clock", "6 o'clock"], "correctIndex": 3 },
+    "explanation": "The short hand points to 3. Move it forward 2 hours: 4, then 5. It will be 5 o'clock.",
+    "difficulty": { "band": 2, "basis": "kangaroo-points", "points": 4 },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "kl12-ball-shadow",
+    "source": { "kind": "kangaroo-style", "ref": "BRIGHT STEPS/kangaroo.html #16" },
+    "skills": ["MATH-GEO-VIEWS"],
+    "prompt": "A soccer ball sits on a table. A light shines straight down from right above it. What shape is the shadow on the table?",
+    "visual": { "kind": "emoji", "lines": ["💡", "⚽", "━━━━━"] },
+    "answer": { "type": "choice", "choices": ["A square 🟦", "A triangle 🔺", "A circle 🔵", "A star ⭐", "A heart 💚"], "correctIndex": 2 },
+    "explanation": "A ball is round from every side. Seen from straight above, it looks like a circle, so its shadow is a circle.",
+    "difficulty": { "band": 2, "basis": "kangaroo-points", "points": 4 },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "kl12-stacked-cards",
+    "source": { "kind": "kangaroo-style", "ref": "BRIGHT STEPS/kangaroo.html #17" },
+    "skills": ["LOGIC-VISUALIZE"],
+    "prompt": "Four cards were put on a table one at a time: blue first, then green, then yellow, and red last. Which card is not covered at all?",
+    "visual": {
+      "kind": "svg",
+      "alt": "Four overlapping squares: blue, green, yellow and red. Red is on top.",
+      "svg": "<svg viewBox=\"0 0 180 180\" width=\"180\" height=\"180\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"20\" y=\"20\" width=\"80\" height=\"80\" fill=\"#2878e3\" stroke=\"#fff\" stroke-width=\"2\"/><rect x=\"60\" y=\"40\" width=\"80\" height=\"80\" fill=\"#2cb470\" stroke=\"#fff\" stroke-width=\"2\"/><rect x=\"40\" y=\"80\" width=\"80\" height=\"80\" fill=\"#ffcd38\" stroke=\"#fff\" stroke-width=\"2\"/><rect x=\"80\" y=\"70\" width=\"80\" height=\"80\" fill=\"#d84957\" stroke=\"#fff\" stroke-width=\"2\"/></svg>"
+    },
+    "answer": { "type": "choice", "choices": ["Blue card", "Green card", "Yellow card", "Red card", "None of them"], "correctIndex": 3 },
+    "explanation": "Each new card goes on top of the ones before it. Red went down last, so nothing is on top of it.",
+    "difficulty": { "band": 2, "basis": "author-estimate", "points": 5 },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "kl12-who-sits-in-middle",
+    "source": { "kind": "kangaroo-style", "ref": "BRIGHT STEPS/kangaroo.html #19 (fixed: said five children)" },
+    "skills": ["LOGIC-ORDER"],
+    "prompt": "Three children sit in a row. Leo sits to the right of Sam. Sam sits to the right of Kim. Who sits in the middle?",
+    "visual": { "kind": "emoji", "lines": ["🪑 🪑 🪑"] },
+    "answer": { "type": "choice", "choices": ["Kim", "Sam", "Leo", "Not enough clues"], "correctIndex": 1 },
+    "explanation": "Start with Kim on the left. Sam is to the right of Kim, and Leo is to the right of Sam. The row is Kim, Sam, Leo, so Sam is in the middle.",
+    "difficulty": { "band": 3, "basis": "kangaroo-points", "points": 5 },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "kl12-two-squares-sticks",
+    "source": { "kind": "kangaroo-style", "ref": "BRIGHT STEPS/kangaroo.html #20" },
+    "skills": ["MATH-GEO-SHARED-EDGES"],
+    "prompt": "One square needs 4 sticks. How many sticks do you need to make two squares side by side that share a side?",
+    "visual": {
+      "kind": "svg",
+      "alt": "One square made of 4 sticks.",
+      "svg": "<svg viewBox=\"0 0 140 140\" width=\"140\" height=\"140\" xmlns=\"http://www.w3.org/2000/svg\"><g stroke=\"#9a5b2a\" stroke-width=\"8\" stroke-linecap=\"round\"><line x1=\"20\" y1=\"20\" x2=\"120\" y2=\"20\"/><line x1=\"20\" y1=\"120\" x2=\"120\" y2=\"120\"/><line x1=\"20\" y1=\"20\" x2=\"20\" y2=\"120\"/><line x1=\"120\" y1=\"20\" x2=\"120\" y2=\"120\"/></g></svg>"
+    },
+    "answer": { "type": "choice", "choices": ["5 sticks", "6 sticks", "7 sticks", "8 sticks", "9 sticks"], "correctIndex": 2 },
+    "explanation": "The first square uses 4 sticks. The second square can borrow the side they share, so it only needs 3 new sticks. 4 + 3 = 7 sticks.",
+    "difficulty": { "band": 3, "basis": "kangaroo-points", "points": 5 },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "kl12-number-square-center",
+    "source": { "kind": "kangaroo-style", "ref": "BRIGHT STEPS/kangaroo.html #21" },
+    "skills": ["MATH-OA-UNKNOWN"],
+    "prompt": "The numbers in every row and every column add up to 6. What number goes in the middle box?",
+    "visual": { "kind": "grid", "rows": [["3", "1", "2"], ["1", "?", "1"], ["2", "1", "3"]], "highlight": { "row": 1, "col": 1 } },
+    "answer": { "type": "choice", "choices": ["1", "2", "3", "4", "5"], "correctIndex": 3 },
+    "explanation": "Look at the middle row: 1 + ? + 1 = 6. 1 + 1 = 2, and 6 - 2 = 4. The middle column checks out too: 1 + 4 + 1 = 6.",
+    "difficulty": { "band": 3, "basis": "kangaroo-points", "points": 5 },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "kl12-dog-and-cat-weight",
+    "source": { "kind": "kangaroo-style", "ref": "BRIGHT STEPS/kangaroo.html #22" },
+    "skills": ["MATH-OA-UNKNOWN"],
+    "prompt": "A dog and a cat weigh 10 kilograms together. The dog is 2 kilograms heavier than the cat. How much does the cat weigh?",
+    "visual": { "kind": "emoji", "lines": ["🐶 + 🐱 = 10 kg"] },
+    "answer": { "type": "choice", "choices": ["3 kg", "4 kg", "5 kg", "6 kg", "8 kg"], "correctIndex": 1 },
+    "explanation": "Try 4 kg for the cat. Then the dog is 4 + 2 = 6 kg. Together 4 + 6 = 10 kg, so the cat weighs 4 kg.",
+    "difficulty": { "band": 3, "basis": "kangaroo-points", "points": 5 },
+    "reviewStatus": "reviewed"
+  }
+]

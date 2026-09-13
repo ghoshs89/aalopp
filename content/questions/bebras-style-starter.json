@@ -1,0 +1,57 @@
+[
+  {
+    "id": "bb-beaver-color-path",
+    "source": { "kind": "bebras-style", "ref": "bebras_100_questions.md Task 1 (choices reordered)" },
+    "skills": ["CS-RULE-PATH", "LOGIC-PATTERN"],
+    "prompt": "Barnaby the beaver wants to get home. He may only step on colors in this order: red, blue, green, then red again. Which path can he take?",
+    "visual": { "kind": "emoji", "lines": ["Path A: 🏠 🔴 🟢 🔵 🔴 🪵", "Path B: 🏠 🔵 🔴 🟢 🔵 🪵", "Path C: 🏠 🔴 🔵 🟢 🔴 🪵", "Path D: 🏠 🔴 🔵 🔴 🟢 🪵"] },
+    "answer": { "type": "choice", "choices": ["Path A", "Path B", "Path C", "Path D"], "correctIndex": 2 },
+    "explanation": "Check each step against the rule red, blue, green, red. Path C matches every step. Path A has green too early, Path B starts with blue, and Path D has red where green should be.",
+    "difficulty": { "band": 2, "basis": "author-estimate" },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "bb-robot-chef-buttons",
+    "source": { "kind": "bebras-style", "ref": "bebras_100_questions.md Task 2 (choices reordered)" },
+    "skills": ["CS-SEQUENCE"],
+    "prompt": "A robot chef has three buttons: 🥚 adds an egg, 🥛 adds milk, 🥣 mixes. The recipe is: egg, milk, mix, egg, mix. Which button order is right?",
+    "speech": "A robot chef has three buttons. The egg button adds an egg. The milk button adds milk. The bowl button mixes. The recipe is: egg, milk, mix, egg, mix. Which button order is right?",
+    "answer": { "type": "choice", "choices": ["🥚 🥛 🥣 🥣 🥚", "🥚 🥛 🥣 🥚 🥣", "🥛 🥚 🥣 🥚 🥣", "🥚 🥛 🥚 🥣 🥣"], "correctIndex": 1 },
+    "explanation": "Match the buttons to the recipe one step at a time: egg, milk, mix, egg, mix. Only the second choice follows every step in the right order.",
+    "difficulty": { "band": 1, "basis": "author-estimate" },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "bb-ice-cream-reversed",
+    "source": { "kind": "bebras-style", "ref": "bebras_100_questions.md Task 3 (rewritten: original answer was wrong for its wording)" },
+    "skills": ["CS-REVERSE", "LOGIC-VISUALIZE"],
+    "prompt": "An ice cream machine adds toppings one at a time, and each new topping lands on top. Its program is: sprinkles, then cherry, then chocolate sauce. A bug makes it run the steps backwards. Which topping ends up on the very top?",
+    "visual": { "kind": "emoji", "lines": ["Program: ✨ ➔ 🍒 ➔ 🍫", "Bug: run it backwards!", "🍦"] },
+    "answer": { "type": "choice", "choices": ["Sprinkles ✨", "Cherry 🍒", "Chocolate sauce 🍫"], "correctIndex": 0 },
+    "explanation": "Backwards, the machine adds chocolate sauce first, then the cherry, then sprinkles last. The last topping added sits on top, so sprinkles are on top.",
+    "difficulty": { "band": 3, "basis": "author-estimate" },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "bb-forest-pattern",
+    "source": { "kind": "bebras-style", "ref": "bebras_100_questions.md Task 26" },
+    "skills": ["LOGIC-PATTERN"],
+    "prompt": "The forest map repeats a pattern. Which piece is missing?",
+    "visual": { "kind": "emoji", "lines": ["🌲 🪵 🌲 ❓ 🌲 🪵"] },
+    "answer": { "type": "choice", "choices": ["🌲", "🪵", "🪨", "🍃"], "correctIndex": 1 },
+    "explanation": "The pattern goes tree, log, tree, log. After a tree comes a log.",
+    "difficulty": { "band": 1, "basis": "author-estimate" },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "bb-secret-number-code",
+    "source": { "kind": "bebras-style", "ref": "bebras_100_questions.md Task 51 (new message)" },
+    "skills": ["CS-ENCODING"],
+    "prompt": "Beavers send secret messages with numbers. A = 1, B = 2, C = 3, D = 4, E = 5. What word is 2 5 4?",
+    "visual": { "kind": "grid", "rows": [["A", "B", "C", "D", "E"], ["1", "2", "3", "4", "5"]] },
+    "answer": { "type": "choice", "choices": ["BAD", "BED", "DEB", "BEE"], "correctIndex": 1 },
+    "explanation": "Change each number back into its letter: 2 is B, 5 is E, 4 is D. The word is BED.",
+    "difficulty": { "band": 2, "basis": "author-estimate" },
+    "reviewStatus": "reviewed"
+  }
+]
