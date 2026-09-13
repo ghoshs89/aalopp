@@ -3,7 +3,7 @@ import { assert, choices, numeric, question, type Draft } from "./helpers";
 
 const FILE = "logic.ts";
 
-function permutations<T>(items: T[]): T[][] {
+export function permutations<T>(items: T[]): T[][] {
   if (items.length <= 1) return [items];
   return items.flatMap((item, i) => permutations([...items.slice(0, i), ...items.slice(i + 1)]).map((rest) => [item, ...rest]));
 }
@@ -116,7 +116,7 @@ function ordering(): Draft[] {
   ];
 }
 
-function latinSolutions(grid: (string | null)[][], symbols: string[]): string[][][] {
+export function latinSolutions(grid: (string | null)[][], symbols: string[]): string[][][] {
   const n = grid.length;
   const g = grid.map((r) => [...r]);
   const found: string[][][] = [];

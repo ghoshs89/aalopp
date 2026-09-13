@@ -38,7 +38,7 @@ Read `docs/HANDOFF.md` first for the live state of the work, then `docs/ROADMAP.
 - Keep engine logic (selection, mastery, review queue) as pure functions in `src/lib/engine/` with tests.
 - Migrations run automatically on every production deploy (`vercel-build` runs `prisma migrate deploy`). Each migration must keep working with the previous deployment while it still serves traffic: add columns as nullable, never rename or drop in the same deploy that stops using them. Every new table needs `ENABLE ROW LEVEL SECURITY` in its migration.
 - Changing a Vercel environment variable does nothing until the next deployment.
-- Adaptive engine: skill state is replayed from the attempt log every time (`skill-state.ts`), never stored. Mastery is 4 of the last 5 right on 2+ device-local days; reviews at 1, 3, 7, 14 days; any miss returns a skill to learning. `select-session.ts` caps sessions at 2 retries, 3 reviews and 2 questions per skill, fills 2 stretch slots one band up, and keeps 3+ everyday-skill questions. `simulation.test.ts` runs 30 simulated days; rerun it after changing any cap.
+- Adaptive engine: skill state is replayed from the attempt log every time (`skill-state.ts`), never stored. Mastery is 4 of the last 5 right on 2+ device-local days; reviews at 1, 3, 7, 14 days; any miss returns a skill to learning. `select-session.ts` caps sessions at 2 retries, 3 reviews and 2 questions per skill, fills 2 stretch slots one band up, and keeps 3+ everyday-skill questions (stretch slots yield to that quota). `simulation.test.ts` runs 30 simulated days; rerun it after changing any cap.
 
 ## Session continuity
 Preserve plans, decisions and context across sessions so no milestone is lost and a different model can resume cold.

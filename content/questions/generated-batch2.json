@@ -1,0 +1,1135 @@
+[
+  {
+    "id": "b2m-wheels-on-cars",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/batch2.ts"
+    },
+    "skills": [
+      "MATH-OA-MULT",
+      "MATH-OA-EQUAL-GROUPS"
+    ],
+    "language": "en",
+    "prompt": "Each toy car has 4 wheels. How many wheels do 6 cars have?",
+    "answer": {
+      "type": "numeric",
+      "value": 24,
+      "unit": "wheels"
+    },
+    "explanation": "That is 6 groups of 4, or 6 × 4. Count by 4s 6 times: 4, 8, 12, 16, 20, 24. The answer is 24.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "b2m-soccer-teams-seven",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/batch2.ts"
+    },
+    "skills": [
+      "MATH-OA-MULT",
+      "MATH-OA-EQUAL-GROUPS"
+    ],
+    "language": "en",
+    "prompt": "There are 3 soccer teams with 7 players each. How many players are there?",
+    "answer": {
+      "type": "numeric",
+      "value": 21,
+      "unit": "players"
+    },
+    "explanation": "That is 3 groups of 7, or 3 × 7. Count by 7s 3 times: 7, 14, 21. The answer is 21.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "b2m-chess-boards-pieces",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/batch2.ts"
+    },
+    "skills": [
+      "MATH-OA-MULT",
+      "MATH-OA-EQUAL-GROUPS"
+    ],
+    "language": "en",
+    "prompt": "Each chess set has 8 white pawns. How many white pawns are in 5 sets?",
+    "answer": {
+      "type": "numeric",
+      "value": 40,
+      "unit": "white pawns"
+    },
+    "explanation": "That is 5 groups of 8, or 5 × 8. Count by 8s 5 times: 8, 16, 24, 32, 40. The answer is 40.",
+    "difficulty": {
+      "band": 4,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "b2m-race-laps",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/batch2.ts"
+    },
+    "skills": [
+      "MATH-OA-MULT",
+      "MATH-OA-EQUAL-GROUPS"
+    ],
+    "language": "en",
+    "prompt": "A race car drives 9 laps every day for 4 days. How many laps is that?",
+    "answer": {
+      "type": "numeric",
+      "value": 36,
+      "unit": "laps"
+    },
+    "explanation": "That is 4 groups of 9, or 4 × 9. Count by 9s 4 times: 9, 18, 27, 36. The answer is 36.",
+    "difficulty": {
+      "band": 4,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "b2m-match-the-array",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/batch2.ts"
+    },
+    "skills": [
+      "MATH-OA-MULT",
+      "MATH-OA-ARRAYS"
+    ],
+    "language": "en",
+    "prompt": "Which multiplication matches the picture?",
+    "visual": {
+      "kind": "grid",
+      "rows": [
+        [
+          "🏎️",
+          "🏎️",
+          "🏎️",
+          "🏎️",
+          "🏎️"
+        ],
+        [
+          "🏎️",
+          "🏎️",
+          "🏎️",
+          "🏎️",
+          "🏎️"
+        ],
+        [
+          "🏎️",
+          "🏎️",
+          "🏎️",
+          "🏎️",
+          "🏎️"
+        ]
+      ]
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "3 + 5",
+        "5 × 5",
+        "3 × 5",
+        "3 × 3"
+      ],
+      "correctIndex": 2
+    },
+    "explanation": "There are 3 rows with 5 race cars in each row. 3 rows of 5 is 3 × 5, which makes 15.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "b2m-missing-factor",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/batch2.ts"
+    },
+    "skills": [
+      "MATH-OA-MULT",
+      "MATH-OA-UNKNOWN"
+    ],
+    "language": "en",
+    "prompt": "What number goes in the box? 4 × ☐ = 28",
+    "speech": "4 times what number equals 28?",
+    "answer": {
+      "type": "numeric",
+      "value": 7
+    },
+    "explanation": "Count by 4s until you reach 28: 4, 8, 12, 16, 20, 24, 28. That took 7 fours, so the missing number is 7.",
+    "difficulty": {
+      "band": 4,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "b2m-times-ten",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/batch2.ts"
+    },
+    "skills": [
+      "MATH-OA-MULT",
+      "MATH-NBT-PLACE-VALUE"
+    ],
+    "language": "en",
+    "prompt": "A pack has 10 stickers. How many stickers are in 6 packs?",
+    "answer": {
+      "type": "numeric",
+      "value": 60,
+      "unit": "stickers"
+    },
+    "explanation": "6 packs of 10 is 6 tens, and 6 tens is 60.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "b2m-order-does-not-matter",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/batch2.ts"
+    },
+    "skills": [
+      "MATH-OA-MULT"
+    ],
+    "language": "en",
+    "prompt": "7 × 3 = 21. What is 3 × 7?",
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "10",
+        "21",
+        "37",
+        "73"
+      ],
+      "correctIndex": 1
+    },
+    "explanation": "Turning an array sideways does not change how many things are in it. 7 rows of 3 and 3 rows of 7 both have 21.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "b2d-share-cars",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/batch2.ts"
+    },
+    "skills": [
+      "MATH-OA-DIVIDE",
+      "MATH-OA-EQUAL-GROUPS"
+    ],
+    "language": "en",
+    "prompt": "24 toy cars are shared equally between 4 friends. How many cars does each friend get?",
+    "answer": {
+      "type": "numeric",
+      "value": 6,
+      "unit": "cars"
+    },
+    "explanation": "Think: 4 times what makes 24? Count by 4s: 4, 8, 12, 16, 20, 24. That is 6 fours, so each friend gets 6 cars.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "b2d-groups-of-three",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/batch2.ts"
+    },
+    "skills": [
+      "MATH-OA-DIVIDE"
+    ],
+    "language": "en",
+    "prompt": "21 soccer players get into teams of 3. How many teams are there?",
+    "answer": {
+      "type": "numeric",
+      "value": 7,
+      "unit": "teams"
+    },
+    "explanation": "Count by 3s until you reach 21: 3, 6, 9, 12, 15, 18, 21. That is 7 threes, so there are 7 teams.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "b2d-full-boxes-leftover",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/batch2.ts"
+    },
+    "skills": [
+      "MATH-OA-DIVIDE"
+    ],
+    "language": "en",
+    "prompt": "Cookies are packed 6 to a box. There are 20 cookies. How many boxes can be filled all the way?",
+    "answer": {
+      "type": "numeric",
+      "value": 3,
+      "unit": "boxes"
+    },
+    "explanation": "Count by 6s: 6, 12, 18. The next box would need 24 cookies, which is more than 20. So 3 boxes are full, and 2 cookies are left over.",
+    "difficulty": {
+      "band": 5,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "b2d-seats-in-vans",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/batch2.ts"
+    },
+    "skills": [
+      "MATH-OA-DIVIDE"
+    ],
+    "language": "en",
+    "prompt": "A van holds 5 children. 23 children are going on a trip. How many vans are needed so everyone can go?",
+    "answer": {
+      "type": "numeric",
+      "value": 5,
+      "unit": "vans"
+    },
+    "explanation": "4 vans hold 4 × 5 = 20 children, which leaves 3 children without a seat. They need one more van, so 5 vans.",
+    "difficulty": {
+      "band": 5,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "b2d-fact-family",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/batch2.ts"
+    },
+    "skills": [
+      "MATH-OA-DIVIDE",
+      "MATH-OA-MULT"
+    ],
+    "language": "en",
+    "prompt": "8 × 5 = 40. What is 40 ÷ 5?",
+    "speech": "8 times 5 equals 40. What is 40 divided by 5?",
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "5",
+        "35",
+        "45",
+        "8"
+      ],
+      "correctIndex": 3
+    },
+    "explanation": "Division undoes multiplication. If 8 groups of 5 make 40, then 40 split into groups of 5 makes 8 groups.",
+    "difficulty": {
+      "band": 4,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "b2f-bar-one-quarter",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/batch2.ts"
+    },
+    "skills": [
+      "MATH-NF-FRACTIONS"
+    ],
+    "language": "en",
+    "prompt": "The bar is cut into equal parts. What fraction is shaded blue?",
+    "visual": {
+      "kind": "svg",
+      "alt": "A bar split into 4 equal parts with 1 part shaded.",
+      "svg": "<svg viewBox=\"0 0 260 80\" width=\"260\" height=\"80\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"10\" y=\"10\" width=\"60\" height=\"60\" fill=\"#2878e3\" stroke=\"#1d2f4b\" stroke-width=\"3\"/><rect x=\"70\" y=\"10\" width=\"60\" height=\"60\" fill=\"#ffffff\" stroke=\"#1d2f4b\" stroke-width=\"3\"/><rect x=\"130\" y=\"10\" width=\"60\" height=\"60\" fill=\"#ffffff\" stroke=\"#1d2f4b\" stroke-width=\"3\"/><rect x=\"190\" y=\"10\" width=\"60\" height=\"60\" fill=\"#ffffff\" stroke=\"#1d2f4b\" stroke-width=\"3\"/></svg>"
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "One half",
+        "One quarter",
+        "One third",
+        "4 parts"
+      ],
+      "correctIndex": 1
+    },
+    "explanation": "There are 4 equal parts and 1 is shaded, so 1 out of 4 is shaded. That is one quarter.",
+    "difficulty": {
+      "band": 2,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "b2f-circle-one-third",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/batch2.ts"
+    },
+    "skills": [
+      "MATH-NF-FRACTIONS"
+    ],
+    "language": "en",
+    "prompt": "The circle is cut into equal parts. What fraction is shaded blue?",
+    "visual": {
+      "kind": "svg",
+      "alt": "A circle split into 3 equal parts with 1 part shaded.",
+      "svg": "<svg viewBox=\"0 0 140 140\" width=\"140\" height=\"140\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M 70 70 L 70.0 10.0 A 60 60 0 0 1 122.0 100.0 Z\" fill=\"#2878e3\" stroke=\"#1d2f4b\" stroke-width=\"3\"/><path d=\"M 70 70 L 122.0 100.0 A 60 60 0 0 1 18.0 100.0 Z\" fill=\"#ffffff\" stroke=\"#1d2f4b\" stroke-width=\"3\"/><path d=\"M 70 70 L 18.0 100.0 A 60 60 0 0 1 70.0 10.0 Z\" fill=\"#ffffff\" stroke=\"#1d2f4b\" stroke-width=\"3\"/></svg>"
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "One half",
+        "One third",
+        "One quarter",
+        "3 parts"
+      ],
+      "correctIndex": 1
+    },
+    "explanation": "There are 3 equal parts and 1 is shaded, so 1 out of 3 is shaded. That is one third.",
+    "difficulty": {
+      "band": 2,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "b2f-bar-one-half",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/batch2.ts"
+    },
+    "skills": [
+      "MATH-NF-FRACTIONS"
+    ],
+    "language": "en",
+    "prompt": "The bar is cut into equal parts. What fraction is shaded blue?",
+    "visual": {
+      "kind": "svg",
+      "alt": "A bar split into 2 equal parts with 1 part shaded.",
+      "svg": "<svg viewBox=\"0 0 260 80\" width=\"260\" height=\"80\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"10\" y=\"10\" width=\"120\" height=\"60\" fill=\"#2878e3\" stroke=\"#1d2f4b\" stroke-width=\"3\"/><rect x=\"130\" y=\"10\" width=\"120\" height=\"60\" fill=\"#ffffff\" stroke=\"#1d2f4b\" stroke-width=\"3\"/></svg>"
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "One third",
+        "One quarter",
+        "One half",
+        "2 parts"
+      ],
+      "correctIndex": 2
+    },
+    "explanation": "There are 2 equal parts and 1 is shaded, so 1 out of 2 is shaded. That is one half.",
+    "difficulty": {
+      "band": 2,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "b2f-three-quarters",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/batch2.ts"
+    },
+    "skills": [
+      "MATH-NF-FRACTIONS"
+    ],
+    "language": "en",
+    "prompt": "The bar is cut into 4 equal parts. How many quarters are shaded?",
+    "visual": {
+      "kind": "svg",
+      "alt": "A bar split into 4 equal parts with 3 parts shaded.",
+      "svg": "<svg viewBox=\"0 0 260 80\" width=\"260\" height=\"80\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"10\" y=\"10\" width=\"60\" height=\"60\" fill=\"#2878e3\" stroke=\"#1d2f4b\" stroke-width=\"3\"/><rect x=\"70\" y=\"10\" width=\"60\" height=\"60\" fill=\"#2878e3\" stroke=\"#1d2f4b\" stroke-width=\"3\"/><rect x=\"130\" y=\"10\" width=\"60\" height=\"60\" fill=\"#2878e3\" stroke=\"#1d2f4b\" stroke-width=\"3\"/><rect x=\"190\" y=\"10\" width=\"60\" height=\"60\" fill=\"#ffffff\" stroke=\"#1d2f4b\" stroke-width=\"3\"/></svg>"
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "1 quarter",
+        "4 quarters",
+        "3 quarters",
+        "3 halves"
+      ],
+      "correctIndex": 2
+    },
+    "explanation": "Each part is one quarter because there are 4 equal parts. 3 parts are shaded, so 3 quarters are shaded.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "b2f-half-of-twelve",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/batch2.ts"
+    },
+    "skills": [
+      "MATH-NF-FRACTIONS",
+      "MATH-OA-EQUAL-GROUPS"
+    ],
+    "language": "en",
+    "prompt": "There are 12 cars in the parking lot. Half of them are red. How many cars are red?",
+    "answer": {
+      "type": "numeric",
+      "value": 6,
+      "unit": "cars"
+    },
+    "explanation": "Half means 2 equal groups. 12 split into 2 equal groups is 6 and 6, so 6 cars are red.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "b2f-third-of-nine",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/batch2.ts"
+    },
+    "skills": [
+      "MATH-NF-FRACTIONS",
+      "MATH-OA-DIVIDE"
+    ],
+    "language": "en",
+    "prompt": "Maya has 9 stickers. She gives away one third of them. How many stickers does she give away?",
+    "answer": {
+      "type": "numeric",
+      "value": 3,
+      "unit": "stickers"
+    },
+    "explanation": "One third means 1 of 3 equal groups. 9 split into 3 equal groups is 3, 3 and 3, so she gives away 3.",
+    "difficulty": {
+      "band": 4,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "b2f-bigger-slice",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/batch2.ts"
+    },
+    "skills": [
+      "MATH-NF-FRACTIONS"
+    ],
+    "language": "en",
+    "prompt": "Two pizzas are the same size. Sam eats one half of his pizza. Mia eats one quarter of hers. Who eats more pizza?",
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "Sam",
+        "Mia",
+        "They eat the same"
+      ],
+      "correctIndex": 0
+    },
+    "explanation": "Cutting a pizza into 2 pieces makes bigger pieces than cutting the same pizza into 4 pieces. One half is more than one quarter, so Sam eats more.",
+    "difficulty": {
+      "band": 4,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "b2f-not-equal-parts",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/batch2.ts"
+    },
+    "skills": [
+      "MATH-NF-FRACTIONS",
+      "MATH-GEO-SHAPES"
+    ],
+    "language": "en",
+    "prompt": "Leo says the shaded part is one half. Is he right?",
+    "visual": {
+      "kind": "svg",
+      "alt": "A bar split into 2 parts that are not equal: a small shaded part on the left and a big white part on the right.",
+      "svg": "<svg viewBox=\"0 0 260 80\" width=\"260\" height=\"80\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"10\" y=\"10\" width=\"70\" height=\"60\" fill=\"#2878e3\" stroke=\"#1d2f4b\" stroke-width=\"3\"/><rect x=\"80\" y=\"10\" width=\"170\" height=\"60\" fill=\"#ffffff\" stroke=\"#1d2f4b\" stroke-width=\"3\"/></svg>"
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "Yes, there are 2 parts",
+        "Yes, one part is shaded",
+        "No, the 2 parts are not equal"
+      ],
+      "correctIndex": 2
+    },
+    "explanation": "A half is 1 of 2 equal parts. These 2 parts are not the same size, so the shaded part is not a half. It is less than half.",
+    "difficulty": {
+      "band": 4,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "b2a-area-count-4x3",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/batch2.ts"
+    },
+    "skills": [
+      "MATH-MD-AREA-PERIMETER",
+      "MATH-OA-ARRAYS"
+    ],
+    "language": "en",
+    "prompt": "Area is how many squares cover a shape. What is the area of this rectangle, in squares?",
+    "visual": {
+      "kind": "svg",
+      "alt": "A rectangle 4 squares long and 3 squares wide, covered by 12 equal squares.",
+      "svg": "<svg viewBox=\"0 0 180 140\" width=\"180\" height=\"140\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"10\" y=\"10\" width=\"40\" height=\"40\" fill=\"#b7d3f6\" stroke=\"#1d2f4b\" stroke-width=\"2\"/><rect x=\"50\" y=\"10\" width=\"40\" height=\"40\" fill=\"#b7d3f6\" stroke=\"#1d2f4b\" stroke-width=\"2\"/><rect x=\"90\" y=\"10\" width=\"40\" height=\"40\" fill=\"#b7d3f6\" stroke=\"#1d2f4b\" stroke-width=\"2\"/><rect x=\"130\" y=\"10\" width=\"40\" height=\"40\" fill=\"#b7d3f6\" stroke=\"#1d2f4b\" stroke-width=\"2\"/><rect x=\"10\" y=\"50\" width=\"40\" height=\"40\" fill=\"#b7d3f6\" stroke=\"#1d2f4b\" stroke-width=\"2\"/><rect x=\"50\" y=\"50\" width=\"40\" height=\"40\" fill=\"#b7d3f6\" stroke=\"#1d2f4b\" stroke-width=\"2\"/><rect x=\"90\" y=\"50\" width=\"40\" height=\"40\" fill=\"#b7d3f6\" stroke=\"#1d2f4b\" stroke-width=\"2\"/><rect x=\"130\" y=\"50\" width=\"40\" height=\"40\" fill=\"#b7d3f6\" stroke=\"#1d2f4b\" stroke-width=\"2\"/><rect x=\"10\" y=\"90\" width=\"40\" height=\"40\" fill=\"#b7d3f6\" stroke=\"#1d2f4b\" stroke-width=\"2\"/><rect x=\"50\" y=\"90\" width=\"40\" height=\"40\" fill=\"#b7d3f6\" stroke=\"#1d2f4b\" stroke-width=\"2\"/><rect x=\"90\" y=\"90\" width=\"40\" height=\"40\" fill=\"#b7d3f6\" stroke=\"#1d2f4b\" stroke-width=\"2\"/><rect x=\"130\" y=\"90\" width=\"40\" height=\"40\" fill=\"#b7d3f6\" stroke=\"#1d2f4b\" stroke-width=\"2\"/></svg>"
+    },
+    "answer": {
+      "type": "numeric",
+      "value": 12,
+      "unit": "squares"
+    },
+    "explanation": "There are 3 rows with 4 squares in each row. 4 + 4 + 4 = 12, so the area is 12 squares.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "b2a-area-count-5x2",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/batch2.ts"
+    },
+    "skills": [
+      "MATH-MD-AREA-PERIMETER",
+      "MATH-OA-ARRAYS"
+    ],
+    "language": "en",
+    "prompt": "Area is how many squares cover a shape. What is the area of this rectangle, in squares?",
+    "visual": {
+      "kind": "svg",
+      "alt": "A rectangle 5 squares long and 2 squares wide, covered by 10 equal squares.",
+      "svg": "<svg viewBox=\"0 0 220 100\" width=\"220\" height=\"100\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"10\" y=\"10\" width=\"40\" height=\"40\" fill=\"#b7d3f6\" stroke=\"#1d2f4b\" stroke-width=\"2\"/><rect x=\"50\" y=\"10\" width=\"40\" height=\"40\" fill=\"#b7d3f6\" stroke=\"#1d2f4b\" stroke-width=\"2\"/><rect x=\"90\" y=\"10\" width=\"40\" height=\"40\" fill=\"#b7d3f6\" stroke=\"#1d2f4b\" stroke-width=\"2\"/><rect x=\"130\" y=\"10\" width=\"40\" height=\"40\" fill=\"#b7d3f6\" stroke=\"#1d2f4b\" stroke-width=\"2\"/><rect x=\"170\" y=\"10\" width=\"40\" height=\"40\" fill=\"#b7d3f6\" stroke=\"#1d2f4b\" stroke-width=\"2\"/><rect x=\"10\" y=\"50\" width=\"40\" height=\"40\" fill=\"#b7d3f6\" stroke=\"#1d2f4b\" stroke-width=\"2\"/><rect x=\"50\" y=\"50\" width=\"40\" height=\"40\" fill=\"#b7d3f6\" stroke=\"#1d2f4b\" stroke-width=\"2\"/><rect x=\"90\" y=\"50\" width=\"40\" height=\"40\" fill=\"#b7d3f6\" stroke=\"#1d2f4b\" stroke-width=\"2\"/><rect x=\"130\" y=\"50\" width=\"40\" height=\"40\" fill=\"#b7d3f6\" stroke=\"#1d2f4b\" stroke-width=\"2\"/><rect x=\"170\" y=\"50\" width=\"40\" height=\"40\" fill=\"#b7d3f6\" stroke=\"#1d2f4b\" stroke-width=\"2\"/></svg>"
+    },
+    "answer": {
+      "type": "numeric",
+      "value": 10,
+      "unit": "squares"
+    },
+    "explanation": "There are 2 rows with 5 squares in each row. 5 + 5 = 10, so the area is 10 squares.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "b2a-perimeter-garden",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/batch2.ts"
+    },
+    "skills": [
+      "MATH-MD-AREA-PERIMETER",
+      "MATH-OA-ADD-SUB"
+    ],
+    "language": "en",
+    "prompt": "Perimeter is the distance all the way around a shape. What is the perimeter of this rectangle?",
+    "visual": {
+      "kind": "svg",
+      "alt": "A rectangle 6 meters long and 3 meters wide.",
+      "svg": "<svg viewBox=\"0 0 280 190\" width=\"280\" height=\"190\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"50\" y=\"30\" width=\"180\" height=\"90\" fill=\"#fff4c9\" stroke=\"#1d2f4b\" stroke-width=\"4\"/><text x=\"140\" y=\"20\" text-anchor=\"middle\" font-family=\"sans-serif\" font-size=\"16\" font-weight=\"700\" fill=\"#1d2f4b\">6 m</text><text x=\"40\" y=\"75\" text-anchor=\"end\" dominant-baseline=\"central\" font-family=\"sans-serif\" font-size=\"16\" font-weight=\"700\" fill=\"#1d2f4b\">3 m</text></svg>"
+    },
+    "answer": {
+      "type": "numeric",
+      "value": 18,
+      "unit": "meters"
+    },
+    "explanation": "A rectangle has 4 sides: two long sides of 6 and two short sides of 3. 6 + 3 + 6 + 3 = 18 meters.",
+    "difficulty": {
+      "band": 4,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "b2a-perimeter-rug",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/batch2.ts"
+    },
+    "skills": [
+      "MATH-MD-AREA-PERIMETER",
+      "MATH-OA-ADD-SUB"
+    ],
+    "language": "en",
+    "prompt": "Perimeter is the distance all the way around a shape. What is the perimeter of this rectangle?",
+    "visual": {
+      "kind": "svg",
+      "alt": "A rectangle 5 meters long and 4 meters wide.",
+      "svg": "<svg viewBox=\"0 0 280 190\" width=\"280\" height=\"190\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"50\" y=\"30\" width=\"150\" height=\"120\" fill=\"#fff4c9\" stroke=\"#1d2f4b\" stroke-width=\"4\"/><text x=\"125\" y=\"20\" text-anchor=\"middle\" font-family=\"sans-serif\" font-size=\"16\" font-weight=\"700\" fill=\"#1d2f4b\">5 m</text><text x=\"40\" y=\"90\" text-anchor=\"end\" dominant-baseline=\"central\" font-family=\"sans-serif\" font-size=\"16\" font-weight=\"700\" fill=\"#1d2f4b\">4 m</text></svg>"
+    },
+    "answer": {
+      "type": "numeric",
+      "value": 18,
+      "unit": "meters"
+    },
+    "explanation": "A rectangle has 4 sides: two long sides of 5 and two short sides of 4. 5 + 4 + 5 + 4 = 18 meters.",
+    "difficulty": {
+      "band": 4,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "b2a-square-perimeter",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/batch2.ts"
+    },
+    "skills": [
+      "MATH-MD-AREA-PERIMETER",
+      "MATH-OA-MULT"
+    ],
+    "language": "en",
+    "prompt": "A square sticker has sides that are 7 centimeters long. What is its perimeter?",
+    "answer": {
+      "type": "numeric",
+      "value": 28,
+      "unit": "centimeters"
+    },
+    "explanation": "All 4 sides of a square are the same length. 7 + 7 + 7 + 7 = 28, or 4 × 7 = 28 centimeters.",
+    "difficulty": {
+      "band": 4,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "b2a-same-area-different-shape",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/batch2.ts"
+    },
+    "skills": [
+      "MATH-MD-AREA-PERIMETER",
+      "MATH-OA-ARRAYS"
+    ],
+    "language": "en",
+    "prompt": "A rectangle is 6 squares by 2 squares. Which other rectangle covers the same number of squares?",
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "6 squares by 3 squares",
+        "4 squares by 3 squares",
+        "4 squares by 4 squares",
+        "8 squares by 2 squares"
+      ],
+      "correctIndex": 1
+    },
+    "explanation": "The first rectangle covers 6 × 2 = 12 squares. 4 × 3 is also 12. The others cover 18, 16 and 16 squares.",
+    "difficulty": {
+      "band": 5,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "b2l-five-car-race",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/batch2.ts"
+    },
+    "skills": [
+      "LOGIC-ORDER"
+    ],
+    "language": "en",
+    "prompt": "Five toy cars had a race. White finished in the middle. Yellow finished last. Blue finished right behind Green. Red finished after Blue. Which car won?",
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "Red",
+        "Green",
+        "Blue",
+        "Yellow"
+      ],
+      "correctIndex": 1
+    },
+    "explanation": "White is 3rd and Yellow is 5th, so spots 1, 2 and 4 are left for Red, Green and Blue. Green and Blue must be next to each other, and the only two spots next to each other are 1 and 2, so Green is 1st and Blue is 2nd. Red takes 4th. The order is Green, Blue, White, Red, Yellow, so Green won.",
+    "difficulty": {
+      "band": 5,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "b2l-four-by-four-hard",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/batch2.ts"
+    },
+    "skills": [
+      "LOGIC-GRID"
+    ],
+    "language": "en",
+    "prompt": "Every row and every column needs the numbers 1, 2, 3 and 4 once each. What number goes in the box with the question mark?",
+    "visual": {
+      "kind": "grid",
+      "rows": [
+        [
+          "2",
+          " ",
+          " ",
+          "3"
+        ],
+        [
+          " ",
+          "3",
+          "?",
+          " "
+        ],
+        [
+          " ",
+          " ",
+          "4",
+          " "
+        ],
+        [
+          "4",
+          " ",
+          " ",
+          "2"
+        ]
+      ],
+      "highlight": {
+        "row": 1,
+        "col": 2
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "1",
+        "3",
+        "4",
+        "2"
+      ],
+      "correctIndex": 3
+    },
+    "explanation": "Fill in the boxes that have only one choice first. When the grid is finished, the second row is 1, 3, 2, 4, so the question mark is 2.",
+    "difficulty": {
+      "band": 5,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "b2l-arrange-three-cars",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/batch2.ts"
+    },
+    "skills": [
+      "LOGIC-COUNT-WAYS"
+    ],
+    "language": "en",
+    "prompt": "In how many different orders can a red car, a taxi and a blue car park in a row of 3 spaces?",
+    "visual": {
+      "kind": "emoji",
+      "lines": [
+        "🚗 🚕 🚙"
+      ]
+    },
+    "answer": {
+      "type": "numeric",
+      "value": 6,
+      "unit": "orders"
+    },
+    "explanation": "Any of the 3 cars can park first. Then 2 cars are left for the second space, and 1 for the last. 3 × 2 × 1 = 6 orders. You can list them: red taxi blue, red blue taxi, taxi red blue, taxi blue red, blue red taxi, blue taxi red.",
+    "difficulty": {
+      "band": 4,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "b2l-handshakes-four",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/batch2.ts"
+    },
+    "skills": [
+      "LOGIC-COUNT-WAYS"
+    ],
+    "language": "en",
+    "prompt": "Ann, Ben, Cal and Dee meet. Every person shakes hands with every other person once. How many handshakes are there?",
+    "answer": {
+      "type": "numeric",
+      "value": 6,
+      "unit": "handshakes"
+    },
+    "explanation": "Ann shakes 3 hands. Ben already shook Ann's, so he shakes 2 new hands. Cal shakes 1 new hand (Dee). Dee has shaken everyone. 3 + 2 + 1 = 6 handshakes.",
+    "difficulty": {
+      "band": 5,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "b2l-jersey-outfits",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/batch2.ts"
+    },
+    "skills": [
+      "LOGIC-COUNT-WAYS",
+      "MATH-OA-MULT"
+    ],
+    "language": "en",
+    "prompt": "A soccer player has 3 shirts and 2 pairs of shorts. How many different shirt and shorts outfits can she make?",
+    "answer": {
+      "type": "numeric",
+      "value": 6,
+      "unit": "outfits"
+    },
+    "explanation": "Each of the 3 shirts can go with either of the 2 pairs of shorts. That is 3 groups of 2, or 3 × 2 = 6 outfits.",
+    "difficulty": {
+      "band": 4,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "b2l-square-numbers-pattern",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/batch2.ts"
+    },
+    "skills": [
+      "LOGIC-PATTERN",
+      "MATH-OA-ARRAYS"
+    ],
+    "language": "en",
+    "prompt": "Squares are made from dots: 1 dot, then 4 dots, then 9 dots, then 16 dots. How many dots are in the next square?",
+    "visual": {
+      "kind": "svg",
+      "alt": "Four squares of dots: 1 dot, 2 by 2 dots, 3 by 3 dots and 4 by 4 dots.",
+      "svg": "<svg viewBox=\"0 0 330 110\" width=\"330\" height=\"110\" xmlns=\"http://www.w3.org/2000/svg\"><circle cx=\"22\" cy=\"20\" r=\"7\" fill=\"#1d2f4b\"/><circle cx=\"64\" cy=\"20\" r=\"7\" fill=\"#1d2f4b\"/><circle cx=\"84\" cy=\"20\" r=\"7\" fill=\"#1d2f4b\"/><circle cx=\"64\" cy=\"40\" r=\"7\" fill=\"#1d2f4b\"/><circle cx=\"84\" cy=\"40\" r=\"7\" fill=\"#1d2f4b\"/><circle cx=\"130\" cy=\"20\" r=\"7\" fill=\"#1d2f4b\"/><circle cx=\"150\" cy=\"20\" r=\"7\" fill=\"#1d2f4b\"/><circle cx=\"170\" cy=\"20\" r=\"7\" fill=\"#1d2f4b\"/><circle cx=\"130\" cy=\"40\" r=\"7\" fill=\"#1d2f4b\"/><circle cx=\"150\" cy=\"40\" r=\"7\" fill=\"#1d2f4b\"/><circle cx=\"170\" cy=\"40\" r=\"7\" fill=\"#1d2f4b\"/><circle cx=\"130\" cy=\"60\" r=\"7\" fill=\"#1d2f4b\"/><circle cx=\"150\" cy=\"60\" r=\"7\" fill=\"#1d2f4b\"/><circle cx=\"170\" cy=\"60\" r=\"7\" fill=\"#1d2f4b\"/><circle cx=\"222\" cy=\"20\" r=\"7\" fill=\"#1d2f4b\"/><circle cx=\"242\" cy=\"20\" r=\"7\" fill=\"#1d2f4b\"/><circle cx=\"262\" cy=\"20\" r=\"7\" fill=\"#1d2f4b\"/><circle cx=\"282\" cy=\"20\" r=\"7\" fill=\"#1d2f4b\"/><circle cx=\"222\" cy=\"40\" r=\"7\" fill=\"#1d2f4b\"/><circle cx=\"242\" cy=\"40\" r=\"7\" fill=\"#1d2f4b\"/><circle cx=\"262\" cy=\"40\" r=\"7\" fill=\"#1d2f4b\"/><circle cx=\"282\" cy=\"40\" r=\"7\" fill=\"#1d2f4b\"/><circle cx=\"222\" cy=\"60\" r=\"7\" fill=\"#1d2f4b\"/><circle cx=\"242\" cy=\"60\" r=\"7\" fill=\"#1d2f4b\"/><circle cx=\"262\" cy=\"60\" r=\"7\" fill=\"#1d2f4b\"/><circle cx=\"282\" cy=\"60\" r=\"7\" fill=\"#1d2f4b\"/><circle cx=\"222\" cy=\"80\" r=\"7\" fill=\"#1d2f4b\"/><circle cx=\"242\" cy=\"80\" r=\"7\" fill=\"#1d2f4b\"/><circle cx=\"262\" cy=\"80\" r=\"7\" fill=\"#1d2f4b\"/><circle cx=\"282\" cy=\"80\" r=\"7\" fill=\"#1d2f4b\"/></svg>"
+    },
+    "answer": {
+      "type": "numeric",
+      "value": 25,
+      "unit": "dots"
+    },
+    "explanation": "The squares are 1 by 1, 2 by 2, 3 by 3 and 4 by 4 (1, 4, 9, 16 dots). The next is 5 by 5, which is 5 × 5 = 25 dots.",
+    "difficulty": {
+      "band": 5,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "b2b-times-as-plus",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/batch2.ts"
+    },
+    "skills": [
+      "CS-DEBUG",
+      "MATH-OA-MULT"
+    ],
+    "language": "en",
+    "prompt": "Zoe worked out how many wheels 4 bikes have. One step has a mistake. Tap the first step that is wrong.",
+    "answer": {
+      "type": "findTheBug",
+      "solver": "Zoe",
+      "steps": [
+        "Each bike has 2 wheels.",
+        "There are 4 bikes.",
+        "4 bikes with 2 wheels each is 4 + 2 = 6 wheels."
+      ],
+      "bugIndex": 2,
+      "fix": "4 bikes with 2 wheels each is 4 × 2 = 8 wheels."
+    },
+    "explanation": "Step 3 should say: 4 bikes with 2 wheels each is 4 × 2 = 8 wheels. The right answer is 8 wheels.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "b2b-bigger-number-bigger-piece",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/batch2.ts"
+    },
+    "skills": [
+      "CS-DEBUG",
+      "MATH-NF-FRACTIONS"
+    ],
+    "language": "en",
+    "prompt": "Kai worked out which is bigger, one half or one quarter of the same sandwich. One step has a mistake. Tap the first step that is wrong.",
+    "answer": {
+      "type": "findTheBug",
+      "solver": "Kai",
+      "steps": [
+        "One half means 1 of 2 equal pieces.",
+        "One quarter means 1 of 4 equal pieces.",
+        "4 is bigger than 2, so a quarter is the bigger piece."
+      ],
+      "bugIndex": 2,
+      "fix": "Cutting into 4 pieces makes smaller pieces than cutting into 2, so a half is the bigger piece."
+    },
+    "explanation": "Step 3 should say: Cutting into 4 pieces makes smaller pieces than cutting into 2, so a half is the bigger piece. The right answer is one half.",
+    "difficulty": {
+      "band": 4,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "b2b-perimeter-two-sides",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/batch2.ts"
+    },
+    "skills": [
+      "CS-DEBUG",
+      "MATH-MD-AREA-PERIMETER"
+    ],
+    "language": "en",
+    "prompt": "Noah worked out the perimeter of a rectangle 5 meters long and 3 meters wide. One step has a mistake. Tap the first step that is wrong.",
+    "answer": {
+      "type": "findTheBug",
+      "solver": "Noah",
+      "steps": [
+        "A rectangle has 4 sides.",
+        "The long sides are 5 meters and the short sides are 3 meters.",
+        "Add the sides: 5 + 3 = 8 meters."
+      ],
+      "bugIndex": 2,
+      "fix": "Add all 4 sides: 5 + 3 + 5 + 3 = 16 meters."
+    },
+    "explanation": "Step 3 should say: Add all 4 sides: 5 + 3 + 5 + 3 = 16 meters. The right answer is 16 meters.",
+    "difficulty": {
+      "band": 4,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "b2b-area-as-perimeter",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/batch2.ts"
+    },
+    "skills": [
+      "CS-DEBUG",
+      "MATH-MD-AREA-PERIMETER"
+    ],
+    "language": "en",
+    "prompt": "Lily worked out the area of a rectangle 4 squares long and 3 squares wide. One step has a mistake. Tap the first step that is wrong.",
+    "answer": {
+      "type": "findTheBug",
+      "solver": "Lily",
+      "steps": [
+        "Area is how many squares cover the shape.",
+        "There are 3 rows of 4 squares.",
+        "Add the sides: 4 + 3 + 4 + 3 = 14 squares."
+      ],
+      "bugIndex": 2,
+      "fix": "Add the rows: 4 + 4 + 4 = 12 squares."
+    },
+    "explanation": "Step 3 should say: Add the rows: 4 + 4 + 4 = 12 squares. The right answer is 12 squares.",
+    "difficulty": {
+      "band": 4,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "b2b-share-wrong-count",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/batch2.ts"
+    },
+    "skills": [
+      "CS-DEBUG",
+      "MATH-OA-DIVIDE"
+    ],
+    "language": "en",
+    "prompt": "Sam worked out how many cars each of 3 friends gets when sharing 18 cars. One step has a mistake. Tap the first step that is wrong.",
+    "answer": {
+      "type": "findTheBug",
+      "solver": "Sam",
+      "steps": [
+        "Share 18 cars equally between 3 friends.",
+        "Count by 3s: 3, 6, 9, 12, 15, 18.",
+        "That is 5 threes, so each friend gets 5 cars."
+      ],
+      "bugIndex": 2,
+      "fix": "That is 6 threes, so each friend gets 6 cars."
+    },
+    "explanation": "Step 3 should say: That is 6 threes, so each friend gets 6 cars. The right answer is 6 cars.",
+    "difficulty": {
+      "band": 4,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "b2b-handshakes-double",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/batch2.ts"
+    },
+    "skills": [
+      "CS-DEBUG",
+      "LOGIC-COUNT-WAYS"
+    ],
+    "language": "en",
+    "prompt": "Mia worked out how many handshakes 3 friends make if each pair shakes once. One step has a mistake. Tap the first step that is wrong.",
+    "answer": {
+      "type": "findTheBug",
+      "solver": "Mia",
+      "steps": [
+        "Each of the 3 friends shakes hands with 2 others.",
+        "3 × 2 = 6.",
+        "So there are 6 handshakes."
+      ],
+      "bugIndex": 2,
+      "fix": "Each handshake was counted twice, once for each person, so there are 6 ÷ 2 = 3 handshakes."
+    },
+    "explanation": "Step 3 should say: Each handshake was counted twice, once for each person, so there are 6 ÷ 2 = 3 handshakes. The right answer is 3 handshakes.",
+    "difficulty": {
+      "band": 4,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  }
+]

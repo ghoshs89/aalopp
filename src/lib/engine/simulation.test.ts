@@ -71,3 +71,25 @@ describe("30 days of practice", () => {
     expect(maxBand).toBeGreaterThanOrEqual(4);
   });
 });
+
+describe("everyday-skills quota under many histories", () => {
+  it("keeps at least 3 everyday-skill questions in every session across 10 simulated learners", () => {
+    const reviewed = questions.filter((q) => q.reviewStatus === "reviewed");
+    const skillByCode = new Map(skills.map((s) => [s.code, s]));
+    for (let learner = 1; learner <= 10; learner++) {
+      const random = seeded(learner * 97);
+      const attempts: AttemptRecord[] = [];
+      let tick = 0;
+      for (let d = 0; d < 25; d++) {
+        const day = addDays("2026-09-14", d);
+        const plan = selectSession(reviewed, skills, attempts, day, random);
+        const everyday = plan.picks.filter((p) => questionsById.get(p.questionId)!.skills.some((c) => skillByCode.get(c)!.isConvention));
+        expect(everyday.length, `learner ${learner}, day ${day}`).toBeGreaterThanOrEqual(3);
+        expect(plan.picks).toHaveLength(8);
+        for (const { questionId } of plan.picks) {
+          attempts.push({ questionId, isCorrect: random() < 0.7, localDate: day, answeredAt: new Date(Date.parse(`${day}T16:00:00Z`) + tick++ * 1000) });
+        }
+      }
+    }
+  });
+});

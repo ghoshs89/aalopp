@@ -79,3 +79,16 @@ Independent blind solve: an agent found the first wrong step without the key and
 - `dbg-calendar-week-later`: step 3 said "the next game" while the question asked only for a date. The question now asks for "the date of the next soccer game, which is one week after the game on October 17". The steps and the answer did not change.
 
 Also changed after the solve, without affecting any answer: explanations now start "Step N should say" instead of repeating "Step N is the first mistake", which the answer screen already says; and for clock times past the half hour, step 1 says the short hand "is past 9 but has not reached 10" instead of "just past 9".
+
+## 2026-09-13: Content batch 2 (39 questions)
+
+File: `generated-batch2.json`, written by `scripts/generate/batch2.ts`. Answers are computed in code; the 5-car race and the 4 by 4 grid are checked by solvers for exactly one solution, and arrangement and handshake counts are enumerated.
+
+Caught before the blind solve: the first 5-car race had no valid order ("Red finished before Blue" is impossible once White is 3rd, Yellow 5th and Blue right behind Green). The clue became "Red finished after Blue".
+
+Independent blind solve: agreed on 39 of 39, all high confidence. Flagged and fixed:
+- `b2m-chess-boards-pieces`: a chess set has 16 pawns, so "8 pawns of one color" could lead to 80. Now "8 white pawns" and the unit is "white pawns".
+- `b2a-same-area-different-shape` (noted, not flagged): "3 squares long and 4 squares wide" had the long side shorter. Choices now read "4 squares by 3 squares" style.
+- `b2l-square-numbers-pattern` (noted): the text-only dot picture was hard to read. Replaced with a drawing of the 1, 2 by 2, 3 by 3 and 4 by 4 dot squares.
+
+Also changed after screenshots, without affecting answers: the area questions now draw touching squares instead of emoji in separate cells.

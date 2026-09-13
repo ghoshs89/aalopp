@@ -1,4 +1,5 @@
 import bebras from "../../content/questions/bebras-style-starter.json";
+import generatedBatch2 from "../../content/questions/generated-batch2.json";
 import generatedDebugging from "../../content/questions/generated-debugging.json";
 import generatedGeometry from "../../content/questions/generated-geometry.json";
 import generatedLogic from "../../content/questions/generated-logic.json";
@@ -13,6 +14,7 @@ import { QuestionFileSchema, SkillFileSchema, type Question, type Skill } from "
 // src/content/bank.test.ts fails if a file in content/questions is missing here.
 export const QUESTION_FILES: Record<string, unknown> = {
   "bebras-style-starter.json": bebras,
+  "generated-batch2.json": generatedBatch2,
   "generated-debugging.json": generatedDebugging,
   "generated-geometry.json": generatedGeometry,
   "generated-logic.json": generatedLogic,

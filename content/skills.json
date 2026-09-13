@@ -3,11 +3,14 @@
   { "code": "MATH-NBT-PLACE-VALUE", "name": "Place value", "domain": "MATHEMATICS", "strand": "NUMBER_BASE_TEN", "tier": 1, "isConvention": false, "prerequisites": ["MATH-NBT-COUNTING"] },
   { "code": "MATH-NBT-SKIP-COUNT", "name": "Skip counting by 2s, 5s and 10s", "domain": "MATHEMATICS", "strand": "NUMBER_BASE_TEN", "tier": 1, "isConvention": false, "prerequisites": ["MATH-NBT-COUNTING"] },
   { "code": "MATH-NBT-ODD-EVEN", "name": "Odd and even numbers", "domain": "MATHEMATICS", "strand": "NUMBER_BASE_TEN", "tier": 1, "isConvention": false, "prerequisites": ["MATH-NBT-COUNTING"] },
+  { "code": "MATH-NF-FRACTIONS", "name": "Halves, thirds and quarters", "domain": "MATHEMATICS", "strand": "NUMBER_BASE_TEN", "tier": 3, "isConvention": false, "prerequisites": ["MATH-GEO-SHAPES", "MATH-OA-EQUAL-GROUPS"] },
 
   { "code": "MATH-OA-ADD-SUB", "name": "Adding and subtracting", "domain": "MATHEMATICS", "strand": "OPERATIONS_ALGEBRA", "tier": 1, "isConvention": false, "prerequisites": ["MATH-NBT-COUNTING"] },
   { "code": "MATH-OA-EQUAL-GROUPS", "name": "Equal groups and balance", "domain": "MATHEMATICS", "strand": "OPERATIONS_ALGEBRA", "tier": 1, "isConvention": false, "prerequisites": ["MATH-OA-ADD-SUB"] },
   { "code": "MATH-OA-UNKNOWN", "name": "Finding a missing number", "domain": "MATHEMATICS", "strand": "OPERATIONS_ALGEBRA", "tier": 2, "isConvention": false, "prerequisites": ["MATH-OA-ADD-SUB"] },
   { "code": "MATH-OA-ARRAYS", "name": "Rows and columns: early multiplication", "domain": "MATHEMATICS", "strand": "OPERATIONS_ALGEBRA", "tier": 2, "isConvention": false, "prerequisites": ["MATH-OA-EQUAL-GROUPS", "MATH-NBT-SKIP-COUNT"] },
+  { "code": "MATH-OA-MULT", "name": "Multiplication facts and word problems", "domain": "MATHEMATICS", "strand": "OPERATIONS_ALGEBRA", "tier": 3, "isConvention": false, "prerequisites": ["MATH-OA-ARRAYS"] },
+  { "code": "MATH-OA-DIVIDE", "name": "Sharing and grouping: early division", "domain": "MATHEMATICS", "strand": "OPERATIONS_ALGEBRA", "tier": 3, "isConvention": false, "prerequisites": ["MATH-OA-MULT"] },
 
   { "code": "MATH-GEO-SHAPES", "name": "Recognizing and counting shapes", "domain": "MATHEMATICS", "strand": "GEOMETRY_SPATIAL", "tier": 1, "isConvention": false, "prerequisites": [] },
   { "code": "MATH-GEO-SYMMETRY", "name": "Symmetry", "domain": "MATHEMATICS", "strand": "GEOMETRY_SPATIAL", "tier": 1, "isConvention": false, "prerequisites": ["MATH-GEO-SHAPES"] },
@@ -27,6 +30,7 @@
   { "code": "MATH-MD-COINS", "name": "Counting coins", "domain": "MATHEMATICS", "strand": "MEASUREMENT_DATA", "tier": 1, "isConvention": true, "prerequisites": ["MATH-OA-ADD-SUB", "MATH-NBT-SKIP-COUNT"] },
   { "code": "MATH-MD-PICTURE-GRAPH", "name": "Reading picture graphs", "domain": "MATHEMATICS", "strand": "MEASUREMENT_DATA", "tier": 1, "isConvention": true, "prerequisites": ["MATH-NBT-SKIP-COUNT"] },
   { "code": "MATH-MD-CALENDAR", "name": "Calendars: days, weeks and dates", "domain": "MATHEMATICS", "strand": "MEASUREMENT_DATA", "tier": 1, "isConvention": true, "prerequisites": ["MATH-NBT-COUNTING"] },
+  { "code": "MATH-MD-AREA-PERIMETER", "name": "Area and perimeter", "domain": "MATHEMATICS", "strand": "MEASUREMENT_DATA", "tier": 3, "isConvention": true, "prerequisites": ["MATH-MD-LENGTH", "MATH-OA-ARRAYS"] },
 
   { "code": "LOGIC-PATTERN", "name": "Repeating patterns", "domain": "LOGIC_CS", "strand": "LOGIC_CS", "tier": 1, "isConvention": false, "prerequisites": [] },
   { "code": "LOGIC-ORDER", "name": "Ordering from clues", "domain": "LOGIC_CS", "strand": "LOGIC_CS", "tier": 1, "isConvention": false, "prerequisites": [] },
@@ -39,5 +43,6 @@
   { "code": "CS-CONDITIONAL", "name": "If-then rules", "domain": "LOGIC_CS", "strand": "LOGIC_CS", "tier": 2, "isConvention": false, "prerequisites": ["CS-SEQUENCE"] },
   { "code": "CS-SORTING", "name": "Sorting and putting things in order", "domain": "LOGIC_CS", "strand": "LOGIC_CS", "tier": 2, "isConvention": false, "prerequisites": ["LOGIC-ORDER"] },
   { "code": "CS-SHORTEST-PATH", "name": "Finding the shortest route on a map", "domain": "LOGIC_CS", "strand": "LOGIC_CS", "tier": 2, "isConvention": false, "prerequisites": ["CS-SEQUENCE", "MATH-OA-ADD-SUB"] },
-  { "code": "CS-DEBUG", "name": "Finding the mistake in a worked solution", "domain": "LOGIC_CS", "strand": "LOGIC_CS", "tier": 2, "isConvention": false, "prerequisites": ["CS-SEQUENCE", "MATH-OA-ADD-SUB"] }
+  { "code": "CS-DEBUG", "name": "Finding the mistake in a worked solution", "domain": "LOGIC_CS", "strand": "LOGIC_CS", "tier": 2, "isConvention": false, "prerequisites": ["CS-SEQUENCE", "MATH-OA-ADD-SUB"] },
+  { "code": "LOGIC-COUNT-WAYS", "name": "Counting all the ways", "domain": "LOGIC_CS", "strand": "LOGIC_CS", "tier": 3, "isConvention": false, "prerequisites": ["LOGIC-ORDER", "MATH-OA-ADD-SUB"] }
 ]

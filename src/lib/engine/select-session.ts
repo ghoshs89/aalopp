@@ -120,16 +120,19 @@ export function selectSession(
     if (reviewsFull() || picked.length >= size) break;
     if (available(c) && !picked.some((p) => p.skill.code === c.skill.code)) take(c);
   }
-  // 2. Stretch slots.
-  const stretchSlots = Math.min(STRETCH_SLOTS, Math.max(0, size - picked.length));
+  // 2. Stretch slots, leaving room for the everyday-skills quota still to be filled.
+  const conventionNeeded = () => Math.max(0, Math.min(MIN_CONVENTION_ITEMS, size) - picked.filter((p) => p.isConvention).length);
+  const stretchSlots = Math.min(STRETCH_SLOTS, Math.max(0, size - picked.length - conventionNeeded()));
   for (const c of byScore.filter((c) => c.isStretch)) {
-    if (picked.filter((p) => p.isStretch).length >= stretchSlots) break;
+    if (picked.filter((p) => p.isStretch).length >= stretchSlots || picked.length >= size - conventionNeeded()) break;
     if (available(c)) take(c);
   }
-  // 3. Applied-convention quota.
-  for (const c of byScore.filter((c) => c.isConvention)) {
-    if (picked.filter((p) => p.isConvention).length >= Math.min(MIN_CONVENTION_ITEMS, size) || picked.length >= size) break;
-    if (available(c)) take(c, c.category === "maintain" ? `Everyday skills mix: ${c.skill.name}` : undefined);
+  // 3. Applied-convention quota. Relax the caps, then the repeat rule, rather than miss it.
+  for (const [allowBlocked, ignoreCaps] of [[false, false], [false, true], [true, true]]) {
+    for (const c of byScore.filter((c) => c.isConvention)) {
+      if (conventionNeeded() === 0 || picked.length >= size) break;
+      if (available(c, allowBlocked, ignoreCaps)) take(c, c.category === "maintain" ? `Everyday skills mix: ${c.skill.name}` : undefined);
+    }
   }
   // 4. Everything else by priority. If the pool runs dry, relax the caps, then the repeat rule.
   for (const [allowBlocked, ignoreCaps] of [[false, false], [false, true], [true, true]]) {

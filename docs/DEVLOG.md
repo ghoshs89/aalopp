@@ -16,6 +16,15 @@ Attribution convention used below: "Parent decision" means the parent chose it; 
 
 ---
 
+## 2026-09-13  Milestone  Content batch 2: 39 questions and 5 grade 3 skills
+What: `scripts/generate/batch2.ts` writes `generated-batch2.json`: multiplication, division (including leftovers), fractions (halves, thirds, quarters; unequal parts), area and perimeter, harder logic (5-car ordering, 4 by 4 grid, counting arrangements and handshakes) and 6 more Find the Bug items. New skills `MATH-OA-MULT`, `MATH-OA-DIVIDE`, `MATH-NF-FRACTIONS`, `MATH-MD-AREA-PERIMETER` (everyday skill) and `LOGIC-COUNT-WAYS`. Bank now 42 skills and 286 questions; band 5 grew from 3 to 12 questions.
+Verified by: independent blind solve agreed on 39 of 39; generator uniqueness checks caught a 5-car race whose clues had no solution (clue changed before the solve); `npm test` 88 passed; typecheck, lint and build clean; phone-width overflow check on the new pictures passed. Details in `content/REVIEW.md`.
+
+## 2026-09-13  Decision  Reserve room for the everyday-skills quota before stretch slots
+What: `selectSession` now limits stretch slots so the 3 everyday-skill questions always fit, and relaxes the per-skill and review caps, then the repeat rule, before ever missing the quota. A new test runs 10 simulated learners for 25 days each and checks every session.
+Reason: Assistant fix for a bug exposed by content batch 2: retries (2), reviews (3) and stretch (2) could take 7 of 8 slots before the quota step ran, leaving sessions with only 2 everyday questions. The single-seed simulation had passed by luck before.
+Alternatives rejected: Lowering the quota; running the quota step first (it would crowd out retries and due reviews).
+
 ## 2026-09-13  Milestone  Phase 3 deployed
 What: Commit 692a08e pushed to `main`.
 Verified by: GitHub commit status from Vercel for 692a08e reported "Deployment has completed". (The Phase 3 docs update failed on a script syntax error before that commit and was added in the next commit.)
