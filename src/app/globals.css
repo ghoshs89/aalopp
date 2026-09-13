@@ -21,6 +21,11 @@ body {
   min-height: 100%;
 }
 
+/* Solid fallback behind the gradient so long pages never show white below the fold on phones. */
+html {
+  background-color: var(--color-bg-deep);
+}
+
 body {
   background: radial-gradient(ellipse at 50% -10%, #2c5c3e 0%, var(--color-bg-mid) 45%, var(--color-bg-deep) 100%) fixed;
   color: var(--color-cream);

@@ -1,11 +1,11 @@
 import type { Visual as VisualData } from "@/content/schema";
-import { barChartTicks, clockHandAngles, pointOnDial } from "./geometry";
+import { barChartTicks, clockHandAngles, emojiFontSize, pointOnDial } from "./geometry";
 
 export function Visual({ visual }: { visual: VisualData }) {
   switch (visual.kind) {
     case "emoji":
       return (
-        <div className="visual-card text-center text-4xl leading-snug whitespace-pre sm:text-5xl">
+        <div className="visual-card text-center leading-snug whitespace-pre" style={{ fontSize: emojiFontSize(visual.lines) }}>
           {visual.lines.map((line, i) => (
             <div key={i}>{line}</div>
           ))}

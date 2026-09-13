@@ -15,3 +15,22 @@ export function barChartTicks(values: number[]): number[] {
   const top = Math.ceil(max / step) * step;
   return Array.from({ length: top / step + 1 }, (_, i) => i * step);
 }
+
+const graphemes = new Intl.Segmenter("en", { granularity: "grapheme" });
+
+/** Rough rendered width of a line in em: an emoji is about 1.15em wide, a letter or space about 0.55em. */
+export function lineWidthEm(line: string): number {
+  let em = 0;
+  for (const { segment } of graphemes.segment(line)) em += /\p{Extended_Pictographic}/u.test(segment) ? 1.15 : 0.55;
+  return em;
+}
+
+/**
+ * Font size that fits the widest line inside the card, so picture rows never scroll sideways or get cut off.
+ * Capped at 3rem on big screens and 1rem on tiny ones.
+ */
+export function emojiFontSize(lines: string[]): string {
+  const widest = Math.max(1, ...lines.map(lineWidthEm));
+  // Card content width: the page column (max 48rem) minus page, card and picture padding (about 6rem).
+  return `clamp(1rem, calc((min(100vw, 48rem) - 6rem) / ${widest.toFixed(2)}), 3rem)`;
+}

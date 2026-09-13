@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { barChartTicks, clockHandAngles, pointOnDial } from "./geometry";
+import { barChartTicks, clockHandAngles, emojiFontSize, lineWidthEm, pointOnDial } from "./geometry";
 
 describe("clockHandAngles", () => {
   it("points both hands up at 12:00", () => {
@@ -30,5 +30,19 @@ describe("barChartTicks", () => {
 
   it("counts by twos above 10 and ends at or above the tallest bar", () => {
     expect(barChartTicks([11, 4])).toEqual([0, 2, 4, 6, 8, 10, 12]);
+  });
+});
+
+describe("emoji line sizing", () => {
+  it("counts emoji wider than letters and treats joined emoji as one", () => {
+    expect(lineWidthEm("ab")).toBeCloseTo(1.1);
+    expect(lineWidthEm("🏎️")).toBeCloseTo(1.15);
+    expect(lineWidthEm("👩‍👧")).toBeCloseTo(1.15);
+  });
+
+  it("sizes by the widest line", () => {
+    expect(emojiFontSize(["🔴", "Path A: 🏠 🔴 🟢 🔵 🔴 🪵"])).toBe(
+      `clamp(1rem, calc((min(100vw, 48rem) - 6rem) / ${lineWidthEm("Path A: 🏠 🔴 🟢 🔵 🔴 🪵").toFixed(2)}), 3rem)`,
+    );
   });
 });
