@@ -1,0 +1,57 @@
+// Questions and skills live in content/*.json, so attempts reference them by id rather than by foreign key.
+
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+enum Confidence {
+  LOW
+  MEDIUM
+  HIGH
+}
+
+model Student {
+  id        String            @id @default(uuid())
+  name      String
+  avatar    String
+  createdAt DateTime          @default(now())
+  sessions  PracticeSession[]
+  attempts  Attempt[]
+}
+
+model PracticeSession {
+  // Generated on the device so answers can be queued offline and uploaded later without duplicates.
+  id        String    @id
+  studentId String
+  student   Student   @relation(fields: [studentId], references: [id], onDelete: Cascade)
+  startedAt DateTime
+  endedAt   DateTime?
+  attempts  Attempt[]
+
+  @@index([studentId, startedAt])
+}
+
+model Attempt {
+  id            String          @id
+  studentId     String
+  student       Student         @relation(fields: [studentId], references: [id], onDelete: Cascade)
+  sessionId     String
+  session       PracticeSession @relation(fields: [sessionId], references: [id], onDelete: Cascade)
+  questionId    String
+  response      Json
+  isCorrect     Boolean
+  confidence    Confidence?
+  firstActionMs Int?
+  totalMs       Int
+  listenCount   Int             @default(0)
+  answeredAt    DateTime
+  receivedAt    DateTime        @default(now())
+
+  @@index([studentId, answeredAt])
+  @@index([sessionId])
+}
