@@ -16,6 +16,10 @@ Attribution convention used below: "Parent decision" means the parent chose it; 
 
 ---
 
+## 2026-09-13  Milestone  Continuity and question fixes deployed
+What: Commit 413d549 (continuity docs, `/handoff` fixes, `docs/ROADMAP.md`, 3 question fixes) pushed to `main`.
+Verified by: GitHub commit status from Vercel for 413d549 reported "Deployment has completed". Before committing: `npm test` 72 passed, `npm run content:check` OK (226 reviewed), typecheck and lint clean.
+
 ## 2026-09-13  Decision  Second family account on the allowlist
 What: `aishik.ghosh2020@gmail.com` belongs on `ALLOWED_EMAILS`, alongside `ghosh.soumalya@gmail.com`. Added to the local `.env.local`. The Vercel production value must be set by the parent; it cannot be read from the repo.
 Reason: Parent decision.
