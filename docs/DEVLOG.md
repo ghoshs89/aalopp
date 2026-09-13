@@ -16,6 +16,11 @@ Attribution convention used below: "Parent decision" means the parent chose it; 
 
 ---
 
+## 2026-09-13  Decision  Finish all remaining phases without waiting for parent input
+What: The parent asked to finish the entire project, commit and push whatever is recommended, and go live, with issues worked out later. Remaining scope, in order: Phase 3 (parent dashboard), content batch 2, Phase 5 (content ingestion), and the later items (reading, Spanish and French with speech, fatigue detection). Commit and push are authorized for this run after each phase passes its checks. Decisions and milestones keep being logged here.
+Reason: Parent decision, stated verbatim: "Don't wait for my inputs, finish the entire project, push and commit whatever you recommend and go live. We will come back and work out the issues later."
+Alternatives rejected: Waiting 1 to 2 weeks of real use before Phase 3 (the earlier proposal); stopping after Phase 4.
+
 ## 2026-09-13  Milestone  Phase 4 deployed
 What: Commit 1e8d91e (scratchpad and Find the Bug) pushed to `main` at the parent's request.
 Verified by: GitHub commit status from Vercel for 1e8d91e reported "Deployment has completed"; `/api/health` returned 200 afterwards. Before committing: `npm test` 79 passed and `npm run content:check` OK (37 skills, 247 questions).

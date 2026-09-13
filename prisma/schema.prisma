@@ -28,6 +28,19 @@ model Student {
   createdAt DateTime          @default(now())
   sessions  PracticeSession[]
   attempts  Attempt[]
+  notes     ParentNote[]
+}
+
+/// Notes a parent writes about the learner, shown on the grown-ups page and in the printable report.
+model ParentNote {
+  id          String   @id @default(uuid())
+  studentId   String
+  student     Student  @relation(fields: [studentId], references: [id], onDelete: Cascade)
+  body        String
+  authorEmail String
+  createdAt   DateTime @default(now())
+
+  @@index([studentId, createdAt])
 }
 
 model PracticeSession {
