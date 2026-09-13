@@ -35,7 +35,7 @@ These come from the support plan and the review of the original AALOPP specifica
 | 3. Parent dashboard | Pure reasoning vs everyday skills chart, skill map, confidence calibration, trends, notes, printable report | Done 2026-09-13 (commit 692a08e), built early at the parent's request; charts fill in as real answers arrive |
 | Content batch 2 | Next generated batch, same verification | Done 2026-09-13: 39 questions, 5 grade 3 skills (multiplication, division, fractions, area and perimeter, counting ways) |
 | 5. PDF ingestion tool | Contest PDFs to draft questions | Done 2026-09-13 as a repo command (`npm run content:ingest`), not an in-app upload page; see DEVLOG |
-| Later | Reading, Spanish and French with speech input; fatigue detection | Only after the math and logic loop has proven itself |
+| Later | Reading, Spanish and French with speech input; fatigue detection | Done 2026-09-13 at the parent's request: reading comprehension, Spanish and French words and phrases with read-aloud and optional spoken answers, and a break suggestion instead of fatigue detection |
 
 Order confirmed by the parent on 2026-09-13: Phase 4 before Phase 3, because the dashboard needs real usage data and the scratchpad is useful immediately.
 

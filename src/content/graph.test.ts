@@ -61,7 +61,7 @@ describe("checkContent", () => {
     ]);
     expect(issues.map((i) => i.message)).toEqual([
       "Duplicate question id (also in a.json)",
-      "Same prompt and visual as q-1",
+      "Same prompt, visual, passage and listening word as q-1",
     ]);
   });
 });

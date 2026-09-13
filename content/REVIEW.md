@@ -92,3 +92,9 @@ Independent blind solve: agreed on 39 of 39, all high confidence. Flagged and fi
 - `b2l-square-numbers-pattern` (noted): the text-only dot picture was hard to read. Replaced with a drawing of the 1, 2 by 2, 3 by 3 and 4 by 4 dot squares.
 
 Also changed after screenshots, without affecting answers: the area questions now draw touching squares instead of emoji in separate cells.
+
+## 2026-09-13: Reading and languages (42 questions)
+
+File: `generated-languages.json`, written by `scripts/generate/languages.ts`. Word lists avoid regional variants (for example car, which is "coche" or "carro"); phrase choices never pair meanings that overlap (bonjour is never offered next to "good morning"). Passages are original.
+
+Independent blind solve: agreed on 42 of 42, all high confidence, with translations, articles, spelling and passage support checked. Flagged: prompts said "Listen to the Spanish words" when a single word plays (hola, adiós, gracias, bonjour, merci). Prompts now say "Listen to the Spanish. What does it mean?" and the button says "Hear it". Spoken-answer prompts no longer promise a microphone on devices that do not show one.

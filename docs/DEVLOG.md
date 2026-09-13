@@ -16,6 +16,21 @@ Attribution convention used below: "Parent decision" means the parent chose it; 
 
 ---
 
+## 2026-09-13  Milestone  Reading, Spanish, French and break suggestions built
+What: 42 generated questions (`scripts/generate/languages.ts`, `generated-languages.json`): 10 reading comprehension questions on 4 original passages, and 16 each in Spanish and French (hear a word and pick the picture, name a picture or color, count, phrases). Six skills in the new `LANGUAGE` strand. Schema fields `passage`, `listen` and `voiceAnswer`. Read-aloud speaks the English prompt, then the word to hear and any Spanish or French choices in a voice for that language (`src/lib/use-speech.ts`, `pickVoice` in `src/lib/voices.ts`); passages are never read aloud. An optional 🎤 on spoken-answer questions uses the browser's speech recognition (`src/lib/use-speech-input.ts`) and selects the matching choice (`matchSpokenChoice`); the confidence tap still confirms it. After 3 wrong answers in a row the child is offered a break once per session (`src/lib/engine/breaks.ts`).
+Verified by: independent blind solve agreed on 42 of 42 (translations, articles and passage answers checked); its only flags were "words" in prompts that play a single word, now reworded; `npm test` 106 passed (voice picking, spoken matching, break rule, read-aloud parts); content check 48 skills and 328 questions; typecheck, lint and build clean; headless Chrome at phone width showed the passage card and hear-it button, the break offer appeared exactly after the third wrong answer and "Keep going" continued, and the 🎤 button appeared on a French question.
+Not verified: real Spanish and French voices on the family's devices (depends on installed voices; falls back to the default voice); speech recognition of a child's voice; headless Chrome stalls when many utterances queue, so the browser test replaced speech synthesis with a silent stub.
+
+## 2026-09-13  Decision  Speech input is optional and experimental
+What: Spoken answers are offered only on questions marked `voiceAnswer` and only when the browser supports speech recognition. A match selects a choice but never submits it; unmatched speech shows what was heard and asks for a tap. No audio is stored, and which input method was used is not recorded.
+Reason: Assistant decision following the plan review: recognition of young children's speech is unreliable, worse in Spanish and French, and browsers send audio to their own speech services. Tapping keeps every question answerable on every device.
+Alternatives rejected: Speech as the main input for language questions; recording audio for the parent; adding an input-method column now (can be added later if the parent wants to track it).
+
+## 2026-09-13  Decision  Break suggestions instead of fatigue detection
+What: A single rule: after 3 wrong answers in a row, offer "Take a break" or "Keep going", at most once per session. No timing signals are used.
+Reason: Assistant decision consistent with "process over speed" and the plan review, which rejected hesitation-spike fatigue detection from the original specification as noise for a 5-year-old. The fixed 12 minute cap still applies.
+Alternatives rejected: Mandatory breaks; hesitation or speed based fatigue scores.
+
 ## 2026-09-13  Milestone  Phase 5 content ingestion tool
 What: `npm run content:ingest -- <file.pdf> [--slug name] [--answers "1:B,2:D"]` (`scripts/ingest/`) extracts a PDF's text layer with pdfjs-dist 6.3.289, splits numbered problems and lettered choices, estimates the band from the Kangaroo problem number, flags problems that mention a picture, applies an answer key, and writes drafts to `content/drafts/<slug>.json`. Workflow for turning drafts into reviewed questions in `content/drafts/README.md`. Test fixture `tests/fixtures/sample-contest.pdf` contains original problems generated with headless Chrome.
 Verified by: 7 ingestion tests including extraction from the fixture PDF across two pages; full `npm test`, typecheck, lint and build clean. Content batch 2 (commit c87a25b) was confirmed deployed by Vercel's commit status before this work.

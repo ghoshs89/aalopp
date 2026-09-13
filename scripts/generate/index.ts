@@ -4,6 +4,7 @@ import type { Question } from "../../src/content/schema";
 import { batch2Questions } from "./batch2";
 import { debuggingQuestions } from "./debugging";
 import { geometryQuestions } from "./geometry";
+import { languageQuestions } from "./languages";
 import { logicQuestions } from "./logic";
 import { measurementQuestions } from "./measurement";
 import { numberQuestions } from "./numbers";
@@ -16,6 +17,7 @@ export const GENERATED: Record<string, () => Question[]> = {
   "generated-logic.json": logicQuestions,
   "generated-debugging.json": debuggingQuestions,
   "generated-batch2.json": batch2Questions,
+  "generated-languages.json": languageQuestions,
 };
 
 export function renderFile(questions: Question[]): string {

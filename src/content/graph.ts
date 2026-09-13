@@ -59,9 +59,10 @@ export function checkContent(skills: Skill[], questions: SourcedQuestion[]): Con
       if (!codes.has(skill)) issues.push({ file, path: question.id, message: `Unknown skill ${skill}` });
     }
 
-    const fingerprint = JSON.stringify([normalize(question.prompt), question.visual ?? null]);
+    // Questions that share a prompt can still differ by picture, reading passage or the word to hear.
+    const fingerprint = JSON.stringify([normalize(question.prompt), question.visual ?? null, question.passage ?? null, question.listen ?? null]);
     const twin = fingerprints.get(fingerprint);
-    if (twin) issues.push({ file, path: question.id, message: `Same prompt and visual as ${twin}` });
+    if (twin) issues.push({ file, path: question.id, message: `Same prompt, visual, passage and listening word as ${twin}` });
     fingerprints.set(fingerprint, question.id);
   }
 

@@ -176,6 +176,12 @@ export const QuestionSchema = z
     // Read-aloud text when the prompt leans on emoji or symbols that TTS would mangle.
     speech: z.string().min(1).optional(),
     visual: VisualSchema.optional(),
+    /** A short text the child reads before answering. Shown on screen, never read aloud automatically. */
+    passage: z.string().min(1).optional(),
+    /** A word or phrase to hear in another language, played with that language's voice. */
+    listen: z.object({ text: z.string().min(1), lang: z.enum(["en-US", "es-ES", "fr-FR"]) }).optional(),
+    /** Offer a microphone so the child can say a choice instead of tapping it (choice answers only). */
+    voiceAnswer: z.boolean().optional(),
     answer: AnswerSchema,
     explanation: z.string().min(1),
     difficulty: DifficultySchema,
@@ -206,6 +212,9 @@ export const QuestionSchema = z
       if (steps[bugIndex] === fix) {
         ctx.addIssue({ code: "custom", path: ["answer", "fix"], message: "The fix must differ from the wrong step" });
       }
+    }
+    if (q.voiceAnswer && q.answer.type !== "choice") {
+      ctx.addIssue({ code: "custom", path: ["voiceAnswer"], message: "voiceAnswer only works with choice answers" });
     }
     if (q.difficulty.basis === "kangaroo-points" && q.difficulty.points === undefined) {
       ctx.addIssue({

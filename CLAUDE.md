@@ -31,6 +31,8 @@ Read `docs/HANDOFF.md` first for the live state of the work, then `docs/ROADMAP.
 - Every prompt must be readable aloud (TTS). Use the `speech` field when emoji or symbols would read badly.
 - Scratchpad drawings are never stored or uploaded; only the mode (none, digital, paper) and stroke count are saved.
 - Find the Bug questions ask for the first wrong step; every step before `bugIndex` must be fully true, or the blind solve will flag a second candidate.
+- Reading passages are never read aloud; Spanish and French are spoken with a voice for that language. Spoken answers are optional: a match selects a choice, the child still confirms, and tapping always works.
+- Breaks are offered, never forced: after 3 wrong answers in a row, once per session.
 - Child-facing screens: large tap targets, minimal text, warm framing of mistakes ("let's check it together").
 - No em dashes in UI strings, logs or content. The content schema enforces this.
 

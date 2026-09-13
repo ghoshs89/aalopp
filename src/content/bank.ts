@@ -2,6 +2,7 @@ import bebras from "../../content/questions/bebras-style-starter.json";
 import generatedBatch2 from "../../content/questions/generated-batch2.json";
 import generatedDebugging from "../../content/questions/generated-debugging.json";
 import generatedGeometry from "../../content/questions/generated-geometry.json";
+import generatedLanguages from "../../content/questions/generated-languages.json";
 import generatedLogic from "../../content/questions/generated-logic.json";
 import generatedMeasurement from "../../content/questions/generated-measurement.json";
 import generatedNumbers from "../../content/questions/generated-numbers.json";
@@ -17,6 +18,7 @@ export const QUESTION_FILES: Record<string, unknown> = {
   "generated-batch2.json": generatedBatch2,
   "generated-debugging.json": generatedDebugging,
   "generated-geometry.json": generatedGeometry,
+  "generated-languages.json": generatedLanguages,
   "generated-logic.json": generatedLogic,
   "generated-measurement.json": generatedMeasurement,
   "generated-numbers.json": generatedNumbers,

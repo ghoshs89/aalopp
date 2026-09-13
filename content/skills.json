@@ -44,5 +44,12 @@
   { "code": "CS-SORTING", "name": "Sorting and putting things in order", "domain": "LOGIC_CS", "strand": "LOGIC_CS", "tier": 2, "isConvention": false, "prerequisites": ["LOGIC-ORDER"] },
   { "code": "CS-SHORTEST-PATH", "name": "Finding the shortest route on a map", "domain": "LOGIC_CS", "strand": "LOGIC_CS", "tier": 2, "isConvention": false, "prerequisites": ["CS-SEQUENCE", "MATH-OA-ADD-SUB"] },
   { "code": "CS-DEBUG", "name": "Finding the mistake in a worked solution", "domain": "LOGIC_CS", "strand": "LOGIC_CS", "tier": 2, "isConvention": false, "prerequisites": ["CS-SEQUENCE", "MATH-OA-ADD-SUB"] },
-  { "code": "LOGIC-COUNT-WAYS", "name": "Counting all the ways", "domain": "LOGIC_CS", "strand": "LOGIC_CS", "tier": 3, "isConvention": false, "prerequisites": ["LOGIC-ORDER", "MATH-OA-ADD-SUB"] }
+  { "code": "LOGIC-COUNT-WAYS", "name": "Counting all the ways", "domain": "LOGIC_CS", "strand": "LOGIC_CS", "tier": 3, "isConvention": false, "prerequisites": ["LOGIC-ORDER", "MATH-OA-ADD-SUB"] },
+
+  { "code": "LANG-EN-READ-DETAIL", "name": "Reading: finding details", "domain": "LANGUAGES", "strand": "LANGUAGE", "tier": 2, "isConvention": false, "prerequisites": [] },
+  { "code": "LANG-EN-READ-INFER", "name": "Reading: working out what is not said", "domain": "LANGUAGES", "strand": "LANGUAGE", "tier": 3, "isConvention": false, "prerequisites": ["LANG-EN-READ-DETAIL"] },
+  { "code": "LANG-ES-WORDS", "name": "Spanish words", "domain": "LANGUAGES", "strand": "LANGUAGE", "tier": 1, "isConvention": false, "prerequisites": [] },
+  { "code": "LANG-ES-PHRASES", "name": "Spanish phrases", "domain": "LANGUAGES", "strand": "LANGUAGE", "tier": 2, "isConvention": false, "prerequisites": ["LANG-ES-WORDS"] },
+  { "code": "LANG-FR-WORDS", "name": "French words", "domain": "LANGUAGES", "strand": "LANGUAGE", "tier": 1, "isConvention": false, "prerequisites": [] },
+  { "code": "LANG-FR-PHRASES", "name": "French phrases", "domain": "LANGUAGES", "strand": "LANGUAGE", "tier": 2, "isConvention": false, "prerequisites": ["LANG-FR-WORDS"] }
 ]

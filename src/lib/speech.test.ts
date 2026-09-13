@@ -30,3 +30,28 @@ describe("questionSpeech", () => {
     expect(questionSpeech(q)).toBe(q.prompt);
   });
 });
+
+describe("questionSpeechParts", () => {
+  it("adds the word to hear in its own language", async () => {
+    const { questionSpeechParts } = await import("./speech");
+    const q = questionsById.get("lang-es-hear-dog")!;
+    const parts = questionSpeechParts(q);
+    expect(parts.at(-1)).toEqual({ text: "el perro", lang: "es-ES" });
+    expect(parts[0].text).toContain("Listen to the Spanish word");
+  });
+
+  it("reads French choices in the French voice and leaves them out of the English part", async () => {
+    const { questionSpeechParts } = await import("./speech");
+    const q = questionsById.get("lang-fr-count-3")!;
+    const parts = questionSpeechParts(q);
+    expect(parts[0].text).not.toContain("trois");
+    expect(parts.slice(1).every((p) => p.lang === "fr-FR")).toBe(true);
+    expect(parts.slice(1).map((p) => p.text)).toContain("trois");
+  });
+
+  it("never reads a reading passage aloud", async () => {
+    const { questionSpeechParts } = await import("./speech");
+    const q = questionsById.get("read-soccer-when")!;
+    expect(questionSpeechParts(q).map((p) => p.text).join(" ")).not.toContain("muddy");
+  });
+});

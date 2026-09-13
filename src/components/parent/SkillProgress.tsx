@@ -8,6 +8,7 @@ const STRANDS: { key: Skill["strand"]; label: string }[] = [
   { key: "NUMBER_BASE_TEN", label: "Numbers and place value" },
   { key: "GEOMETRY_SPATIAL", label: "Geometry and spatial reasoning" },
   { key: "LOGIC_CS", label: "Logic and computer science" },
+  { key: "LANGUAGE", label: "Reading and languages" },
 ];
 
 const STATUS: Record<SkillStatus, { label: string; className: string }> = {

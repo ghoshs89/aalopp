@@ -6,6 +6,11 @@ export type Draft = {
   prompt: string;
   speech?: string;
   visual?: Visual;
+  passage?: string;
+  listen?: Question["listen"];
+  voiceAnswer?: boolean;
+  /** Language of the answer choices; defaults to English. */
+  language?: Question["language"];
   answer: Question["answer"];
   explanation: string;
   band: 1 | 2 | 3 | 4 | 5;
@@ -17,10 +22,13 @@ export function question(file: string, d: Draft): Question {
     id: d.id,
     source: { kind: "original", ref: `scripts/generate/${file}` },
     skills: d.skills,
-    language: "en",
+    language: d.language ?? "en",
     prompt: d.prompt,
     ...(d.speech ? { speech: d.speech } : {}),
     ...(d.visual ? { visual: d.visual } : {}),
+    ...(d.passage ? { passage: d.passage } : {}),
+    ...(d.listen ? { listen: d.listen } : {}),
+    ...(d.voiceAnswer ? { voiceAnswer: true } : {}),
     answer: d.answer,
     explanation: d.explanation,
     difficulty: { band: d.band, basis: "author-estimate" },

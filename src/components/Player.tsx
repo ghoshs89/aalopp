@@ -3,11 +3,14 @@
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import type { Question } from "@/content/schema";
+import { shouldSuggestBreak } from "@/lib/engine/breaks";
 import { localDateOf } from "@/lib/engine/dates";
 import { isCorrect, type Response } from "@/lib/engine/grade";
 import { enqueue, pendingCount, startBackgroundSync } from "@/lib/outbox";
-import { questionSpeech, speakable } from "@/lib/speech";
+import { questionSpeechParts, speakable } from "@/lib/speech";
 import { useSpeech } from "@/lib/use-speech";
+import { useSpeechInput } from "@/lib/use-speech-input";
+import { matchSpokenChoice } from "@/lib/voices";
 import { Scratchpad } from "./Scratchpad";
 import { Visual } from "./visuals/Visual";
 
@@ -37,6 +40,12 @@ type Props = {
 
 export function Player({ student, questions, reasons = {}, save = true }: Props) {
   const { speak, stop, supported: canSpeak } = useSpeech();
+  const speechInput = useSpeechInput();
+  const [heard, setHeard] = useState<{ text: string; matched: boolean } | null>(null);
+  // Answers so far this session (true = right), for the break suggestion.
+  const results = useRef<boolean[]>([]);
+  const breakSuggested = useRef(false);
+  const [offerBreak, setOfferBreak] = useState(false);
   const [phase, setPhase] = useState<Phase>("ready");
   const [index, setIndex] = useState(0);
   const [choice, setChoice] = useState<number | null>(null);
@@ -93,13 +102,18 @@ export function Player({ student, questions, reasons = {}, save = true }: Props)
     setResult(null);
     setShowExplanation(false);
     setScratch({ open: false, strokes: 0, paper: false });
+    setHeard(null);
+    setOfferBreak(false);
+    speechInput.cancel();
     setPhase("answering");
     timing.current = { shownAt: clock(), firstActionMs: null, listens: 0 };
-    speak(questionSpeech(questions[i]));
+    speak(questionSpeechParts(questions[i]));
   };
 
   const start = () => {
     session.current = { id: crypto.randomUUID(), endItemId: crypto.randomUUID(), startedAt: new Date().toISOString(), startedMs: clock(), active: true };
+    results.current = [];
+    breakSuggested.current = false;
     showQuestion(0);
   };
 
@@ -109,7 +123,7 @@ export function Player({ student, questions, reasons = {}, save = true }: Props)
 
   const listen = () => {
     timing.current.listens += 1;
-    speak(questionSpeech(question));
+    speak(questionSpeechParts(question));
   };
 
   const response: Response | null = !question
@@ -128,6 +142,12 @@ export function Player({ student, questions, reasons = {}, save = true }: Props)
     const correct = isCorrect(question, response);
     setResult({ correct, confidence });
     setPhase("feedback");
+    speechInput.cancel();
+    results.current.push(correct);
+    if (index + 1 < questions.length && shouldSuggestBreak(results.current, breakSuggested.current)) {
+      breakSuggested.current = true;
+      setOfferBreak(true);
+    }
 
     if (save) {
       void enqueue({
@@ -223,6 +243,12 @@ export function Player({ student, questions, reasons = {}, save = true }: Props)
   return (
     <Shell onLeave={markSessionEnd} pending={pending} progress={{ current: index + 1, total: questions.length }}>
       <article className="rounded-3xl bg-cream p-4 text-ink shadow-xl sm:p-6">
+        {question.passage && (
+          <div className="mb-4 rounded-2xl border-2 border-ink/10 bg-white p-4">
+            <p className="mb-1 text-sm font-extrabold tracking-wide text-ink/60 uppercase">Read this</p>
+            <p className="text-xl leading-relaxed font-semibold sm:text-2xl">{question.passage}</p>
+          </div>
+        )}
         <div className="flex items-start gap-3">
           {canSpeak && (
             <button onClick={listen} aria-label="Read the question out loud" className="grid size-14 shrink-0 place-items-center rounded-2xl bg-ink text-3xl text-cream active:translate-y-0.5">
@@ -231,6 +257,17 @@ export function Player({ student, questions, reasons = {}, save = true }: Props)
           )}
           <h1 className="text-2xl leading-snug font-extrabold sm:text-3xl">{question.prompt}</h1>
         </div>
+        {question.listen && canSpeak && (
+          <button
+            onClick={() => {
+              timing.current.listens += 1;
+              speak([{ text: question.listen!.text, lang: question.listen!.lang }]);
+            }}
+            className="mt-3 rounded-2xl bg-ink px-4 py-2 text-lg font-bold text-cream active:translate-y-0.5"
+          >
+            🔊 Hear it
+          </button>
+        )}
         {question.visual && (
           <div className="mt-4">
             <Visual visual={question.visual} />
@@ -253,7 +290,32 @@ export function Player({ student, questions, reasons = {}, save = true }: Props)
         >
           📝 {scratch.paper ? "Using paper" : "I'm using paper"}
         </button>
+        {question.voiceAnswer && answer.type === "choice" && speechInput.supported && phase === "answering" && (
+          <button
+            onClick={() => {
+              const lang = { en: "en-US", es: "es-ES", fr: "fr-FR" }[question.language];
+              setHeard(null);
+              speechInput.listen(lang, (alternatives) => {
+                const match = matchSpokenChoice(alternatives, answer.choices);
+                if (match !== null) {
+                  markAction();
+                  setChoice(match);
+                }
+                setHeard({ text: alternatives[0] ?? "", matched: match !== null });
+              });
+            }}
+            aria-pressed={speechInput.listening}
+            className={`rounded-2xl border-2 px-4 py-2 text-lg font-bold ${speechInput.listening ? "border-gold bg-gold text-ink" : "border-white/15 bg-bg-hill"}`}
+          >
+            🎤 {speechInput.listening ? "Listening..." : "Say it"}
+          </button>
+        )}
       </div>
+      {heard && (
+        <p className="mt-2 text-lg text-cream-dim" role="status">
+          {heard.matched ? `I heard "${heard.text}". Is that your answer?` : heard.text ? `I heard "${heard.text}". Tap your answer, or try again.` : "I did not catch that. Tap your answer, or try again."}
+        </p>
+      )}
       {/* Kept mounted while hidden so drawings survive closing and reopening; a new key clears it per question. */}
       <div hidden={!scratch.open}>
         <Scratchpad key={question.id} onStrokesChange={(strokes) => setScratch((sc) => ({ ...sc, strokes }))} />
@@ -377,9 +439,23 @@ export function Player({ student, questions, reasons = {}, save = true }: Props)
               How do we know?
             </button>
           )}
-          <button onClick={next} className="big-button mt-5 w-full bg-gold text-ink">
-            {index + 1 >= questions.length ? "Finish ⭐" : "Next puzzle ➜"}
-          </button>
+          {offerBreak ? (
+            <div className="mt-5 rounded-2xl bg-bg-hill p-4">
+              <p className="text-xl font-bold">That was a tricky run. Tricky puzzles grow your brain. Want a short break?</p>
+              <div className="mt-3 grid gap-3 sm:grid-cols-2">
+                <button onClick={finish} className="big-button bg-cream text-ink">
+                  Take a break 🦘
+                </button>
+                <button onClick={next} className="big-button bg-gold text-ink">
+                  Keep going ➜
+                </button>
+              </div>
+            </div>
+          ) : (
+            <button onClick={next} className="big-button mt-5 w-full bg-gold text-ink">
+              {index + 1 >= questions.length ? "Finish ⭐" : "Next puzzle ➜"}
+            </button>
+          )}
         </section>
       )}
     </Shell>

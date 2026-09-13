@@ -1,0 +1,1362 @@
+[
+  {
+    "id": "read-soccer-when",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/languages.ts"
+    },
+    "skills": [
+      "LANG-EN-READ-DETAIL"
+    ],
+    "language": "en",
+    "prompt": "When did Maya's team play?",
+    "passage": "Maya's soccer team played on Saturday morning. It rained, so the field was muddy. Maya kicked the ball hard, but it stopped in a puddle. Her friend Leo ran over and scored a goal. After the game, everyone's socks were brown.",
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "Sunday morning",
+        "Saturday night",
+        "Saturday morning",
+        "Friday afternoon"
+      ],
+      "correctIndex": 2
+    },
+    "explanation": "The first sentence says they played \"on Saturday morning.\"",
+    "difficulty": {
+      "band": 2,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "read-soccer-who-scored",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/languages.ts"
+    },
+    "skills": [
+      "LANG-EN-READ-DETAIL"
+    ],
+    "language": "en",
+    "prompt": "Who scored the goal?",
+    "passage": "Maya's soccer team played on Saturday morning. It rained, so the field was muddy. Maya kicked the ball hard, but it stopped in a puddle. Her friend Leo ran over and scored a goal. After the game, everyone's socks were brown.",
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "Maya",
+        "The coach",
+        "Nobody",
+        "Leo"
+      ],
+      "correctIndex": 3
+    },
+    "explanation": "Maya's kick stopped in a puddle. Then Leo ran over and scored a goal.",
+    "difficulty": {
+      "band": 2,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "read-soccer-brown-socks",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/languages.ts"
+    },
+    "skills": [
+      "LANG-EN-READ-INFER"
+    ],
+    "language": "en",
+    "prompt": "Why were everyone's socks brown after the game?",
+    "passage": "Maya's soccer team played on Saturday morning. It rained, so the field was muddy. Maya kicked the ball hard, but it stopped in a puddle. Her friend Leo ran over and scored a goal. After the game, everyone's socks were brown.",
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "They wore brown socks",
+        "The ball was brown",
+        "The field was muddy",
+        "They painted their socks"
+      ],
+      "correctIndex": 2
+    },
+    "explanation": "The story says it rained and the field was muddy. Playing in mud makes socks brown. The story does not say this, so you have to work it out.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "read-tower-how-many",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/languages.ts"
+    },
+    "skills": [
+      "LANG-EN-READ-DETAIL"
+    ],
+    "language": "en",
+    "prompt": "How many blocks were in the tower at the end?",
+    "passage": "Sam wanted to build the tallest tower. He stacked eight blocks. The tower wobbled. Sam took off the top two blocks, and the tower stood still. Then he smiled.",
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "8",
+        "2",
+        "6",
+        "10"
+      ],
+      "correctIndex": 2
+    },
+    "explanation": "Sam stacked 8 blocks, then took off the top 2. 8 - 2 = 6 blocks were left.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "read-tower-why-smile",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/languages.ts"
+    },
+    "skills": [
+      "LANG-EN-READ-INFER"
+    ],
+    "language": "en",
+    "prompt": "Why did Sam smile at the end?",
+    "passage": "Sam wanted to build the tallest tower. He stacked eight blocks. The tower wobbled. Sam took off the top two blocks, and the tower stood still. Then he smiled.",
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "His tower fell down",
+        "He found more blocks",
+        "He wanted to go outside",
+        "His tower stopped wobbling"
+      ],
+      "correctIndex": 3
+    },
+    "explanation": "Just before he smiled, the tower stood still. He was happy it stopped wobbling.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "read-chess-first-move",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/languages.ts"
+    },
+    "skills": [
+      "LANG-EN-READ-DETAIL"
+    ],
+    "language": "en",
+    "prompt": "Who moves first in their chess games?",
+    "passage": "Grandpa and Ava play chess every Sunday. Ava always plays with the white pieces, so she moves first. Last week Grandpa won. This week Ava won, and Grandpa shook her hand.",
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "Grandpa",
+        "Whoever won last week",
+        "They take turns going first",
+        "Ava"
+      ],
+      "correctIndex": 3
+    },
+    "explanation": "Ava always plays with the white pieces, so she moves first.",
+    "difficulty": {
+      "band": 2,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "read-chess-how-often",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/languages.ts"
+    },
+    "skills": [
+      "LANG-EN-READ-DETAIL"
+    ],
+    "language": "en",
+    "prompt": "How often do Grandpa and Ava play chess?",
+    "passage": "Grandpa and Ava play chess every Sunday. Ava always plays with the white pieces, so she moves first. Last week Grandpa won. This week Ava won, and Grandpa shook her hand.",
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "Every day",
+        "Every Saturday",
+        "Every Sunday",
+        "Once a year"
+      ],
+      "correctIndex": 2
+    },
+    "explanation": "The first sentence says they play \"every Sunday.\"",
+    "difficulty": {
+      "band": 2,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "read-chess-good-sport",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/languages.ts"
+    },
+    "skills": [
+      "LANG-EN-READ-INFER"
+    ],
+    "language": "en",
+    "prompt": "How did Grandpa show he was a good sport when he lost?",
+    "passage": "Grandpa and Ava play chess every Sunday. Ava always plays with the white pieces, so she moves first. Last week Grandpa won. This week Ava won, and Grandpa shook her hand.",
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "He won the game",
+        "He shook Ava's hand",
+        "He moved first",
+        "He played every Sunday"
+      ],
+      "correctIndex": 1
+    },
+    "explanation": "Grandpa lost this week, and he shook Ava's hand. Shaking hands after losing is being a good sport.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "read-pit-why-stop",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/languages.ts"
+    },
+    "skills": [
+      "LANG-EN-READ-INFER"
+    ],
+    "language": "en",
+    "prompt": "Why did the driver stop at the pit?",
+    "passage": "The race car was fast, but it needed gas. The driver stopped at the pit. The crew filled the tank and changed a flat tire. Then the car zoomed back onto the track.",
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "The race was over",
+        "The car needed gas",
+        "The driver was tired",
+        "It started to rain"
+      ],
+      "correctIndex": 1
+    },
+    "explanation": "The story says the car needed gas, and the crew filled the tank at the pit.",
+    "difficulty": {
+      "band": 2,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "read-pit-what-else",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/languages.ts"
+    },
+    "skills": [
+      "LANG-EN-READ-DETAIL"
+    ],
+    "language": "en",
+    "prompt": "What else did the crew do besides filling the tank?",
+    "passage": "The race car was fast, but it needed gas. The driver stopped at the pit. The crew filled the tank and changed a flat tire. Then the car zoomed back onto the track.",
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "Changed a flat tire",
+        "Washed the car",
+        "Fixed the steering wheel",
+        "Painted the car"
+      ],
+      "correctIndex": 0
+    },
+    "explanation": "The crew filled the tank and changed a flat tire.",
+    "difficulty": {
+      "band": 2,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "lang-es-hear-dog",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/languages.ts"
+    },
+    "skills": [
+      "LANG-ES-WORDS"
+    ],
+    "language": "en",
+    "prompt": "Listen to the Spanish word. Which picture does it name?",
+    "listen": {
+      "text": "el perro",
+      "lang": "es-ES"
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "🐶 Dog",
+        "🐱 Cat",
+        "🍎 Apple",
+        "🏠 House"
+      ],
+      "correctIndex": 0
+    },
+    "explanation": "\"el perro\" is Spanish for dog.",
+    "difficulty": {
+      "band": 1,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "lang-es-hear-cat",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/languages.ts"
+    },
+    "skills": [
+      "LANG-ES-WORDS"
+    ],
+    "language": "en",
+    "prompt": "Listen to the Spanish word. Which picture does it name?",
+    "listen": {
+      "text": "el gato",
+      "lang": "es-ES"
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "🍎 Apple",
+        "🏠 House",
+        "🐱 Cat",
+        "☀️ Sun"
+      ],
+      "correctIndex": 2
+    },
+    "explanation": "\"el gato\" is Spanish for cat.",
+    "difficulty": {
+      "band": 1,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "lang-es-hear-apple",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/languages.ts"
+    },
+    "skills": [
+      "LANG-ES-WORDS"
+    ],
+    "language": "en",
+    "prompt": "Listen to the Spanish word. Which picture does it name?",
+    "listen": {
+      "text": "la manzana",
+      "lang": "es-ES"
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "🏠 House",
+        "☀️ Sun",
+        "🍎 Apple",
+        "📖 Book"
+      ],
+      "correctIndex": 2
+    },
+    "explanation": "\"la manzana\" is Spanish for apple.",
+    "difficulty": {
+      "band": 1,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "lang-es-hear-house",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/languages.ts"
+    },
+    "skills": [
+      "LANG-ES-WORDS"
+    ],
+    "language": "en",
+    "prompt": "Listen to the Spanish word. Which picture does it name?",
+    "listen": {
+      "text": "la casa",
+      "lang": "es-ES"
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "☀️ Sun",
+        "📖 Book",
+        "🏠 House",
+        "🐦 Bird"
+      ],
+      "correctIndex": 2
+    },
+    "explanation": "\"la casa\" is Spanish for house.",
+    "difficulty": {
+      "band": 1,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "lang-es-hear-sun",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/languages.ts"
+    },
+    "skills": [
+      "LANG-ES-WORDS"
+    ],
+    "language": "en",
+    "prompt": "Listen to the Spanish word. Which picture does it name?",
+    "listen": {
+      "text": "el sol",
+      "lang": "es-ES"
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "☀️ Sun",
+        "📖 Book",
+        "🐦 Bird",
+        "🐶 Dog"
+      ],
+      "correctIndex": 0
+    },
+    "explanation": "\"el sol\" is Spanish for sun.",
+    "difficulty": {
+      "band": 1,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "lang-es-say-book",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/languages.ts"
+    },
+    "skills": [
+      "LANG-ES-WORDS"
+    ],
+    "language": "es",
+    "prompt": "What is this in Spanish? Tap your answer. If you see the 🎤 button, you can say it instead.",
+    "visual": {
+      "kind": "emoji",
+      "lines": [
+        "📖"
+      ]
+    },
+    "voiceAnswer": true,
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "el libro",
+        "el perro",
+        "el gato",
+        "la manzana"
+      ],
+      "correctIndex": 0
+    },
+    "explanation": "Book in Spanish is \"el libro\".",
+    "difficulty": {
+      "band": 2,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "lang-es-say-bird",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/languages.ts"
+    },
+    "skills": [
+      "LANG-ES-WORDS"
+    ],
+    "language": "es",
+    "prompt": "What is this in Spanish? Tap your answer. If you see the 🎤 button, you can say it instead.",
+    "visual": {
+      "kind": "emoji",
+      "lines": [
+        "🐦"
+      ]
+    },
+    "voiceAnswer": true,
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "el gato",
+        "la manzana",
+        "el pájaro",
+        "la casa"
+      ],
+      "correctIndex": 2
+    },
+    "explanation": "Bird in Spanish is \"el pájaro\".",
+    "difficulty": {
+      "band": 2,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "lang-es-say-blue",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/languages.ts"
+    },
+    "skills": [
+      "LANG-ES-WORDS"
+    ],
+    "language": "es",
+    "prompt": "What is this color in Spanish? Tap your answer. If you see the 🎤 button, you can say it instead.",
+    "visual": {
+      "kind": "emoji",
+      "lines": [
+        "🔵"
+      ]
+    },
+    "voiceAnswer": true,
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "amarillo",
+        "azul",
+        "rojo",
+        "verde"
+      ],
+      "correctIndex": 1
+    },
+    "explanation": "Blue in Spanish is \"azul\".",
+    "difficulty": {
+      "band": 2,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "lang-es-say-yellow",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/languages.ts"
+    },
+    "skills": [
+      "LANG-ES-WORDS"
+    ],
+    "language": "es",
+    "prompt": "What is this color in Spanish? Tap your answer. If you see the 🎤 button, you can say it instead.",
+    "visual": {
+      "kind": "emoji",
+      "lines": [
+        "🟡"
+      ]
+    },
+    "voiceAnswer": true,
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "rojo",
+        "amarillo",
+        "azul",
+        "verde"
+      ],
+      "correctIndex": 1
+    },
+    "explanation": "Yellow in Spanish is \"amarillo\".",
+    "difficulty": {
+      "band": 2,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "lang-es-count-3",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/languages.ts"
+    },
+    "skills": [
+      "LANG-ES-WORDS",
+      "MATH-NBT-COUNTING"
+    ],
+    "language": "es",
+    "prompt": "How many soccer balls are there? Answer in Spanish. If you see the 🎤 button, you can say it instead.",
+    "visual": {
+      "kind": "emoji",
+      "lines": [
+        "⚽⚽⚽"
+      ]
+    },
+    "voiceAnswer": true,
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "dos",
+        "cuatro",
+        "tres",
+        "cinco"
+      ],
+      "correctIndex": 2
+    },
+    "explanation": "There are 3 balls. 3 in Spanish is \"tres\". Counting: uno, dos, tres.",
+    "difficulty": {
+      "band": 1,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "lang-es-count-4",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/languages.ts"
+    },
+    "skills": [
+      "LANG-ES-WORDS",
+      "MATH-NBT-COUNTING"
+    ],
+    "language": "es",
+    "prompt": "How many soccer balls are there? Answer in Spanish. If you see the 🎤 button, you can say it instead.",
+    "visual": {
+      "kind": "emoji",
+      "lines": [
+        "⚽⚽⚽⚽"
+      ]
+    },
+    "voiceAnswer": true,
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "tres",
+        "cinco",
+        "uno",
+        "cuatro"
+      ],
+      "correctIndex": 3
+    },
+    "explanation": "There are 4 balls. 4 in Spanish is \"cuatro\". Counting: uno, dos, tres, cuatro.",
+    "difficulty": {
+      "band": 1,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "lang-es-phrase-hello",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/languages.ts"
+    },
+    "skills": [
+      "LANG-ES-PHRASES"
+    ],
+    "language": "en",
+    "prompt": "Listen to the Spanish. What does it mean?",
+    "listen": {
+      "text": "hola",
+      "lang": "es-ES"
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "Goodbye",
+        "Thank you",
+        "Please",
+        "Hello"
+      ],
+      "correctIndex": 3
+    },
+    "explanation": "\"hola\" means \"hello\".",
+    "difficulty": {
+      "band": 2,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "lang-es-phrase-goodbye",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/languages.ts"
+    },
+    "skills": [
+      "LANG-ES-PHRASES"
+    ],
+    "language": "en",
+    "prompt": "Listen to the Spanish. What does it mean?",
+    "listen": {
+      "text": "adiós",
+      "lang": "es-ES"
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "Goodbye",
+        "Thank you",
+        "Please",
+        "Good night"
+      ],
+      "correctIndex": 0
+    },
+    "explanation": "\"adiós\" means \"goodbye\".",
+    "difficulty": {
+      "band": 2,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "lang-es-phrase-thank-you",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/languages.ts"
+    },
+    "skills": [
+      "LANG-ES-PHRASES"
+    ],
+    "language": "en",
+    "prompt": "Listen to the Spanish. What does it mean?",
+    "listen": {
+      "text": "gracias",
+      "lang": "es-ES"
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "Thank you",
+        "Please",
+        "Good night",
+        "Hello"
+      ],
+      "correctIndex": 0
+    },
+    "explanation": "\"gracias\" means \"thank you\".",
+    "difficulty": {
+      "band": 2,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "lang-es-phrase-please",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/languages.ts"
+    },
+    "skills": [
+      "LANG-ES-PHRASES"
+    ],
+    "language": "en",
+    "prompt": "Listen to the Spanish. What does it mean?",
+    "listen": {
+      "text": "por favor",
+      "lang": "es-ES"
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "Good night",
+        "Hello",
+        "Goodbye",
+        "Please"
+      ],
+      "correctIndex": 3
+    },
+    "explanation": "\"por favor\" means \"please\".",
+    "difficulty": {
+      "band": 2,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "lang-es-phrase-when-given-a-gift",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/languages.ts"
+    },
+    "skills": [
+      "LANG-ES-PHRASES"
+    ],
+    "language": "es",
+    "prompt": "A friend gives you a present. What do you say in Spanish? Tap your answer. If you see the 🎤 button, you can say it instead.",
+    "visual": {
+      "kind": "emoji",
+      "lines": [
+        "🎁"
+      ]
+    },
+    "voiceAnswer": true,
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "hola",
+        "gracias",
+        "adiós",
+        "por favor"
+      ],
+      "correctIndex": 1
+    },
+    "explanation": "When someone gives you something, you say thank you. In Spanish that is \"gracias\".",
+    "difficulty": {
+      "band": 2,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "lang-fr-hear-dog",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/languages.ts"
+    },
+    "skills": [
+      "LANG-FR-WORDS"
+    ],
+    "language": "en",
+    "prompt": "Listen to the French word. Which picture does it name?",
+    "listen": {
+      "text": "le chien",
+      "lang": "fr-FR"
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "🐶 Dog",
+        "🐱 Cat",
+        "🍎 Apple",
+        "🏠 House"
+      ],
+      "correctIndex": 0
+    },
+    "explanation": "\"le chien\" is French for dog.",
+    "difficulty": {
+      "band": 1,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "lang-fr-hear-cat",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/languages.ts"
+    },
+    "skills": [
+      "LANG-FR-WORDS"
+    ],
+    "language": "en",
+    "prompt": "Listen to the French word. Which picture does it name?",
+    "listen": {
+      "text": "le chat",
+      "lang": "fr-FR"
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "🍎 Apple",
+        "🏠 House",
+        "🐱 Cat",
+        "☀️ Sun"
+      ],
+      "correctIndex": 2
+    },
+    "explanation": "\"le chat\" is French for cat.",
+    "difficulty": {
+      "band": 1,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "lang-fr-hear-apple",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/languages.ts"
+    },
+    "skills": [
+      "LANG-FR-WORDS"
+    ],
+    "language": "en",
+    "prompt": "Listen to the French word. Which picture does it name?",
+    "listen": {
+      "text": "la pomme",
+      "lang": "fr-FR"
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "🏠 House",
+        "☀️ Sun",
+        "🍎 Apple",
+        "📖 Book"
+      ],
+      "correctIndex": 2
+    },
+    "explanation": "\"la pomme\" is French for apple.",
+    "difficulty": {
+      "band": 1,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "lang-fr-hear-house",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/languages.ts"
+    },
+    "skills": [
+      "LANG-FR-WORDS"
+    ],
+    "language": "en",
+    "prompt": "Listen to the French word. Which picture does it name?",
+    "listen": {
+      "text": "la maison",
+      "lang": "fr-FR"
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "☀️ Sun",
+        "📖 Book",
+        "🏠 House",
+        "🐦 Bird"
+      ],
+      "correctIndex": 2
+    },
+    "explanation": "\"la maison\" is French for house.",
+    "difficulty": {
+      "band": 1,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "lang-fr-hear-sun",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/languages.ts"
+    },
+    "skills": [
+      "LANG-FR-WORDS"
+    ],
+    "language": "en",
+    "prompt": "Listen to the French word. Which picture does it name?",
+    "listen": {
+      "text": "le soleil",
+      "lang": "fr-FR"
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "☀️ Sun",
+        "📖 Book",
+        "🐦 Bird",
+        "🐶 Dog"
+      ],
+      "correctIndex": 0
+    },
+    "explanation": "\"le soleil\" is French for sun.",
+    "difficulty": {
+      "band": 1,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "lang-fr-say-book",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/languages.ts"
+    },
+    "skills": [
+      "LANG-FR-WORDS"
+    ],
+    "language": "fr",
+    "prompt": "What is this in French? Tap your answer. If you see the 🎤 button, you can say it instead.",
+    "visual": {
+      "kind": "emoji",
+      "lines": [
+        "📖"
+      ]
+    },
+    "voiceAnswer": true,
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "le livre",
+        "le chien",
+        "le chat",
+        "la pomme"
+      ],
+      "correctIndex": 0
+    },
+    "explanation": "Book in French is \"le livre\".",
+    "difficulty": {
+      "band": 2,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "lang-fr-say-bird",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/languages.ts"
+    },
+    "skills": [
+      "LANG-FR-WORDS"
+    ],
+    "language": "fr",
+    "prompt": "What is this in French? Tap your answer. If you see the 🎤 button, you can say it instead.",
+    "visual": {
+      "kind": "emoji",
+      "lines": [
+        "🐦"
+      ]
+    },
+    "voiceAnswer": true,
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "le chat",
+        "la pomme",
+        "l'oiseau",
+        "la maison"
+      ],
+      "correctIndex": 2
+    },
+    "explanation": "Bird in French is \"l'oiseau\".",
+    "difficulty": {
+      "band": 2,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "lang-fr-say-blue",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/languages.ts"
+    },
+    "skills": [
+      "LANG-FR-WORDS"
+    ],
+    "language": "fr",
+    "prompt": "What is this color in French? Tap your answer. If you see the 🎤 button, you can say it instead.",
+    "visual": {
+      "kind": "emoji",
+      "lines": [
+        "🔵"
+      ]
+    },
+    "voiceAnswer": true,
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "jaune",
+        "bleu",
+        "rouge",
+        "vert"
+      ],
+      "correctIndex": 1
+    },
+    "explanation": "Blue in French is \"bleu\".",
+    "difficulty": {
+      "band": 2,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "lang-fr-say-yellow",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/languages.ts"
+    },
+    "skills": [
+      "LANG-FR-WORDS"
+    ],
+    "language": "fr",
+    "prompt": "What is this color in French? Tap your answer. If you see the 🎤 button, you can say it instead.",
+    "visual": {
+      "kind": "emoji",
+      "lines": [
+        "🟡"
+      ]
+    },
+    "voiceAnswer": true,
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "rouge",
+        "jaune",
+        "bleu",
+        "vert"
+      ],
+      "correctIndex": 1
+    },
+    "explanation": "Yellow in French is \"jaune\".",
+    "difficulty": {
+      "band": 2,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "lang-fr-count-3",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/languages.ts"
+    },
+    "skills": [
+      "LANG-FR-WORDS",
+      "MATH-NBT-COUNTING"
+    ],
+    "language": "fr",
+    "prompt": "How many soccer balls are there? Answer in French. If you see the 🎤 button, you can say it instead.",
+    "visual": {
+      "kind": "emoji",
+      "lines": [
+        "⚽⚽⚽"
+      ]
+    },
+    "voiceAnswer": true,
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "deux",
+        "quatre",
+        "trois",
+        "cinq"
+      ],
+      "correctIndex": 2
+    },
+    "explanation": "There are 3 balls. 3 in French is \"trois\". Counting: un, deux, trois.",
+    "difficulty": {
+      "band": 1,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "lang-fr-count-4",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/languages.ts"
+    },
+    "skills": [
+      "LANG-FR-WORDS",
+      "MATH-NBT-COUNTING"
+    ],
+    "language": "fr",
+    "prompt": "How many soccer balls are there? Answer in French. If you see the 🎤 button, you can say it instead.",
+    "visual": {
+      "kind": "emoji",
+      "lines": [
+        "⚽⚽⚽⚽"
+      ]
+    },
+    "voiceAnswer": true,
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "trois",
+        "cinq",
+        "un",
+        "quatre"
+      ],
+      "correctIndex": 3
+    },
+    "explanation": "There are 4 balls. 4 in French is \"quatre\". Counting: un, deux, trois, quatre.",
+    "difficulty": {
+      "band": 1,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "lang-fr-phrase-hello",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/languages.ts"
+    },
+    "skills": [
+      "LANG-FR-PHRASES"
+    ],
+    "language": "en",
+    "prompt": "Listen to the French. What does it mean?",
+    "listen": {
+      "text": "bonjour",
+      "lang": "fr-FR"
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "Goodbye",
+        "Thank you",
+        "Please",
+        "Hello"
+      ],
+      "correctIndex": 3
+    },
+    "explanation": "\"bonjour\" means \"hello\".",
+    "difficulty": {
+      "band": 2,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "lang-fr-phrase-goodbye",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/languages.ts"
+    },
+    "skills": [
+      "LANG-FR-PHRASES"
+    ],
+    "language": "en",
+    "prompt": "Listen to the French. What does it mean?",
+    "listen": {
+      "text": "au revoir",
+      "lang": "fr-FR"
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "Goodbye",
+        "Thank you",
+        "Please",
+        "Good night"
+      ],
+      "correctIndex": 0
+    },
+    "explanation": "\"au revoir\" means \"goodbye\".",
+    "difficulty": {
+      "band": 2,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "lang-fr-phrase-thank-you",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/languages.ts"
+    },
+    "skills": [
+      "LANG-FR-PHRASES"
+    ],
+    "language": "en",
+    "prompt": "Listen to the French. What does it mean?",
+    "listen": {
+      "text": "merci",
+      "lang": "fr-FR"
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "Thank you",
+        "Please",
+        "Good night",
+        "Hello"
+      ],
+      "correctIndex": 0
+    },
+    "explanation": "\"merci\" means \"thank you\".",
+    "difficulty": {
+      "band": 2,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "lang-fr-phrase-please",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/languages.ts"
+    },
+    "skills": [
+      "LANG-FR-PHRASES"
+    ],
+    "language": "en",
+    "prompt": "Listen to the French. What does it mean?",
+    "listen": {
+      "text": "s'il vous plaît",
+      "lang": "fr-FR"
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "Good night",
+        "Hello",
+        "Goodbye",
+        "Please"
+      ],
+      "correctIndex": 3
+    },
+    "explanation": "\"s'il vous plaît\" means \"please\".",
+    "difficulty": {
+      "band": 2,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "lang-fr-phrase-when-given-a-gift",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/languages.ts"
+    },
+    "skills": [
+      "LANG-FR-PHRASES"
+    ],
+    "language": "fr",
+    "prompt": "A friend gives you a present. What do you say in French? Tap your answer. If you see the 🎤 button, you can say it instead.",
+    "visual": {
+      "kind": "emoji",
+      "lines": [
+        "🎁"
+      ]
+    },
+    "voiceAnswer": true,
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "bonjour",
+        "merci",
+        "au revoir",
+        "s'il vous plaît"
+      ],
+      "correctIndex": 1
+    },
+    "explanation": "When someone gives you something, you say thank you. In French that is \"merci\".",
+    "difficulty": {
+      "band": 2,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  }
+]
