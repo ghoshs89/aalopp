@@ -18,6 +18,9 @@ export const AttemptItemSchema = z.object({
   totalMs: z.int().min(0),
   listenCount: z.int().min(0),
   answeredAt: z.iso.datetime(),
+  // Optional so an older copy of the app cached on a device can still upload; the server falls back to the UTC date.
+  localDate: z.iso.date().optional(),
+  selectionReason: z.string().max(200).optional(),
 });
 
 export const SessionEndItemSchema = z.object({

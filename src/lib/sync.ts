@@ -26,7 +26,12 @@ export async function saveSyncItems(db: PrismaClient, items: SyncItem[]): Promis
     });
 
     if (item.kind === "sessionEnd") {
-      await db.practiceSession.update({ where: { id: item.sessionId }, data: { endedAt: new Date(item.endedAt) } });
+      // The device may send several end markers (leaving, coming back, finishing); keep the latest.
+      const endedAt = new Date(item.endedAt);
+      await db.practiceSession.updateMany({
+        where: { id: item.sessionId, OR: [{ endedAt: null }, { endedAt: { lt: endedAt } }] },
+        data: { endedAt },
+      });
       result.saved.push(item.id);
       continue;
     }
@@ -51,6 +56,8 @@ export async function saveSyncItems(db: PrismaClient, items: SyncItem[]): Promis
         totalMs: item.totalMs,
         listenCount: item.listenCount,
         answeredAt: new Date(item.answeredAt),
+        localDate: item.localDate ?? item.answeredAt.slice(0, 10),
+        selectionReason: item.selectionReason ?? null,
       },
       update: {},
     });

@@ -22,6 +22,12 @@ describe("SyncRequestSchema", () => {
     expect(SyncRequestSchema.safeParse({ items: [attempt, end] }).success).toBe(true);
   });
 
+  it("accepts the device date and selection reason, and still accepts uploads from older app versions without them", () => {
+    expect(SyncRequestSchema.safeParse({ items: [{ ...attempt, localDate: "2026-09-13", selectionReason: "Practice: Counting coins" }] }).success).toBe(true);
+    expect(SyncRequestSchema.safeParse({ items: [{ ...attempt, localDate: "13/09/2026" }] }).success).toBe(false);
+    expect(SyncRequestSchema.safeParse({ items: [{ ...attempt, selectionReason: "x".repeat(201) }] }).success).toBe(false);
+  });
+
   it("rejects device-side correctness, bad ids and empty batches", () => {
     expect(SyncRequestSchema.safeParse({ items: [] }).success).toBe(false);
     expect(SyncRequestSchema.safeParse({ items: [{ ...attempt, id: "not-a-uuid" }] }).success).toBe(false);

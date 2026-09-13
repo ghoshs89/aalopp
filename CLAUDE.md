@@ -31,3 +31,4 @@ Adaptive learning app for one learner: Aishik, age 5.5, working around grade 3 (
 ## Code
 - No `any`. Server Components for data fetching; Client Components only for interaction.
 - Keep engine logic (selection, mastery, review queue) as pure functions in `src/lib/engine/` with tests.
+- Adaptive engine: skill state is replayed from the attempt log every time (`skill-state.ts`), never stored. Mastery is 4 of the last 5 right on 2+ device-local days; reviews at 1, 3, 7, 14 days; any miss returns a skill to learning. `select-session.ts` caps sessions at 2 retries, 3 reviews and 2 questions per skill, fills 2 stretch slots one band up, and keeps 3+ everyday-skill questions. `simulation.test.ts` runs 30 simulated days; rerun it after changing any cap.

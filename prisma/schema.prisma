@@ -50,6 +50,10 @@ model Attempt {
   totalMs       Int
   listenCount   Int             @default(0)
   answeredAt    DateTime
+  /// Calendar date on the device when answered (YYYY-MM-DD), in the household's time zone.
+  localDate     String?
+  /// Why the selector picked this question, shown on the grown-ups page.
+  selectionReason String?
   receivedAt    DateTime        @default(now())
 
   @@index([studentId, answeredAt])

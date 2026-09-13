@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import type { Question } from "@/content/schema";
+import { localDateOf } from "@/lib/engine/dates";
 import { isCorrect, type Response } from "@/lib/engine/grade";
 import { enqueue, pendingCount, startBackgroundSync } from "@/lib/outbox";
 import { questionSpeech, speakable } from "@/lib/speech";
@@ -27,11 +28,13 @@ const FACES: { value: Confidence; face: string; label: string }[] = [
 type Props = {
   student: { id: string; name: string; avatar: string };
   questions: Question[];
+  /** Why each question was chosen, keyed by question id. Saved with the answer for the grown-ups page. */
+  reasons?: Record<string, string>;
   /** When false (dev preview) nothing is saved. */
   save?: boolean;
 };
 
-export function Player({ student, questions, save = true }: Props) {
+export function Player({ student, questions, reasons = {}, save = true }: Props) {
   const { speak, stop, supported: canSpeak } = useSpeech();
   const [phase, setPhase] = useState<Phase>("ready");
   const [index, setIndex] = useState(0);
@@ -41,10 +44,34 @@ export function Player({ student, questions, save = true }: Props) {
   const [showExplanation, setShowExplanation] = useState(false);
   const [pending, setPending] = useState(0);
 
-  const session = useRef({ id: "", startedAt: "", startedMs: 0 });
+  // endItemId stays the same for the whole session, so each new end marker replaces the last one in the upload queue.
+  const session = useRef({ id: "", endItemId: "", startedAt: "", startedMs: 0, active: false });
   const timing = useRef({ shownAt: 0, firstActionMs: null as number | null, listens: 0 });
 
   const question = questions[index];
+
+  const markSessionEnd = () => {
+    if (!save || !session.current.active) return;
+    void enqueue({
+      kind: "sessionEnd",
+      id: session.current.endItemId,
+      studentId: student.id,
+      sessionId: session.current.id,
+      sessionStartedAt: session.current.startedAt,
+      endedAt: new Date().toISOString(),
+    });
+  };
+  const markSessionEndRef = useRef(markSessionEnd);
+  useEffect(() => {
+    markSessionEndRef.current = markSessionEnd;
+  });
+
+  // Leaving partway (switching apps, locking the tablet) still records when the session stopped.
+  useEffect(() => {
+    const onHide = () => document.visibilityState === "hidden" && markSessionEndRef.current();
+    document.addEventListener("visibilitychange", onHide);
+    return () => document.removeEventListener("visibilitychange", onHide);
+  }, []);
 
   useEffect(() => {
     if (!save) return;
@@ -68,7 +95,7 @@ export function Player({ student, questions, save = true }: Props) {
   };
 
   const start = () => {
-    session.current = { id: crypto.randomUUID(), startedAt: new Date().toISOString(), startedMs: clock() };
+    session.current = { id: crypto.randomUUID(), endItemId: crypto.randomUUID(), startedAt: new Date().toISOString(), startedMs: clock(), active: true };
     showQuestion(0);
   };
 
@@ -111,6 +138,8 @@ export function Player({ student, questions, save = true }: Props) {
         totalMs: Math.round(clock() - timing.current.shownAt),
         listenCount: timing.current.listens,
         answeredAt: new Date().toISOString(),
+        localDate: localDateOf(new Date(), Intl.DateTimeFormat().resolvedOptions().timeZone),
+        selectionReason: reasons[question.id]?.slice(0, 200),
       });
     }
 
@@ -136,25 +165,17 @@ export function Player({ student, questions, save = true }: Props) {
     stop();
     setPhase("done");
     speak(`Great work, ${student.name}! You tried ${index + 1} puzzles. Time for a break.`);
-    if (save) {
-      void enqueue({
-        kind: "sessionEnd",
-        id: crypto.randomUUID(),
-        studentId: student.id,
-        sessionId: session.current.id,
-        sessionStartedAt: session.current.startedAt,
-        endedAt: new Date().toISOString(),
-      });
-    }
+    markSessionEnd();
+    session.current.active = false;
   };
 
   if (questions.length === 0) {
-    return <Shell pending={pending}><p className="text-center text-2xl">No puzzles available yet.</p></Shell>;
+    return <Shell onLeave={markSessionEnd} pending={pending}><p className="text-center text-2xl">No puzzles available yet.</p></Shell>;
   }
 
   if (phase === "ready") {
     return (
-      <Shell pending={pending}>
+      <Shell onLeave={markSessionEnd} pending={pending}>
         <div className="flex flex-col items-center gap-6 py-10 text-center">
           <div className="text-8xl">{student.avatar}</div>
           <h1 className="font-display text-4xl font-extrabold">Ready, {student.name}?</h1>
@@ -170,7 +191,7 @@ export function Player({ student, questions, save = true }: Props) {
   if (phase === "done") {
     const tried = index + 1;
     return (
-      <Shell pending={pending}>
+      <Shell onLeave={markSessionEnd} pending={pending}>
         <div className="flex flex-col items-center gap-6 py-10 text-center">
           <div className="text-6xl leading-tight">{"⭐".repeat(Math.min(tried, 10))}</div>
           <h1 className="font-display text-4xl font-extrabold">Great work, {student.name}!</h1>
@@ -188,7 +209,7 @@ export function Player({ student, questions, save = true }: Props) {
   const correctLabel = answer.type === "choice" ? answer.choices[answer.correctIndex] : `${answer.value}${answer.unit ? ` ${answer.unit}` : ""}`;
 
   return (
-    <Shell pending={pending} progress={{ current: index + 1, total: questions.length }}>
+    <Shell onLeave={markSessionEnd} pending={pending} progress={{ current: index + 1, total: questions.length }}>
       <article className="rounded-3xl bg-cream p-4 text-ink shadow-xl sm:p-6">
         <div className="flex items-start gap-3">
           {canSpeak && (
@@ -301,15 +322,17 @@ function Shell({
   children,
   pending,
   progress,
+  onLeave,
 }: {
   children: React.ReactNode;
+  onLeave: () => void;
   pending: number;
   progress?: { current: number; total: number };
 }) {
   return (
     <main className="mx-auto w-full max-w-3xl px-4 pt-4 pb-10">
       <div className="mb-4 flex items-center justify-between gap-3">
-        <Link href="/" className="rounded-xl bg-bg-mid px-3 py-2 text-lg font-bold" aria-label="Back to players">
+        <Link href="/" onClick={onLeave} className="rounded-xl bg-bg-mid px-3 py-2 text-lg font-bold" aria-label="Back to players">
           🏠
         </Link>
         {progress && (

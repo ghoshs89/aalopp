@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Baloo_2, Nunito } from "next/font/google";
+import { TimeZoneCookie } from "@/components/TimeZoneCookie";
 import "./globals.css";
 
 const baloo = Baloo_2({ variable: "--font-baloo", subsets: ["latin"], weight: ["600", "800"] });
@@ -21,7 +22,10 @@ export const viewport: Viewport = {
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="en" className={`${baloo.variable} ${nunito.variable} antialiased`}>
-      <body>{children}</body>
+      <body>
+        <TimeZoneCookie />
+        {children}
+      </body>
     </html>
   );
 }
