@@ -5,7 +5,7 @@
 Adaptive learning app for one learner: Aishik, age 5.5, working around grade 3 (MAP Math and Reading RIT 186). Parents use it from laptops, tablets and phones around the house. The plan and phase status live in `docs/ROADMAP.md`.
 
 ### Current focus
-Read `docs/HANDOFF.md` first for the live state of the work, then `docs/ROADMAP.md` for the plan. Phases 0, 1 and 2 are done and live. Phase 4 (scratchpad and Find the Bug) is built and verified locally, with its migration applied, but not yet committed or deployed.
+Read `docs/HANDOFF.md` first for the live state of the work, then `docs/ROADMAP.md` for the plan. Phases 0, 1 and 2 are done and live. Phase 4 (scratchpad and Find the Bug) is also live. Next: parent tries the scratchpad with a real stylus; Phase 3 (dashboard) after 1 to 2 weeks of real use.
 
 ## Stack
 - Next.js 16 App Router, TypeScript strict, Tailwind v4. Hosted on Vercel.

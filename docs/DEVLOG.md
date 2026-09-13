@@ -16,6 +16,10 @@ Attribution convention used below: "Parent decision" means the parent chose it; 
 
 ---
 
+## 2026-09-13  Milestone  Phase 4 deployed
+What: Commit 1e8d91e (scratchpad and Find the Bug) pushed to `main` at the parent's request.
+Verified by: GitHub commit status from Vercel for 1e8d91e reported "Deployment has completed"; `/api/health` returned 200 afterwards. Before committing: `npm test` 79 passed and `npm run content:check` OK (37 skills, 247 questions).
+
 ## 2026-09-13  Milestone  Phase 4 built and verified locally (not yet deployed)
 What: Scratchpad (`src/components/Scratchpad.tsx`) with pen colors, undo, clear, palm rejection when a stylus is used, and an "I'm using paper" toggle; Find the Bug answer type with 21 generated questions (`scripts/generate/debugging.ts`, `content/questions/generated-debugging.json`) and skill `CS-DEBUG`; migration `20260913180000_attempt_scratchpad` applied to the production database; grown-ups Answers tab shows ✏️ strokes or 📝 paper.
 Verified by: `npm test` 79 passed including the 30-day simulation; `npm run content:check` 37 skills and 247 questions; typecheck, lint and `npm run build` clean; `prisma migrate diff --from-config-datasource` empty after the migration; a probe sync against Supabase stored step answers, `DIGITAL` with 9 strokes and `PAPER`, and an old-format answer with nulls (probe data deleted); headless Chrome at phone (384 px) and iPad (820 px) drew with mouse and touch, undo removed a stroke, the scratchpad started hidden on the next question, no sideways scroll, no console errors; independent blind solve agreed on 21 of 21 Find the Bug questions.

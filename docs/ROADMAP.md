@@ -2,7 +2,7 @@
 
 The living plan. It replaces the original planning file at `~/.claude/plans/what-do-you-think-melodic-harp.md`, which exists only on the parent's Mac and still describes phases that are now done. Decisions and their reasons are in `docs/DEVLOG.md`; the latest session state is in `docs/HANDOFF.md`.
 
-Last updated: 2026-09-13 (Phase 4 built).
+Last updated: 2026-09-13 (Phase 4 live).
 
 ## Goal
 A practice app for one learner, Aishik (age 5.5, working around grade 3: MAP Math and Reading RIT 186, IXL Math about 290 with Measurement and Data as the weakest strand). He uses it on laptops, tablets and phones around the house. Source material: `../Aishik-Support-Plan.md` (one folder above the repo).
@@ -31,7 +31,7 @@ These come from the support plan and the review of the original AALOPP specifica
 | 1. Player MVP | Child player with read-aloud, confidence faces, offline answer queue, Google sign-in, PIN-locked grown-ups page, PWA | Done 2026-09-12 (commit 15a9d22); tested by the parent on a Samsung S23+ and a MacBook |
 | Content batch 1 | 187 generated questions, 12 new skills, 5 new picture types | Done 2026-09-13 (commit da402dc) |
 | 2. Adaptive practice | Mastery per skill, spaced review, session selection with reasons, Skills tab on the grown-ups page | Done 2026-09-13 (commit a1b8d37); live on Vercel |
-| 4. Scratchpad and Find the Bug | Drawing canvas for working out, paper-mode toggle, new question type: find the mistake in a worked solution | Built and verified locally 2026-09-13; database migration applied; code not yet deployed |
+| 4. Scratchpad and Find the Bug | Drawing canvas for working out, paper-mode toggle, new question type: find the mistake in a worked solution | Done 2026-09-13 (commit 1e8d91e); live on Vercel; not yet tried with a real stylus |
 | 3. Parent dashboard | Pure reasoning vs everyday skills chart, skill map, confidence calibration, trends, notes, printable report | After 1 to 2 weeks of real use, so it has data to show |
 | Content batch 2 | Next generated batch, same verification | In about 3 to 4 weeks; the 30-day simulation used about 150 of 226 questions |
 | 5. PDF ingestion tool | Contest PDFs to questions inside the app | Deferred; converting PDFs in the repo with a coding assistant covers this for now |

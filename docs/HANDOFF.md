@@ -1,4 +1,4 @@
-# Session Handoff  2026-09-13  Phase 4 built and verified locally, not yet committed or deployed; Phases 0 to 2 live
+# Session Handoff  2026-09-13  Phases 0 to 2 and 4 live; next is real-device stylus testing, then Phase 3 after real use
 
 > Read this fully before acting. It is the state of the work as of the end of the last session. Assume you have no memory of that session and may be a different model. This document plus the repository should be enough to resume.
 >
@@ -12,18 +12,16 @@ Commands run on 2026-09-13 from the repo root (`aalopp/`) after the Phase 4 chan
 - `npm run lint`: pass. No problems.
 - `npm run build`: compiled successfully.
 
-Repo state: branch `main` level with `origin/main` at `eb4e4ca`. All Phase 4 work is uncommitted (listed in section 1). No em dashes in `CLAUDE.md`, `docs/` or `content/REVIEW.md`.
+Repo state: Phase 4 committed as `1e8d91e` and pushed; this docs update is committed on top of it. No em dashes in `CLAUDE.md`, `docs/` or `content/REVIEW.md`.
 
 ## 1. Current state
 - Works and verified:
-  - Live at `https://aalopp.vercel.app`: Phases 0 to 2. Vercel reported "Deployment has completed" for `413d549`, the last deployed code change; later commits changed only docs.
+  - Live at `https://aalopp.vercel.app`: Phases 0, 1, 2 and 4. Vercel reported "Deployment has completed" for `1e8d91e` (Phase 4), and `/api/health` returned 200 afterwards.
   - Both family Google accounts sign in on production (new `auth.users` sign-ins at 14:45 and 14:46 UTC on 2026-09-13, each with an active `auth.sessions` row).
   - All 247 questions passed an independent blind solve (187 generated, 39 hand-typed, 21 Find the Bug). Record in `content/REVIEW.md`.
   - Phase 4 locally: scratchpad and Find the Bug work in headless Chrome at 384 px and 820 px wide (mouse and touch strokes, undo, hidden per question, correct and wrong feedback, no sideways scroll, no console errors).
   - Production database already has the Phase 4 migration `20260913180000_attempt_scratchpad` (nullable columns, so the live Phase 2 code is unaffected). `prisma migrate diff --from-config-datasource --to-schema prisma/schema.prisma` printed an empty migration. A probe sync saved `step` answers and scratchpad fields, then the probe student was deleted.
-- In progress, and exactly where it stops: Phase 4 is complete in the working tree but not committed or pushed, so it is not live. Uncommitted files:
-  - Modified: `CLAUDE.md`, `content/REVIEW.md`, `content/skills.json`, `docs/DEVLOG.md`, `docs/ROADMAP.md`, `docs/HANDOFF.md`, `prisma/schema.prisma`, `scripts/generate/index.ts`, `src/app/parent/page.tsx`, `src/components/Player.tsx`, `src/content/bank.ts`, `src/content/schema.ts`, `src/content/schema.test.ts`, `src/lib/engine/grade.ts`, `src/lib/engine/grade.test.ts`, `src/lib/speech.ts`, `src/lib/speech.test.ts`, `src/lib/sync-schema.ts`, `src/lib/sync-schema.test.ts`, `src/lib/sync.ts`.
-  - New: `content/questions/generated-debugging.json`, `prisma/migrations/20260913180000_attempt_scratchpad/migration.sql`, `scripts/generate/debugging.ts`, `src/components/Scratchpad.tsx`, `src/components/Scratchpad.test.ts`.
+- In progress: nothing. Phase 4 is committed and deployed.
 - Broken or known failing: none observed.
 - Assumed, not verified:
   - A real stylus (Apple Pencil, S Pen) draws with pressure, and palm rejection works on a physical tablet. Only mouse and emulated touch were tested.
@@ -57,14 +55,12 @@ Standing rules in `CLAUDE.md`: Row Level Security on every table with server-sid
 - Rerun `src/lib/engine/simulation.test.ts` after changing any engine cap.
 
 ## 4. Next steps, prioritized
-- Commit and push Phase 4 | `git status` clean; Vercel commit status for the new commit is "Deployment has completed" | parent asks for the commit, or runs `git add -A && git commit` and `git push`; then `gh api repos/ghoshs89/aalopp/commits/<sha>/status`.
 - Try Phase 4 on a real tablet or phone with a stylus | strokes appear with varying width, a resting palm does not draw, the Answers tab shows ✏️ and 📝 | `src/components/Scratchpad.tsx`, `src/app/parent/page.tsx`.
 - Phase 3, parent dashboard | after 1 to 2 weeks of real answers | `src/app/parent/page.tsx`, `src/components/parent/SkillProgress.tsx`, `src/lib/engine/skill-state.ts`; scratchpad use per skill is now available in `Attempt.scratchpad`.
 - Tune the engine from real data | after a week or more of use; compare real accuracy and review share with the simulation | `src/lib/engine/select-session.ts`, `src/lib/engine/simulation.test.ts`.
 - Content batch 2, including more Find the Bug questions | in about 3 to 4 weeks | `scripts/generate/`.
 
 ## 5. Open questions and blockers
-- Blocks deployment of Phase 4: parent approval to commit and push.
 - Parent action, not blocking code: set up the TrueNAS backup (`docs/backup-truenas.md`); until then answer data exists only in Supabase, whose free plan has no downloadable backups.
 - Parent action: repeat the Wi-Fi drop test on a phone.
 - Parent input: is 8 questions the right session length? Asked, not yet answered.
