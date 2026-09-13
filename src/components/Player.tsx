@@ -10,6 +10,7 @@ import { enqueue, pendingCount, startBackgroundSync } from "@/lib/outbox";
 import { questionSpeechParts, speakable } from "@/lib/speech";
 import { useSpeech } from "@/lib/use-speech";
 import { useSpeechInput } from "@/lib/use-speech-input";
+import { useVoicePreference } from "@/lib/voice-preference";
 import { matchSpokenChoice } from "@/lib/voices";
 import { Scratchpad } from "./Scratchpad";
 import { Visual } from "./visuals/Visual";
@@ -40,6 +41,17 @@ type Props = {
 
 export function Player({ student, questions, reasons = {}, save = true }: Props) {
   const { speak, stop, supported: canSpeak } = useSpeech();
+  const [voiceOn, setVoiceOn] = useVoicePreference();
+  // Automatic reading follows the on/off switch. Buttons the child taps on purpose (🔊, Hear it) always speak.
+  const autoSpeak: typeof speak = (input) => {
+    if (voiceOn) speak(input);
+  };
+  const toggleVoice = () => {
+    const next = !voiceOn;
+    setVoiceOn(next);
+    if (!next) stop();
+    else if (phase === "answering" && question) speak(questionSpeechParts(question));
+  };
   const speechInput = useSpeechInput();
   const [heard, setHeard] = useState<{ text: string; matched: boolean } | null>(null);
   // Answers so far this session (true = right), for the break suggestion.
@@ -107,7 +119,7 @@ export function Player({ student, questions, reasons = {}, save = true }: Props)
     speechInput.cancel();
     setPhase("answering");
     timing.current = { shownAt: clock(), firstActionMs: null, listens: 0 };
-    speak(questionSpeechParts(questions[i]));
+    autoSpeak(questionSpeechParts(questions[i]));
   };
 
   const start = () => {
@@ -171,11 +183,11 @@ export function Player({ student, questions, reasons = {}, save = true }: Props)
     }
 
     if (correct) {
-      speak("You got it! Nice careful thinking.");
+      autoSpeak("You got it! Nice careful thinking.");
     } else {
       setShowExplanation(true);
       const opener = confidence === "HIGH" ? "You felt really sure. Let's look at it together." : "Let's check it together.";
-      speak(`${opener} ${speakable(question.explanation)}`);
+      autoSpeak(`${opener} ${speakable(question.explanation)}`);
     }
   };
 
@@ -191,18 +203,18 @@ export function Player({ student, questions, reasons = {}, save = true }: Props)
   const finish = () => {
     stop();
     setPhase("done");
-    speak(`Great work, ${student.name}! You tried ${index + 1} puzzles. Time for a break.`);
+    autoSpeak(`Great work, ${student.name}! You tried ${index + 1} puzzles. Time for a break.`);
     markSessionEnd();
     session.current.active = false;
   };
 
   if (questions.length === 0) {
-    return <Shell onLeave={markSessionEnd} pending={pending}><p className="text-center text-2xl">No puzzles available yet.</p></Shell>;
+    return <Shell onLeave={markSessionEnd} voice={canSpeak ? { on: voiceOn, toggle: toggleVoice } : undefined} pending={pending}><p className="text-center text-2xl">No puzzles available yet.</p></Shell>;
   }
 
   if (phase === "ready") {
     return (
-      <Shell onLeave={markSessionEnd} pending={pending}>
+      <Shell onLeave={markSessionEnd} voice={canSpeak ? { on: voiceOn, toggle: toggleVoice } : undefined} pending={pending}>
         <div className="flex flex-col items-center gap-6 py-10 text-center">
           <div className="text-8xl">{student.avatar}</div>
           <h1 className="font-display text-4xl font-extrabold">Ready, {student.name}?</h1>
@@ -218,7 +230,7 @@ export function Player({ student, questions, reasons = {}, save = true }: Props)
   if (phase === "done") {
     const tried = index + 1;
     return (
-      <Shell onLeave={markSessionEnd} pending={pending}>
+      <Shell onLeave={markSessionEnd} voice={canSpeak ? { on: voiceOn, toggle: toggleVoice } : undefined} pending={pending}>
         <div className="flex flex-col items-center gap-6 py-10 text-center">
           <div className="text-6xl leading-tight">{"⭐".repeat(Math.min(tried, 10))}</div>
           <h1 className="font-display text-4xl font-extrabold">Great work, {student.name}!</h1>
@@ -241,7 +253,7 @@ export function Player({ student, questions, reasons = {}, save = true }: Props)
         : `${answer.value}${answer.unit ? ` ${answer.unit}` : ""}`;
 
   return (
-    <Shell onLeave={markSessionEnd} pending={pending} progress={{ current: index + 1, total: questions.length }}>
+    <Shell onLeave={markSessionEnd} voice={canSpeak ? { on: voiceOn, toggle: toggleVoice } : undefined} pending={pending} progress={{ current: index + 1, total: questions.length }}>
       <article className="rounded-3xl bg-cream p-4 text-ink shadow-xl sm:p-6">
         {question.passage && (
           <div className="mb-4 rounded-2xl border-2 border-ink/10 bg-white p-4">
@@ -432,7 +444,7 @@ export function Player({ student, questions, reasons = {}, save = true }: Props)
             <button
               onClick={() => {
                 setShowExplanation(true);
-                speak(speakable(question.explanation));
+                autoSpeak(speakable(question.explanation));
               }}
               className="mt-3 text-xl font-bold text-gold underline underline-offset-4"
             >
@@ -467,9 +479,11 @@ function Shell({
   pending,
   progress,
   onLeave,
+  voice,
 }: {
   children: React.ReactNode;
   onLeave: () => void;
+  voice?: { on: boolean; toggle: () => void };
   pending: number;
   progress?: { current: number; total: number };
 }) {
@@ -486,9 +500,21 @@ function Shell({
             ))}
           </div>
         )}
-        <span className="min-w-12 text-right text-sm text-cream-dim" title="Answers waiting to upload">
-          {pending > 0 ? `☁️ ${pending}` : ""}
-        </span>
+        <div className="flex items-center gap-2">
+          <span className="min-w-8 text-right text-sm text-cream-dim" title="Answers waiting to upload">
+            {pending > 0 ? `☁️ ${pending}` : ""}
+          </span>
+          {voice && (
+            <button
+              onClick={voice.toggle}
+              aria-pressed={voice.on}
+              aria-label={voice.on ? "Voice is on. Tap to turn it off." : "Voice is off. Tap to turn it on."}
+              className={`rounded-xl px-3 py-2 text-base font-bold whitespace-nowrap ${voice.on ? "bg-gold text-ink" : "bg-bg-mid text-cream"}`}
+            >
+              {voice.on ? "🔊 Voice on" : "🔇 Voice off"}
+            </button>
+          )}
+        </div>
       </div>
       {children}
     </main>

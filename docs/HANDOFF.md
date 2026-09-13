@@ -25,7 +25,7 @@ Repo state: `main` level with `origin/main`; the last code commit is `b56be0c`, 
 - Assumed, not verified (each is a likely source of the "issues to work out later" the parent expects):
   - Parent dashboard, notes form and printable report in a real signed-in session. They were checked only through `/dev/dashboard` with simulated data and by route checks; they need sign-in and the PIN.
   - Scratchpad with a real stylus and palm rejection on a physical tablet.
-  - Spanish and French voices on the family's devices. `pickVoice` falls back to any voice for the language, then the default voice; a device without those voices will mispronounce.
+  - Voice quality on the family's devices. `pickVoice` now prefers Natural, Premium and Enhanced voices and skips robotic novelty voices, but quality depends on what each device has installed; the family guide explains how to install better voices. Automatic reading is off by default (on-screen switch).
   - Speech recognition of a child's voice, in any language.
   - The offline answer queue after a real Wi-Fi drop.
   - The Vercel cron calling `/api/health` daily.

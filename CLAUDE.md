@@ -28,7 +28,7 @@ Read `docs/HANDOFF.md` first for the live state of the work, then `docs/ROADMAP.
 ## Product rules
 - Process over speed. Never reward fast answers in ratings or UI; no visible timers for the child.
 - Soft gates only: mix in applied-convention items (time, money, measurement, graphs), never lock him out of reasoning content.
-- Every prompt must be readable aloud (TTS). Use the `speech` field when emoji or symbols would read badly.
+- Every prompt must be readable aloud (TTS). Use the `speech` field when emoji or symbols would read badly. Automatic reading is off by default and follows the on-screen switch (`useVoicePreference`); the 🔊 and Hear it buttons speak on tap regardless.
 - Scratchpad drawings are never stored or uploaded; only the mode (none, digital, paper) and stroke count are saved.
 - Find the Bug questions ask for the first wrong step; every step before `bugIndex` must be fully true, or the blind solve will flag a second candidate.
 - Reading passages are never read aloud; Spanish and French are spoken with a voice for that language. Spoken answers are optional: a match selects a choice, the child still confirms, and tapping always works.

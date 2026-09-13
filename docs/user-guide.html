@@ -204,6 +204,7 @@
       <li><b>328</b> checked questions</li>
       <li><b>48</b> skills in 6 strands</li>
       <li>No timers, ever</li>
+      <li>Voice starts off</li>
     </ul>
   </header>
 
@@ -249,7 +250,11 @@
           </table>
         </div>
 
-        <h3>3. Know where the grown-up controls are</h3>
+        <h3>3. Decide whether the app talks</h3>
+        <p>Reading aloud is <strong>off</strong> when the app is first opened. The <span class="key">🔇 Voice off</span> switch at the top right of every puzzle screen turns it on; it then shows <span class="key gold">🔊 Voice on</span>. Each device remembers its own setting, so a tablet can talk while a laptop stays quiet.</p>
+        <p>For the most natural voice, see <a href="#voice">Making the voice sound natural</a>.</p>
+
+        <h3>4. Know where the grown-up controls are</h3>
         <p>At the bottom of <strong>Who is playing?</strong> there is a small <strong>Grown-ups</strong> link. It asks for the family PIN, then opens the progress pages. It stays unlocked for 30 minutes, or until you tap <span class="key">Lock</span>.</p>
       </section>
 
@@ -260,7 +265,7 @@
           <ol class="steps">
             <li><span>Tap your race car 🏎️.</span></li>
             <li><span>Tap <span class="key gold">Let's go! 🚀</span></span></li>
-            <li><span>Listen to the puzzle. Tap 🔊 to hear it again.</span></li>
+            <li><span>Read the puzzle, or tap 🔊 to hear it.</span></li>
             <li><span>Think it through. You can draw, or use paper.</span></li>
             <li><span>Tap your answer.</span></li>
             <li><span>Tap a face to show how sure you are: 😟 not sure, 🙂 kind of sure, 😄 very sure.</span></li>
@@ -271,7 +276,8 @@
 
         <h3>The buttons you will see</h3>
         <ul class="buttons">
-          <li><span class="key">🔊</span><span>Reads the puzzle out loud again. On Spanish and French puzzles, <span class="key">🔊 Hear it</span> plays the word in that language.</span></li>
+          <li><span class="key">🔇 Voice off</span><span>Tap to turn the talking on. When it says <strong>🔊 Voice on</strong>, every puzzle and answer is read out loud. Tap again to make it quiet.</span></li>
+          <li><span class="key">🔊</span><span>Reads this puzzle out loud once, even when the voice is off. On Spanish and French puzzles, <span class="key">🔊 Hear it</span> plays the word in that language.</span></li>
           <li><span class="key">✏️ Scratchpad</span><span>Opens a drawing space with a blue pen, a red pen, <strong>Undo</strong> and <strong>Clear</strong>. It works with a finger or a stylus. It clears for every new puzzle.</span></li>
           <li><span class="key">📝 I'm using paper</span><span>Tap this when working it out on real paper.</span></li>
           <li><span class="key">🎤 Say it</span><span>On some language puzzles, say the answer instead of tapping. The app picks the answer it heard, and you still tap a face to finish. Tapping always works too.</span></li>
@@ -289,7 +295,7 @@
           <pre class="mermaid">
 flowchart TD
   A["Who is playing? Tap 🏎️"] --> B["App picks 8 puzzles for today"]
-  B --> C["Puzzle shown and read aloud"]
+  B --> C["Puzzle shown, read aloud if Voice is on"]
   C --> D["Work it out: think, scratchpad or paper"]
   D --> E["Tap an answer, or say it on language puzzles"]
   E --> F["Tap a face: how sure?"]
@@ -309,7 +315,7 @@ flowchart TD
         <h3>What Aishik sees after answering</h3>
         <ul>
           <li><strong>Right:</strong> "You got it! Nice careful thinking. 🎉" A <strong>How do we know?</strong> link shows the worked explanation if he wants it.</li>
-          <li><strong>Not right:</strong> "Let's check it together. 🔍" The right answer is shown and the explanation is read aloud. If he tapped 😄 very sure, it says "You felt really sure. Let's look at it together." His choice is outlined and the right answer is highlighted, but there is no penalty.</li>
+          <li><strong>Not right:</strong> "Let's check it together. 🔍" The right answer and the explanation are shown, and read aloud when the voice is on. If he tapped 😄 very sure, it says "You felt really sure. Let's look at it together." His choice is outlined and the right answer is highlighted, but there is no penalty.</li>
           <li><strong>Find the Bug puzzles:</strong> the wrong step turns red and shows what it should have said.</li>
         </ul>
 
@@ -496,11 +502,21 @@ flowchart TD
         </details>
         <details>
           <summary>Nothing is read aloud</summary>
-          <p>Check the volume, and on an iPhone or iPad, the silent switch or Silent mode. The first read-aloud needs a tap, which <strong>Let's go</strong> provides. Tap 🔊 to replay.</p>
+          <p>Reading aloud starts switched off. Tap <span class="key">🔇 Voice off</span> at the top right so it shows <strong>🔊 Voice on</strong>. If it is on and still silent, check the volume, and on an iPhone or iPad the silent switch or Silent mode. Tapping 🔊 next to a puzzle always tries to read it.</p>
+        </details>
+        <details id="voice">
+          <summary>Making the voice sound natural</summary>
+          <p>The app uses the best voice installed on the device: it looks for voices marked Natural, Premium or Enhanced, and skips robotic novelty voices. How good it sounds depends on what the device has, so installing a better voice once makes a big difference.</p>
+          <ul>
+            <li><strong>iPad, iPhone or Mac:</strong> in Settings (System Settings on a Mac), open Accessibility, then Spoken Content (Read and Speak on newer Macs), then Voices, then English. Download a voice marked <strong>Premium</strong> or <strong>Enhanced</strong>, such as Ava, Zoe or Evan. Do the same under Spanish and French for those puzzles.</li>
+            <li><strong>Laptop:</strong> Microsoft Edge offers "Online (Natural)" voices, which sound the most human. Chrome uses its Google voices.</li>
+            <li><strong>Android:</strong> in Settings, search for text-to-speech, choose Speech Services by Google, and install a high-quality voice for English, Spanish and French.</li>
+          </ul>
+          <p>Close and reopen the app after installing a voice so it can find it.</p>
         </details>
         <details>
           <summary>Spanish or French sounds like an English voice</summary>
-          <p>The device has no voice installed for that language. Add one in the device's speech settings: on iPhone and iPad under Accessibility, Spoken Content, Voices; on Android under text-to-speech settings; on a Mac under Accessibility, Spoken Content, System voice.</p>
+          <p>The device has no voice installed for that language. Add one as described in <a href="#voice">Making the voice sound natural</a>.</p>
         </details>
         <details>
           <summary>There is no 🎤 Say it button</summary>
