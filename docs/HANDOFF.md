@@ -29,7 +29,7 @@ Repo state: `main` level with `origin/main`; the last code commit is `b56be0c`, 
   - Speech recognition of a child's voice, in any language.
   - The offline answer queue after a real Wi-Fi drop.
   - The Vercel cron calling `/api/health` daily.
-  - Real usage by Aishik: only the parent's test sessions exist, so every engine threshold is tuned on simulation only.
+  - Real usage by Aishik: none yet. All test practice data was deleted on 2026-09-13 for a fresh start (backup at `/Users/soumalya/Documents/Aishik/aalopp-reset-backup-2026-09-13.json`, outside the repo), so every engine threshold is tuned on simulation only.
 
 ## 2. Decisions made this session
 All are in `docs/DEVLOG.md` with reasons and attribution. Treat as settled; do not reopen without new cause.

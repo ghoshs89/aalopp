@@ -16,6 +16,17 @@ Attribution convention used below: "Parent decision" means the parent chose it; 
 
 ---
 
+## 2026-09-13  Milestone  Family user guide
+What: `docs/user-guide.html`, a guide for Aishik and his parents: device setup, how to play (a section to read with Aishik), a session flow diagram, how puzzles are chosen (mastery, review gaps, session rules, levels), question types with counts per strand, the grown-ups page and its selection reasons, tips, troubleshooting and data privacy. Published as a private artifact at https://claude.ai/code/artifact/8a8f0d10-cf4c-4082-8258-74892b1c3c62.
+Verified by: counts taken from `content/` (328 questions, 48 skills; 200 choice, 101 number, 27 Find the Bug); screen text and rules checked against `src/components/Player.tsx`, `src/lib/engine/select-session.ts`, `src/lib/engine/skill-state.ts`, `src/lib/engine/breaks.ts` and `src/app/parent/page.tsx`; two statements corrected before publishing (wrong answers do get an outline; background upload retries run only during a session). Update the guide when question counts, session rules or screens change.
+
+## 2026-09-13  Milestone  Practice data reset for a fresh start
+What: All test practice data was deleted from production so Aishik starts from scratch: 30 attempts and 6 practice sessions. Kept: the Aishik student profile, both Google sign-in accounts, and parent notes (there were none). Skill states, reviews, working levels, the dashboard and the report reset automatically because they are replayed from attempts.
+Reason: Parent decision: "reset all that he has done and start from scratch". Parent chose to delete answers and sessions only and to keep a backup.
+Alternatives rejected: Also deleting and recreating the student profile; deleting without a backup.
+Verified by: backup file `/Users/soumalya/Documents/Aishik/aalopp-reset-backup-2026-09-13.json` (outside the git repo) contains all 6 sessions and 30 attempts; deletes ran in one transaction; afterwards Student 1, PracticeSession 0, Attempt 0, ParentNote 0.
+Caveat: answers still queued in a device's IndexedDB outbox would upload after the reset. The parent was asked to confirm no pending uploads (no cloud counter) on each device.
+
 ## 2026-09-13  Milestone  All planned phases complete and live
 What: Every phase in `docs/ROADMAP.md` is built and deployed. Final bank: 48 skills, 328 reviewed questions (bands 1 to 5: 53, 121, 96, 48, 10). Session handoff rewritten for the next stage: real use, device testing and fixes.
 Verified by: at handoff `npm test` (20 files, 106 tests), `npm run content:check`, `npm run typecheck` and `npm run lint` all exit 0; Vercel commit status "Deployment has completed" for b56be0c; `/api/health` 200, `/dev/dashboard` 404 and `/parent/report` redirecting to `/login` when signed out.
