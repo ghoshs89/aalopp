@@ -16,6 +16,16 @@ Attribution convention used below: "Parent decision" means the parent chose it; 
 
 ---
 
+## 2026-09-13  Milestone  Phase 5 content ingestion tool
+What: `npm run content:ingest -- <file.pdf> [--slug name] [--answers "1:B,2:D"]` (`scripts/ingest/`) extracts a PDF's text layer with pdfjs-dist 6.3.289, splits numbered problems and lettered choices, estimates the band from the Kangaroo problem number, flags problems that mention a picture, applies an answer key, and writes drafts to `content/drafts/<slug>.json`. Workflow for turning drafts into reviewed questions in `content/drafts/README.md`. Test fixture `tests/fixtures/sample-contest.pdf` contains original problems generated with headless Chrome.
+Verified by: 7 ingestion tests including extraction from the fixture PDF across two pages; full `npm test`, typecheck, lint and build clean. Content batch 2 (commit c87a25b) was confirmed deployed by Vercel's commit status before this work.
+Not verified: a real contest PDF (none in the repo); scanned PDFs without a text layer produce no drafts by design.
+
+## 2026-09-13  Decision  Ingestion as a repo tool, not an in-app vision pipeline
+What: Phase 5 is a command-line tool that produces drafts in the repo. The in-app upload page, AI vision parsing and image cropping from the original specification were not built.
+Reason: Assistant decision under the parent's instruction to finish all phases. The vision path needs an Anthropic API key and storage that the project does not have, so it would ship untested; drafts still need the independent blind solve before any question reaches the child, so an in-app approve button would bypass the content review rule; and contest artwork should be redrawn, not cropped and copied.
+Alternatives rejected: Claude vision extraction behind an upload page (no key, untestable now, can be added later on top of `DraftQuestionSchema`); OCR for scanned PDFs (heavy dependency; noted in the drafts README).
+
 ## 2026-09-13  Milestone  Content batch 2: 39 questions and 5 grade 3 skills
 What: `scripts/generate/batch2.ts` writes `generated-batch2.json`: multiplication, division (including leftovers), fractions (halves, thirds, quarters; unequal parts), area and perimeter, harder logic (5-car ordering, 4 by 4 grid, counting arrangements and handshakes) and 6 more Find the Bug items. New skills `MATH-OA-MULT`, `MATH-OA-DIVIDE`, `MATH-NF-FRACTIONS`, `MATH-MD-AREA-PERIMETER` (everyday skill) and `LOGIC-COUNT-WAYS`. Bank now 42 skills and 286 questions; band 5 grew from 3 to 12 questions.
 Verified by: independent blind solve agreed on 39 of 39; generator uniqueness checks caught a 5-car race whose clues had no solution (clue changed before the solve); `npm test` 88 passed; typecheck, lint and build clean; phone-width overflow check on the new pictures passed. Details in `content/REVIEW.md`.

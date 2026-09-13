@@ -16,6 +16,7 @@ Read `docs/HANDOFF.md` first for the live state of the work, then `docs/ROADMAP.
 - `npm test`: unit tests plus a full validation of `content/`
 - `npm run content:check`: validate content and print coverage by strand, band and review status
 - `npm run content:generate`: rebuild `content/questions/generated-*.json`
+- `npm run content:ingest -- <file.pdf>`: extract draft questions from a contest PDF into `content/drafts/` (never loaded by the app; see `content/drafts/README.md`)
 - `npm run typecheck`, `npm run lint`
 
 ## Content
