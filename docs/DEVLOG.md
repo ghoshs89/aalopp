@@ -16,6 +16,10 @@ Attribution convention used below: "Parent decision" means the parent chose it; 
 
 ---
 
+## 2026-09-13  Milestone  Voice switch and natural voice selection deployed
+What: Commit bcdc783 pushed to `main` at the parent's request.
+Verified by: GitHub commit status from Vercel for bcdc783 reported "Deployment has completed"; `npm test` 108 passed before committing. Family guide republished (version 2) at the same artifact link.
+
 ## 2026-09-13  Decision  Voice off by default, with an on-screen switch
 What: Automatic reading aloud (the question when it appears, feedback, explanations, the end-of-session message) is off until someone taps the switch in the top bar of every puzzle screen ("🔇 Voice off" or "🔊 Voice on"). The choice is saved per device in localStorage (`src/lib/voice-preference.ts`). Taps the child makes on purpose still speak while the voice is off: the 🔊 button beside a question and "Hear it" on Spanish and French questions, which cannot be answered without hearing the word.
 Reason: Parent decision: "The voice needs to be turned off by default and I would like an on/off button on screen to turn it on." Keeping the deliberate 🔊 and "Hear it" taps working is an assistant decision so listening questions stay answerable; the parent has not yet been asked about it.
