@@ -16,6 +16,20 @@ Attribution convention used below: "Parent decision" means the parent chose it; 
 
 ---
 
+## 2026-09-13  Milestone  Phase 3 deployed
+What: Commit 692a08e pushed to `main`.
+Verified by: GitHub commit status from Vercel for 692a08e reported "Deployment has completed". (The Phase 3 docs update failed on a script syntax error before that commit and was added in the next commit.)
+
+## 2026-09-13  Milestone  Phase 3 parent dashboard built
+What: Grown-ups page tabs Overview (stat tiles, everyday skills vs reasoning, confidence calibration, answers per day, weekly percent right, accuracy by strand), Skills, Skill map, Recent answers and Notes; printable report at `/parent/report`; `ParentNote` table (migration `20260913200000_parent_notes`, RLS enabled). Pure calculations in `src/lib/engine/insights.ts`.
+Verified by: `npm test` 86 passed (7 new insight tests); typecheck, lint and build clean; migration applied and `prisma migrate diff --from-config-datasource` empty; the publishable key read an empty list from `ParentNote` with a probe row present (probe deleted); `/dev/dashboard` with 30 simulated days screenshot at 1280 and 384 pixels wide, tooltips appear on hover, no page-level sideways scroll, no console errors.
+Not verified: the notes form and report printing in a real signed-in session (both need sign-in and the PIN).
+
+## 2026-09-13  Decision  Dashboard chart forms
+What: Horizontal percent bars in one hue (everyday vs reasoning, confidence, strands); two shades of one hue for right and not-right daily columns; a 2px line for weekly percent right with gaps for empty weeks; skill map status as a colored stripe plus icon plus label; every chart has hover and keyboard tooltips and a "Show as table" view. Charts sit on light cards (`#fcfcfb`) on the app's dark page. The daily chart keeps a 600px minimum width and scrolls inside its card on phones.
+Reason: Assistant decision following the dataviz method: bars compare magnitude better than the radar chart in the original specification, and status colors must never carry meaning alone. The palette validator failed the status yellow (`#fab219`) on the lightness band and warned on contrast; that color is from the fixed status palette, which documents the shortfall and requires icon plus label, so it always appears with "Review due".
+Alternatives rejected: Radar chart for strands; React Flow for the skill map (a new dependency for a 37-node graph; the layered SVG layout in `skillMapLayout` is enough); a PDF library for the report (browser print to PDF from a plain light page).
+
 ## 2026-09-13  Decision  Finish all remaining phases without waiting for parent input
 What: The parent asked to finish the entire project, commit and push whatever is recommended, and go live, with issues worked out later. Remaining scope, in order: Phase 3 (parent dashboard), content batch 2, Phase 5 (content ingestion), and the later items (reading, Spanish and French with speech, fatigue detection). Commit and push are authorized for this run after each phase passes its checks. Decisions and milestones keep being logged here.
 Reason: Parent decision, stated verbatim: "Don't wait for my inputs, finish the entire project, push and commit whatever you recommend and go live. We will come back and work out the issues later."

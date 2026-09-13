@@ -32,7 +32,7 @@ These come from the support plan and the review of the original AALOPP specifica
 | Content batch 1 | 187 generated questions, 12 new skills, 5 new picture types | Done 2026-09-13 (commit da402dc) |
 | 2. Adaptive practice | Mastery per skill, spaced review, session selection with reasons, Skills tab on the grown-ups page | Done 2026-09-13 (commit a1b8d37); live on Vercel |
 | 4. Scratchpad and Find the Bug | Drawing canvas for working out, paper-mode toggle, new question type: find the mistake in a worked solution | Done 2026-09-13 (commit 1e8d91e); live on Vercel; not yet tried with a real stylus |
-| 3. Parent dashboard | Pure reasoning vs everyday skills chart, skill map, confidence calibration, trends, notes, printable report | After 1 to 2 weeks of real use, so it has data to show |
+| 3. Parent dashboard | Pure reasoning vs everyday skills chart, skill map, confidence calibration, trends, notes, printable report | Done 2026-09-13 (commit 692a08e), built early at the parent's request; charts fill in as real answers arrive |
 | Content batch 2 | Next generated batch, same verification | In about 3 to 4 weeks; the 30-day simulation used about 150 of 226 questions |
 | 5. PDF ingestion tool | Contest PDFs to questions inside the app | Deferred; converting PDFs in the repo with a coding assistant covers this for now |
 | Later | Reading, Spanish and French with speech input; fatigue detection | Only after the math and logic loop has proven itself |
