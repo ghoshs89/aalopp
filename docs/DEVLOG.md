@@ -16,6 +16,26 @@ Attribution convention used below: "Parent decision" means the parent chose it; 
 
 ---
 
+## 2026-09-13  Milestone  Session handoff written
+What: Ran the `/handoff` procedure: verification commands, DEVLOG reconciled (backfilled decisions, a milestone and dead ends not yet logged), `docs/HANDOFF.md` rewritten, `CLAUDE.md` checked. Not committed; committing is the parent's step.
+Verified by: `npm test` (15 files, 72 tests), `npm run content:check` (36 skills, 226 questions, all reviewed), `npm run typecheck` and `npm run lint`, all exit 0 on 2026-09-13.
+
+## 2026-09-13  Dead end  Detecting a new deployment from script paths in the HTML
+What: A background poll compared `/_next/static/chunks/` paths in the live page to spot a new Vercel deployment. It never fired, because Next.js 16 serves scripts from `/_next/static/immutable/chunks/`, so both fingerprints were the hash of an empty string.
+Instead: read the GitHub commit status that Vercel posts (`gh api repos/ghoshs89/aalopp/commits/<sha>/status`), or search the live bundle for a string unique to the new code.
+
+## 2026-09-13  Dead end  Diffing migrations without a shadow database
+What: `npx prisma migrate diff --from-migrations prisma/migrations --to-schema prisma/schema.prisma` fails with Prisma 7.10 unless `shadowDatabaseUrl` is set in `prisma.config.ts`, and `prisma migrate dev` would need a shadow database on Supabase.
+Instead: write migrations with `npx prisma migrate diff --from-empty --to-schema prisma/schema.prisma --script` (or by hand for later changes), apply with `npx prisma migrate deploy`, and confirm with `npx prisma migrate diff --from-config-datasource --to-schema prisma/schema.prisma --script`, which should print an empty migration.
+
+## 2026-09-13  Milestone  Production environment configured
+What: Vercel production has `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY`, `DATABASE_URL`, `DIRECT_URL`, `ALLOWED_EMAILS`, `PARENT_PIN` and `CRON_SECRET`. The first attempt did not take effect until the variables were saved for Production and the site was redeployed.
+Verified by: `/api/health` with the local `CRON_SECRET` returned 200 on the live site; the parent signed in with both family accounts.
+
+## 2026-09-13  Milestone  Second family account can sign in on production
+What: `aishik.ghosh2020@gmail.com` signs in at `https://aalopp.vercel.app` and reaches "Who is playing?".
+Verified by: parent sign-in in a fresh session; Supabase `auth.users` showed a new sign-in at 2026-09-13 14:46:29 UTC with an active row in `auth.sessions`, which the app would have removed if the account had failed the `ALLOWED_EMAILS` check in `src/app/auth/callback/route.ts`.
+
 ## 2026-09-13  Milestone  Continuity and question fixes deployed
 What: Commit 413d549 (continuity docs, `/handoff` fixes, `docs/ROADMAP.md`, 3 question fixes) pushed to `main`.
 Verified by: GitHub commit status from Vercel for 413d549 reported "Deployment has completed". Before committing: `npm test` 72 passed, `npm run content:check` OK (226 reviewed), typecheck and lint clean.
@@ -94,6 +114,43 @@ Verified by: overflow measurement and screenshots at 384 pixels wide (Samsung S2
 ## 2026-09-13  Milestone  Phase 1 tested by the parent
 What: Parent played sessions on a Samsung S23+ and a MacBook Pro.
 Verified by: database showed 2 sessions, 6 attempts, uploads within 2 seconds, no duplicates, and no repeated questions across devices. Not verified: the offline queue, because no attempt showed an upload delay.
+
+## 2026-09-12  Decision  Session length and child-facing timing
+What: A session is 8 questions (`SESSION_SIZE` in `src/lib/engine/select-session.ts`) and ends quietly after 12 minutes (`SESSION_LIMIT_MS` in `src/components/Player.tsx`). No timer is ever shown. Timing (time to first action, total time, replays) is recorded for the parent only.
+Reason: Assistant recommendation in the plan review, parent approved the plan: fixed short sessions suit a 5 year old better than algorithmic fatigue detection, and visible timers work against "process over speed".
+Alternatives rejected: Fatigue detection from hesitation spikes (the specification's approach; deferred until real data shows it is needed); visible timers.
+Open: the parent has been asked whether 8 is the right length; no answer yet.
+
+## 2026-09-12  Decision  Answers queue on the device and are re-graded on the server
+What: Each answer goes into an IndexedDB queue (`src/lib/outbox.ts`) with a device-generated UUID, then uploads to `/api/sync`. `src/lib/sync.ts` re-grades against the question bank and writes idempotently, so retries never duplicate. Mastery and history come from the server, so every device sees the same progress.
+Reason: Assistant recommendation for multi-device use and unreliable home Wi-Fi.
+Alternatives rejected: Trusting correctness sent by the device; storing progress per device.
+
+## 2026-09-12  Decision  Question bank bundled with static imports
+What: `src/content/bank.ts` imports each `content/questions/*.json` file statically. `src/content/bank.test.ts` fails if a file on disk is not registered there.
+Reason: Assistant decision. Reading `content/` with `fs` at runtime is not guaranteed to be included in Vercel's serverless bundle; static imports are.
+Alternatives rejected: Runtime `fs` reads with output file tracing configuration.
+
+## 2026-09-12  Decision  Migrations run on every production deploy
+What: `vercel-build` in `package.json` runs `prisma generate && prisma migrate deploy && next build`, so a pushed migration reaches the production database during the build, before the new code serves traffic.
+Reason: Assistant decision; keeps schema and code in step without a manual step.
+Consequence: every migration must stay compatible with the previous deployment while it is still serving (for example, add columns as nullable). Recorded as a rule in `CLAUDE.md`.
+Alternatives rejected: Running migrations by hand before each deploy.
+
+## 2026-09-12  Decision  Daily health check keeps the free Supabase project awake
+What: `vercel.json` schedules a daily cron to `/api/health`, which runs `SELECT 1` and requires `Authorization: Bearer <CRON_SECRET>`.
+Reason: Assistant recommendation: free Supabase projects pause after about a week without activity, for example during a family trip.
+Alternatives rejected: Paid Supabase plan; relying only on the planned TrueNAS nightly dump, which is not set up yet.
+
+## 2026-09-12  Decision  Vercel Prisma Postgres integration not added
+What: At the first Vercel deploy, the suggested Prisma Postgres integration was skipped.
+Reason: Assistant recommendation, parent followed it: it would create a second database and could set its own `DATABASE_URL`, overriding Supabase.
+Alternatives rejected: Using Prisma Postgres instead of Supabase (Supabase was already chosen for database, auth and storage together).
+
+## 2026-09-12  Decision  Every strand starts at working level 2
+What: `STARTING_BAND = 2` in `src/lib/engine/select-session.ts`. A strand moves up one level after at least 3 answers at a level with at least 2 in 3 right.
+Reason: Assistant decision based on the MAP and IXL results (about grade 3), which place Aishik above the easiest band.
+Alternatives rejected: Starting at level 1 for everyone (too many easy questions before the engine adapts).
 
 ## 2026-09-12  Milestone  Phase 1 player deployed
 What: Child player with read-aloud, confidence faces, number pad, IndexedDB answer queue, `/api/sync`, Google sign-in with `ALLOWED_EMAILS`, PIN-locked grown-ups page, PWA manifest and icons, daily health cron (commit 15a9d22).
