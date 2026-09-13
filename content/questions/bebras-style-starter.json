@@ -1,12 +1,12 @@
 [
   {
     "id": "bb-beaver-color-path",
-    "source": { "kind": "bebras-style", "ref": "bebras_100_questions.md Task 1 (choices reordered)" },
+    "source": { "kind": "bebras-style", "ref": "bebras_100_questions.md Task 1 (2026-09-13: start and direction made explicit so only one path works either way)" },
     "skills": ["CS-RULE-PATH", "LOGIC-PATTERN"],
-    "prompt": "Barnaby the beaver wants to get home. He may only step on colors in this order: red, blue, green, then red again. Which path can he take?",
-    "visual": { "kind": "emoji", "lines": ["Path A: 🏠 🔴 🟢 🔵 🔴 🪵", "Path B: 🏠 🔵 🔴 🟢 🔵 🪵", "Path C: 🏠 🔴 🔵 🟢 🔴 🪵", "Path D: 🏠 🔴 🔵 🔴 🟢 🪵"] },
+    "prompt": "Barnaby the beaver starts at his house and walks to the log. He may only step on colors in this order: red, blue, green, then red again. Which path can he take?",
+    "visual": { "kind": "emoji", "lines": ["Path A: 🏠 🔴 🔵 🔵 🔴 🪵", "Path B: 🏠 🔵 🔴 🟢 🔵 🪵", "Path C: 🏠 🔴 🔵 🟢 🔴 🪵", "Path D: 🏠 🔴 🔵 🔴 🟢 🪵"] },
     "answer": { "type": "choice", "choices": ["Path A", "Path B", "Path C", "Path D"], "correctIndex": 2 },
-    "explanation": "Check each step against the rule red, blue, green, red. Path C matches every step. Path A has green too early, Path B starts with blue, and Path D has red where green should be.",
+    "explanation": "Start at the house and check each step against the rule red, blue, green, red. Path C matches every step. Path A has blue twice in a row, Path B starts with blue, and Path D has red where green should be.",
     "difficulty": { "band": 2, "basis": "author-estimate" },
     "reviewStatus": "reviewed"
   },

@@ -55,3 +55,17 @@ How answers were checked:
 5. **Visual check:** every emoji and grid question, plus each new picture type (coins, rulers, picture graphs, calendar, route maps, tally marks, matchsticks), was screenshot at phone width. Nothing is cut off. The bus 🚌 in the vehicle puzzle looked too much like the taxi on Apple devices and was swapped for a tractor 🚜.
 
 Review status: shipped as reviewed under the spot-check policy (parent spot-checks a sample rather than approving each item).
+
+## 2026-09-13: Blind solve of the 39 hand-typed questions
+
+The review rule (see `CLAUDE.md` and `docs/DEVLOG.md`) requires an independent blind solve for questions to ship as reviewed. The 39 hand-typed questions in `kangaroo-style-l12.json`, `bebras-style-starter.json` and `measurement-cars.json` had only a hand check, so an independent agent solved all 39 without the answer key.
+
+Result: it agreed with the answer key on 38 of 39 and flagged 3 questions, all fixed:
+
+| Question | Problem | Fix |
+|---|---|---|
+| `bb-beaver-color-path` | Real bug: the picture did not say where Barnaby starts, and reading Path A from the log toward the house also matched the rule, so a child could be marked wrong for a correct answer | Prompt now says he starts at the house; Path A changed to red, blue, blue, red so only Path C works in either direction |
+| `kl12-folded-rope-cut` | The knot and scissors emoji could not show a folded rope or where the cut is; "across the middle" could be read as cutting at the fold (2 pieces) | Replaced with a drawing of the folded rope, both ends and a dashed "cut here" line; prompt says to cut along the dashed line |
+| `kl12-symmetric-butterfly` | The colored dots stand for wing colors, but the prompt never said so | Prompt now says the dots beside each butterfly show its wing spots |
+
+Re-check: the three fixed questions were solved again by a separate agent without the answer key. All 3 agreed with the key at high confidence, with no issues. All 39 hand-typed questions now meet the review rule and stay reviewed.

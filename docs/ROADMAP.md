@@ -1,0 +1,46 @@
+# AALOPP roadmap
+
+The living plan. It replaces the original planning file at `~/.claude/plans/what-do-you-think-melodic-harp.md`, which exists only on the parent's Mac and still describes phases that are now done. Decisions and their reasons are in `docs/DEVLOG.md`; the latest session state is in `docs/HANDOFF.md`.
+
+Last updated: 2026-09-13.
+
+## Goal
+A practice app for one learner, Aishik (age 5.5, working around grade 3: MAP Math and Reading RIT 186, IXL Math about 290 with Measurement and Data as the weakest strand). He uses it on laptops, tablets and phones around the house. Source material: `../Aishik-Support-Plan.md` (one folder above the repo).
+
+## Product principles
+These come from the support plan and the review of the original AALOPP specification. They are also the standing rules in `CLAUDE.md`.
+- Process over speed: no speed bonuses, no visible timers.
+- Soft gates only: everyday convention skills (time, money, measuring, graphs) are mixed into every session; reasoning content is never locked.
+- Every prompt can be read aloud; answers are tap or number pad, not typing or speech.
+- Wrong answers get a warm "let's check it together" review, not a penalty.
+- Difficulty is seeded from outside evidence and never learned from one child's answers.
+- Accuracy of content matters more than volume.
+
+## Architecture (current)
+- Next.js 16 on Vercel at `https://aalopp.vercel.app`, installable as a home-screen app.
+- Supabase: Postgres through Prisma 7.10, Google sign-in limited by `ALLOWED_EMAILS`, Row Level Security on every table with no policies (the browser key can read and write nothing).
+- Answers queue in IndexedDB on the device and upload to `/api/sync`; the server re-grades and saves idempotently.
+- Skill state is replayed from the attempt log on every request, never stored.
+- Planned, not set up yet: nightly backup from Supabase to the family TrueNAS, then an encrypted copy to Google Drive (`docs/backup-truenas.md`).
+
+## Phases
+
+| Phase | Scope | Status |
+|---|---|---|
+| 0. Content format | Zod question schema, validator, first 39 questions | Done 2026-09-12 (commit a7cc63d) |
+| 1. Player MVP | Child player with read-aloud, confidence faces, offline answer queue, Google sign-in, PIN-locked grown-ups page, PWA | Done 2026-09-12 (commit 15a9d22); tested by the parent on a Samsung S23+ and a MacBook |
+| Content batch 1 | 187 generated questions, 12 new skills, 5 new picture types | Done 2026-09-13 (commit da402dc) |
+| 2. Adaptive practice | Mastery per skill, spaced review, session selection with reasons, Skills tab on the grown-ups page | Done 2026-09-13 (commit a1b8d37); live on Vercel |
+| 4. Scratchpad and Find the Bug | Drawing canvas for working out, paper-mode toggle, new question type: find the mistake in a worked solution | Proposed next (not yet confirmed by the parent) |
+| 3. Parent dashboard | Pure reasoning vs everyday skills chart, skill map, confidence calibration, trends, notes, printable report | After 1 to 2 weeks of real use, so it has data to show |
+| Content batch 2 | Next generated batch, same verification | In about 3 to 4 weeks; the 30-day simulation used about 150 of 226 questions |
+| 5. PDF ingestion tool | Contest PDFs to questions inside the app | Deferred; converting PDFs in the repo with a coding assistant covers this for now |
+| Later | Reading, Spanish and French with speech input; fatigue detection | Only after the math and logic loop has proven itself |
+
+Proposed order, not yet confirmed by the parent: Phase 4 before Phase 3, because the dashboard needs real usage data and the scratchpad is useful immediately.
+
+## Parent to-dos (no code)
+- Let Aishik use the app for 1 to 2 weeks before Phase 3.
+- Set up the TrueNAS backup (`docs/backup-truenas.md`).
+- Repeat the Wi-Fi drop test on the phone (airplane mode, answer, wait, reconnect).
+- Spot-check the sample questions listed in `docs/HANDOFF.md`.
