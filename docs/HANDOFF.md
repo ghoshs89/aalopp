@@ -1,4 +1,4 @@
-# Session Handoff  2026-09-21  Engine tuned from real data; themes built, fact-checked and ready to deploy
+# Session Handoff  2026-09-22  Engine tuning and both themes live in production
 
 > Read this fully before acting. It is the state of the work as of the end of the last session. Assume you have no memory of that session and may be a different model. This document plus the repository should be enough to resume.
 >
@@ -11,20 +11,20 @@ Commands run at handoff time on 2026-09-21 from the repo root (`aalopp/`), all e
 - `npm run typecheck`: pass. `npm run lint`: pass.
 - Both new engine tests were confirmed to fail when the change they cover is reverted, and the picture check was confirmed to fail on a deliberately broken path.
 
-Repo state: **nothing is committed.** All of this session's work is uncommitted in the working tree, and nothing is deployed. Production still runs `f44be31`.
+Repo state: `main` level with `origin/main`. Everything from this session is committed and deployed as `2b9781b`; Vercel reported "Deployment has completed".
 
 ## 1. Current state
 - Works and verified:
-  - Live at `https://aalopp.vercel.app`, still on `f44be31`. Checked this session: `/login` 200, `/`, `/parent` and `/parent/report` 307 to login when signed out, `/dev/dashboard` 404, `/api/health` 401 without the secret and `{"ok":true}` with it. Vercel commit status for `f44be31`: "Deployment has completed".
+  - Live at `https://aalopp.vercel.app` on `2b9781b`. Checked after deploying: `/login` 200, `/`, `/parent`, `/parent/report` and `/choose/abc` 307 to login when signed out, `/dev/dashboard` 404, `/api/health` 200 with the secret. The flag and logo files serve without sign-in, as the `src/proxy.ts` matcher intends.
   - Real usage since the 2026-09-13 reset: 36 attempts across 5 played sessions on 3 days (09-14, 09-15, 09-20), 28 right, 78%. Sessions ran 4.5 to 9 minutes. Upload lag 0 to 2 seconds on every attempt.
-  - Engine fixes (uncommitted): a reserved new-skill slot, `MAX_REVIEWS` 3 to 4, a fifth review box at 30 days, a miss dropping one box instead of resetting, and a specific Find the Bug message when he taps a step after the real bug.
-  - Themes (uncommitted): `content/themes.json`, a `/choose/[studentId]` screen, teach cards, an `image` visual, picture answer choices, 45 committed artwork files, 221 draft questions.
+  - Engine fixes: a reserved new-skill slot, `MAX_REVIEWS` 3 to 4, a fifth review box at 30 days, a miss dropping one box instead of resetting, and a specific Find the Bug message when he taps a step after the real bug.
+  - Themes: `content/themes.json`, a `/choose/[studentId]` screen, teach cards, an `image` visual, picture answer choices, 45 committed artwork files, 221 draft questions.
 - In progress: nothing. The fact-checking pass is done and recorded in `content/REVIEW.md`; six wrong claims were found and corrected, and all 221 questions are now `"reviewed"`. Both themes appear on the choose screen. Verified by simulation: a cars session and a world session each drew 400 picks with zero off-theme questions, and all 200 sampled ordinary sessions contained a themed question.
 - Broken or known failing: none observed.
 - Assumed, not verified:
   - Everything from the 2026-09-13 handoff that still stands: the parent dashboard in a real signed-in session, the scratchpad with a real stylus, voice quality on family devices, speech recognition of a child's voice, the offline queue after a real Wi-Fi drop.
   - The daily Vercel cron calling `/api/health`. The runtime logs API returns 403 on this plan, so cron runs could not be confirmed from the command line. Check the Vercel dashboard, project `aalopp`, Cron Jobs tab.
-  - Every screen in this session was checked in headless Chrome at 384 px, never on a real device.
+  - Every screen in this session was checked in headless Chrome at 384 px, never on a real device. Nobody has played a themed session on production yet.
 
 ## 2. Decisions made this session
 All are in `docs/DEVLOG.md` with reasons and attribution. Treat as settled; do not reopen without new cause.
@@ -45,10 +45,9 @@ Standing rules are in `CLAUDE.md`, which gained three sections this session: kno
 - Never hand draw a flag or a logo, and never hotlink one. Add it to `content/assets.json` and run `npm run assets:fetch`.
 - The top review interval is load-bearing. N skills demand N/30 reviews a day against the 4 a session can serve; at the old 14 day top box the due queue grew without bound. Rerun `simulation.test.ts` after touching any cap or interval.
 - Everything from the previous handoff still holds: never edit `generated-*.json` by hand, a new question file must be imported in `src/content/bank.ts`, migrations stay compatible with the previous deployment, `Attempt.localDate` stays nullable.
-- The autonomous commit-and-push authorization covered finishing the original phases only. Confirm with the parent before committing this session's work.
+- The autonomous commit-and-push authorization covered finishing the original phases, and the parent authorized this session's push separately. Confirm again before committing new work.
 
 ## 4. Next steps, prioritized
-- Commit and deploy | the parent confirms, then push; Vercel commit status reports "Deployment has completed" | the engine fixes in Part 1 are independent of the themes and can ship first if preferred.
 - Parent walkthrough on a real device | a session on a tablet and a phone, both themes, every grown-ups tab, a note saved and the report printed | collect issues into section 5.
 - Two weak logo files | Mahindra and Jaguar came through as wordmarks rather than marks, which are poor for "guess the logo" | replace the `sourceUrl` in `content/assets.json` and rerun `npm run assets:fetch -- --force`.
 - Device checks, TrueNAS backup, engine tuning from more data | unchanged from the previous handoff | `docs/backup-truenas.md` needs the parent at the NAS.

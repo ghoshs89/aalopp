@@ -16,6 +16,17 @@ Attribution convention used below: "Parent decision" means the parent chose it; 
 
 ---
 
+## 2026-09-22  Milestone  Engine tuning and both themes deployed
+What: Commit 2b9781b pushed to `main` at the parent's request ("Check everything in and go live with the app"). 79
+files, the engine fixes and the cars and world-knowledge themes together.
+Verified by: GitHub commit status from Vercel for 2b9781b reported "Deployment has completed". On production
+afterwards: `/login` 200, `/`, `/parent`, `/parent/report` and `/choose/abc` 307 to login when signed out,
+`/dev/dashboard` 404, and `/api/health` 200 with the secret so the database is reachable. The artwork now serves
+without sign-in as intended by the `src/proxy.ts` matcher change: `/flags/ca.svg`, `/flags/in.svg`, `/flags/us.svg`,
+`/logos/toyota.svg`, `/logos/ferrari.svg` and `/logos/tata.svg` all returned 200. Before pushing, `npm run build`
+succeeded (Vercel type-checks `scripts/` too) and no migration was involved, since `prisma/schema.prisma` did not
+change this session.
+
 ## 2026-09-21  Milestone  Fact-checking pass: 221 questions moved from draft to reviewed
 What: Every fact behind the cars and world-knowledge questions was checked against a source rather than from memory.
 The 221 questions come from two tables totalling 45 rows, so the check was of those rows. Sources: the Wikidata REST
