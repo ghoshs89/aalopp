@@ -1,0 +1,3980 @@
+[
+  {
+    "id": "world-flag-name-ca",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/world.ts"
+    },
+    "skills": [
+      "WORLD-FLAGS"
+    ],
+    "language": "en",
+    "prompt": "Which country's flag is this?",
+    "visual": {
+      "kind": "image",
+      "src": "/flags/ca.svg",
+      "alt": "The flag of Canada"
+    },
+    "teach": {
+      "title": "Canada",
+      "lines": [
+        "Red on both sides, white in the middle, with a red maple leaf.",
+        "The capital city is Ottawa.",
+        "Canada has two official languages, English and French."
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "/flags/ca.svg",
+        "alt": "The flag of Canada"
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "Japan",
+        "Brazil",
+        "Sweden",
+        "Canada"
+      ],
+      "correctIndex": 3
+    },
+    "explanation": "This is the flag of Canada. Red on both sides, white in the middle, with a red maple leaf.",
+    "difficulty": {
+      "band": 1,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "world-flag-pick-ca",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/world.ts"
+    },
+    "skills": [
+      "WORLD-FLAGS"
+    ],
+    "language": "en",
+    "prompt": "Which one of these is the flag of Canada?",
+    "teach": {
+      "title": "Canada",
+      "lines": [
+        "Red on both sides, white in the middle, with a red maple leaf.",
+        "The capital city is Ottawa.",
+        "Canada has two official languages, English and French."
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "/flags/ca.svg",
+        "alt": "The flag of Canada"
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "Japan",
+        "Canada",
+        "Brazil",
+        "Sweden"
+      ],
+      "correctIndex": 1,
+      "choiceVisuals": [
+        {
+          "kind": "image",
+          "src": "/flags/jp.svg",
+          "alt": "The flag of Japan"
+        },
+        {
+          "kind": "image",
+          "src": "/flags/ca.svg",
+          "alt": "The flag of Canada"
+        },
+        {
+          "kind": "image",
+          "src": "/flags/br.svg",
+          "alt": "The flag of Brazil"
+        },
+        {
+          "kind": "image",
+          "src": "/flags/se.svg",
+          "alt": "The flag of Sweden"
+        }
+      ]
+    },
+    "explanation": "Canada's flag: red on both sides, white in the middle, with a red maple leaf.",
+    "difficulty": {
+      "band": 1,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "world-capital-ca",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/world.ts"
+    },
+    "skills": [
+      "WORLD-CAPITALS"
+    ],
+    "language": "en",
+    "prompt": "What is the capital city of Canada?",
+    "visual": {
+      "kind": "image",
+      "src": "/flags/ca.svg",
+      "alt": "The flag of Canada"
+    },
+    "teach": {
+      "title": "Canada",
+      "lines": [
+        "Red on both sides, white in the middle, with a red maple leaf.",
+        "The capital city is Ottawa.",
+        "Canada has two official languages, English and French."
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "/flags/ca.svg",
+        "alt": "The flag of Canada"
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "Tokyo",
+        "Ottawa",
+        "Brasilia",
+        "Stockholm"
+      ],
+      "correctIndex": 1
+    },
+    "explanation": "The capital of Canada is Ottawa.",
+    "difficulty": {
+      "band": 2,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "world-continent-ca",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/world.ts"
+    },
+    "skills": [
+      "WORLD-MAP"
+    ],
+    "language": "en",
+    "prompt": "Which continent is Canada in?",
+    "visual": {
+      "kind": "image",
+      "src": "/flags/ca.svg",
+      "alt": "The flag of Canada"
+    },
+    "teach": {
+      "title": "Canada",
+      "lines": [
+        "Red on both sides, white in the middle, with a red maple leaf.",
+        "The capital city is Ottawa.",
+        "Canada has two official languages, English and French."
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "/flags/ca.svg",
+        "alt": "The flag of Canada"
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "Asia",
+        "North America",
+        "South America",
+        "Europe"
+      ],
+      "correctIndex": 1
+    },
+    "explanation": "Canada is in North America.",
+    "difficulty": {
+      "band": 1,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "world-flag-detail-ca",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/world.ts"
+    },
+    "skills": [
+      "WORLD-FLAGS-DETAIL"
+    ],
+    "language": "en",
+    "prompt": "What is in the middle of Canada's flag?",
+    "visual": {
+      "kind": "image",
+      "src": "/flags/ca.svg",
+      "alt": "The flag of Canada"
+    },
+    "teach": {
+      "title": "Canada",
+      "lines": [
+        "Red on both sides, white in the middle, with a red maple leaf.",
+        "The capital city is Ottawa.",
+        "Canada has two official languages, English and French."
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "/flags/ca.svg",
+        "alt": "The flag of Canada"
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "A star",
+        "A maple leaf",
+        "A moon",
+        "A bear"
+      ],
+      "correctIndex": 1
+    },
+    "explanation": "The red maple leaf in the white middle band is Canada's best known symbol.",
+    "difficulty": {
+      "band": 1,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "world-culture-ca",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/world.ts"
+    },
+    "skills": [
+      "WORLD-CULTURE"
+    ],
+    "language": "en",
+    "prompt": "Which of these is true about Canada?",
+    "visual": {
+      "kind": "image",
+      "src": "/flags/ca.svg",
+      "alt": "The flag of Canada"
+    },
+    "teach": {
+      "title": "Canada",
+      "lines": [
+        "Red on both sides, white in the middle, with a red maple leaf.",
+        "The capital city is Ottawa.",
+        "Canada has two official languages, English and French."
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "/flags/ca.svg",
+        "alt": "The flag of Canada"
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "Japan is famous for very fast trains called bullet trains.",
+        "Most of the Amazon rainforest is in Brazil.",
+        "Volvo cars come from Sweden.",
+        "Canada has two official languages, English and French."
+      ],
+      "correctIndex": 3
+    },
+    "explanation": "Canada has two official languages, English and French.",
+    "difficulty": {
+      "band": 2,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "world-flag-name-in",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/world.ts"
+    },
+    "skills": [
+      "WORLD-FLAGS"
+    ],
+    "language": "en",
+    "prompt": "Which country's flag is this?",
+    "visual": {
+      "kind": "image",
+      "src": "/flags/in.svg",
+      "alt": "The flag of India"
+    },
+    "teach": {
+      "title": "India",
+      "lines": [
+        "Orange on top, white in the middle, green at the bottom, with a navy blue wheel.",
+        "The capital city is New Delhi.",
+        "India has more people than any other country."
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "/flags/in.svg",
+        "alt": "The flag of India"
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "India",
+        "Canada",
+        "United Kingdom",
+        "Germany"
+      ],
+      "correctIndex": 0
+    },
+    "explanation": "This is the flag of India. Orange on top, white in the middle, green at the bottom, with a navy blue wheel.",
+    "difficulty": {
+      "band": 1,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "world-flag-pick-in",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/world.ts"
+    },
+    "skills": [
+      "WORLD-FLAGS"
+    ],
+    "language": "en",
+    "prompt": "Which one of these is the flag of India?",
+    "teach": {
+      "title": "India",
+      "lines": [
+        "Orange on top, white in the middle, green at the bottom, with a navy blue wheel.",
+        "The capital city is New Delhi.",
+        "India has more people than any other country."
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "/flags/in.svg",
+        "alt": "The flag of India"
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "Canada",
+        "United Kingdom",
+        "India",
+        "Germany"
+      ],
+      "correctIndex": 2,
+      "choiceVisuals": [
+        {
+          "kind": "image",
+          "src": "/flags/ca.svg",
+          "alt": "The flag of Canada"
+        },
+        {
+          "kind": "image",
+          "src": "/flags/gb.svg",
+          "alt": "The flag of United Kingdom"
+        },
+        {
+          "kind": "image",
+          "src": "/flags/in.svg",
+          "alt": "The flag of India"
+        },
+        {
+          "kind": "image",
+          "src": "/flags/de.svg",
+          "alt": "The flag of Germany"
+        }
+      ]
+    },
+    "explanation": "India's flag: orange on top, white in the middle, green at the bottom, with a navy blue wheel.",
+    "difficulty": {
+      "band": 1,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "world-capital-in",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/world.ts"
+    },
+    "skills": [
+      "WORLD-CAPITALS"
+    ],
+    "language": "en",
+    "prompt": "What is the capital city of India?",
+    "visual": {
+      "kind": "image",
+      "src": "/flags/in.svg",
+      "alt": "The flag of India"
+    },
+    "teach": {
+      "title": "India",
+      "lines": [
+        "Orange on top, white in the middle, green at the bottom, with a navy blue wheel.",
+        "The capital city is New Delhi.",
+        "India has more people than any other country."
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "/flags/in.svg",
+        "alt": "The flag of India"
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "Ottawa",
+        "London",
+        "New Delhi",
+        "Berlin"
+      ],
+      "correctIndex": 2
+    },
+    "explanation": "The capital of India is New Delhi.",
+    "difficulty": {
+      "band": 2,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "world-continent-in",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/world.ts"
+    },
+    "skills": [
+      "WORLD-MAP"
+    ],
+    "language": "en",
+    "prompt": "Which continent is India in?",
+    "visual": {
+      "kind": "image",
+      "src": "/flags/in.svg",
+      "alt": "The flag of India"
+    },
+    "teach": {
+      "title": "India",
+      "lines": [
+        "Orange on top, white in the middle, green at the bottom, with a navy blue wheel.",
+        "The capital city is New Delhi.",
+        "India has more people than any other country."
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "/flags/in.svg",
+        "alt": "The flag of India"
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "North America",
+        "Europe",
+        "Asia"
+      ],
+      "correctIndex": 2
+    },
+    "explanation": "India is in Asia.",
+    "difficulty": {
+      "band": 1,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "world-flag-detail-in",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/world.ts"
+    },
+    "skills": [
+      "WORLD-FLAGS-DETAIL"
+    ],
+    "language": "en",
+    "prompt": "What is in the middle of India's flag?",
+    "visual": {
+      "kind": "image",
+      "src": "/flags/in.svg",
+      "alt": "The flag of India"
+    },
+    "teach": {
+      "title": "India",
+      "lines": [
+        "Orange on top, white in the middle, green at the bottom, with a navy blue wheel.",
+        "The capital city is New Delhi.",
+        "India has more people than any other country."
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "/flags/in.svg",
+        "alt": "The flag of India"
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "A red circle",
+        "A white star",
+        "A blue wheel",
+        "A green leaf"
+      ],
+      "correctIndex": 2
+    },
+    "explanation": "The navy blue wheel in the white band is called the Ashoka Chakra.",
+    "difficulty": {
+      "band": 1,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "world-culture-in",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/world.ts"
+    },
+    "skills": [
+      "WORLD-CULTURE"
+    ],
+    "language": "en",
+    "prompt": "Which of these is true about India?",
+    "visual": {
+      "kind": "image",
+      "src": "/flags/in.svg",
+      "alt": "The flag of India"
+    },
+    "teach": {
+      "title": "India",
+      "lines": [
+        "Orange on top, white in the middle, green at the bottom, with a navy blue wheel.",
+        "The capital city is New Delhi.",
+        "India has more people than any other country."
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "/flags/in.svg",
+        "alt": "The flag of India"
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "India has more people than any other country.",
+        "Canada has two official languages, English and French.",
+        "Big Ben and Buckingham Palace are in London.",
+        "Germany builds many famous cars, including BMW, Audi and Volkswagen."
+      ],
+      "correctIndex": 0
+    },
+    "explanation": "India has more people than any other country.",
+    "difficulty": {
+      "band": 2,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "world-flag-name-us",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/world.ts"
+    },
+    "skills": [
+      "WORLD-FLAGS"
+    ],
+    "language": "en",
+    "prompt": "Which country's flag is this?",
+    "visual": {
+      "kind": "image",
+      "src": "/flags/us.svg",
+      "alt": "The flag of United States"
+    },
+    "teach": {
+      "title": "United States",
+      "lines": [
+        "Red and white stripes, with white stars on a blue square in the corner.",
+        "The capital city is Washington, D.C..",
+        "There is one star on the flag for each of the fifty states."
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "/flags/us.svg",
+        "alt": "The flag of United States"
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "Australia",
+        "India",
+        "Germany",
+        "United States"
+      ],
+      "correctIndex": 3
+    },
+    "explanation": "This is the flag of United States. Red and white stripes, with white stars on a blue square in the corner.",
+    "difficulty": {
+      "band": 1,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "world-flag-pick-us",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/world.ts"
+    },
+    "skills": [
+      "WORLD-FLAGS"
+    ],
+    "language": "en",
+    "prompt": "Which one of these is the flag of United States?",
+    "teach": {
+      "title": "United States",
+      "lines": [
+        "Red and white stripes, with white stars on a blue square in the corner.",
+        "The capital city is Washington, D.C..",
+        "There is one star on the flag for each of the fifty states."
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "/flags/us.svg",
+        "alt": "The flag of United States"
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "Australia",
+        "United States",
+        "India",
+        "Germany"
+      ],
+      "correctIndex": 1,
+      "choiceVisuals": [
+        {
+          "kind": "image",
+          "src": "/flags/au.svg",
+          "alt": "The flag of Australia"
+        },
+        {
+          "kind": "image",
+          "src": "/flags/us.svg",
+          "alt": "The flag of United States"
+        },
+        {
+          "kind": "image",
+          "src": "/flags/in.svg",
+          "alt": "The flag of India"
+        },
+        {
+          "kind": "image",
+          "src": "/flags/de.svg",
+          "alt": "The flag of Germany"
+        }
+      ]
+    },
+    "explanation": "United States's flag: red and white stripes, with white stars on a blue square in the corner.",
+    "difficulty": {
+      "band": 1,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "world-capital-us",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/world.ts"
+    },
+    "skills": [
+      "WORLD-CAPITALS"
+    ],
+    "language": "en",
+    "prompt": "What is the capital city of United States?",
+    "visual": {
+      "kind": "image",
+      "src": "/flags/us.svg",
+      "alt": "The flag of United States"
+    },
+    "teach": {
+      "title": "United States",
+      "lines": [
+        "Red and white stripes, with white stars on a blue square in the corner.",
+        "The capital city is Washington, D.C..",
+        "There is one star on the flag for each of the fifty states."
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "/flags/us.svg",
+        "alt": "The flag of United States"
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "Canberra",
+        "Washington, D.C.",
+        "New Delhi",
+        "Berlin"
+      ],
+      "correctIndex": 1
+    },
+    "explanation": "The capital of United States is Washington, D.C..",
+    "difficulty": {
+      "band": 2,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "world-continent-us",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/world.ts"
+    },
+    "skills": [
+      "WORLD-MAP"
+    ],
+    "language": "en",
+    "prompt": "Which continent is United States in?",
+    "visual": {
+      "kind": "image",
+      "src": "/flags/us.svg",
+      "alt": "The flag of United States"
+    },
+    "teach": {
+      "title": "United States",
+      "lines": [
+        "Red and white stripes, with white stars on a blue square in the corner.",
+        "The capital city is Washington, D.C..",
+        "There is one star on the flag for each of the fifty states."
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "/flags/us.svg",
+        "alt": "The flag of United States"
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "Australia",
+        "North America",
+        "Asia",
+        "Europe"
+      ],
+      "correctIndex": 1
+    },
+    "explanation": "United States is in North America.",
+    "difficulty": {
+      "band": 1,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "world-flag-detail-us",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/world.ts"
+    },
+    "skills": [
+      "WORLD-FLAGS-DETAIL"
+    ],
+    "language": "en",
+    "prompt": "What is on the blue square of the United States flag?",
+    "visual": {
+      "kind": "image",
+      "src": "/flags/us.svg",
+      "alt": "The flag of United States"
+    },
+    "teach": {
+      "title": "United States",
+      "lines": [
+        "Red and white stripes, with white stars on a blue square in the corner.",
+        "The capital city is Washington, D.C..",
+        "There is one star on the flag for each of the fifty states."
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "/flags/us.svg",
+        "alt": "The flag of United States"
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "Stripes",
+        "Stars",
+        "A leaf",
+        "A wheel"
+      ],
+      "correctIndex": 1
+    },
+    "explanation": "Fifty white stars sit on the blue square, one for each state.",
+    "difficulty": {
+      "band": 1,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "world-culture-us",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/world.ts"
+    },
+    "skills": [
+      "WORLD-CULTURE"
+    ],
+    "language": "en",
+    "prompt": "Which of these is true about United States?",
+    "visual": {
+      "kind": "image",
+      "src": "/flags/us.svg",
+      "alt": "The flag of United States"
+    },
+    "teach": {
+      "title": "United States",
+      "lines": [
+        "Red and white stripes, with white stars on a blue square in the corner.",
+        "The capital city is Washington, D.C..",
+        "There is one star on the flag for each of the fifty states."
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "/flags/us.svg",
+        "alt": "The flag of United States"
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "Kangaroos and koalas live in Australia.",
+        "India has more people than any other country.",
+        "Germany builds many famous cars, including BMW, Audi and Volkswagen.",
+        "There is one star on the flag for each of the fifty states."
+      ],
+      "correctIndex": 3
+    },
+    "explanation": "There is one star on the flag for each of the fifty states.",
+    "difficulty": {
+      "band": 2,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "world-flag-name-gb",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/world.ts"
+    },
+    "skills": [
+      "WORLD-FLAGS"
+    ],
+    "language": "en",
+    "prompt": "Which country's flag is this?",
+    "visual": {
+      "kind": "image",
+      "src": "/flags/gb.svg",
+      "alt": "The flag of United Kingdom"
+    },
+    "teach": {
+      "title": "United Kingdom",
+      "lines": [
+        "Red and white crosses on a dark blue background.",
+        "The capital city is London.",
+        "Big Ben and Buckingham Palace are in London."
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "/flags/gb.svg",
+        "alt": "The flag of United Kingdom"
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "Canada",
+        "United States",
+        "United Kingdom",
+        "China"
+      ],
+      "correctIndex": 2
+    },
+    "explanation": "This is the flag of United Kingdom. Red and white crosses on a dark blue background.",
+    "difficulty": {
+      "band": 2,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "world-flag-pick-gb",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/world.ts"
+    },
+    "skills": [
+      "WORLD-FLAGS"
+    ],
+    "language": "en",
+    "prompt": "Which one of these is the flag of United Kingdom?",
+    "teach": {
+      "title": "United Kingdom",
+      "lines": [
+        "Red and white crosses on a dark blue background.",
+        "The capital city is London.",
+        "Big Ben and Buckingham Palace are in London."
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "/flags/gb.svg",
+        "alt": "The flag of United Kingdom"
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "United Kingdom",
+        "Canada",
+        "United States",
+        "China"
+      ],
+      "correctIndex": 0,
+      "choiceVisuals": [
+        {
+          "kind": "image",
+          "src": "/flags/gb.svg",
+          "alt": "The flag of United Kingdom"
+        },
+        {
+          "kind": "image",
+          "src": "/flags/ca.svg",
+          "alt": "The flag of Canada"
+        },
+        {
+          "kind": "image",
+          "src": "/flags/us.svg",
+          "alt": "The flag of United States"
+        },
+        {
+          "kind": "image",
+          "src": "/flags/cn.svg",
+          "alt": "The flag of China"
+        }
+      ]
+    },
+    "explanation": "United Kingdom's flag: red and white crosses on a dark blue background.",
+    "difficulty": {
+      "band": 2,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "world-capital-gb",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/world.ts"
+    },
+    "skills": [
+      "WORLD-CAPITALS"
+    ],
+    "language": "en",
+    "prompt": "What is the capital city of United Kingdom?",
+    "visual": {
+      "kind": "image",
+      "src": "/flags/gb.svg",
+      "alt": "The flag of United Kingdom"
+    },
+    "teach": {
+      "title": "United Kingdom",
+      "lines": [
+        "Red and white crosses on a dark blue background.",
+        "The capital city is London.",
+        "Big Ben and Buckingham Palace are in London."
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "/flags/gb.svg",
+        "alt": "The flag of United Kingdom"
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "London",
+        "Ottawa",
+        "Washington, D.C.",
+        "Beijing"
+      ],
+      "correctIndex": 0
+    },
+    "explanation": "The capital of United Kingdom is London.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "world-continent-gb",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/world.ts"
+    },
+    "skills": [
+      "WORLD-MAP"
+    ],
+    "language": "en",
+    "prompt": "Which continent is United Kingdom in?",
+    "visual": {
+      "kind": "image",
+      "src": "/flags/gb.svg",
+      "alt": "The flag of United Kingdom"
+    },
+    "teach": {
+      "title": "United Kingdom",
+      "lines": [
+        "Red and white crosses on a dark blue background.",
+        "The capital city is London.",
+        "Big Ben and Buckingham Palace are in London."
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "/flags/gb.svg",
+        "alt": "The flag of United Kingdom"
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "North America",
+        "Europe",
+        "Asia"
+      ],
+      "correctIndex": 1
+    },
+    "explanation": "United Kingdom is in Europe.",
+    "difficulty": {
+      "band": 2,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "world-culture-gb",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/world.ts"
+    },
+    "skills": [
+      "WORLD-CULTURE"
+    ],
+    "language": "en",
+    "prompt": "Which of these is true about United Kingdom?",
+    "visual": {
+      "kind": "image",
+      "src": "/flags/gb.svg",
+      "alt": "The flag of United Kingdom"
+    },
+    "teach": {
+      "title": "United Kingdom",
+      "lines": [
+        "Red and white crosses on a dark blue background.",
+        "The capital city is London.",
+        "Big Ben and Buckingham Palace are in London."
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "/flags/gb.svg",
+        "alt": "The flag of United Kingdom"
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "Canada has two official languages, English and French.",
+        "There is one star on the flag for each of the fifty states.",
+        "Big Ben and Buckingham Palace are in London.",
+        "The Great Wall of China is thousands of kilometres long."
+      ],
+      "correctIndex": 2
+    },
+    "explanation": "Big Ben and Buckingham Palace are in London.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "world-flag-name-fr",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/world.ts"
+    },
+    "skills": [
+      "WORLD-FLAGS"
+    ],
+    "language": "en",
+    "prompt": "Which country's flag is this?",
+    "visual": {
+      "kind": "image",
+      "src": "/flags/fr.svg",
+      "alt": "The flag of France"
+    },
+    "teach": {
+      "title": "France",
+      "lines": [
+        "Three stripes standing up: blue, white and red.",
+        "The capital city is Paris.",
+        "The Eiffel Tower is in Paris."
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "/flags/fr.svg",
+        "alt": "The flag of France"
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "Canada",
+        "United States",
+        "China",
+        "France"
+      ],
+      "correctIndex": 3
+    },
+    "explanation": "This is the flag of France. Three stripes standing up: blue, white and red.",
+    "difficulty": {
+      "band": 2,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "world-flag-pick-fr",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/world.ts"
+    },
+    "skills": [
+      "WORLD-FLAGS"
+    ],
+    "language": "en",
+    "prompt": "Which one of these is the flag of France?",
+    "teach": {
+      "title": "France",
+      "lines": [
+        "Three stripes standing up: blue, white and red.",
+        "The capital city is Paris.",
+        "The Eiffel Tower is in Paris."
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "/flags/fr.svg",
+        "alt": "The flag of France"
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "Canada",
+        "France",
+        "United States",
+        "China"
+      ],
+      "correctIndex": 1,
+      "choiceVisuals": [
+        {
+          "kind": "image",
+          "src": "/flags/ca.svg",
+          "alt": "The flag of Canada"
+        },
+        {
+          "kind": "image",
+          "src": "/flags/fr.svg",
+          "alt": "The flag of France"
+        },
+        {
+          "kind": "image",
+          "src": "/flags/us.svg",
+          "alt": "The flag of United States"
+        },
+        {
+          "kind": "image",
+          "src": "/flags/cn.svg",
+          "alt": "The flag of China"
+        }
+      ]
+    },
+    "explanation": "France's flag: three stripes standing up: blue, white and red.",
+    "difficulty": {
+      "band": 2,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "world-capital-fr",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/world.ts"
+    },
+    "skills": [
+      "WORLD-CAPITALS"
+    ],
+    "language": "en",
+    "prompt": "What is the capital city of France?",
+    "visual": {
+      "kind": "image",
+      "src": "/flags/fr.svg",
+      "alt": "The flag of France"
+    },
+    "teach": {
+      "title": "France",
+      "lines": [
+        "Three stripes standing up: blue, white and red.",
+        "The capital city is Paris.",
+        "The Eiffel Tower is in Paris."
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "/flags/fr.svg",
+        "alt": "The flag of France"
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "Ottawa",
+        "Paris",
+        "Washington, D.C.",
+        "Beijing"
+      ],
+      "correctIndex": 1
+    },
+    "explanation": "The capital of France is Paris.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "world-continent-fr",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/world.ts"
+    },
+    "skills": [
+      "WORLD-MAP"
+    ],
+    "language": "en",
+    "prompt": "Which continent is France in?",
+    "visual": {
+      "kind": "image",
+      "src": "/flags/fr.svg",
+      "alt": "The flag of France"
+    },
+    "teach": {
+      "title": "France",
+      "lines": [
+        "Three stripes standing up: blue, white and red.",
+        "The capital city is Paris.",
+        "The Eiffel Tower is in Paris."
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "/flags/fr.svg",
+        "alt": "The flag of France"
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "North America",
+        "Europe",
+        "Asia"
+      ],
+      "correctIndex": 1
+    },
+    "explanation": "France is in Europe.",
+    "difficulty": {
+      "band": 2,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "world-culture-fr",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/world.ts"
+    },
+    "skills": [
+      "WORLD-CULTURE"
+    ],
+    "language": "en",
+    "prompt": "Which of these is true about France?",
+    "visual": {
+      "kind": "image",
+      "src": "/flags/fr.svg",
+      "alt": "The flag of France"
+    },
+    "teach": {
+      "title": "France",
+      "lines": [
+        "Three stripes standing up: blue, white and red.",
+        "The capital city is Paris.",
+        "The Eiffel Tower is in Paris."
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "/flags/fr.svg",
+        "alt": "The flag of France"
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "Canada has two official languages, English and French.",
+        "There is one star on the flag for each of the fifty states.",
+        "The Great Wall of China is thousands of kilometres long.",
+        "The Eiffel Tower is in Paris."
+      ],
+      "correctIndex": 3
+    },
+    "explanation": "The Eiffel Tower is in Paris.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "world-flag-name-de",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/world.ts"
+    },
+    "skills": [
+      "WORLD-FLAGS"
+    ],
+    "language": "en",
+    "prompt": "Which country's flag is this?",
+    "visual": {
+      "kind": "image",
+      "src": "/flags/de.svg",
+      "alt": "The flag of Germany"
+    },
+    "teach": {
+      "title": "Germany",
+      "lines": [
+        "Three stripes lying down: black, red and gold.",
+        "The capital city is Berlin.",
+        "Germany builds many famous cars, including BMW, Audi and Volkswagen."
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "/flags/de.svg",
+        "alt": "The flag of Germany"
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "Germany",
+        "South Korea",
+        "Mexico",
+        "Canada"
+      ],
+      "correctIndex": 0
+    },
+    "explanation": "This is the flag of Germany. Three stripes lying down: black, red and gold.",
+    "difficulty": {
+      "band": 2,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "world-flag-pick-de",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/world.ts"
+    },
+    "skills": [
+      "WORLD-FLAGS"
+    ],
+    "language": "en",
+    "prompt": "Which one of these is the flag of Germany?",
+    "teach": {
+      "title": "Germany",
+      "lines": [
+        "Three stripes lying down: black, red and gold.",
+        "The capital city is Berlin.",
+        "Germany builds many famous cars, including BMW, Audi and Volkswagen."
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "/flags/de.svg",
+        "alt": "The flag of Germany"
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "South Korea",
+        "Mexico",
+        "Germany",
+        "Canada"
+      ],
+      "correctIndex": 2,
+      "choiceVisuals": [
+        {
+          "kind": "image",
+          "src": "/flags/kr.svg",
+          "alt": "The flag of South Korea"
+        },
+        {
+          "kind": "image",
+          "src": "/flags/mx.svg",
+          "alt": "The flag of Mexico"
+        },
+        {
+          "kind": "image",
+          "src": "/flags/de.svg",
+          "alt": "The flag of Germany"
+        },
+        {
+          "kind": "image",
+          "src": "/flags/ca.svg",
+          "alt": "The flag of Canada"
+        }
+      ]
+    },
+    "explanation": "Germany's flag: three stripes lying down: black, red and gold.",
+    "difficulty": {
+      "band": 2,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "world-capital-de",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/world.ts"
+    },
+    "skills": [
+      "WORLD-CAPITALS"
+    ],
+    "language": "en",
+    "prompt": "What is the capital city of Germany?",
+    "visual": {
+      "kind": "image",
+      "src": "/flags/de.svg",
+      "alt": "The flag of Germany"
+    },
+    "teach": {
+      "title": "Germany",
+      "lines": [
+        "Three stripes lying down: black, red and gold.",
+        "The capital city is Berlin.",
+        "Germany builds many famous cars, including BMW, Audi and Volkswagen."
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "/flags/de.svg",
+        "alt": "The flag of Germany"
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "Seoul",
+        "Mexico City",
+        "Berlin",
+        "Ottawa"
+      ],
+      "correctIndex": 2
+    },
+    "explanation": "The capital of Germany is Berlin.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "world-continent-de",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/world.ts"
+    },
+    "skills": [
+      "WORLD-MAP"
+    ],
+    "language": "en",
+    "prompt": "Which continent is Germany in?",
+    "visual": {
+      "kind": "image",
+      "src": "/flags/de.svg",
+      "alt": "The flag of Germany"
+    },
+    "teach": {
+      "title": "Germany",
+      "lines": [
+        "Three stripes lying down: black, red and gold.",
+        "The capital city is Berlin.",
+        "Germany builds many famous cars, including BMW, Audi and Volkswagen."
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "/flags/de.svg",
+        "alt": "The flag of Germany"
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "Asia",
+        "North America",
+        "Europe"
+      ],
+      "correctIndex": 2
+    },
+    "explanation": "Germany is in Europe.",
+    "difficulty": {
+      "band": 2,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "world-culture-de",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/world.ts"
+    },
+    "skills": [
+      "WORLD-CULTURE"
+    ],
+    "language": "en",
+    "prompt": "Which of these is true about Germany?",
+    "visual": {
+      "kind": "image",
+      "src": "/flags/de.svg",
+      "alt": "The flag of Germany"
+    },
+    "teach": {
+      "title": "Germany",
+      "lines": [
+        "Three stripes lying down: black, red and gold.",
+        "The capital city is Berlin.",
+        "Germany builds many famous cars, including BMW, Audi and Volkswagen."
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "/flags/de.svg",
+        "alt": "The flag of Germany"
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "Germany builds many famous cars, including BMW, Audi and Volkswagen.",
+        "Hyundai and Kia are from South Korea.",
+        "Mexico shares a long border with the United States.",
+        "Canada has two official languages, English and French."
+      ],
+      "correctIndex": 0
+    },
+    "explanation": "Germany builds many famous cars, including BMW, Audi and Volkswagen.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "world-flag-name-it",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/world.ts"
+    },
+    "skills": [
+      "WORLD-FLAGS"
+    ],
+    "language": "en",
+    "prompt": "Which country's flag is this?",
+    "visual": {
+      "kind": "image",
+      "src": "/flags/it.svg",
+      "alt": "The flag of Italy"
+    },
+    "teach": {
+      "title": "Italy",
+      "lines": [
+        "Three stripes standing up: green, white and red.",
+        "The capital city is Rome.",
+        "Pizza and pasta come from Italy."
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "/flags/it.svg",
+        "alt": "The flag of Italy"
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "Australia",
+        "India",
+        "Italy",
+        "Japan"
+      ],
+      "correctIndex": 2
+    },
+    "explanation": "This is the flag of Italy. Three stripes standing up: green, white and red.",
+    "difficulty": {
+      "band": 2,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "world-flag-pick-it",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/world.ts"
+    },
+    "skills": [
+      "WORLD-FLAGS"
+    ],
+    "language": "en",
+    "prompt": "Which one of these is the flag of Italy?",
+    "teach": {
+      "title": "Italy",
+      "lines": [
+        "Three stripes standing up: green, white and red.",
+        "The capital city is Rome.",
+        "Pizza and pasta come from Italy."
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "/flags/it.svg",
+        "alt": "The flag of Italy"
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "Italy",
+        "Australia",
+        "India",
+        "Japan"
+      ],
+      "correctIndex": 0,
+      "choiceVisuals": [
+        {
+          "kind": "image",
+          "src": "/flags/it.svg",
+          "alt": "The flag of Italy"
+        },
+        {
+          "kind": "image",
+          "src": "/flags/au.svg",
+          "alt": "The flag of Australia"
+        },
+        {
+          "kind": "image",
+          "src": "/flags/in.svg",
+          "alt": "The flag of India"
+        },
+        {
+          "kind": "image",
+          "src": "/flags/jp.svg",
+          "alt": "The flag of Japan"
+        }
+      ]
+    },
+    "explanation": "Italy's flag: three stripes standing up: green, white and red.",
+    "difficulty": {
+      "band": 2,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "world-capital-it",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/world.ts"
+    },
+    "skills": [
+      "WORLD-CAPITALS"
+    ],
+    "language": "en",
+    "prompt": "What is the capital city of Italy?",
+    "visual": {
+      "kind": "image",
+      "src": "/flags/it.svg",
+      "alt": "The flag of Italy"
+    },
+    "teach": {
+      "title": "Italy",
+      "lines": [
+        "Three stripes standing up: green, white and red.",
+        "The capital city is Rome.",
+        "Pizza and pasta come from Italy."
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "/flags/it.svg",
+        "alt": "The flag of Italy"
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "Rome",
+        "Canberra",
+        "New Delhi",
+        "Tokyo"
+      ],
+      "correctIndex": 0
+    },
+    "explanation": "The capital of Italy is Rome.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "world-continent-it",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/world.ts"
+    },
+    "skills": [
+      "WORLD-MAP"
+    ],
+    "language": "en",
+    "prompt": "Which continent is Italy in?",
+    "visual": {
+      "kind": "image",
+      "src": "/flags/it.svg",
+      "alt": "The flag of Italy"
+    },
+    "teach": {
+      "title": "Italy",
+      "lines": [
+        "Three stripes standing up: green, white and red.",
+        "The capital city is Rome.",
+        "Pizza and pasta come from Italy."
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "/flags/it.svg",
+        "alt": "The flag of Italy"
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "Australia",
+        "Asia",
+        "Europe"
+      ],
+      "correctIndex": 2
+    },
+    "explanation": "Italy is in Europe.",
+    "difficulty": {
+      "band": 2,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "world-culture-it",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/world.ts"
+    },
+    "skills": [
+      "WORLD-CULTURE"
+    ],
+    "language": "en",
+    "prompt": "Which of these is true about Italy?",
+    "visual": {
+      "kind": "image",
+      "src": "/flags/it.svg",
+      "alt": "The flag of Italy"
+    },
+    "teach": {
+      "title": "Italy",
+      "lines": [
+        "Three stripes standing up: green, white and red.",
+        "The capital city is Rome.",
+        "Pizza and pasta come from Italy."
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "/flags/it.svg",
+        "alt": "The flag of Italy"
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "Kangaroos and koalas live in Australia.",
+        "India has more people than any other country.",
+        "Pizza and pasta come from Italy.",
+        "Japan is famous for very fast trains called bullet trains."
+      ],
+      "correctIndex": 2
+    },
+    "explanation": "Pizza and pasta come from Italy.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "world-flag-name-jp",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/world.ts"
+    },
+    "skills": [
+      "WORLD-FLAGS"
+    ],
+    "language": "en",
+    "prompt": "Which country's flag is this?",
+    "visual": {
+      "kind": "image",
+      "src": "/flags/jp.svg",
+      "alt": "The flag of Japan"
+    },
+    "teach": {
+      "title": "Japan",
+      "lines": [
+        "A red circle in the middle of a white flag.",
+        "The capital city is Tokyo.",
+        "Japan is famous for very fast trains called bullet trains."
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "/flags/jp.svg",
+        "alt": "The flag of Japan"
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "Germany",
+        "Japan",
+        "Brazil",
+        "Australia"
+      ],
+      "correctIndex": 1
+    },
+    "explanation": "This is the flag of Japan. A red circle in the middle of a white flag.",
+    "difficulty": {
+      "band": 2,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "world-flag-pick-jp",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/world.ts"
+    },
+    "skills": [
+      "WORLD-FLAGS"
+    ],
+    "language": "en",
+    "prompt": "Which one of these is the flag of Japan?",
+    "teach": {
+      "title": "Japan",
+      "lines": [
+        "A red circle in the middle of a white flag.",
+        "The capital city is Tokyo.",
+        "Japan is famous for very fast trains called bullet trains."
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "/flags/jp.svg",
+        "alt": "The flag of Japan"
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "Germany",
+        "Brazil",
+        "Australia",
+        "Japan"
+      ],
+      "correctIndex": 3,
+      "choiceVisuals": [
+        {
+          "kind": "image",
+          "src": "/flags/de.svg",
+          "alt": "The flag of Germany"
+        },
+        {
+          "kind": "image",
+          "src": "/flags/br.svg",
+          "alt": "The flag of Brazil"
+        },
+        {
+          "kind": "image",
+          "src": "/flags/au.svg",
+          "alt": "The flag of Australia"
+        },
+        {
+          "kind": "image",
+          "src": "/flags/jp.svg",
+          "alt": "The flag of Japan"
+        }
+      ]
+    },
+    "explanation": "Japan's flag: a red circle in the middle of a white flag.",
+    "difficulty": {
+      "band": 2,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "world-capital-jp",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/world.ts"
+    },
+    "skills": [
+      "WORLD-CAPITALS"
+    ],
+    "language": "en",
+    "prompt": "What is the capital city of Japan?",
+    "visual": {
+      "kind": "image",
+      "src": "/flags/jp.svg",
+      "alt": "The flag of Japan"
+    },
+    "teach": {
+      "title": "Japan",
+      "lines": [
+        "A red circle in the middle of a white flag.",
+        "The capital city is Tokyo.",
+        "Japan is famous for very fast trains called bullet trains."
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "/flags/jp.svg",
+        "alt": "The flag of Japan"
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "Berlin",
+        "Brasilia",
+        "Canberra",
+        "Tokyo"
+      ],
+      "correctIndex": 3
+    },
+    "explanation": "The capital of Japan is Tokyo.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "world-continent-jp",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/world.ts"
+    },
+    "skills": [
+      "WORLD-MAP"
+    ],
+    "language": "en",
+    "prompt": "Which continent is Japan in?",
+    "visual": {
+      "kind": "image",
+      "src": "/flags/jp.svg",
+      "alt": "The flag of Japan"
+    },
+    "teach": {
+      "title": "Japan",
+      "lines": [
+        "A red circle in the middle of a white flag.",
+        "The capital city is Tokyo.",
+        "Japan is famous for very fast trains called bullet trains."
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "/flags/jp.svg",
+        "alt": "The flag of Japan"
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "Europe",
+        "South America",
+        "Australia",
+        "Asia"
+      ],
+      "correctIndex": 3
+    },
+    "explanation": "Japan is in Asia.",
+    "difficulty": {
+      "band": 2,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "world-flag-detail-jp",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/world.ts"
+    },
+    "skills": [
+      "WORLD-FLAGS-DETAIL"
+    ],
+    "language": "en",
+    "prompt": "What is in the middle of Japan's flag?",
+    "visual": {
+      "kind": "image",
+      "src": "/flags/jp.svg",
+      "alt": "The flag of Japan"
+    },
+    "teach": {
+      "title": "Japan",
+      "lines": [
+        "A red circle in the middle of a white flag.",
+        "The capital city is Tokyo.",
+        "Japan is famous for very fast trains called bullet trains."
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "/flags/jp.svg",
+        "alt": "The flag of Japan"
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "A red star",
+        "A red leaf",
+        "A red cross",
+        "A red circle"
+      ],
+      "correctIndex": 3
+    },
+    "explanation": "The red circle stands for the sun. Japan is sometimes called the land of the rising sun.",
+    "difficulty": {
+      "band": 2,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "world-culture-jp",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/world.ts"
+    },
+    "skills": [
+      "WORLD-CULTURE"
+    ],
+    "language": "en",
+    "prompt": "Which of these is true about Japan?",
+    "visual": {
+      "kind": "image",
+      "src": "/flags/jp.svg",
+      "alt": "The flag of Japan"
+    },
+    "teach": {
+      "title": "Japan",
+      "lines": [
+        "A red circle in the middle of a white flag.",
+        "The capital city is Tokyo.",
+        "Japan is famous for very fast trains called bullet trains."
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "/flags/jp.svg",
+        "alt": "The flag of Japan"
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "Germany builds many famous cars, including BMW, Audi and Volkswagen.",
+        "Japan is famous for very fast trains called bullet trains.",
+        "Most of the Amazon rainforest is in Brazil.",
+        "Kangaroos and koalas live in Australia."
+      ],
+      "correctIndex": 1
+    },
+    "explanation": "Japan is famous for very fast trains called bullet trains.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "world-flag-name-cn",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/world.ts"
+    },
+    "skills": [
+      "WORLD-FLAGS"
+    ],
+    "language": "en",
+    "prompt": "Which country's flag is this?",
+    "visual": {
+      "kind": "image",
+      "src": "/flags/cn.svg",
+      "alt": "The flag of China"
+    },
+    "teach": {
+      "title": "China",
+      "lines": [
+        "A red flag with five yellow stars in the corner.",
+        "The capital city is Beijing.",
+        "The Great Wall of China is thousands of kilometres long."
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "/flags/cn.svg",
+        "alt": "The flag of China"
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "Germany",
+        "Brazil",
+        "China",
+        "Australia"
+      ],
+      "correctIndex": 2
+    },
+    "explanation": "This is the flag of China. A red flag with five yellow stars in the corner.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "world-flag-pick-cn",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/world.ts"
+    },
+    "skills": [
+      "WORLD-FLAGS"
+    ],
+    "language": "en",
+    "prompt": "Which one of these is the flag of China?",
+    "teach": {
+      "title": "China",
+      "lines": [
+        "A red flag with five yellow stars in the corner.",
+        "The capital city is Beijing.",
+        "The Great Wall of China is thousands of kilometres long."
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "/flags/cn.svg",
+        "alt": "The flag of China"
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "China",
+        "Germany",
+        "Brazil",
+        "Australia"
+      ],
+      "correctIndex": 0,
+      "choiceVisuals": [
+        {
+          "kind": "image",
+          "src": "/flags/cn.svg",
+          "alt": "The flag of China"
+        },
+        {
+          "kind": "image",
+          "src": "/flags/de.svg",
+          "alt": "The flag of Germany"
+        },
+        {
+          "kind": "image",
+          "src": "/flags/br.svg",
+          "alt": "The flag of Brazil"
+        },
+        {
+          "kind": "image",
+          "src": "/flags/au.svg",
+          "alt": "The flag of Australia"
+        }
+      ]
+    },
+    "explanation": "China's flag: a red flag with five yellow stars in the corner.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "world-capital-cn",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/world.ts"
+    },
+    "skills": [
+      "WORLD-CAPITALS"
+    ],
+    "language": "en",
+    "prompt": "What is the capital city of China?",
+    "visual": {
+      "kind": "image",
+      "src": "/flags/cn.svg",
+      "alt": "The flag of China"
+    },
+    "teach": {
+      "title": "China",
+      "lines": [
+        "A red flag with five yellow stars in the corner.",
+        "The capital city is Beijing.",
+        "The Great Wall of China is thousands of kilometres long."
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "/flags/cn.svg",
+        "alt": "The flag of China"
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "Beijing",
+        "Berlin",
+        "Brasilia",
+        "Canberra"
+      ],
+      "correctIndex": 0
+    },
+    "explanation": "The capital of China is Beijing.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "world-continent-cn",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/world.ts"
+    },
+    "skills": [
+      "WORLD-MAP"
+    ],
+    "language": "en",
+    "prompt": "Which continent is China in?",
+    "visual": {
+      "kind": "image",
+      "src": "/flags/cn.svg",
+      "alt": "The flag of China"
+    },
+    "teach": {
+      "title": "China",
+      "lines": [
+        "A red flag with five yellow stars in the corner.",
+        "The capital city is Beijing.",
+        "The Great Wall of China is thousands of kilometres long."
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "/flags/cn.svg",
+        "alt": "The flag of China"
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "Asia",
+        "Europe",
+        "South America",
+        "Australia"
+      ],
+      "correctIndex": 0
+    },
+    "explanation": "China is in Asia.",
+    "difficulty": {
+      "band": 2,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "world-culture-cn",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/world.ts"
+    },
+    "skills": [
+      "WORLD-CULTURE"
+    ],
+    "language": "en",
+    "prompt": "Which of these is true about China?",
+    "visual": {
+      "kind": "image",
+      "src": "/flags/cn.svg",
+      "alt": "The flag of China"
+    },
+    "teach": {
+      "title": "China",
+      "lines": [
+        "A red flag with five yellow stars in the corner.",
+        "The capital city is Beijing.",
+        "The Great Wall of China is thousands of kilometres long."
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "/flags/cn.svg",
+        "alt": "The flag of China"
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "Germany builds many famous cars, including BMW, Audi and Volkswagen.",
+        "Most of the Amazon rainforest is in Brazil.",
+        "The Great Wall of China is thousands of kilometres long.",
+        "Kangaroos and koalas live in Australia."
+      ],
+      "correctIndex": 2
+    },
+    "explanation": "The Great Wall of China is thousands of kilometres long.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "world-flag-name-kr",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/world.ts"
+    },
+    "skills": [
+      "WORLD-FLAGS"
+    ],
+    "language": "en",
+    "prompt": "Which country's flag is this?",
+    "visual": {
+      "kind": "image",
+      "src": "/flags/kr.svg",
+      "alt": "The flag of South Korea"
+    },
+    "teach": {
+      "title": "South Korea",
+      "lines": [
+        "A white flag with a red and blue circle in the middle and four black marks around it.",
+        "The capital city is Seoul.",
+        "Hyundai and Kia are from South Korea."
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "/flags/kr.svg",
+        "alt": "The flag of South Korea"
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "Germany",
+        "Brazil",
+        "South Korea",
+        "Australia"
+      ],
+      "correctIndex": 2
+    },
+    "explanation": "This is the flag of South Korea. A white flag with a red and blue circle in the middle and four black marks around it.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "world-flag-pick-kr",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/world.ts"
+    },
+    "skills": [
+      "WORLD-FLAGS"
+    ],
+    "language": "en",
+    "prompt": "Which one of these is the flag of South Korea?",
+    "teach": {
+      "title": "South Korea",
+      "lines": [
+        "A white flag with a red and blue circle in the middle and four black marks around it.",
+        "The capital city is Seoul.",
+        "Hyundai and Kia are from South Korea."
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "/flags/kr.svg",
+        "alt": "The flag of South Korea"
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "South Korea",
+        "Germany",
+        "Brazil",
+        "Australia"
+      ],
+      "correctIndex": 0,
+      "choiceVisuals": [
+        {
+          "kind": "image",
+          "src": "/flags/kr.svg",
+          "alt": "The flag of South Korea"
+        },
+        {
+          "kind": "image",
+          "src": "/flags/de.svg",
+          "alt": "The flag of Germany"
+        },
+        {
+          "kind": "image",
+          "src": "/flags/br.svg",
+          "alt": "The flag of Brazil"
+        },
+        {
+          "kind": "image",
+          "src": "/flags/au.svg",
+          "alt": "The flag of Australia"
+        }
+      ]
+    },
+    "explanation": "South Korea's flag: a white flag with a red and blue circle in the middle and four black marks around it.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "world-capital-kr",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/world.ts"
+    },
+    "skills": [
+      "WORLD-CAPITALS"
+    ],
+    "language": "en",
+    "prompt": "What is the capital city of South Korea?",
+    "visual": {
+      "kind": "image",
+      "src": "/flags/kr.svg",
+      "alt": "The flag of South Korea"
+    },
+    "teach": {
+      "title": "South Korea",
+      "lines": [
+        "A white flag with a red and blue circle in the middle and four black marks around it.",
+        "The capital city is Seoul.",
+        "Hyundai and Kia are from South Korea."
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "/flags/kr.svg",
+        "alt": "The flag of South Korea"
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "Seoul",
+        "Berlin",
+        "Brasilia",
+        "Canberra"
+      ],
+      "correctIndex": 0
+    },
+    "explanation": "The capital of South Korea is Seoul.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "world-continent-kr",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/world.ts"
+    },
+    "skills": [
+      "WORLD-MAP"
+    ],
+    "language": "en",
+    "prompt": "Which continent is South Korea in?",
+    "visual": {
+      "kind": "image",
+      "src": "/flags/kr.svg",
+      "alt": "The flag of South Korea"
+    },
+    "teach": {
+      "title": "South Korea",
+      "lines": [
+        "A white flag with a red and blue circle in the middle and four black marks around it.",
+        "The capital city is Seoul.",
+        "Hyundai and Kia are from South Korea."
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "/flags/kr.svg",
+        "alt": "The flag of South Korea"
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "Asia",
+        "Europe",
+        "South America",
+        "Australia"
+      ],
+      "correctIndex": 0
+    },
+    "explanation": "South Korea is in Asia.",
+    "difficulty": {
+      "band": 2,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "world-culture-kr",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/world.ts"
+    },
+    "skills": [
+      "WORLD-CULTURE"
+    ],
+    "language": "en",
+    "prompt": "Which of these is true about South Korea?",
+    "visual": {
+      "kind": "image",
+      "src": "/flags/kr.svg",
+      "alt": "The flag of South Korea"
+    },
+    "teach": {
+      "title": "South Korea",
+      "lines": [
+        "A white flag with a red and blue circle in the middle and four black marks around it.",
+        "The capital city is Seoul.",
+        "Hyundai and Kia are from South Korea."
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "/flags/kr.svg",
+        "alt": "The flag of South Korea"
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "Germany builds many famous cars, including BMW, Audi and Volkswagen.",
+        "Most of the Amazon rainforest is in Brazil.",
+        "Hyundai and Kia are from South Korea.",
+        "Kangaroos and koalas live in Australia."
+      ],
+      "correctIndex": 2
+    },
+    "explanation": "Hyundai and Kia are from South Korea.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "world-flag-name-br",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/world.ts"
+    },
+    "skills": [
+      "WORLD-FLAGS"
+    ],
+    "language": "en",
+    "prompt": "Which country's flag is this?",
+    "visual": {
+      "kind": "image",
+      "src": "/flags/br.svg",
+      "alt": "The flag of Brazil"
+    },
+    "teach": {
+      "title": "Brazil",
+      "lines": [
+        "Green with a yellow diamond and a blue globe in the middle.",
+        "The capital city is Brasilia.",
+        "Most of the Amazon rainforest is in Brazil."
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "/flags/br.svg",
+        "alt": "The flag of Brazil"
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "United Kingdom",
+        "Italy",
+        "South Korea",
+        "Brazil"
+      ],
+      "correctIndex": 3
+    },
+    "explanation": "This is the flag of Brazil. Green with a yellow diamond and a blue globe in the middle.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "world-flag-pick-br",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/world.ts"
+    },
+    "skills": [
+      "WORLD-FLAGS"
+    ],
+    "language": "en",
+    "prompt": "Which one of these is the flag of Brazil?",
+    "teach": {
+      "title": "Brazil",
+      "lines": [
+        "Green with a yellow diamond and a blue globe in the middle.",
+        "The capital city is Brasilia.",
+        "Most of the Amazon rainforest is in Brazil."
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "/flags/br.svg",
+        "alt": "The flag of Brazil"
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "United Kingdom",
+        "Brazil",
+        "Italy",
+        "South Korea"
+      ],
+      "correctIndex": 1,
+      "choiceVisuals": [
+        {
+          "kind": "image",
+          "src": "/flags/gb.svg",
+          "alt": "The flag of United Kingdom"
+        },
+        {
+          "kind": "image",
+          "src": "/flags/br.svg",
+          "alt": "The flag of Brazil"
+        },
+        {
+          "kind": "image",
+          "src": "/flags/it.svg",
+          "alt": "The flag of Italy"
+        },
+        {
+          "kind": "image",
+          "src": "/flags/kr.svg",
+          "alt": "The flag of South Korea"
+        }
+      ]
+    },
+    "explanation": "Brazil's flag: green with a yellow diamond and a blue globe in the middle.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "world-capital-br",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/world.ts"
+    },
+    "skills": [
+      "WORLD-CAPITALS"
+    ],
+    "language": "en",
+    "prompt": "What is the capital city of Brazil?",
+    "visual": {
+      "kind": "image",
+      "src": "/flags/br.svg",
+      "alt": "The flag of Brazil"
+    },
+    "teach": {
+      "title": "Brazil",
+      "lines": [
+        "Green with a yellow diamond and a blue globe in the middle.",
+        "The capital city is Brasilia.",
+        "Most of the Amazon rainforest is in Brazil."
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "/flags/br.svg",
+        "alt": "The flag of Brazil"
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "London",
+        "Brasilia",
+        "Rome",
+        "Seoul"
+      ],
+      "correctIndex": 1
+    },
+    "explanation": "The capital of Brazil is Brasilia.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "world-continent-br",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/world.ts"
+    },
+    "skills": [
+      "WORLD-MAP"
+    ],
+    "language": "en",
+    "prompt": "Which continent is Brazil in?",
+    "visual": {
+      "kind": "image",
+      "src": "/flags/br.svg",
+      "alt": "The flag of Brazil"
+    },
+    "teach": {
+      "title": "Brazil",
+      "lines": [
+        "Green with a yellow diamond and a blue globe in the middle.",
+        "The capital city is Brasilia.",
+        "Most of the Amazon rainforest is in Brazil."
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "/flags/br.svg",
+        "alt": "The flag of Brazil"
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "Europe",
+        "South America",
+        "Asia"
+      ],
+      "correctIndex": 1
+    },
+    "explanation": "Brazil is in South America.",
+    "difficulty": {
+      "band": 2,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "world-culture-br",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/world.ts"
+    },
+    "skills": [
+      "WORLD-CULTURE"
+    ],
+    "language": "en",
+    "prompt": "Which of these is true about Brazil?",
+    "visual": {
+      "kind": "image",
+      "src": "/flags/br.svg",
+      "alt": "The flag of Brazil"
+    },
+    "teach": {
+      "title": "Brazil",
+      "lines": [
+        "Green with a yellow diamond and a blue globe in the middle.",
+        "The capital city is Brasilia.",
+        "Most of the Amazon rainforest is in Brazil."
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "/flags/br.svg",
+        "alt": "The flag of Brazil"
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "Big Ben and Buckingham Palace are in London.",
+        "Pizza and pasta come from Italy.",
+        "Hyundai and Kia are from South Korea.",
+        "Most of the Amazon rainforest is in Brazil."
+      ],
+      "correctIndex": 3
+    },
+    "explanation": "Most of the Amazon rainforest is in Brazil.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "world-flag-name-mx",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/world.ts"
+    },
+    "skills": [
+      "WORLD-FLAGS"
+    ],
+    "language": "en",
+    "prompt": "Which country's flag is this?",
+    "visual": {
+      "kind": "image",
+      "src": "/flags/mx.svg",
+      "alt": "The flag of Mexico"
+    },
+    "teach": {
+      "title": "Mexico",
+      "lines": [
+        "Three stripes standing up: green, white and red, with an eagle in the middle.",
+        "The capital city is Mexico City.",
+        "Mexico shares a long border with the United States."
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "/flags/mx.svg",
+        "alt": "The flag of Mexico"
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "Italy",
+        "South Korea",
+        "Mexico",
+        "Spain"
+      ],
+      "correctIndex": 2
+    },
+    "explanation": "This is the flag of Mexico. Three stripes standing up: green, white and red, with an eagle in the middle.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "world-flag-pick-mx",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/world.ts"
+    },
+    "skills": [
+      "WORLD-FLAGS"
+    ],
+    "language": "en",
+    "prompt": "Which one of these is the flag of Mexico?",
+    "teach": {
+      "title": "Mexico",
+      "lines": [
+        "Three stripes standing up: green, white and red, with an eagle in the middle.",
+        "The capital city is Mexico City.",
+        "Mexico shares a long border with the United States."
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "/flags/mx.svg",
+        "alt": "The flag of Mexico"
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "Mexico",
+        "Italy",
+        "South Korea",
+        "Spain"
+      ],
+      "correctIndex": 0,
+      "choiceVisuals": [
+        {
+          "kind": "image",
+          "src": "/flags/mx.svg",
+          "alt": "The flag of Mexico"
+        },
+        {
+          "kind": "image",
+          "src": "/flags/it.svg",
+          "alt": "The flag of Italy"
+        },
+        {
+          "kind": "image",
+          "src": "/flags/kr.svg",
+          "alt": "The flag of South Korea"
+        },
+        {
+          "kind": "image",
+          "src": "/flags/es.svg",
+          "alt": "The flag of Spain"
+        }
+      ]
+    },
+    "explanation": "Mexico's flag: three stripes standing up: green, white and red, with an eagle in the middle.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "world-capital-mx",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/world.ts"
+    },
+    "skills": [
+      "WORLD-CAPITALS"
+    ],
+    "language": "en",
+    "prompt": "What is the capital city of Mexico?",
+    "visual": {
+      "kind": "image",
+      "src": "/flags/mx.svg",
+      "alt": "The flag of Mexico"
+    },
+    "teach": {
+      "title": "Mexico",
+      "lines": [
+        "Three stripes standing up: green, white and red, with an eagle in the middle.",
+        "The capital city is Mexico City.",
+        "Mexico shares a long border with the United States."
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "/flags/mx.svg",
+        "alt": "The flag of Mexico"
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "Mexico City",
+        "Rome",
+        "Seoul",
+        "Madrid"
+      ],
+      "correctIndex": 0
+    },
+    "explanation": "The capital of Mexico is Mexico City.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "world-continent-mx",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/world.ts"
+    },
+    "skills": [
+      "WORLD-MAP"
+    ],
+    "language": "en",
+    "prompt": "Which continent is Mexico in?",
+    "visual": {
+      "kind": "image",
+      "src": "/flags/mx.svg",
+      "alt": "The flag of Mexico"
+    },
+    "teach": {
+      "title": "Mexico",
+      "lines": [
+        "Three stripes standing up: green, white and red, with an eagle in the middle.",
+        "The capital city is Mexico City.",
+        "Mexico shares a long border with the United States."
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "/flags/mx.svg",
+        "alt": "The flag of Mexico"
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "Europe",
+        "North America",
+        "Asia"
+      ],
+      "correctIndex": 1
+    },
+    "explanation": "Mexico is in North America.",
+    "difficulty": {
+      "band": 2,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "world-culture-mx",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/world.ts"
+    },
+    "skills": [
+      "WORLD-CULTURE"
+    ],
+    "language": "en",
+    "prompt": "Which of these is true about Mexico?",
+    "visual": {
+      "kind": "image",
+      "src": "/flags/mx.svg",
+      "alt": "The flag of Mexico"
+    },
+    "teach": {
+      "title": "Mexico",
+      "lines": [
+        "Three stripes standing up: green, white and red, with an eagle in the middle.",
+        "The capital city is Mexico City.",
+        "Mexico shares a long border with the United States."
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "/flags/mx.svg",
+        "alt": "The flag of Mexico"
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "Pizza and pasta come from Italy.",
+        "Hyundai and Kia are from South Korea.",
+        "Mexico shares a long border with the United States.",
+        "People in Spain speak Spanish."
+      ],
+      "correctIndex": 2
+    },
+    "explanation": "Mexico shares a long border with the United States.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "world-flag-name-au",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/world.ts"
+    },
+    "skills": [
+      "WORLD-FLAGS"
+    ],
+    "language": "en",
+    "prompt": "Which country's flag is this?",
+    "visual": {
+      "kind": "image",
+      "src": "/flags/au.svg",
+      "alt": "The flag of Australia"
+    },
+    "teach": {
+      "title": "Australia",
+      "lines": [
+        "Dark blue with a small Union Jack in the corner and white stars.",
+        "The capital city is Canberra.",
+        "Kangaroos and koalas live in Australia."
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "/flags/au.svg",
+        "alt": "The flag of Australia"
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "India",
+        "Australia",
+        "France",
+        "Japan"
+      ],
+      "correctIndex": 1
+    },
+    "explanation": "This is the flag of Australia. Dark blue with a small Union Jack in the corner and white stars.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "world-flag-pick-au",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/world.ts"
+    },
+    "skills": [
+      "WORLD-FLAGS"
+    ],
+    "language": "en",
+    "prompt": "Which one of these is the flag of Australia?",
+    "teach": {
+      "title": "Australia",
+      "lines": [
+        "Dark blue with a small Union Jack in the corner and white stars.",
+        "The capital city is Canberra.",
+        "Kangaroos and koalas live in Australia."
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "/flags/au.svg",
+        "alt": "The flag of Australia"
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "India",
+        "France",
+        "Japan",
+        "Australia"
+      ],
+      "correctIndex": 3,
+      "choiceVisuals": [
+        {
+          "kind": "image",
+          "src": "/flags/in.svg",
+          "alt": "The flag of India"
+        },
+        {
+          "kind": "image",
+          "src": "/flags/fr.svg",
+          "alt": "The flag of France"
+        },
+        {
+          "kind": "image",
+          "src": "/flags/jp.svg",
+          "alt": "The flag of Japan"
+        },
+        {
+          "kind": "image",
+          "src": "/flags/au.svg",
+          "alt": "The flag of Australia"
+        }
+      ]
+    },
+    "explanation": "Australia's flag: dark blue with a small union jack in the corner and white stars.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "world-capital-au",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/world.ts"
+    },
+    "skills": [
+      "WORLD-CAPITALS"
+    ],
+    "language": "en",
+    "prompt": "What is the capital city of Australia?",
+    "visual": {
+      "kind": "image",
+      "src": "/flags/au.svg",
+      "alt": "The flag of Australia"
+    },
+    "teach": {
+      "title": "Australia",
+      "lines": [
+        "Dark blue with a small Union Jack in the corner and white stars.",
+        "The capital city is Canberra.",
+        "Kangaroos and koalas live in Australia."
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "/flags/au.svg",
+        "alt": "The flag of Australia"
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "New Delhi",
+        "Paris",
+        "Tokyo",
+        "Canberra"
+      ],
+      "correctIndex": 3
+    },
+    "explanation": "The capital of Australia is Canberra.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "world-continent-au",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/world.ts"
+    },
+    "skills": [
+      "WORLD-MAP"
+    ],
+    "language": "en",
+    "prompt": "Which continent is Australia in?",
+    "visual": {
+      "kind": "image",
+      "src": "/flags/au.svg",
+      "alt": "The flag of Australia"
+    },
+    "teach": {
+      "title": "Australia",
+      "lines": [
+        "Dark blue with a small Union Jack in the corner and white stars.",
+        "The capital city is Canberra.",
+        "Kangaroos and koalas live in Australia."
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "/flags/au.svg",
+        "alt": "The flag of Australia"
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "Asia",
+        "Europe",
+        "Australia"
+      ],
+      "correctIndex": 2
+    },
+    "explanation": "Australia is in Australia.",
+    "difficulty": {
+      "band": 2,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "world-culture-au",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/world.ts"
+    },
+    "skills": [
+      "WORLD-CULTURE"
+    ],
+    "language": "en",
+    "prompt": "Which of these is true about Australia?",
+    "visual": {
+      "kind": "image",
+      "src": "/flags/au.svg",
+      "alt": "The flag of Australia"
+    },
+    "teach": {
+      "title": "Australia",
+      "lines": [
+        "Dark blue with a small Union Jack in the corner and white stars.",
+        "The capital city is Canberra.",
+        "Kangaroos and koalas live in Australia."
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "/flags/au.svg",
+        "alt": "The flag of Australia"
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "India has more people than any other country.",
+        "Kangaroos and koalas live in Australia.",
+        "The Eiffel Tower is in Paris.",
+        "Japan is famous for very fast trains called bullet trains."
+      ],
+      "correctIndex": 1
+    },
+    "explanation": "Kangaroos and koalas live in Australia.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "world-flag-name-es",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/world.ts"
+    },
+    "skills": [
+      "WORLD-FLAGS"
+    ],
+    "language": "en",
+    "prompt": "Which country's flag is this?",
+    "visual": {
+      "kind": "image",
+      "src": "/flags/es.svg",
+      "alt": "The flag of Spain"
+    },
+    "teach": {
+      "title": "Spain",
+      "lines": [
+        "Red, yellow, red stripes lying down, with a badge on the yellow band.",
+        "The capital city is Madrid.",
+        "People in Spain speak Spanish."
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "/flags/es.svg",
+        "alt": "The flag of Spain"
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "India",
+        "Japan",
+        "South Korea",
+        "Spain"
+      ],
+      "correctIndex": 3
+    },
+    "explanation": "This is the flag of Spain. Red, yellow, red stripes lying down, with a badge on the yellow band.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "world-flag-pick-es",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/world.ts"
+    },
+    "skills": [
+      "WORLD-FLAGS"
+    ],
+    "language": "en",
+    "prompt": "Which one of these is the flag of Spain?",
+    "teach": {
+      "title": "Spain",
+      "lines": [
+        "Red, yellow, red stripes lying down, with a badge on the yellow band.",
+        "The capital city is Madrid.",
+        "People in Spain speak Spanish."
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "/flags/es.svg",
+        "alt": "The flag of Spain"
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "India",
+        "Spain",
+        "Japan",
+        "South Korea"
+      ],
+      "correctIndex": 1,
+      "choiceVisuals": [
+        {
+          "kind": "image",
+          "src": "/flags/in.svg",
+          "alt": "The flag of India"
+        },
+        {
+          "kind": "image",
+          "src": "/flags/es.svg",
+          "alt": "The flag of Spain"
+        },
+        {
+          "kind": "image",
+          "src": "/flags/jp.svg",
+          "alt": "The flag of Japan"
+        },
+        {
+          "kind": "image",
+          "src": "/flags/kr.svg",
+          "alt": "The flag of South Korea"
+        }
+      ]
+    },
+    "explanation": "Spain's flag: red, yellow, red stripes lying down, with a badge on the yellow band.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "world-capital-es",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/world.ts"
+    },
+    "skills": [
+      "WORLD-CAPITALS"
+    ],
+    "language": "en",
+    "prompt": "What is the capital city of Spain?",
+    "visual": {
+      "kind": "image",
+      "src": "/flags/es.svg",
+      "alt": "The flag of Spain"
+    },
+    "teach": {
+      "title": "Spain",
+      "lines": [
+        "Red, yellow, red stripes lying down, with a badge on the yellow band.",
+        "The capital city is Madrid.",
+        "People in Spain speak Spanish."
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "/flags/es.svg",
+        "alt": "The flag of Spain"
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "New Delhi",
+        "Madrid",
+        "Tokyo",
+        "Seoul"
+      ],
+      "correctIndex": 1
+    },
+    "explanation": "The capital of Spain is Madrid.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "world-continent-es",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/world.ts"
+    },
+    "skills": [
+      "WORLD-MAP"
+    ],
+    "language": "en",
+    "prompt": "Which continent is Spain in?",
+    "visual": {
+      "kind": "image",
+      "src": "/flags/es.svg",
+      "alt": "The flag of Spain"
+    },
+    "teach": {
+      "title": "Spain",
+      "lines": [
+        "Red, yellow, red stripes lying down, with a badge on the yellow band.",
+        "The capital city is Madrid.",
+        "People in Spain speak Spanish."
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "/flags/es.svg",
+        "alt": "The flag of Spain"
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "Asia",
+        "Europe"
+      ],
+      "correctIndex": 1
+    },
+    "explanation": "Spain is in Europe.",
+    "difficulty": {
+      "band": 2,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "world-culture-es",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/world.ts"
+    },
+    "skills": [
+      "WORLD-CULTURE"
+    ],
+    "language": "en",
+    "prompt": "Which of these is true about Spain?",
+    "visual": {
+      "kind": "image",
+      "src": "/flags/es.svg",
+      "alt": "The flag of Spain"
+    },
+    "teach": {
+      "title": "Spain",
+      "lines": [
+        "Red, yellow, red stripes lying down, with a badge on the yellow band.",
+        "The capital city is Madrid.",
+        "People in Spain speak Spanish."
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "/flags/es.svg",
+        "alt": "The flag of Spain"
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "India has more people than any other country.",
+        "Japan is famous for very fast trains called bullet trains.",
+        "Hyundai and Kia are from South Korea.",
+        "People in Spain speak Spanish."
+      ],
+      "correctIndex": 3
+    },
+    "explanation": "People in Spain speak Spanish.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "world-flag-name-se",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/world.ts"
+    },
+    "skills": [
+      "WORLD-FLAGS"
+    ],
+    "language": "en",
+    "prompt": "Which country's flag is this?",
+    "visual": {
+      "kind": "image",
+      "src": "/flags/se.svg",
+      "alt": "The flag of Sweden"
+    },
+    "teach": {
+      "title": "Sweden",
+      "lines": [
+        "A blue flag with a yellow cross.",
+        "The capital city is Stockholm.",
+        "Volvo cars come from Sweden."
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "/flags/se.svg",
+        "alt": "The flag of Sweden"
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "United States",
+        "China",
+        "Brazil",
+        "Sweden"
+      ],
+      "correctIndex": 3
+    },
+    "explanation": "This is the flag of Sweden. A blue flag with a yellow cross.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "world-flag-pick-se",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/world.ts"
+    },
+    "skills": [
+      "WORLD-FLAGS"
+    ],
+    "language": "en",
+    "prompt": "Which one of these is the flag of Sweden?",
+    "teach": {
+      "title": "Sweden",
+      "lines": [
+        "A blue flag with a yellow cross.",
+        "The capital city is Stockholm.",
+        "Volvo cars come from Sweden."
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "/flags/se.svg",
+        "alt": "The flag of Sweden"
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "United States",
+        "Sweden",
+        "China",
+        "Brazil"
+      ],
+      "correctIndex": 1,
+      "choiceVisuals": [
+        {
+          "kind": "image",
+          "src": "/flags/us.svg",
+          "alt": "The flag of United States"
+        },
+        {
+          "kind": "image",
+          "src": "/flags/se.svg",
+          "alt": "The flag of Sweden"
+        },
+        {
+          "kind": "image",
+          "src": "/flags/cn.svg",
+          "alt": "The flag of China"
+        },
+        {
+          "kind": "image",
+          "src": "/flags/br.svg",
+          "alt": "The flag of Brazil"
+        }
+      ]
+    },
+    "explanation": "Sweden's flag: a blue flag with a yellow cross.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "world-capital-se",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/world.ts"
+    },
+    "skills": [
+      "WORLD-CAPITALS"
+    ],
+    "language": "en",
+    "prompt": "What is the capital city of Sweden?",
+    "visual": {
+      "kind": "image",
+      "src": "/flags/se.svg",
+      "alt": "The flag of Sweden"
+    },
+    "teach": {
+      "title": "Sweden",
+      "lines": [
+        "A blue flag with a yellow cross.",
+        "The capital city is Stockholm.",
+        "Volvo cars come from Sweden."
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "/flags/se.svg",
+        "alt": "The flag of Sweden"
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "Washington, D.C.",
+        "Stockholm",
+        "Beijing",
+        "Brasilia"
+      ],
+      "correctIndex": 1
+    },
+    "explanation": "The capital of Sweden is Stockholm.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "world-continent-se",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/world.ts"
+    },
+    "skills": [
+      "WORLD-MAP"
+    ],
+    "language": "en",
+    "prompt": "Which continent is Sweden in?",
+    "visual": {
+      "kind": "image",
+      "src": "/flags/se.svg",
+      "alt": "The flag of Sweden"
+    },
+    "teach": {
+      "title": "Sweden",
+      "lines": [
+        "A blue flag with a yellow cross.",
+        "The capital city is Stockholm.",
+        "Volvo cars come from Sweden."
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "/flags/se.svg",
+        "alt": "The flag of Sweden"
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "North America",
+        "Europe",
+        "Asia",
+        "South America"
+      ],
+      "correctIndex": 1
+    },
+    "explanation": "Sweden is in Europe.",
+    "difficulty": {
+      "band": 2,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "world-culture-se",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/world.ts"
+    },
+    "skills": [
+      "WORLD-CULTURE"
+    ],
+    "language": "en",
+    "prompt": "Which of these is true about Sweden?",
+    "visual": {
+      "kind": "image",
+      "src": "/flags/se.svg",
+      "alt": "The flag of Sweden"
+    },
+    "teach": {
+      "title": "Sweden",
+      "lines": [
+        "A blue flag with a yellow cross.",
+        "The capital city is Stockholm.",
+        "Volvo cars come from Sweden."
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "/flags/se.svg",
+        "alt": "The flag of Sweden"
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "There is one star on the flag for each of the fifty states.",
+        "The Great Wall of China is thousands of kilometres long.",
+        "Most of the Amazon rainforest is in Brazil.",
+        "Volvo cars come from Sweden."
+      ],
+      "correctIndex": 3
+    },
+    "explanation": "Volvo cars come from Sweden.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "world-chart-most",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/world.ts"
+    },
+    "skills": [
+      "WORLD-NUMBERS",
+      "MATH-MD-BAR-GRAPH"
+    ],
+    "language": "en",
+    "prompt": "Which country have the most children visited?",
+    "visual": {
+      "kind": "barChart",
+      "title": "Countries our class has visited",
+      "unit": "children",
+      "bars": [
+        {
+          "label": "Canada",
+          "value": 9
+        },
+        {
+          "label": "India",
+          "value": 6
+        },
+        {
+          "label": "USA",
+          "value": 7
+        },
+        {
+          "label": "Japan",
+          "value": 2
+        }
+      ]
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "India",
+        "USA",
+        "Canada",
+        "Japan"
+      ],
+      "correctIndex": 2
+    },
+    "explanation": "Canada's bar is the tallest, at 9 children.",
+    "difficulty": {
+      "band": 2,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "world-chart-difference",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/world.ts"
+    },
+    "skills": [
+      "WORLD-NUMBERS",
+      "MATH-MD-BAR-GRAPH",
+      "MATH-OA-ADD-SUB"
+    ],
+    "language": "en",
+    "prompt": "How many more children have visited Canada than Japan?",
+    "visual": {
+      "kind": "barChart",
+      "title": "Countries our class has visited",
+      "unit": "children",
+      "bars": [
+        {
+          "label": "Canada",
+          "value": 9
+        },
+        {
+          "label": "India",
+          "value": 6
+        },
+        {
+          "label": "USA",
+          "value": 7
+        },
+        {
+          "label": "Japan",
+          "value": 2
+        }
+      ]
+    },
+    "answer": {
+      "type": "numeric",
+      "value": 7
+    },
+    "explanation": "Canada has 9 and Japan has 2. 9 - 2 = 7.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  }
+]

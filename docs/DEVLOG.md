@@ -16,6 +16,134 @@ Attribution convention used below: "Parent decision" means the parent chose it; 
 
 ---
 
+## 2026-09-21  Milestone  Fact-checking pass: 221 questions moved from draft to reviewed
+What: Every fact behind the cars and world-knowledge questions was checked against a source rather than from memory.
+The 221 questions come from two tables totalling 45 rows, so the check was of those rows. Sources: the Wikidata REST
+API for country (`P17`), capital (`P36`), continent (`P30`) and inception (`P571`), and the English Wikipedia
+`extracts` API for prose claims. Flag descriptions were checked against the committed SVG files, since the file is
+what the child actually sees. Full record in `content/REVIEW.md`.
+Verified by: 30 of 30 car maker founding countries match Wikidata, which is the fact the questions ask. 15 of 15
+capitals and 15 of 15 continents match. Six claims were wrong and were corrected: Mazda's name (the company's own
+stated derivation is Ahura Mazda, not the founder's family name), Hyundai's logo (the handshake story could not be
+sourced anywhere checked), Rolls-Royce ("quietest, most expensive" is an opinion, replaced with the Spirit of
+Ecstasy), Tata (its car business demerged in October 2025), Jaguar (true, but the committed logo file is a wordmark so
+the card contradicted the picture), and Canada ("second biggest by land" is wrong; it is fourth by land and second by
+total area). Afterwards `npm run content:check` reported 58 skills and 549 questions, all reviewed.
+Also: the 7 founding years Wikidata disagreed with were all cases of the two sources dating different legal entities
+(Lamborghini 1948 is the tractor company, Tata 2024 the demerger, Rolls-Royce 1998 the BMW era). The year no longer
+appears in any question or explanation and stays in the table as provenance only.
+
+## 2026-09-21  Decision  The new-skill slot is given up while reviews are backed up
+What: `selectSession` skips its reserved new-skill slot when more than `MAX_REVIEWS * 2` skills are due for review.
+Reason: Assistant decision; the parent has not been asked. Moving the 221 questions to reviewed took the servable
+bank from 48 to 58 skills, and review demand scales with skill count. At a sustained 70% accuracy the due queue
+stopped converging. Pausing new material while he owes more reviews than two sessions can serve is also the right
+lesson, so this fixes the queue and the teaching together. Measured over 180 simulated days it lowered the peak due
+queue at every accuracy tested (18 to 15 at 70%, 21 to 16 at 75%, 18 to 15 at 80%, 14 to 13 at 85%) and raised
+skills mastered at his actual accuracy from 52 to 54 of 58.
+Alternatives rejected: raising `MAX_REVIEWS` again (an 8 question session already reserves 3 everyday-skill slots, 1
+new-skill slot and 1 themed slot); weakening the test instead of the behaviour.
+Known trade-off: one new-skill slot now serves more than 25 unstarted skills across two strands, so LANGUAGE fell
+from 96 to 29 slots per 1600 in ordinary sessions. It is no longer starved, but it is thin. The real lever is session
+length, which is still an open question for the parent.
+
+## 2026-09-21  Milestone  Picked themes: cars and logos, flags and countries
+What: A theme system plus two themes. `content/themes.json` groups skills into themes the child picks from a new
+`/choose/[studentId]` screen; picking one fills the whole session, and ordinary sessions keep one slot for a themed
+question. 221 new questions across 10 new HUMANITIES skills (`WORLD-*`, `CARS-*`): naming a logo, picking it out of a
+line-up, which country a maker is from, matching a country to its flag, capitals, continents, culture, and bar charts.
+Every one ships as `"draft"` until its facts are checked, so none of it reaches Aishik yet.
+Verified by: `npm test` 115 passed, `npm run content:check` 58 skills and 549 questions, typecheck and lint clean.
+In headless Chrome at 384 px: the Ferrari teach card shows the logo beside the Italian flag then the question, "Got
+it" moves on, the India flag line-up renders four real flags, and no picture failed to load. A deliberately broken
+picture path was confirmed to fail `content:check` rather than reach the screen.
+
+## 2026-09-21  Decision  Cars are the on-ramp to world knowledge, not a separate thing
+What: Every `CARS-ORIGIN` question is tagged `WORLD-FLAGS` as well, and its teach card shows the maker's logo beside
+its country's flag. Some car logo questions are also tagged `MATH-GEO-SHAPES` or `MATH-GEO-SYMMETRY` (counting the
+Audi rings, the Toyota ovals, the quarters of the BMW roundel, folding the Volkswagen circle).
+Reason: Parent decision on the geometry tie-in, choosing "Yes, weave it in". The parent asked for cars because "he
+loves guessing car logos, manufacturer country of origin etc. He's an automobile nerd. he looooves his cars", and
+separately asked for world knowledge so he gets "more aware about the world". Tying them together was an assistant
+decision: he will take Italy, Japan and Germany along with the logos he already wants to know. The geometry tagging
+lands on the one weakness his real answers show, undercounting composite shapes.
+Alternatives rejected: keeping cars purely about cars.
+
+## 2026-09-21  Decision  Artwork is downloaded and committed, never drawn and never hotlinked
+What: Flags and logos are real files under `public/flags` and `public/logos`, listed with source and date in
+`content/assets.json` and fetched by `npm run assets:fetch`. A new `image` visual kind points at them, and
+`content:check` fails if a question names a file nobody downloaded. `src/proxy.ts` leaves those two folders out of the
+auth matcher.
+Reason: Parent decision on logos: "Take logos from company websites. This is not a commercial product, only used for
+at home learning." Extending the same approach to flags was an assistant decision: the plan had been to draw flags in
+code, and a drawn flag quietly gets the 50 stars or the 24 chakra spokes wrong, which is a fact the child then learns.
+Alternatives rejected: hand drawn SVG for both; hotlinking (breaks offline play, breaks when a URL moves, and sends
+requests from the family's devices).
+Caveat: company press pages have no stable direct file URLs, so 27 of 30 logos come from Simple Icons and 3 from
+Wikimedia Commons. Simple Icons marks are one colour, so a teach card must never describe a logo's colours. This
+already caught one: the Ferrari card said "black prancing horse" while the mark rendered red, so the mark is now
+black and the wording moved the yellow shield onto the real car.
+
+## 2026-09-21  Decision  Knowledge questions teach before they ask
+What: A `teach` card (title, up to 4 lines, optional picture) is shown before a question the first time he meets it,
+and skipped once he has answered that question. The timer starts when the question appears, not when the card does.
+Reason: Parent decision, choosing "Teach card, then check", having asked for something "more geared towards learning
+than just outside testing with puzzles". Reason not stated beyond that choice.
+Alternatives rejected: asking first and teaching in the explanation (the first sight of a country would be a question
+he cannot know); a browse mode with no scoring (sits outside the engine, so nothing is reviewed or remembered).
+
+## 2026-09-21  Milestone  Engine fixes from the first real usage data
+What: Four changes to the adaptive engine, all driven by measurement against Aishik's real attempt log: a reserved
+new-skill slot, MAX_REVIEWS 3 to 4, a fifth review box at 30 days, and a miss dropping one box instead of resetting.
+Also a specific Find the Bug message when he taps a step after the real bug.
+Verified by: `npm test` 113 passed (20 files, 5 new tests), `npm run typecheck` and `npm run lint` clean. Both new
+engine tests were confirmed to fail when the change they cover is reverted. Against the real log, 200 seeded draws of
+one session went from 0 "New skill" picks in 1600 slots to 200, and from 0 LANGUAGE slots to 96. A 180 day simulation
+at 80% accuracy ends with 47 of 48 skills mastered and 1 review due. The Find the Bug message was checked in headless
+Chrome at 384 px on `dbg-clock-minutes-4-20`, the exact question he missed this way on 2026-09-15: tapping step 4
+shows "So close. Something went wrong before that step.", and tapping step 2 shows no such line.
+
+## 2026-09-21  Decision  A fifth review box at 30 days
+What: `REVIEW_INTERVALS` becomes 1, 3, 7, 14, 30 days.
+Reason: Assistant decision; the parent has not been asked. Raising MAX_REVIEWS to 4 was meant to keep the review
+queue servable, but measuring it showed that alone did not work: over 90 days the due queue still peaked at 18 to 20
+of 48 skills. The arithmetic says why. With a 14 day top box, N settled skills demand N/14 reviews a day, so 48
+skills demand 3.4 against a capacity of 4, and the 10 skills planned for the themes work would demand 4.1, over
+capacity. A 30 day top box drops that to 1.6 and leaves headroom.
+Alternatives rejected: raising MAX_REVIEWS further (an 8 question session already reserves 3 everyday-skill slots
+and 1 new-skill slot, so there is no room); a longer session (the parent's open question about session length is
+still unanswered, and this would have pre-empted it).
+
+## 2026-09-21  Decision  A missed review drops one box instead of resetting the skill
+What: In `computeSkillStates`, a wrong answer on a mastered skill sets box to box minus 1 and recomputes the next
+review date, keeping `masteredOn`. Only a miss in box 1 returns the skill to learning.
+Reason: Parent decision, choosing "Drop one box" when asked what should happen to a skill he misses on review. Reason
+not stated beyond that choice. The measurement put to the parent: he played on 09-14, 09-15 and 09-20, and that four
+day gap made reviews land late, he missed 2 of 3, and both skills reset to zero, leaving 0 of 48 skills mastered.
+Alternatives rejected: keeping the full reset to learning; leaving it unchanged and deciding on more data.
+
+## 2026-09-21  Decision  One session slot is reserved for a skill he has not met yet
+What: `MIN_NEW_ITEMS = 1` in `select-session.ts`, filled after retries and reviews and before the stretch slots.
+Retries, reviews and stretch picks that fill no quota now yield to the everyday-skills and new-skill quotas.
+Reason: Parent decision, choosing "One guaranteed slot" over two slots or a language-first rule. Reason not stated
+beyond that choice. It was put to the parent because 25 of 48 skills had never been served after 36 attempts,
+including the entire LANGUAGE strand: a skill in `learning` scores 80 to 95 and a `new` skill 50 to 68, so once
+enough skills are in progress no new skill can ever win a slot.
+Alternatives rejected: two reserved slots (costs a practice slot); a language-first preference for the slot.
+
+## 2026-09-21  Milestone  First real usage data since the reset, reviewed
+What: 36 attempts across 5 played sessions on 3 days (2026-09-14, 09-15, 09-20), 28 right, 78%. One empty session row
+from 09-14 (3 seconds, 0 attempts). Sessions ran 4.5 to 9 minutes, all under the 12 minute cap. Upload lag was 0 to 2
+seconds on every attempt, so the outbox has never had to queue. Scratchpad used once in 36. `listenCount` 0
+throughout, so the read-aloud buttons have not been tapped.
+Verified by: read directly from the production database, and replayed through the app's own engine
+(`computeSkillStates`, `selectSession`, `insights`).
+Findings for the parent, recorded because they are teaching signals rather than bugs: he missed `gs-fan-triangles-2`
+and `gs-fan-triangles-4` the same way six days apart, counting only the small triangles and never the composites;
+`lso-third-fastest` and `kl12-clock-two-hours-later` were both off-by-one in ordinal counting; `nas-63-minus-27` was
+answered 56, consistent with subtracting only the 7 and ignoring the 20, after 241 seconds at LOW confidence with the
+scratchpad unopened, then right in 16 seconds the next day.
+
 ## 2026-09-13  Milestone  Voice switch and natural voice selection deployed
 What: Commit bcdc783 pushed to `main` at the parent's request.
 Verified by: GitHub commit status from Vercel for bcdc783 reported "Deployment has completed"; `npm test` 108 passed before committing. Family guide republished (version 2) at the same artifact link.

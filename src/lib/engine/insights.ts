@@ -42,23 +42,32 @@ export function weeklyAccuracy(attempts: InsightAttempt[], today: LocalDate, wee
 /** Accuracy by the strand of each question's first skill, in a fixed strand order. */
 export function accuracyByStrand(attempts: InsightAttempt[], questionsById: Map<string, Question>, skills: Skill[]): ({ strand: Skill["strand"] } & Tally)[] {
   const strandOf = new Map(skills.map((s) => [s.code, s.strand]));
-  const order: Skill["strand"][] = ["MEASUREMENT_DATA", "OPERATIONS_ALGEBRA", "NUMBER_BASE_TEN", "GEOMETRY_SPATIAL", "LOGIC_CS", "LANGUAGE"];
-  return order
-    .map((strand) => ({
-      strand,
-      ...tally(attempts.filter((a) => {
-        const q = questionsById.get(a.questionId);
-        return q !== undefined && strandOf.get(q.skills[0]) === strand;
-      })),
-    }))
-    .filter((row) => row.answered > 0 || row.strand !== "LANGUAGE");
+  const order: Skill["strand"][] = ["MEASUREMENT_DATA", "OPERATIONS_ALGEBRA", "NUMBER_BASE_TEN", "GEOMETRY_SPATIAL", "LOGIC_CS", "LANGUAGE", "HUMANITIES"];
+  // Every strand is shown, including one with no answers yet. A strand he has never been served is exactly the thing
+  // a parent needs to see, and hiding the empty row is what kept the missing language questions invisible for a week.
+  return order.map((strand) => ({
+    strand,
+    ...tally(attempts.filter((a) => {
+      const q = questionsById.get(a.questionId);
+      return q !== undefined && strandOf.get(q.skills[0]) === strand;
+    })),
+  }));
 }
 
-/** Everyday convention skills (time, money, measuring, graphs) against everything else. */
+/**
+ * Everyday convention skills (time, money, measuring, graphs) against reasoning. Themed knowledge questions are
+ * neither: knowing Ferrari is Italian is recall, not reasoning, so counting it as reasoning would flatter the split.
+ * Those are left out of both sides.
+ */
 export function everydayVsReasoning(attempts: InsightAttempt[], questionsById: Map<string, Question>, skills: Skill[]): { everyday: Tally; reasoning: Tally } {
   const convention = new Set(skills.filter((s) => s.isConvention).map((s) => s.code));
+  const knowledge = new Set(skills.filter((s) => s.strand === "HUMANITIES").map((s) => s.code));
   const isEveryday = (a: InsightAttempt) => questionsById.get(a.questionId)?.skills.some((c) => convention.has(c)) ?? false;
-  return { everyday: tally(attempts.filter(isEveryday)), reasoning: tally(attempts.filter((a) => questionsById.has(a.questionId) && !isEveryday(a))) };
+  const isKnowledge = (a: InsightAttempt) => questionsById.get(a.questionId)?.skills.every((c) => knowledge.has(c)) ?? false;
+  return {
+    everyday: tally(attempts.filter((a) => isEveryday(a) && !isKnowledge(a))),
+    reasoning: tally(attempts.filter((a) => questionsById.has(a.questionId) && !isEveryday(a) && !isKnowledge(a))),
+  };
 }
 
 /** How often each confidence face turned out right. Well calibrated: "Very sure" is right most of the time. */

@@ -28,6 +28,13 @@ export function Visual({ visual }: { visual: VisualData }) {
           dangerouslySetInnerHTML={{ __html: visual.svg }}
         />
       );
+    case "image":
+      return (
+        <div className="visual-card flex items-center justify-center gap-4">
+          <Picture src={visual.src} alt={visual.alt} />
+          {visual.beside && <Picture src={visual.beside.src} alt={visual.beside.alt} />}
+        </div>
+      );
     case "coins":
       return <CoinsVisual visual={visual} />;
     case "ruler":
@@ -162,5 +169,20 @@ function BarChartVisual({ title, unit, bars }: { title: string; unit: string; ba
       </svg>
       <p className="text-center text-sm font-bold text-ink/70">Number of {unit}</p>
     </figure>
+  );
+}
+
+/**
+ * A committed picture from public/. Logos and flags sit on a white tile: many are drawn in a single dark colour and
+ * would disappear against the cream question card, and a flag needs a light edge to read against the page.
+ */
+function Picture({ src, alt }: { src: string; alt: string }) {
+  return (
+    <span className="flex h-24 w-32 items-center justify-center rounded-2xl bg-white p-2 shadow-inner sm:h-32 sm:w-44">
+      {/* Plain img, not next/image: next/image does not optimise SVG anyway, these are already a few hundred bytes,
+          and going through the optimiser would break them on a tablet that has dropped off the Wi-Fi. */}
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img src={src} alt={alt} className="max-h-full max-w-full object-contain" />
+    </span>
   );
 }

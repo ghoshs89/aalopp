@@ -90,6 +90,25 @@ describe("selectSession", () => {
     expect(plan.picks.every((p) => p.reason.startsWith("Extra practice") || p.reason.includes(":"))).toBe(true);
   });
 
+  it("still introduces a new skill when many skills are already in progress", () => {
+    // Give him a scattered history across many skills, so every one of them sits in "learning" and outscores a new
+    // skill. Before the new-skill slot existed this starved whole strands: 200 draws produced no new skill at all.
+    let history: AttemptRecord[] = [];
+    for (const skill of skills.slice(0, 24)) {
+      const ids = idsFor(skill.code).slice(0, 2);
+      history = history.concat(ids.map((id, i) => attempt(id, i === 0, "2026-09-05")));
+    }
+    const states = computeSkillStates(skills, questionsById, history, "2026-09-13");
+    const learning = [...states.values()].filter((s) => s.status === "learning").length;
+    expect(learning, "the history needs plenty of skills in progress for this to mean anything").toBeGreaterThanOrEqual(15);
+
+    for (let seed = 1; seed <= 20; seed++) {
+      const plan = selectSession(reviewed, skills, history, "2026-09-13", seeded(seed));
+      const introduced = plan.picks.filter((p) => p.reason.startsWith("New skill:"));
+      expect(introduced.length, `seed ${seed}`).toBeGreaterThanOrEqual(1);
+    }
+  });
+
   it("is deterministic for the same seed", () => {
     const a = selectSession(reviewed, skills, [], "2026-09-13", seeded(11));
     const b = selectSession(reviewed, skills, [], "2026-09-13", seeded(11));

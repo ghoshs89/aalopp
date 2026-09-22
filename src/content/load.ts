@@ -1,12 +1,13 @@
-import { readdirSync, readFileSync } from "node:fs";
+import { existsSync, readdirSync, readFileSync } from "node:fs";
 import path from "node:path";
 import type { z } from "zod";
 import { checkContent, type ContentIssue, type SourcedQuestion } from "./graph";
-import { QuestionFileSchema, SkillFileSchema, type Skill } from "./schema";
+import { QuestionFileSchema, SkillFileSchema, ThemeFileSchema, type Skill, type Theme } from "./schema";
 
 export type LoadedContent = {
   skills: Skill[];
   questions: SourcedQuestion[];
+  themes: Theme[];
   issues: ContentIssue[];
 };
 
@@ -23,8 +24,22 @@ export function loadContent(contentDir = path.join(process.cwd(), "content")): L
     for (const question of parsed ?? []) questions.push({ file, question });
   }
 
-  issues.push(...checkContent(skills, questions));
-  return { skills, questions, issues };
+  const themes = parseFile(path.join(contentDir, "themes.json"), ThemeFileSchema, issues, "themes.json") ?? [];
+
+  issues.push(...checkContent(skills, questions, themes, committedPictures(contentDir)));
+  return { skills, questions, themes, issues };
+}
+
+/** Every picture actually present under public/, as the paths a question would use. */
+function committedPictures(contentDir: string): Set<string> {
+  const publicDir = path.join(path.dirname(contentDir), "public");
+  const found = new Set<string>();
+  for (const folder of ["flags", "logos"]) {
+    const dir = path.join(publicDir, folder);
+    if (!existsSync(dir)) continue;
+    for (const name of readdirSync(dir)) found.add(`/${folder}/${name}`);
+  }
+  return found;
 }
 
 function parseFile<T extends z.ZodType>(

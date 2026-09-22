@@ -1,93 +1,80 @@
-# Session Handoff  2026-09-13  All planned phases built and live; next is real use, device testing and fixes
+# Session Handoff  2026-09-21  Engine tuned from real data; themes built, fact-checked and ready to deploy
 
 > Read this fully before acting. It is the state of the work as of the end of the last session. Assume you have no memory of that session and may be a different model. This document plus the repository should be enough to resume.
 >
 > Before trusting any claim below, the previous session should have verified it against the repo, not the conversation. If a section says "assumed", treat it as unconfirmed.
 
 ## How this was verified
-Commands run at handoff time on 2026-09-13 from the repo root (`aalopp/`), all exit code 0:
-- `npm test`: pass. 20 test files, 106 tests (includes the 30-day simulation and a 10-learner quota stress test).
-- `npm run content:check`: pass. 48 skills, 328 questions, all `"reviewed"`. By band: 1: 53, 2: 121, 3: 96, 4: 48, 5: 10.
-- `npm run typecheck`: pass. No errors.
-- `npm run lint`: pass. No problems.
+Commands run at handoff time on 2026-09-21 from the repo root (`aalopp/`), all exit code 0:
+- `npm test`: pass. 20 test files, 115 tests (5 new: a 180 day review-queue run at two accuracies, every servable skill getting served, the new-skill slot, and a miss dropping one box).
+- `npm run content:check`: pass. 58 skills, 549 questions, all reviewed. By primary strand: LOGIC_CS 98, MEASUREMENT_DATA 79, HUMANITIES 221, GEOMETRY_SPATIAL 42, LANGUAGE 42, OPERATIONS_ALGEBRA 34, NUMBER_BASE_TEN 33.
+- `npm run typecheck`: pass. `npm run lint`: pass.
+- Both new engine tests were confirmed to fail when the change they cover is reverted, and the picture check was confirmed to fail on a deliberately broken path.
 
-Repo state: `main` level with `origin/main`; the last code commit is `b56be0c`, followed by this handoff's docs commit. No em dashes in `CLAUDE.md`, `docs/` or `content/REVIEW.md`.
+Repo state: **nothing is committed.** All of this session's work is uncommitted in the working tree, and nothing is deployed. Production still runs `f44be31`.
 
 ## 1. Current state
 - Works and verified:
-  - Live at `https://aalopp.vercel.app`. Vercel commit status "Deployment has completed" was checked after every phase: Phase 4 `1e8d91e`, Phase 3 `692a08e`, content batch 2 `c87a25b`, Phase 5 `a2af948`, reading and languages `b56be0c`. After the last deploy: `/api/health` returned 200 with `CRON_SECRET`, `/dev/dashboard` returned 404, and `/parent/report` redirected signed-out visitors to `/login`.
-  - Every phase in `docs/ROADMAP.md` is done: 0 content format, 1 player, 2 adaptive practice, 3 parent dashboard, 4 scratchpad and Find the Bug, 5 ingestion tool, content batch 2, and the later items (reading, Spanish, French, spoken answers, break offers).
-  - Production database has all 5 migrations (`20260913000000_init` through `20260913200000_parent_notes`); after the last schema change `prisma migrate diff --from-config-datasource --to-schema prisma/schema.prisma` printed an empty migration. Row Level Security is on for every table, including `ParentNote` (the publishable key read an empty list with a probe row present).
-  - All 328 questions passed an independent blind solve (187 + 39 + 21 + 39 + 42 across five rounds). Record in `content/REVIEW.md`.
-  - Both family Google accounts sign in on production (verified earlier on 2026-09-13).
-- In progress: nothing.
+  - Live at `https://aalopp.vercel.app`, still on `f44be31`. Checked this session: `/login` 200, `/`, `/parent` and `/parent/report` 307 to login when signed out, `/dev/dashboard` 404, `/api/health` 401 without the secret and `{"ok":true}` with it. Vercel commit status for `f44be31`: "Deployment has completed".
+  - Real usage since the 2026-09-13 reset: 36 attempts across 5 played sessions on 3 days (09-14, 09-15, 09-20), 28 right, 78%. Sessions ran 4.5 to 9 minutes. Upload lag 0 to 2 seconds on every attempt.
+  - Engine fixes (uncommitted): a reserved new-skill slot, `MAX_REVIEWS` 3 to 4, a fifth review box at 30 days, a miss dropping one box instead of resetting, and a specific Find the Bug message when he taps a step after the real bug.
+  - Themes (uncommitted): `content/themes.json`, a `/choose/[studentId]` screen, teach cards, an `image` visual, picture answer choices, 45 committed artwork files, 221 draft questions.
+- In progress: nothing. The fact-checking pass is done and recorded in `content/REVIEW.md`; six wrong claims were found and corrected, and all 221 questions are now `"reviewed"`. Both themes appear on the choose screen. Verified by simulation: a cars session and a world session each drew 400 picks with zero off-theme questions, and all 200 sampled ordinary sessions contained a themed question.
 - Broken or known failing: none observed.
-- Assumed, not verified (each is a likely source of the "issues to work out later" the parent expects):
-  - Parent dashboard, notes form and printable report in a real signed-in session. They were checked only through `/dev/dashboard` with simulated data and by route checks; they need sign-in and the PIN.
-  - Scratchpad with a real stylus and palm rejection on a physical tablet.
-  - Voice quality on the family's devices. `pickVoice` now prefers Natural, Premium and Enhanced voices and skips robotic novelty voices, but quality depends on what each device has installed; the family guide explains how to install better voices. Automatic reading is off by default (on-screen switch).
-  - Speech recognition of a child's voice, in any language.
-  - The offline answer queue after a real Wi-Fi drop.
-  - The Vercel cron calling `/api/health` daily.
-  - Real usage by Aishik: none yet. All test practice data was deleted on 2026-09-13 for a fresh start (backup at `/Users/soumalya/Documents/Aishik/aalopp-reset-backup-2026-09-13.json`, outside the repo), so every engine threshold is tuned on simulation only.
+- Assumed, not verified:
+  - Everything from the 2026-09-13 handoff that still stands: the parent dashboard in a real signed-in session, the scratchpad with a real stylus, voice quality on family devices, speech recognition of a child's voice, the offline queue after a real Wi-Fi drop.
+  - The daily Vercel cron calling `/api/health`. The runtime logs API returns 403 on this plan, so cron runs could not be confirmed from the command line. Check the Vercel dashboard, project `aalopp`, Cron Jobs tab.
+  - Every screen in this session was checked in headless Chrome at 384 px, never on a real device.
 
 ## 2. Decisions made this session
 All are in `docs/DEVLOG.md` with reasons and attribution. Treat as settled; do not reopen without new cause.
-- The parent authorized finishing all phases without waiting for input and committing and pushing after each phase passed its checks.
-- Earlier: revised build plan; Vercel and Supabase hosting with TrueNAS backup planned; Google sign-in with `ALLOWED_EMAILS` and `PARENT_PIN`; RLS with server-side Prisma 7.10.0; blind-solve review rule (parent's reason "Time constraints."); generators compute answers; mixed US and Canadian units; mastery and review rules; session caps; 8-question sessions with a quiet 12 minute cap; migrations stay compatible with the previous deployment.
-- Phase 4: scratchpad stores mode and stroke count only; Find the Bug asks for the first wrong step.
-- Phase 3: bars and lines instead of a radar chart; status on the skill map is stripe plus icon plus label; layered SVG skill map instead of React Flow; browser print instead of a PDF library.
-- Selector fix: stretch slots yield to the everyday-skills quota.
-- Phase 5: a repo command producing drafts, not an in-app AI vision pipeline (no API key; drafts still need a blind solve).
-- Languages: speech input optional and experimental, nothing recorded; break offers after 3 wrong in a row instead of fatigue detection.
+- Parent: a missed review drops a skill one box instead of resetting it to learning.
+- Parent: one session slot is reserved for a skill he has not met yet.
+- Parent: knowledge questions teach first, with a card before the question.
+- Parent: picking a theme fills the whole session, and ordinary sessions also mix in a themed item.
+- Parent: the first world batch covers flags, capitals and maps, culture and daily life, and numbers about countries.
+- Parent: "Take logos from company websites. This is not a commercial product, only used for at home learning."
+- Parent: car logos double as shape and symmetry practice.
+- Assistant, parent not asked: the fifth review box at 30 days, and extending the downloaded-artwork approach from logos to flags.
 
 ## 3. Constraints and invariants the next session must not violate
-Standing rules in `CLAUDE.md`: RLS on every table with server-side data access only, no `any`, skill state replayed never stored, no em dashes anywhere, process over speed, soft gates only, drawings never stored, passages never read aloud, spoken answers optional, breaks offered never forced.
-- Never edit `content/questions/generated-*.json` by hand; change `scripts/generate/*.ts` and run `npm run content:generate`, or `scripts/generate/generate.test.ts` fails.
-- A new question file must be imported in `src/content/bank.ts`, or `src/content/bank.test.ts` fails.
-- Only `"reviewed"` questions reach the child. Do not mark a question reviewed without an independent blind solve, and log each round in `content/REVIEW.md`.
-- Migrations deploy automatically on push through `vercel-build`; keep them compatible with the previous deployment and enable RLS on new tables.
-- Keep `Attempt.localDate` nullable until old app versions cached on devices are gone.
-- Do not record a reason in `docs/DEVLOG.md` that the parent did not give.
-- The autonomous commit-and-push authorization covered finishing the phases; for new work, confirm with the parent before committing unless they say otherwise.
-- Rerun `src/lib/engine/simulation.test.ts` after changing any engine cap; it caught a real quota bug this session.
+Standing rules are in `CLAUDE.md`, which gained three sections this session: knowledge-content review, Pictures, and Themes. The ones easiest to break:
+- Knowledge content stays `"draft"` until an independent pass checks each fact against a source and records it in `content/REVIEW.md`. A wrong puzzle answer is a bad question; a wrong fact is something Aishik learns and repeats.
+- A teach card must never describe a logo's colours. The logos are one-colour marks, so the card and the picture would contradict each other. This already happened once with Ferrari.
+- Country of origin means where a brand was founded, never who owns it now. `scripts/generate/cars.ts` keeps `country` and `ownerNote` in separate fields for exactly this reason.
+- Never hand draw a flag or a logo, and never hotlink one. Add it to `content/assets.json` and run `npm run assets:fetch`.
+- The top review interval is load-bearing. N skills demand N/30 reviews a day against the 4 a session can serve; at the old 14 day top box the due queue grew without bound. Rerun `simulation.test.ts` after touching any cap or interval.
+- Everything from the previous handoff still holds: never edit `generated-*.json` by hand, a new question file must be imported in `src/content/bank.ts`, migrations stay compatible with the previous deployment, `Attempt.localDate` stays nullable.
+- The autonomous commit-and-push authorization covered finishing the original phases only. Confirm with the parent before committing this session's work.
 
 ## 4. Next steps, prioritized
-- Parent walkthrough of the live app | parent has played a session on a tablet and a phone, opened every grown-ups tab, saved a note and printed the report | `https://aalopp.vercel.app`; collect issues into `docs/HANDOFF.md` section 5.
-- Fix whatever the walkthrough finds | each issue has a test or screenshot showing it fixed | usually `src/components/Player.tsx`, `src/app/parent/page.tsx`, `src/components/parent/`.
-- Device checks | stylus strokes and palm rejection, Spanish and French voices, 🎤 on a phone, Wi-Fi drop recovery | `src/components/Scratchpad.tsx`, `src/lib/use-speech.ts`, `src/lib/use-speech-input.ts`, `src/lib/outbox.ts`.
-- Set up the TrueNAS backup | a nightly dump appears on the NAS and in Google Drive, and a test restore matches the row counts | `docs/backup-truenas.md` (needs the parent at the NAS).
-- Tune the engine from real data | after one to two weeks of Aishik's answers; compare accuracy, review share and break offers with the simulation | `src/lib/engine/select-session.ts`, `src/lib/engine/breaks.ts`, `src/lib/engine/simulation.test.ts`.
-- Content batch 3 | when the Skills tab shows most skills mastered or the pool feels repetitive; also turn contest PDFs into drafts | `scripts/generate/`, `npm run content:ingest`.
+- Commit and deploy | the parent confirms, then push; Vercel commit status reports "Deployment has completed" | the engine fixes in Part 1 are independent of the themes and can ship first if preferred.
+- Parent walkthrough on a real device | a session on a tablet and a phone, both themes, every grown-ups tab, a note saved and the report printed | collect issues into section 5.
+- Two weak logo files | Mahindra and Jaguar came through as wordmarks rather than marks, which are poor for "guess the logo" | replace the `sourceUrl` in `content/assets.json` and rerun `npm run assets:fetch -- --force`.
+- Device checks, TrueNAS backup, engine tuning from more data | unchanged from the previous handoff | `docs/backup-truenas.md` needs the parent at the NAS.
 
 ## 5. Open questions and blockers
-- Parent input: is 8 questions the right session length? Asked, not yet answered.
-- Parent action: TrueNAS backup not set up; answer data exists only in Supabase, whose free plan has no downloadable backups.
+- Parent input: is 8 questions the right session length? Asked 2026-09-13, still unanswered, and now the most consequential open question. An 8 slot session reserves 3 everyday-skill items, 1 new skill and 1 themed item, and one new-skill slot has to serve more than 25 unstarted skills across two strands. LANGUAGE fell from 96 to 29 slots per 1600 in ordinary sessions once the themes went live. It is not starved, but a longer session is the real lever.
+- Parent input: the four brands with no usable logo file are Mercedes-Benz (resolved from Commons, fine), Alfa Romeo (dropped, only model wordmarks found), plus the two weak files above. Does he want Alfa Romeo?
+- Parent action: TrueNAS backup still not set up. Answer data exists only in Supabase.
 - Parent action: Wi-Fi drop test on a phone.
-- Parent input, optional: which issues to prioritize from the walkthrough.
-- Parent spot-check suggestions: `mdl-bus-cm-offset`, `lgr-cars-4x4`, `lsp-zoo-best-route`, `mdc-ca-piggy-bank`, `gs-fan-triangles-4`, `lrv-undo-the-walk`, `dbg-sub-52-18-trade`, `b2l-five-car-race`, `b2f-not-equal-parts`, `read-soccer-brown-socks`, `lang-fr-phrase-please`.
+- Parent spot-check suggestions: `car-from-ferrari`, `car-flag-tata`, `car-shape-audi-rings`, `car-sym-vw`, `car-fact-f1`, `world-flag-detail-in`, `world-capital-ca`, `world-continent-au`, `world-culture-ca`. The six general `CARS-FACTS` questions are the ones not taken from a source, so they are worth a look first.
 
 ## 6. Dead ends
 Also in `docs/DEVLOG.md` where durable.
-- Detecting a deployment from `/_next/static/chunks/` in page HTML; Next.js 16 uses `/_next/static/immutable/chunks/`. Use `gh api repos/ghoshs89/aalopp/commits/<sha>/status`.
-- `npx prisma migrate diff --from-migrations` needs a shadow database; use `--from-empty` or `--from-config-datasource`.
-- Python one-off edit scripts with `'...parent\\'s...'` quoting failed with a syntax error before writing anything, twice; the commit went out without its docs the first time. Use double-quoted strings for text with apostrophes, or write the script to a file and check it runs before committing.
-- Headless Chrome browser tests stall when many speech utterances queue; stub `window.speechSynthesis` in the test page.
-- Reading pixels from the scratchpad canvas while it is hidden throws (width 0); check `canvas.width` first.
+- Everything in the previous handoff still applies: deployment detection via `/_next/static/chunks/`, `prisma migrate diff --from-migrations`, Python one-off scripts with escaped apostrophes, queued speech stalling headless Chrome, reading pixels from a hidden canvas.
+- Trusting a lead summary as a fact check. Wikipedia's `summary` endpoint confirmed only about half the prose claims; the rest needed the full article via `prop=extracts&explaintext=1`, which is where the Mazda, Hyundai and Canada errors surfaced.
+- Wikidata's `action=wbsearchentities` and `wbgetentities` API. It rate limits an anonymous burst within a handful of requests and returns plain text, not JSON, when it does. The REST endpoint `\`/w/rest.php/wikibase/v1/entities/items/<QID>\`` is fine, and Wikipedia's `summary` endpoint hands over the QID.
+- Guessing a company's own logo URL. Press pages are JavaScript driven with no stable direct file URLs; `https://www.toyota.com/.../logo.svg` returns an HTML 404 page. The MediaWiki `pageimages` API is no better, returning headquarters photographs for Toyota, Audi and Ferrari. Use Simple Icons for a predictable URL, or resolve an exact Commons file title.
+- Counting broken images in a page whose `onerror` handler rewrites the element. The images leave `document.images`, so the count comes back zero and everything looks fine. Set a data attribute instead and count that.
+- Top-level `await` in a `scripts/*.ts` file. `tsx` builds them as CommonJS here, so wrap it in a `main()`.
 
 ## 7. Orientation for a cold reader
-`CLAUDE.md` covers the stack, commands and standing rules; `docs/ROADMAP.md` covers the plan. This section is only what matters for resuming.
-- Where things live:
-  - Child flow: `src/app/play/[studentId]/page.tsx` loads attempts and calls `selectSession` (`src/lib/engine/select-session.ts`, which uses `computeSkillStates` in `skill-state.ts`), then renders `src/components/Player.tsx` (scratchpad, Find the Bug, passages, hear-it, 🎤, break offer).
-  - Answers: `src/lib/outbox.ts` (IndexedDB queue), then `src/app/api/sync/route.ts` and `src/lib/sync.ts`.
-  - Grown-ups: `src/app/parent/page.tsx` (tabs), `src/lib/parent-session.ts` (PIN check and data loading), `src/lib/engine/insights.ts` (dashboard numbers), `src/components/parent/` (charts, skill map, skill progress), `src/app/parent/notes-actions.ts`, `src/app/parent/report/page.tsx`.
-  - Content: `content/`, validated by `src/content/schema.ts` and `src/content/graph.ts`, bundled by `src/content/bank.ts`; generators in `scripts/generate/` (measurement, numbers, geometry, logic, debugging, batch2, languages); ingestion in `scripts/ingest/`, drafts in `content/drafts/`.
-  - Local previews without sign-in (404 in production): `/dev/player?ids=<id,id>`, `/dev/skills`, `/dev/dashboard`.
-- Accounts and services: GitHub `ghoshs89/aalopp` (`gh` logged in on the parent's Mac); Vercel project `aalopp`; Supabase project whose ref starts with `strk`; Google Cloud OAuth client in Testing mode with both family accounts as test users.
-- Environment gotchas:
-  - Secrets are in `.env.local` (git-ignored): the four Supabase values, `ALLOWED_EMAILS` (both accounts) and `CRON_SECRET`. `PARENT_PIN` is not set locally, so the grown-ups page shows a notice in local development.
-  - Prisma CLI reads `DIRECT_URL` (session pooler) through `prisma.config.ts`; the app uses `DATABASE_URL` (transaction pooler).
-  - `npm run typecheck` runs `next typegen` first. `next build` type-checks `scripts/` too, so a type error there fails the Vercel build.
-  - zsh: an unmatched glob aborts a command chain, and a variable holding several words is one argument.
-  - Headless Chrome for screenshots lives in the session scratchpad with `puppeteer-core`; it is not a repo dependency.
-- Source material one folder above the repo: `Aishik-Support-Plan.md`, the IXL report PDF, `bebras_100_questions.md`, `BRIGHT STEPS/`.
+`CLAUDE.md` covers the stack, commands and standing rules; `docs/ROADMAP.md` covers the plan. This section is only what matters for resuming. Everything in the previous handoff's orientation still applies. What is new:
+- Choosing what to play: `src/app/page.tsx` (who is playing) links to `src/app/choose/[studentId]/page.tsx` (today's puzzles, or a theme), which links to `/play/[studentId]?theme=<id>`.
+- Themed selection: `selectSession` takes a `SessionOptions` with `themeSkills` (the mix-in quota) and `onlySkills` (a themed session). Skill states are always computed from the whole bank, so picking a theme never distorts what the engine believes.
+- Teach cards: `teach` on a question, rendered by the `learning` phase in `src/components/Player.tsx`. The play page passes `seen`, the ids he has already answered, so a card shows once. The answer timer starts in `beginQuestion`, not when the card appears.
+- Pictures: the `image` visual kind, rendered by `Picture` in `src/components/visuals/Visual.tsx` on a white tile. Files in `public/flags` and `public/logos`, manifest `content/assets.json`, fetched by `npm run assets:fetch`. `src/proxy.ts` excludes both folders from the auth matcher.
+- Picture answer choices: `choiceVisuals` on a choice answer, one per choice in the same order.
+- Generators: `scripts/generate/cars.ts` and `scripts/generate/world.ts`. `pickSpread` in `helpers.ts` varies the wrong answers; without it every logo question offered the same three decoys and he would have learned to spot the odd one out.
+- A throwaway harness for driving the app in headless Chrome lives in the session scratchpad with `puppeteer-core`, not in the repo. Stub `window.speechSynthesis` before the page loads.

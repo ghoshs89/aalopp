@@ -51,5 +51,17 @@
   { "code": "LANG-ES-WORDS", "name": "Spanish words", "domain": "LANGUAGES", "strand": "LANGUAGE", "tier": 1, "isConvention": false, "prerequisites": [] },
   { "code": "LANG-ES-PHRASES", "name": "Spanish phrases", "domain": "LANGUAGES", "strand": "LANGUAGE", "tier": 2, "isConvention": false, "prerequisites": ["LANG-ES-WORDS"] },
   { "code": "LANG-FR-WORDS", "name": "French words", "domain": "LANGUAGES", "strand": "LANGUAGE", "tier": 1, "isConvention": false, "prerequisites": [] },
-  { "code": "LANG-FR-PHRASES", "name": "French phrases", "domain": "LANGUAGES", "strand": "LANGUAGE", "tier": 2, "isConvention": false, "prerequisites": ["LANG-FR-WORDS"] }
+  { "code": "LANG-FR-PHRASES", "name": "French phrases", "domain": "LANGUAGES", "strand": "LANGUAGE", "tier": 2, "isConvention": false, "prerequisites": ["LANG-FR-WORDS"] },
+
+  { "code": "WORLD-FLAGS", "name": "Flags of the world", "domain": "HUMANITIES", "strand": "HUMANITIES", "tier": 1, "isConvention": false, "prerequisites": [] },
+  { "code": "WORLD-FLAGS-DETAIL", "name": "What is on a flag", "domain": "HUMANITIES", "strand": "HUMANITIES", "tier": 2, "isConvention": false, "prerequisites": ["WORLD-FLAGS"] },
+  { "code": "WORLD-MAP", "name": "Continents and where countries are", "domain": "HUMANITIES", "strand": "HUMANITIES", "tier": 1, "isConvention": false, "prerequisites": [] },
+  { "code": "WORLD-CAPITALS", "name": "Capital cities", "domain": "HUMANITIES", "strand": "HUMANITIES", "tier": 2, "isConvention": false, "prerequisites": ["WORLD-MAP"] },
+  { "code": "WORLD-CULTURE", "name": "Languages, festivals, food and landmarks", "domain": "HUMANITIES", "strand": "HUMANITIES", "tier": 1, "isConvention": false, "prerequisites": [] },
+  { "code": "WORLD-NUMBERS", "name": "Comparing countries by numbers", "domain": "HUMANITIES", "strand": "HUMANITIES", "tier": 2, "isConvention": false, "prerequisites": ["MATH-MD-BAR-GRAPH"] },
+
+  { "code": "CARS-LOGOS", "name": "Car logos", "domain": "HUMANITIES", "strand": "HUMANITIES", "tier": 1, "isConvention": false, "prerequisites": [] },
+  { "code": "CARS-ORIGIN", "name": "Where car makers come from", "domain": "HUMANITIES", "strand": "HUMANITIES", "tier": 2, "isConvention": false, "prerequisites": ["CARS-LOGOS"] },
+  { "code": "CARS-FACTS", "name": "Kinds of cars and how they work", "domain": "HUMANITIES", "strand": "HUMANITIES", "tier": 1, "isConvention": false, "prerequisites": [] },
+  { "code": "CARS-NUMBERS", "name": "Comparing cars by numbers", "domain": "HUMANITIES", "strand": "HUMANITIES", "tier": 2, "isConvention": false, "prerequisites": ["MATH-MD-BAR-GRAPH"] }
 ]

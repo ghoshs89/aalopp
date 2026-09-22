@@ -63,7 +63,7 @@ describe("computeSkillStates", () => {
     expect(state(attempts, "2026-09-20").status).toBe("learning");
   });
 
-  it("moves up the review boxes: 1, 3, 7 then 14 days", () => {
+  it("moves up the review boxes: 1, 3, 7, 14 then 30 days", () => {
     const mastered = [on("2026-09-01", true), on("2026-09-01", true), on("2026-09-02", true), on("2026-09-02", true), on("2026-09-02", true)];
     const reviews = [on("2026-09-03", true), on("2026-09-06", true), on("2026-09-13", true)];
     const s = state([...mastered, ...reviews], "2026-09-13");
@@ -76,12 +76,25 @@ describe("computeSkillStates", () => {
     expect(state([...mastered, early], "2026-09-02")).toMatchObject({ box: 1, nextReview: "2026-09-03" });
   });
 
-  it("sends a mastered skill back to learning after one miss, and needs 4 of 5 again", () => {
+  it("sends a skill in box 1 back to learning after one miss, and needs 4 of 5 again", () => {
     const mastered = [on("2026-09-01", true), on("2026-09-01", true), on("2026-09-02", true), on("2026-09-02", true), on("2026-09-02", true)];
     const miss = on("2026-09-05", false);
     expect(state([...mastered, miss], "2026-09-05")).toMatchObject({ status: "learning", box: 0, nextReview: null });
     // The window now holds 4 right and the miss; one more right on a new day brings it back.
     expect(state([...mastered, miss, on("2026-09-06", true)], "2026-09-06").status).toBe("mastered");
+  });
+
+  it("drops one box on a miss higher up instead of wiping the skill", () => {
+    const mastered = [on("2026-09-01", true), on("2026-09-01", true), on("2026-09-02", true), on("2026-09-02", true), on("2026-09-02", true)];
+    // Right answers on each review date carry it up to box 3, whose next review is 7 days out.
+    const climb = [on("2026-09-03", true), on("2026-09-06", true)];
+    expect(state([...mastered, ...climb], "2026-09-06")).toMatchObject({ box: 3, nextReview: "2026-09-13" });
+
+    const miss = on("2026-09-13", false);
+    const dropped = state([...mastered, ...climb, miss], "2026-09-13");
+    // Back to box 2, still mastered, next review 3 days on. The weeks of work are not thrown away.
+    expect(dropped).toMatchObject({ status: "mastered", box: 2, nextReview: "2026-09-16" });
+    expect(dropped.masteredOn).not.toBeNull();
   });
 
   it("counts a question toward every skill it is tagged with, and orders by time not input order", () => {

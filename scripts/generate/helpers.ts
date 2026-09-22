@@ -14,6 +14,13 @@ export type Draft = {
   answer: Question["answer"];
   explanation: string;
   band: 1 | 2 | 3 | 4 | 5;
+  /** A card shown before the question the first time he meets it. */
+  teach?: Question["teach"];
+  /**
+   * Knowledge questions ship as drafts. A generator can compute that 4 + 3 is 7, but it cannot check that Ferrari is
+   * Italian, so those facts need a separate checking pass before the player will serve them.
+   */
+  review?: Question["reviewStatus"];
 };
 
 /** Wraps a draft into a full question. Generated questions compute their own answers, so they ship as reviewed. */
@@ -27,16 +34,17 @@ export function question(file: string, d: Draft): Question {
     ...(d.speech ? { speech: d.speech } : {}),
     ...(d.visual ? { visual: d.visual } : {}),
     ...(d.passage ? { passage: d.passage } : {}),
+    ...(d.teach ? { teach: d.teach } : {}),
     ...(d.listen ? { listen: d.listen } : {}),
     ...(d.voiceAnswer ? { voiceAnswer: true } : {}),
     answer: d.answer,
     explanation: d.explanation,
     difficulty: { band: d.band, basis: "author-estimate" },
-    reviewStatus: "reviewed",
+    reviewStatus: d.review ?? "reviewed",
   };
 }
 
-function hash(text: string): number {
+export function hash(text: string): number {
   let h = 2166136261;
   for (const ch of text) h = Math.imul(h ^ ch.codePointAt(0)!, 16777619);
   return h >>> 0;
@@ -78,4 +86,21 @@ export function dollars(cents: number): string {
 
 export function assert(condition: unknown, message: string): asserts condition {
   if (!condition) throw new Error(message);
+}
+
+/**
+ * Picks `count` items spread across a list, deterministically from `seed`. Source tables are grouped by country, so
+ * taking the first few or a consecutive run would hand every question the same decoys, and he would learn to spot the
+ * odd one out instead of learning the logos. Striding across the list mixes countries, and with them colours.
+ */
+export function pickSpread<T>(pool: T[], count: number, seed: string): T[] {
+  if (pool.length === 0) return [];
+  const start = hash(seed) % pool.length;
+  const stride = Math.max(1, Math.floor(pool.length / (count + 1)));
+  const out: T[] = [];
+  for (let i = 0; out.length < count && i < pool.length * 2; i++) {
+    const item = pool[(start + i * stride + Math.floor(i / pool.length)) % pool.length];
+    if (!out.includes(item)) out.push(item);
+  }
+  return out;
 }

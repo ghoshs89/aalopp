@@ -1,0 +1,7816 @@
+[
+  {
+    "id": "car-logo-toyota",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/cars.ts"
+    },
+    "skills": [
+      "CARS-LOGOS"
+    ],
+    "language": "en",
+    "prompt": "Which car maker uses this logo?",
+    "visual": {
+      "kind": "image",
+      "src": "/logos/toyota.svg",
+      "alt": "The Toyota logo"
+    },
+    "teach": {
+      "title": "Toyota",
+      "lines": [
+        "Toyota is from Japan.",
+        "Toyota builds more cars than anyone else in the world."
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "/logos/toyota.svg",
+        "alt": "The Toyota logo",
+        "beside": {
+          "src": "/flags/jp.svg",
+          "alt": "The flag of Japan"
+        }
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "Toyota",
+        "Fiat",
+        "Mahindra",
+        "Jaguar"
+      ],
+      "correctIndex": 0
+    },
+    "explanation": "This is the Toyota logo. Toyota is from Japan.",
+    "difficulty": {
+      "band": 1,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "car-pick-toyota",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/cars.ts"
+    },
+    "skills": [
+      "CARS-LOGOS"
+    ],
+    "language": "en",
+    "prompt": "Which one of these is the Toyota logo?",
+    "teach": {
+      "title": "Toyota",
+      "lines": [
+        "Toyota is from Japan.",
+        "Toyota builds more cars than anyone else in the world."
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "/logos/toyota.svg",
+        "alt": "The Toyota logo",
+        "beside": {
+          "src": "/flags/jp.svg",
+          "alt": "The flag of Japan"
+        }
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "Kia",
+        "Renault",
+        "Toyota",
+        "Porsche"
+      ],
+      "correctIndex": 2,
+      "choiceVisuals": [
+        {
+          "kind": "image",
+          "src": "/logos/kia.svg",
+          "alt": "The Kia logo"
+        },
+        {
+          "kind": "image",
+          "src": "/logos/renault.svg",
+          "alt": "The Renault logo"
+        },
+        {
+          "kind": "image",
+          "src": "/logos/toyota.svg",
+          "alt": "The Toyota logo"
+        },
+        {
+          "kind": "image",
+          "src": "/logos/porsche.svg",
+          "alt": "The Porsche logo"
+        }
+      ]
+    },
+    "explanation": "The Toyota logo is the one shown. Toyota builds more cars than anyone else in the world.",
+    "difficulty": {
+      "band": 1,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "car-from-toyota",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/cars.ts"
+    },
+    "skills": [
+      "CARS-ORIGIN",
+      "WORLD-FLAGS"
+    ],
+    "language": "en",
+    "prompt": "Which country does Toyota come from?",
+    "visual": {
+      "kind": "image",
+      "src": "/logos/toyota.svg",
+      "alt": "The Toyota logo"
+    },
+    "teach": {
+      "title": "Toyota",
+      "lines": [
+        "Toyota is from Japan.",
+        "Toyota builds more cars than anyone else in the world."
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "/logos/toyota.svg",
+        "alt": "The Toyota logo",
+        "beside": {
+          "src": "/flags/jp.svg",
+          "alt": "The flag of Japan"
+        }
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "South Korea",
+        "Japan",
+        "Sweden",
+        "Germany"
+      ],
+      "correctIndex": 1
+    },
+    "explanation": "Toyota comes from Japan.",
+    "difficulty": {
+      "band": 2,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "car-flag-toyota",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/cars.ts"
+    },
+    "skills": [
+      "CARS-ORIGIN",
+      "WORLD-FLAGS"
+    ],
+    "language": "en",
+    "prompt": "Toyota comes from Japan. Which flag is Japan's?",
+    "visual": {
+      "kind": "image",
+      "src": "/logos/toyota.svg",
+      "alt": "The Toyota logo"
+    },
+    "teach": {
+      "title": "Toyota",
+      "lines": [
+        "Toyota is from Japan.",
+        "Toyota builds more cars than anyone else in the world."
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "/logos/toyota.svg",
+        "alt": "The Toyota logo",
+        "beside": {
+          "src": "/flags/jp.svg",
+          "alt": "The flag of Japan"
+        }
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "South Korea",
+        "Sweden",
+        "Germany",
+        "Japan"
+      ],
+      "correctIndex": 3,
+      "choiceVisuals": [
+        {
+          "kind": "image",
+          "src": "/flags/kr.svg",
+          "alt": "The flag of South Korea"
+        },
+        {
+          "kind": "image",
+          "src": "/flags/se.svg",
+          "alt": "The flag of Sweden"
+        },
+        {
+          "kind": "image",
+          "src": "/flags/de.svg",
+          "alt": "The flag of Germany"
+        },
+        {
+          "kind": "image",
+          "src": "/flags/jp.svg",
+          "alt": "The flag of Japan"
+        }
+      ]
+    },
+    "explanation": "Japan's flag is the one shown, and that is where Toyota comes from.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "car-logo-honda",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/cars.ts"
+    },
+    "skills": [
+      "CARS-LOGOS"
+    ],
+    "language": "en",
+    "prompt": "Which car maker uses this logo?",
+    "visual": {
+      "kind": "image",
+      "src": "/logos/honda.svg",
+      "alt": "The Honda logo"
+    },
+    "teach": {
+      "title": "Honda",
+      "lines": [
+        "Honda is from Japan.",
+        "Honda makes cars, motorbikes and even little robots."
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "/logos/honda.svg",
+        "alt": "The Honda logo",
+        "beside": {
+          "src": "/flags/jp.svg",
+          "alt": "The flag of Japan"
+        }
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "Honda",
+        "Rolls-Royce",
+        "Citroen",
+        "Ferrari"
+      ],
+      "correctIndex": 0
+    },
+    "explanation": "This is the Honda logo. Honda is from Japan.",
+    "difficulty": {
+      "band": 1,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "car-pick-honda",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/cars.ts"
+    },
+    "skills": [
+      "CARS-LOGOS"
+    ],
+    "language": "en",
+    "prompt": "Which one of these is the Honda logo?",
+    "teach": {
+      "title": "Honda",
+      "lines": [
+        "Honda is from Japan.",
+        "Honda makes cars, motorbikes and even little robots."
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "/logos/honda.svg",
+        "alt": "The Honda logo",
+        "beside": {
+          "src": "/flags/jp.svg",
+          "alt": "The flag of Japan"
+        }
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "Ferrari",
+        "Jeep",
+        "Honda",
+        "Rolls-Royce"
+      ],
+      "correctIndex": 2,
+      "choiceVisuals": [
+        {
+          "kind": "image",
+          "src": "/logos/ferrari.svg",
+          "alt": "The Ferrari logo"
+        },
+        {
+          "kind": "image",
+          "src": "/logos/jeep.svg",
+          "alt": "The Jeep logo"
+        },
+        {
+          "kind": "image",
+          "src": "/logos/honda.svg",
+          "alt": "The Honda logo"
+        },
+        {
+          "kind": "image",
+          "src": "/logos/rolls-royce.svg",
+          "alt": "The Rolls-Royce logo"
+        }
+      ]
+    },
+    "explanation": "The Honda logo is the one shown. Honda makes cars, motorbikes and even little robots.",
+    "difficulty": {
+      "band": 1,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "car-from-honda",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/cars.ts"
+    },
+    "skills": [
+      "CARS-ORIGIN",
+      "WORLD-FLAGS"
+    ],
+    "language": "en",
+    "prompt": "Which country does Honda come from?",
+    "visual": {
+      "kind": "image",
+      "src": "/logos/honda.svg",
+      "alt": "The Honda logo"
+    },
+    "teach": {
+      "title": "Honda",
+      "lines": [
+        "Honda is from Japan.",
+        "Honda makes cars, motorbikes and even little robots."
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "/logos/honda.svg",
+        "alt": "The Honda logo",
+        "beside": {
+          "src": "/flags/jp.svg",
+          "alt": "The flag of Japan"
+        }
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "Sweden",
+        "Germany",
+        "United States",
+        "Japan"
+      ],
+      "correctIndex": 3
+    },
+    "explanation": "Honda comes from Japan.",
+    "difficulty": {
+      "band": 2,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "car-flag-honda",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/cars.ts"
+    },
+    "skills": [
+      "CARS-ORIGIN",
+      "WORLD-FLAGS"
+    ],
+    "language": "en",
+    "prompt": "Honda comes from Japan. Which flag is Japan's?",
+    "visual": {
+      "kind": "image",
+      "src": "/logos/honda.svg",
+      "alt": "The Honda logo"
+    },
+    "teach": {
+      "title": "Honda",
+      "lines": [
+        "Honda is from Japan.",
+        "Honda makes cars, motorbikes and even little robots."
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "/logos/honda.svg",
+        "alt": "The Honda logo",
+        "beside": {
+          "src": "/flags/jp.svg",
+          "alt": "The flag of Japan"
+        }
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "Sweden",
+        "Japan",
+        "Germany",
+        "United States"
+      ],
+      "correctIndex": 1,
+      "choiceVisuals": [
+        {
+          "kind": "image",
+          "src": "/flags/se.svg",
+          "alt": "The flag of Sweden"
+        },
+        {
+          "kind": "image",
+          "src": "/flags/jp.svg",
+          "alt": "The flag of Japan"
+        },
+        {
+          "kind": "image",
+          "src": "/flags/de.svg",
+          "alt": "The flag of Germany"
+        },
+        {
+          "kind": "image",
+          "src": "/flags/us.svg",
+          "alt": "The flag of United States"
+        }
+      ]
+    },
+    "explanation": "Japan's flag is the one shown, and that is where Honda comes from.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "car-logo-nissan",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/cars.ts"
+    },
+    "skills": [
+      "CARS-LOGOS"
+    ],
+    "language": "en",
+    "prompt": "Which car maker uses this logo?",
+    "visual": {
+      "kind": "image",
+      "src": "/logos/nissan.svg",
+      "alt": "The Nissan logo"
+    },
+    "teach": {
+      "title": "Nissan",
+      "lines": [
+        "Nissan is from Japan.",
+        "Nissan made one of the first popular electric cars, the Leaf."
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "/logos/nissan.svg",
+        "alt": "The Nissan logo",
+        "beside": {
+          "src": "/flags/jp.svg",
+          "alt": "The flag of Japan"
+        }
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "Chevrolet",
+        "Kia",
+        "Nissan",
+        "Renault"
+      ],
+      "correctIndex": 2
+    },
+    "explanation": "This is the Nissan logo. Nissan is from Japan.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "car-pick-nissan",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/cars.ts"
+    },
+    "skills": [
+      "CARS-LOGOS"
+    ],
+    "language": "en",
+    "prompt": "Which one of these is the Nissan logo?",
+    "teach": {
+      "title": "Nissan",
+      "lines": [
+        "Nissan is from Japan.",
+        "Nissan made one of the first popular electric cars, the Leaf."
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "/logos/nissan.svg",
+        "alt": "The Nissan logo",
+        "beside": {
+          "src": "/flags/jp.svg",
+          "alt": "The flag of Japan"
+        }
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "Nissan",
+        "Mahindra",
+        "Jaguar",
+        "Audi"
+      ],
+      "correctIndex": 0,
+      "choiceVisuals": [
+        {
+          "kind": "image",
+          "src": "/logos/nissan.svg",
+          "alt": "The Nissan logo"
+        },
+        {
+          "kind": "image",
+          "src": "/logos/mahindra.svg",
+          "alt": "The Mahindra logo"
+        },
+        {
+          "kind": "image",
+          "src": "/logos/jaguar.svg",
+          "alt": "The Jaguar logo"
+        },
+        {
+          "kind": "image",
+          "src": "/logos/audi.svg",
+          "alt": "The Audi logo"
+        }
+      ]
+    },
+    "explanation": "The Nissan logo is the one shown. Nissan made one of the first popular electric cars, the Leaf.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "car-from-nissan",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/cars.ts"
+    },
+    "skills": [
+      "CARS-ORIGIN",
+      "WORLD-FLAGS"
+    ],
+    "language": "en",
+    "prompt": "Which country does Nissan come from?",
+    "visual": {
+      "kind": "image",
+      "src": "/logos/nissan.svg",
+      "alt": "The Nissan logo"
+    },
+    "teach": {
+      "title": "Nissan",
+      "lines": [
+        "Nissan is from Japan.",
+        "Nissan made one of the first popular electric cars, the Leaf."
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "/logos/nissan.svg",
+        "alt": "The Nissan logo",
+        "beside": {
+          "src": "/flags/jp.svg",
+          "alt": "The flag of Japan"
+        }
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "Sweden",
+        "Germany",
+        "United States",
+        "Japan"
+      ],
+      "correctIndex": 3
+    },
+    "explanation": "Nissan comes from Japan.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "car-flag-nissan",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/cars.ts"
+    },
+    "skills": [
+      "CARS-ORIGIN",
+      "WORLD-FLAGS"
+    ],
+    "language": "en",
+    "prompt": "Nissan comes from Japan. Which flag is Japan's?",
+    "visual": {
+      "kind": "image",
+      "src": "/logos/nissan.svg",
+      "alt": "The Nissan logo"
+    },
+    "teach": {
+      "title": "Nissan",
+      "lines": [
+        "Nissan is from Japan.",
+        "Nissan made one of the first popular electric cars, the Leaf."
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "/logos/nissan.svg",
+        "alt": "The Nissan logo",
+        "beside": {
+          "src": "/flags/jp.svg",
+          "alt": "The flag of Japan"
+        }
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "Sweden",
+        "Japan",
+        "Germany",
+        "United States"
+      ],
+      "correctIndex": 1,
+      "choiceVisuals": [
+        {
+          "kind": "image",
+          "src": "/flags/se.svg",
+          "alt": "The flag of Sweden"
+        },
+        {
+          "kind": "image",
+          "src": "/flags/jp.svg",
+          "alt": "The flag of Japan"
+        },
+        {
+          "kind": "image",
+          "src": "/flags/de.svg",
+          "alt": "The flag of Germany"
+        },
+        {
+          "kind": "image",
+          "src": "/flags/us.svg",
+          "alt": "The flag of United States"
+        }
+      ]
+    },
+    "explanation": "Japan's flag is the one shown, and that is where Nissan comes from.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "car-logo-mazda",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/cars.ts"
+    },
+    "skills": [
+      "CARS-LOGOS"
+    ],
+    "language": "en",
+    "prompt": "Which car maker uses this logo?",
+    "visual": {
+      "kind": "image",
+      "src": "/logos/mazda.svg",
+      "alt": "The Mazda logo"
+    },
+    "teach": {
+      "title": "Mazda",
+      "lines": [
+        "Mazda is from Japan.",
+        "Mazda is named after Ahura Mazda, an ancient god of wisdom."
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "/logos/mazda.svg",
+        "alt": "The Mazda logo",
+        "beside": {
+          "src": "/flags/jp.svg",
+          "alt": "The flag of Japan"
+        }
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "Tata",
+        "Mazda",
+        "Land Rover",
+        "BMW"
+      ],
+      "correctIndex": 1
+    },
+    "explanation": "This is the Mazda logo. Mazda is from Japan.",
+    "difficulty": {
+      "band": 2,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "car-pick-mazda",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/cars.ts"
+    },
+    "skills": [
+      "CARS-LOGOS"
+    ],
+    "language": "en",
+    "prompt": "Which one of these is the Mazda logo?",
+    "teach": {
+      "title": "Mazda",
+      "lines": [
+        "Mazda is from Japan.",
+        "Mazda is named after Ahura Mazda, an ancient god of wisdom."
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "/logos/mazda.svg",
+        "alt": "The Mazda logo",
+        "beside": {
+          "src": "/flags/jp.svg",
+          "alt": "The flag of Japan"
+        }
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "Hyundai",
+        "Volvo",
+        "Volkswagen",
+        "Mazda"
+      ],
+      "correctIndex": 3,
+      "choiceVisuals": [
+        {
+          "kind": "image",
+          "src": "/logos/hyundai.svg",
+          "alt": "The Hyundai logo"
+        },
+        {
+          "kind": "image",
+          "src": "/logos/volvo.svg",
+          "alt": "The Volvo logo"
+        },
+        {
+          "kind": "image",
+          "src": "/logos/volkswagen.svg",
+          "alt": "The Volkswagen logo"
+        },
+        {
+          "kind": "image",
+          "src": "/logos/mazda.svg",
+          "alt": "The Mazda logo"
+        }
+      ]
+    },
+    "explanation": "The Mazda logo is the one shown. Mazda is named after Ahura Mazda, an ancient god of wisdom.",
+    "difficulty": {
+      "band": 2,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "car-from-mazda",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/cars.ts"
+    },
+    "skills": [
+      "CARS-ORIGIN",
+      "WORLD-FLAGS"
+    ],
+    "language": "en",
+    "prompt": "Which country does Mazda come from?",
+    "visual": {
+      "kind": "image",
+      "src": "/logos/mazda.svg",
+      "alt": "The Mazda logo"
+    },
+    "teach": {
+      "title": "Mazda",
+      "lines": [
+        "Mazda is from Japan.",
+        "Mazda is named after Ahura Mazda, an ancient god of wisdom."
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "/logos/mazda.svg",
+        "alt": "The Mazda logo",
+        "beside": {
+          "src": "/flags/jp.svg",
+          "alt": "The flag of Japan"
+        }
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "India",
+        "United Kingdom",
+        "Japan",
+        "France"
+      ],
+      "correctIndex": 2
+    },
+    "explanation": "Mazda comes from Japan.",
+    "difficulty": {
+      "band": 2,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "car-flag-mazda",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/cars.ts"
+    },
+    "skills": [
+      "CARS-ORIGIN",
+      "WORLD-FLAGS"
+    ],
+    "language": "en",
+    "prompt": "Mazda comes from Japan. Which flag is Japan's?",
+    "visual": {
+      "kind": "image",
+      "src": "/logos/mazda.svg",
+      "alt": "The Mazda logo"
+    },
+    "teach": {
+      "title": "Mazda",
+      "lines": [
+        "Mazda is from Japan.",
+        "Mazda is named after Ahura Mazda, an ancient god of wisdom."
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "/logos/mazda.svg",
+        "alt": "The Mazda logo",
+        "beside": {
+          "src": "/flags/jp.svg",
+          "alt": "The flag of Japan"
+        }
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "Japan",
+        "India",
+        "United Kingdom",
+        "France"
+      ],
+      "correctIndex": 0,
+      "choiceVisuals": [
+        {
+          "kind": "image",
+          "src": "/flags/jp.svg",
+          "alt": "The flag of Japan"
+        },
+        {
+          "kind": "image",
+          "src": "/flags/in.svg",
+          "alt": "The flag of India"
+        },
+        {
+          "kind": "image",
+          "src": "/flags/gb.svg",
+          "alt": "The flag of United Kingdom"
+        },
+        {
+          "kind": "image",
+          "src": "/flags/fr.svg",
+          "alt": "The flag of France"
+        }
+      ]
+    },
+    "explanation": "Japan's flag is the one shown, and that is where Mazda comes from.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "car-logo-subaru",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/cars.ts"
+    },
+    "skills": [
+      "CARS-LOGOS"
+    ],
+    "language": "en",
+    "prompt": "Which car maker uses this logo?",
+    "visual": {
+      "kind": "image",
+      "src": "/logos/subaru.svg",
+      "alt": "The Subaru logo"
+    },
+    "teach": {
+      "title": "Subaru",
+      "lines": [
+        "Subaru is from Japan.",
+        "The six stars in the Subaru logo are a group of stars called the Pleiades."
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "/logos/subaru.svg",
+        "alt": "The Subaru logo",
+        "beside": {
+          "src": "/flags/jp.svg",
+          "alt": "The flag of Japan"
+        }
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "Renault",
+        "Porsche",
+        "Subaru",
+        "Chevrolet"
+      ],
+      "correctIndex": 2
+    },
+    "explanation": "This is the Subaru logo. Subaru is from Japan.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "car-pick-subaru",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/cars.ts"
+    },
+    "skills": [
+      "CARS-LOGOS"
+    ],
+    "language": "en",
+    "prompt": "Which one of these is the Subaru logo?",
+    "teach": {
+      "title": "Subaru",
+      "lines": [
+        "Subaru is from Japan.",
+        "The six stars in the Subaru logo are a group of stars called the Pleiades."
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "/logos/subaru.svg",
+        "alt": "The Subaru logo",
+        "beside": {
+          "src": "/flags/jp.svg",
+          "alt": "The flag of Japan"
+        }
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "Subaru",
+        "Chevrolet",
+        "Kia",
+        "Renault"
+      ],
+      "correctIndex": 0,
+      "choiceVisuals": [
+        {
+          "kind": "image",
+          "src": "/logos/subaru.svg",
+          "alt": "The Subaru logo"
+        },
+        {
+          "kind": "image",
+          "src": "/logos/chevrolet.svg",
+          "alt": "The Chevrolet logo"
+        },
+        {
+          "kind": "image",
+          "src": "/logos/kia.svg",
+          "alt": "The Kia logo"
+        },
+        {
+          "kind": "image",
+          "src": "/logos/renault.svg",
+          "alt": "The Renault logo"
+        }
+      ]
+    },
+    "explanation": "The Subaru logo is the one shown. The six stars in the Subaru logo are a group of stars called the Pleiades.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "car-from-subaru",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/cars.ts"
+    },
+    "skills": [
+      "CARS-ORIGIN",
+      "WORLD-FLAGS"
+    ],
+    "language": "en",
+    "prompt": "Which country does Subaru come from?",
+    "visual": {
+      "kind": "image",
+      "src": "/logos/subaru.svg",
+      "alt": "The Subaru logo"
+    },
+    "teach": {
+      "title": "Subaru",
+      "lines": [
+        "Subaru is from Japan.",
+        "The six stars in the Subaru logo are a group of stars called the Pleiades."
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "/logos/subaru.svg",
+        "alt": "The Subaru logo",
+        "beside": {
+          "src": "/flags/jp.svg",
+          "alt": "The flag of Japan"
+        }
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "United States",
+        "South Korea",
+        "Sweden",
+        "Japan"
+      ],
+      "correctIndex": 3
+    },
+    "explanation": "Subaru comes from Japan.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "car-flag-subaru",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/cars.ts"
+    },
+    "skills": [
+      "CARS-ORIGIN",
+      "WORLD-FLAGS"
+    ],
+    "language": "en",
+    "prompt": "Subaru comes from Japan. Which flag is Japan's?",
+    "visual": {
+      "kind": "image",
+      "src": "/logos/subaru.svg",
+      "alt": "The Subaru logo"
+    },
+    "teach": {
+      "title": "Subaru",
+      "lines": [
+        "Subaru is from Japan.",
+        "The six stars in the Subaru logo are a group of stars called the Pleiades."
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "/logos/subaru.svg",
+        "alt": "The Subaru logo",
+        "beside": {
+          "src": "/flags/jp.svg",
+          "alt": "The flag of Japan"
+        }
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "United States",
+        "Japan",
+        "South Korea",
+        "Sweden"
+      ],
+      "correctIndex": 1,
+      "choiceVisuals": [
+        {
+          "kind": "image",
+          "src": "/flags/us.svg",
+          "alt": "The flag of United States"
+        },
+        {
+          "kind": "image",
+          "src": "/flags/jp.svg",
+          "alt": "The flag of Japan"
+        },
+        {
+          "kind": "image",
+          "src": "/flags/kr.svg",
+          "alt": "The flag of South Korea"
+        },
+        {
+          "kind": "image",
+          "src": "/flags/se.svg",
+          "alt": "The flag of Sweden"
+        }
+      ]
+    },
+    "explanation": "Japan's flag is the one shown, and that is where Subaru comes from.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "car-logo-suzuki",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/cars.ts"
+    },
+    "skills": [
+      "CARS-LOGOS"
+    ],
+    "language": "en",
+    "prompt": "Which car maker uses this logo?",
+    "visual": {
+      "kind": "image",
+      "src": "/logos/suzuki.svg",
+      "alt": "The Suzuki logo"
+    },
+    "teach": {
+      "title": "Suzuki",
+      "lines": [
+        "Suzuki is from Japan.",
+        "Suzuki started out making machines for weaving cloth."
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "/logos/suzuki.svg",
+        "alt": "The Suzuki logo",
+        "beside": {
+          "src": "/flags/jp.svg",
+          "alt": "The flag of Japan"
+        }
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "Mini",
+        "Peugeot",
+        "Mercedes-Benz",
+        "Suzuki"
+      ],
+      "correctIndex": 3
+    },
+    "explanation": "This is the Suzuki logo. Suzuki is from Japan.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "car-pick-suzuki",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/cars.ts"
+    },
+    "skills": [
+      "CARS-LOGOS"
+    ],
+    "language": "en",
+    "prompt": "Which one of these is the Suzuki logo?",
+    "teach": {
+      "title": "Suzuki",
+      "lines": [
+        "Suzuki is from Japan.",
+        "Suzuki started out making machines for weaving cloth."
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "/logos/suzuki.svg",
+        "alt": "The Suzuki logo",
+        "beside": {
+          "src": "/flags/jp.svg",
+          "alt": "The flag of Japan"
+        }
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "Volkswagen",
+        "Suzuki",
+        "Ford",
+        "Hyundai"
+      ],
+      "correctIndex": 1,
+      "choiceVisuals": [
+        {
+          "kind": "image",
+          "src": "/logos/volkswagen.svg",
+          "alt": "The Volkswagen logo"
+        },
+        {
+          "kind": "image",
+          "src": "/logos/suzuki.svg",
+          "alt": "The Suzuki logo"
+        },
+        {
+          "kind": "image",
+          "src": "/logos/ford.svg",
+          "alt": "The Ford logo"
+        },
+        {
+          "kind": "image",
+          "src": "/logos/hyundai.svg",
+          "alt": "The Hyundai logo"
+        }
+      ]
+    },
+    "explanation": "The Suzuki logo is the one shown. Suzuki started out making machines for weaving cloth.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "car-from-suzuki",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/cars.ts"
+    },
+    "skills": [
+      "CARS-ORIGIN",
+      "WORLD-FLAGS"
+    ],
+    "language": "en",
+    "prompt": "Which country does Suzuki come from?",
+    "visual": {
+      "kind": "image",
+      "src": "/logos/suzuki.svg",
+      "alt": "The Suzuki logo"
+    },
+    "teach": {
+      "title": "Suzuki",
+      "lines": [
+        "Suzuki is from Japan.",
+        "Suzuki started out making machines for weaving cloth."
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "/logos/suzuki.svg",
+        "alt": "The Suzuki logo",
+        "beside": {
+          "src": "/flags/jp.svg",
+          "alt": "The flag of Japan"
+        }
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "France",
+        "Italy",
+        "Japan",
+        "India"
+      ],
+      "correctIndex": 2
+    },
+    "explanation": "Suzuki comes from Japan.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "car-flag-suzuki",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/cars.ts"
+    },
+    "skills": [
+      "CARS-ORIGIN",
+      "WORLD-FLAGS"
+    ],
+    "language": "en",
+    "prompt": "Suzuki comes from Japan. Which flag is Japan's?",
+    "visual": {
+      "kind": "image",
+      "src": "/logos/suzuki.svg",
+      "alt": "The Suzuki logo"
+    },
+    "teach": {
+      "title": "Suzuki",
+      "lines": [
+        "Suzuki is from Japan.",
+        "Suzuki started out making machines for weaving cloth."
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "/logos/suzuki.svg",
+        "alt": "The Suzuki logo",
+        "beside": {
+          "src": "/flags/jp.svg",
+          "alt": "The flag of Japan"
+        }
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "Japan",
+        "France",
+        "Italy",
+        "India"
+      ],
+      "correctIndex": 0,
+      "choiceVisuals": [
+        {
+          "kind": "image",
+          "src": "/flags/jp.svg",
+          "alt": "The flag of Japan"
+        },
+        {
+          "kind": "image",
+          "src": "/flags/fr.svg",
+          "alt": "The flag of France"
+        },
+        {
+          "kind": "image",
+          "src": "/flags/it.svg",
+          "alt": "The flag of Italy"
+        },
+        {
+          "kind": "image",
+          "src": "/flags/in.svg",
+          "alt": "The flag of India"
+        }
+      ]
+    },
+    "explanation": "Japan's flag is the one shown, and that is where Suzuki comes from.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "car-logo-bmw",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/cars.ts"
+    },
+    "skills": [
+      "CARS-LOGOS"
+    ],
+    "language": "en",
+    "prompt": "Which car maker uses this logo?",
+    "visual": {
+      "kind": "image",
+      "src": "/logos/bmw.svg",
+      "alt": "The BMW logo"
+    },
+    "teach": {
+      "title": "BMW",
+      "lines": [
+        "BMW is from Germany.",
+        "BMW is short for Bayerische Motoren Werke, which means Bavarian Motor Works."
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "/logos/bmw.svg",
+        "alt": "The BMW logo",
+        "beside": {
+          "src": "/flags/de.svg",
+          "alt": "The flag of Germany"
+        }
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "BMW",
+        "Rolls-Royce",
+        "Citroen",
+        "Suzuki"
+      ],
+      "correctIndex": 0
+    },
+    "explanation": "This is the BMW logo. BMW is from Germany.",
+    "difficulty": {
+      "band": 1,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "car-pick-bmw",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/cars.ts"
+    },
+    "skills": [
+      "CARS-LOGOS"
+    ],
+    "language": "en",
+    "prompt": "Which one of these is the BMW logo?",
+    "teach": {
+      "title": "BMW",
+      "lines": [
+        "BMW is from Germany.",
+        "BMW is short for Bayerische Motoren Werke, which means Bavarian Motor Works."
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "/logos/bmw.svg",
+        "alt": "The BMW logo",
+        "beside": {
+          "src": "/flags/de.svg",
+          "alt": "The flag of Germany"
+        }
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "Fiat",
+        "Mahindra",
+        "BMW",
+        "Jaguar"
+      ],
+      "correctIndex": 2,
+      "choiceVisuals": [
+        {
+          "kind": "image",
+          "src": "/logos/fiat.svg",
+          "alt": "The Fiat logo"
+        },
+        {
+          "kind": "image",
+          "src": "/logos/mahindra.svg",
+          "alt": "The Mahindra logo"
+        },
+        {
+          "kind": "image",
+          "src": "/logos/bmw.svg",
+          "alt": "The BMW logo"
+        },
+        {
+          "kind": "image",
+          "src": "/logos/jaguar.svg",
+          "alt": "The Jaguar logo"
+        }
+      ]
+    },
+    "explanation": "The BMW logo is the one shown. BMW is short for Bayerische Motoren Werke, which means Bavarian Motor Works.",
+    "difficulty": {
+      "band": 1,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "car-from-bmw",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/cars.ts"
+    },
+    "skills": [
+      "CARS-ORIGIN",
+      "WORLD-FLAGS"
+    ],
+    "language": "en",
+    "prompt": "Which country does BMW come from?",
+    "visual": {
+      "kind": "image",
+      "src": "/logos/bmw.svg",
+      "alt": "The BMW logo"
+    },
+    "teach": {
+      "title": "BMW",
+      "lines": [
+        "BMW is from Germany.",
+        "BMW is short for Bayerische Motoren Werke, which means Bavarian Motor Works."
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "/logos/bmw.svg",
+        "alt": "The BMW logo",
+        "beside": {
+          "src": "/flags/de.svg",
+          "alt": "The flag of Germany"
+        }
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "United States",
+        "South Korea",
+        "Sweden",
+        "Germany"
+      ],
+      "correctIndex": 3
+    },
+    "explanation": "BMW comes from Germany.",
+    "difficulty": {
+      "band": 2,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "car-flag-bmw",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/cars.ts"
+    },
+    "skills": [
+      "CARS-ORIGIN",
+      "WORLD-FLAGS"
+    ],
+    "language": "en",
+    "prompt": "BMW comes from Germany. Which flag is Germany's?",
+    "visual": {
+      "kind": "image",
+      "src": "/logos/bmw.svg",
+      "alt": "The BMW logo"
+    },
+    "teach": {
+      "title": "BMW",
+      "lines": [
+        "BMW is from Germany.",
+        "BMW is short for Bayerische Motoren Werke, which means Bavarian Motor Works."
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "/logos/bmw.svg",
+        "alt": "The BMW logo",
+        "beside": {
+          "src": "/flags/de.svg",
+          "alt": "The flag of Germany"
+        }
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "United States",
+        "Germany",
+        "South Korea",
+        "Sweden"
+      ],
+      "correctIndex": 1,
+      "choiceVisuals": [
+        {
+          "kind": "image",
+          "src": "/flags/us.svg",
+          "alt": "The flag of United States"
+        },
+        {
+          "kind": "image",
+          "src": "/flags/de.svg",
+          "alt": "The flag of Germany"
+        },
+        {
+          "kind": "image",
+          "src": "/flags/kr.svg",
+          "alt": "The flag of South Korea"
+        },
+        {
+          "kind": "image",
+          "src": "/flags/se.svg",
+          "alt": "The flag of Sweden"
+        }
+      ]
+    },
+    "explanation": "Germany's flag is the one shown, and that is where BMW comes from.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "car-logo-audi",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/cars.ts"
+    },
+    "skills": [
+      "CARS-LOGOS"
+    ],
+    "language": "en",
+    "prompt": "Which car maker uses this logo?",
+    "visual": {
+      "kind": "image",
+      "src": "/logos/audi.svg",
+      "alt": "The Audi logo"
+    },
+    "teach": {
+      "title": "Audi",
+      "lines": [
+        "Audi is from Germany.",
+        "The four rings stand for four car companies that joined together."
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "/logos/audi.svg",
+        "alt": "The Audi logo",
+        "beside": {
+          "src": "/flags/de.svg",
+          "alt": "The flag of Germany"
+        }
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "Rolls-Royce",
+        "Citroen",
+        "Suzuki",
+        "Audi"
+      ],
+      "correctIndex": 3
+    },
+    "explanation": "This is the Audi logo. Audi is from Germany.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "car-pick-audi",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/cars.ts"
+    },
+    "skills": [
+      "CARS-LOGOS"
+    ],
+    "language": "en",
+    "prompt": "Which one of these is the Audi logo?",
+    "teach": {
+      "title": "Audi",
+      "lines": [
+        "Audi is from Germany.",
+        "The four rings stand for four car companies that joined together."
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "/logos/audi.svg",
+        "alt": "The Audi logo",
+        "beside": {
+          "src": "/flags/de.svg",
+          "alt": "The flag of Germany"
+        }
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "Toyota",
+        "Audi",
+        "Ferrari",
+        "Jeep"
+      ],
+      "correctIndex": 1,
+      "choiceVisuals": [
+        {
+          "kind": "image",
+          "src": "/logos/toyota.svg",
+          "alt": "The Toyota logo"
+        },
+        {
+          "kind": "image",
+          "src": "/logos/audi.svg",
+          "alt": "The Audi logo"
+        },
+        {
+          "kind": "image",
+          "src": "/logos/ferrari.svg",
+          "alt": "The Ferrari logo"
+        },
+        {
+          "kind": "image",
+          "src": "/logos/jeep.svg",
+          "alt": "The Jeep logo"
+        }
+      ]
+    },
+    "explanation": "The Audi logo is the one shown. The four rings stand for four car companies that joined together.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "car-from-audi",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/cars.ts"
+    },
+    "skills": [
+      "CARS-ORIGIN",
+      "WORLD-FLAGS"
+    ],
+    "language": "en",
+    "prompt": "Which country does Audi come from?",
+    "visual": {
+      "kind": "image",
+      "src": "/logos/audi.svg",
+      "alt": "The Audi logo"
+    },
+    "teach": {
+      "title": "Audi",
+      "lines": [
+        "Audi is from Germany.",
+        "The four rings stand for four car companies that joined together."
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "/logos/audi.svg",
+        "alt": "The Audi logo",
+        "beside": {
+          "src": "/flags/de.svg",
+          "alt": "The flag of Germany"
+        }
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "India",
+        "United Kingdom",
+        "Germany",
+        "France"
+      ],
+      "correctIndex": 2
+    },
+    "explanation": "Audi comes from Germany.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "car-flag-audi",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/cars.ts"
+    },
+    "skills": [
+      "CARS-ORIGIN",
+      "WORLD-FLAGS"
+    ],
+    "language": "en",
+    "prompt": "Audi comes from Germany. Which flag is Germany's?",
+    "visual": {
+      "kind": "image",
+      "src": "/logos/audi.svg",
+      "alt": "The Audi logo"
+    },
+    "teach": {
+      "title": "Audi",
+      "lines": [
+        "Audi is from Germany.",
+        "The four rings stand for four car companies that joined together."
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "/logos/audi.svg",
+        "alt": "The Audi logo",
+        "beside": {
+          "src": "/flags/de.svg",
+          "alt": "The flag of Germany"
+        }
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "Germany",
+        "India",
+        "United Kingdom",
+        "France"
+      ],
+      "correctIndex": 0,
+      "choiceVisuals": [
+        {
+          "kind": "image",
+          "src": "/flags/de.svg",
+          "alt": "The flag of Germany"
+        },
+        {
+          "kind": "image",
+          "src": "/flags/in.svg",
+          "alt": "The flag of India"
+        },
+        {
+          "kind": "image",
+          "src": "/flags/gb.svg",
+          "alt": "The flag of United Kingdom"
+        },
+        {
+          "kind": "image",
+          "src": "/flags/fr.svg",
+          "alt": "The flag of France"
+        }
+      ]
+    },
+    "explanation": "Germany's flag is the one shown, and that is where Audi comes from.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "car-logo-volkswagen",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/cars.ts"
+    },
+    "skills": [
+      "CARS-LOGOS"
+    ],
+    "language": "en",
+    "prompt": "Which car maker uses this logo?",
+    "visual": {
+      "kind": "image",
+      "src": "/logos/volkswagen.svg",
+      "alt": "The Volkswagen logo"
+    },
+    "teach": {
+      "title": "Volkswagen",
+      "lines": [
+        "Volkswagen is from Germany.",
+        "Volkswagen means people's car in German."
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "/logos/volkswagen.svg",
+        "alt": "The Volkswagen logo",
+        "beside": {
+          "src": "/flags/de.svg",
+          "alt": "The flag of Germany"
+        }
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "Jeep",
+        "Volkswagen",
+        "Rolls-Royce",
+        "Citroen"
+      ],
+      "correctIndex": 1
+    },
+    "explanation": "This is the Volkswagen logo. Volkswagen is from Germany.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "car-pick-volkswagen",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/cars.ts"
+    },
+    "skills": [
+      "CARS-LOGOS"
+    ],
+    "language": "en",
+    "prompt": "Which one of these is the Volkswagen logo?",
+    "teach": {
+      "title": "Volkswagen",
+      "lines": [
+        "Volkswagen is from Germany.",
+        "Volkswagen means people's car in German."
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "/logos/volkswagen.svg",
+        "alt": "The Volkswagen logo",
+        "beside": {
+          "src": "/flags/de.svg",
+          "alt": "The flag of Germany"
+        }
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "Volvo",
+        "Nissan",
+        "Fiat",
+        "Volkswagen"
+      ],
+      "correctIndex": 3,
+      "choiceVisuals": [
+        {
+          "kind": "image",
+          "src": "/logos/volvo.svg",
+          "alt": "The Volvo logo"
+        },
+        {
+          "kind": "image",
+          "src": "/logos/nissan.svg",
+          "alt": "The Nissan logo"
+        },
+        {
+          "kind": "image",
+          "src": "/logos/fiat.svg",
+          "alt": "The Fiat logo"
+        },
+        {
+          "kind": "image",
+          "src": "/logos/volkswagen.svg",
+          "alt": "The Volkswagen logo"
+        }
+      ]
+    },
+    "explanation": "The Volkswagen logo is the one shown. Volkswagen means people's car in German.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "car-from-volkswagen",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/cars.ts"
+    },
+    "skills": [
+      "CARS-ORIGIN",
+      "WORLD-FLAGS"
+    ],
+    "language": "en",
+    "prompt": "Which country does Volkswagen come from?",
+    "visual": {
+      "kind": "image",
+      "src": "/logos/volkswagen.svg",
+      "alt": "The Volkswagen logo"
+    },
+    "teach": {
+      "title": "Volkswagen",
+      "lines": [
+        "Volkswagen is from Germany.",
+        "Volkswagen means people's car in German."
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "/logos/volkswagen.svg",
+        "alt": "The Volkswagen logo",
+        "beside": {
+          "src": "/flags/de.svg",
+          "alt": "The flag of Germany"
+        }
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "Germany",
+        "United Kingdom",
+        "France",
+        "Italy"
+      ],
+      "correctIndex": 0
+    },
+    "explanation": "Volkswagen comes from Germany.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "car-flag-volkswagen",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/cars.ts"
+    },
+    "skills": [
+      "CARS-ORIGIN",
+      "WORLD-FLAGS"
+    ],
+    "language": "en",
+    "prompt": "Volkswagen comes from Germany. Which flag is Germany's?",
+    "visual": {
+      "kind": "image",
+      "src": "/logos/volkswagen.svg",
+      "alt": "The Volkswagen logo"
+    },
+    "teach": {
+      "title": "Volkswagen",
+      "lines": [
+        "Volkswagen is from Germany.",
+        "Volkswagen means people's car in German."
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "/logos/volkswagen.svg",
+        "alt": "The Volkswagen logo",
+        "beside": {
+          "src": "/flags/de.svg",
+          "alt": "The flag of Germany"
+        }
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "United Kingdom",
+        "France",
+        "Germany",
+        "Italy"
+      ],
+      "correctIndex": 2,
+      "choiceVisuals": [
+        {
+          "kind": "image",
+          "src": "/flags/gb.svg",
+          "alt": "The flag of United Kingdom"
+        },
+        {
+          "kind": "image",
+          "src": "/flags/fr.svg",
+          "alt": "The flag of France"
+        },
+        {
+          "kind": "image",
+          "src": "/flags/de.svg",
+          "alt": "The flag of Germany"
+        },
+        {
+          "kind": "image",
+          "src": "/flags/it.svg",
+          "alt": "The flag of Italy"
+        }
+      ]
+    },
+    "explanation": "Germany's flag is the one shown, and that is where Volkswagen comes from.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "car-logo-porsche",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/cars.ts"
+    },
+    "skills": [
+      "CARS-LOGOS"
+    ],
+    "language": "en",
+    "prompt": "Which car maker uses this logo?",
+    "visual": {
+      "kind": "image",
+      "src": "/logos/porsche.svg",
+      "alt": "The Porsche logo"
+    },
+    "teach": {
+      "title": "Porsche",
+      "lines": [
+        "Porsche is from Germany.",
+        "Porsche is famous for fast sports cars like the 911."
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "/logos/porsche.svg",
+        "alt": "The Porsche logo",
+        "beside": {
+          "src": "/flags/de.svg",
+          "alt": "The flag of Germany"
+        }
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "Honda",
+        "Lamborghini",
+        "Porsche",
+        "Tata"
+      ],
+      "correctIndex": 2
+    },
+    "explanation": "This is the Porsche logo. Porsche is from Germany.",
+    "difficulty": {
+      "band": 2,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "car-pick-porsche",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/cars.ts"
+    },
+    "skills": [
+      "CARS-LOGOS"
+    ],
+    "language": "en",
+    "prompt": "Which one of these is the Porsche logo?",
+    "teach": {
+      "title": "Porsche",
+      "lines": [
+        "Porsche is from Germany.",
+        "Porsche is famous for fast sports cars like the 911."
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "/logos/porsche.svg",
+        "alt": "The Porsche logo",
+        "beside": {
+          "src": "/flags/de.svg",
+          "alt": "The flag of Germany"
+        }
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "Porsche",
+        "Land Rover",
+        "Toyota",
+        "Ferrari"
+      ],
+      "correctIndex": 0,
+      "choiceVisuals": [
+        {
+          "kind": "image",
+          "src": "/logos/porsche.svg",
+          "alt": "The Porsche logo"
+        },
+        {
+          "kind": "image",
+          "src": "/logos/land-rover.svg",
+          "alt": "The Land Rover logo"
+        },
+        {
+          "kind": "image",
+          "src": "/logos/toyota.svg",
+          "alt": "The Toyota logo"
+        },
+        {
+          "kind": "image",
+          "src": "/logos/ferrari.svg",
+          "alt": "The Ferrari logo"
+        }
+      ]
+    },
+    "explanation": "The Porsche logo is the one shown. Porsche is famous for fast sports cars like the 911.",
+    "difficulty": {
+      "band": 2,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "car-from-porsche",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/cars.ts"
+    },
+    "skills": [
+      "CARS-ORIGIN",
+      "WORLD-FLAGS"
+    ],
+    "language": "en",
+    "prompt": "Which country does Porsche come from?",
+    "visual": {
+      "kind": "image",
+      "src": "/logos/porsche.svg",
+      "alt": "The Porsche logo"
+    },
+    "teach": {
+      "title": "Porsche",
+      "lines": [
+        "Porsche is from Germany.",
+        "Porsche is famous for fast sports cars like the 911."
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "/logos/porsche.svg",
+        "alt": "The Porsche logo",
+        "beside": {
+          "src": "/flags/de.svg",
+          "alt": "The flag of Germany"
+        }
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "Japan",
+        "Germany",
+        "United States",
+        "South Korea"
+      ],
+      "correctIndex": 1
+    },
+    "explanation": "Porsche comes from Germany.",
+    "difficulty": {
+      "band": 2,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "car-flag-porsche",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/cars.ts"
+    },
+    "skills": [
+      "CARS-ORIGIN",
+      "WORLD-FLAGS"
+    ],
+    "language": "en",
+    "prompt": "Porsche comes from Germany. Which flag is Germany's?",
+    "visual": {
+      "kind": "image",
+      "src": "/logos/porsche.svg",
+      "alt": "The Porsche logo"
+    },
+    "teach": {
+      "title": "Porsche",
+      "lines": [
+        "Porsche is from Germany.",
+        "Porsche is famous for fast sports cars like the 911."
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "/logos/porsche.svg",
+        "alt": "The Porsche logo",
+        "beside": {
+          "src": "/flags/de.svg",
+          "alt": "The flag of Germany"
+        }
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "Japan",
+        "United States",
+        "South Korea",
+        "Germany"
+      ],
+      "correctIndex": 3,
+      "choiceVisuals": [
+        {
+          "kind": "image",
+          "src": "/flags/jp.svg",
+          "alt": "The flag of Japan"
+        },
+        {
+          "kind": "image",
+          "src": "/flags/us.svg",
+          "alt": "The flag of United States"
+        },
+        {
+          "kind": "image",
+          "src": "/flags/kr.svg",
+          "alt": "The flag of South Korea"
+        },
+        {
+          "kind": "image",
+          "src": "/flags/de.svg",
+          "alt": "The flag of Germany"
+        }
+      ]
+    },
+    "explanation": "Germany's flag is the one shown, and that is where Porsche comes from.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "car-logo-mercedes",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/cars.ts"
+    },
+    "skills": [
+      "CARS-LOGOS"
+    ],
+    "language": "en",
+    "prompt": "Which car maker uses this logo?",
+    "visual": {
+      "kind": "image",
+      "src": "/logos/mercedes-benz.svg",
+      "alt": "The Mercedes-Benz logo"
+    },
+    "teach": {
+      "title": "Mercedes-Benz",
+      "lines": [
+        "Mercedes-Benz is from Germany.",
+        "The three points of the star stand for engines on land, at sea and in the air."
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "/logos/mercedes-benz.svg",
+        "alt": "The Mercedes-Benz logo",
+        "beside": {
+          "src": "/flags/de.svg",
+          "alt": "The flag of Germany"
+        }
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "Ford",
+        "Hyundai",
+        "Mercedes-Benz",
+        "Volvo"
+      ],
+      "correctIndex": 2
+    },
+    "explanation": "This is the Mercedes-Benz logo. Mercedes-Benz is from Germany.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "car-pick-mercedes",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/cars.ts"
+    },
+    "skills": [
+      "CARS-LOGOS"
+    ],
+    "language": "en",
+    "prompt": "Which one of these is the Mercedes-Benz logo?",
+    "teach": {
+      "title": "Mercedes-Benz",
+      "lines": [
+        "Mercedes-Benz is from Germany.",
+        "The three points of the star stand for engines on land, at sea and in the air."
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "/logos/mercedes-benz.svg",
+        "alt": "The Mercedes-Benz logo",
+        "beside": {
+          "src": "/flags/de.svg",
+          "alt": "The flag of Germany"
+        }
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "Mercedes-Benz",
+        "Honda",
+        "Lamborghini",
+        "Tata"
+      ],
+      "correctIndex": 0,
+      "choiceVisuals": [
+        {
+          "kind": "image",
+          "src": "/logos/mercedes-benz.svg",
+          "alt": "The Mercedes-Benz logo"
+        },
+        {
+          "kind": "image",
+          "src": "/logos/honda.svg",
+          "alt": "The Honda logo"
+        },
+        {
+          "kind": "image",
+          "src": "/logos/lamborghini.svg",
+          "alt": "The Lamborghini logo"
+        },
+        {
+          "kind": "image",
+          "src": "/logos/tata.svg",
+          "alt": "The Tata logo"
+        }
+      ]
+    },
+    "explanation": "The Mercedes-Benz logo is the one shown. The three points of the star stand for engines on land, at sea and in the air.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "car-from-mercedes",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/cars.ts"
+    },
+    "skills": [
+      "CARS-ORIGIN",
+      "WORLD-FLAGS"
+    ],
+    "language": "en",
+    "prompt": "Which country does Mercedes-Benz come from?",
+    "visual": {
+      "kind": "image",
+      "src": "/logos/mercedes-benz.svg",
+      "alt": "The Mercedes-Benz logo"
+    },
+    "teach": {
+      "title": "Mercedes-Benz",
+      "lines": [
+        "Mercedes-Benz is from Germany.",
+        "The three points of the star stand for engines on land, at sea and in the air."
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "/logos/mercedes-benz.svg",
+        "alt": "The Mercedes-Benz logo",
+        "beside": {
+          "src": "/flags/de.svg",
+          "alt": "The flag of Germany"
+        }
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "Sweden",
+        "Japan",
+        "United States",
+        "Germany"
+      ],
+      "correctIndex": 3
+    },
+    "explanation": "Mercedes-Benz comes from Germany.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "car-flag-mercedes",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/cars.ts"
+    },
+    "skills": [
+      "CARS-ORIGIN",
+      "WORLD-FLAGS"
+    ],
+    "language": "en",
+    "prompt": "Mercedes-Benz comes from Germany. Which flag is Germany's?",
+    "visual": {
+      "kind": "image",
+      "src": "/logos/mercedes-benz.svg",
+      "alt": "The Mercedes-Benz logo"
+    },
+    "teach": {
+      "title": "Mercedes-Benz",
+      "lines": [
+        "Mercedes-Benz is from Germany.",
+        "The three points of the star stand for engines on land, at sea and in the air."
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "/logos/mercedes-benz.svg",
+        "alt": "The Mercedes-Benz logo",
+        "beside": {
+          "src": "/flags/de.svg",
+          "alt": "The flag of Germany"
+        }
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "Sweden",
+        "Germany",
+        "Japan",
+        "United States"
+      ],
+      "correctIndex": 1,
+      "choiceVisuals": [
+        {
+          "kind": "image",
+          "src": "/flags/se.svg",
+          "alt": "The flag of Sweden"
+        },
+        {
+          "kind": "image",
+          "src": "/flags/de.svg",
+          "alt": "The flag of Germany"
+        },
+        {
+          "kind": "image",
+          "src": "/flags/jp.svg",
+          "alt": "The flag of Japan"
+        },
+        {
+          "kind": "image",
+          "src": "/flags/us.svg",
+          "alt": "The flag of United States"
+        }
+      ]
+    },
+    "explanation": "Germany's flag is the one shown, and that is where Mercedes-Benz comes from.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "car-logo-ferrari",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/cars.ts"
+    },
+    "skills": [
+      "CARS-LOGOS"
+    ],
+    "language": "en",
+    "prompt": "Which car maker uses this logo?",
+    "visual": {
+      "kind": "image",
+      "src": "/logos/ferrari.svg",
+      "alt": "The Ferrari logo"
+    },
+    "teach": {
+      "title": "Ferrari",
+      "lines": [
+        "Ferrari is from Italy.",
+        "Ferrari's badge is a prancing horse. On a real Ferrari it sits on a yellow shield."
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "/logos/ferrari.svg",
+        "alt": "The Ferrari logo",
+        "beside": {
+          "src": "/flags/it.svg",
+          "alt": "The flag of Italy"
+        }
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "Chevrolet",
+        "Kia",
+        "Renault",
+        "Ferrari"
+      ],
+      "correctIndex": 3
+    },
+    "explanation": "This is the Ferrari logo. Ferrari is from Italy.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "car-pick-ferrari",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/cars.ts"
+    },
+    "skills": [
+      "CARS-LOGOS"
+    ],
+    "language": "en",
+    "prompt": "Which one of these is the Ferrari logo?",
+    "teach": {
+      "title": "Ferrari",
+      "lines": [
+        "Ferrari is from Italy.",
+        "Ferrari's badge is a prancing horse. On a real Ferrari it sits on a yellow shield."
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "/logos/ferrari.svg",
+        "alt": "The Ferrari logo",
+        "beside": {
+          "src": "/flags/it.svg",
+          "alt": "The flag of Italy"
+        }
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "Renault",
+        "Ferrari",
+        "Mazda",
+        "Porsche"
+      ],
+      "correctIndex": 1,
+      "choiceVisuals": [
+        {
+          "kind": "image",
+          "src": "/logos/renault.svg",
+          "alt": "The Renault logo"
+        },
+        {
+          "kind": "image",
+          "src": "/logos/ferrari.svg",
+          "alt": "The Ferrari logo"
+        },
+        {
+          "kind": "image",
+          "src": "/logos/mazda.svg",
+          "alt": "The Mazda logo"
+        },
+        {
+          "kind": "image",
+          "src": "/logos/porsche.svg",
+          "alt": "The Porsche logo"
+        }
+      ]
+    },
+    "explanation": "The Ferrari logo is the one shown. Ferrari's badge is a prancing horse. On a real Ferrari it sits on a yellow shield.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "car-from-ferrari",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/cars.ts"
+    },
+    "skills": [
+      "CARS-ORIGIN",
+      "WORLD-FLAGS"
+    ],
+    "language": "en",
+    "prompt": "Which country does Ferrari come from?",
+    "visual": {
+      "kind": "image",
+      "src": "/logos/ferrari.svg",
+      "alt": "The Ferrari logo"
+    },
+    "teach": {
+      "title": "Ferrari",
+      "lines": [
+        "Ferrari is from Italy.",
+        "Ferrari's badge is a prancing horse. On a real Ferrari it sits on a yellow shield."
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "/logos/ferrari.svg",
+        "alt": "The Ferrari logo",
+        "beside": {
+          "src": "/flags/it.svg",
+          "alt": "The flag of Italy"
+        }
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "Italy",
+        "United Kingdom",
+        "France",
+        "Germany"
+      ],
+      "correctIndex": 0
+    },
+    "explanation": "Ferrari comes from Italy.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "car-flag-ferrari",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/cars.ts"
+    },
+    "skills": [
+      "CARS-ORIGIN",
+      "WORLD-FLAGS"
+    ],
+    "language": "en",
+    "prompt": "Ferrari comes from Italy. Which flag is Italy's?",
+    "visual": {
+      "kind": "image",
+      "src": "/logos/ferrari.svg",
+      "alt": "The Ferrari logo"
+    },
+    "teach": {
+      "title": "Ferrari",
+      "lines": [
+        "Ferrari is from Italy.",
+        "Ferrari's badge is a prancing horse. On a real Ferrari it sits on a yellow shield."
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "/logos/ferrari.svg",
+        "alt": "The Ferrari logo",
+        "beside": {
+          "src": "/flags/it.svg",
+          "alt": "The flag of Italy"
+        }
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "United Kingdom",
+        "France",
+        "Italy",
+        "Germany"
+      ],
+      "correctIndex": 2,
+      "choiceVisuals": [
+        {
+          "kind": "image",
+          "src": "/flags/gb.svg",
+          "alt": "The flag of United Kingdom"
+        },
+        {
+          "kind": "image",
+          "src": "/flags/fr.svg",
+          "alt": "The flag of France"
+        },
+        {
+          "kind": "image",
+          "src": "/flags/it.svg",
+          "alt": "The flag of Italy"
+        },
+        {
+          "kind": "image",
+          "src": "/flags/de.svg",
+          "alt": "The flag of Germany"
+        }
+      ]
+    },
+    "explanation": "Italy's flag is the one shown, and that is where Ferrari comes from.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "car-logo-lamborghini",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/cars.ts"
+    },
+    "skills": [
+      "CARS-LOGOS"
+    ],
+    "language": "en",
+    "prompt": "Which car maker uses this logo?",
+    "visual": {
+      "kind": "image",
+      "src": "/logos/lamborghini.svg",
+      "alt": "The Lamborghini logo"
+    },
+    "teach": {
+      "title": "Lamborghini",
+      "lines": [
+        "Lamborghini is from Italy.",
+        "The Lamborghini badge is a charging bull.",
+        "Lamborghini is owned today by the Volkswagen Group of Germany."
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "/logos/lamborghini.svg",
+        "alt": "The Lamborghini logo",
+        "beside": {
+          "src": "/flags/it.svg",
+          "alt": "The flag of Italy"
+        }
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "Peugeot",
+        "Subaru",
+        "Lamborghini",
+        "Mercedes-Benz"
+      ],
+      "correctIndex": 2
+    },
+    "explanation": "This is the Lamborghini logo. Lamborghini is from Italy.",
+    "difficulty": {
+      "band": 2,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "car-pick-lamborghini",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/cars.ts"
+    },
+    "skills": [
+      "CARS-LOGOS"
+    ],
+    "language": "en",
+    "prompt": "Which one of these is the Lamborghini logo?",
+    "teach": {
+      "title": "Lamborghini",
+      "lines": [
+        "Lamborghini is from Italy.",
+        "The Lamborghini badge is a charging bull.",
+        "Lamborghini is owned today by the Volkswagen Group of Germany."
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "/logos/lamborghini.svg",
+        "alt": "The Lamborghini logo",
+        "beside": {
+          "src": "/flags/it.svg",
+          "alt": "The flag of Italy"
+        }
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "Lamborghini",
+        "Mahindra",
+        "Jaguar",
+        "Honda"
+      ],
+      "correctIndex": 0,
+      "choiceVisuals": [
+        {
+          "kind": "image",
+          "src": "/logos/lamborghini.svg",
+          "alt": "The Lamborghini logo"
+        },
+        {
+          "kind": "image",
+          "src": "/logos/mahindra.svg",
+          "alt": "The Mahindra logo"
+        },
+        {
+          "kind": "image",
+          "src": "/logos/jaguar.svg",
+          "alt": "The Jaguar logo"
+        },
+        {
+          "kind": "image",
+          "src": "/logos/honda.svg",
+          "alt": "The Honda logo"
+        }
+      ]
+    },
+    "explanation": "The Lamborghini logo is the one shown. The Lamborghini badge is a charging bull.",
+    "difficulty": {
+      "band": 2,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "car-from-lamborghini",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/cars.ts"
+    },
+    "skills": [
+      "CARS-ORIGIN",
+      "WORLD-FLAGS"
+    ],
+    "language": "en",
+    "prompt": "Which country does Lamborghini come from?",
+    "visual": {
+      "kind": "image",
+      "src": "/logos/lamborghini.svg",
+      "alt": "The Lamborghini logo"
+    },
+    "teach": {
+      "title": "Lamborghini",
+      "lines": [
+        "Lamborghini is from Italy.",
+        "The Lamborghini badge is a charging bull.",
+        "Lamborghini is owned today by the Volkswagen Group of Germany."
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "/logos/lamborghini.svg",
+        "alt": "The Lamborghini logo",
+        "beside": {
+          "src": "/flags/it.svg",
+          "alt": "The flag of Italy"
+        }
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "South Korea",
+        "Italy",
+        "Sweden",
+        "Japan"
+      ],
+      "correctIndex": 1
+    },
+    "explanation": "Lamborghini comes from Italy.",
+    "difficulty": {
+      "band": 2,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "car-flag-lamborghini",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/cars.ts"
+    },
+    "skills": [
+      "CARS-ORIGIN",
+      "WORLD-FLAGS"
+    ],
+    "language": "en",
+    "prompt": "Lamborghini comes from Italy. Which flag is Italy's?",
+    "visual": {
+      "kind": "image",
+      "src": "/logos/lamborghini.svg",
+      "alt": "The Lamborghini logo"
+    },
+    "teach": {
+      "title": "Lamborghini",
+      "lines": [
+        "Lamborghini is from Italy.",
+        "The Lamborghini badge is a charging bull.",
+        "Lamborghini is owned today by the Volkswagen Group of Germany."
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "/logos/lamborghini.svg",
+        "alt": "The Lamborghini logo",
+        "beside": {
+          "src": "/flags/it.svg",
+          "alt": "The flag of Italy"
+        }
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "South Korea",
+        "Sweden",
+        "Japan",
+        "Italy"
+      ],
+      "correctIndex": 3,
+      "choiceVisuals": [
+        {
+          "kind": "image",
+          "src": "/flags/kr.svg",
+          "alt": "The flag of South Korea"
+        },
+        {
+          "kind": "image",
+          "src": "/flags/se.svg",
+          "alt": "The flag of Sweden"
+        },
+        {
+          "kind": "image",
+          "src": "/flags/jp.svg",
+          "alt": "The flag of Japan"
+        },
+        {
+          "kind": "image",
+          "src": "/flags/it.svg",
+          "alt": "The flag of Italy"
+        }
+      ]
+    },
+    "explanation": "Italy's flag is the one shown, and that is where Lamborghini comes from.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "car-logo-fiat",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/cars.ts"
+    },
+    "skills": [
+      "CARS-LOGOS"
+    ],
+    "language": "en",
+    "prompt": "Which car maker uses this logo?",
+    "visual": {
+      "kind": "image",
+      "src": "/logos/fiat.svg",
+      "alt": "The Fiat logo"
+    },
+    "teach": {
+      "title": "Fiat",
+      "lines": [
+        "Fiat is from Italy.",
+        "Fiat is known for small city cars like the Fiat 500."
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "/logos/fiat.svg",
+        "alt": "The Fiat logo",
+        "beside": {
+          "src": "/flags/it.svg",
+          "alt": "The flag of Italy"
+        }
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "Mazda",
+        "Porsche",
+        "Fiat",
+        "Tata"
+      ],
+      "correctIndex": 2
+    },
+    "explanation": "This is the Fiat logo. Fiat is from Italy.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "car-pick-fiat",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/cars.ts"
+    },
+    "skills": [
+      "CARS-LOGOS"
+    ],
+    "language": "en",
+    "prompt": "Which one of these is the Fiat logo?",
+    "teach": {
+      "title": "Fiat",
+      "lines": [
+        "Fiat is from Italy.",
+        "Fiat is known for small city cars like the Fiat 500."
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "/logos/fiat.svg",
+        "alt": "The Fiat logo",
+        "beside": {
+          "src": "/flags/it.svg",
+          "alt": "The flag of Italy"
+        }
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "Fiat",
+        "Kia",
+        "Renault",
+        "Mazda"
+      ],
+      "correctIndex": 0,
+      "choiceVisuals": [
+        {
+          "kind": "image",
+          "src": "/logos/fiat.svg",
+          "alt": "The Fiat logo"
+        },
+        {
+          "kind": "image",
+          "src": "/logos/kia.svg",
+          "alt": "The Kia logo"
+        },
+        {
+          "kind": "image",
+          "src": "/logos/renault.svg",
+          "alt": "The Renault logo"
+        },
+        {
+          "kind": "image",
+          "src": "/logos/mazda.svg",
+          "alt": "The Mazda logo"
+        }
+      ]
+    },
+    "explanation": "The Fiat logo is the one shown. Fiat is known for small city cars like the Fiat 500.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "car-from-fiat",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/cars.ts"
+    },
+    "skills": [
+      "CARS-ORIGIN",
+      "WORLD-FLAGS"
+    ],
+    "language": "en",
+    "prompt": "Which country does Fiat come from?",
+    "visual": {
+      "kind": "image",
+      "src": "/logos/fiat.svg",
+      "alt": "The Fiat logo"
+    },
+    "teach": {
+      "title": "Fiat",
+      "lines": [
+        "Fiat is from Italy.",
+        "Fiat is known for small city cars like the Fiat 500."
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "/logos/fiat.svg",
+        "alt": "The Fiat logo",
+        "beside": {
+          "src": "/flags/it.svg",
+          "alt": "The flag of Italy"
+        }
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "United States",
+        "South Korea",
+        "Sweden",
+        "Italy"
+      ],
+      "correctIndex": 3
+    },
+    "explanation": "Fiat comes from Italy.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "car-flag-fiat",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/cars.ts"
+    },
+    "skills": [
+      "CARS-ORIGIN",
+      "WORLD-FLAGS"
+    ],
+    "language": "en",
+    "prompt": "Fiat comes from Italy. Which flag is Italy's?",
+    "visual": {
+      "kind": "image",
+      "src": "/logos/fiat.svg",
+      "alt": "The Fiat logo"
+    },
+    "teach": {
+      "title": "Fiat",
+      "lines": [
+        "Fiat is from Italy.",
+        "Fiat is known for small city cars like the Fiat 500."
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "/logos/fiat.svg",
+        "alt": "The Fiat logo",
+        "beside": {
+          "src": "/flags/it.svg",
+          "alt": "The flag of Italy"
+        }
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "United States",
+        "Italy",
+        "South Korea",
+        "Sweden"
+      ],
+      "correctIndex": 1,
+      "choiceVisuals": [
+        {
+          "kind": "image",
+          "src": "/flags/us.svg",
+          "alt": "The flag of United States"
+        },
+        {
+          "kind": "image",
+          "src": "/flags/it.svg",
+          "alt": "The flag of Italy"
+        },
+        {
+          "kind": "image",
+          "src": "/flags/kr.svg",
+          "alt": "The flag of South Korea"
+        },
+        {
+          "kind": "image",
+          "src": "/flags/se.svg",
+          "alt": "The flag of Sweden"
+        }
+      ]
+    },
+    "explanation": "Italy's flag is the one shown, and that is where Fiat comes from.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "car-logo-ford",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/cars.ts"
+    },
+    "skills": [
+      "CARS-LOGOS"
+    ],
+    "language": "en",
+    "prompt": "Which car maker uses this logo?",
+    "visual": {
+      "kind": "image",
+      "src": "/logos/ford.svg",
+      "alt": "The Ford logo"
+    },
+    "teach": {
+      "title": "Ford",
+      "lines": [
+        "Ford is from United States.",
+        "Ford built the Model T, the car that first put families on the road."
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "/logos/ford.svg",
+        "alt": "The Ford logo",
+        "beside": {
+          "src": "/flags/us.svg",
+          "alt": "The flag of United States"
+        }
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "Mercedes-Benz",
+        "Hyundai",
+        "Volvo",
+        "Ford"
+      ],
+      "correctIndex": 3
+    },
+    "explanation": "This is the Ford logo. Ford is from United States.",
+    "difficulty": {
+      "band": 1,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "car-pick-ford",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/cars.ts"
+    },
+    "skills": [
+      "CARS-LOGOS"
+    ],
+    "language": "en",
+    "prompt": "Which one of these is the Ford logo?",
+    "teach": {
+      "title": "Ford",
+      "lines": [
+        "Ford is from United States.",
+        "Ford built the Model T, the car that first put families on the road."
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "/logos/ford.svg",
+        "alt": "The Ford logo",
+        "beside": {
+          "src": "/flags/us.svg",
+          "alt": "The flag of United States"
+        }
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "Mini",
+        "Ford",
+        "Peugeot",
+        "Subaru"
+      ],
+      "correctIndex": 1,
+      "choiceVisuals": [
+        {
+          "kind": "image",
+          "src": "/logos/mini.svg",
+          "alt": "The Mini logo"
+        },
+        {
+          "kind": "image",
+          "src": "/logos/ford.svg",
+          "alt": "The Ford logo"
+        },
+        {
+          "kind": "image",
+          "src": "/logos/peugeot.svg",
+          "alt": "The Peugeot logo"
+        },
+        {
+          "kind": "image",
+          "src": "/logos/subaru.svg",
+          "alt": "The Subaru logo"
+        }
+      ]
+    },
+    "explanation": "The Ford logo is the one shown. Ford built the Model T, the car that first put families on the road.",
+    "difficulty": {
+      "band": 1,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "car-from-ford",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/cars.ts"
+    },
+    "skills": [
+      "CARS-ORIGIN",
+      "WORLD-FLAGS"
+    ],
+    "language": "en",
+    "prompt": "Which country does Ford come from?",
+    "visual": {
+      "kind": "image",
+      "src": "/logos/ford.svg",
+      "alt": "The Ford logo"
+    },
+    "teach": {
+      "title": "Ford",
+      "lines": [
+        "Ford is from United States.",
+        "Ford built the Model T, the car that first put families on the road."
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "/logos/ford.svg",
+        "alt": "The Ford logo",
+        "beside": {
+          "src": "/flags/us.svg",
+          "alt": "The flag of United States"
+        }
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "India",
+        "United Kingdom",
+        "United States",
+        "France"
+      ],
+      "correctIndex": 2
+    },
+    "explanation": "Ford comes from United States.",
+    "difficulty": {
+      "band": 2,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "car-flag-ford",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/cars.ts"
+    },
+    "skills": [
+      "CARS-ORIGIN",
+      "WORLD-FLAGS"
+    ],
+    "language": "en",
+    "prompt": "Ford comes from United States. Which flag is United States's?",
+    "visual": {
+      "kind": "image",
+      "src": "/logos/ford.svg",
+      "alt": "The Ford logo"
+    },
+    "teach": {
+      "title": "Ford",
+      "lines": [
+        "Ford is from United States.",
+        "Ford built the Model T, the car that first put families on the road."
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "/logos/ford.svg",
+        "alt": "The Ford logo",
+        "beside": {
+          "src": "/flags/us.svg",
+          "alt": "The flag of United States"
+        }
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "United States",
+        "India",
+        "United Kingdom",
+        "France"
+      ],
+      "correctIndex": 0,
+      "choiceVisuals": [
+        {
+          "kind": "image",
+          "src": "/flags/us.svg",
+          "alt": "The flag of United States"
+        },
+        {
+          "kind": "image",
+          "src": "/flags/in.svg",
+          "alt": "The flag of India"
+        },
+        {
+          "kind": "image",
+          "src": "/flags/gb.svg",
+          "alt": "The flag of United Kingdom"
+        },
+        {
+          "kind": "image",
+          "src": "/flags/fr.svg",
+          "alt": "The flag of France"
+        }
+      ]
+    },
+    "explanation": "United States's flag is the one shown, and that is where Ford comes from.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "car-logo-chevrolet",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/cars.ts"
+    },
+    "skills": [
+      "CARS-LOGOS"
+    ],
+    "language": "en",
+    "prompt": "Which car maker uses this logo?",
+    "visual": {
+      "kind": "image",
+      "src": "/logos/chevrolet.svg",
+      "alt": "The Chevrolet logo"
+    },
+    "teach": {
+      "title": "Chevrolet",
+      "lines": [
+        "Chevrolet is from United States.",
+        "People call the Chevrolet badge the bowtie."
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "/logos/chevrolet.svg",
+        "alt": "The Chevrolet logo",
+        "beside": {
+          "src": "/flags/us.svg",
+          "alt": "The flag of United States"
+        }
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "Jaguar",
+        "Honda",
+        "Chevrolet",
+        "Audi"
+      ],
+      "correctIndex": 2
+    },
+    "explanation": "This is the Chevrolet logo. Chevrolet is from United States.",
+    "difficulty": {
+      "band": 2,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "car-pick-chevrolet",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/cars.ts"
+    },
+    "skills": [
+      "CARS-LOGOS"
+    ],
+    "language": "en",
+    "prompt": "Which one of these is the Chevrolet logo?",
+    "teach": {
+      "title": "Chevrolet",
+      "lines": [
+        "Chevrolet is from United States.",
+        "People call the Chevrolet badge the bowtie."
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "/logos/chevrolet.svg",
+        "alt": "The Chevrolet logo",
+        "beside": {
+          "src": "/flags/us.svg",
+          "alt": "The flag of United States"
+        }
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "Chevrolet",
+        "Citroen",
+        "Suzuki",
+        "Ferrari"
+      ],
+      "correctIndex": 0,
+      "choiceVisuals": [
+        {
+          "kind": "image",
+          "src": "/logos/chevrolet.svg",
+          "alt": "The Chevrolet logo"
+        },
+        {
+          "kind": "image",
+          "src": "/logos/citroen.svg",
+          "alt": "The Citroen logo"
+        },
+        {
+          "kind": "image",
+          "src": "/logos/suzuki.svg",
+          "alt": "The Suzuki logo"
+        },
+        {
+          "kind": "image",
+          "src": "/logos/ferrari.svg",
+          "alt": "The Ferrari logo"
+        }
+      ]
+    },
+    "explanation": "The Chevrolet logo is the one shown. People call the Chevrolet badge the bowtie.",
+    "difficulty": {
+      "band": 2,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "car-from-chevrolet",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/cars.ts"
+    },
+    "skills": [
+      "CARS-ORIGIN",
+      "WORLD-FLAGS"
+    ],
+    "language": "en",
+    "prompt": "Which country does Chevrolet come from?",
+    "visual": {
+      "kind": "image",
+      "src": "/logos/chevrolet.svg",
+      "alt": "The Chevrolet logo"
+    },
+    "teach": {
+      "title": "Chevrolet",
+      "lines": [
+        "Chevrolet is from United States.",
+        "People call the Chevrolet badge the bowtie."
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "/logos/chevrolet.svg",
+        "alt": "The Chevrolet logo",
+        "beside": {
+          "src": "/flags/us.svg",
+          "alt": "The flag of United States"
+        }
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "South Korea",
+        "United States",
+        "Sweden",
+        "Japan"
+      ],
+      "correctIndex": 1
+    },
+    "explanation": "Chevrolet comes from United States.",
+    "difficulty": {
+      "band": 2,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "car-flag-chevrolet",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/cars.ts"
+    },
+    "skills": [
+      "CARS-ORIGIN",
+      "WORLD-FLAGS"
+    ],
+    "language": "en",
+    "prompt": "Chevrolet comes from United States. Which flag is United States's?",
+    "visual": {
+      "kind": "image",
+      "src": "/logos/chevrolet.svg",
+      "alt": "The Chevrolet logo"
+    },
+    "teach": {
+      "title": "Chevrolet",
+      "lines": [
+        "Chevrolet is from United States.",
+        "People call the Chevrolet badge the bowtie."
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "/logos/chevrolet.svg",
+        "alt": "The Chevrolet logo",
+        "beside": {
+          "src": "/flags/us.svg",
+          "alt": "The flag of United States"
+        }
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "South Korea",
+        "Sweden",
+        "Japan",
+        "United States"
+      ],
+      "correctIndex": 3,
+      "choiceVisuals": [
+        {
+          "kind": "image",
+          "src": "/flags/kr.svg",
+          "alt": "The flag of South Korea"
+        },
+        {
+          "kind": "image",
+          "src": "/flags/se.svg",
+          "alt": "The flag of Sweden"
+        },
+        {
+          "kind": "image",
+          "src": "/flags/jp.svg",
+          "alt": "The flag of Japan"
+        },
+        {
+          "kind": "image",
+          "src": "/flags/us.svg",
+          "alt": "The flag of United States"
+        }
+      ]
+    },
+    "explanation": "United States's flag is the one shown, and that is where Chevrolet comes from.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "car-logo-tesla",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/cars.ts"
+    },
+    "skills": [
+      "CARS-LOGOS"
+    ],
+    "language": "en",
+    "prompt": "Which car maker uses this logo?",
+    "visual": {
+      "kind": "image",
+      "src": "/logos/tesla.svg",
+      "alt": "The Tesla logo"
+    },
+    "teach": {
+      "title": "Tesla",
+      "lines": [
+        "Tesla is from United States.",
+        "Every Tesla is electric. None of them use petrol."
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "/logos/tesla.svg",
+        "alt": "The Tesla logo",
+        "beside": {
+          "src": "/flags/us.svg",
+          "alt": "The flag of United States"
+        }
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "Volkswagen",
+        "Tesla",
+        "Tata",
+        "Land Rover"
+      ],
+      "correctIndex": 1
+    },
+    "explanation": "This is the Tesla logo. Tesla is from United States.",
+    "difficulty": {
+      "band": 1,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "car-pick-tesla",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/cars.ts"
+    },
+    "skills": [
+      "CARS-LOGOS"
+    ],
+    "language": "en",
+    "prompt": "Which one of these is the Tesla logo?",
+    "teach": {
+      "title": "Tesla",
+      "lines": [
+        "Tesla is from United States.",
+        "Every Tesla is electric. None of them use petrol."
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "/logos/tesla.svg",
+        "alt": "The Tesla logo",
+        "beside": {
+          "src": "/flags/us.svg",
+          "alt": "The flag of United States"
+        }
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "Hyundai",
+        "Volvo",
+        "Nissan",
+        "Tesla"
+      ],
+      "correctIndex": 3,
+      "choiceVisuals": [
+        {
+          "kind": "image",
+          "src": "/logos/hyundai.svg",
+          "alt": "The Hyundai logo"
+        },
+        {
+          "kind": "image",
+          "src": "/logos/volvo.svg",
+          "alt": "The Volvo logo"
+        },
+        {
+          "kind": "image",
+          "src": "/logos/nissan.svg",
+          "alt": "The Nissan logo"
+        },
+        {
+          "kind": "image",
+          "src": "/logos/tesla.svg",
+          "alt": "The Tesla logo"
+        }
+      ]
+    },
+    "explanation": "The Tesla logo is the one shown. Every Tesla is electric. None of them use petrol.",
+    "difficulty": {
+      "band": 1,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "car-from-tesla",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/cars.ts"
+    },
+    "skills": [
+      "CARS-ORIGIN",
+      "WORLD-FLAGS"
+    ],
+    "language": "en",
+    "prompt": "Which country does Tesla come from?",
+    "visual": {
+      "kind": "image",
+      "src": "/logos/tesla.svg",
+      "alt": "The Tesla logo"
+    },
+    "teach": {
+      "title": "Tesla",
+      "lines": [
+        "Tesla is from United States.",
+        "Every Tesla is electric. None of them use petrol."
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "/logos/tesla.svg",
+        "alt": "The Tesla logo",
+        "beside": {
+          "src": "/flags/us.svg",
+          "alt": "The flag of United States"
+        }
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "India",
+        "United Kingdom",
+        "United States",
+        "France"
+      ],
+      "correctIndex": 2
+    },
+    "explanation": "Tesla comes from United States.",
+    "difficulty": {
+      "band": 2,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "car-flag-tesla",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/cars.ts"
+    },
+    "skills": [
+      "CARS-ORIGIN",
+      "WORLD-FLAGS"
+    ],
+    "language": "en",
+    "prompt": "Tesla comes from United States. Which flag is United States's?",
+    "visual": {
+      "kind": "image",
+      "src": "/logos/tesla.svg",
+      "alt": "The Tesla logo"
+    },
+    "teach": {
+      "title": "Tesla",
+      "lines": [
+        "Tesla is from United States.",
+        "Every Tesla is electric. None of them use petrol."
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "/logos/tesla.svg",
+        "alt": "The Tesla logo",
+        "beside": {
+          "src": "/flags/us.svg",
+          "alt": "The flag of United States"
+        }
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "United States",
+        "India",
+        "United Kingdom",
+        "France"
+      ],
+      "correctIndex": 0,
+      "choiceVisuals": [
+        {
+          "kind": "image",
+          "src": "/flags/us.svg",
+          "alt": "The flag of United States"
+        },
+        {
+          "kind": "image",
+          "src": "/flags/in.svg",
+          "alt": "The flag of India"
+        },
+        {
+          "kind": "image",
+          "src": "/flags/gb.svg",
+          "alt": "The flag of United Kingdom"
+        },
+        {
+          "kind": "image",
+          "src": "/flags/fr.svg",
+          "alt": "The flag of France"
+        }
+      ]
+    },
+    "explanation": "United States's flag is the one shown, and that is where Tesla comes from.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "car-logo-jeep",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/cars.ts"
+    },
+    "skills": [
+      "CARS-LOGOS"
+    ],
+    "language": "en",
+    "prompt": "Which car maker uses this logo?",
+    "visual": {
+      "kind": "image",
+      "src": "/logos/jeep.svg",
+      "alt": "The Jeep logo"
+    },
+    "teach": {
+      "title": "Jeep",
+      "lines": [
+        "Jeep is from United States.",
+        "Jeeps are built to climb rough ground and go where roads stop."
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "/logos/jeep.svg",
+        "alt": "The Jeep logo",
+        "beside": {
+          "src": "/flags/us.svg",
+          "alt": "The flag of United States"
+        }
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "Mazda",
+        "Porsche",
+        "Jeep",
+        "Mahindra"
+      ],
+      "correctIndex": 2
+    },
+    "explanation": "This is the Jeep logo. Jeep is from United States.",
+    "difficulty": {
+      "band": 1,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "car-pick-jeep",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/cars.ts"
+    },
+    "skills": [
+      "CARS-LOGOS"
+    ],
+    "language": "en",
+    "prompt": "Which one of these is the Jeep logo?",
+    "teach": {
+      "title": "Jeep",
+      "lines": [
+        "Jeep is from United States.",
+        "Jeeps are built to climb rough ground and go where roads stop."
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "/logos/jeep.svg",
+        "alt": "The Jeep logo",
+        "beside": {
+          "src": "/flags/us.svg",
+          "alt": "The flag of United States"
+        }
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "Jeep",
+        "Mazda",
+        "Porsche",
+        "Mahindra"
+      ],
+      "correctIndex": 0,
+      "choiceVisuals": [
+        {
+          "kind": "image",
+          "src": "/logos/jeep.svg",
+          "alt": "The Jeep logo"
+        },
+        {
+          "kind": "image",
+          "src": "/logos/mazda.svg",
+          "alt": "The Mazda logo"
+        },
+        {
+          "kind": "image",
+          "src": "/logos/porsche.svg",
+          "alt": "The Porsche logo"
+        },
+        {
+          "kind": "image",
+          "src": "/logos/mahindra.svg",
+          "alt": "The Mahindra logo"
+        }
+      ]
+    },
+    "explanation": "The Jeep logo is the one shown. Jeeps are built to climb rough ground and go where roads stop.",
+    "difficulty": {
+      "band": 1,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "car-from-jeep",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/cars.ts"
+    },
+    "skills": [
+      "CARS-ORIGIN",
+      "WORLD-FLAGS"
+    ],
+    "language": "en",
+    "prompt": "Which country does Jeep come from?",
+    "visual": {
+      "kind": "image",
+      "src": "/logos/jeep.svg",
+      "alt": "The Jeep logo"
+    },
+    "teach": {
+      "title": "Jeep",
+      "lines": [
+        "Jeep is from United States.",
+        "Jeeps are built to climb rough ground and go where roads stop."
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "/logos/jeep.svg",
+        "alt": "The Jeep logo",
+        "beside": {
+          "src": "/flags/us.svg",
+          "alt": "The flag of United States"
+        }
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "Italy",
+        "South Korea",
+        "Sweden",
+        "United States"
+      ],
+      "correctIndex": 3
+    },
+    "explanation": "Jeep comes from United States.",
+    "difficulty": {
+      "band": 2,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "car-flag-jeep",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/cars.ts"
+    },
+    "skills": [
+      "CARS-ORIGIN",
+      "WORLD-FLAGS"
+    ],
+    "language": "en",
+    "prompt": "Jeep comes from United States. Which flag is United States's?",
+    "visual": {
+      "kind": "image",
+      "src": "/logos/jeep.svg",
+      "alt": "The Jeep logo"
+    },
+    "teach": {
+      "title": "Jeep",
+      "lines": [
+        "Jeep is from United States.",
+        "Jeeps are built to climb rough ground and go where roads stop."
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "/logos/jeep.svg",
+        "alt": "The Jeep logo",
+        "beside": {
+          "src": "/flags/us.svg",
+          "alt": "The flag of United States"
+        }
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "Italy",
+        "United States",
+        "South Korea",
+        "Sweden"
+      ],
+      "correctIndex": 1,
+      "choiceVisuals": [
+        {
+          "kind": "image",
+          "src": "/flags/it.svg",
+          "alt": "The flag of Italy"
+        },
+        {
+          "kind": "image",
+          "src": "/flags/us.svg",
+          "alt": "The flag of United States"
+        },
+        {
+          "kind": "image",
+          "src": "/flags/kr.svg",
+          "alt": "The flag of South Korea"
+        },
+        {
+          "kind": "image",
+          "src": "/flags/se.svg",
+          "alt": "The flag of Sweden"
+        }
+      ]
+    },
+    "explanation": "United States's flag is the one shown, and that is where Jeep comes from.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "car-logo-tata",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/cars.ts"
+    },
+    "skills": [
+      "CARS-LOGOS"
+    ],
+    "language": "en",
+    "prompt": "Which car maker uses this logo?",
+    "visual": {
+      "kind": "image",
+      "src": "/logos/tata.svg",
+      "alt": "The Tata logo"
+    },
+    "teach": {
+      "title": "Tata",
+      "lines": [
+        "Tata is from India.",
+        "Tata is one of India's biggest companies, and it owns Jaguar and Land Rover in Britain."
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "/logos/tata.svg",
+        "alt": "The Tata logo",
+        "beside": {
+          "src": "/flags/in.svg",
+          "alt": "The flag of India"
+        }
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "Renault",
+        "Subaru",
+        "Tata",
+        "Ferrari"
+      ],
+      "correctIndex": 2
+    },
+    "explanation": "This is the Tata logo. Tata is from India.",
+    "difficulty": {
+      "band": 1,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "car-pick-tata",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/cars.ts"
+    },
+    "skills": [
+      "CARS-LOGOS"
+    ],
+    "language": "en",
+    "prompt": "Which one of these is the Tata logo?",
+    "teach": {
+      "title": "Tata",
+      "lines": [
+        "Tata is from India.",
+        "Tata is one of India's biggest companies, and it owns Jaguar and Land Rover in Britain."
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "/logos/tata.svg",
+        "alt": "The Tata logo",
+        "beside": {
+          "src": "/flags/in.svg",
+          "alt": "The flag of India"
+        }
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "Tata",
+        "Jeep",
+        "Volvo",
+        "Mazda"
+      ],
+      "correctIndex": 0,
+      "choiceVisuals": [
+        {
+          "kind": "image",
+          "src": "/logos/tata.svg",
+          "alt": "The Tata logo"
+        },
+        {
+          "kind": "image",
+          "src": "/logos/jeep.svg",
+          "alt": "The Jeep logo"
+        },
+        {
+          "kind": "image",
+          "src": "/logos/volvo.svg",
+          "alt": "The Volvo logo"
+        },
+        {
+          "kind": "image",
+          "src": "/logos/mazda.svg",
+          "alt": "The Mazda logo"
+        }
+      ]
+    },
+    "explanation": "The Tata logo is the one shown. Tata is one of India's biggest companies, and it owns Jaguar and Land Rover in Britain.",
+    "difficulty": {
+      "band": 1,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "car-from-tata",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/cars.ts"
+    },
+    "skills": [
+      "CARS-ORIGIN",
+      "WORLD-FLAGS"
+    ],
+    "language": "en",
+    "prompt": "Which country does Tata come from?",
+    "visual": {
+      "kind": "image",
+      "src": "/logos/tata.svg",
+      "alt": "The Tata logo"
+    },
+    "teach": {
+      "title": "Tata",
+      "lines": [
+        "Tata is from India.",
+        "Tata is one of India's biggest companies, and it owns Jaguar and Land Rover in Britain."
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "/logos/tata.svg",
+        "alt": "The Tata logo",
+        "beside": {
+          "src": "/flags/in.svg",
+          "alt": "The flag of India"
+        }
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "Italy",
+        "South Korea",
+        "Sweden",
+        "India"
+      ],
+      "correctIndex": 3
+    },
+    "explanation": "Tata comes from India.",
+    "difficulty": {
+      "band": 2,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "car-flag-tata",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/cars.ts"
+    },
+    "skills": [
+      "CARS-ORIGIN",
+      "WORLD-FLAGS"
+    ],
+    "language": "en",
+    "prompt": "Tata comes from India. Which flag is India's?",
+    "visual": {
+      "kind": "image",
+      "src": "/logos/tata.svg",
+      "alt": "The Tata logo"
+    },
+    "teach": {
+      "title": "Tata",
+      "lines": [
+        "Tata is from India.",
+        "Tata is one of India's biggest companies, and it owns Jaguar and Land Rover in Britain."
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "/logos/tata.svg",
+        "alt": "The Tata logo",
+        "beside": {
+          "src": "/flags/in.svg",
+          "alt": "The flag of India"
+        }
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "Italy",
+        "India",
+        "South Korea",
+        "Sweden"
+      ],
+      "correctIndex": 1,
+      "choiceVisuals": [
+        {
+          "kind": "image",
+          "src": "/flags/it.svg",
+          "alt": "The flag of Italy"
+        },
+        {
+          "kind": "image",
+          "src": "/flags/in.svg",
+          "alt": "The flag of India"
+        },
+        {
+          "kind": "image",
+          "src": "/flags/kr.svg",
+          "alt": "The flag of South Korea"
+        },
+        {
+          "kind": "image",
+          "src": "/flags/se.svg",
+          "alt": "The flag of Sweden"
+        }
+      ]
+    },
+    "explanation": "India's flag is the one shown, and that is where Tata comes from.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "car-logo-mahindra",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/cars.ts"
+    },
+    "skills": [
+      "CARS-LOGOS"
+    ],
+    "language": "en",
+    "prompt": "Which car maker uses this logo?",
+    "visual": {
+      "kind": "image",
+      "src": "/logos/mahindra.svg",
+      "alt": "The Mahindra logo"
+    },
+    "teach": {
+      "title": "Mahindra",
+      "lines": [
+        "Mahindra is from India.",
+        "Mahindra is known in India for tough vehicles that handle rough roads."
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "/logos/mahindra.svg",
+        "alt": "The Mahindra logo",
+        "beside": {
+          "src": "/flags/in.svg",
+          "alt": "The flag of India"
+        }
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "Mahindra",
+        "Audi",
+        "Ford",
+        "Rolls-Royce"
+      ],
+      "correctIndex": 0
+    },
+    "explanation": "This is the Mahindra logo. Mahindra is from India.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "car-pick-mahindra",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/cars.ts"
+    },
+    "skills": [
+      "CARS-LOGOS"
+    ],
+    "language": "en",
+    "prompt": "Which one of these is the Mahindra logo?",
+    "teach": {
+      "title": "Mahindra",
+      "lines": [
+        "Mahindra is from India.",
+        "Mahindra is known in India for tough vehicles that handle rough roads."
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "/logos/mahindra.svg",
+        "alt": "The Mahindra logo",
+        "beside": {
+          "src": "/flags/in.svg",
+          "alt": "The flag of India"
+        }
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "Audi",
+        "Ford",
+        "Mahindra",
+        "Rolls-Royce"
+      ],
+      "correctIndex": 2,
+      "choiceVisuals": [
+        {
+          "kind": "image",
+          "src": "/logos/audi.svg",
+          "alt": "The Audi logo"
+        },
+        {
+          "kind": "image",
+          "src": "/logos/ford.svg",
+          "alt": "The Ford logo"
+        },
+        {
+          "kind": "image",
+          "src": "/logos/mahindra.svg",
+          "alt": "The Mahindra logo"
+        },
+        {
+          "kind": "image",
+          "src": "/logos/rolls-royce.svg",
+          "alt": "The Rolls-Royce logo"
+        }
+      ]
+    },
+    "explanation": "The Mahindra logo is the one shown. Mahindra is known in India for tough vehicles that handle rough roads.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "car-from-mahindra",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/cars.ts"
+    },
+    "skills": [
+      "CARS-ORIGIN",
+      "WORLD-FLAGS"
+    ],
+    "language": "en",
+    "prompt": "Which country does Mahindra come from?",
+    "visual": {
+      "kind": "image",
+      "src": "/logos/mahindra.svg",
+      "alt": "The Mahindra logo"
+    },
+    "teach": {
+      "title": "Mahindra",
+      "lines": [
+        "Mahindra is from India.",
+        "Mahindra is known in India for tough vehicles that handle rough roads."
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "/logos/mahindra.svg",
+        "alt": "The Mahindra logo",
+        "beside": {
+          "src": "/flags/in.svg",
+          "alt": "The flag of India"
+        }
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "Japan",
+        "India",
+        "Italy",
+        "South Korea"
+      ],
+      "correctIndex": 1
+    },
+    "explanation": "Mahindra comes from India.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "car-flag-mahindra",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/cars.ts"
+    },
+    "skills": [
+      "CARS-ORIGIN",
+      "WORLD-FLAGS"
+    ],
+    "language": "en",
+    "prompt": "Mahindra comes from India. Which flag is India's?",
+    "visual": {
+      "kind": "image",
+      "src": "/logos/mahindra.svg",
+      "alt": "The Mahindra logo"
+    },
+    "teach": {
+      "title": "Mahindra",
+      "lines": [
+        "Mahindra is from India.",
+        "Mahindra is known in India for tough vehicles that handle rough roads."
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "/logos/mahindra.svg",
+        "alt": "The Mahindra logo",
+        "beside": {
+          "src": "/flags/in.svg",
+          "alt": "The flag of India"
+        }
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "Japan",
+        "Italy",
+        "South Korea",
+        "India"
+      ],
+      "correctIndex": 3,
+      "choiceVisuals": [
+        {
+          "kind": "image",
+          "src": "/flags/jp.svg",
+          "alt": "The flag of Japan"
+        },
+        {
+          "kind": "image",
+          "src": "/flags/it.svg",
+          "alt": "The flag of Italy"
+        },
+        {
+          "kind": "image",
+          "src": "/flags/kr.svg",
+          "alt": "The flag of South Korea"
+        },
+        {
+          "kind": "image",
+          "src": "/flags/in.svg",
+          "alt": "The flag of India"
+        }
+      ]
+    },
+    "explanation": "India's flag is the one shown, and that is where Mahindra comes from.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "car-logo-hyundai",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/cars.ts"
+    },
+    "skills": [
+      "CARS-LOGOS"
+    ],
+    "language": "en",
+    "prompt": "Which car maker uses this logo?",
+    "visual": {
+      "kind": "image",
+      "src": "/logos/hyundai.svg",
+      "alt": "The Hyundai logo"
+    },
+    "teach": {
+      "title": "Hyundai",
+      "lines": [
+        "Hyundai is from South Korea.",
+        "Hyundai owns part of Kia, so South Korea's two big car makers are family."
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "/logos/hyundai.svg",
+        "alt": "The Hyundai logo",
+        "beside": {
+          "src": "/flags/kr.svg",
+          "alt": "The flag of South Korea"
+        }
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "Hyundai",
+        "Suzuki",
+        "Lamborghini",
+        "Mahindra"
+      ],
+      "correctIndex": 0
+    },
+    "explanation": "This is the Hyundai logo. Hyundai is from South Korea.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "car-pick-hyundai",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/cars.ts"
+    },
+    "skills": [
+      "CARS-LOGOS"
+    ],
+    "language": "en",
+    "prompt": "Which one of these is the Hyundai logo?",
+    "teach": {
+      "title": "Hyundai",
+      "lines": [
+        "Hyundai is from South Korea.",
+        "Hyundai owns part of Kia, so South Korea's two big car makers are family."
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "/logos/hyundai.svg",
+        "alt": "The Hyundai logo",
+        "beside": {
+          "src": "/flags/kr.svg",
+          "alt": "The flag of South Korea"
+        }
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "Jeep",
+        "Volvo",
+        "Hyundai",
+        "Mazda"
+      ],
+      "correctIndex": 2,
+      "choiceVisuals": [
+        {
+          "kind": "image",
+          "src": "/logos/jeep.svg",
+          "alt": "The Jeep logo"
+        },
+        {
+          "kind": "image",
+          "src": "/logos/volvo.svg",
+          "alt": "The Volvo logo"
+        },
+        {
+          "kind": "image",
+          "src": "/logos/hyundai.svg",
+          "alt": "The Hyundai logo"
+        },
+        {
+          "kind": "image",
+          "src": "/logos/mazda.svg",
+          "alt": "The Mazda logo"
+        }
+      ]
+    },
+    "explanation": "The Hyundai logo is the one shown. Hyundai owns part of Kia, so South Korea's two big car makers are family.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "car-from-hyundai",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/cars.ts"
+    },
+    "skills": [
+      "CARS-ORIGIN",
+      "WORLD-FLAGS"
+    ],
+    "language": "en",
+    "prompt": "Which country does Hyundai come from?",
+    "visual": {
+      "kind": "image",
+      "src": "/logos/hyundai.svg",
+      "alt": "The Hyundai logo"
+    },
+    "teach": {
+      "title": "Hyundai",
+      "lines": [
+        "Hyundai is from South Korea.",
+        "Hyundai owns part of Kia, so South Korea's two big car makers are family."
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "/logos/hyundai.svg",
+        "alt": "The Hyundai logo",
+        "beside": {
+          "src": "/flags/kr.svg",
+          "alt": "The flag of South Korea"
+        }
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "Sweden",
+        "Japan",
+        "Italy",
+        "South Korea"
+      ],
+      "correctIndex": 3
+    },
+    "explanation": "Hyundai comes from South Korea.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "car-flag-hyundai",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/cars.ts"
+    },
+    "skills": [
+      "CARS-ORIGIN",
+      "WORLD-FLAGS"
+    ],
+    "language": "en",
+    "prompt": "Hyundai comes from South Korea. Which flag is South Korea's?",
+    "visual": {
+      "kind": "image",
+      "src": "/logos/hyundai.svg",
+      "alt": "The Hyundai logo"
+    },
+    "teach": {
+      "title": "Hyundai",
+      "lines": [
+        "Hyundai is from South Korea.",
+        "Hyundai owns part of Kia, so South Korea's two big car makers are family."
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "/logos/hyundai.svg",
+        "alt": "The Hyundai logo",
+        "beside": {
+          "src": "/flags/kr.svg",
+          "alt": "The flag of South Korea"
+        }
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "Sweden",
+        "South Korea",
+        "Japan",
+        "Italy"
+      ],
+      "correctIndex": 1,
+      "choiceVisuals": [
+        {
+          "kind": "image",
+          "src": "/flags/se.svg",
+          "alt": "The flag of Sweden"
+        },
+        {
+          "kind": "image",
+          "src": "/flags/kr.svg",
+          "alt": "The flag of South Korea"
+        },
+        {
+          "kind": "image",
+          "src": "/flags/jp.svg",
+          "alt": "The flag of Japan"
+        },
+        {
+          "kind": "image",
+          "src": "/flags/it.svg",
+          "alt": "The flag of Italy"
+        }
+      ]
+    },
+    "explanation": "South Korea's flag is the one shown, and that is where Hyundai comes from.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "car-logo-kia",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/cars.ts"
+    },
+    "skills": [
+      "CARS-LOGOS"
+    ],
+    "language": "en",
+    "prompt": "Which car maker uses this logo?",
+    "visual": {
+      "kind": "image",
+      "src": "/logos/kia.svg",
+      "alt": "The Kia logo"
+    },
+    "teach": {
+      "title": "Kia",
+      "lines": [
+        "Kia is from South Korea.",
+        "Kia began by making bicycle parts before it made cars."
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "/logos/kia.svg",
+        "alt": "The Kia logo",
+        "beside": {
+          "src": "/flags/kr.svg",
+          "alt": "The flag of South Korea"
+        }
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "Subaru",
+        "Kia",
+        "Ferrari",
+        "Tata"
+      ],
+      "correctIndex": 1
+    },
+    "explanation": "This is the Kia logo. Kia is from South Korea.",
+    "difficulty": {
+      "band": 2,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "car-pick-kia",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/cars.ts"
+    },
+    "skills": [
+      "CARS-LOGOS"
+    ],
+    "language": "en",
+    "prompt": "Which one of these is the Kia logo?",
+    "teach": {
+      "title": "Kia",
+      "lines": [
+        "Kia is from South Korea.",
+        "Kia began by making bicycle parts before it made cars."
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "/logos/kia.svg",
+        "alt": "The Kia logo",
+        "beside": {
+          "src": "/flags/kr.svg",
+          "alt": "The flag of South Korea"
+        }
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "Mercedes-Benz",
+        "Jeep",
+        "Volvo",
+        "Kia"
+      ],
+      "correctIndex": 3,
+      "choiceVisuals": [
+        {
+          "kind": "image",
+          "src": "/logos/mercedes-benz.svg",
+          "alt": "The Mercedes-Benz logo"
+        },
+        {
+          "kind": "image",
+          "src": "/logos/jeep.svg",
+          "alt": "The Jeep logo"
+        },
+        {
+          "kind": "image",
+          "src": "/logos/volvo.svg",
+          "alt": "The Volvo logo"
+        },
+        {
+          "kind": "image",
+          "src": "/logos/kia.svg",
+          "alt": "The Kia logo"
+        }
+      ]
+    },
+    "explanation": "The Kia logo is the one shown. Kia began by making bicycle parts before it made cars.",
+    "difficulty": {
+      "band": 2,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "car-from-kia",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/cars.ts"
+    },
+    "skills": [
+      "CARS-ORIGIN",
+      "WORLD-FLAGS"
+    ],
+    "language": "en",
+    "prompt": "Which country does Kia come from?",
+    "visual": {
+      "kind": "image",
+      "src": "/logos/kia.svg",
+      "alt": "The Kia logo"
+    },
+    "teach": {
+      "title": "Kia",
+      "lines": [
+        "Kia is from South Korea.",
+        "Kia began by making bicycle parts before it made cars."
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "/logos/kia.svg",
+        "alt": "The Kia logo",
+        "beside": {
+          "src": "/flags/kr.svg",
+          "alt": "The flag of South Korea"
+        }
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "France",
+        "Germany",
+        "South Korea",
+        "United States"
+      ],
+      "correctIndex": 2
+    },
+    "explanation": "Kia comes from South Korea.",
+    "difficulty": {
+      "band": 2,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "car-flag-kia",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/cars.ts"
+    },
+    "skills": [
+      "CARS-ORIGIN",
+      "WORLD-FLAGS"
+    ],
+    "language": "en",
+    "prompt": "Kia comes from South Korea. Which flag is South Korea's?",
+    "visual": {
+      "kind": "image",
+      "src": "/logos/kia.svg",
+      "alt": "The Kia logo"
+    },
+    "teach": {
+      "title": "Kia",
+      "lines": [
+        "Kia is from South Korea.",
+        "Kia began by making bicycle parts before it made cars."
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "/logos/kia.svg",
+        "alt": "The Kia logo",
+        "beside": {
+          "src": "/flags/kr.svg",
+          "alt": "The flag of South Korea"
+        }
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "South Korea",
+        "France",
+        "Germany",
+        "United States"
+      ],
+      "correctIndex": 0,
+      "choiceVisuals": [
+        {
+          "kind": "image",
+          "src": "/flags/kr.svg",
+          "alt": "The flag of South Korea"
+        },
+        {
+          "kind": "image",
+          "src": "/flags/fr.svg",
+          "alt": "The flag of France"
+        },
+        {
+          "kind": "image",
+          "src": "/flags/de.svg",
+          "alt": "The flag of Germany"
+        },
+        {
+          "kind": "image",
+          "src": "/flags/us.svg",
+          "alt": "The flag of United States"
+        }
+      ]
+    },
+    "explanation": "South Korea's flag is the one shown, and that is where Kia comes from.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "car-logo-mini",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/cars.ts"
+    },
+    "skills": [
+      "CARS-LOGOS"
+    ],
+    "language": "en",
+    "prompt": "Which car maker uses this logo?",
+    "visual": {
+      "kind": "image",
+      "src": "/logos/mini.svg",
+      "alt": "The Mini logo"
+    },
+    "teach": {
+      "title": "Mini",
+      "lines": [
+        "Mini is from United Kingdom.",
+        "The original Mini was tiny, and built to fit four people anyway.",
+        "Mini is owned today by BMW of Germany."
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "/logos/mini.svg",
+        "alt": "The Mini logo",
+        "beside": {
+          "src": "/flags/gb.svg",
+          "alt": "The flag of United Kingdom"
+        }
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "Subaru",
+        "Mini",
+        "Mercedes-Benz",
+        "Tesla"
+      ],
+      "correctIndex": 1
+    },
+    "explanation": "This is the Mini logo. Mini is from United Kingdom.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "car-pick-mini",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/cars.ts"
+    },
+    "skills": [
+      "CARS-LOGOS"
+    ],
+    "language": "en",
+    "prompt": "Which one of these is the Mini logo?",
+    "teach": {
+      "title": "Mini",
+      "lines": [
+        "Mini is from United Kingdom.",
+        "The original Mini was tiny, and built to fit four people anyway.",
+        "Mini is owned today by BMW of Germany."
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "/logos/mini.svg",
+        "alt": "The Mini logo",
+        "beside": {
+          "src": "/flags/gb.svg",
+          "alt": "The flag of United Kingdom"
+        }
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "Nissan",
+        "Volkswagen",
+        "Ford",
+        "Mini"
+      ],
+      "correctIndex": 3,
+      "choiceVisuals": [
+        {
+          "kind": "image",
+          "src": "/logos/nissan.svg",
+          "alt": "The Nissan logo"
+        },
+        {
+          "kind": "image",
+          "src": "/logos/volkswagen.svg",
+          "alt": "The Volkswagen logo"
+        },
+        {
+          "kind": "image",
+          "src": "/logos/ford.svg",
+          "alt": "The Ford logo"
+        },
+        {
+          "kind": "image",
+          "src": "/logos/mini.svg",
+          "alt": "The Mini logo"
+        }
+      ]
+    },
+    "explanation": "The Mini logo is the one shown. The original Mini was tiny, and built to fit four people anyway.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "car-from-mini",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/cars.ts"
+    },
+    "skills": [
+      "CARS-ORIGIN",
+      "WORLD-FLAGS"
+    ],
+    "language": "en",
+    "prompt": "Which country does Mini come from?",
+    "visual": {
+      "kind": "image",
+      "src": "/logos/mini.svg",
+      "alt": "The Mini logo"
+    },
+    "teach": {
+      "title": "Mini",
+      "lines": [
+        "Mini is from United Kingdom.",
+        "The original Mini was tiny, and built to fit four people anyway.",
+        "Mini is owned today by BMW of Germany."
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "/logos/mini.svg",
+        "alt": "The Mini logo",
+        "beside": {
+          "src": "/flags/gb.svg",
+          "alt": "The flag of United Kingdom"
+        }
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "United Kingdom",
+        "Germany",
+        "United States",
+        "South Korea"
+      ],
+      "correctIndex": 0
+    },
+    "explanation": "Mini comes from United Kingdom.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "car-flag-mini",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/cars.ts"
+    },
+    "skills": [
+      "CARS-ORIGIN",
+      "WORLD-FLAGS"
+    ],
+    "language": "en",
+    "prompt": "Mini comes from United Kingdom. Which flag is United Kingdom's?",
+    "visual": {
+      "kind": "image",
+      "src": "/logos/mini.svg",
+      "alt": "The Mini logo"
+    },
+    "teach": {
+      "title": "Mini",
+      "lines": [
+        "Mini is from United Kingdom.",
+        "The original Mini was tiny, and built to fit four people anyway.",
+        "Mini is owned today by BMW of Germany."
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "/logos/mini.svg",
+        "alt": "The Mini logo",
+        "beside": {
+          "src": "/flags/gb.svg",
+          "alt": "The flag of United Kingdom"
+        }
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "Germany",
+        "United States",
+        "United Kingdom",
+        "South Korea"
+      ],
+      "correctIndex": 2,
+      "choiceVisuals": [
+        {
+          "kind": "image",
+          "src": "/flags/de.svg",
+          "alt": "The flag of Germany"
+        },
+        {
+          "kind": "image",
+          "src": "/flags/us.svg",
+          "alt": "The flag of United States"
+        },
+        {
+          "kind": "image",
+          "src": "/flags/gb.svg",
+          "alt": "The flag of United Kingdom"
+        },
+        {
+          "kind": "image",
+          "src": "/flags/kr.svg",
+          "alt": "The flag of South Korea"
+        }
+      ]
+    },
+    "explanation": "United Kingdom's flag is the one shown, and that is where Mini comes from.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "car-logo-rollsroyce",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/cars.ts"
+    },
+    "skills": [
+      "CARS-LOGOS"
+    ],
+    "language": "en",
+    "prompt": "Which car maker uses this logo?",
+    "visual": {
+      "kind": "image",
+      "src": "/logos/rolls-royce.svg",
+      "alt": "The Rolls-Royce logo"
+    },
+    "teach": {
+      "title": "Rolls-Royce",
+      "lines": [
+        "Rolls-Royce is from United Kingdom.",
+        "The little silver figure on the front of a Rolls-Royce is called the Spirit of Ecstasy.",
+        "Rolls-Royce Motor Cars is owned today by BMW of Germany."
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "/logos/rolls-royce.svg",
+        "alt": "The Rolls-Royce logo",
+        "beside": {
+          "src": "/flags/gb.svg",
+          "alt": "The flag of United Kingdom"
+        }
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "Rolls-Royce",
+        "Mahindra",
+        "Citroen",
+        "Suzuki"
+      ],
+      "correctIndex": 0
+    },
+    "explanation": "This is the Rolls-Royce logo. Rolls-Royce is from United Kingdom.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "car-pick-rollsroyce",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/cars.ts"
+    },
+    "skills": [
+      "CARS-LOGOS"
+    ],
+    "language": "en",
+    "prompt": "Which one of these is the Rolls-Royce logo?",
+    "teach": {
+      "title": "Rolls-Royce",
+      "lines": [
+        "Rolls-Royce is from United Kingdom.",
+        "The little silver figure on the front of a Rolls-Royce is called the Spirit of Ecstasy.",
+        "Rolls-Royce Motor Cars is owned today by BMW of Germany."
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "/logos/rolls-royce.svg",
+        "alt": "The Rolls-Royce logo",
+        "beside": {
+          "src": "/flags/gb.svg",
+          "alt": "The flag of United Kingdom"
+        }
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "Mahindra",
+        "Citroen",
+        "Rolls-Royce",
+        "Suzuki"
+      ],
+      "correctIndex": 2,
+      "choiceVisuals": [
+        {
+          "kind": "image",
+          "src": "/logos/mahindra.svg",
+          "alt": "The Mahindra logo"
+        },
+        {
+          "kind": "image",
+          "src": "/logos/citroen.svg",
+          "alt": "The Citroen logo"
+        },
+        {
+          "kind": "image",
+          "src": "/logos/rolls-royce.svg",
+          "alt": "The Rolls-Royce logo"
+        },
+        {
+          "kind": "image",
+          "src": "/logos/suzuki.svg",
+          "alt": "The Suzuki logo"
+        }
+      ]
+    },
+    "explanation": "The Rolls-Royce logo is the one shown. The little silver figure on the front of a Rolls-Royce is called the Spirit of Ecstasy.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "car-from-rollsroyce",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/cars.ts"
+    },
+    "skills": [
+      "CARS-ORIGIN",
+      "WORLD-FLAGS"
+    ],
+    "language": "en",
+    "prompt": "Which country does Rolls-Royce come from?",
+    "visual": {
+      "kind": "image",
+      "src": "/logos/rolls-royce.svg",
+      "alt": "The Rolls-Royce logo"
+    },
+    "teach": {
+      "title": "Rolls-Royce",
+      "lines": [
+        "Rolls-Royce is from United Kingdom.",
+        "The little silver figure on the front of a Rolls-Royce is called the Spirit of Ecstasy.",
+        "Rolls-Royce Motor Cars is owned today by BMW of Germany."
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "/logos/rolls-royce.svg",
+        "alt": "The Rolls-Royce logo",
+        "beside": {
+          "src": "/flags/gb.svg",
+          "alt": "The flag of United Kingdom"
+        }
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "India",
+        "United Kingdom",
+        "Sweden",
+        "Japan"
+      ],
+      "correctIndex": 1
+    },
+    "explanation": "Rolls-Royce comes from United Kingdom.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "car-flag-rollsroyce",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/cars.ts"
+    },
+    "skills": [
+      "CARS-ORIGIN",
+      "WORLD-FLAGS"
+    ],
+    "language": "en",
+    "prompt": "Rolls-Royce comes from United Kingdom. Which flag is United Kingdom's?",
+    "visual": {
+      "kind": "image",
+      "src": "/logos/rolls-royce.svg",
+      "alt": "The Rolls-Royce logo"
+    },
+    "teach": {
+      "title": "Rolls-Royce",
+      "lines": [
+        "Rolls-Royce is from United Kingdom.",
+        "The little silver figure on the front of a Rolls-Royce is called the Spirit of Ecstasy.",
+        "Rolls-Royce Motor Cars is owned today by BMW of Germany."
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "/logos/rolls-royce.svg",
+        "alt": "The Rolls-Royce logo",
+        "beside": {
+          "src": "/flags/gb.svg",
+          "alt": "The flag of United Kingdom"
+        }
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "India",
+        "Sweden",
+        "Japan",
+        "United Kingdom"
+      ],
+      "correctIndex": 3,
+      "choiceVisuals": [
+        {
+          "kind": "image",
+          "src": "/flags/in.svg",
+          "alt": "The flag of India"
+        },
+        {
+          "kind": "image",
+          "src": "/flags/se.svg",
+          "alt": "The flag of Sweden"
+        },
+        {
+          "kind": "image",
+          "src": "/flags/jp.svg",
+          "alt": "The flag of Japan"
+        },
+        {
+          "kind": "image",
+          "src": "/flags/gb.svg",
+          "alt": "The flag of United Kingdom"
+        }
+      ]
+    },
+    "explanation": "United Kingdom's flag is the one shown, and that is where Rolls-Royce comes from.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "car-logo-landrover",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/cars.ts"
+    },
+    "skills": [
+      "CARS-LOGOS"
+    ],
+    "language": "en",
+    "prompt": "Which car maker uses this logo?",
+    "visual": {
+      "kind": "image",
+      "src": "/logos/land-rover.svg",
+      "alt": "The Land Rover logo"
+    },
+    "teach": {
+      "title": "Land Rover",
+      "lines": [
+        "Land Rover is from United Kingdom.",
+        "Land Rovers are built for mud, rivers and mountains.",
+        "Land Rover is owned today by Tata Motors of India."
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "/logos/land-rover.svg",
+        "alt": "The Land Rover logo",
+        "beside": {
+          "src": "/flags/gb.svg",
+          "alt": "The flag of United Kingdom"
+        }
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "Nissan",
+        "Land Rover",
+        "Volkswagen",
+        "Ford"
+      ],
+      "correctIndex": 1
+    },
+    "explanation": "This is the Land Rover logo. Land Rover is from United Kingdom.",
+    "difficulty": {
+      "band": 2,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "car-pick-landrover",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/cars.ts"
+    },
+    "skills": [
+      "CARS-LOGOS"
+    ],
+    "language": "en",
+    "prompt": "Which one of these is the Land Rover logo?",
+    "teach": {
+      "title": "Land Rover",
+      "lines": [
+        "Land Rover is from United Kingdom.",
+        "Land Rovers are built for mud, rivers and mountains.",
+        "Land Rover is owned today by Tata Motors of India."
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "/logos/land-rover.svg",
+        "alt": "The Land Rover logo",
+        "beside": {
+          "src": "/flags/gb.svg",
+          "alt": "The flag of United Kingdom"
+        }
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "Tesla",
+        "Volvo",
+        "Nissan",
+        "Land Rover"
+      ],
+      "correctIndex": 3,
+      "choiceVisuals": [
+        {
+          "kind": "image",
+          "src": "/logos/tesla.svg",
+          "alt": "The Tesla logo"
+        },
+        {
+          "kind": "image",
+          "src": "/logos/volvo.svg",
+          "alt": "The Volvo logo"
+        },
+        {
+          "kind": "image",
+          "src": "/logos/nissan.svg",
+          "alt": "The Nissan logo"
+        },
+        {
+          "kind": "image",
+          "src": "/logos/land-rover.svg",
+          "alt": "The Land Rover logo"
+        }
+      ]
+    },
+    "explanation": "The Land Rover logo is the one shown. Land Rovers are built for mud, rivers and mountains.",
+    "difficulty": {
+      "band": 2,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "car-from-landrover",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/cars.ts"
+    },
+    "skills": [
+      "CARS-ORIGIN",
+      "WORLD-FLAGS"
+    ],
+    "language": "en",
+    "prompt": "Which country does Land Rover come from?",
+    "visual": {
+      "kind": "image",
+      "src": "/logos/land-rover.svg",
+      "alt": "The Land Rover logo"
+    },
+    "teach": {
+      "title": "Land Rover",
+      "lines": [
+        "Land Rover is from United Kingdom.",
+        "Land Rovers are built for mud, rivers and mountains.",
+        "Land Rover is owned today by Tata Motors of India."
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "/logos/land-rover.svg",
+        "alt": "The Land Rover logo",
+        "beside": {
+          "src": "/flags/gb.svg",
+          "alt": "The flag of United Kingdom"
+        }
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "France",
+        "Germany",
+        "United Kingdom",
+        "United States"
+      ],
+      "correctIndex": 2
+    },
+    "explanation": "Land Rover comes from United Kingdom.",
+    "difficulty": {
+      "band": 2,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "car-flag-landrover",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/cars.ts"
+    },
+    "skills": [
+      "CARS-ORIGIN",
+      "WORLD-FLAGS"
+    ],
+    "language": "en",
+    "prompt": "Land Rover comes from United Kingdom. Which flag is United Kingdom's?",
+    "visual": {
+      "kind": "image",
+      "src": "/logos/land-rover.svg",
+      "alt": "The Land Rover logo"
+    },
+    "teach": {
+      "title": "Land Rover",
+      "lines": [
+        "Land Rover is from United Kingdom.",
+        "Land Rovers are built for mud, rivers and mountains.",
+        "Land Rover is owned today by Tata Motors of India."
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "/logos/land-rover.svg",
+        "alt": "The Land Rover logo",
+        "beside": {
+          "src": "/flags/gb.svg",
+          "alt": "The flag of United Kingdom"
+        }
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "United Kingdom",
+        "France",
+        "Germany",
+        "United States"
+      ],
+      "correctIndex": 0,
+      "choiceVisuals": [
+        {
+          "kind": "image",
+          "src": "/flags/gb.svg",
+          "alt": "The flag of United Kingdom"
+        },
+        {
+          "kind": "image",
+          "src": "/flags/fr.svg",
+          "alt": "The flag of France"
+        },
+        {
+          "kind": "image",
+          "src": "/flags/de.svg",
+          "alt": "The flag of Germany"
+        },
+        {
+          "kind": "image",
+          "src": "/flags/us.svg",
+          "alt": "The flag of United States"
+        }
+      ]
+    },
+    "explanation": "United Kingdom's flag is the one shown, and that is where Land Rover comes from.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "car-logo-jaguar",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/cars.ts"
+    },
+    "skills": [
+      "CARS-LOGOS"
+    ],
+    "language": "en",
+    "prompt": "Which car maker uses this logo?",
+    "visual": {
+      "kind": "image",
+      "src": "/logos/jaguar.svg",
+      "alt": "The Jaguar logo"
+    },
+    "teach": {
+      "title": "Jaguar",
+      "lines": [
+        "Jaguar is from United Kingdom.",
+        "Jaguar is named after the big cat, and a leaping jaguar sits on the front of the car.",
+        "Jaguar is owned today by Tata Motors of India."
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "/logos/jaguar.svg",
+        "alt": "The Jaguar logo",
+        "beside": {
+          "src": "/flags/gb.svg",
+          "alt": "The flag of United Kingdom"
+        }
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "Jaguar",
+        "Chevrolet",
+        "Kia",
+        "Honda"
+      ],
+      "correctIndex": 0
+    },
+    "explanation": "This is the Jaguar logo. Jaguar is from United Kingdom.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "car-pick-jaguar",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/cars.ts"
+    },
+    "skills": [
+      "CARS-LOGOS"
+    ],
+    "language": "en",
+    "prompt": "Which one of these is the Jaguar logo?",
+    "teach": {
+      "title": "Jaguar",
+      "lines": [
+        "Jaguar is from United Kingdom.",
+        "Jaguar is named after the big cat, and a leaping jaguar sits on the front of the car.",
+        "Jaguar is owned today by Tata Motors of India."
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "/logos/jaguar.svg",
+        "alt": "The Jaguar logo",
+        "beside": {
+          "src": "/flags/gb.svg",
+          "alt": "The flag of United Kingdom"
+        }
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "Suzuki",
+        "Ferrari",
+        "Jaguar",
+        "Jeep"
+      ],
+      "correctIndex": 2,
+      "choiceVisuals": [
+        {
+          "kind": "image",
+          "src": "/logos/suzuki.svg",
+          "alt": "The Suzuki logo"
+        },
+        {
+          "kind": "image",
+          "src": "/logos/ferrari.svg",
+          "alt": "The Ferrari logo"
+        },
+        {
+          "kind": "image",
+          "src": "/logos/jaguar.svg",
+          "alt": "The Jaguar logo"
+        },
+        {
+          "kind": "image",
+          "src": "/logos/jeep.svg",
+          "alt": "The Jeep logo"
+        }
+      ]
+    },
+    "explanation": "The Jaguar logo is the one shown. Jaguar is named after the big cat, and a leaping jaguar sits on the front of the car.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "car-from-jaguar",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/cars.ts"
+    },
+    "skills": [
+      "CARS-ORIGIN",
+      "WORLD-FLAGS"
+    ],
+    "language": "en",
+    "prompt": "Which country does Jaguar come from?",
+    "visual": {
+      "kind": "image",
+      "src": "/logos/jaguar.svg",
+      "alt": "The Jaguar logo"
+    },
+    "teach": {
+      "title": "Jaguar",
+      "lines": [
+        "Jaguar is from United Kingdom.",
+        "Jaguar is named after the big cat, and a leaping jaguar sits on the front of the car.",
+        "Jaguar is owned today by Tata Motors of India."
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "/logos/jaguar.svg",
+        "alt": "The Jaguar logo",
+        "beside": {
+          "src": "/flags/gb.svg",
+          "alt": "The flag of United Kingdom"
+        }
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "India",
+        "United Kingdom",
+        "Sweden",
+        "Japan"
+      ],
+      "correctIndex": 1
+    },
+    "explanation": "Jaguar comes from United Kingdom.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "car-flag-jaguar",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/cars.ts"
+    },
+    "skills": [
+      "CARS-ORIGIN",
+      "WORLD-FLAGS"
+    ],
+    "language": "en",
+    "prompt": "Jaguar comes from United Kingdom. Which flag is United Kingdom's?",
+    "visual": {
+      "kind": "image",
+      "src": "/logos/jaguar.svg",
+      "alt": "The Jaguar logo"
+    },
+    "teach": {
+      "title": "Jaguar",
+      "lines": [
+        "Jaguar is from United Kingdom.",
+        "Jaguar is named after the big cat, and a leaping jaguar sits on the front of the car.",
+        "Jaguar is owned today by Tata Motors of India."
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "/logos/jaguar.svg",
+        "alt": "The Jaguar logo",
+        "beside": {
+          "src": "/flags/gb.svg",
+          "alt": "The flag of United Kingdom"
+        }
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "India",
+        "Sweden",
+        "Japan",
+        "United Kingdom"
+      ],
+      "correctIndex": 3,
+      "choiceVisuals": [
+        {
+          "kind": "image",
+          "src": "/flags/in.svg",
+          "alt": "The flag of India"
+        },
+        {
+          "kind": "image",
+          "src": "/flags/se.svg",
+          "alt": "The flag of Sweden"
+        },
+        {
+          "kind": "image",
+          "src": "/flags/jp.svg",
+          "alt": "The flag of Japan"
+        },
+        {
+          "kind": "image",
+          "src": "/flags/gb.svg",
+          "alt": "The flag of United Kingdom"
+        }
+      ]
+    },
+    "explanation": "United Kingdom's flag is the one shown, and that is where Jaguar comes from.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "car-logo-volvo",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/cars.ts"
+    },
+    "skills": [
+      "CARS-LOGOS"
+    ],
+    "language": "en",
+    "prompt": "Which car maker uses this logo?",
+    "visual": {
+      "kind": "image",
+      "src": "/logos/volvo.svg",
+      "alt": "The Volvo logo"
+    },
+    "teach": {
+      "title": "Volvo",
+      "lines": [
+        "Volvo is from Sweden.",
+        "Volvo invented the three point seat belt and let every other carmaker use it for free.",
+        "Volvo Cars is owned today by Geely of China."
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "/logos/volvo.svg",
+        "alt": "The Volvo logo",
+        "beside": {
+          "src": "/flags/se.svg",
+          "alt": "The flag of Sweden"
+        }
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "Volvo",
+        "Fiat",
+        "Hyundai",
+        "Peugeot"
+      ],
+      "correctIndex": 0
+    },
+    "explanation": "This is the Volvo logo. Volvo is from Sweden.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "car-pick-volvo",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/cars.ts"
+    },
+    "skills": [
+      "CARS-LOGOS"
+    ],
+    "language": "en",
+    "prompt": "Which one of these is the Volvo logo?",
+    "teach": {
+      "title": "Volvo",
+      "lines": [
+        "Volvo is from Sweden.",
+        "Volvo invented the three point seat belt and let every other carmaker use it for free.",
+        "Volvo Cars is owned today by Geely of China."
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "/logos/volvo.svg",
+        "alt": "The Volvo logo",
+        "beside": {
+          "src": "/flags/se.svg",
+          "alt": "The flag of Sweden"
+        }
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "Jaguar",
+        "Mazda",
+        "Volvo",
+        "Mercedes-Benz"
+      ],
+      "correctIndex": 2,
+      "choiceVisuals": [
+        {
+          "kind": "image",
+          "src": "/logos/jaguar.svg",
+          "alt": "The Jaguar logo"
+        },
+        {
+          "kind": "image",
+          "src": "/logos/mazda.svg",
+          "alt": "The Mazda logo"
+        },
+        {
+          "kind": "image",
+          "src": "/logos/volvo.svg",
+          "alt": "The Volvo logo"
+        },
+        {
+          "kind": "image",
+          "src": "/logos/mercedes-benz.svg",
+          "alt": "The Mercedes-Benz logo"
+        }
+      ]
+    },
+    "explanation": "The Volvo logo is the one shown. Volvo invented the three point seat belt and let every other carmaker use it for free.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "car-from-volvo",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/cars.ts"
+    },
+    "skills": [
+      "CARS-ORIGIN",
+      "WORLD-FLAGS"
+    ],
+    "language": "en",
+    "prompt": "Which country does Volvo come from?",
+    "visual": {
+      "kind": "image",
+      "src": "/logos/volvo.svg",
+      "alt": "The Volvo logo"
+    },
+    "teach": {
+      "title": "Volvo",
+      "lines": [
+        "Volvo is from Sweden.",
+        "Volvo invented the three point seat belt and let every other carmaker use it for free.",
+        "Volvo Cars is owned today by Geely of China."
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "/logos/volvo.svg",
+        "alt": "The Volvo logo",
+        "beside": {
+          "src": "/flags/se.svg",
+          "alt": "The flag of Sweden"
+        }
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "United Kingdom",
+        "Japan",
+        "Italy",
+        "Sweden"
+      ],
+      "correctIndex": 3
+    },
+    "explanation": "Volvo comes from Sweden.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "car-flag-volvo",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/cars.ts"
+    },
+    "skills": [
+      "CARS-ORIGIN",
+      "WORLD-FLAGS"
+    ],
+    "language": "en",
+    "prompt": "Volvo comes from Sweden. Which flag is Sweden's?",
+    "visual": {
+      "kind": "image",
+      "src": "/logos/volvo.svg",
+      "alt": "The Volvo logo"
+    },
+    "teach": {
+      "title": "Volvo",
+      "lines": [
+        "Volvo is from Sweden.",
+        "Volvo invented the three point seat belt and let every other carmaker use it for free.",
+        "Volvo Cars is owned today by Geely of China."
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "/logos/volvo.svg",
+        "alt": "The Volvo logo",
+        "beside": {
+          "src": "/flags/se.svg",
+          "alt": "The flag of Sweden"
+        }
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "United Kingdom",
+        "Sweden",
+        "Japan",
+        "Italy"
+      ],
+      "correctIndex": 1,
+      "choiceVisuals": [
+        {
+          "kind": "image",
+          "src": "/flags/gb.svg",
+          "alt": "The flag of United Kingdom"
+        },
+        {
+          "kind": "image",
+          "src": "/flags/se.svg",
+          "alt": "The flag of Sweden"
+        },
+        {
+          "kind": "image",
+          "src": "/flags/jp.svg",
+          "alt": "The flag of Japan"
+        },
+        {
+          "kind": "image",
+          "src": "/flags/it.svg",
+          "alt": "The flag of Italy"
+        }
+      ]
+    },
+    "explanation": "Sweden's flag is the one shown, and that is where Volvo comes from.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "car-logo-renault",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/cars.ts"
+    },
+    "skills": [
+      "CARS-LOGOS"
+    ],
+    "language": "en",
+    "prompt": "Which car maker uses this logo?",
+    "visual": {
+      "kind": "image",
+      "src": "/logos/renault.svg",
+      "alt": "The Renault logo"
+    },
+    "teach": {
+      "title": "Renault",
+      "lines": [
+        "Renault is from France.",
+        "The Renault badge is a diamond shape."
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "/logos/renault.svg",
+        "alt": "The Renault logo",
+        "beside": {
+          "src": "/flags/fr.svg",
+          "alt": "The flag of France"
+        }
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "Tata",
+        "Renault",
+        "Land Rover",
+        "Mazda"
+      ],
+      "correctIndex": 1
+    },
+    "explanation": "This is the Renault logo. Renault is from France.",
+    "difficulty": {
+      "band": 2,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "car-pick-renault",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/cars.ts"
+    },
+    "skills": [
+      "CARS-LOGOS"
+    ],
+    "language": "en",
+    "prompt": "Which one of these is the Renault logo?",
+    "teach": {
+      "title": "Renault",
+      "lines": [
+        "Renault is from France.",
+        "The Renault badge is a diamond shape."
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "/logos/renault.svg",
+        "alt": "The Renault logo",
+        "beside": {
+          "src": "/flags/fr.svg",
+          "alt": "The flag of France"
+        }
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "Volkswagen",
+        "Ford",
+        "Hyundai",
+        "Renault"
+      ],
+      "correctIndex": 3,
+      "choiceVisuals": [
+        {
+          "kind": "image",
+          "src": "/logos/volkswagen.svg",
+          "alt": "The Volkswagen logo"
+        },
+        {
+          "kind": "image",
+          "src": "/logos/ford.svg",
+          "alt": "The Ford logo"
+        },
+        {
+          "kind": "image",
+          "src": "/logos/hyundai.svg",
+          "alt": "The Hyundai logo"
+        },
+        {
+          "kind": "image",
+          "src": "/logos/renault.svg",
+          "alt": "The Renault logo"
+        }
+      ]
+    },
+    "explanation": "The Renault logo is the one shown. The Renault badge is a diamond shape.",
+    "difficulty": {
+      "band": 2,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "car-from-renault",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/cars.ts"
+    },
+    "skills": [
+      "CARS-ORIGIN",
+      "WORLD-FLAGS"
+    ],
+    "language": "en",
+    "prompt": "Which country does Renault come from?",
+    "visual": {
+      "kind": "image",
+      "src": "/logos/renault.svg",
+      "alt": "The Renault logo"
+    },
+    "teach": {
+      "title": "Renault",
+      "lines": [
+        "Renault is from France.",
+        "The Renault badge is a diamond shape."
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "/logos/renault.svg",
+        "alt": "The Renault logo",
+        "beside": {
+          "src": "/flags/fr.svg",
+          "alt": "The flag of France"
+        }
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "United States",
+        "South Korea",
+        "France",
+        "Sweden"
+      ],
+      "correctIndex": 2
+    },
+    "explanation": "Renault comes from France.",
+    "difficulty": {
+      "band": 2,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "car-flag-renault",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/cars.ts"
+    },
+    "skills": [
+      "CARS-ORIGIN",
+      "WORLD-FLAGS"
+    ],
+    "language": "en",
+    "prompt": "Renault comes from France. Which flag is France's?",
+    "visual": {
+      "kind": "image",
+      "src": "/logos/renault.svg",
+      "alt": "The Renault logo"
+    },
+    "teach": {
+      "title": "Renault",
+      "lines": [
+        "Renault is from France.",
+        "The Renault badge is a diamond shape."
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "/logos/renault.svg",
+        "alt": "The Renault logo",
+        "beside": {
+          "src": "/flags/fr.svg",
+          "alt": "The flag of France"
+        }
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "France",
+        "United States",
+        "South Korea",
+        "Sweden"
+      ],
+      "correctIndex": 0,
+      "choiceVisuals": [
+        {
+          "kind": "image",
+          "src": "/flags/fr.svg",
+          "alt": "The flag of France"
+        },
+        {
+          "kind": "image",
+          "src": "/flags/us.svg",
+          "alt": "The flag of United States"
+        },
+        {
+          "kind": "image",
+          "src": "/flags/kr.svg",
+          "alt": "The flag of South Korea"
+        },
+        {
+          "kind": "image",
+          "src": "/flags/se.svg",
+          "alt": "The flag of Sweden"
+        }
+      ]
+    },
+    "explanation": "France's flag is the one shown, and that is where Renault comes from.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "car-logo-peugeot",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/cars.ts"
+    },
+    "skills": [
+      "CARS-LOGOS"
+    ],
+    "language": "en",
+    "prompt": "Which car maker uses this logo?",
+    "visual": {
+      "kind": "image",
+      "src": "/logos/peugeot.svg",
+      "alt": "The Peugeot logo"
+    },
+    "teach": {
+      "title": "Peugeot",
+      "lines": [
+        "Peugeot is from France.",
+        "The Peugeot badge is a lion, and the company made saws and coffee grinders first."
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "/logos/peugeot.svg",
+        "alt": "The Peugeot logo",
+        "beside": {
+          "src": "/flags/fr.svg",
+          "alt": "The flag of France"
+        }
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "Tesla",
+        "Mini",
+        "Honda",
+        "Peugeot"
+      ],
+      "correctIndex": 3
+    },
+    "explanation": "This is the Peugeot logo. Peugeot is from France.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "car-pick-peugeot",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/cars.ts"
+    },
+    "skills": [
+      "CARS-LOGOS"
+    ],
+    "language": "en",
+    "prompt": "Which one of these is the Peugeot logo?",
+    "teach": {
+      "title": "Peugeot",
+      "lines": [
+        "Peugeot is from France.",
+        "The Peugeot badge is a lion, and the company made saws and coffee grinders first."
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "/logos/peugeot.svg",
+        "alt": "The Peugeot logo",
+        "beside": {
+          "src": "/flags/fr.svg",
+          "alt": "The flag of France"
+        }
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "Audi",
+        "Peugeot",
+        "Fiat",
+        "Mahindra"
+      ],
+      "correctIndex": 1,
+      "choiceVisuals": [
+        {
+          "kind": "image",
+          "src": "/logos/audi.svg",
+          "alt": "The Audi logo"
+        },
+        {
+          "kind": "image",
+          "src": "/logos/peugeot.svg",
+          "alt": "The Peugeot logo"
+        },
+        {
+          "kind": "image",
+          "src": "/logos/fiat.svg",
+          "alt": "The Fiat logo"
+        },
+        {
+          "kind": "image",
+          "src": "/logos/mahindra.svg",
+          "alt": "The Mahindra logo"
+        }
+      ]
+    },
+    "explanation": "The Peugeot logo is the one shown. The Peugeot badge is a lion, and the company made saws and coffee grinders first.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "car-from-peugeot",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/cars.ts"
+    },
+    "skills": [
+      "CARS-ORIGIN",
+      "WORLD-FLAGS"
+    ],
+    "language": "en",
+    "prompt": "Which country does Peugeot come from?",
+    "visual": {
+      "kind": "image",
+      "src": "/logos/peugeot.svg",
+      "alt": "The Peugeot logo"
+    },
+    "teach": {
+      "title": "Peugeot",
+      "lines": [
+        "Peugeot is from France.",
+        "The Peugeot badge is a lion, and the company made saws and coffee grinders first."
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "/logos/peugeot.svg",
+        "alt": "The Peugeot logo",
+        "beside": {
+          "src": "/flags/fr.svg",
+          "alt": "The flag of France"
+        }
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "France",
+        "South Korea",
+        "Sweden",
+        "Germany"
+      ],
+      "correctIndex": 0
+    },
+    "explanation": "Peugeot comes from France.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "car-flag-peugeot",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/cars.ts"
+    },
+    "skills": [
+      "CARS-ORIGIN",
+      "WORLD-FLAGS"
+    ],
+    "language": "en",
+    "prompt": "Peugeot comes from France. Which flag is France's?",
+    "visual": {
+      "kind": "image",
+      "src": "/logos/peugeot.svg",
+      "alt": "The Peugeot logo"
+    },
+    "teach": {
+      "title": "Peugeot",
+      "lines": [
+        "Peugeot is from France.",
+        "The Peugeot badge is a lion, and the company made saws and coffee grinders first."
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "/logos/peugeot.svg",
+        "alt": "The Peugeot logo",
+        "beside": {
+          "src": "/flags/fr.svg",
+          "alt": "The flag of France"
+        }
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "South Korea",
+        "Sweden",
+        "France",
+        "Germany"
+      ],
+      "correctIndex": 2,
+      "choiceVisuals": [
+        {
+          "kind": "image",
+          "src": "/flags/kr.svg",
+          "alt": "The flag of South Korea"
+        },
+        {
+          "kind": "image",
+          "src": "/flags/se.svg",
+          "alt": "The flag of Sweden"
+        },
+        {
+          "kind": "image",
+          "src": "/flags/fr.svg",
+          "alt": "The flag of France"
+        },
+        {
+          "kind": "image",
+          "src": "/flags/de.svg",
+          "alt": "The flag of Germany"
+        }
+      ]
+    },
+    "explanation": "France's flag is the one shown, and that is where Peugeot comes from.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "car-logo-citroen",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/cars.ts"
+    },
+    "skills": [
+      "CARS-LOGOS"
+    ],
+    "language": "en",
+    "prompt": "Which car maker uses this logo?",
+    "visual": {
+      "kind": "image",
+      "src": "/logos/citroen.svg",
+      "alt": "The Citroen logo"
+    },
+    "teach": {
+      "title": "Citroen",
+      "lines": [
+        "Citroen is from France.",
+        "The two arrows in the Citroen badge come from a kind of gear tooth."
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "/logos/citroen.svg",
+        "alt": "The Citroen logo",
+        "beside": {
+          "src": "/flags/fr.svg",
+          "alt": "The flag of France"
+        }
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "Ferrari",
+        "Jeep",
+        "Citroen",
+        "Rolls-Royce"
+      ],
+      "correctIndex": 2
+    },
+    "explanation": "This is the Citroen logo. Citroen is from France.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "car-pick-citroen",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/cars.ts"
+    },
+    "skills": [
+      "CARS-LOGOS"
+    ],
+    "language": "en",
+    "prompt": "Which one of these is the Citroen logo?",
+    "teach": {
+      "title": "Citroen",
+      "lines": [
+        "Citroen is from France.",
+        "The two arrows in the Citroen badge come from a kind of gear tooth."
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "/logos/citroen.svg",
+        "alt": "The Citroen logo",
+        "beside": {
+          "src": "/flags/fr.svg",
+          "alt": "The flag of France"
+        }
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "Citroen",
+        "Lamborghini",
+        "Tata",
+        "Land Rover"
+      ],
+      "correctIndex": 0,
+      "choiceVisuals": [
+        {
+          "kind": "image",
+          "src": "/logos/citroen.svg",
+          "alt": "The Citroen logo"
+        },
+        {
+          "kind": "image",
+          "src": "/logos/lamborghini.svg",
+          "alt": "The Lamborghini logo"
+        },
+        {
+          "kind": "image",
+          "src": "/logos/tata.svg",
+          "alt": "The Tata logo"
+        },
+        {
+          "kind": "image",
+          "src": "/logos/land-rover.svg",
+          "alt": "The Land Rover logo"
+        }
+      ]
+    },
+    "explanation": "The Citroen logo is the one shown. The two arrows in the Citroen badge come from a kind of gear tooth.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "car-from-citroen",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/cars.ts"
+    },
+    "skills": [
+      "CARS-ORIGIN",
+      "WORLD-FLAGS"
+    ],
+    "language": "en",
+    "prompt": "Which country does Citroen come from?",
+    "visual": {
+      "kind": "image",
+      "src": "/logos/citroen.svg",
+      "alt": "The Citroen logo"
+    },
+    "teach": {
+      "title": "Citroen",
+      "lines": [
+        "Citroen is from France.",
+        "The two arrows in the Citroen badge come from a kind of gear tooth."
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "/logos/citroen.svg",
+        "alt": "The Citroen logo",
+        "beside": {
+          "src": "/flags/fr.svg",
+          "alt": "The flag of France"
+        }
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "Japan",
+        "France",
+        "Italy",
+        "India"
+      ],
+      "correctIndex": 1
+    },
+    "explanation": "Citroen comes from France.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "car-flag-citroen",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/cars.ts"
+    },
+    "skills": [
+      "CARS-ORIGIN",
+      "WORLD-FLAGS"
+    ],
+    "language": "en",
+    "prompt": "Citroen comes from France. Which flag is France's?",
+    "visual": {
+      "kind": "image",
+      "src": "/logos/citroen.svg",
+      "alt": "The Citroen logo"
+    },
+    "teach": {
+      "title": "Citroen",
+      "lines": [
+        "Citroen is from France.",
+        "The two arrows in the Citroen badge come from a kind of gear tooth."
+      ],
+      "visual": {
+        "kind": "image",
+        "src": "/logos/citroen.svg",
+        "alt": "The Citroen logo",
+        "beside": {
+          "src": "/flags/fr.svg",
+          "alt": "The flag of France"
+        }
+      }
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "Japan",
+        "Italy",
+        "India",
+        "France"
+      ],
+      "correctIndex": 3,
+      "choiceVisuals": [
+        {
+          "kind": "image",
+          "src": "/flags/jp.svg",
+          "alt": "The flag of Japan"
+        },
+        {
+          "kind": "image",
+          "src": "/flags/it.svg",
+          "alt": "The flag of Italy"
+        },
+        {
+          "kind": "image",
+          "src": "/flags/in.svg",
+          "alt": "The flag of India"
+        },
+        {
+          "kind": "image",
+          "src": "/flags/fr.svg",
+          "alt": "The flag of France"
+        }
+      ]
+    },
+    "explanation": "France's flag is the one shown, and that is where Citroen comes from.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "car-shape-audi-rings",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/cars.ts"
+    },
+    "skills": [
+      "CARS-LOGOS",
+      "MATH-GEO-SHAPES"
+    ],
+    "language": "en",
+    "prompt": "How many rings are in the Audi logo?",
+    "visual": {
+      "kind": "image",
+      "src": "/logos/audi.svg",
+      "alt": "The Audi logo"
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "3",
+        "5",
+        "2",
+        "4"
+      ],
+      "correctIndex": 3
+    },
+    "explanation": "Count them left to right: 1, 2, 3, 4. There are 4 rings.",
+    "difficulty": {
+      "band": 1,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "car-shape-audi-overlaps",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/cars.ts"
+    },
+    "skills": [
+      "CARS-LOGOS",
+      "MATH-GEO-SHAPES"
+    ],
+    "language": "en",
+    "prompt": "The Audi rings overlap each other. How many places do two rings overlap?",
+    "visual": {
+      "kind": "image",
+      "src": "/logos/audi.svg",
+      "alt": "The Audi logo"
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "3",
+        "4",
+        "2",
+        "5"
+      ],
+      "correctIndex": 0
+    },
+    "explanation": "Each ring overlaps the next one along. Ring 1 with 2, ring 2 with 3, ring 3 with 4. That is 3 places.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "car-shape-toyota-ovals",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/cars.ts"
+    },
+    "skills": [
+      "CARS-LOGOS",
+      "MATH-GEO-SHAPES"
+    ],
+    "language": "en",
+    "prompt": "The Toyota logo is made of oval shapes inside each other. How many ovals can you find?",
+    "visual": {
+      "kind": "image",
+      "src": "/logos/toyota.svg",
+      "alt": "The Toyota logo"
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "2",
+        "4",
+        "3",
+        "1"
+      ],
+      "correctIndex": 2
+    },
+    "explanation": "There is one big oval around the outside, and two more ovals crossing inside it. Altogether 3.",
+    "difficulty": {
+      "band": 2,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "car-shape-mercedes-points",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/cars.ts"
+    },
+    "skills": [
+      "CARS-LOGOS",
+      "MATH-GEO-SHAPES"
+    ],
+    "language": "en",
+    "prompt": "How many points does the Mercedes-Benz star have?",
+    "visual": {
+      "kind": "image",
+      "src": "/logos/mercedes-benz.svg",
+      "alt": "The Mercedes-Benz logo"
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "correctIndex": 0
+    },
+    "explanation": "The star reaches out three times, like the letter Y. It has 3 points.",
+    "difficulty": {
+      "band": 1,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "car-shape-subaru-stars",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/cars.ts"
+    },
+    "skills": [
+      "CARS-LOGOS",
+      "MATH-GEO-SHAPES"
+    ],
+    "language": "en",
+    "prompt": "How many stars are in the Subaru logo?",
+    "visual": {
+      "kind": "image",
+      "src": "/logos/subaru.svg",
+      "alt": "The Subaru logo"
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "6",
+        "5",
+        "7",
+        "4"
+      ],
+      "correctIndex": 0
+    },
+    "explanation": "There is one bigger star and five smaller ones. Altogether 6.",
+    "difficulty": {
+      "band": 2,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "car-shape-bmw-quarters",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/cars.ts"
+    },
+    "skills": [
+      "CARS-LOGOS",
+      "MATH-GEO-SHAPES"
+    ],
+    "language": "en",
+    "prompt": "The circle in the middle of the BMW logo is split into equal pieces. How many pieces?",
+    "visual": {
+      "kind": "image",
+      "src": "/logos/bmw.svg",
+      "alt": "The BMW logo"
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "4",
+        "2",
+        "3",
+        "6"
+      ],
+      "correctIndex": 0
+    },
+    "explanation": "Two lines cross in the middle, cutting the circle into 4 equal quarters.",
+    "difficulty": {
+      "band": 2,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "car-shape-citroen-chevrons",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/cars.ts"
+    },
+    "skills": [
+      "CARS-LOGOS",
+      "MATH-GEO-SHAPES"
+    ],
+    "language": "en",
+    "prompt": "How many arrow shapes are in the Citroen logo?",
+    "visual": {
+      "kind": "image",
+      "src": "/logos/citroen.svg",
+      "alt": "The Citroen logo"
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "3",
+        "1",
+        "4",
+        "2"
+      ],
+      "correctIndex": 3
+    },
+    "explanation": "There are two arrow shapes, one stacked above the other.",
+    "difficulty": {
+      "band": 1,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "car-sym-vw",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/cars.ts"
+    },
+    "skills": [
+      "CARS-LOGOS",
+      "MATH-GEO-SYMMETRY"
+    ],
+    "language": "en",
+    "prompt": "If you folded this logo straight down the middle, would the two halves match?",
+    "visual": {
+      "kind": "image",
+      "src": "/logos/volkswagen.svg",
+      "alt": "The Volkswagen logo"
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "No, they would not match",
+        "Yes, they would match"
+      ],
+      "correctIndex": 1
+    },
+    "explanation": "Fold the Volkswagen circle down the middle and both halves match. The V and the W are the same on the left and the right.",
+    "difficulty": {
+      "band": 2,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "car-sym-mercedes",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/cars.ts"
+    },
+    "skills": [
+      "CARS-LOGOS",
+      "MATH-GEO-SYMMETRY"
+    ],
+    "language": "en",
+    "prompt": "If you folded this logo straight down the middle, would the two halves match?",
+    "visual": {
+      "kind": "image",
+      "src": "/logos/mercedes-benz.svg",
+      "alt": "The Mercedes-Benz logo"
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "Yes, they would match",
+        "No, they would not match"
+      ],
+      "correctIndex": 0
+    },
+    "explanation": "Fold the Mercedes-Benz star down the middle and both halves match.",
+    "difficulty": {
+      "band": 2,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "car-sym-ferrari",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/cars.ts"
+    },
+    "skills": [
+      "CARS-LOGOS",
+      "MATH-GEO-SYMMETRY"
+    ],
+    "language": "en",
+    "prompt": "If you folded this logo straight down the middle, would the two halves match?",
+    "visual": {
+      "kind": "image",
+      "src": "/logos/ferrari.svg",
+      "alt": "The Ferrari logo"
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "Yes, they would match",
+        "No, they would not match"
+      ],
+      "correctIndex": 1
+    },
+    "explanation": "The horse faces one way, so folding it down the middle does not match. It has no mirror line.",
+    "difficulty": {
+      "band": 2,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "car-sym-subaru",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/cars.ts"
+    },
+    "skills": [
+      "CARS-LOGOS",
+      "MATH-GEO-SYMMETRY"
+    ],
+    "language": "en",
+    "prompt": "If you folded this logo straight down the middle, would the two halves match?",
+    "visual": {
+      "kind": "image",
+      "src": "/logos/subaru.svg",
+      "alt": "The Subaru logo"
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "No, they would not match",
+        "Yes, they would match"
+      ],
+      "correctIndex": 0
+    },
+    "explanation": "The stars are scattered, not matched left to right, so there is no mirror line.",
+    "difficulty": {
+      "band": 2,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "car-fact-wheels",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/cars.ts"
+    },
+    "skills": [
+      "CARS-FACTS"
+    ],
+    "language": "en",
+    "prompt": "How many wheels does a normal car have?",
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "2",
+        "4",
+        "3",
+        "6"
+      ],
+      "correctIndex": 1
+    },
+    "explanation": "A car has one wheel at each corner, so 4 altogether.",
+    "difficulty": {
+      "band": 1,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "car-fact-electric",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/cars.ts"
+    },
+    "skills": [
+      "CARS-FACTS"
+    ],
+    "language": "en",
+    "prompt": "A Tesla does not need petrol. What does it run on?",
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "Petrol",
+        "Steam",
+        "Electricity from a battery",
+        "Water"
+      ],
+      "correctIndex": 2
+    },
+    "explanation": "Every Tesla is electric. You plug it in to charge the battery instead of filling it with petrol.",
+    "difficulty": {
+      "band": 1,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "car-fact-steer",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/cars.ts"
+    },
+    "skills": [
+      "CARS-FACTS"
+    ],
+    "language": "en",
+    "prompt": "Which part of a car do you turn to make it go left or right?",
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "The engine",
+        "The boot",
+        "The steering wheel",
+        "The mirror"
+      ],
+      "correctIndex": 2
+    },
+    "explanation": "The steering wheel turns the front wheels, and the car follows them.",
+    "difficulty": {
+      "band": 1,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "car-fact-suv",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/cars.ts"
+    },
+    "skills": [
+      "CARS-FACTS"
+    ],
+    "language": "en",
+    "prompt": "Which kind of vehicle is built to drive on rough ground away from roads?",
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "A city hatchback",
+        "An off-roader like a Jeep",
+        "A racing car",
+        "A limousine"
+      ],
+      "correctIndex": 1
+    },
+    "explanation": "Off-roaders sit high up with chunky tyres, so rocks and mud do not stop them. Racing cars sit low and need smooth track.",
+    "difficulty": {
+      "band": 2,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "car-fact-f1",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/cars.ts"
+    },
+    "skills": [
+      "CARS-FACTS"
+    ],
+    "language": "en",
+    "prompt": "In a Formula 1 race, what does the team do in a pit stop?",
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "Change the tyres very fast",
+        "Wash the car",
+        "Fill it with shopping",
+        "Let the driver sleep"
+      ],
+      "correctIndex": 0
+    },
+    "explanation": "A Formula 1 pit crew can change all four tyres in a couple of seconds.",
+    "difficulty": {
+      "band": 2,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "car-fact-truck",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/cars.ts"
+    },
+    "skills": [
+      "CARS-FACTS"
+    ],
+    "language": "en",
+    "prompt": "Why do big trucks have more wheels than cars?",
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "To carry much heavier loads",
+        "To go faster",
+        "To look nice",
+        "To use less fuel"
+      ],
+      "correctIndex": 0
+    },
+    "explanation": "Extra wheels spread the weight out, so a heavy load does not crush the tyres or the road.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "car-chart-most",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/cars.ts"
+    },
+    "skills": [
+      "CARS-NUMBERS",
+      "MATH-MD-BAR-GRAPH"
+    ],
+    "language": "en",
+    "prompt": "Which car maker had the most cars in the car park?",
+    "visual": {
+      "kind": "barChart",
+      "title": "Cars in the car park",
+      "unit": "cars",
+      "bars": [
+        {
+          "label": "Toyota",
+          "value": 8
+        },
+        {
+          "label": "Ford",
+          "value": 5
+        },
+        {
+          "label": "Tesla",
+          "value": 3
+        },
+        {
+          "label": "Kia",
+          "value": 6
+        }
+      ]
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "Toyota",
+        "Kia",
+        "Ford",
+        "Tesla"
+      ],
+      "correctIndex": 0
+    },
+    "explanation": "Toyota's bar is the tallest, at 8 cars. Kia is next with 6.",
+    "difficulty": {
+      "band": 2,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "car-chart-difference",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/cars.ts"
+    },
+    "skills": [
+      "CARS-NUMBERS",
+      "MATH-MD-BAR-GRAPH",
+      "MATH-OA-ADD-SUB"
+    ],
+    "language": "en",
+    "prompt": "How many more Toyotas than Teslas were in the car park?",
+    "visual": {
+      "kind": "barChart",
+      "title": "Cars in the car park",
+      "unit": "cars",
+      "bars": [
+        {
+          "label": "Toyota",
+          "value": 8
+        },
+        {
+          "label": "Ford",
+          "value": 5
+        },
+        {
+          "label": "Tesla",
+          "value": 3
+        },
+        {
+          "label": "Kia",
+          "value": 6
+        }
+      ]
+    },
+    "answer": {
+      "type": "numeric",
+      "value": 5
+    },
+    "explanation": "Toyota has 8 and Tesla has 3. 8 - 3 = 5.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "car-chart-total",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/cars.ts"
+    },
+    "skills": [
+      "CARS-NUMBERS",
+      "MATH-MD-BAR-GRAPH",
+      "MATH-OA-ADD-SUB"
+    ],
+    "language": "en",
+    "prompt": "How many cars were in the car park altogether?",
+    "visual": {
+      "kind": "barChart",
+      "title": "Cars in the car park",
+      "unit": "cars",
+      "bars": [
+        {
+          "label": "Toyota",
+          "value": 8
+        },
+        {
+          "label": "Ford",
+          "value": 5
+        },
+        {
+          "label": "Tesla",
+          "value": 3
+        },
+        {
+          "label": "Kia",
+          "value": 6
+        }
+      ]
+    },
+    "answer": {
+      "type": "numeric",
+      "value": 22
+    },
+    "explanation": "Add the four bars: 8 + 5 + 3 + 6 = 22 cars.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  }
+]

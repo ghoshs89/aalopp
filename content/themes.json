@@ -1,0 +1,14 @@
+[
+  {
+    "id": "cars",
+    "name": "Cars and logos",
+    "emoji": "🏎️",
+    "skills": ["CARS-LOGOS", "CARS-ORIGIN", "CARS-FACTS", "CARS-NUMBERS"]
+  },
+  {
+    "id": "world",
+    "name": "Flags and countries",
+    "emoji": "🌍",
+    "skills": ["WORLD-FLAGS", "WORLD-FLAGS-DETAIL", "WORLD-MAP", "WORLD-CAPITALS", "WORLD-CULTURE", "WORLD-NUMBERS"]
+  }
+]

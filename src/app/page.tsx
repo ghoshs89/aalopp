@@ -11,7 +11,7 @@ export default async function HomePage() {
       <h1 className="font-display text-4xl font-extrabold">Who is playing?</h1>
       <div className="flex flex-wrap justify-center gap-6">
         {students.map((s) => (
-          <Link key={s.id} href={`/play/${s.id}`} className="flex w-44 flex-col items-center gap-2 rounded-3xl bg-bg-mid p-6 shadow-xl active:translate-y-1">
+          <Link key={s.id} href={`/choose/${s.id}`} className="flex w-44 flex-col items-center gap-2 rounded-3xl bg-bg-mid p-6 shadow-xl active:translate-y-1">
             <span className="text-8xl">{s.avatar}</span>
             <span className="font-display text-3xl font-extrabold">{s.name}</span>
           </Link>

@@ -1,4 +1,4 @@
-import type { Question, Skill } from "./schema";
+import type { Question, Skill, Theme, Visual } from "./schema";
 
 export type ContentIssue = { file?: string; path: string; message: string };
 
@@ -31,8 +31,21 @@ export function findCycle(skills: Skill[]): string[] | null {
   return null;
 }
 
-/** Cross-file checks that a per-item schema cannot see: references, uniqueness, cycles, copy-paste duplicates. */
-export function checkContent(skills: Skill[], questions: SourcedQuestion[]): ContentIssue[] {
+/** Every picture a question can point at, including the ones inside a teach card or on the answer choices. */
+function picturesIn(question: Question): Visual[] {
+  const found: Visual[] = [];
+  if (question.visual) found.push(question.visual);
+  if (question.teach?.visual) found.push(question.teach.visual);
+  if (question.answer.type === "choice" && question.answer.choiceVisuals) found.push(...question.answer.choiceVisuals);
+  return found;
+}
+
+/**
+ * Cross-file checks that a per-item schema cannot see: references, uniqueness, cycles, copy-paste duplicates.
+ * `assetPaths` is every picture committed under public/, so a question pointing at a file nobody downloaded fails
+ * here rather than showing Aishik a broken box.
+ */
+export function checkContent(skills: Skill[], questions: SourcedQuestion[], themes: Theme[] = [], assetPaths?: Set<string>): ContentIssue[] {
   const issues: ContentIssue[] = [];
   const codes = new Set<string>();
 
@@ -64,6 +77,30 @@ export function checkContent(skills: Skill[], questions: SourcedQuestion[]): Con
     const twin = fingerprints.get(fingerprint);
     if (twin) issues.push({ file, path: question.id, message: `Same prompt, visual, passage and listening word as ${twin}` });
     fingerprints.set(fingerprint, question.id);
+  }
+
+  const themeIds = new Set<string>();
+  for (const theme of themes) {
+    if (themeIds.has(theme.id)) issues.push({ file: "themes.json", path: theme.id, message: "Duplicate theme id" });
+    themeIds.add(theme.id);
+    for (const skill of theme.skills) {
+      if (!codes.has(skill)) issues.push({ file: "themes.json", path: theme.id, message: `Unknown skill ${skill}` });
+    }
+    const covered = questions.some(({ question }) => question.skills.some((c) => theme.skills.includes(c)));
+    if (!covered) issues.push({ file: "themes.json", path: theme.id, message: "No question uses any of this theme's skills" });
+  }
+
+  if (assetPaths) {
+    for (const { file, question } of questions) {
+      for (const picture of picturesIn(question)) {
+        if (picture.kind !== "image") continue;
+        for (const src of [picture.src, picture.beside?.src].filter((s) => s !== undefined)) {
+          if (!assetPaths.has(src)) {
+            issues.push({ file, path: question.id, message: `Picture ${src} is not committed under public/. Add it to content/assets.json and run npm run assets:fetch` });
+          }
+        }
+      }
+    }
   }
 
   return issues;

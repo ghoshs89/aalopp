@@ -36,11 +36,13 @@ These come from the support plan and the review of the original AALOPP specifica
 | Content batch 2 | Next generated batch, same verification | Done 2026-09-13: 39 questions, 5 grade 3 skills (multiplication, division, fractions, area and perimeter, counting ways) |
 | 5. PDF ingestion tool | Contest PDFs to draft questions | Done 2026-09-13 as a repo command (`npm run content:ingest`), not an in-app upload page; see DEVLOG |
 | Later | Reading, Spanish and French with speech input; fatigue detection | Done 2026-09-13 at the parent's request: reading comprehension, Spanish and French words and phrases with read-aloud and optional spoken answers, and a break suggestion instead of fatigue detection |
+| 6. Engine tuning from real data | Fixes the first 36 real answers exposed: a reserved new-skill slot, a fifth review box, a miss dropping one box, clearer Find the Bug feedback | Done 2026-09-21, not yet deployed. Before the fix, 25 of 48 skills had never been served and the whole LANGUAGE strand was starved |
+| 7. Picked themes | A theme the child chooses from `/choose/[studentId]`, teach cards before knowledge questions, committed flag and logo artwork. Two themes: cars and logos, flags and countries | Built 2026-09-21 at the parent's request. 221 questions across 10 skills, all `"draft"` until the fact-checking pass, so none of it reaches Aishik yet |
 
 Order confirmed by the parent on 2026-09-13: Phase 4 before Phase 3, because the dashboard needs real usage data and the scratchpad is useful immediately.
 
 ## Parent to-dos (no code)
-- Let Aishik use the app for 1 to 2 weeks before Phase 3.
+- Spot-check a sample of the new cars and world-knowledge facts once they have been through the checking pass.
 - Set up the TrueNAS backup (`docs/backup-truenas.md`).
 - Repeat the Wi-Fi drop test on the phone (airplane mode, answer, wait, reconnect).
 - Spot-check the sample questions listed in `docs/HANDOFF.md`.

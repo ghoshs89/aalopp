@@ -1,5 +1,61 @@
 # Content review log
 
+## 2026-09-21: Fact-checking pass, cars and world knowledge (221 questions)
+
+A fact cannot be blind solved, so the rule for the `HUMANITIES` strand is different: every fact is checked against a
+source rather than re-derived. This pass checked the two source tables the 221 questions are generated from, which is
+45 rows rather than 221 questions, since every question is built from those rows.
+
+**Sources**, all retrieved 2026-09-21: Wikidata REST API (`P17` country, `P36` capital, `P30` continent, `P571`
+inception) and the English Wikipedia `extracts` API for prose claims. Flag descriptions were checked against the
+committed SVG files in `public/flags` rather than against a text source, since the file is what the child sees.
+
+### Checked and correct
+
+| What | Rows | Result |
+|---|---|---|
+| Car maker founding country | 30 | 30 of 30 match Wikidata `P17`. This is the fact the questions actually ask. |
+| Country capital | 15 | 15 of 15 match Wikidata `P36`. |
+| Country continent | 15 | 15 of 15 match Wikidata `P30`. |
+| Flag descriptions | 15 | 15 of 15 match the committed file, checked by eye at phone width. |
+| Ownership notes | 6 | Lamborghini and Volkswagen Group, Mini and BMW, Rolls-Royce and BMW, Land Rover and Tata, Jaguar and Tata, Volvo and Geely. All confirmed. |
+| Bar chart arithmetic | 5 | Recomputed by hand. The charts describe a made up car park and class survey, so no real world figure is claimed. |
+| Logo shape and symmetry counts | 11 | Checked against the committed logo files, not from memory: 4 Audi rings, 3 Toyota ovals, 3 Mercedes points, 6 Subaru stars, 4 BMW quarters, 2 Citroen arrows. |
+
+### Corrected before shipping
+
+| Fact | Was | Now | Why |
+|---|---|---|---|
+| Mazda name | "comes from the family name of its founder, Jujiro Matsuda" | "named after Ahura Mazda, an ancient god of wisdom" | Contradicted the company's own stated derivation, which Wikipedia quotes directly. The Matsuda link is a common belief, not the official one. |
+| Hyundai logo | "a slanted H, made to look like two people shaking hands" | "Hyundai owns part of Kia" | The handshake story could not be found in any source checked. Replaced with a fact the article does state. |
+| Rolls-Royce | "some of the quietest, most expensive cars there are" | "the little silver figure on the front is called the Spirit of Ecstasy" | An opinion, not a fact. The mascot is verifiable and better for a child. |
+| Tata | "one of India's biggest companies and builds cars, buses and trucks" | "one of India's biggest companies, and it owns Jaguar and Land Rover in Britain" | Tata Motors demerged its passenger car business in October 2025, so "builds cars" needed care. |
+| Jaguar | "Jaguar's badge is a leaping cat" | "named after the big cat, and a leaping jaguar sits on the front of the car" | True, but the committed logo file is a wordmark, so the card would have contradicted the picture beside it. |
+| Canada | "the second biggest country in the world by land" | "the second biggest country in the world by total area" | Wikipedia: "By land area alone, Canada ranks fourth." Second is by total area including water. |
+| Ferrari (earlier, same session) | teach card said "a black prancing horse" | picture changed to black, card now notes the yellow shield is on the real car | The one-colour mark rendered red, so the words and the picture disagreed. |
+
+### Founding years removed from the shipped text
+
+Wikidata disagreed with 7 of the 30 founding years, and in every case because the two sources date different legal
+entities: Lamborghini 1948 is the tractor company and 1963 the car company, Tata 2024 is the demerger, Rolls-Royce
+1998 is the BMW era, Renault 2002 a restructure, Peugeot 1810 the family firm and 1896 its first car, Mini 1969 the
+marque and 1959 the car, Ferrari 1947 the road car company and 1939 its predecessor. None of these is a useful thing
+to tell a five year old with confidence, so the year no longer appears in any question or explanation. It stays in
+`scripts/generate/cars.ts` as provenance, with a comment saying why it is not shown.
+
+### Not from a source
+
+The six general `CARS-FACTS` questions (a car has four wheels, a Tesla runs on a battery, the steering wheel turns the
+front wheels, off-roaders are built for rough ground, a Formula 1 pit crew changes tyres in seconds, big trucks have
+more wheels to spread a heavier load) are everyday knowledge rather than sourced claims. They are the ones for the
+parent to spot-check first.
+
+### Outcome
+
+All 221 questions moved from `"draft"` to `"reviewed"`. Parent spot-check suggestions: `car-from-ferrari`,
+`car-flag-tata`, `car-shape-audi-rings`, `car-sym-vw`, `car-fact-f1`, `world-flag-detail-in`, `world-capital-ca`,
+`world-continent-au`, `world-culture-ca`.
+
 ## 2026-09-12: Phase 0 import
 
 ### `bebras_100_questions.md` (5 kept of 100)

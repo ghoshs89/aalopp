@@ -14,7 +14,8 @@
     "vercel-build": "prisma generate && prisma migrate deploy && next build",
     "db:seed": "tsx --env-file=.env.local prisma/seed.ts",
     "content:generate": "tsx scripts/generate/index.ts",
-    "content:ingest": "tsx scripts/ingest/index.ts"
+    "content:ingest": "tsx scripts/ingest/index.ts",
+    "assets:fetch": "tsx scripts/fetch-assets.ts"
   },
   "dependencies": {
     "@prisma/adapter-pg": "7.10.0",

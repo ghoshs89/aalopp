@@ -37,5 +37,8 @@ export async function proxy(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ["/((?!_next/static|_next/image|favicon.ico|icons/|apple-icon|dev/).*)"],
+  // `flags/` and `logos/` are the committed pictures in public/. They are left out for two reasons: the /dev preview
+  // routes are signed out and could not show them otherwise, and an auth check per picture means a Supabase round
+  // trip for every flag and logo on screen. Nothing about the learner is in them, so there is nothing to protect.
+  matcher: ["/((?!_next/static|_next/image|favicon.ico|icons/|apple-icon|dev/|flags/|logos/).*)"],
 };

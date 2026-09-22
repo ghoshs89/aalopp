@@ -58,6 +58,19 @@ const SvgVisual = z.object({
   alt: z.string().min(1),
 });
 
+/**
+ * A picture file committed under `public/`. Flags and maker logos are downloaded once and served from the repo, never
+ * hotlinked: an outside URL would break offline play, break when the far side moves it, and send requests from the
+ * family's devices. The path shape is enforced here so a question can only ever point at a committed asset.
+ */
+const ImageVisual = z.object({
+  kind: z.literal("image"),
+  src: z.string().regex(/^\/(flags|logos)\/[a-z0-9-]+\.(svg|png|webp)$/, "Pictures live in public/flags or public/logos"),
+  alt: z.string().min(1),
+  /** Side by side with a second picture, for example a logo next to its country's flag. */
+  beside: z.object({ src: z.string().min(1), alt: z.string().min(1) }).optional(),
+});
+
 export const COIN_VALUES_CENTS = {
   USD: { penny: 1, nickel: 5, dime: 10, quarter: 25 },
   CAD: { nickel: 5, dime: 10, quarter: 25, loonie: 100, toonie: 200 },
@@ -125,6 +138,7 @@ export const VisualSchema = z.discriminatedUnion("kind", [
   ClockVisual,
   BarChartVisual,
   SvgVisual,
+  ImageVisual,
   CoinsVisual,
   RulerVisual,
   PictureGraphVisual,
@@ -136,6 +150,8 @@ const ChoiceAnswer = z.object({
   type: z.literal("choice"),
   choices: z.array(z.string().min(1)).min(2).max(5),
   correctIndex: z.int().min(0),
+  /** One picture per choice, in the same order, for questions that ask him to pick a flag or a logo. */
+  choiceVisuals: z.array(VisualSchema).min(2).max(5).optional(),
 });
 
 const NumericAnswer = z.object({
@@ -163,6 +179,17 @@ export const DifficultySchema = z.object({
   points: z.union([z.literal(3), z.literal(4), z.literal(5)]).optional(),
 });
 
+/**
+ * Shown before the question the first time he meets it: what a flag looks like, who makes a car, where they are from.
+ * Knowledge questions are not solvable by reasoning, so he is told the fact before he is asked it. Once he has
+ * answered the question once, the card is skipped and the question behaves like any other.
+ */
+export const TeachSchema = z.object({
+  title: z.string().min(1),
+  lines: z.array(z.string().min(1)).min(1).max(4),
+  visual: VisualSchema.optional(),
+});
+
 export const QuestionSchema = z
   .object({
     id: z.string().regex(/^[a-z0-9]+(-[a-z0-9]+)*$/, "Question ids are kebab-case"),
@@ -178,6 +205,8 @@ export const QuestionSchema = z
     visual: VisualSchema.optional(),
     /** A short text the child reads before answering. Shown on screen, never read aloud automatically. */
     passage: z.string().min(1).optional(),
+    /** A card shown before the question the first time he sees it. See TeachSchema. */
+    teach: TeachSchema.optional(),
     /** A word or phrase to hear in another language, played with that language's voice. */
     listen: z.object({ text: z.string().min(1), lang: z.enum(["en-US", "es-ES", "fr-FR"]) }).optional(),
     /** Offer a microphone so the child can say a choice instead of tapping it (choice answers only). */
@@ -199,6 +228,13 @@ export const QuestionSchema = z
       }
       if (new Set(choices).size !== choices.length) {
         ctx.addIssue({ code: "custom", path: ["answer", "choices"], message: "Choices must be unique" });
+      }
+      if (q.answer.choiceVisuals && q.answer.choiceVisuals.length !== choices.length) {
+        ctx.addIssue({
+          code: "custom",
+          path: ["answer", "choiceVisuals"],
+          message: `${q.answer.choiceVisuals.length} pictures for ${choices.length} choices: there must be one each, in the same order`,
+        });
       }
     }
     if (q.answer.type === "findTheBug") {
@@ -230,13 +266,24 @@ export const QuestionSchema = z
     }
   });
 
+/** A theme he can choose from the play screen. Themes group skills and can span strands, so adding one is content only. */
+export const ThemeSchema = z.object({
+  id: z.string().regex(/^[a-z0-9]+(-[a-z0-9]+)*$/, "Theme ids are kebab-case"),
+  name: z.string().min(1),
+  emoji: z.string().min(1),
+  skills: z.array(skillCode).min(1),
+});
+
 export const SkillFileSchema = z.array(SkillSchema);
 export const QuestionFileSchema = z.array(QuestionSchema);
+export const ThemeFileSchema = z.array(ThemeSchema);
 
 export type Skill = z.infer<typeof SkillSchema>;
 export type Visual = z.infer<typeof VisualSchema>;
 export type Answer = z.infer<typeof AnswerSchema>;
 export type Question = z.infer<typeof QuestionSchema>;
+export type Teach = z.infer<typeof TeachSchema>;
+export type Theme = z.infer<typeof ThemeSchema>;
 
 function* walkStrings(value: unknown, path: (string | number)[] = []): Generator<{ path: (string | number)[]; value: string }> {
   if (typeof value === "string") {

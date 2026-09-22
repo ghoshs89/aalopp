@@ -1,0 +1,322 @@
+{
+  "note": "Every picture the app shows is downloaded once and committed under public/. Nothing is hotlinked at runtime: an outside URL would break offline play, break when the far side moves the file, and send requests from the family's devices. Run `npm run assets:fetch` to restore anything missing.",
+  "flags": [
+    {
+      "file": "ca.svg",
+      "name": "Canada",
+      "sourceUrl": "https://flagcdn.com/ca.svg",
+      "retrieved": "2026-09-21",
+      "licence": "National flag, public domain."
+    },
+    {
+      "file": "in.svg",
+      "name": "India",
+      "sourceUrl": "https://flagcdn.com/in.svg",
+      "retrieved": "2026-09-21",
+      "licence": "National flag, public domain."
+    },
+    {
+      "file": "us.svg",
+      "name": "United States",
+      "sourceUrl": "https://flagcdn.com/us.svg",
+      "retrieved": "2026-09-21",
+      "licence": "National flag, public domain."
+    },
+    {
+      "file": "gb.svg",
+      "name": "United Kingdom",
+      "sourceUrl": "https://flagcdn.com/gb.svg",
+      "retrieved": "2026-09-21",
+      "licence": "National flag, public domain."
+    },
+    {
+      "file": "fr.svg",
+      "name": "France",
+      "sourceUrl": "https://flagcdn.com/fr.svg",
+      "retrieved": "2026-09-21",
+      "licence": "National flag, public domain."
+    },
+    {
+      "file": "de.svg",
+      "name": "Germany",
+      "sourceUrl": "https://flagcdn.com/de.svg",
+      "retrieved": "2026-09-21",
+      "licence": "National flag, public domain."
+    },
+    {
+      "file": "it.svg",
+      "name": "Italy",
+      "sourceUrl": "https://flagcdn.com/it.svg",
+      "retrieved": "2026-09-21",
+      "licence": "National flag, public domain."
+    },
+    {
+      "file": "jp.svg",
+      "name": "Japan",
+      "sourceUrl": "https://flagcdn.com/jp.svg",
+      "retrieved": "2026-09-21",
+      "licence": "National flag, public domain."
+    },
+    {
+      "file": "cn.svg",
+      "name": "China",
+      "sourceUrl": "https://flagcdn.com/cn.svg",
+      "retrieved": "2026-09-21",
+      "licence": "National flag, public domain."
+    },
+    {
+      "file": "kr.svg",
+      "name": "South Korea",
+      "sourceUrl": "https://flagcdn.com/kr.svg",
+      "retrieved": "2026-09-21",
+      "licence": "National flag, public domain."
+    },
+    {
+      "file": "br.svg",
+      "name": "Brazil",
+      "sourceUrl": "https://flagcdn.com/br.svg",
+      "retrieved": "2026-09-21",
+      "licence": "National flag, public domain."
+    },
+    {
+      "file": "mx.svg",
+      "name": "Mexico",
+      "sourceUrl": "https://flagcdn.com/mx.svg",
+      "retrieved": "2026-09-21",
+      "licence": "National flag, public domain."
+    },
+    {
+      "file": "au.svg",
+      "name": "Australia",
+      "sourceUrl": "https://flagcdn.com/au.svg",
+      "retrieved": "2026-09-21",
+      "licence": "National flag, public domain."
+    },
+    {
+      "file": "es.svg",
+      "name": "Spain",
+      "sourceUrl": "https://flagcdn.com/es.svg",
+      "retrieved": "2026-09-21",
+      "licence": "National flag, public domain."
+    },
+    {
+      "file": "se.svg",
+      "name": "Sweden",
+      "sourceUrl": "https://flagcdn.com/se.svg",
+      "retrieved": "2026-09-21",
+      "licence": "National flag, public domain."
+    }
+  ],
+  "logos": [
+    {
+      "file": "toyota.svg",
+      "name": "Toyota",
+      "sourceUrl": "https://cdn.simpleicons.org/toyota/EB0A1E",
+      "retrieved": "2026-09-21",
+      "licence": "Brand trademark, one-colour mark from Simple Icons. Downloaded for private family learning, not a commercial product."
+    },
+    {
+      "file": "honda.svg",
+      "name": "Honda",
+      "sourceUrl": "https://cdn.simpleicons.org/honda/E40521",
+      "retrieved": "2026-09-21",
+      "licence": "Brand trademark, one-colour mark from Simple Icons. Downloaded for private family learning, not a commercial product."
+    },
+    {
+      "file": "nissan.svg",
+      "name": "Nissan",
+      "sourceUrl": "https://cdn.simpleicons.org/nissan/C3002F",
+      "retrieved": "2026-09-21",
+      "licence": "Brand trademark, one-colour mark from Simple Icons. Downloaded for private family learning, not a commercial product."
+    },
+    {
+      "file": "mazda.svg",
+      "name": "Mazda",
+      "sourceUrl": "https://cdn.simpleicons.org/mazda/101010",
+      "retrieved": "2026-09-21",
+      "licence": "Brand trademark, one-colour mark from Simple Icons. Downloaded for private family learning, not a commercial product."
+    },
+    {
+      "file": "subaru.svg",
+      "name": "Subaru",
+      "sourceUrl": "https://cdn.simpleicons.org/subaru/013C74",
+      "retrieved": "2026-09-21",
+      "licence": "Brand trademark, one-colour mark from Simple Icons. Downloaded for private family learning, not a commercial product."
+    },
+    {
+      "file": "suzuki.svg",
+      "name": "Suzuki",
+      "sourceUrl": "https://cdn.simpleicons.org/suzuki/E30613",
+      "retrieved": "2026-09-21",
+      "licence": "Brand trademark, one-colour mark from Simple Icons. Downloaded for private family learning, not a commercial product."
+    },
+    {
+      "file": "bmw.svg",
+      "name": "BMW",
+      "sourceUrl": "https://cdn.simpleicons.org/bmw/0066B1",
+      "retrieved": "2026-09-21",
+      "licence": "Brand trademark, one-colour mark from Simple Icons. Downloaded for private family learning, not a commercial product."
+    },
+    {
+      "file": "audi.svg",
+      "name": "Audi",
+      "sourceUrl": "https://cdn.simpleicons.org/audi/BB0A30",
+      "retrieved": "2026-09-21",
+      "licence": "Brand trademark, one-colour mark from Simple Icons. Downloaded for private family learning, not a commercial product."
+    },
+    {
+      "file": "volkswagen.svg",
+      "name": "Volkswagen",
+      "sourceUrl": "https://cdn.simpleicons.org/volkswagen/151F5D",
+      "retrieved": "2026-09-21",
+      "licence": "Brand trademark, one-colour mark from Simple Icons. Downloaded for private family learning, not a commercial product."
+    },
+    {
+      "file": "porsche.svg",
+      "name": "Porsche",
+      "sourceUrl": "https://cdn.simpleicons.org/porsche/B12B28",
+      "retrieved": "2026-09-21",
+      "licence": "Brand trademark, one-colour mark from Simple Icons. Downloaded for private family learning, not a commercial product."
+    },
+    {
+      "file": "ferrari.svg",
+      "name": "Ferrari",
+      "sourceUrl": "https://cdn.simpleicons.org/ferrari/1B1B1B",
+      "retrieved": "2026-09-21",
+      "licence": "Brand trademark, one-colour mark from Simple Icons. Downloaded for private family learning, not a commercial product."
+    },
+    {
+      "file": "lamborghini.svg",
+      "name": "Lamborghini",
+      "sourceUrl": "https://cdn.simpleicons.org/lamborghini/8A6D1B",
+      "retrieved": "2026-09-21",
+      "licence": "Brand trademark, one-colour mark from Simple Icons. Downloaded for private family learning, not a commercial product."
+    },
+    {
+      "file": "fiat.svg",
+      "name": "Fiat",
+      "sourceUrl": "https://cdn.simpleicons.org/fiat/941711",
+      "retrieved": "2026-09-21",
+      "licence": "Brand trademark, one-colour mark from Simple Icons. Downloaded for private family learning, not a commercial product."
+    },
+    {
+      "file": "ford.svg",
+      "name": "Ford",
+      "sourceUrl": "https://cdn.simpleicons.org/ford/003478",
+      "retrieved": "2026-09-21",
+      "licence": "Brand trademark, one-colour mark from Simple Icons. Downloaded for private family learning, not a commercial product."
+    },
+    {
+      "file": "chevrolet.svg",
+      "name": "Chevrolet",
+      "sourceUrl": "https://cdn.simpleicons.org/chevrolet/8C6A21",
+      "retrieved": "2026-09-21",
+      "licence": "Brand trademark, one-colour mark from Simple Icons. Downloaded for private family learning, not a commercial product."
+    },
+    {
+      "file": "tesla.svg",
+      "name": "Tesla",
+      "sourceUrl": "https://cdn.simpleicons.org/tesla/CC0000",
+      "retrieved": "2026-09-21",
+      "licence": "Brand trademark, one-colour mark from Simple Icons. Downloaded for private family learning, not a commercial product."
+    },
+    {
+      "file": "jeep.svg",
+      "name": "Jeep",
+      "sourceUrl": "https://cdn.simpleicons.org/jeep/1B1B1B",
+      "retrieved": "2026-09-21",
+      "licence": "Brand trademark, one-colour mark from Simple Icons. Downloaded for private family learning, not a commercial product."
+    },
+    {
+      "file": "tata.svg",
+      "name": "Tata",
+      "sourceUrl": "https://cdn.simpleicons.org/tata/486AAE",
+      "retrieved": "2026-09-21",
+      "licence": "Brand trademark, one-colour mark from Simple Icons. Downloaded for private family learning, not a commercial product."
+    },
+    {
+      "file": "mahindra.svg",
+      "name": "Mahindra",
+      "sourceUrl": "https://cdn.simpleicons.org/mahindra/DC000D",
+      "retrieved": "2026-09-21",
+      "licence": "Brand trademark, one-colour mark from Simple Icons. Downloaded for private family learning, not a commercial product."
+    },
+    {
+      "file": "hyundai.svg",
+      "name": "Hyundai",
+      "sourceUrl": "https://cdn.simpleicons.org/hyundai/002C5F",
+      "retrieved": "2026-09-21",
+      "licence": "Brand trademark, one-colour mark from Simple Icons. Downloaded for private family learning, not a commercial product."
+    },
+    {
+      "file": "kia.svg",
+      "name": "Kia",
+      "sourceUrl": "https://cdn.simpleicons.org/kia/05141F",
+      "retrieved": "2026-09-21",
+      "licence": "Brand trademark, one-colour mark from Simple Icons. Downloaded for private family learning, not a commercial product."
+    },
+    {
+      "file": "mini.svg",
+      "name": "Mini",
+      "sourceUrl": "https://cdn.simpleicons.org/mini/1B1B1B",
+      "retrieved": "2026-09-21",
+      "licence": "Brand trademark, one-colour mark from Simple Icons. Downloaded for private family learning, not a commercial product."
+    },
+    {
+      "file": "rolls-royce.svg",
+      "name": "Rolls-Royce",
+      "sourceUrl": "https://cdn.simpleicons.org/rollsroyce/680021",
+      "retrieved": "2026-09-21",
+      "licence": "Brand trademark, one-colour mark from Simple Icons. Downloaded for private family learning, not a commercial product."
+    },
+    {
+      "file": "volvo.svg",
+      "name": "Volvo",
+      "sourceUrl": "https://cdn.simpleicons.org/volvo/003057",
+      "retrieved": "2026-09-21",
+      "licence": "Brand trademark, one-colour mark from Simple Icons. Downloaded for private family learning, not a commercial product."
+    },
+    {
+      "file": "renault.svg",
+      "name": "Renault",
+      "sourceUrl": "https://cdn.simpleicons.org/renault/1B1B1B",
+      "retrieved": "2026-09-21",
+      "licence": "Brand trademark, one-colour mark from Simple Icons. Downloaded for private family learning, not a commercial product."
+    },
+    {
+      "file": "peugeot.svg",
+      "name": "Peugeot",
+      "sourceUrl": "https://cdn.simpleicons.org/peugeot/1B1B1B",
+      "retrieved": "2026-09-21",
+      "licence": "Brand trademark, one-colour mark from Simple Icons. Downloaded for private family learning, not a commercial product."
+    },
+    {
+      "file": "citroen.svg",
+      "name": "Citroen",
+      "sourceUrl": "https://cdn.simpleicons.org/citroen/DA291C",
+      "retrieved": "2026-09-21",
+      "licence": "Brand trademark, one-colour mark from Simple Icons. Downloaded for private family learning, not a commercial product."
+    },
+    {
+      "file": "mercedes-benz.svg",
+      "name": "Mercedes-Benz",
+      "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/9/9e/Mercedes-Benz_%282025%29.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "retrieved": "2026-09-21",
+      "licence": "Brand trademark, from Wikimedia Commons (Mercedes-Benz (2025).svg). Downloaded for private family learning, not a commercial product."
+    },
+    {
+      "file": "land-rover.svg",
+      "name": "Land Rover",
+      "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c2/Land_Rover_2023.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "retrieved": "2026-09-21",
+      "licence": "Brand trademark, from Wikimedia Commons (Land Rover 2023.svg). Downloaded for private family learning, not a commercial product."
+    },
+    {
+      "file": "jaguar.svg",
+      "name": "Jaguar",
+      "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/b/b6/Jaguar_1966_logo.svg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "retrieved": "2026-09-21",
+      "licence": "Brand trademark, from Wikimedia Commons (Jaguar 1966 logo.svg). Downloaded for private family learning, not a commercial product."
+    }
+  ]
+}

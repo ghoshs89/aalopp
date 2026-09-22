@@ -1,13 +1,13 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import type { Question } from "@/content/schema";
 import { shouldSuggestBreak } from "@/lib/engine/breaks";
 import { localDateOf } from "@/lib/engine/dates";
 import { isCorrect, type Response } from "@/lib/engine/grade";
 import { enqueue, pendingCount, startBackgroundSync } from "@/lib/outbox";
-import { questionSpeechParts, speakable } from "@/lib/speech";
+import { questionSpeechParts, speakable, teachSpeechParts } from "@/lib/speech";
 import { useSpeech } from "@/lib/use-speech";
 import { useSpeechInput } from "@/lib/use-speech-input";
 import { useVoicePreference } from "@/lib/voice-preference";
@@ -16,7 +16,7 @@ import { Scratchpad } from "./Scratchpad";
 import { Visual } from "./visuals/Visual";
 
 type Confidence = "LOW" | "MEDIUM" | "HIGH";
-type Phase = "ready" | "answering" | "feedback" | "done";
+type Phase = "ready" | "learning" | "answering" | "feedback" | "done";
 
 // Sessions end quietly after this long, even mid-list. Nothing on screen counts down.
 const SESSION_LIMIT_MS = 12 * 60 * 1000;
@@ -35,11 +35,14 @@ type Props = {
   questions: Question[];
   /** Why each question was chosen, keyed by question id. Saved with the answer for the grown-ups page. */
   reasons?: Record<string, string>;
+  /** Question ids he has answered before. A teach card is only shown the first time he meets a question. */
+  seen?: string[];
   /** When false (dev preview) nothing is saved. */
   save?: boolean;
 };
 
-export function Player({ student, questions, reasons = {}, save = true }: Props) {
+export function Player({ student, questions, reasons = {}, seen = [], save = true }: Props) {
+  const seenIds = useMemo(() => new Set(seen), [seen]);
   const { speak, stop, supported: canSpeak } = useSpeech();
   const [voiceOn, setVoiceOn] = useVoicePreference();
   // Automatic reading follows the on/off switch. Buttons the child taps on purpose (🔊, Hear it) always speak.
@@ -50,6 +53,7 @@ export function Player({ student, questions, reasons = {}, save = true }: Props)
     const next = !voiceOn;
     setVoiceOn(next);
     if (!next) stop();
+    else if (phase === "learning" && question?.teach) speak(teachSpeechParts(question));
     else if (phase === "answering" && question) speak(questionSpeechParts(question));
   };
   const speechInput = useSpeechInput();
@@ -117,9 +121,22 @@ export function Player({ student, questions, reasons = {}, save = true }: Props)
     setHeard(null);
     setOfferBreak(false);
     speechInput.cancel();
+    const next = questions[i];
+    const teaching = next.teach !== undefined && !seenIds.has(next.id);
+    setPhase(teaching ? "learning" : "answering");
+    // The clock starts when the question appears, never when the card does, or a taught question would look like it
+    // took him a minute to think about. `beginQuestion` restarts it when he taps "Got it".
+    timing.current = { shownAt: clock(), firstActionMs: null, listens: 0 };
+    if (teaching) autoSpeak(teachSpeechParts(next));
+    else autoSpeak(questionSpeechParts(next));
+  };
+
+  /** Leaving the teach card: the question is now on screen, so the timer starts here. */
+  const beginQuestion = () => {
+    stop();
     setPhase("answering");
     timing.current = { shownAt: clock(), firstActionMs: null, listens: 0 };
-    autoSpeak(questionSpeechParts(questions[i]));
+    autoSpeak(questionSpeechParts(questions[index]));
   };
 
   const start = () => {
@@ -227,6 +244,43 @@ export function Player({ student, questions, reasons = {}, save = true }: Props)
     );
   }
 
+  // A fact he has not met yet is shown before he is asked about it. Knowledge questions cannot be reasoned out, so
+  // being asked first would just be a guess. Once he has answered the question once, this is skipped for good.
+  if (phase === "learning" && questions[index]?.teach) {
+    const teach = questions[index].teach;
+    return (
+      <Shell
+        onLeave={markSessionEnd}
+        voice={canSpeak ? { on: voiceOn, toggle: toggleVoice } : undefined}
+        pending={pending}
+        progress={{ current: index + 1, total: questions.length }}
+      >
+        <article className="rounded-3xl bg-cream p-5 text-ink shadow-xl sm:p-7">
+          <p className="font-display text-sm font-extrabold tracking-widest text-ink/50 uppercase">Something new</p>
+          <h1 className="font-display mt-1 text-4xl font-extrabold">{teach.title}</h1>
+          {teach.visual && (
+            <div className="mt-4">
+              <Visual visual={teach.visual} />
+            </div>
+          )}
+          <ul className="mt-4 grid gap-3">
+            {teach.lines.map((line, i) => (
+              <li key={i} className="flex gap-3 text-xl leading-relaxed">
+                <span aria-hidden className="text-moss">
+                  •
+                </span>
+                <span>{line}</span>
+              </li>
+            ))}
+          </ul>
+        </article>
+        <button onClick={beginQuestion} className="big-button mt-5 w-full bg-gold text-ink">
+          Got it 👍
+        </button>
+      </Shell>
+    );
+  }
+
   if (phase === "done") {
     const tried = index + 1;
     return (
@@ -245,6 +299,9 @@ export function Player({ student, questions, reasons = {}, save = true }: Props)
   }
 
   const answer = question.answer;
+  // Tapping a step after the bug means he spotted a wrong step, just not the first one. That is a different mistake
+  // from picking a step that was true, and saying so is what the question is actually teaching.
+  const tappedLaterStep = answer.type === "findTheBug" && choice !== null && choice > answer.bugIndex;
   const correctLabel =
     answer.type === "choice"
       ? answer.choices[answer.correctIndex]
@@ -392,7 +449,14 @@ export function Player({ student, questions, reasons = {}, save = true }: Props)
                 className={`flex min-h-16 items-center gap-3 rounded-2xl border-4 px-4 py-3 text-left text-xl font-bold active:translate-y-0.5 ${tone}`}
               >
                 <span className="grid size-9 shrink-0 place-items-center rounded-full bg-cream text-lg font-extrabold text-ink">{"ABCDE"[i]}</span>
-                <span>{label}</span>
+                {answer.choiceVisuals ? (
+                  <span className="flex min-w-0 flex-1 flex-col items-center gap-1">
+                    <Visual visual={answer.choiceVisuals[i]} />
+                    <span className="truncate text-base">{label}</span>
+                  </span>
+                ) : (
+                  <span>{label}</span>
+                )}
               </button>
             );
           })}
@@ -433,6 +497,7 @@ export function Player({ student, questions, reasons = {}, save = true }: Props)
                 {result.confidence === "HIGH" ? "You felt really sure. Let's look at it together. 🔍" : "Let's check it together. 🔍"}
               </p>
               <p className="mt-2 text-xl">
+                {tappedLaterStep && "So close. Something went wrong before that step. "}
                 {answer.type === "findTheBug" ? "The first mistake is in " : "The answer is "}
                 <strong className="text-moss-light">{correctLabel}</strong>.
               </p>

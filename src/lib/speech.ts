@@ -29,3 +29,9 @@ export function questionSpeech(question: Question): string {
   if (choices.some((c) => c === "")) return prompt;
   return `${prompt} ${choices.map((c, i) => `${"ABCDE"[i]}: ${c}.`).join(" ")}`;
 }
+
+/** Read-aloud for a teach card: its title, then each line. The card teaches a fact, so it is read like a prompt. */
+export function teachSpeechParts(question: Question): { text: string; lang?: string }[] {
+  if (!question.teach) return [];
+  return [{ text: speakable([question.teach.title, ...question.teach.lines].join(". ")) }];
+}
