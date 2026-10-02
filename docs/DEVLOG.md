@@ -16,6 +16,12 @@ Attribution convention used below: "Parent decision" means the parent chose it; 
 
 ---
 
+## 2026-10-01  Milestone  First-themed-week tuning deployed
+What: Commit 067f23b pushed to `main` at the parent's request.
+Verified by: `npm run build` succeeded before pushing. GitHub commit status from Vercel for 067f23b reported
+"Deployment has completed". On production afterwards: `/login` 200, `/` and `/choose/abc` 307 to login when signed
+out, `/dev/player` 404, `/logos/mini.svg` 200. Not yet seen in a real signed-in session.
+
 ## 2026-10-01  Decision  Tuning from the first themed week (parent decisions on three changes)
 What: Four changes from the 158 real attempts up to 2026-09-25.
 1. Parent decision: a picked theme now carries 3 questions from his ordinary plan (`THEMED_CORE_ITEMS`), retries and
