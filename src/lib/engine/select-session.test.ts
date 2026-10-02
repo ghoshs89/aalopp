@@ -1,8 +1,8 @@
 import { describe, expect, it } from "vitest";
-import { questions, questionsById, skills } from "@/content/bank";
+import { questions, questionsById, skills, themes } from "@/content/bank";
 import type { AttemptRecord } from "./skill-state";
 import { computeSkillStates } from "./skill-state";
-import { computeWorkingBands, selectSession, SESSION_SIZE } from "./select-session";
+import { computeWorkingBands, selectSession, SESSION_SIZE, THEMED_CORE_ITEMS } from "./select-session";
 
 const reviewed = questions.filter((q) => q.reviewStatus === "reviewed");
 const skillByCode = new Map(skills.map((s) => [s.code, s]));
@@ -113,6 +113,43 @@ describe("selectSession", () => {
     const a = selectSession(reviewed, skills, [], "2026-09-13", seeded(11));
     const b = selectSession(reviewed, skills, [], "2026-09-13", seeded(11));
     expect(a).toEqual(b);
+  });
+});
+
+describe("selectSession with a picked theme", () => {
+  const themeSkills = new Set(themes.flatMap((t) => t.skills));
+  const inSkills = (id: string, set: Set<string>) => questionsById.get(id)!.skills.some((c) => set.has(c));
+
+  for (const theme of themes) {
+    it(`fills a ${theme.id} session with the theme plus ${THEMED_CORE_ITEMS} questions from outside every theme`, () => {
+      const onlySkills = new Set(theme.skills);
+      for (let seed = 1; seed <= 25; seed++) {
+        const plan = selectSession(reviewed, skills, [], "2026-09-13", seeded(seed), SESSION_SIZE, { themeSkills, onlySkills });
+        const ids = plan.picks.map((p) => p.questionId);
+        expect(ids).toHaveLength(SESSION_SIZE);
+        const core = ids.filter((id) => !inSkills(id, themeSkills));
+        expect(core, `seed ${seed}`).toHaveLength(THEMED_CORE_ITEMS);
+        expect(core.some(isConvention), `seed ${seed}: an everyday skill among the core picks`).toBe(true);
+        expect(ids.filter((id) => !core.includes(id)).every((id) => inSkills(id, onlySkills)), `seed ${seed}: nothing from another theme`).toBe(true);
+      }
+    });
+  }
+
+  it("puts a question missed on an earlier day among the core picks", () => {
+    const target = reviewed.find((q) => !isConvention(q.id) && !inSkills(q.id, themeSkills) && q.difficulty.band === 2)!.id;
+    const onlySkills = new Set(themes[0].skills);
+    const plan = selectSession(reviewed, skills, [attempt(target, false, "2026-09-12")], "2026-09-13", seeded(6), SESSION_SIZE, { themeSkills, onlySkills });
+    expect(plan.picks.find((p) => p.questionId === target)?.reason).toMatch(/^Try again/);
+  });
+
+  it("asks at most one question per brand or country", () => {
+    for (const theme of themes) {
+      for (let seed = 1; seed <= 25; seed++) {
+        const plan = selectSession(reviewed, skills, [], "2026-09-13", seeded(seed), SESSION_SIZE, { themeSkills, onlySkills: new Set(theme.skills) });
+        const topics = plan.picks.map((p) => questionsById.get(p.questionId)!.topic).filter(Boolean);
+        expect(new Set(topics).size, `${theme.id} seed ${seed}: ${topics.join(", ")}`).toBe(topics.length);
+      }
+    }
   });
 });
 

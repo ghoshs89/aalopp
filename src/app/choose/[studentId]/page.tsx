@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { questions, skills, themes } from "@/content/bank";
 import { requireFamilyUser } from "@/lib/auth";
 import { db } from "@/lib/db";
+import { THEMED_CORE_ITEMS } from "@/lib/engine/select-session";
 
 /** A theme is only offered once it actually has questions the player will serve. Drafts do not count. */
 function playableThemes() {
@@ -44,6 +45,7 @@ export default async function ChoosePage({ params }: PageProps<"/choose/[student
               <span className="flex flex-col">
                 <span className="font-display text-2xl font-extrabold">{theme.name}</span>
                 <span className="text-base text-cream-dim">{theme.skills.map((c) => nameOf.get(c)).filter(Boolean).join(", ")}</span>
+                <span className="text-base text-cream-dim">Plus {THEMED_CORE_ITEMS} of today&apos;s puzzles</span>
               </span>
             </Link>
           ))}

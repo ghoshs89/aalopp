@@ -26,7 +26,7 @@ Read `docs/HANDOFF.md` first for the live state of the work, then `docs/ROADMAP.
 - Log fixes and exclusions of source material in `content/REVIEW.md`.
 - Knowledge content (the `HUMANITIES` strand: cars and world knowledge) cannot be blind solved, because a fact has no working to check. The rule instead: every fact needs an independent pass against a source, with the source and date recorded in `content/REVIEW.md`, and figures carry the year they are from. Until that pass is done the questions stay `"draft"` and the player never serves them. A wrong puzzle answer is a bad question; a wrong fact is something Aishik learns and repeats.
 - A teach card (`teach` on a question) is shown before the question the first time he meets it, so a fact is taught before it is asked. Never let a card claim something the picture beside it contradicts: the logos are one-colour marks, so do not describe a logo's colours.
-- Country of origin means where a brand was FOUNDED, never who owns it now. Jaguar and Land Rover are British and owned by Tata of India; Volvo is Swedish and owned by Geely of China. Founding country and owner are separate fields in `scripts/generate/cars.ts` so a question cannot be built from the wrong one, and ownership only ever appears on a teach card.
+- Country of origin means where a brand was FOUNDED, never who owns it now. Jaguar and Land Rover are British and owned by Tata of India; Volvo is Swedish and owned by Geely of China. Founding country and owner are separate fields in `scripts/generate/cars.ts` so a question cannot be built from the wrong one. Ownership is shown nowhere for now: on a teach card it misled him (he answered "Germany" for Mini after reading "owned by BMW of Germany"), so `card()` leaves `ownerNote` off.
 
 ## Pictures
 - Flags and car logos are real files committed under `public/flags` and `public/logos`, listed with their source and date in `content/assets.json`, and fetched by `npm run assets:fetch`. Never hotlink: an outside URL breaks offline play, breaks when the far side moves the file, and sends requests from the family's devices. `npm run content:check` fails if a question points at a file nobody downloaded.
@@ -36,14 +36,14 @@ Read `docs/HANDOFF.md` first for the live state of the work, then `docs/ROADMAP.
 
 ## Themes
 - `content/themes.json` groups skills into themes the child picks from `/choose/[studentId]`. A theme can span strands, so adding one is a content change with no code change. A theme is only offered once it has questions that are `"reviewed"`.
-- Picking a theme fills the whole session (`onlySkills`, and the everyday-skills quota is skipped). An ordinary session keeps one slot for a themed question (`MIN_THEME_ITEMS`) so cars and countries turn up anyway.
+- Picking a theme fills the session apart from 3 questions from his ordinary plan (`THEMED_CORE_ITEMS`: retries and reviews first, at least one everyday skill, no new skill); the everyday-skills quota is otherwise skipped. A session asks at most one question per `topic` (a brand or a country), so a teach card and the first question cannot hand him the answer to the next. An ordinary session keeps one slot for a themed question (`MIN_THEME_ITEMS`) so cars and countries turn up anyway.
 
 ## Product rules
 - Process over speed. Never reward fast answers in ratings or UI; no visible timers for the child.
 - Soft gates only: mix in applied-convention items (time, money, measurement, graphs), never lock him out of reasoning content.
 - Every prompt must be readable aloud (TTS). Use the `speech` field when emoji or symbols would read badly. Automatic reading is off by default and follows the on-screen switch (`useVoicePreference`); the 🔊 and Hear it buttons speak on tap regardless.
 - Scratchpad drawings are never stored or uploaded; only the mode (none, digital, paper) and stroke count are saved.
-- Find the Bug questions ask for the first wrong step; every step before `bugIndex` must be fully true, or the blind solve will flag a second candidate.
+- Find the Bug questions ask for the first wrong step; every step before `bugIndex` must be fully true, or the blind solve will flag a second candidate. Tapping a step after the bug gets one "look earlier" nudge; only the first tap is graded (`index`), the second is saved as `secondIndex`.
 - Reading passages are never read aloud; Spanish and French are spoken with a voice for that language. Spoken answers are optional: a match selects a choice, the child still confirms, and tapping always works.
 - Breaks are offered, never forced: after 3 wrong answers in a row, once per session.
 - Child-facing screens: large tap targets, minimal text, warm framing of mistakes ("let's check it together").

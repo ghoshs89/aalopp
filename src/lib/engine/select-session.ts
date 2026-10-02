@@ -15,6 +15,12 @@ const MIN_NEW_ITEMS = 1;
  * toward this, rather than a second slot being reserved on top.
  */
 const MIN_THEME_ITEMS = 1;
+/**
+ * A session he picks a theme for still carries this many questions from his ordinary plan, retries and reviews first.
+ * In the first themed week 87 of his 119 answers were theme questions (95% right, about 4 seconds each), and core
+ * practice nearly stopped. The parent chose a mix over limiting how often a theme can be played.
+ */
+export const THEMED_CORE_ITEMS = 3;
 const STRETCH_SLOTS = 2;
 const MAX_REVIEWS = 4;
 const MAX_RETRIES = 2;
@@ -30,9 +36,15 @@ export type SessionPlan = { picks: Pick[]; workingBands: Record<string, number> 
 export type SessionOptions = {
   /** Every skill that belongs to some theme. One slot per session is kept for one of them. */
   themeSkills?: Set<string>;
-  /** Set when the child picked a theme: the whole session is drawn from these skills. */
+  /**
+   * Set when the child picked a theme: the session is drawn from these skills, apart from THEMED_CORE_ITEMS slots
+   * that come from questions outside every theme.
+   */
   onlySkills?: Set<string>;
 };
+
+/** How many slots a fill reserves for everyday skills, a skill he has not met, and a themed question. */
+type Quotas = { convention: number; newSkill: number; theme: number };
 
 type Category = "review" | "retry" | "practice" | "new" | "maintain";
 
@@ -74,10 +86,8 @@ export function selectSession(
   for (const a of [...attempts].sort((x, y) => x.answeredAt.getTime() - y.answeredAt.getTime())) lastByQuestion.set(a.questionId, a);
 
   // Skill states and working bands are always computed from the whole bank, so picking a theme does not distort what
-  // the engine believes about him. Only the list he can be offered narrows.
-  const offerable = onlySkills ? questions.filter((q) => q.skills.some((c) => onlySkills.has(c))) : questions;
-
-  const candidates: Candidate[] = offerable.map((question) => {
+  // the engine believes about him. Picking a theme only narrows which questions fill which slots (see the end).
+  const candidates: Candidate[] = questions.map((question) => {
     // A question belongs to its most urgent skill.
     const options = question.skills.map((code) => ({ skill: skillByCode.get(code)!, state: states.get(code)! })).filter((o) => o.skill);
     const { skill, state } = options.reduce((best, o) => (urgency(o.state, skillByCode, states) > urgency(best.state, skillByCode, states) ? o : best));
@@ -132,72 +142,89 @@ export function selectSession(
   const available = (c: Candidate, allowBlocked = false, ignoreCaps = false) =>
     !picked.some((p) => p.question.id === c.question.id) &&
     (allowBlocked || !c.blocked) &&
+    // One question per brand or country, so the first one cannot hand him the answer to the next.
+    (allowBlocked || !c.question.topic || !picked.some((p) => p.question.topic === c.question.topic)) &&
     (ignoreCaps || ((c.category !== "review" || !reviewsFull()) && c.question.skills.every((code) => (perSkill.get(code) ?? 0) < MAX_PER_SKILL)));
   const byScore = [...candidates].sort((a, b) => b.score - a.score);
-  // A themed session is all flags or all logos, so the everyday-skills mix does not apply to it.
-  const conventionNeeded = () =>
-    onlySkills ? 0 : Math.max(0, Math.min(MIN_CONVENTION_ITEMS, size) - picked.filter((p) => p.isConvention).length);
   const isThemed = (c: Candidate) => themeSkills !== undefined && c.question.skills.some((code) => themeSkills.has(code));
-  const themeNeeded = () =>
-    themeSkills === undefined || onlySkills
-      ? 0
-      : Math.max(0, Math.min(MIN_THEME_ITEMS, size) - picked.filter(isThemed).length);
   /**
    * The new-skill slot is given up while reviews are badly backed up. Starting something new when he already owes
    * more reviews than a session can serve twice over is the wrong lesson, and it is what lets the due queue grow.
    */
   const reviewBacklog = [...states.values()].filter((s) => s.status === "review-due").length;
   const introducing = reviewBacklog <= MAX_REVIEWS * 2;
-  const newNeeded = () =>
-    introducing ? Math.max(0, Math.min(MIN_NEW_ITEMS, size) - picked.filter((p) => p.category === "new").length) : 0;
-  /**
-   * Whether a pick that fills neither quota still fits. Retries and reviews come first by priority, but they must
-   * not eat the slots the everyday-skills and new-skill quotas still need. A retry or review that happens to be an
-   * everyday-skill question is always fine, so this only holds back the ones that fill no quota.
-   */
-  const roomForExtra = () => picked.length < size - conventionNeeded() - newNeeded() - themeNeeded();
 
-  // 1. Missed questions from earlier days, then due reviews (one per skill).
-  for (const c of byScore.filter((c) => c.category === "retry")) {
-    if (picked.length >= Math.min(MAX_RETRIES, size)) break;
-    if (!c.isConvention && !roomForExtra()) continue;
-    if (available(c)) take(c);
-  }
-  for (const c of byScore.filter((c) => c.category === "review")) {
-    if (reviewsFull() || picked.length >= size) break;
-    if (!c.isConvention && !roomForExtra()) continue;
-    if (available(c) && !picked.some((p) => p.skill.code === c.skill.code)) take(c);
-  }
-  // 2. One skill he has not met yet, so new material keeps arriving while other skills are still in progress.
-  for (const c of byScore.filter((c) => c.category === "new")) {
-    if (newNeeded() === 0 || picked.length >= size - conventionNeeded()) break;
-    if (available(c)) take(c);
-  }
-  // 3. One themed question, so cars and countries turn up without him having to ask for them.
-  for (const c of byScore.filter(isThemed)) {
-    if (themeNeeded() === 0 || picked.length >= size - conventionNeeded()) break;
-    if (available(c)) take(c);
-  }
-  // 4. Stretch slots, leaving room for the quotas still to be filled.
-  const reserved = () => conventionNeeded() + newNeeded() + themeNeeded();
-  const stretchSlots = Math.min(STRETCH_SLOTS, Math.max(0, size - picked.length - reserved()));
-  for (const c of byScore.filter((c) => c.isStretch)) {
-    if (picked.filter((p) => p.isStretch).length >= stretchSlots || picked.length >= size - reserved()) break;
-    if (available(c)) take(c);
-  }
-  // 5. Applied-convention quota. Relax the caps, then the repeat rule, rather than miss it.
-  for (const [allowBlocked, ignoreCaps] of [[false, false], [false, true], [true, true]]) {
-    for (const c of byScore.filter((c) => c.isConvention)) {
-      if (conventionNeeded() === 0 || picked.length >= size) break;
-      if (available(c, allowBlocked, ignoreCaps)) take(c, c.category === "maintain" ? `Everyday skills mix: ${c.skill.name}` : undefined);
+  /**
+   * Fills the session up to `target` picks from `pool`, in priority order. Quotas count only this fill's own picks;
+   * the retry, review and stretch caps count the whole session.
+   */
+  const fill = (pool: Candidate[], target: number, quotas: Quotas) => {
+    const start = picked.length;
+    const slots = target - start;
+    const mine = () => picked.slice(start);
+    const conventionNeeded = () => Math.max(0, Math.min(quotas.convention, slots) - mine().filter((p) => p.isConvention).length);
+    const themeNeeded = () => Math.max(0, Math.min(quotas.theme, slots) - mine().filter(isThemed).length);
+    const newNeeded = () => Math.max(0, Math.min(quotas.newSkill, slots) - mine().filter((p) => p.category === "new").length);
+    /**
+     * Whether a pick that fills neither quota still fits. Retries and reviews come first by priority, but they must
+     * not eat the slots the everyday-skills and new-skill quotas still need. A retry or review that happens to be an
+     * everyday-skill question is always fine, so this only holds back the ones that fill no quota.
+     */
+    const roomForExtra = () => picked.length < target - conventionNeeded() - newNeeded() - themeNeeded();
+
+    // 1. Missed questions from earlier days, then due reviews (one per skill).
+    for (const c of pool.filter((c) => c.category === "retry")) {
+      if (picked.filter((p) => p.category === "retry").length >= MAX_RETRIES || picked.length >= target) break;
+      if (!c.isConvention && !roomForExtra()) continue;
+      if (available(c)) take(c);
     }
-  }
-  // 6. Everything else by priority. If the pool runs dry, relax the caps, then the repeat rule.
-  for (const [allowBlocked, ignoreCaps] of [[false, false], [false, true], [true, true]]) {
-    for (const c of byScore) {
-      if (picked.length >= size) break;
-      if (available(c, allowBlocked, ignoreCaps)) take(c, c.blocked ? `Extra practice (pool is small): ${c.skill.name}` : undefined);
+    for (const c of pool.filter((c) => c.category === "review")) {
+      if (reviewsFull() || picked.length >= target) break;
+      if (!c.isConvention && !roomForExtra()) continue;
+      if (available(c) && !picked.some((p) => p.skill.code === c.skill.code)) take(c);
     }
+    // 2. One skill he has not met yet, so new material keeps arriving while other skills are still in progress.
+    for (const c of pool.filter((c) => c.category === "new")) {
+      if (newNeeded() === 0 || picked.length >= target - conventionNeeded()) break;
+      if (available(c)) take(c);
+    }
+    // 3. One themed question, so cars and countries turn up without him having to ask for them.
+    for (const c of pool.filter(isThemed)) {
+      if (themeNeeded() === 0 || picked.length >= target - conventionNeeded()) break;
+      if (available(c)) take(c);
+    }
+    // 4. Stretch slots, leaving room for the quotas still to be filled.
+    const reserved = () => conventionNeeded() + newNeeded() + themeNeeded();
+    const stretchSlots = Math.min(STRETCH_SLOTS, Math.max(0, target - picked.length - reserved()));
+    for (const c of pool.filter((c) => c.isStretch)) {
+      if (picked.filter((p) => p.isStretch).length >= stretchSlots || picked.length >= target - reserved()) break;
+      if (available(c)) take(c);
+    }
+    // 5. Applied-convention quota. Relax the caps, then the repeat rule, rather than miss it.
+    for (const [allowBlocked, ignoreCaps] of [[false, false], [false, true], [true, true]]) {
+      for (const c of pool.filter((c) => c.isConvention)) {
+        if (conventionNeeded() === 0 || picked.length >= target) break;
+        if (available(c, allowBlocked, ignoreCaps)) take(c, c.category === "maintain" ? `Everyday skills mix: ${c.skill.name}` : undefined);
+      }
+    }
+    // 6. Everything else by priority. If the pool runs dry, relax the caps, then the repeat rule.
+    for (const [allowBlocked, ignoreCaps] of [[false, false], [false, true], [true, true]]) {
+      for (const c of pool) {
+        if (picked.length >= target) break;
+        if (available(c, allowBlocked, ignoreCaps)) take(c, c.blocked ? `Extra practice (pool is small): ${c.skill.name}` : undefined);
+      }
+    }
+  };
+
+  const newSkill = introducing ? MIN_NEW_ITEMS : 0;
+  if (onlySkills) {
+    // A picked theme: a few questions from his ordinary plan first, with one everyday skill among them and no new
+    // skill (the theme brings its own), then the theme fills the rest. The everyday-skills mix does not apply to it.
+    const inTheme = (c: Candidate) => c.question.skills.some((code) => onlySkills.has(code));
+    fill(byScore.filter((c) => !inTheme(c) && !isThemed(c)), Math.min(THEMED_CORE_ITEMS, size), { convention: 1, newSkill: 0, theme: 0 });
+    fill(byScore.filter(inTheme), size, { convention: 0, newSkill, theme: 0 });
+  } else {
+    fill(byScore, size, { convention: MIN_CONVENTION_ITEMS, newSkill, theme: themeSkills ? MIN_THEME_ITEMS : 0 });
   }
 
   // Warm up with the easier questions and finish on the stretch ones.

@@ -26,7 +26,7 @@ type Maker = {
   founded: number;
   /** One line for the teach card. Every one of these was checked against its Wikipedia article on 2026-09-21. */
   fact: string;
-  /** Who owns the brand now, when that is somewhere else. Teach card only, never an answer. */
+  /** Who owns the brand now, when that is somewhere else. Not shown anywhere for now (see `card`), never an answer. */
   ownerNote?: string;
 };
 
@@ -75,11 +75,15 @@ const COUNTRIES = [...new Set(MAKERS.map((m) => m.country))];
 const logoPicture = (m: Maker) => ({ kind: "image" as const, src: `/logos/${m.logo}.svg`, alt: `The ${m.name} logo` });
 const flagPicture = (code: string, name: string) => ({ kind: "image" as const, src: `/flags/${code}.svg`, alt: `The flag of ${name}` });
 
-/** The teach card: the logo, who it is, where they are from, and one thing worth knowing. */
+/**
+ * The teach card: the logo, who it is, where they are from, and one thing worth knowing. `ownerNote` is left off: on
+ * 2026-09-22 he answered "Germany" for where Mini comes from, straight after a card saying BMW of Germany owns it.
+ * A second country on the card is one too many at five.
+ */
 function card(m: Maker): Question["teach"] {
   return {
     title: m.name,
-    lines: [`${m.name} is from ${m.country}.`, m.fact, ...(m.ownerNote ? [m.ownerNote] : [])],
+    lines: [`${m.name} is from ${m.country}.`, m.fact],
     visual: { ...logoPicture(m), beside: { src: `/flags/${m.flag}.svg`, alt: `The flag of ${m.country}` } },
   };
 }
@@ -103,6 +107,7 @@ export function carQuestions(): Question[] {
         prompt: "Which car maker uses this logo?",
         visual: logoPicture(m),
         teach: card(m),
+        topic: `car:${m.id}`,
         answer: choices(`car-logo-${m.id}`, m.name, otherMakers(m, 3).map((o) => o.name)),
         explanation: `This is the ${m.name} logo. ${m.name} is from ${m.country}.`,
         band: band as 1 | 2 | 3,
@@ -119,6 +124,7 @@ export function carQuestions(): Question[] {
           skills: ["CARS-LOGOS"],
           prompt: `Which one of these is the ${m.name} logo?`,
           teach: card(m),
+        topic: `car:${m.id}`,
           answer: {
             ...lineup,
             choiceVisuals: lineup.choices.map((name) => {
@@ -141,6 +147,7 @@ export function carQuestions(): Question[] {
         prompt: `Which country does ${m.name} come from?`,
         visual: logoPicture(m),
         teach: card(m),
+        topic: `car:${m.id}`,
         answer: choices(`car-from-${m.id}`, m.country, wrongCountries),
         explanation: `${m.name} comes from ${m.country}.`,
         band: (band === 1 ? 2 : band) as 2 | 3,
@@ -155,6 +162,7 @@ export function carQuestions(): Question[] {
         prompt: `${m.name} comes from ${m.country}. Which flag is ${m.country}'s?`,
         visual: logoPicture(m),
         teach: card(m),
+        topic: `car:${m.id}`,
         answer: (() => {
           const others = wrongCountries.map((c) => MAKERS.find((o) => o.country === c)!);
           const picked = choices(`car-flag-${m.id}`, m.country, wrongCountries);

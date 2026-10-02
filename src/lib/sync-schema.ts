@@ -3,7 +3,8 @@ import { z } from "zod";
 export const ResponseSchema = z.discriminatedUnion("type", [
   z.object({ type: z.literal("choice"), index: z.int().min(0) }),
   z.object({ type: z.literal("numeric"), value: z.number() }),
-  z.object({ type: z.literal("step"), index: z.int().min(0) }),
+  // `index` is his first tap and the only one graded. `secondIndex` is the tap after a "look earlier" nudge.
+  z.object({ type: z.literal("step"), index: z.int().min(0), secondIndex: z.int().min(0).optional() }),
 ]);
 
 export const AttemptItemSchema = z.object({

@@ -38,6 +38,7 @@ These come from the support plan and the review of the original AALOPP specifica
 | Later | Reading, Spanish and French with speech input; fatigue detection | Done 2026-09-13 at the parent's request: reading comprehension, Spanish and French words and phrases with read-aloud and optional spoken answers, and a break suggestion instead of fatigue detection |
 | 6. Engine tuning from real data | Fixes the first 36 real answers exposed: a reserved new-skill slot, a fifth review box, a miss dropping one box, clearer Find the Bug feedback | Done 2026-09-21, not yet deployed. Before the fix, 25 of 48 skills had never been served and the whole LANGUAGE strand was starved |
 | 7. Picked themes | A theme the child chooses from `/choose/[studentId]`, teach cards before knowledge questions, committed flag and logo artwork. Two themes: cars and logos, flags and countries | Built 2026-09-21 at the parent's request. 221 questions across 10 skills, all `"draft"` until the fact-checking pass, so none of it reaches Aishik yet |
+| 8. Tuning from the first themed week | 3 core questions in every themed session, one question per brand or country, no ownership lines on teach cards, a "look earlier" nudge in Find the Bug | Built 2026-10-01 at the parent's request, not yet deployed |
 
 Order confirmed by the parent on 2026-09-13: Phase 4 before Phase 3, because the dashboard needs real usage data and the scratchpad is useful immediately.
 

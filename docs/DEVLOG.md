@@ -16,6 +16,37 @@ Attribution convention used below: "Parent decision" means the parent chose it; 
 
 ---
 
+## 2026-10-01  Decision  Tuning from the first themed week (parent decisions on three changes)
+What: Four changes from the 158 real attempts up to 2026-09-25.
+1. Parent decision: a picked theme now carries 3 questions from his ordinary plan (`THEMED_CORE_ITEMS`), retries and
+   reviews first, at least one everyday skill, no new-skill slot. The theme fills the other 5.
+2. Parent decision: teach cards no longer show who owns a car brand (`ownerNote` kept in `cars.ts`, unused).
+3. Parent decision: in Find the Bug, tapping a wrong step after the real bug gets one nudge ("the mistake started
+   earlier, look above it") and a second tap. The first tap is the one graded, so it still counts as a miss; the
+   second is stored as `secondIndex` in the response JSON (no migration).
+4. Assistant recommendation, parent approved with the plan: questions carry an optional `topic` (`car:<id>`,
+   `country:<code>`), and a session asks at most one question per topic, relaxed only when the pool runs dry.
+Reason: since 2026-09-22, 87 of 119 answers were theme questions at 95% right and a median 3.8 seconds, against
+core questions at 66% and 27 seconds; on 09-22 he played 11 sessions, 6 of them cars. Session d5a8 asked about Mini
+three times in a row, so the card and the first question answered the next two. He answered "Germany" for Mini
+straight after a card saying BMW of Germany owns it. 4 of his 7 Find the Bug misses were taps on a later wrong step,
+usually the final answer line (dbg-clock-minutes-4-20 twice, same step).
+Alternatives rejected: one themed session a day (feels like a lock; parent chose the mix); keeping the ownership line
+(one miss is thin evidence, but the line adds a second country to a card about the first); marking a late tap
+wrong at once (it already had a specific message and he kept doing it).
+Noted, not changed: a retry repeats the identical question after the answer was shown (nas-63-minus-27: 241 s to
+miss, 16 s right the next day), so retry success may be memory; revisit with more data. b2a-perimeter-garden got the
+same wrong answer, 9, on two days (two sides added, not four). He picks "Very sure" on 93 of 119 answers.
+
+## 2026-10-01  Milestone  First-themed-week tuning built and verified locally
+What: The four changes above, not yet committed or deployed.
+Verified by: `npm test` 20 files, 120 tests (new: themed mix per theme over 25 seeds, a retry among the core picks,
+one question per topic, first-tap grading, `secondIndex` accepted by the sync schema); the topic test was confirmed
+to fail with the rule disabled. `npm run content:check` 549 questions all reviewed, 199 with a topic, no ownership
+lines. `npm run typecheck` and `npm run lint` pass. `/dev/player` driven in headless Chrome at 384 px: a late tap
+shows the nudge and greys out that step, a right second tap shows "You found it!", a tap on a true step gets the
+ordinary feedback with no nudge.
+
 ## 2026-09-22  Milestone  Engine tuning and both themes deployed
 What: Commit 2b9781b pushed to `main` at the parent's request ("Check everything in and go live with the app"). 79
 files, the engine fixes and the cars and world-knowledge themes together.

@@ -1,5 +1,12 @@
 # Content review log
 
+## 2026-10-01: Ownership lines removed from car teach cards
+
+`card()` in `scripts/generate/cars.ts` no longer adds `ownerNote`, which removes one line from the teach cards of
+Lamborghini, Mini, Rolls-Royce, Land Rover, Jaguar and Volvo (24 questions). Text was only removed, so no fact is new
+and the questions stay `"reviewed"`. Reason: on 2026-09-22 he answered "Germany" for where Mini comes from, straight
+after a card saying BMW of Germany owns it.
+
 ## 2026-09-21: Fact-checking pass, cars and world knowledge (221 questions)
 
 A fact cannot be blind solved, so the rule for the `HUMANITIES` strand is different: every fact is checked against a

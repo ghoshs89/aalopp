@@ -31,6 +31,7 @@
         }
       }
     },
+    "topic": "car:toyota",
     "answer": {
       "type": "choice",
       "choices": [
@@ -75,6 +76,7 @@
         }
       }
     },
+    "topic": "car:toyota",
     "answer": {
       "type": "choice",
       "choices": [
@@ -147,6 +149,7 @@
         }
       }
     },
+    "topic": "car:toyota",
     "answer": {
       "type": "choice",
       "choices": [
@@ -197,6 +200,7 @@
         }
       }
     },
+    "topic": "car:toyota",
     "answer": {
       "type": "choice",
       "choices": [
@@ -268,6 +272,7 @@
         }
       }
     },
+    "topic": "car:honda",
     "answer": {
       "type": "choice",
       "choices": [
@@ -312,6 +317,7 @@
         }
       }
     },
+    "topic": "car:honda",
     "answer": {
       "type": "choice",
       "choices": [
@@ -384,6 +390,7 @@
         }
       }
     },
+    "topic": "car:honda",
     "answer": {
       "type": "choice",
       "choices": [
@@ -434,6 +441,7 @@
         }
       }
     },
+    "topic": "car:honda",
     "answer": {
       "type": "choice",
       "choices": [
@@ -505,6 +513,7 @@
         }
       }
     },
+    "topic": "car:nissan",
     "answer": {
       "type": "choice",
       "choices": [
@@ -549,6 +558,7 @@
         }
       }
     },
+    "topic": "car:nissan",
     "answer": {
       "type": "choice",
       "choices": [
@@ -621,6 +631,7 @@
         }
       }
     },
+    "topic": "car:nissan",
     "answer": {
       "type": "choice",
       "choices": [
@@ -671,6 +682,7 @@
         }
       }
     },
+    "topic": "car:nissan",
     "answer": {
       "type": "choice",
       "choices": [
@@ -742,6 +754,7 @@
         }
       }
     },
+    "topic": "car:mazda",
     "answer": {
       "type": "choice",
       "choices": [
@@ -786,6 +799,7 @@
         }
       }
     },
+    "topic": "car:mazda",
     "answer": {
       "type": "choice",
       "choices": [
@@ -858,6 +872,7 @@
         }
       }
     },
+    "topic": "car:mazda",
     "answer": {
       "type": "choice",
       "choices": [
@@ -908,6 +923,7 @@
         }
       }
     },
+    "topic": "car:mazda",
     "answer": {
       "type": "choice",
       "choices": [
@@ -979,6 +995,7 @@
         }
       }
     },
+    "topic": "car:subaru",
     "answer": {
       "type": "choice",
       "choices": [
@@ -1023,6 +1040,7 @@
         }
       }
     },
+    "topic": "car:subaru",
     "answer": {
       "type": "choice",
       "choices": [
@@ -1095,6 +1113,7 @@
         }
       }
     },
+    "topic": "car:subaru",
     "answer": {
       "type": "choice",
       "choices": [
@@ -1145,6 +1164,7 @@
         }
       }
     },
+    "topic": "car:subaru",
     "answer": {
       "type": "choice",
       "choices": [
@@ -1216,6 +1236,7 @@
         }
       }
     },
+    "topic": "car:suzuki",
     "answer": {
       "type": "choice",
       "choices": [
@@ -1260,6 +1281,7 @@
         }
       }
     },
+    "topic": "car:suzuki",
     "answer": {
       "type": "choice",
       "choices": [
@@ -1332,6 +1354,7 @@
         }
       }
     },
+    "topic": "car:suzuki",
     "answer": {
       "type": "choice",
       "choices": [
@@ -1382,6 +1405,7 @@
         }
       }
     },
+    "topic": "car:suzuki",
     "answer": {
       "type": "choice",
       "choices": [
@@ -1453,6 +1477,7 @@
         }
       }
     },
+    "topic": "car:bmw",
     "answer": {
       "type": "choice",
       "choices": [
@@ -1497,6 +1522,7 @@
         }
       }
     },
+    "topic": "car:bmw",
     "answer": {
       "type": "choice",
       "choices": [
@@ -1569,6 +1595,7 @@
         }
       }
     },
+    "topic": "car:bmw",
     "answer": {
       "type": "choice",
       "choices": [
@@ -1619,6 +1646,7 @@
         }
       }
     },
+    "topic": "car:bmw",
     "answer": {
       "type": "choice",
       "choices": [
@@ -1690,6 +1718,7 @@
         }
       }
     },
+    "topic": "car:audi",
     "answer": {
       "type": "choice",
       "choices": [
@@ -1734,6 +1763,7 @@
         }
       }
     },
+    "topic": "car:audi",
     "answer": {
       "type": "choice",
       "choices": [
@@ -1806,6 +1836,7 @@
         }
       }
     },
+    "topic": "car:audi",
     "answer": {
       "type": "choice",
       "choices": [
@@ -1856,6 +1887,7 @@
         }
       }
     },
+    "topic": "car:audi",
     "answer": {
       "type": "choice",
       "choices": [
@@ -1927,6 +1959,7 @@
         }
       }
     },
+    "topic": "car:volkswagen",
     "answer": {
       "type": "choice",
       "choices": [
@@ -1971,6 +2004,7 @@
         }
       }
     },
+    "topic": "car:volkswagen",
     "answer": {
       "type": "choice",
       "choices": [
@@ -2043,6 +2077,7 @@
         }
       }
     },
+    "topic": "car:volkswagen",
     "answer": {
       "type": "choice",
       "choices": [
@@ -2093,6 +2128,7 @@
         }
       }
     },
+    "topic": "car:volkswagen",
     "answer": {
       "type": "choice",
       "choices": [
@@ -2164,6 +2200,7 @@
         }
       }
     },
+    "topic": "car:porsche",
     "answer": {
       "type": "choice",
       "choices": [
@@ -2208,6 +2245,7 @@
         }
       }
     },
+    "topic": "car:porsche",
     "answer": {
       "type": "choice",
       "choices": [
@@ -2280,6 +2318,7 @@
         }
       }
     },
+    "topic": "car:porsche",
     "answer": {
       "type": "choice",
       "choices": [
@@ -2330,6 +2369,7 @@
         }
       }
     },
+    "topic": "car:porsche",
     "answer": {
       "type": "choice",
       "choices": [
@@ -2401,6 +2441,7 @@
         }
       }
     },
+    "topic": "car:mercedes",
     "answer": {
       "type": "choice",
       "choices": [
@@ -2445,6 +2486,7 @@
         }
       }
     },
+    "topic": "car:mercedes",
     "answer": {
       "type": "choice",
       "choices": [
@@ -2517,6 +2559,7 @@
         }
       }
     },
+    "topic": "car:mercedes",
     "answer": {
       "type": "choice",
       "choices": [
@@ -2567,6 +2610,7 @@
         }
       }
     },
+    "topic": "car:mercedes",
     "answer": {
       "type": "choice",
       "choices": [
@@ -2638,6 +2682,7 @@
         }
       }
     },
+    "topic": "car:ferrari",
     "answer": {
       "type": "choice",
       "choices": [
@@ -2682,6 +2727,7 @@
         }
       }
     },
+    "topic": "car:ferrari",
     "answer": {
       "type": "choice",
       "choices": [
@@ -2754,6 +2800,7 @@
         }
       }
     },
+    "topic": "car:ferrari",
     "answer": {
       "type": "choice",
       "choices": [
@@ -2804,6 +2851,7 @@
         }
       }
     },
+    "topic": "car:ferrari",
     "answer": {
       "type": "choice",
       "choices": [
@@ -2863,8 +2911,7 @@
       "title": "Lamborghini",
       "lines": [
         "Lamborghini is from Italy.",
-        "The Lamborghini badge is a charging bull.",
-        "Lamborghini is owned today by the Volkswagen Group of Germany."
+        "The Lamborghini badge is a charging bull."
       ],
       "visual": {
         "kind": "image",
@@ -2876,6 +2923,7 @@
         }
       }
     },
+    "topic": "car:lamborghini",
     "answer": {
       "type": "choice",
       "choices": [
@@ -2908,8 +2956,7 @@
       "title": "Lamborghini",
       "lines": [
         "Lamborghini is from Italy.",
-        "The Lamborghini badge is a charging bull.",
-        "Lamborghini is owned today by the Volkswagen Group of Germany."
+        "The Lamborghini badge is a charging bull."
       ],
       "visual": {
         "kind": "image",
@@ -2921,6 +2968,7 @@
         }
       }
     },
+    "topic": "car:lamborghini",
     "answer": {
       "type": "choice",
       "choices": [
@@ -2981,8 +3029,7 @@
       "title": "Lamborghini",
       "lines": [
         "Lamborghini is from Italy.",
-        "The Lamborghini badge is a charging bull.",
-        "Lamborghini is owned today by the Volkswagen Group of Germany."
+        "The Lamborghini badge is a charging bull."
       ],
       "visual": {
         "kind": "image",
@@ -2994,6 +3041,7 @@
         }
       }
     },
+    "topic": "car:lamborghini",
     "answer": {
       "type": "choice",
       "choices": [
@@ -3032,8 +3080,7 @@
       "title": "Lamborghini",
       "lines": [
         "Lamborghini is from Italy.",
-        "The Lamborghini badge is a charging bull.",
-        "Lamborghini is owned today by the Volkswagen Group of Germany."
+        "The Lamborghini badge is a charging bull."
       ],
       "visual": {
         "kind": "image",
@@ -3045,6 +3092,7 @@
         }
       }
     },
+    "topic": "car:lamborghini",
     "answer": {
       "type": "choice",
       "choices": [
@@ -3116,6 +3164,7 @@
         }
       }
     },
+    "topic": "car:fiat",
     "answer": {
       "type": "choice",
       "choices": [
@@ -3160,6 +3209,7 @@
         }
       }
     },
+    "topic": "car:fiat",
     "answer": {
       "type": "choice",
       "choices": [
@@ -3232,6 +3282,7 @@
         }
       }
     },
+    "topic": "car:fiat",
     "answer": {
       "type": "choice",
       "choices": [
@@ -3282,6 +3333,7 @@
         }
       }
     },
+    "topic": "car:fiat",
     "answer": {
       "type": "choice",
       "choices": [
@@ -3353,6 +3405,7 @@
         }
       }
     },
+    "topic": "car:ford",
     "answer": {
       "type": "choice",
       "choices": [
@@ -3397,6 +3450,7 @@
         }
       }
     },
+    "topic": "car:ford",
     "answer": {
       "type": "choice",
       "choices": [
@@ -3469,6 +3523,7 @@
         }
       }
     },
+    "topic": "car:ford",
     "answer": {
       "type": "choice",
       "choices": [
@@ -3519,6 +3574,7 @@
         }
       }
     },
+    "topic": "car:ford",
     "answer": {
       "type": "choice",
       "choices": [
@@ -3590,6 +3646,7 @@
         }
       }
     },
+    "topic": "car:chevrolet",
     "answer": {
       "type": "choice",
       "choices": [
@@ -3634,6 +3691,7 @@
         }
       }
     },
+    "topic": "car:chevrolet",
     "answer": {
       "type": "choice",
       "choices": [
@@ -3706,6 +3764,7 @@
         }
       }
     },
+    "topic": "car:chevrolet",
     "answer": {
       "type": "choice",
       "choices": [
@@ -3756,6 +3815,7 @@
         }
       }
     },
+    "topic": "car:chevrolet",
     "answer": {
       "type": "choice",
       "choices": [
@@ -3827,6 +3887,7 @@
         }
       }
     },
+    "topic": "car:tesla",
     "answer": {
       "type": "choice",
       "choices": [
@@ -3871,6 +3932,7 @@
         }
       }
     },
+    "topic": "car:tesla",
     "answer": {
       "type": "choice",
       "choices": [
@@ -3943,6 +4005,7 @@
         }
       }
     },
+    "topic": "car:tesla",
     "answer": {
       "type": "choice",
       "choices": [
@@ -3993,6 +4056,7 @@
         }
       }
     },
+    "topic": "car:tesla",
     "answer": {
       "type": "choice",
       "choices": [
@@ -4064,6 +4128,7 @@
         }
       }
     },
+    "topic": "car:jeep",
     "answer": {
       "type": "choice",
       "choices": [
@@ -4108,6 +4173,7 @@
         }
       }
     },
+    "topic": "car:jeep",
     "answer": {
       "type": "choice",
       "choices": [
@@ -4180,6 +4246,7 @@
         }
       }
     },
+    "topic": "car:jeep",
     "answer": {
       "type": "choice",
       "choices": [
@@ -4230,6 +4297,7 @@
         }
       }
     },
+    "topic": "car:jeep",
     "answer": {
       "type": "choice",
       "choices": [
@@ -4301,6 +4369,7 @@
         }
       }
     },
+    "topic": "car:tata",
     "answer": {
       "type": "choice",
       "choices": [
@@ -4345,6 +4414,7 @@
         }
       }
     },
+    "topic": "car:tata",
     "answer": {
       "type": "choice",
       "choices": [
@@ -4417,6 +4487,7 @@
         }
       }
     },
+    "topic": "car:tata",
     "answer": {
       "type": "choice",
       "choices": [
@@ -4467,6 +4538,7 @@
         }
       }
     },
+    "topic": "car:tata",
     "answer": {
       "type": "choice",
       "choices": [
@@ -4538,6 +4610,7 @@
         }
       }
     },
+    "topic": "car:mahindra",
     "answer": {
       "type": "choice",
       "choices": [
@@ -4582,6 +4655,7 @@
         }
       }
     },
+    "topic": "car:mahindra",
     "answer": {
       "type": "choice",
       "choices": [
@@ -4654,6 +4728,7 @@
         }
       }
     },
+    "topic": "car:mahindra",
     "answer": {
       "type": "choice",
       "choices": [
@@ -4704,6 +4779,7 @@
         }
       }
     },
+    "topic": "car:mahindra",
     "answer": {
       "type": "choice",
       "choices": [
@@ -4775,6 +4851,7 @@
         }
       }
     },
+    "topic": "car:hyundai",
     "answer": {
       "type": "choice",
       "choices": [
@@ -4819,6 +4896,7 @@
         }
       }
     },
+    "topic": "car:hyundai",
     "answer": {
       "type": "choice",
       "choices": [
@@ -4891,6 +4969,7 @@
         }
       }
     },
+    "topic": "car:hyundai",
     "answer": {
       "type": "choice",
       "choices": [
@@ -4941,6 +5020,7 @@
         }
       }
     },
+    "topic": "car:hyundai",
     "answer": {
       "type": "choice",
       "choices": [
@@ -5012,6 +5092,7 @@
         }
       }
     },
+    "topic": "car:kia",
     "answer": {
       "type": "choice",
       "choices": [
@@ -5056,6 +5137,7 @@
         }
       }
     },
+    "topic": "car:kia",
     "answer": {
       "type": "choice",
       "choices": [
@@ -5128,6 +5210,7 @@
         }
       }
     },
+    "topic": "car:kia",
     "answer": {
       "type": "choice",
       "choices": [
@@ -5178,6 +5261,7 @@
         }
       }
     },
+    "topic": "car:kia",
     "answer": {
       "type": "choice",
       "choices": [
@@ -5237,8 +5321,7 @@
       "title": "Mini",
       "lines": [
         "Mini is from United Kingdom.",
-        "The original Mini was tiny, and built to fit four people anyway.",
-        "Mini is owned today by BMW of Germany."
+        "The original Mini was tiny, and built to fit four people anyway."
       ],
       "visual": {
         "kind": "image",
@@ -5250,6 +5333,7 @@
         }
       }
     },
+    "topic": "car:mini",
     "answer": {
       "type": "choice",
       "choices": [
@@ -5282,8 +5366,7 @@
       "title": "Mini",
       "lines": [
         "Mini is from United Kingdom.",
-        "The original Mini was tiny, and built to fit four people anyway.",
-        "Mini is owned today by BMW of Germany."
+        "The original Mini was tiny, and built to fit four people anyway."
       ],
       "visual": {
         "kind": "image",
@@ -5295,6 +5378,7 @@
         }
       }
     },
+    "topic": "car:mini",
     "answer": {
       "type": "choice",
       "choices": [
@@ -5355,8 +5439,7 @@
       "title": "Mini",
       "lines": [
         "Mini is from United Kingdom.",
-        "The original Mini was tiny, and built to fit four people anyway.",
-        "Mini is owned today by BMW of Germany."
+        "The original Mini was tiny, and built to fit four people anyway."
       ],
       "visual": {
         "kind": "image",
@@ -5368,6 +5451,7 @@
         }
       }
     },
+    "topic": "car:mini",
     "answer": {
       "type": "choice",
       "choices": [
@@ -5406,8 +5490,7 @@
       "title": "Mini",
       "lines": [
         "Mini is from United Kingdom.",
-        "The original Mini was tiny, and built to fit four people anyway.",
-        "Mini is owned today by BMW of Germany."
+        "The original Mini was tiny, and built to fit four people anyway."
       ],
       "visual": {
         "kind": "image",
@@ -5419,6 +5502,7 @@
         }
       }
     },
+    "topic": "car:mini",
     "answer": {
       "type": "choice",
       "choices": [
@@ -5478,8 +5562,7 @@
       "title": "Rolls-Royce",
       "lines": [
         "Rolls-Royce is from United Kingdom.",
-        "The little silver figure on the front of a Rolls-Royce is called the Spirit of Ecstasy.",
-        "Rolls-Royce Motor Cars is owned today by BMW of Germany."
+        "The little silver figure on the front of a Rolls-Royce is called the Spirit of Ecstasy."
       ],
       "visual": {
         "kind": "image",
@@ -5491,6 +5574,7 @@
         }
       }
     },
+    "topic": "car:rollsroyce",
     "answer": {
       "type": "choice",
       "choices": [
@@ -5523,8 +5607,7 @@
       "title": "Rolls-Royce",
       "lines": [
         "Rolls-Royce is from United Kingdom.",
-        "The little silver figure on the front of a Rolls-Royce is called the Spirit of Ecstasy.",
-        "Rolls-Royce Motor Cars is owned today by BMW of Germany."
+        "The little silver figure on the front of a Rolls-Royce is called the Spirit of Ecstasy."
       ],
       "visual": {
         "kind": "image",
@@ -5536,6 +5619,7 @@
         }
       }
     },
+    "topic": "car:rollsroyce",
     "answer": {
       "type": "choice",
       "choices": [
@@ -5596,8 +5680,7 @@
       "title": "Rolls-Royce",
       "lines": [
         "Rolls-Royce is from United Kingdom.",
-        "The little silver figure on the front of a Rolls-Royce is called the Spirit of Ecstasy.",
-        "Rolls-Royce Motor Cars is owned today by BMW of Germany."
+        "The little silver figure on the front of a Rolls-Royce is called the Spirit of Ecstasy."
       ],
       "visual": {
         "kind": "image",
@@ -5609,6 +5692,7 @@
         }
       }
     },
+    "topic": "car:rollsroyce",
     "answer": {
       "type": "choice",
       "choices": [
@@ -5647,8 +5731,7 @@
       "title": "Rolls-Royce",
       "lines": [
         "Rolls-Royce is from United Kingdom.",
-        "The little silver figure on the front of a Rolls-Royce is called the Spirit of Ecstasy.",
-        "Rolls-Royce Motor Cars is owned today by BMW of Germany."
+        "The little silver figure on the front of a Rolls-Royce is called the Spirit of Ecstasy."
       ],
       "visual": {
         "kind": "image",
@@ -5660,6 +5743,7 @@
         }
       }
     },
+    "topic": "car:rollsroyce",
     "answer": {
       "type": "choice",
       "choices": [
@@ -5719,8 +5803,7 @@
       "title": "Land Rover",
       "lines": [
         "Land Rover is from United Kingdom.",
-        "Land Rovers are built for mud, rivers and mountains.",
-        "Land Rover is owned today by Tata Motors of India."
+        "Land Rovers are built for mud, rivers and mountains."
       ],
       "visual": {
         "kind": "image",
@@ -5732,6 +5815,7 @@
         }
       }
     },
+    "topic": "car:landrover",
     "answer": {
       "type": "choice",
       "choices": [
@@ -5764,8 +5848,7 @@
       "title": "Land Rover",
       "lines": [
         "Land Rover is from United Kingdom.",
-        "Land Rovers are built for mud, rivers and mountains.",
-        "Land Rover is owned today by Tata Motors of India."
+        "Land Rovers are built for mud, rivers and mountains."
       ],
       "visual": {
         "kind": "image",
@@ -5777,6 +5860,7 @@
         }
       }
     },
+    "topic": "car:landrover",
     "answer": {
       "type": "choice",
       "choices": [
@@ -5837,8 +5921,7 @@
       "title": "Land Rover",
       "lines": [
         "Land Rover is from United Kingdom.",
-        "Land Rovers are built for mud, rivers and mountains.",
-        "Land Rover is owned today by Tata Motors of India."
+        "Land Rovers are built for mud, rivers and mountains."
       ],
       "visual": {
         "kind": "image",
@@ -5850,6 +5933,7 @@
         }
       }
     },
+    "topic": "car:landrover",
     "answer": {
       "type": "choice",
       "choices": [
@@ -5888,8 +5972,7 @@
       "title": "Land Rover",
       "lines": [
         "Land Rover is from United Kingdom.",
-        "Land Rovers are built for mud, rivers and mountains.",
-        "Land Rover is owned today by Tata Motors of India."
+        "Land Rovers are built for mud, rivers and mountains."
       ],
       "visual": {
         "kind": "image",
@@ -5901,6 +5984,7 @@
         }
       }
     },
+    "topic": "car:landrover",
     "answer": {
       "type": "choice",
       "choices": [
@@ -5960,8 +6044,7 @@
       "title": "Jaguar",
       "lines": [
         "Jaguar is from United Kingdom.",
-        "Jaguar is named after the big cat, and a leaping jaguar sits on the front of the car.",
-        "Jaguar is owned today by Tata Motors of India."
+        "Jaguar is named after the big cat, and a leaping jaguar sits on the front of the car."
       ],
       "visual": {
         "kind": "image",
@@ -5973,6 +6056,7 @@
         }
       }
     },
+    "topic": "car:jaguar",
     "answer": {
       "type": "choice",
       "choices": [
@@ -6005,8 +6089,7 @@
       "title": "Jaguar",
       "lines": [
         "Jaguar is from United Kingdom.",
-        "Jaguar is named after the big cat, and a leaping jaguar sits on the front of the car.",
-        "Jaguar is owned today by Tata Motors of India."
+        "Jaguar is named after the big cat, and a leaping jaguar sits on the front of the car."
       ],
       "visual": {
         "kind": "image",
@@ -6018,6 +6101,7 @@
         }
       }
     },
+    "topic": "car:jaguar",
     "answer": {
       "type": "choice",
       "choices": [
@@ -6078,8 +6162,7 @@
       "title": "Jaguar",
       "lines": [
         "Jaguar is from United Kingdom.",
-        "Jaguar is named after the big cat, and a leaping jaguar sits on the front of the car.",
-        "Jaguar is owned today by Tata Motors of India."
+        "Jaguar is named after the big cat, and a leaping jaguar sits on the front of the car."
       ],
       "visual": {
         "kind": "image",
@@ -6091,6 +6174,7 @@
         }
       }
     },
+    "topic": "car:jaguar",
     "answer": {
       "type": "choice",
       "choices": [
@@ -6129,8 +6213,7 @@
       "title": "Jaguar",
       "lines": [
         "Jaguar is from United Kingdom.",
-        "Jaguar is named after the big cat, and a leaping jaguar sits on the front of the car.",
-        "Jaguar is owned today by Tata Motors of India."
+        "Jaguar is named after the big cat, and a leaping jaguar sits on the front of the car."
       ],
       "visual": {
         "kind": "image",
@@ -6142,6 +6225,7 @@
         }
       }
     },
+    "topic": "car:jaguar",
     "answer": {
       "type": "choice",
       "choices": [
@@ -6201,8 +6285,7 @@
       "title": "Volvo",
       "lines": [
         "Volvo is from Sweden.",
-        "Volvo invented the three point seat belt and let every other carmaker use it for free.",
-        "Volvo Cars is owned today by Geely of China."
+        "Volvo invented the three point seat belt and let every other carmaker use it for free."
       ],
       "visual": {
         "kind": "image",
@@ -6214,6 +6297,7 @@
         }
       }
     },
+    "topic": "car:volvo",
     "answer": {
       "type": "choice",
       "choices": [
@@ -6246,8 +6330,7 @@
       "title": "Volvo",
       "lines": [
         "Volvo is from Sweden.",
-        "Volvo invented the three point seat belt and let every other carmaker use it for free.",
-        "Volvo Cars is owned today by Geely of China."
+        "Volvo invented the three point seat belt and let every other carmaker use it for free."
       ],
       "visual": {
         "kind": "image",
@@ -6259,6 +6342,7 @@
         }
       }
     },
+    "topic": "car:volvo",
     "answer": {
       "type": "choice",
       "choices": [
@@ -6319,8 +6403,7 @@
       "title": "Volvo",
       "lines": [
         "Volvo is from Sweden.",
-        "Volvo invented the three point seat belt and let every other carmaker use it for free.",
-        "Volvo Cars is owned today by Geely of China."
+        "Volvo invented the three point seat belt and let every other carmaker use it for free."
       ],
       "visual": {
         "kind": "image",
@@ -6332,6 +6415,7 @@
         }
       }
     },
+    "topic": "car:volvo",
     "answer": {
       "type": "choice",
       "choices": [
@@ -6370,8 +6454,7 @@
       "title": "Volvo",
       "lines": [
         "Volvo is from Sweden.",
-        "Volvo invented the three point seat belt and let every other carmaker use it for free.",
-        "Volvo Cars is owned today by Geely of China."
+        "Volvo invented the three point seat belt and let every other carmaker use it for free."
       ],
       "visual": {
         "kind": "image",
@@ -6383,6 +6466,7 @@
         }
       }
     },
+    "topic": "car:volvo",
     "answer": {
       "type": "choice",
       "choices": [
@@ -6454,6 +6538,7 @@
         }
       }
     },
+    "topic": "car:renault",
     "answer": {
       "type": "choice",
       "choices": [
@@ -6498,6 +6583,7 @@
         }
       }
     },
+    "topic": "car:renault",
     "answer": {
       "type": "choice",
       "choices": [
@@ -6570,6 +6656,7 @@
         }
       }
     },
+    "topic": "car:renault",
     "answer": {
       "type": "choice",
       "choices": [
@@ -6620,6 +6707,7 @@
         }
       }
     },
+    "topic": "car:renault",
     "answer": {
       "type": "choice",
       "choices": [
@@ -6691,6 +6779,7 @@
         }
       }
     },
+    "topic": "car:peugeot",
     "answer": {
       "type": "choice",
       "choices": [
@@ -6735,6 +6824,7 @@
         }
       }
     },
+    "topic": "car:peugeot",
     "answer": {
       "type": "choice",
       "choices": [
@@ -6807,6 +6897,7 @@
         }
       }
     },
+    "topic": "car:peugeot",
     "answer": {
       "type": "choice",
       "choices": [
@@ -6857,6 +6948,7 @@
         }
       }
     },
+    "topic": "car:peugeot",
     "answer": {
       "type": "choice",
       "choices": [
@@ -6928,6 +7020,7 @@
         }
       }
     },
+    "topic": "car:citroen",
     "answer": {
       "type": "choice",
       "choices": [
@@ -6972,6 +7065,7 @@
         }
       }
     },
+    "topic": "car:citroen",
     "answer": {
       "type": "choice",
       "choices": [
@@ -7044,6 +7138,7 @@
         }
       }
     },
+    "topic": "car:citroen",
     "answer": {
       "type": "choice",
       "choices": [
@@ -7094,6 +7189,7 @@
         }
       }
     },
+    "topic": "car:citroen",
     "answer": {
       "type": "choice",
       "choices": [

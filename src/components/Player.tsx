@@ -21,6 +21,10 @@ type Phase = "ready" | "learning" | "answering" | "feedback" | "done";
 // Sessions end quietly after this long, even mid-list. Nothing on screen counts down.
 const SESSION_LIMIT_MS = 12 * 60 * 1000;
 
+// Find the Bug, when he taps a wrong step that comes after the first mistake.
+const NUDGE = "That step is wrong too, but the mistake started earlier. Look above it.";
+const FOUND_WITH_NUDGE = "You found it! Next time, start checking from the top.";
+
 // Timing is only read inside tap handlers, never while rendering.
 const clock = () => performance.now();
 
@@ -65,8 +69,10 @@ export function Player({ student, questions, reasons = {}, seen = [], save = tru
   const [phase, setPhase] = useState<Phase>("ready");
   const [index, setIndex] = useState(0);
   const [choice, setChoice] = useState<number | null>(null);
+  // Find the Bug: the step he tapped first, when it came after the real bug and he was nudged to look earlier.
+  const [firstTap, setFirstTap] = useState<number | null>(null);
   const [digits, setDigits] = useState("");
-  const [result, setResult] = useState<{ correct: boolean; confidence: Confidence } | null>(null);
+  const [result, setResult] = useState<{ correct: boolean; confidence: Confidence; foundWithNudge: boolean } | null>(null);
   const [showExplanation, setShowExplanation] = useState(false);
   const [pending, setPending] = useState(0);
   // How the child is working this question out. Reset for every question.
@@ -114,6 +120,7 @@ export function Player({ student, questions, reasons = {}, seen = [], save = tru
   const showQuestion = (i: number) => {
     setIndex(i);
     setChoice(null);
+    setFirstTap(null);
     setDigits("");
     setResult(null);
     setShowExplanation(false);
@@ -163,16 +170,31 @@ export function Player({ student, questions, reasons = {}, seen = [], save = tru
         : { type: "numeric", value: Number(digits) }
       : choice === null
         ? null
-        : { type: question.answer.type === "choice" ? "choice" : "step", index: choice };
+        : question.answer.type === "choice"
+          ? { type: "choice", index: choice }
+          : firstTap === null
+            ? { type: "step", index: choice }
+            : { type: "step", index: firstTap, secondIndex: choice };
 
   const submit = (confidence: Confidence) => {
     if (!response) return;
     stop();
+    const { answer } = question;
+    // Tapping a step after the bug means he saw a wrong step but not where it started. Point him earlier once, and
+    // keep the first tap: that is what gets graded, so finding it with help never counts toward mastery.
+    if (answer.type === "findTheBug" && response.type === "step" && firstTap === null && response.index > answer.bugIndex) {
+      setFirstTap(response.index);
+      setChoice(null);
+      autoSpeak(NUDGE);
+      return;
+    }
     const correct = isCorrect(question, response);
-    setResult({ correct, confidence });
+    const foundWithNudge = answer.type === "findTheBug" && response.type === "step" && response.secondIndex === answer.bugIndex;
+    setResult({ correct, confidence, foundWithNudge });
     setPhase("feedback");
     speechInput.cancel();
-    results.current.push(correct);
+    // Finding it after a nudge is not the kind of run a break is for.
+    results.current.push(correct || foundWithNudge);
     if (index + 1 < questions.length && shouldSuggestBreak(results.current, breakSuggested.current)) {
       breakSuggested.current = true;
       setOfferBreak(true);
@@ -201,6 +223,8 @@ export function Player({ student, questions, reasons = {}, seen = [], save = tru
 
     if (correct) {
       autoSpeak("You got it! Nice careful thinking.");
+    } else if (foundWithNudge) {
+      autoSpeak(FOUND_WITH_NUDGE);
     } else {
       setShowExplanation(true);
       const opener = confidence === "HIGH" ? "You felt really sure. Let's look at it together." : "Let's check it together.";
@@ -390,12 +414,20 @@ export function Player({ student, questions, reasons = {}, seen = [], save = tru
         <Scratchpad key={question.id} onStrokesChange={(strokes) => setScratch((sc) => ({ ...sc, strokes }))} />
       </div>
 
+      {answer.type === "findTheBug" && firstTap !== null && phase === "answering" && (
+        <p className="mt-4 rounded-2xl bg-bg-mid p-4 text-xl font-bold" role="status">
+          {NUDGE} 👆
+        </p>
+      )}
       {answer.type === "findTheBug" ? (
         <ol className="mt-4 grid gap-3" aria-label={`${answer.solver}'s steps`}>
           {answer.steps.map((step, i) => {
             const picked = choice === i;
             const reveal = phase === "feedback";
-            const tone = reveal
+            const ruledOut = !reveal && firstTap !== null && i >= firstTap;
+            const tone = ruledOut
+              ? "border-white/10 bg-bg-hill opacity-50"
+              : reveal
               ? i === answer.bugIndex
                 ? "border-danger bg-danger/20"
                 : picked
@@ -407,7 +439,7 @@ export function Player({ student, questions, reasons = {}, seen = [], save = tru
             return (
               <li key={i}>
                 <button
-                  disabled={reveal}
+                  disabled={reveal || ruledOut}
                   onClick={() => {
                     markAction();
                     setChoice(i);
@@ -491,6 +523,8 @@ export function Player({ student, questions, reasons = {}, seen = [], save = tru
         <section className="mt-5 rounded-3xl bg-bg-mid p-5">
           {result.correct ? (
             <p className="font-display text-3xl font-extrabold text-moss-light">You got it! Nice careful thinking. 🎉</p>
+          ) : result.foundWithNudge ? (
+            <p className="font-display text-3xl font-extrabold text-moss-light">{FOUND_WITH_NUDGE} 🔍</p>
           ) : (
             <>
               <p className="font-display text-3xl font-extrabold text-gold">

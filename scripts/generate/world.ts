@@ -133,6 +133,7 @@ export function worldQuestions(): Question[] {
         prompt: "Which country's flag is this?",
         visual: flagPicture(c),
         teach: card(c),
+        topic: `country:${c.code}`,
         answer: choices(`world-flag-name-${c.code}`, c.name, decoys.map((o) => o.name)),
         explanation: `This is the flag of ${c.name}. ${c.flagWords}`,
         band,
@@ -142,6 +143,7 @@ export function worldQuestions(): Question[] {
         skills: ["WORLD-FLAGS"],
         prompt: `Which one of these is the flag of ${c.name}?`,
         teach: card(c),
+        topic: `country:${c.code}`,
         answer: (() => {
           const picked = choices(`world-flag-pick-${c.code}`, c.name, decoys.map((o) => o.name));
           if (picked.type !== "choice") throw new Error("expected choices");
@@ -156,6 +158,7 @@ export function worldQuestions(): Question[] {
         prompt: `What is the capital city of ${c.name}?`,
         visual: flagPicture(c),
         teach: card(c),
+        topic: `country:${c.code}`,
         answer: choices(`world-capital-${c.code}`, c.capital, decoys.map((o) => o.capital)),
         explanation: `The capital of ${c.name} is ${c.capital}.`,
         band: (band === 1 ? 2 : 3) as 2 | 3,
@@ -166,6 +169,7 @@ export function worldQuestions(): Question[] {
         prompt: `Which continent is ${c.name} in?`,
         visual: flagPicture(c),
         teach: card(c),
+        topic: `country:${c.code}`,
         answer: choices(`world-continent-${c.code}`, c.continent, [...new Set(decoys.map((o) => o.continent))]),
         explanation: `${c.name} is in ${c.continent}.`,
         band: (band === 1 ? 1 : 2) as 1 | 2,
@@ -180,6 +184,7 @@ export function worldQuestions(): Question[] {
           prompt: c.flagDetail.question,
           visual: flagPicture(c),
           teach: card(c),
+          topic: `country:${c.code}`,
           answer: choices(`world-flag-detail-${c.code}`, c.flagDetail.answer, c.flagDetail.wrong),
           explanation: c.flagDetail.why,
           band: (band === 1 ? 1 : 2) as 1 | 2,
@@ -196,6 +201,7 @@ export function worldQuestions(): Question[] {
           prompt: `Which of these is true about ${c.name}?`,
           visual: flagPicture(c),
           teach: card(c),
+          topic: `country:${c.code}`,
           answer: choices(
             `world-culture-${c.code}`,
             fact,

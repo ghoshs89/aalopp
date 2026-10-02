@@ -31,6 +31,8 @@ describe("SyncRequestSchema", () => {
   it("accepts step responses and how the child worked it out, but never drawings", () => {
     const item = { ...attempt, questionId: "dbg-add-47-38-carry", response: { type: "step", index: 2 }, scratchpad: "DIGITAL", scratchpadStrokes: 14 };
     expect(SyncRequestSchema.safeParse({ items: [item] }).success).toBe(true);
+    const nudged = SyncRequestSchema.parse({ items: [{ ...item, response: { type: "step", index: 3, secondIndex: 2 } }] });
+    expect(nudged.items[0]).toMatchObject({ response: { type: "step", index: 3, secondIndex: 2 } });
     expect(SyncRequestSchema.safeParse({ items: [{ ...item, scratchpad: "CRAYON" }] }).success).toBe(false);
     const parsed = SyncRequestSchema.parse({ items: [{ ...item, drawing: "data:image/png;base64,AAAA" }] });
     expect(parsed.items[0]).not.toHaveProperty("drawing");

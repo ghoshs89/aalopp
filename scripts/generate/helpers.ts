@@ -16,6 +16,8 @@ export type Draft = {
   band: 1 | 2 | 3 | 4 | 5;
   /** A card shown before the question the first time he meets it. */
   teach?: Question["teach"];
+  /** What the question is about, so a session asks only one question per brand or country. */
+  topic?: Question["topic"];
   /**
    * Knowledge questions ship as drafts. A generator can compute that 4 + 3 is 7, but it cannot check that Ferrari is
    * Italian, so those facts need a separate checking pass before the player will serve them.
@@ -35,6 +37,7 @@ export function question(file: string, d: Draft): Question {
     ...(d.visual ? { visual: d.visual } : {}),
     ...(d.passage ? { passage: d.passage } : {}),
     ...(d.teach ? { teach: d.teach } : {}),
+    ...(d.topic ? { topic: d.topic } : {}),
     ...(d.listen ? { listen: d.listen } : {}),
     ...(d.voiceAnswer ? { voiceAnswer: true } : {}),
     answer: d.answer,

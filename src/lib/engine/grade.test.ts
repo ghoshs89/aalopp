@@ -24,6 +24,11 @@ describe("isCorrect", () => {
     expect(isCorrect(bug, { type: "choice", index: 2 })).toBe(false);
   });
 
+  it("grades find-the-bug on the first tap, even when the tap after a nudge is right", () => {
+    const bug = questionsById.get("dbg-add-47-38-carry")!;
+    expect(isCorrect(bug, { type: "step", index: 3, secondIndex: 2 })).toBe(false);
+  });
+
   it("never accepts a response of the wrong type", () => {
     expect(isCorrect(choice, { type: "numeric", value: 2 })).toBe(false);
     expect(isCorrect(numeric, { type: "choice", index: 0 })).toBe(false);

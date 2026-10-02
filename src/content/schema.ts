@@ -207,6 +207,11 @@ export const QuestionSchema = z
     passage: z.string().min(1).optional(),
     /** A card shown before the question the first time he sees it. See TeachSchema. */
     teach: TeachSchema.optional(),
+    /**
+     * What the question is about, such as "car:mini" or "country:fr". A session asks at most one question per topic,
+     * because the teach card and the first question about Mini hand him the answer to the next one.
+     */
+    topic: z.string().regex(/^[a-z]+:[a-z0-9-]+$/, "Topics look like car:mini or country:fr").optional(),
     /** A word or phrase to hear in another language, played with that language's voice. */
     listen: z.object({ text: z.string().min(1), lang: z.enum(["en-US", "es-ES", "fr-FR"]) }).optional(),
     /** Offer a microphone so the child can say a choice instead of tapping it (choice answers only). */
