@@ -16,6 +16,79 @@ Attribution convention used below: "Parent decision" means the parent chose it; 
 
 ---
 
+## 2026-10-03  Decision  World knowledge batch 2: scope and teaching moments
+What: Five parent decisions from one conversation, acted on together.
+1. Countries: add all four offered groups rather than picking a subset. India's neighbours (Nepal, Bangladesh, Sri
+   Lanka, Pakistan, Bhutan), Africa (Egypt, Kenya, South Africa, Nigeria, Morocco), more of the Americas (Argentina,
+   Peru, Chile, Colombia, Cuba), more of Europe and Asia-Pacific (Netherlands, Switzerland, Greece, Russia,
+   Indonesia, Thailand, New Zealand). 15 plus 22 is 37 countries.
+2. Question kinds: add all four offered kinds. Big cities, landmarks, real locator maps, land neighbours.
+3. Teaching: both a richer teach card and a "Did you know?" fact after he answers, right or wrong.
+4. Maps: the India point-of-view version of the geographic data, so Jammu, Kashmir and Ladakh are drawn as India
+   rather than hatched as disputed, matching what the parent wants him taught.
+Reason for the countries and question-kind scope: not narrowed down, the parent chose everything on offer.
+Alternatives rejected: none, these were the offered options, not alternatives to a default.
+
+## 2026-10-03  Decision  Picture answer choices hide their name until the answer is checked
+What: `Picture` choices (flags, logos, maps) no longer print a name under the picture while he is answering, only
+after (`src/components/Player.tsx`); the read aloud button skips choice names entirely for a picture-choice question
+(`src/lib/speech.ts`); `voiceAnswer` is now rejected together with `choiceVisuals` in the schema, since saying a
+choice out loud needs the very name the picture is meant to hide.
+Reason: parent noticed that "which one of these is the flag of X" showed the country name under every flag choice,
+which answers the question by reading rather than by recognising the picture.
+Alternatives rejected: none offered; this was the only reasonable fix.
+
+## 2026-10-03  Decision  Capital and continent questions skipped where there is no single right answer
+What: `skipCapitalQuestion` leaves out the quiz question for Sri Lanka (executive capital Colombo, legislative
+capital Sri Jayawardenepura Kotte) and South Africa (Pretoria, Cape Town and Bloemfontein); `skipContinentQuestion`
+leaves it out for Russia (Europe and Asia, no single correct answer). The teach card still explains the real
+situation in each case; only the quiz question with one correct choice is skipped. Switzerland and the Netherlands
+were considered for the same treatment (Bern is called the "federal city" rather than the constitutional capital;
+Amsterdam is the constitutional capital but the government sits in The Hague) but kept as normal single-answer
+questions, since both are taught as a single capital everywhere from school atlases to encyclopedias, unlike the
+genuinely split cases.
+Reason: a single-answer quiz question needs one unambiguous right answer; Wikipedia's own text for Sri Lanka, South
+Africa and Russia states the split directly (see content/REVIEW.md).
+Alternatives rejected: picking one of the real answers arbitrarily and calling it correct, which would mark the
+other true answer wrong if he ever heard it elsewhere.
+
+## 2026-10-03  Decision, parent not asked  No neighbour question for South Korea
+What: `neighbours` is left empty for South Korea, so it gets no "which country shares a border with X" question. Its
+only real land neighbour is North Korea.
+Reason: the parent did not ask for this topic, and a quiz answer framing it as a plain neighbour fact seemed like
+the wrong way for a five year old to first meet it. Easy to revisit if the parent would rather it were included.
+Alternatives rejected: including it like any other country, since India to Pakistan and India to China are already
+treated as plain geography elsewhere in this same content.
+
+## 2026-10-03  Milestone  World knowledge batch 2 built and verified locally
+What: 37 countries (22 new), 4 new question kinds (big cities, landmarks, maps, land neighbours) in
+`scripts/generate/world.ts`, two new skills `WORLD-CITIES` and `WORLD-NEIGHBOURS`, a `didYouKnow` field on
+`Question`, picture choices hiding their name until checked, and 37 locator maps rendered from real geographic data.
+Sources for new facts: Wikidata REST API (capital, continent) cross-checked against the English Wikipedia's full
+article text (capital, land borders, biggest city), both retrieved 2026-10-03; landmarks and second cities are
+common knowledge checked the same way the six general CARS-FACTS questions were in the first content batch, not
+against one named source. Full detail in content/REVIEW.md. Verified since the facts were checked as they were
+written rather than drafted first and checked in a separate pass, every new question ships `"reviewed"` directly;
+this is a deviation from the usual "ships draft until an independent pass" sequence, justified because the
+independent-source check happened before the data was typed in, not after.
+Verified by: `npm test` 21 files, 128 tests (6 new, covering neighbour decoys, the two skipped quiz questions,
+Russia's skipped continent question, every picture path existing on disk, and no `didYouKnow` repeating its own
+explanation). `npm run content:check`: 60 skills, 792 questions, all reviewed. `npm run typecheck` and `npm run
+lint` pass. `npm run build` succeeds. Driven in headless Chrome at 390px: a map question, a city question, a
+landmark question and a neighbour question all render and grade correctly; a flag-pick question shows no names
+while answering; a Did You Know box appears after answering a flag question.
+
+## 2026-10-03  Dead end  d3-geo renders the inverse of a country if the source data's ring winding is backwards
+What: `geoAzimuthalEqualArea().clipAngle(...)` combined with a `MultiPolygon` whose exterior rings wind clockwise
+(the convention most shapefiles use) does not clip to nothing or throw. It silently fills the entire clip circle
+except for the country's own shape, which looks exactly like a giant circle with the real shape punched out of it
+as a hole, and the resulting SVG path is enormous (one single-country file bloated past 800KB). The fix is
+`mapshaper ... -o reverse-winding` when converting the source shapefile to GeoJSON, documented with the full
+regeneration command in `scripts/maps/data/README.md`. Also: always use the bounding box diagonal for the view
+radius, not the width or height alone, or a country whose shape is wider than it is tall (India) gets its far
+corner clipped off at the top. Also: `mapshaper -simplify ... -clean` drops small countries entirely (lost 71 of
+248 at one setting); `keep-shapes` avoids that.
+
 ## 2026-10-01  Milestone  First-themed-week tuning deployed
 What: Commit 067f23b pushed to `main` at the parent's request.
 Verified by: `npm run build` succeeded before pushing. GitHub commit status from Vercel for 067f23b reported

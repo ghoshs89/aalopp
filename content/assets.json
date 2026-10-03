@@ -105,8 +105,31 @@
       "sourceUrl": "https://flagcdn.com/se.svg",
       "retrieved": "2026-09-21",
       "licence": "National flag, public domain."
-    }
+    },
+    { "file": "np.svg", "name": "Nepal", "sourceUrl": "https://flagcdn.com/np.svg", "retrieved": "2026-10-03", "licence": "National flag, public domain." },
+    { "file": "bd.svg", "name": "Bangladesh", "sourceUrl": "https://flagcdn.com/bd.svg", "retrieved": "2026-10-03", "licence": "National flag, public domain." },
+    { "file": "lk.svg", "name": "Sri Lanka", "sourceUrl": "https://flagcdn.com/lk.svg", "retrieved": "2026-10-03", "licence": "National flag, public domain." },
+    { "file": "pk.svg", "name": "Pakistan", "sourceUrl": "https://flagcdn.com/pk.svg", "retrieved": "2026-10-03", "licence": "National flag, public domain." },
+    { "file": "bt.svg", "name": "Bhutan", "sourceUrl": "https://flagcdn.com/bt.svg", "retrieved": "2026-10-03", "licence": "National flag, public domain." },
+    { "file": "eg.svg", "name": "Egypt", "sourceUrl": "https://flagcdn.com/eg.svg", "retrieved": "2026-10-03", "licence": "National flag, public domain." },
+    { "file": "ke.svg", "name": "Kenya", "sourceUrl": "https://flagcdn.com/ke.svg", "retrieved": "2026-10-03", "licence": "National flag, public domain." },
+    { "file": "za.svg", "name": "South Africa", "sourceUrl": "https://flagcdn.com/za.svg", "retrieved": "2026-10-03", "licence": "National flag, public domain." },
+    { "file": "ng.svg", "name": "Nigeria", "sourceUrl": "https://flagcdn.com/ng.svg", "retrieved": "2026-10-03", "licence": "National flag, public domain." },
+    { "file": "ma.svg", "name": "Morocco", "sourceUrl": "https://flagcdn.com/ma.svg", "retrieved": "2026-10-03", "licence": "National flag, public domain." },
+    { "file": "ar.svg", "name": "Argentina", "sourceUrl": "https://flagcdn.com/ar.svg", "retrieved": "2026-10-03", "licence": "National flag, public domain." },
+    { "file": "pe.svg", "name": "Peru", "sourceUrl": "https://flagcdn.com/pe.svg", "retrieved": "2026-10-03", "licence": "National flag, public domain." },
+    { "file": "cl.svg", "name": "Chile", "sourceUrl": "https://flagcdn.com/cl.svg", "retrieved": "2026-10-03", "licence": "National flag, public domain." },
+    { "file": "co.svg", "name": "Colombia", "sourceUrl": "https://flagcdn.com/co.svg", "retrieved": "2026-10-03", "licence": "National flag, public domain." },
+    { "file": "cu.svg", "name": "Cuba", "sourceUrl": "https://flagcdn.com/cu.svg", "retrieved": "2026-10-03", "licence": "National flag, public domain." },
+    { "file": "nl.svg", "name": "Netherlands", "sourceUrl": "https://flagcdn.com/nl.svg", "retrieved": "2026-10-03", "licence": "National flag, public domain." },
+    { "file": "ch.svg", "name": "Switzerland", "sourceUrl": "https://flagcdn.com/ch.svg", "retrieved": "2026-10-03", "licence": "National flag, public domain." },
+    { "file": "gr.svg", "name": "Greece", "sourceUrl": "https://flagcdn.com/gr.svg", "retrieved": "2026-10-03", "licence": "National flag, public domain." },
+    { "file": "ru.svg", "name": "Russia", "sourceUrl": "https://flagcdn.com/ru.svg", "retrieved": "2026-10-03", "licence": "National flag, public domain." },
+    { "file": "id.svg", "name": "Indonesia", "sourceUrl": "https://flagcdn.com/id.svg", "retrieved": "2026-10-03", "licence": "National flag, public domain." },
+    { "file": "th.svg", "name": "Thailand", "sourceUrl": "https://flagcdn.com/th.svg", "retrieved": "2026-10-03", "licence": "National flag, public domain." },
+    { "file": "nz.svg", "name": "New Zealand", "sourceUrl": "https://flagcdn.com/nz.svg", "retrieved": "2026-10-03", "licence": "National flag, public domain." }
   ],
+  "mapsNote": "The files in public/maps are not downloaded 1:1 like flags and logos: they are rendered by npm run maps:build from the single committed dataset at scripts/maps/data/countries.geojson. See scripts/maps/data/README.md for that dataset's source, date and licence (Natural Earth, public domain, India point-of-view admin-0 countries, retrieved 2026-10-03). assets:fetch does not touch public/maps; run maps:build instead.",
   "logos": [
     {
       "file": "toyota.svg",

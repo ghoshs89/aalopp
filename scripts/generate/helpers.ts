@@ -18,6 +18,8 @@ export type Draft = {
   teach?: Question["teach"];
   /** What the question is about, so a session asks only one question per brand or country. */
   topic?: Question["topic"];
+  /** A second, different fact shown after he answers. See the schema's own comment on this field. */
+  didYouKnow?: Question["didYouKnow"];
   /**
    * Knowledge questions ship as drafts. A generator can compute that 4 + 3 is 7, but it cannot check that Ferrari is
    * Italian, so those facts need a separate checking pass before the player will serve them.
@@ -38,6 +40,7 @@ export function question(file: string, d: Draft): Question {
     ...(d.passage ? { passage: d.passage } : {}),
     ...(d.teach ? { teach: d.teach } : {}),
     ...(d.topic ? { topic: d.topic } : {}),
+    ...(d.didYouKnow ? { didYouKnow: d.didYouKnow } : {}),
     ...(d.listen ? { listen: d.listen } : {}),
     ...(d.voiceAnswer ? { voiceAnswer: true } : {}),
     answer: d.answer,

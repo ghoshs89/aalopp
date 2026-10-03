@@ -40,6 +40,22 @@ describe("QuestionSchema", () => {
     expect(messages(withDash)).toContain("Em dashes are not allowed in content");
   });
 
+  it("rejects a spoken answer when the choices are pictures", () => {
+    const withVisuals = {
+      ...valid,
+      voiceAnswer: true,
+      answer: {
+        ...valid.answer,
+        choiceVisuals: [
+          { kind: "image", src: "/flags/ca.svg", alt: "a" },
+          { kind: "image", src: "/flags/in.svg", alt: "b" },
+          { kind: "image", src: "/flags/us.svg", alt: "c" },
+        ],
+      },
+    };
+    expect(messages(withVisuals).some((m) => m.includes("choiceVisuals"))).toBe(true);
+  });
+
   it("requires points when difficulty comes from Kangaroo point values", () => {
     expect(messages({ ...valid, difficulty: { band: 1, basis: "kangaroo-points" } })).toContain(
       "kangaroo-points difficulty needs a points value",

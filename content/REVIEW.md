@@ -1,5 +1,78 @@
 # Content review log
 
+## 2026-10-03: World knowledge batch 2, 22 new countries (324 world questions total)
+
+New countries: Nepal, Bangladesh, Sri Lanka, Pakistan, Bhutan (India's neighbours); Egypt, Kenya, South Africa,
+Nigeria, Morocco (Africa); Argentina, Peru, Chile, Colombia, Cuba (more of the Americas); Netherlands, Switzerland,
+Greece, Russia, Indonesia, Thailand, New Zealand (Europe and Asia-Pacific). Plus four new question kinds (big
+cities, landmarks, maps, land neighbours) added to all 37 countries including the original 15.
+
+**Sources**, all retrieved 2026-10-03:
+- Wikidata REST API (`/w/rest.php/wikibase/v1/entities/items/<QID>`), statements P36 (capital), P30 (continent) and
+  P47 (shares border), for all 37 countries.
+- The English Wikipedia `prop=extracts&explaintext=1` API (the full article text, not the lead summary; see the Dead
+  ends section below for why the full text matters), for all 22 new countries.
+
+**Why both, not just one**: Wikidata's P36 is not reliable alone. Its first-ranked value for Brazil's capital was
+"Rio de Janeiro", Brazil's capital until 1960, not the current one, Brasilia (which the original 15 countries'
+entry already had correctly, from the 2026-09-21 pass). Every new country's capital was cross-checked against the
+Wikipedia article's own opening sentences, which state it in plain prose ("Dhaka, the capital and largest city,
+is...").
+
+**Capitals and continents**: all 22 matched between Wikidata and the Wikipedia extract, except the three called
+out below. Continents follow the mainland for a country with overseas territory, not every territory it holds:
+France is Europe (not also Africa, Americas, Oceania and Antarctica from French Guiana, Reunion, French Polynesia
+and its Antarctic claim); Netherlands is Europe (not also Central America, from its Caribbean constituent
+countries); Spain is Europe (not also Africa and the Americas, from the Canary Islands and other claims); Chile is
+South America (not also Oceania, from Easter Island); United States is North America (not also Asia and Insular
+Oceania, from its Pacific territories); Egypt is Africa (it has a small Asian part, the Sinai Peninsula, but the
+overwhelming majority of its land and all its population centres are African, and it is taught as an African
+country everywhere a child would meet it); Indonesia is Asia (sometimes classed partly Oceania for its eastern
+provinces, but Jakarta and the great majority of its population are in Asia).
+
+**Three countries with no single right answer, confirmed directly in the Wikipedia article text**:
+- Sri Lanka: "Its executive and judicial capital is Colombo... neighboring Sri Jayawardenepura Kotte is the
+  legislative capital." Capital quiz question skipped (`skipCapitalQuestion`); teach card names both.
+- South Africa: "Pretoria is the administrative capital, while Cape Town, as the seat of Parliament, is the
+  legislative capital, and Bloemfontein is regarded as the judicial capital." Capital quiz question skipped; teach
+  card names all three.
+- Russia: spans Europe and Asia with no single correct continent answer. Continent quiz question skipped
+  (`skipContinentQuestion`); the teach card's facts explain the Ural Mountains as the usual dividing line.
+- Considered and rejected for the same treatment: Switzerland ("Bern serving as the federal city and the seat of
+  the national government": functionally unambiguous, no second city is called a capital anywhere) and Netherlands
+  ("Amsterdam is the country's most populous city and the nominal capital, though the primary national political
+  institutions are in The Hague": Amsterdam is still the one constitutional capital, same simplification already
+  used for Washington, D.C. elsewhere in this file). Both kept as normal single-answer capital questions.
+
+**Land neighbours** (`WORLD-NEIGHBOURS`): read directly from each Wikipedia article's own border description, for
+example Pakistan: "it shares land borders with India to the east; Afghanistan to the west; Iran to the southwest;
+and China to the northeast." Maritime-only borders and disputed territories are left out (Morocco's neighbour list
+omits Western Sahara, a disputed territory and not a sovereign country). South Korea is given an empty neighbour
+list on purpose, not because the data is missing; see docs/DEVLOG.md, 2026-10-03, "No neighbour question for South
+Korea".
+
+**Flags**: all 22 new flag descriptions were checked by reading the actual committed SVG source in `public/flags`
+(fill colours and path order), not by memory, the same standard as the 2026-09-21 pass. Indonesia (red over white)
+and the Netherlands (red, white, blue top to bottom) were specifically double-checked this way since both are easy
+to invert or confuse with a similar-looking flag.
+
+**Landmarks and second cities**: not from one named source each. These are facts checked the same way the six
+general `CARS-FACTS` questions were in the first content batch: common knowledge not in real dispute (the Eiffel
+Tower is in Paris, Machu Picchu is near Cusco), cross-checked against the fetched Wikipedia text where it happened
+to confirm one in passing (for example New Zealand's capital Wellington and biggest city Auckland, South Africa's
+biggest city Johannesburg).
+
+**Maps**: see `scripts/maps/data/README.md` for the data source (Natural Earth, India point of view) and
+`docs/DEVLOG.md`, 2026-10-03, "Dead end", for the rendering bug that had to be fixed first. All 37 rendered maps
+were checked visually, as a full contact sheet and again individually for Canada, India, New Zealand, Pakistan,
+Russia and South Africa, confirming: India is drawn with Jammu, Kashmir and Ladakh as part of India, not hatched as
+disputed; Canada and Russia show their full extent, not a fragment left over from an earlier, too-aggressive
+simplification pass; New Zealand shows both main islands; no country is missing.
+
+**Parent spot-check suggestions**: `world-map-in` (the India point-of-view shape), `world-capital-lk`,
+`world-capital-za` (confirm both are correctly absent), `world-continent-ru` (confirm absent),
+`world-neighbour-eg`, `world-landmark-pe`, `world-city-za`.
+
 ## 2026-10-01: Ownership lines removed from car teach cards
 
 `card()` in `scripts/generate/cars.ts` no longer adds `ownerNote`, which removes one line from the teach cards of

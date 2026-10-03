@@ -2,7 +2,7 @@
 
 The living plan. It replaces the original planning file at `~/.claude/plans/what-do-you-think-melodic-harp.md`, which exists only on the parent's Mac and still describes phases that are now done. Decisions and their reasons are in `docs/DEVLOG.md`; the latest session state is in `docs/HANDOFF.md`.
 
-Last updated: 2026-09-13. All planned phases are built and live; next is real use, device testing and fixes (see `docs/HANDOFF.md`).
+Last updated: 2026-10-03. All planned phases are built; phases 6 to 9 are tuning and content work done since, see the table below and `docs/HANDOFF.md` for what is live versus still to deploy.
 
 ## Goal
 A practice app for one learner, Aishik (age 5.5, working around grade 3: MAP Math and Reading RIT 186, IXL Math about 290 with Measurement and Data as the weakest strand). He uses it on laptops, tablets and phones around the house. Source material: `../Aishik-Support-Plan.md` (one folder above the repo).
@@ -39,6 +39,7 @@ These come from the support plan and the review of the original AALOPP specifica
 | 6. Engine tuning from real data | Fixes the first 36 real answers exposed: a reserved new-skill slot, a fifth review box, a miss dropping one box, clearer Find the Bug feedback | Done 2026-09-21, not yet deployed. Before the fix, 25 of 48 skills had never been served and the whole LANGUAGE strand was starved |
 | 7. Picked themes | A theme the child chooses from `/choose/[studentId]`, teach cards before knowledge questions, committed flag and logo artwork. Two themes: cars and logos, flags and countries | Built 2026-09-21 at the parent's request. 221 questions across 10 skills, all `"draft"` until the fact-checking pass, so none of it reaches Aishik yet |
 | 8. Tuning from the first themed week | 3 core questions in every themed session, one question per brand or country, no ownership lines on teach cards, a "look earlier" nudge in Find the Bug | Done 2026-10-01 at the parent's request (commit 067f23b); live on Vercel |
+| 9. World knowledge batch 2 | Picture answer choices (flags, logos, maps) never show a name until the answer is checked; 22 more countries (India's neighbours, Africa, more of the Americas, Europe and Asia-Pacific); real locator maps rendered from Natural Earth data (India point of view); big cities, landmarks and land neighbours as new question kinds; "Did you know?" after an answer | Built 2026-10-03 at the parent's request, not yet deployed |
 
 Order confirmed by the parent on 2026-09-13: Phase 4 before Phase 3, because the dashboard needs real usage data and the scratchpad is useful immediately.
 

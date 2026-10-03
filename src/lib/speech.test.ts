@@ -29,6 +29,18 @@ describe("questionSpeech", () => {
     const q = questionsById.get("md-beach-drive-minutes")!;
     expect(questionSpeech(q)).toBe(q.prompt);
   });
+
+  it("does not read choice names for picture choices, since the picture is the question", () => {
+    const q = questionsById.get("world-flag-pick-ca")!;
+    expect(q.answer.type).toBe("choice");
+    const spoken = questionSpeech(q);
+    expect(spoken).toBe(q.speech ?? speakable(q.prompt));
+    // The prompt itself names the country being asked about ("the flag of Canada"); it is the other, wrong
+    // choices that must never be spoken, since naming any of them would answer the question for him.
+    const wrongChoices = (q.answer as { choices: string[]; correctIndex: number }).choices.filter((_, i) => i !== (q.answer as { correctIndex: number }).correctIndex);
+    expect(wrongChoices.length).toBeGreaterThan(0);
+    for (const name of wrongChoices) expect(spoken).not.toContain(name);
+  });
 });
 
 describe("questionSpeechParts", () => {

@@ -65,7 +65,7 @@ const SvgVisual = z.object({
  */
 const ImageVisual = z.object({
   kind: z.literal("image"),
-  src: z.string().regex(/^\/(flags|logos)\/[a-z0-9-]+\.(svg|png|webp)$/, "Pictures live in public/flags or public/logos"),
+  src: z.string().regex(/^\/(flags|logos|maps)\/[a-z0-9-]+\.(svg|png|webp)$/, "Pictures live in public/flags, public/logos or public/maps"),
   alt: z.string().min(1),
   /** Side by side with a second picture, for example a logo next to its country's flag. */
   beside: z.object({ src: z.string().min(1), alt: z.string().min(1) }).optional(),
@@ -212,6 +212,11 @@ export const QuestionSchema = z
      * because the teach card and the first question about Mini hand him the answer to the next one.
      */
     topic: z.string().regex(/^[a-z]+:[a-z0-9-]+$/, "Topics look like car:mini or country:fr").optional(),
+    /**
+     * A second, different fact shown after he answers, so a right answer still teaches him something new. Always a
+     * checked fact (see the HUMANITIES review rule), never a restatement of this question's own answer.
+     */
+    didYouKnow: z.string().min(1).optional(),
     /** A word or phrase to hear in another language, played with that language's voice. */
     listen: z.object({ text: z.string().min(1), lang: z.enum(["en-US", "es-ES", "fr-FR"]) }).optional(),
     /** Offer a microphone so the child can say a choice instead of tapping it (choice answers only). */
@@ -256,6 +261,16 @@ export const QuestionSchema = z
     }
     if (q.voiceAnswer && q.answer.type !== "choice") {
       ctx.addIssue({ code: "custom", path: ["voiceAnswer"], message: "voiceAnswer only works with choice answers" });
+    }
+    if (q.voiceAnswer && q.answer.type === "choice" && q.answer.choiceVisuals) {
+      ctx.addIssue({
+        code: "custom",
+        path: ["voiceAnswer"],
+        message: "voiceAnswer cannot be used with choiceVisuals: saying a choice out loud would require knowing the name the picture is meant to hide",
+      });
+    }
+    if (q.didYouKnow && q.didYouKnow === q.explanation) {
+      ctx.addIssue({ code: "custom", path: ["didYouKnow"], message: "didYouKnow must teach something new, not repeat the explanation" });
     }
     if (q.difficulty.basis === "kangaroo-points" && q.difficulty.points === undefined) {
       ctx.addIssue({

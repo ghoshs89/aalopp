@@ -9,6 +9,6 @@
     "id": "world",
     "name": "Flags and countries",
     "emoji": "🌍",
-    "skills": ["WORLD-FLAGS", "WORLD-FLAGS-DETAIL", "WORLD-MAP", "WORLD-CAPITALS", "WORLD-CULTURE", "WORLD-NUMBERS"]
+    "skills": ["WORLD-FLAGS", "WORLD-FLAGS-DETAIL", "WORLD-MAP", "WORLD-CAPITALS", "WORLD-CULTURE", "WORLD-NUMBERS", "WORLD-CITIES", "WORLD-NEIGHBOURS"]
   }
 ]

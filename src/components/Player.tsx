@@ -221,14 +221,15 @@ export function Player({ student, questions, reasons = {}, seen = [], save = tru
       });
     }
 
+    const didYouKnow = question.didYouKnow ? ` Did you know? ${speakable(question.didYouKnow)}` : "";
     if (correct) {
-      autoSpeak("You got it! Nice careful thinking.");
+      autoSpeak(`You got it! Nice careful thinking.${didYouKnow}`);
     } else if (foundWithNudge) {
-      autoSpeak(FOUND_WITH_NUDGE);
+      autoSpeak(`${FOUND_WITH_NUDGE}${didYouKnow}`);
     } else {
       setShowExplanation(true);
       const opener = confidence === "HIGH" ? "You felt really sure. Let's look at it together." : "Let's check it together.";
-      autoSpeak(`${opener} ${speakable(question.explanation)}`);
+      autoSpeak(`${opener} ${speakable(question.explanation)}${didYouKnow}`);
     }
   };
 
@@ -484,7 +485,8 @@ export function Player({ student, questions, reasons = {}, seen = [], save = tru
                 {answer.choiceVisuals ? (
                   <span className="flex min-w-0 flex-1 flex-col items-center gap-1">
                     <Visual visual={answer.choiceVisuals[i]} />
-                    <span className="truncate text-base">{label}</span>
+                    {/* The name only appears once the answer is checked, or the picture would not be a question. */}
+                    {reveal && <span className="truncate text-base">{label}</span>}
                   </span>
                 ) : (
                   <span>{label}</span>
@@ -549,6 +551,12 @@ export function Player({ student, questions, reasons = {}, seen = [], save = tru
             >
               How do we know?
             </button>
+          )}
+          {question.didYouKnow && (
+            <p className="mt-3 rounded-2xl bg-bg-hill p-3 text-lg leading-relaxed">
+              <span className="font-extrabold text-gold">Did you know? </span>
+              {question.didYouKnow}
+            </p>
           )}
           {offerBreak ? (
             <div className="mt-5 rounded-2xl bg-bg-hill p-4">

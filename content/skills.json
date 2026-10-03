@@ -1,67 +1,646 @@
 [
-  { "code": "MATH-NBT-COUNTING", "name": "Counting objects carefully", "domain": "MATHEMATICS", "strand": "NUMBER_BASE_TEN", "tier": 1, "isConvention": false, "prerequisites": [] },
-  { "code": "MATH-NBT-PLACE-VALUE", "name": "Place value", "domain": "MATHEMATICS", "strand": "NUMBER_BASE_TEN", "tier": 1, "isConvention": false, "prerequisites": ["MATH-NBT-COUNTING"] },
-  { "code": "MATH-NBT-SKIP-COUNT", "name": "Skip counting by 2s, 5s and 10s", "domain": "MATHEMATICS", "strand": "NUMBER_BASE_TEN", "tier": 1, "isConvention": false, "prerequisites": ["MATH-NBT-COUNTING"] },
-  { "code": "MATH-NBT-ODD-EVEN", "name": "Odd and even numbers", "domain": "MATHEMATICS", "strand": "NUMBER_BASE_TEN", "tier": 1, "isConvention": false, "prerequisites": ["MATH-NBT-COUNTING"] },
-  { "code": "MATH-NF-FRACTIONS", "name": "Halves, thirds and quarters", "domain": "MATHEMATICS", "strand": "NUMBER_BASE_TEN", "tier": 3, "isConvention": false, "prerequisites": ["MATH-GEO-SHAPES", "MATH-OA-EQUAL-GROUPS"] },
-
-  { "code": "MATH-OA-ADD-SUB", "name": "Adding and subtracting", "domain": "MATHEMATICS", "strand": "OPERATIONS_ALGEBRA", "tier": 1, "isConvention": false, "prerequisites": ["MATH-NBT-COUNTING"] },
-  { "code": "MATH-OA-EQUAL-GROUPS", "name": "Equal groups and balance", "domain": "MATHEMATICS", "strand": "OPERATIONS_ALGEBRA", "tier": 1, "isConvention": false, "prerequisites": ["MATH-OA-ADD-SUB"] },
-  { "code": "MATH-OA-UNKNOWN", "name": "Finding a missing number", "domain": "MATHEMATICS", "strand": "OPERATIONS_ALGEBRA", "tier": 2, "isConvention": false, "prerequisites": ["MATH-OA-ADD-SUB"] },
-  { "code": "MATH-OA-ARRAYS", "name": "Rows and columns: early multiplication", "domain": "MATHEMATICS", "strand": "OPERATIONS_ALGEBRA", "tier": 2, "isConvention": false, "prerequisites": ["MATH-OA-EQUAL-GROUPS", "MATH-NBT-SKIP-COUNT"] },
-  { "code": "MATH-OA-MULT", "name": "Multiplication facts and word problems", "domain": "MATHEMATICS", "strand": "OPERATIONS_ALGEBRA", "tier": 3, "isConvention": false, "prerequisites": ["MATH-OA-ARRAYS"] },
-  { "code": "MATH-OA-DIVIDE", "name": "Sharing and grouping: early division", "domain": "MATHEMATICS", "strand": "OPERATIONS_ALGEBRA", "tier": 3, "isConvention": false, "prerequisites": ["MATH-OA-MULT"] },
-
-  { "code": "MATH-GEO-SHAPES", "name": "Recognizing and counting shapes", "domain": "MATHEMATICS", "strand": "GEOMETRY_SPATIAL", "tier": 1, "isConvention": false, "prerequisites": [] },
-  { "code": "MATH-GEO-SYMMETRY", "name": "Symmetry", "domain": "MATHEMATICS", "strand": "GEOMETRY_SPATIAL", "tier": 1, "isConvention": false, "prerequisites": ["MATH-GEO-SHAPES"] },
-  { "code": "MATH-GEO-3D-COUNT", "name": "Counting blocks in 3D builds", "domain": "MATHEMATICS", "strand": "GEOMETRY_SPATIAL", "tier": 1, "isConvention": false, "prerequisites": ["MATH-GEO-SHAPES", "MATH-NBT-COUNTING"] },
-  { "code": "MATH-GEO-VIEWS", "name": "Views and shadows of 3D objects", "domain": "MATHEMATICS", "strand": "GEOMETRY_SPATIAL", "tier": 2, "isConvention": false, "prerequisites": ["MATH-GEO-SHAPES"] },
-  { "code": "MATH-GEO-SHARED-EDGES", "name": "Shapes that share sides", "domain": "MATHEMATICS", "strand": "GEOMETRY_SPATIAL", "tier": 2, "isConvention": false, "prerequisites": ["MATH-GEO-SHAPES", "MATH-OA-ADD-SUB"] },
-  { "code": "MATH-GEO-TURNS", "name": "Turns and flips", "domain": "MATHEMATICS", "strand": "GEOMETRY_SPATIAL", "tier": 2, "isConvention": false, "prerequisites": ["MATH-GEO-SYMMETRY"] },
-  { "code": "MATH-GEO-FOLDING", "name": "Folding and cutting paper", "domain": "MATHEMATICS", "strand": "GEOMETRY_SPATIAL", "tier": 2, "isConvention": false, "prerequisites": ["MATH-GEO-SYMMETRY"] },
-
-  { "code": "MATH-MD-TIME-HOUR", "name": "Telling time to the hour", "domain": "MATHEMATICS", "strand": "MEASUREMENT_DATA", "tier": 1, "isConvention": true, "prerequisites": ["MATH-NBT-COUNTING"] },
-  { "code": "MATH-MD-TIME-HALF-QUARTER", "name": "Telling time to the half and quarter hour", "domain": "MATHEMATICS", "strand": "MEASUREMENT_DATA", "tier": 1, "isConvention": true, "prerequisites": ["MATH-MD-TIME-HOUR"] },
-  { "code": "MATH-MD-TIME-ELAPSED", "name": "How much time has passed", "domain": "MATHEMATICS", "strand": "MEASUREMENT_DATA", "tier": 2, "isConvention": true, "prerequisites": ["MATH-MD-TIME-HALF-QUARTER", "MATH-OA-ADD-SUB"] },
-  { "code": "MATH-MD-MONEY", "name": "Money: dollars and cents", "domain": "MATHEMATICS", "strand": "MEASUREMENT_DATA", "tier": 1, "isConvention": true, "prerequisites": ["MATH-OA-ADD-SUB"] },
-  { "code": "MATH-MD-LENGTH", "name": "Measuring length with a ruler", "domain": "MATHEMATICS", "strand": "MEASUREMENT_DATA", "tier": 1, "isConvention": true, "prerequisites": ["MATH-NBT-COUNTING"] },
-  { "code": "MATH-MD-BAR-GRAPH", "name": "Reading bar graphs", "domain": "MATHEMATICS", "strand": "MEASUREMENT_DATA", "tier": 1, "isConvention": true, "prerequisites": ["MATH-NBT-COUNTING"] },
-  { "code": "MATH-MD-TIME-5MIN", "name": "Telling time to 5 minutes", "domain": "MATHEMATICS", "strand": "MEASUREMENT_DATA", "tier": 2, "isConvention": true, "prerequisites": ["MATH-MD-TIME-HALF-QUARTER", "MATH-NBT-SKIP-COUNT"] },
-  { "code": "MATH-MD-COINS", "name": "Counting coins", "domain": "MATHEMATICS", "strand": "MEASUREMENT_DATA", "tier": 1, "isConvention": true, "prerequisites": ["MATH-OA-ADD-SUB", "MATH-NBT-SKIP-COUNT"] },
-  { "code": "MATH-MD-PICTURE-GRAPH", "name": "Reading picture graphs", "domain": "MATHEMATICS", "strand": "MEASUREMENT_DATA", "tier": 1, "isConvention": true, "prerequisites": ["MATH-NBT-SKIP-COUNT"] },
-  { "code": "MATH-MD-CALENDAR", "name": "Calendars: days, weeks and dates", "domain": "MATHEMATICS", "strand": "MEASUREMENT_DATA", "tier": 1, "isConvention": true, "prerequisites": ["MATH-NBT-COUNTING"] },
-  { "code": "MATH-MD-AREA-PERIMETER", "name": "Area and perimeter", "domain": "MATHEMATICS", "strand": "MEASUREMENT_DATA", "tier": 3, "isConvention": true, "prerequisites": ["MATH-MD-LENGTH", "MATH-OA-ARRAYS"] },
-
-  { "code": "LOGIC-PATTERN", "name": "Repeating patterns", "domain": "LOGIC_CS", "strand": "LOGIC_CS", "tier": 1, "isConvention": false, "prerequisites": [] },
-  { "code": "LOGIC-ORDER", "name": "Ordering from clues", "domain": "LOGIC_CS", "strand": "LOGIC_CS", "tier": 1, "isConvention": false, "prerequisites": [] },
-  { "code": "LOGIC-GRID", "name": "Grid logic puzzles", "domain": "LOGIC_CS", "strand": "LOGIC_CS", "tier": 2, "isConvention": false, "prerequisites": ["LOGIC-PATTERN"] },
-  { "code": "LOGIC-VISUALIZE", "name": "Picturing what happens next", "domain": "LOGIC_CS", "strand": "LOGIC_CS", "tier": 2, "isConvention": false, "prerequisites": [] },
-  { "code": "CS-SEQUENCE", "name": "Following step-by-step instructions", "domain": "LOGIC_CS", "strand": "LOGIC_CS", "tier": 1, "isConvention": false, "prerequisites": [] },
-  { "code": "CS-ENCODING", "name": "Codes and secret messages", "domain": "LOGIC_CS", "strand": "LOGIC_CS", "tier": 1, "isConvention": false, "prerequisites": ["CS-SEQUENCE"] },
-  { "code": "CS-REVERSE", "name": "Reversing a sequence", "domain": "LOGIC_CS", "strand": "LOGIC_CS", "tier": 2, "isConvention": false, "prerequisites": ["CS-SEQUENCE"] },
-  { "code": "CS-RULE-PATH", "name": "Finding a path that follows a rule", "domain": "LOGIC_CS", "strand": "LOGIC_CS", "tier": 2, "isConvention": false, "prerequisites": ["CS-SEQUENCE", "LOGIC-PATTERN"] },
-  { "code": "CS-CONDITIONAL", "name": "If-then rules", "domain": "LOGIC_CS", "strand": "LOGIC_CS", "tier": 2, "isConvention": false, "prerequisites": ["CS-SEQUENCE"] },
-  { "code": "CS-SORTING", "name": "Sorting and putting things in order", "domain": "LOGIC_CS", "strand": "LOGIC_CS", "tier": 2, "isConvention": false, "prerequisites": ["LOGIC-ORDER"] },
-  { "code": "CS-SHORTEST-PATH", "name": "Finding the shortest route on a map", "domain": "LOGIC_CS", "strand": "LOGIC_CS", "tier": 2, "isConvention": false, "prerequisites": ["CS-SEQUENCE", "MATH-OA-ADD-SUB"] },
-  { "code": "CS-DEBUG", "name": "Finding the mistake in a worked solution", "domain": "LOGIC_CS", "strand": "LOGIC_CS", "tier": 2, "isConvention": false, "prerequisites": ["CS-SEQUENCE", "MATH-OA-ADD-SUB"] },
-  { "code": "LOGIC-COUNT-WAYS", "name": "Counting all the ways", "domain": "LOGIC_CS", "strand": "LOGIC_CS", "tier": 3, "isConvention": false, "prerequisites": ["LOGIC-ORDER", "MATH-OA-ADD-SUB"] },
-
-  { "code": "LANG-EN-READ-DETAIL", "name": "Reading: finding details", "domain": "LANGUAGES", "strand": "LANGUAGE", "tier": 2, "isConvention": false, "prerequisites": [] },
-  { "code": "LANG-EN-READ-INFER", "name": "Reading: working out what is not said", "domain": "LANGUAGES", "strand": "LANGUAGE", "tier": 3, "isConvention": false, "prerequisites": ["LANG-EN-READ-DETAIL"] },
-  { "code": "LANG-ES-WORDS", "name": "Spanish words", "domain": "LANGUAGES", "strand": "LANGUAGE", "tier": 1, "isConvention": false, "prerequisites": [] },
-  { "code": "LANG-ES-PHRASES", "name": "Spanish phrases", "domain": "LANGUAGES", "strand": "LANGUAGE", "tier": 2, "isConvention": false, "prerequisites": ["LANG-ES-WORDS"] },
-  { "code": "LANG-FR-WORDS", "name": "French words", "domain": "LANGUAGES", "strand": "LANGUAGE", "tier": 1, "isConvention": false, "prerequisites": [] },
-  { "code": "LANG-FR-PHRASES", "name": "French phrases", "domain": "LANGUAGES", "strand": "LANGUAGE", "tier": 2, "isConvention": false, "prerequisites": ["LANG-FR-WORDS"] },
-
-  { "code": "WORLD-FLAGS", "name": "Flags of the world", "domain": "HUMANITIES", "strand": "HUMANITIES", "tier": 1, "isConvention": false, "prerequisites": [] },
-  { "code": "WORLD-FLAGS-DETAIL", "name": "What is on a flag", "domain": "HUMANITIES", "strand": "HUMANITIES", "tier": 2, "isConvention": false, "prerequisites": ["WORLD-FLAGS"] },
-  { "code": "WORLD-MAP", "name": "Continents and where countries are", "domain": "HUMANITIES", "strand": "HUMANITIES", "tier": 1, "isConvention": false, "prerequisites": [] },
-  { "code": "WORLD-CAPITALS", "name": "Capital cities", "domain": "HUMANITIES", "strand": "HUMANITIES", "tier": 2, "isConvention": false, "prerequisites": ["WORLD-MAP"] },
-  { "code": "WORLD-CULTURE", "name": "Languages, festivals, food and landmarks", "domain": "HUMANITIES", "strand": "HUMANITIES", "tier": 1, "isConvention": false, "prerequisites": [] },
-  { "code": "WORLD-NUMBERS", "name": "Comparing countries by numbers", "domain": "HUMANITIES", "strand": "HUMANITIES", "tier": 2, "isConvention": false, "prerequisites": ["MATH-MD-BAR-GRAPH"] },
-
-  { "code": "CARS-LOGOS", "name": "Car logos", "domain": "HUMANITIES", "strand": "HUMANITIES", "tier": 1, "isConvention": false, "prerequisites": [] },
-  { "code": "CARS-ORIGIN", "name": "Where car makers come from", "domain": "HUMANITIES", "strand": "HUMANITIES", "tier": 2, "isConvention": false, "prerequisites": ["CARS-LOGOS"] },
-  { "code": "CARS-FACTS", "name": "Kinds of cars and how they work", "domain": "HUMANITIES", "strand": "HUMANITIES", "tier": 1, "isConvention": false, "prerequisites": [] },
-  { "code": "CARS-NUMBERS", "name": "Comparing cars by numbers", "domain": "HUMANITIES", "strand": "HUMANITIES", "tier": 2, "isConvention": false, "prerequisites": ["MATH-MD-BAR-GRAPH"] }
+  {
+    "code": "MATH-NBT-COUNTING",
+    "name": "Counting objects carefully",
+    "domain": "MATHEMATICS",
+    "strand": "NUMBER_BASE_TEN",
+    "tier": 1,
+    "isConvention": false,
+    "prerequisites": []
+  },
+  {
+    "code": "MATH-NBT-PLACE-VALUE",
+    "name": "Place value",
+    "domain": "MATHEMATICS",
+    "strand": "NUMBER_BASE_TEN",
+    "tier": 1,
+    "isConvention": false,
+    "prerequisites": [
+      "MATH-NBT-COUNTING"
+    ]
+  },
+  {
+    "code": "MATH-NBT-SKIP-COUNT",
+    "name": "Skip counting by 2s, 5s and 10s",
+    "domain": "MATHEMATICS",
+    "strand": "NUMBER_BASE_TEN",
+    "tier": 1,
+    "isConvention": false,
+    "prerequisites": [
+      "MATH-NBT-COUNTING"
+    ]
+  },
+  {
+    "code": "MATH-NBT-ODD-EVEN",
+    "name": "Odd and even numbers",
+    "domain": "MATHEMATICS",
+    "strand": "NUMBER_BASE_TEN",
+    "tier": 1,
+    "isConvention": false,
+    "prerequisites": [
+      "MATH-NBT-COUNTING"
+    ]
+  },
+  {
+    "code": "MATH-NF-FRACTIONS",
+    "name": "Halves, thirds and quarters",
+    "domain": "MATHEMATICS",
+    "strand": "NUMBER_BASE_TEN",
+    "tier": 3,
+    "isConvention": false,
+    "prerequisites": [
+      "MATH-GEO-SHAPES",
+      "MATH-OA-EQUAL-GROUPS"
+    ]
+  },
+  {
+    "code": "MATH-OA-ADD-SUB",
+    "name": "Adding and subtracting",
+    "domain": "MATHEMATICS",
+    "strand": "OPERATIONS_ALGEBRA",
+    "tier": 1,
+    "isConvention": false,
+    "prerequisites": [
+      "MATH-NBT-COUNTING"
+    ]
+  },
+  {
+    "code": "MATH-OA-EQUAL-GROUPS",
+    "name": "Equal groups and balance",
+    "domain": "MATHEMATICS",
+    "strand": "OPERATIONS_ALGEBRA",
+    "tier": 1,
+    "isConvention": false,
+    "prerequisites": [
+      "MATH-OA-ADD-SUB"
+    ]
+  },
+  {
+    "code": "MATH-OA-UNKNOWN",
+    "name": "Finding a missing number",
+    "domain": "MATHEMATICS",
+    "strand": "OPERATIONS_ALGEBRA",
+    "tier": 2,
+    "isConvention": false,
+    "prerequisites": [
+      "MATH-OA-ADD-SUB"
+    ]
+  },
+  {
+    "code": "MATH-OA-ARRAYS",
+    "name": "Rows and columns: early multiplication",
+    "domain": "MATHEMATICS",
+    "strand": "OPERATIONS_ALGEBRA",
+    "tier": 2,
+    "isConvention": false,
+    "prerequisites": [
+      "MATH-OA-EQUAL-GROUPS",
+      "MATH-NBT-SKIP-COUNT"
+    ]
+  },
+  {
+    "code": "MATH-OA-MULT",
+    "name": "Multiplication facts and word problems",
+    "domain": "MATHEMATICS",
+    "strand": "OPERATIONS_ALGEBRA",
+    "tier": 3,
+    "isConvention": false,
+    "prerequisites": [
+      "MATH-OA-ARRAYS"
+    ]
+  },
+  {
+    "code": "MATH-OA-DIVIDE",
+    "name": "Sharing and grouping: early division",
+    "domain": "MATHEMATICS",
+    "strand": "OPERATIONS_ALGEBRA",
+    "tier": 3,
+    "isConvention": false,
+    "prerequisites": [
+      "MATH-OA-MULT"
+    ]
+  },
+  {
+    "code": "MATH-GEO-SHAPES",
+    "name": "Recognizing and counting shapes",
+    "domain": "MATHEMATICS",
+    "strand": "GEOMETRY_SPATIAL",
+    "tier": 1,
+    "isConvention": false,
+    "prerequisites": []
+  },
+  {
+    "code": "MATH-GEO-SYMMETRY",
+    "name": "Symmetry",
+    "domain": "MATHEMATICS",
+    "strand": "GEOMETRY_SPATIAL",
+    "tier": 1,
+    "isConvention": false,
+    "prerequisites": [
+      "MATH-GEO-SHAPES"
+    ]
+  },
+  {
+    "code": "MATH-GEO-3D-COUNT",
+    "name": "Counting blocks in 3D builds",
+    "domain": "MATHEMATICS",
+    "strand": "GEOMETRY_SPATIAL",
+    "tier": 1,
+    "isConvention": false,
+    "prerequisites": [
+      "MATH-GEO-SHAPES",
+      "MATH-NBT-COUNTING"
+    ]
+  },
+  {
+    "code": "MATH-GEO-VIEWS",
+    "name": "Views and shadows of 3D objects",
+    "domain": "MATHEMATICS",
+    "strand": "GEOMETRY_SPATIAL",
+    "tier": 2,
+    "isConvention": false,
+    "prerequisites": [
+      "MATH-GEO-SHAPES"
+    ]
+  },
+  {
+    "code": "MATH-GEO-SHARED-EDGES",
+    "name": "Shapes that share sides",
+    "domain": "MATHEMATICS",
+    "strand": "GEOMETRY_SPATIAL",
+    "tier": 2,
+    "isConvention": false,
+    "prerequisites": [
+      "MATH-GEO-SHAPES",
+      "MATH-OA-ADD-SUB"
+    ]
+  },
+  {
+    "code": "MATH-GEO-TURNS",
+    "name": "Turns and flips",
+    "domain": "MATHEMATICS",
+    "strand": "GEOMETRY_SPATIAL",
+    "tier": 2,
+    "isConvention": false,
+    "prerequisites": [
+      "MATH-GEO-SYMMETRY"
+    ]
+  },
+  {
+    "code": "MATH-GEO-FOLDING",
+    "name": "Folding and cutting paper",
+    "domain": "MATHEMATICS",
+    "strand": "GEOMETRY_SPATIAL",
+    "tier": 2,
+    "isConvention": false,
+    "prerequisites": [
+      "MATH-GEO-SYMMETRY"
+    ]
+  },
+  {
+    "code": "MATH-MD-TIME-HOUR",
+    "name": "Telling time to the hour",
+    "domain": "MATHEMATICS",
+    "strand": "MEASUREMENT_DATA",
+    "tier": 1,
+    "isConvention": true,
+    "prerequisites": [
+      "MATH-NBT-COUNTING"
+    ]
+  },
+  {
+    "code": "MATH-MD-TIME-HALF-QUARTER",
+    "name": "Telling time to the half and quarter hour",
+    "domain": "MATHEMATICS",
+    "strand": "MEASUREMENT_DATA",
+    "tier": 1,
+    "isConvention": true,
+    "prerequisites": [
+      "MATH-MD-TIME-HOUR"
+    ]
+  },
+  {
+    "code": "MATH-MD-TIME-ELAPSED",
+    "name": "How much time has passed",
+    "domain": "MATHEMATICS",
+    "strand": "MEASUREMENT_DATA",
+    "tier": 2,
+    "isConvention": true,
+    "prerequisites": [
+      "MATH-MD-TIME-HALF-QUARTER",
+      "MATH-OA-ADD-SUB"
+    ]
+  },
+  {
+    "code": "MATH-MD-MONEY",
+    "name": "Money: dollars and cents",
+    "domain": "MATHEMATICS",
+    "strand": "MEASUREMENT_DATA",
+    "tier": 1,
+    "isConvention": true,
+    "prerequisites": [
+      "MATH-OA-ADD-SUB"
+    ]
+  },
+  {
+    "code": "MATH-MD-LENGTH",
+    "name": "Measuring length with a ruler",
+    "domain": "MATHEMATICS",
+    "strand": "MEASUREMENT_DATA",
+    "tier": 1,
+    "isConvention": true,
+    "prerequisites": [
+      "MATH-NBT-COUNTING"
+    ]
+  },
+  {
+    "code": "MATH-MD-BAR-GRAPH",
+    "name": "Reading bar graphs",
+    "domain": "MATHEMATICS",
+    "strand": "MEASUREMENT_DATA",
+    "tier": 1,
+    "isConvention": true,
+    "prerequisites": [
+      "MATH-NBT-COUNTING"
+    ]
+  },
+  {
+    "code": "MATH-MD-TIME-5MIN",
+    "name": "Telling time to 5 minutes",
+    "domain": "MATHEMATICS",
+    "strand": "MEASUREMENT_DATA",
+    "tier": 2,
+    "isConvention": true,
+    "prerequisites": [
+      "MATH-MD-TIME-HALF-QUARTER",
+      "MATH-NBT-SKIP-COUNT"
+    ]
+  },
+  {
+    "code": "MATH-MD-COINS",
+    "name": "Counting coins",
+    "domain": "MATHEMATICS",
+    "strand": "MEASUREMENT_DATA",
+    "tier": 1,
+    "isConvention": true,
+    "prerequisites": [
+      "MATH-OA-ADD-SUB",
+      "MATH-NBT-SKIP-COUNT"
+    ]
+  },
+  {
+    "code": "MATH-MD-PICTURE-GRAPH",
+    "name": "Reading picture graphs",
+    "domain": "MATHEMATICS",
+    "strand": "MEASUREMENT_DATA",
+    "tier": 1,
+    "isConvention": true,
+    "prerequisites": [
+      "MATH-NBT-SKIP-COUNT"
+    ]
+  },
+  {
+    "code": "MATH-MD-CALENDAR",
+    "name": "Calendars: days, weeks and dates",
+    "domain": "MATHEMATICS",
+    "strand": "MEASUREMENT_DATA",
+    "tier": 1,
+    "isConvention": true,
+    "prerequisites": [
+      "MATH-NBT-COUNTING"
+    ]
+  },
+  {
+    "code": "MATH-MD-AREA-PERIMETER",
+    "name": "Area and perimeter",
+    "domain": "MATHEMATICS",
+    "strand": "MEASUREMENT_DATA",
+    "tier": 3,
+    "isConvention": true,
+    "prerequisites": [
+      "MATH-MD-LENGTH",
+      "MATH-OA-ARRAYS"
+    ]
+  },
+  {
+    "code": "LOGIC-PATTERN",
+    "name": "Repeating patterns",
+    "domain": "LOGIC_CS",
+    "strand": "LOGIC_CS",
+    "tier": 1,
+    "isConvention": false,
+    "prerequisites": []
+  },
+  {
+    "code": "LOGIC-ORDER",
+    "name": "Ordering from clues",
+    "domain": "LOGIC_CS",
+    "strand": "LOGIC_CS",
+    "tier": 1,
+    "isConvention": false,
+    "prerequisites": []
+  },
+  {
+    "code": "LOGIC-GRID",
+    "name": "Grid logic puzzles",
+    "domain": "LOGIC_CS",
+    "strand": "LOGIC_CS",
+    "tier": 2,
+    "isConvention": false,
+    "prerequisites": [
+      "LOGIC-PATTERN"
+    ]
+  },
+  {
+    "code": "LOGIC-VISUALIZE",
+    "name": "Picturing what happens next",
+    "domain": "LOGIC_CS",
+    "strand": "LOGIC_CS",
+    "tier": 2,
+    "isConvention": false,
+    "prerequisites": []
+  },
+  {
+    "code": "CS-SEQUENCE",
+    "name": "Following step-by-step instructions",
+    "domain": "LOGIC_CS",
+    "strand": "LOGIC_CS",
+    "tier": 1,
+    "isConvention": false,
+    "prerequisites": []
+  },
+  {
+    "code": "CS-ENCODING",
+    "name": "Codes and secret messages",
+    "domain": "LOGIC_CS",
+    "strand": "LOGIC_CS",
+    "tier": 1,
+    "isConvention": false,
+    "prerequisites": [
+      "CS-SEQUENCE"
+    ]
+  },
+  {
+    "code": "CS-REVERSE",
+    "name": "Reversing a sequence",
+    "domain": "LOGIC_CS",
+    "strand": "LOGIC_CS",
+    "tier": 2,
+    "isConvention": false,
+    "prerequisites": [
+      "CS-SEQUENCE"
+    ]
+  },
+  {
+    "code": "CS-RULE-PATH",
+    "name": "Finding a path that follows a rule",
+    "domain": "LOGIC_CS",
+    "strand": "LOGIC_CS",
+    "tier": 2,
+    "isConvention": false,
+    "prerequisites": [
+      "CS-SEQUENCE",
+      "LOGIC-PATTERN"
+    ]
+  },
+  {
+    "code": "CS-CONDITIONAL",
+    "name": "If-then rules",
+    "domain": "LOGIC_CS",
+    "strand": "LOGIC_CS",
+    "tier": 2,
+    "isConvention": false,
+    "prerequisites": [
+      "CS-SEQUENCE"
+    ]
+  },
+  {
+    "code": "CS-SORTING",
+    "name": "Sorting and putting things in order",
+    "domain": "LOGIC_CS",
+    "strand": "LOGIC_CS",
+    "tier": 2,
+    "isConvention": false,
+    "prerequisites": [
+      "LOGIC-ORDER"
+    ]
+  },
+  {
+    "code": "CS-SHORTEST-PATH",
+    "name": "Finding the shortest route on a map",
+    "domain": "LOGIC_CS",
+    "strand": "LOGIC_CS",
+    "tier": 2,
+    "isConvention": false,
+    "prerequisites": [
+      "CS-SEQUENCE",
+      "MATH-OA-ADD-SUB"
+    ]
+  },
+  {
+    "code": "CS-DEBUG",
+    "name": "Finding the mistake in a worked solution",
+    "domain": "LOGIC_CS",
+    "strand": "LOGIC_CS",
+    "tier": 2,
+    "isConvention": false,
+    "prerequisites": [
+      "CS-SEQUENCE",
+      "MATH-OA-ADD-SUB"
+    ]
+  },
+  {
+    "code": "LOGIC-COUNT-WAYS",
+    "name": "Counting all the ways",
+    "domain": "LOGIC_CS",
+    "strand": "LOGIC_CS",
+    "tier": 3,
+    "isConvention": false,
+    "prerequisites": [
+      "LOGIC-ORDER",
+      "MATH-OA-ADD-SUB"
+    ]
+  },
+  {
+    "code": "LANG-EN-READ-DETAIL",
+    "name": "Reading: finding details",
+    "domain": "LANGUAGES",
+    "strand": "LANGUAGE",
+    "tier": 2,
+    "isConvention": false,
+    "prerequisites": []
+  },
+  {
+    "code": "LANG-EN-READ-INFER",
+    "name": "Reading: working out what is not said",
+    "domain": "LANGUAGES",
+    "strand": "LANGUAGE",
+    "tier": 3,
+    "isConvention": false,
+    "prerequisites": [
+      "LANG-EN-READ-DETAIL"
+    ]
+  },
+  {
+    "code": "LANG-ES-WORDS",
+    "name": "Spanish words",
+    "domain": "LANGUAGES",
+    "strand": "LANGUAGE",
+    "tier": 1,
+    "isConvention": false,
+    "prerequisites": []
+  },
+  {
+    "code": "LANG-ES-PHRASES",
+    "name": "Spanish phrases",
+    "domain": "LANGUAGES",
+    "strand": "LANGUAGE",
+    "tier": 2,
+    "isConvention": false,
+    "prerequisites": [
+      "LANG-ES-WORDS"
+    ]
+  },
+  {
+    "code": "LANG-FR-WORDS",
+    "name": "French words",
+    "domain": "LANGUAGES",
+    "strand": "LANGUAGE",
+    "tier": 1,
+    "isConvention": false,
+    "prerequisites": []
+  },
+  {
+    "code": "LANG-FR-PHRASES",
+    "name": "French phrases",
+    "domain": "LANGUAGES",
+    "strand": "LANGUAGE",
+    "tier": 2,
+    "isConvention": false,
+    "prerequisites": [
+      "LANG-FR-WORDS"
+    ]
+  },
+  {
+    "code": "WORLD-FLAGS",
+    "name": "Flags of the world",
+    "domain": "HUMANITIES",
+    "strand": "HUMANITIES",
+    "tier": 1,
+    "isConvention": false,
+    "prerequisites": []
+  },
+  {
+    "code": "WORLD-FLAGS-DETAIL",
+    "name": "What is on a flag",
+    "domain": "HUMANITIES",
+    "strand": "HUMANITIES",
+    "tier": 2,
+    "isConvention": false,
+    "prerequisites": [
+      "WORLD-FLAGS"
+    ]
+  },
+  {
+    "code": "WORLD-MAP",
+    "name": "Continents and where countries are",
+    "domain": "HUMANITIES",
+    "strand": "HUMANITIES",
+    "tier": 1,
+    "isConvention": false,
+    "prerequisites": []
+  },
+  {
+    "code": "WORLD-CAPITALS",
+    "name": "Capital cities",
+    "domain": "HUMANITIES",
+    "strand": "HUMANITIES",
+    "tier": 2,
+    "isConvention": false,
+    "prerequisites": [
+      "WORLD-MAP"
+    ]
+  },
+  {
+    "code": "WORLD-CULTURE",
+    "name": "Languages, festivals, food and landmarks",
+    "domain": "HUMANITIES",
+    "strand": "HUMANITIES",
+    "tier": 1,
+    "isConvention": false,
+    "prerequisites": []
+  },
+  {
+    "code": "WORLD-CITIES",
+    "name": "Famous cities and landmarks",
+    "domain": "HUMANITIES",
+    "strand": "HUMANITIES",
+    "tier": 2,
+    "isConvention": false,
+    "prerequisites": [
+      "WORLD-CAPITALS"
+    ]
+  },
+  {
+    "code": "WORLD-NEIGHBOURS",
+    "name": "Which countries are next to each other",
+    "domain": "HUMANITIES",
+    "strand": "HUMANITIES",
+    "tier": 2,
+    "isConvention": false,
+    "prerequisites": [
+      "WORLD-MAP"
+    ]
+  },
+  {
+    "code": "WORLD-NUMBERS",
+    "name": "Comparing countries by numbers",
+    "domain": "HUMANITIES",
+    "strand": "HUMANITIES",
+    "tier": 2,
+    "isConvention": false,
+    "prerequisites": [
+      "MATH-MD-BAR-GRAPH"
+    ]
+  },
+  {
+    "code": "CARS-LOGOS",
+    "name": "Car logos",
+    "domain": "HUMANITIES",
+    "strand": "HUMANITIES",
+    "tier": 1,
+    "isConvention": false,
+    "prerequisites": []
+  },
+  {
+    "code": "CARS-ORIGIN",
+    "name": "Where car makers come from",
+    "domain": "HUMANITIES",
+    "strand": "HUMANITIES",
+    "tier": 2,
+    "isConvention": false,
+    "prerequisites": [
+      "CARS-LOGOS"
+    ]
+  },
+  {
+    "code": "CARS-FACTS",
+    "name": "Kinds of cars and how they work",
+    "domain": "HUMANITIES",
+    "strand": "HUMANITIES",
+    "tier": 1,
+    "isConvention": false,
+    "prerequisites": []
+  },
+  {
+    "code": "CARS-NUMBERS",
+    "name": "Comparing cars by numbers",
+    "domain": "HUMANITIES",
+    "strand": "HUMANITIES",
+    "tier": 2,
+    "isConvention": false,
+    "prerequisites": [
+      "MATH-MD-BAR-GRAPH"
+    ]
+  }
 ]

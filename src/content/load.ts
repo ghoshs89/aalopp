@@ -34,7 +34,7 @@ export function loadContent(contentDir = path.join(process.cwd(), "content")): L
 function committedPictures(contentDir: string): Set<string> {
   const publicDir = path.join(path.dirname(contentDir), "public");
   const found = new Set<string>();
-  for (const folder of ["flags", "logos"]) {
+  for (const folder of ["flags", "logos", "maps"]) {
     const dir = path.join(publicDir, folder);
     if (!existsSync(dir)) continue;
     for (const name of readdirSync(dir)) found.add(`/${folder}/${name}`);

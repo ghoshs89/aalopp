@@ -20,11 +20,15 @@ export function questionSpeechParts(question: Question): { text: string; lang?: 
   return parts;
 }
 
-/** What the read-aloud button says: the prompt, then the choices if every choice still has words once symbols are removed. */
+/**
+ * What the read-aloud button says: the prompt, then the choices if every choice still has words once symbols are
+ * removed. Skipped for picture choices (flags, logos): the choice is the picture, so saying its name would answer
+ * the question for him.
+ */
 export function questionSpeech(question: Question): string {
   const prompt = question.speech ?? speakable(question.prompt);
   if (question.answer.type === "findTheBug") return `${prompt} ${question.answer.steps.map((s, i) => `Step ${i + 1}: ${speakable(s)}`).join(" ")}`;
-  if (question.answer.type !== "choice" || question.language !== "en") return prompt;
+  if (question.answer.type !== "choice" || question.language !== "en" || question.answer.choiceVisuals) return prompt;
   const choices = question.answer.choices.map(speakable);
   if (choices.some((c) => c === "")) return prompt;
   return `${prompt} ${choices.map((c, i) => `${"ABCDE"[i]}: ${c}.`).join(" ")}`;
