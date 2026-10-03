@@ -16,6 +16,13 @@ Attribution convention used below: "Parent decision" means the parent chose it; 
 
 ---
 
+## 2026-10-03  Milestone  World knowledge batch 2 deployed
+What: Commit a31b212 pushed to `main` at the parent's request.
+Verified by: `npm run build` succeeded before pushing. GitHub commit status from Vercel for a31b212 reported
+"Deployment has completed". On production afterwards: `/login` 200, `/` and `/choose/abc` 307 to login when signed
+out, `/dev/player` 404, `/flags/np.svg`, `/maps/in.svg` and `/logos/toyota.svg` all 200. Not yet seen in a real
+signed-in session.
+
 ## 2026-10-03  Decision  World knowledge batch 2: scope and teaching moments
 What: Five parent decisions from one conversation, acted on together.
 1. Countries: add all four offered groups rather than picking a subset. India's neighbours (Nepal, Bangladesh, Sri
