@@ -16,6 +16,19 @@ Attribution convention used below: "Parent decision" means the parent chose it; 
 
 ---
 
+## 2026-10-28  Decision  The daily health check also reads through the Supabase Data API
+What: `/api/health` keeps its `SELECT 1` and adds a `GET /rest/v1/Student?select=id&limit=1` with the publishable
+key, returning 502 if that request fails. Not yet committed or deployed.
+Reason: Supabase emailed on 2026-10-23 that project `aalopp` would be paused for inactivity, although the daily
+cron was working: Vercel lists it as enabled at `0 12 * * *`, and a manual Run on 2026-10-28 returned 200 in Request
+Logs. A query through the pooler goes straight to Postgres and evidently does not count as activity. The proxy does
+not help either: with no session cookie, `auth.getUser()` returns without calling Supabase. The Data API request
+was checked from the command line first: 200 with an empty list, since RLS has no policies for the public key.
+Alternatives rejected: a Supabase Cron (pg_cron) job, which runs inside the database and so is no more visible from
+outside than the current query; `GET /auth/v1/health`, which also returns 200 but runs no query, so it is the weaker
+bet when it is unknown exactly what Supabase measures; upgrading to Pro, a cost the parent has not chosen.
+Still unverified: that Supabase counts this request. Check that no further pause warning arrives.
+
 ## 2026-10-03  Milestone  World knowledge batch 2 deployed
 What: Commit a31b212 pushed to `main` at the parent's request.
 Verified by: `npm run build` succeeded before pushing. GitHub commit status from Vercel for a31b212 reported
