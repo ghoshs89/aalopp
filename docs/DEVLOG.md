@@ -16,9 +16,15 @@ Attribution convention used below: "Parent decision" means the parent chose it; 
 
 ---
 
+## 2026-10-28  Milestone  Data API health check deployed
+What: Commit b36f2fb pushed to `main` at the parent's request.
+Verified by: GitHub commit status from Vercel for b36f2fb reported "Deployment has completed" (21:03 UTC). On
+production afterwards: `/api/health` with the secret 200 (so the Data API read succeeded; a failure returns 502),
+without it 401, `/login` 200. Whether Supabase counts the request is only shown by no further pause warning.
+
 ## 2026-10-28  Decision  The daily health check also reads through the Supabase Data API
 What: `/api/health` keeps its `SELECT 1` and adds a `GET /rest/v1/Student?select=id&limit=1` with the publishable
-key, returning 502 if that request fails. Not yet committed or deployed.
+key, returning 502 if that request fails.
 Reason: Supabase emailed on 2026-10-23 that project `aalopp` would be paused for inactivity, although the daily
 cron was working: Vercel lists it as enabled at `0 12 * * *`, and a manual Run on 2026-10-28 returned 200 in Request
 Logs. A query through the pooler goes straight to Postgres and evidently does not count as activity. The proxy does
