@@ -9,9 +9,9 @@ AALOPP is a family learning project built by Soumalya Ghosh in collaboration wit
 
 ## AI Contributors
 
-- **Google Gemini (Antigravity)** (`noreply@google.com`)
+- **Google Gemini (Antigravity)** (`@gemini-code-assist`, `200291788+gemini-code-assist@users.noreply.github.com`)
   Full codebase and diagnostic review, Phase 10 cleanup, confidence-prompt removal, rolling working-band and per-strand calibration, offline sync batching, parent PIN hardening, and documentation updates.
-- **Anthropic Claude** (`noreply@anthropic.com`)
+- **Anthropic Claude** (`@claude`, `noreply@anthropic.com`)
   Phases 0 through 9 implementation, event-sourced adaptive engine, parent dashboard, scratchpad, Find the Bug, SVG visualizers, content generators, and verification suite.
 - **OpenAI ChatGPT** (`noreply@openai.com`)
   Early specification discussions, learning-plan ideation, and problem-format exploration.
