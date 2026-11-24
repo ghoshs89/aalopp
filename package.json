@@ -11,7 +11,7 @@
     "content:check": "tsx scripts/validate-content.ts",
     "typecheck": "next typegen && tsc --noEmit",
     "postinstall": "prisma generate",
-    "vercel-build": "prisma generate && prisma migrate deploy && next build",
+    "vercel-build": "prisma generate && prisma migrate deploy && rm -rf .next && next build",
     "db:seed": "tsx --env-file=.env.local prisma/seed.ts",
     "content:generate": "tsx scripts/generate/index.ts",
     "content:ingest": "tsx scripts/ingest/index.ts",

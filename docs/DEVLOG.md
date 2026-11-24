@@ -16,6 +16,11 @@ Attribution convention used below: "Parent decision" means the parent chose it; 
 
 ---
 
+## 2026-11-24  Decision  Clear .next before next build in vercel-build
+What: Changed `vercel-build` in `package.json` from `prisma generate && prisma migrate deploy && next build` to `prisma generate && prisma migrate deploy && rm -rf .next && next build`.
+Reason: Deployment `dpl_7cKqEeTvxAoPqdBXM94sMF8bWYLW` (commit `ef3d3bb`) failed on Vercel during `next build` with a Turbopack `next/font/google` cache error (`Error while looking up import map: next/font/google queries have exactly one entry` on `baloo_2_85cdf8b6.module.css`), the exact same error seen locally on `nunito_a46755c1.module.css` when `src/app/layout.tsx` changed against a persisted `.next` cache from October. Clearing `.next` before `next build` resolves it cleanly without upgrading Next.js or risking framework churn, and the full build completes in under 5 seconds.
+Alternatives rejected: One-off Redeploy Without Cache in Vercel UI (leaves the next `layout.tsx` edit vulnerable to the same failure); upgrading Next.js mid-cleanup.
+
 ## 2026-11-24  Milestone  Phase 10 cleanup and friction reduction built and verified
 What: Dropped the confidence prompt in `Player.tsx`, fixed `HUMANITIES` visibility and ordering on `/parent`, switched working bands to an 8-attempt rolling window with Band 3 starting baselines for `OPERATIONS_ALGEBRA` and `NUMBER_BASE_TEN`, mounted root-level batched offline sync, hardened parent PIN signing with a 5-try lockout cookie, updated `README.md` / `CONTRIBUTORS.md` / `docs/ROADMAP.md` / `docs/HANDOFF.md` / `CLAUDE.md`, and pushed to `main`.
 Verified by: `npm test` (22 files, 135 tests passed), `npm run content:check` (60 skills, 792 reviewed questions), `npm run typecheck`, `npm run lint`, and clean `rm -rf .next && npm run build` all exited 0.
