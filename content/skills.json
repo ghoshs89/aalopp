@@ -54,15 +54,24 @@
     ]
   },
   {
+    "code": "MATH-NBT-ROUNDING",
+    "name": "Rounding on a number line",
+    "domain": "MATHEMATICS",
+    "strand": "NUMBER_BASE_TEN",
+    "tier": 3,
+    "isConvention": false,
+    "prerequisites": [
+      "MATH-NBT-PLACE-VALUE"
+    ]
+  },
+  {
     "code": "MATH-OA-ADD-SUB",
     "name": "Adding and subtracting",
     "domain": "MATHEMATICS",
     "strand": "OPERATIONS_ALGEBRA",
     "tier": 1,
     "isConvention": false,
-    "prerequisites": [
-      "MATH-NBT-COUNTING"
-    ]
+    "prerequisites": []
   },
   {
     "code": "MATH-OA-EQUAL-GROUPS",
@@ -195,6 +204,17 @@
     "isConvention": false,
     "prerequisites": [
       "MATH-GEO-SYMMETRY"
+    ]
+  },
+  {
+    "code": "MATH-GEO-QUADRILATERALS",
+    "name": "Quadrilaterals and shape families",
+    "domain": "MATHEMATICS",
+    "strand": "GEOMETRY_SPATIAL",
+    "tier": 2,
+    "isConvention": false,
+    "prerequisites": [
+      "MATH-GEO-SHAPES"
     ]
   },
   {
@@ -462,6 +482,29 @@
     ]
   },
   {
+    "code": "LOGIC-MATRIX",
+    "name": "Visual pattern matrices",
+    "domain": "LOGIC_CS",
+    "strand": "LOGIC_CS",
+    "tier": 3,
+    "isConvention": false,
+    "prerequisites": [
+      "LOGIC-PATTERN"
+    ]
+  },
+  {
+    "code": "LOGIC-ANALOGY",
+    "name": "Number analogies and balance scales",
+    "domain": "LOGIC_CS",
+    "strand": "LOGIC_CS",
+    "tier": 3,
+    "isConvention": false,
+    "prerequisites": [
+      "LOGIC-PATTERN",
+      "MATH-OA-EQUAL-GROUPS"
+    ]
+  },
+  {
     "code": "LANG-EN-READ-DETAIL",
     "name": "Reading: finding details",
     "domain": "LANGUAGES",
@@ -479,6 +522,28 @@
     "isConvention": false,
     "prerequisites": [
       "LANG-EN-READ-DETAIL"
+    ]
+  },
+  {
+    "code": "LANG-EN-WORD-PARTS",
+    "name": "Prefixes, suffixes and word analogies",
+    "domain": "LANGUAGES",
+    "strand": "LANGUAGE",
+    "tier": 3,
+    "isConvention": false,
+    "prerequisites": [
+      "LANG-EN-READ-DETAIL"
+    ]
+  },
+  {
+    "code": "LANG-EN-OPINION-EVIDENCE",
+    "name": "Reasons and evidence in reading",
+    "domain": "LANGUAGES",
+    "strand": "LANGUAGE",
+    "tier": 3,
+    "isConvention": false,
+    "prerequisites": [
+      "LANG-EN-READ-INFER"
     ]
   },
   {

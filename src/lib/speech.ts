@@ -28,6 +28,7 @@ export function questionSpeechParts(question: Question): { text: string; lang?: 
 export function questionSpeech(question: Question): string {
   const prompt = question.speech ?? speakable(question.prompt);
   if (question.answer.type === "findTheBug") return `${prompt} ${question.answer.steps.map((s, i) => `Step ${i + 1}: ${speakable(s)}`).join(" ")}`;
+  if (question.answer.type === "order") return prompt;
   if (question.answer.type !== "choice" || question.language !== "en" || question.answer.choiceVisuals) return prompt;
   const choices = question.answer.choices.map(speakable);
   if (choices.some((c) => c === "")) return prompt;

@@ -254,7 +254,8 @@ const COUNTRIES: Country[] = [
     facts: ["Morocco is in the northwest corner of Africa, just across the water from Spain.", "The Sahara, the world's largest hot desert, stretches into southern Morocco."],
     cities: ["Marrakesh"],
     landmarks: [{ name: "The Hassan II Mosque, one of the biggest mosques in the world", city: "Casablanca" }],
-    neighbours: ["Algeria"],
+    // Includes Spain (Ceuta and Melilla enclaves) so Spain is never offered as a "wrong" decoy on Morocco's border question.
+    neighbours: ["Algeria", "Spain"],
   },
   {
     code: "ar", name: "Argentina", capital: "Buenos Aires", continent: "South America",
@@ -329,7 +330,7 @@ const COUNTRIES: Country[] = [
   {
     code: "id", name: "Indonesia", capital: "Jakarta", continent: "Asia",
     flagWords: "Two stripes lying down: red on top, white on the bottom.",
-    facts: ["Indonesia is made up of more islands than any other country, between thirteen and seventeen thousand of them.", "The famous island of Bali is part of Indonesia."],
+    facts: ["Indonesia is the world's largest island country, spread across more than seventeen thousand islands.", "The famous island of Bali is part of Indonesia."],
     cities: ["Yogyakarta"],
     landmarks: [{ name: "Borobudur, a giant ancient stone temple", city: "Yogyakarta" }],
     neighbours: ["Malaysia", "Papua New Guinea"],

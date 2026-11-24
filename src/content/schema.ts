@@ -87,6 +87,8 @@ const CoinsVisual = z
     path: ["coins"],
   });
 
+const RULER_OBJECTS = ["car", "pencil", "crayon", "truck", "key", "bus"] as const;
+
 const RulerVisual = z
   .object({
     kind: z.literal("ruler"),
@@ -94,9 +96,69 @@ const RulerVisual = z
     length: z.int().min(4).max(15),
     start: z.int().min(0),
     end: z.int().min(1),
-    object: z.enum(["car", "pencil", "crayon", "truck", "key", "bus"]),
+    object: z.enum(RULER_OBJECTS),
+    /** Optional second object above the same ruler for two-object length comparison. */
+    compare: z
+      .object({
+        start: z.int().min(0),
+        end: z.int().min(1),
+        object: z.enum(RULER_OBJECTS),
+      })
+      .optional(),
   })
-  .refine((v) => v.start < v.end && v.end <= v.length, { message: "Object must sit on the ruler", path: ["end"] });
+  .refine(
+    (v) =>
+      v.start < v.end &&
+      v.end <= v.length &&
+      (!v.compare || (v.compare.start < v.compare.end && v.compare.end <= v.length && v.compare.object !== v.object)),
+    { message: "Object must sit on the ruler and compared objects must be distinct", path: ["end"] },
+  );
+
+const NumberLineVisual = z
+  .object({
+    kind: z.literal("numberLine"),
+    min: z.int(),
+    max: z.int(),
+    step: z.int().min(1),
+    mark: z.number(),
+    label: z.string().min(1).optional(),
+  })
+  .refine((v) => v.max > v.min && (v.max - v.min) % v.step === 0 && v.mark >= v.min && v.mark <= v.max, {
+    message: "Number line bounds, step and mark must align",
+    path: ["mark"],
+  });
+
+const FractionStripVisual = z
+  .object({
+    kind: z.literal("fractionStrip"),
+    strips: z
+      .array(
+        z.object({
+          parts: z.int().min(2).max(12),
+          shaded: z.int().min(0),
+          label: z.string().min(1).optional(),
+        }),
+      )
+      .min(1)
+      .max(4),
+  })
+  .refine((v) => v.strips.every((s) => s.shaded <= s.parts), {
+    message: "Shaded parts cannot exceed total parts",
+    path: ["strips"],
+  });
+
+const BalanceVisual = z.object({
+  kind: z.literal("balance"),
+  scales: z
+    .array(
+      z.object({
+        left: z.array(z.string().min(1)).min(1).max(6),
+        right: z.array(z.string().min(1)).min(1).max(6),
+      }),
+    )
+    .min(1)
+    .max(3),
+});
 
 const PictureGraphVisual = z
   .object({
@@ -141,6 +203,9 @@ export const VisualSchema = z.discriminatedUnion("kind", [
   ImageVisual,
   CoinsVisual,
   RulerVisual,
+  NumberLineVisual,
+  FractionStripVisual,
+  BalanceVisual,
   PictureGraphVisual,
   CalendarVisual,
   NetworkVisual,
@@ -170,7 +235,15 @@ const FindTheBugAnswer = z.object({
   fix: z.string().min(1),
 });
 
-export const AnswerSchema = z.discriminatedUnion("type", [ChoiceAnswer, NumericAnswer, FindTheBugAnswer]);
+// Interactive ordering board: the child places items into slots from first to last.
+const OrderAnswer = z.object({
+  type: z.literal("order"),
+  items: z.array(z.string().min(1)).min(3).max(5),
+  correctOrder: z.array(z.string().min(1)).min(3).max(5),
+  slots: z.array(z.string().min(1)).min(3).max(5).optional(),
+});
+
+export const AnswerSchema = z.discriminatedUnion("type", [ChoiceAnswer, NumericAnswer, FindTheBugAnswer, OrderAnswer]);
 
 export const DifficultySchema = z.object({
   // 1 = easy warm-up, 5 = hardest in the current pool. Seeds the rating; never learned from one child.
@@ -221,6 +294,8 @@ export const QuestionSchema = z
     listen: z.object({ text: z.string().min(1), lang: z.enum(["en-US", "es-ES", "fr-FR"]) }).optional(),
     /** Offer a microphone so the child can say a choice instead of tapping it (choice answers only). */
     voiceAnswer: z.boolean().optional(),
+    /** Optional 1-tap clue shown while answering so the child can work through a hard puzzle without giving up. */
+    hint: z.string().min(1).optional(),
     answer: AnswerSchema,
     explanation: z.string().min(1),
     difficulty: DifficultySchema,
@@ -258,6 +333,21 @@ export const QuestionSchema = z
       if (steps[bugIndex] === fix) {
         ctx.addIssue({ code: "custom", path: ["answer", "fix"], message: "The fix must differ from the wrong step" });
       }
+    }
+    if (q.answer.type === "order") {
+      const { items, correctOrder, slots } = q.answer;
+      if (new Set(items).size !== items.length) {
+        ctx.addIssue({ code: "custom", path: ["answer", "items"], message: "Order items must be unique" });
+      }
+      if (items.length !== correctOrder.length || !correctOrder.every((item) => items.includes(item)) || new Set(correctOrder).size !== correctOrder.length) {
+        ctx.addIssue({ code: "custom", path: ["answer", "correctOrder"], message: "correctOrder must be a permutation of items" });
+      }
+      if (slots && slots.length !== items.length) {
+        ctx.addIssue({ code: "custom", path: ["answer", "slots"], message: "slots must match the number of items" });
+      }
+    }
+    if (q.hint && q.hint === q.explanation) {
+      ctx.addIssue({ code: "custom", path: ["hint"], message: "hint must scaffold without repeating the full explanation" });
     }
     if (q.voiceAnswer && q.answer.type !== "choice") {
       ctx.addIssue({ code: "custom", path: ["voiceAnswer"], message: "voiceAnswer only works with choice answers" });

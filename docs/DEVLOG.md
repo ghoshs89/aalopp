@@ -16,6 +16,34 @@ Attribution convention used below: "Parent decision" means the parent chose it; 
 
 ---
 
+## 2026-11-24  Milestone  Phase 11 data-integrity fixes, IXL-aligned skills, and cognitive puzzles built and verified
+What: Completed all three steps of the Phase 11 plan: (1) resolved every data-integrity, selector, privacy, factual, listening-fallback, and backup-script issue surfaced by the post-Phase-10 peer review; (2) added 6 new skills (66 total) and 56 IXL-aligned visual math and ELA questions (`generated-ixl-targeted.json`) plus 26 cognitive-reasoning puzzles (`generated-cognitive.json`: 2x2/3x3 SVG matrices, balance scales, number analogies, and solver-verified interactive `order` puzzles) with a 1-tap `hint` scaffold and a new "Brain Gym: Logic and matrices" theme; (3) passed an independent blind solve on 82/82 new questions (logged in `content/REVIEW.md`).
+Verified by: `npm test` (22 files, 141 tests passed), `npm run content:check` (66 skills, 874 reviewed questions), `npm run typecheck`, `npm run lint` (0 errors, 0 warnings), and clean `npm run build`.
+
+## 2026-11-24  Decision  Choice-text grading, append-only sessionEnd, awaited local saves, and sign-out cookie cleanup
+What:
+1. `ChoiceResponseSchema` now accepts an optional `value?: string` (sent by `Player.tsx`), and `grade()` grades by matching `value` against `answer.choices` when present, falling back to `index` for legacy rows.
+2. `Player.tsx` now issues a fresh `crypto.randomUUID()` per `sessionEnd` outbox item instead of reusing `end-${sessionId}`, and tracks/awaits the IndexedDB `enqueue` promise before advancing or finishing (surfacing a visible warning if local storage rejects).
+3. `signOut()` in `src/app/parent/actions.ts` now deletes `PARENT_COOKIE` and `PIN_TRIES_COOKIE`.
+4. `Player.tsx` now shows the target word visually when `question.listen` is set on devices without speech synthesis, and reworded the Find the Bug nudge so it never labels a true step false.
+5. Updated `README.md` speech privacy wording (browser recognition may use the browser's service; AALOPP never stores or uploads audio) and made `docs/backup-truenas.md` dump to `.tmp` and prune old dumps only after a verified non-empty dump succeeds.
+Reason: Peer review of `fc37abf` reproduced choice-index grading drift across content shuffles, a slow-upload `sessionEnd` overwrite-delete race, unawaited IndexedDB saves, lingering parent-unlock cookies across sign-out, and risky backup pruning.
+Alternatives rejected: Persisting choice-order snapshots in Prisma (unnecessary when grading by exact choice string is backward-compatible with `Attempt.response` JSON).
+
+## 2026-11-24  Decision  Session selector balancing, retry cap enforcement, slump step-down, and multi-skill new-skill discovery
+What: Updated `src/lib/engine/select-session.ts` and `content/skills.json`:
+1. Enforced `MAX_RETRIES = 2` inside `available()` so step 6 filler cannot pull extra retries past the cap.
+2. Switched random jitter to per-skill (`skillJitter`) instead of per-question, capped ordinary sessions at `MAX_HUMANITIES_ITEMS = 2` (primary strand `HUMANITIES`), and removed `MATH-NBT-COUNTING` as a prerequisite on `MATH-OA-ADD-SUB` so `OPERATIONS_ALGEBRA` is a root strand on cold start (reducing cold-start Humanities share across 200 seeds from 827/1600 to 322/1600 and raising primary OA picks from 0 to >0).
+3. Added slump step-down in `computeWorkingBands`: if recent accuracy on the current working band is below 1/3 across 3+ attempts in the 8-attempt window, step down one band.
+4. Added `targetBand = Math.min(working, skillMaxBand)` so skills whose questions top out below the strand's working band (e.g. band-2 Spanish phrases when English raises `LANGUAGE` to band 4) are not penalized, added a `nearMastery` nudge (+6) for skills 2-4 attempts in with <=1 miss, and allowed Step 2 (`new`) to introduce multi-skill questions carrying a `new` skill (fixing `CARS-ORIGIN` starvation when paired with `WORLD-FLAGS`).
+Reason: Peer review reproduced 5 retries in one session, persistent band-4 lock after 8 straight misses, and 827/1600 Humanities cold-start dominance with 0 primary OA picks; 180-day `simulation.test.ts` caught both low-ceiling skill starvation and dual-tagged new-skill starvation.
+Alternatives rejected: Lowering mastery thresholds or weakening `simulation.test.ts` bounds.
+
+## 2026-11-24  Decision  Phase 11 visuals, interactive OrderBoard, optional hint, and Brain Gym theme
+What: Added two-object `compare` mode on `RulerVisual`, new `NumberLineVisual`, `FractionStripVisual`, and `BalanceVisual` SVG components, an interactive `order` answer type (`OrderAnswer` + tap-to-place `OrderBoard`), an optional 1-tap `hint` field on `QuestionSchema` (validated `hint !== explanation`), 6 new skills (`MATH-NBT-ROUNDING`, `MATH-GEO-QUADRILATERALS`, `LOGIC-MATRIX`, `LOGIC-ANALOGY`, `LANG-EN-WORD-PARTS`, `LANG-EN-OPINION-EVIDENCE`), a 3rd theme `"puzzles"` ("Brain Gym: Logic and matrices"), and two new generators (`scripts/generate/ixl-targeted.ts`, `scripts/generate/cognitive.ts`).
+Reason: Parent approved Steps 1 to 3 to address Aishik's IXL Action Plan targets (Measurement & Data 280, Geometry 290, NBT 320, OA 350, ELA 300+ with 320L-470L independent reading) and give him high-ceiling cognitive-test puzzles (CogAT/NNAT3-style matrices, balance scales, analogies, and interactive ordering) themed around cars, robots, and world flags so he stays engaged beyond trivia.
+Alternatives rejected: Hand-typing puzzle JSON (generators compute and assert uniqueness), or gating hints behind a miss (a voluntary 1-tap hint helps prevent giving up before submitting).
+
 ## 2026-11-24  Decision  Clear .next before next build in vercel-build
 What: Changed `vercel-build` in `package.json` from `prisma generate && prisma migrate deploy && next build` to `prisma generate && prisma migrate deploy && rm -rf .next && next build`.
 Reason: Deployment `dpl_7cKqEeTvxAoPqdBXM94sMF8bWYLW` (commit `ef3d3bb`) failed on Vercel during `next build` with a Turbopack `next/font/google` cache error (`Error while looking up import map: next/font/google queries have exactly one entry` on `baloo_2_85cdf8b6.module.css`), the exact same error seen locally on `nunito_a46755c1.module.css` when `src/app/layout.tsx` changed against a persisted `.next` cache from October. Clearing `.next` before `next build` resolves it cleanly without upgrading Next.js or risking framework churn, and the full build completes in under 5 seconds.

@@ -1,5 +1,11 @@
 [
   {
+    "id": "puzzles",
+    "name": "Brain Gym: Logic and matrices",
+    "emoji": "🧠",
+    "skills": ["LOGIC-MATRIX", "LOGIC-ANALOGY", "LOGIC-ORDER", "CS-DEBUG"]
+  },
+  {
     "id": "cars",
     "name": "Cars and logos",
     "emoji": "🏎️",

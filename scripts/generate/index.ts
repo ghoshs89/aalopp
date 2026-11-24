@@ -3,8 +3,10 @@ import path from "node:path";
 import type { Question } from "../../src/content/schema";
 import { batch2Questions } from "./batch2";
 import { carQuestions } from "./cars";
+import { cognitiveQuestions } from "./cognitive";
 import { debuggingQuestions } from "./debugging";
 import { geometryQuestions } from "./geometry";
+import { ixlTargetedQuestions } from "./ixl-targeted";
 import { languageQuestions } from "./languages";
 import { logicQuestions } from "./logic";
 import { worldQuestions } from "./world";
@@ -22,6 +24,8 @@ export const GENERATED: Record<string, () => Question[]> = {
   "generated-languages.json": languageQuestions,
   "generated-world.json": worldQuestions,
   "generated-cars.json": carQuestions,
+  "generated-ixl-targeted.json": ixlTargetedQuestions,
+  "generated-cognitive.json": cognitiveQuestions,
 };
 
 export function renderFile(questions: Question[]): string {

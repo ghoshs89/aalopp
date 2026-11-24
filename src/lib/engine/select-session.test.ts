@@ -201,5 +201,40 @@ describe("computeWorkingBands", () => {
       attempt(qs[5].id, false, "2026-09-12"),
     ];
     expect(computeWorkingBands(reviewed, skillByCode, slumped).LOGIC_CS).toBe(2);
+
+    // Passing band 3 then missing 8 distinct band-4 questions must step back down from 4 to 3.
+    const oa3 = reviewed.filter((q) => skillByCode.get(q.skills[0])!.strand === "OPERATIONS_ALGEBRA" && q.difficulty.band === 3).slice(0, 3);
+    const oa4 = reviewed.filter((q) => skillByCode.get(q.skills[0])!.strand === "OPERATIONS_ALGEBRA" && q.difficulty.band === 4).slice(0, 8);
+    expect(oa4.length).toBeGreaterThanOrEqual(8);
+    const stuckCheck = [
+      ...oa3.map((q, i) => attempt(q.id, true, `2026-09-0${i + 1}`)),
+      ...oa4.map((q, i) => attempt(q.id, false, `2026-09-${String(10 + i).padStart(2, "0")}`)),
+    ];
+    expect(computeWorkingBands(reviewed, skillByCode, stuckCheck).OPERATIONS_ALGEBRA).toBe(3);
+  });
+
+  it("never exceeds MAX_RETRIES in a session even when many missed questions are waiting", () => {
+    const missed = reviewed
+      .filter((q) => !isConvention(q.id) && skillByCode.get(q.skills[0])!.strand !== "HUMANITIES")
+      .slice(0, 6)
+      .map((q) => attempt(q.id, false, "2026-09-12"));
+    const plan = selectSession(reviewed, skills, missed, "2026-09-13", seeded(42));
+    const retries = plan.picks.filter((p) => p.reason.startsWith("Try again:"));
+    expect(retries.length).toBeLessThanOrEqual(2);
+  });
+
+  it("caps Humanities items in ordinary sessions so core math and logic strands are served on cold start", () => {
+    const themeSkills = new Set(themes.flatMap((t) => t.skills));
+    let humanitiesPicks = 0;
+    let oaPicks = 0;
+    for (let seed = 1; seed <= 200; seed++) {
+      const plan = selectSession(reviewed, skills, [], "2026-09-13", seeded(seed), SESSION_SIZE, { themeSkills });
+      const hum = plan.picks.filter((p) => skillByCode.get(questionsById.get(p.questionId)!.skills[0])!.strand === "HUMANITIES").length;
+      expect(hum, `seed ${seed}`).toBeLessThanOrEqual(2);
+      humanitiesPicks += hum;
+      oaPicks += plan.picks.filter((p) => skillByCode.get(questionsById.get(p.questionId)!.skills[0])!.strand === "OPERATIONS_ALGEBRA").length;
+    }
+    expect(humanitiesPicks).toBeLessThanOrEqual(400);
+    expect(oaPicks).toBeGreaterThan(0);
   });
 });

@@ -1,8 +1,10 @@
 import bebras from "../../content/questions/bebras-style-starter.json";
 import generatedBatch2 from "../../content/questions/generated-batch2.json";
 import generatedCars from "../../content/questions/generated-cars.json";
+import generatedCognitive from "../../content/questions/generated-cognitive.json";
 import generatedDebugging from "../../content/questions/generated-debugging.json";
 import generatedGeometry from "../../content/questions/generated-geometry.json";
+import generatedIxlTargeted from "../../content/questions/generated-ixl-targeted.json";
 import generatedLanguages from "../../content/questions/generated-languages.json";
 import generatedLogic from "../../content/questions/generated-logic.json";
 import generatedMeasurement from "../../content/questions/generated-measurement.json";
@@ -20,8 +22,10 @@ export const QUESTION_FILES: Record<string, unknown> = {
   "bebras-style-starter.json": bebras,
   "generated-batch2.json": generatedBatch2,
   "generated-cars.json": generatedCars,
+  "generated-cognitive.json": generatedCognitive,
   "generated-debugging.json": generatedDebugging,
   "generated-geometry.json": generatedGeometry,
+  "generated-ixl-targeted.json": generatedIxlTargeted,
   "generated-languages.json": generatedLanguages,
   "generated-logic.json": generatedLogic,
   "generated-measurement.json": generatedMeasurement,

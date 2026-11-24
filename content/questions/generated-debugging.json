@@ -298,14 +298,14 @@
       "solver": "Sam",
       "steps": [
         "A quarter is 25 cents.",
-        "A dime is 5 cents.",
         "A nickel is 5 cents.",
+        "A dime is 5 cents.",
         "Together: 25 + 5 + 5 = 35 cents."
       ],
-      "bugIndex": 1,
+      "bugIndex": 2,
       "fix": "A dime is 10 cents."
     },
-    "explanation": "Step 2 should say: A dime is 10 cents. Any step after it that used the mistake is wrong too. The right answer is 40 cents.",
+    "explanation": "Step 3 should say: A dime is 10 cents. Any step after it that used the mistake is wrong too. The right answer is 40 cents.",
     "difficulty": {
       "band": 2,
       "basis": "author-estimate"

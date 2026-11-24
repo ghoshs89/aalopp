@@ -6,9 +6,24 @@ describe("isCorrect", () => {
   const choice = questionsById.get("md-car-wash-clock-half")!;
   const numeric = questionsById.get("md-car-wash-change")!;
 
-  it("grades multiple choice by index", () => {
+  it("grades multiple choice by index and by choice text when present", () => {
     expect(isCorrect(choice, { type: "choice", index: 2 })).toBe(true);
     expect(isCorrect(choice, { type: "choice", index: 0 })).toBe(false);
+    const rightText = choice.answer.type === "choice" ? choice.answer.choices[choice.answer.correctIndex] : "";
+    const wrongText = choice.answer.type === "choice" ? choice.answer.choices[0] : "";
+    // Even if choices were reordered after an offline answer was queued, the stored choice text preserves the true grade.
+    expect(isCorrect(choice, { type: "choice", index: 0, value: rightText })).toBe(true);
+    expect(isCorrect(choice, { type: "choice", index: 2, value: wrongText })).toBe(false);
+  });
+
+  it("grades interactive ordering answers element by element", () => {
+    const orderQuestion = {
+      ...choice,
+      answer: { type: "order" as const, items: ["Blue", "Green", "Red"], correctOrder: ["Green", "Blue", "Red"] },
+    };
+    expect(isCorrect(orderQuestion, { type: "order", order: ["Green", "Blue", "Red"] })).toBe(true);
+    expect(isCorrect(orderQuestion, { type: "order", order: ["Blue", "Green", "Red"] })).toBe(false);
+    expect(isCorrect(orderQuestion, { type: "order", order: ["Green", "Blue"] })).toBe(false);
   });
 
   it("grades numeric answers by value", () => {

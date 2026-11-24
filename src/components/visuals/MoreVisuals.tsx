@@ -64,30 +64,159 @@ export function RulerVisual({ visual }: { visual: Of<"ruler"> }) {
   const width = left * 2 + visual.length * perUnit;
   const x = (n: number) => left + n * perUnit;
   const object = RULER_OBJECT[visual.object];
+  const compare = visual.compare ? RULER_OBJECT[visual.compare.object] : null;
+  const rulerY = compare ? 132 : 86;
+  const height = compare ? 196 : 150;
+  const primaryY = compare ? 74 : 28;
   return (
     <div className="visual-card flex justify-center">
-      <svg viewBox={`0 0 ${width} 150`} className="h-auto w-full max-w-2xl" role="img" aria-label={`A ${visual.object} above a ruler`}>
-        <rect x={x(visual.start)} y={28} width={x(visual.end) - x(visual.start)} height={34} rx={10} fill={object.fill} stroke={INK} strokeWidth={2} />
-        <text x={(x(visual.start) + x(visual.end)) / 2} y={46} textAnchor="middle" dominantBaseline="central" fontSize={24}>
+      <svg
+        viewBox={`0 0 ${width} ${height}`}
+        className="h-auto w-full max-w-2xl"
+        role="img"
+        aria-label={visual.compare ? `A ${visual.object} and a ${visual.compare.object} above a ruler` : `A ${visual.object} above a ruler`}
+      >
+        {visual.compare && compare && (
+          <>
+            <rect x={x(visual.compare.start)} y={26} width={x(visual.compare.end) - x(visual.compare.start)} height={34} rx={10} fill={compare.fill} stroke={INK} strokeWidth={2} />
+            <text x={(x(visual.compare.start) + x(visual.compare.end)) / 2} y={44} textAnchor="middle" dominantBaseline="central" fontSize={22}>
+              {compare.emoji}
+            </text>
+            <line x1={x(visual.compare.start)} x2={x(visual.compare.start)} y1={60} y2={rulerY} stroke={INK} strokeOpacity={0.55} strokeDasharray="3 3" />
+            <line x1={x(visual.compare.end)} x2={x(visual.compare.end)} y1={60} y2={rulerY} stroke={INK} strokeOpacity={0.55} strokeDasharray="3 3" />
+          </>
+        )}
+        <rect x={x(visual.start)} y={primaryY} width={x(visual.end) - x(visual.start)} height={34} rx={10} fill={object.fill} stroke={INK} strokeWidth={2} />
+        <text x={(x(visual.start) + x(visual.end)) / 2} y={primaryY + 18} textAnchor="middle" dominantBaseline="central" fontSize={22}>
           {object.emoji}
         </text>
-        <line x1={x(visual.start)} x2={x(visual.start)} y1={62} y2={86} stroke={INK} strokeDasharray="3 3" />
-        <line x1={x(visual.end)} x2={x(visual.end)} y1={62} y2={86} stroke={INK} strokeDasharray="3 3" />
-        <rect x={left - 12} y={86} width={width - 2 * (left - 12)} height={50} fill="#ffe08a" stroke="#9a7b1f" />
+        <line x1={x(visual.start)} x2={x(visual.start)} y1={primaryY + 34} y2={rulerY} stroke={INK} strokeDasharray="3 3" />
+        <line x1={x(visual.end)} x2={x(visual.end)} y1={primaryY + 34} y2={rulerY} stroke={INK} strokeDasharray="3 3" />
+        <rect x={left - 12} y={rulerY} width={width - 2 * (left - 12)} height={50} fill="#ffe08a" stroke="#9a7b1f" />
         {Array.from({ length: visual.length + 1 }, (_, n) => (
           <g key={n}>
-            <line x1={x(n)} x2={x(n)} y1={86} y2={108} stroke={INK} strokeWidth={2} />
-            <text x={x(n)} y={126} textAnchor="middle" fontSize={15} fontWeight={700} fill={INK}>
+            <line x1={x(n)} x2={x(n)} y1={rulerY} y2={rulerY + 22} stroke={INK} strokeWidth={2} />
+            <text x={x(n)} y={rulerY + 40} textAnchor="middle" fontSize={15} fontWeight={700} fill={INK}>
               {n}
             </text>
           </g>
         ))}
         {visual.unit === "in" &&
-          Array.from({ length: visual.length }, (_, n) => <line key={n} x1={x(n + 0.5)} x2={x(n + 0.5)} y1={86} y2={98} stroke={INK} />)}
-        <text x={width - left} y={20} textAnchor="end" fontSize={14} fontWeight={700} fill={INK}>
+          Array.from({ length: visual.length }, (_, n) => <line key={n} x1={x(n + 0.5)} x2={x(n + 0.5)} y1={rulerY} y2={rulerY + 12} stroke={INK} />)}
+        <text x={width - left} y={18} textAnchor="end" fontSize={14} fontWeight={700} fill={INK}>
           {visual.unit === "in" ? "inches" : "centimeters"}
         </text>
       </svg>
+    </div>
+  );
+}
+
+export function NumberLineVisual({ visual }: { visual: Of<"numberLine"> }) {
+  const width = 360;
+  const height = 112;
+  const left = 28;
+  const right = width - 28;
+  const span = visual.max - visual.min;
+  const x = (v: number) => left + ((v - visual.min) / span) * (right - left);
+  const ticks: number[] = [];
+  for (let v = visual.min; v <= visual.max; v += visual.step) ticks.push(v);
+  const mx = x(visual.mark);
+  return (
+    <div className="visual-card flex justify-center">
+      <svg viewBox={`0 0 ${width} ${height}`} className="h-auto w-full max-w-2xl" role="img" aria-label={`Number line from ${visual.min} to ${visual.max} with a marker at ${visual.mark}`}>
+        <line x1={left} x2={right} y1={66} y2={66} stroke={INK} strokeWidth={4} strokeLinecap="round" />
+        {ticks.map((t, i) => {
+          const major = i === 0 || i === ticks.length - 1 || t === (visual.min + visual.max) / 2;
+          return (
+            <g key={t}>
+              <line x1={x(t)} x2={x(t)} y1={major ? 52 : 58} y2={major ? 80 : 74} stroke={INK} strokeWidth={major ? 3 : 1.8} />
+              {(ticks.length <= 11 ? i % 2 === 0 || major : major) && (
+                <text x={x(t)} y={98} textAnchor="middle" fontSize={major ? 14 : 11} fontWeight={major ? 800 : 600} fill={INK}>
+                  {t}
+                </text>
+              )}
+            </g>
+          );
+        })}
+        <circle cx={mx} cy={66} r={8} fill="#d84957" stroke="#ffffff" strokeWidth={2.5} />
+        <rect x={Math.max(8, Math.min(width - 78, mx - 35))} y={10} width={70} height={28} rx={10} fill="#d84957" />
+        <text x={Math.max(43, Math.min(width - 43, mx))} y={25} textAnchor="middle" dominantBaseline="central" fontSize={15} fontWeight={800} fill="#ffffff">
+          {visual.label ?? String(visual.mark)}
+        </text>
+        <line x1={mx} x2={mx} y1={38} y2={58} stroke="#d84957" strokeWidth={2.5} />
+      </svg>
+    </div>
+  );
+}
+
+const STRIP_COLORS = ["#2878e3", "#2cb470", "#e8a33b", "#8a5cd6"];
+
+export function FractionStripVisual({ visual }: { visual: Of<"fractionStrip"> }) {
+  const barW = 280;
+  const barH = 38;
+  const gap = 14;
+  const left = 16;
+  const labelW = 54;
+  const width = left + barW + labelW + 12;
+  const height = 20 + visual.strips.length * (barH + gap);
+  return (
+    <div className="visual-card flex justify-center">
+      <svg viewBox={`0 0 ${width} ${height}`} className="h-auto w-full max-w-xl" role="img" aria-label="Fraction strips comparing equal parts of the same whole">
+        {visual.strips.map((strip, row) => {
+          const y = 12 + row * (barH + gap);
+          const cellW = barW / strip.parts;
+          const fill = STRIP_COLORS[row % STRIP_COLORS.length];
+          return (
+            <g key={row}>
+              {Array.from({ length: strip.parts }, (_, i) => (
+                <rect
+                  key={i}
+                  x={left + i * cellW}
+                  y={y}
+                  width={cellW}
+                  height={barH}
+                  fill={i < strip.shaded ? fill : "#ffffff"}
+                  stroke={INK}
+                  strokeWidth={2.5}
+                />
+              ))}
+              {strip.label && (
+                <text x={left + barW + 12} y={y + barH / 2} dominantBaseline="central" fontSize={16} fontWeight={800} fill={INK}>
+                  {strip.label}
+                </text>
+              )}
+            </g>
+          );
+        })}
+      </svg>
+    </div>
+  );
+}
+
+export function BalanceVisual({ visual }: { visual: Of<"balance"> }) {
+  return (
+    <div className="visual-card grid gap-4">
+      {visual.scales.map((scale, idx) => (
+        <div key={idx} className="flex flex-col items-center">
+          <div className="grid w-full max-w-md grid-cols-[1fr_auto_1fr] items-end gap-2">
+            <div className="flex min-h-14 flex-wrap items-center justify-center gap-1.5 rounded-2xl border-2 border-ink/25 bg-white px-3 py-2 text-2xl font-extrabold text-ink shadow-sm">
+              {scale.left.map((item, i) => (
+                <span key={i}>{item}</span>
+              ))}
+            </div>
+            <span className="pb-3 text-2xl font-extrabold text-ink" aria-label="equals">
+              =
+            </span>
+            <div className="flex min-h-14 flex-wrap items-center justify-center gap-1.5 rounded-2xl border-2 border-ink/25 bg-white px-3 py-2 text-2xl font-extrabold text-ink shadow-sm">
+              {scale.right.map((item, i) => (
+                <span key={i}>{item}</span>
+              ))}
+            </div>
+          </div>
+          <div className="mt-1 h-2 w-full max-w-md rounded-full bg-ink/80" />
+          <div className="h-0 w-0 border-x-[12px] border-b-[14px] border-x-transparent border-b-ink/80" />
+        </div>
+      ))}
     </div>
   );
 }

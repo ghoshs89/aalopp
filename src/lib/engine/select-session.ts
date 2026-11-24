@@ -16,6 +16,11 @@ const MIN_NEW_ITEMS = 1;
  */
 const MIN_THEME_ITEMS = 1;
 /**
+ * Cap on Humanities (world/cars recall) items in an ordinary session so the large recall bank cannot crowd out core
+ * math, logic and language practice.
+ */
+const MAX_HUMANITIES_ITEMS = 2;
+/**
  * A session he picks a theme for still carries this many questions from his ordinary plan, retries and reviews first.
  * In the first themed week 87 of his 119 answers were theme questions (95% right, about 4 seconds each), and core
  * practice nearly stopped. The parent chose a mix over limiting how often a theme can be played.
@@ -99,6 +104,27 @@ export function selectSession(
   const lastByQuestion = new Map<string, AttemptRecord>();
   for (const a of [...attempts].sort((x, y) => x.answeredAt.getTime() - y.answeredAt.getTime())) lastByQuestion.set(a.questionId, a);
 
+  // Roll random jitter per skill rather than per question so a large question bank (such as Humanities) does not
+  // outdraw smaller core strands purely by having more random rolls.
+  const skillJitter = new Map<string, number>();
+  const jitterFor = (code: string) => {
+    let j = skillJitter.get(code);
+    if (j === undefined) {
+      j = random() * 8;
+      skillJitter.set(code, j);
+    }
+    return j;
+  };
+
+  // Highest available band per skill, so a skill whose bank tops out below the strand's working band (e.g. band-2
+  // Spanish phrases when English has pushed LANGUAGE to band 4) is not penalized for lacking higher-band items.
+  const skillMaxBand = new Map<string, number>();
+  for (const q of questions) {
+    for (const code of q.skills) {
+      skillMaxBand.set(code, Math.max(skillMaxBand.get(code) ?? 1, q.difficulty.band));
+    }
+  }
+
   // Skill states and working bands are always computed from the whole bank, so picking a theme does not distort what
   // the engine believes about him. Picking a theme only narrows which questions fill which slots (see the end).
   const candidates: Candidate[] = questions.map((question) => {
@@ -106,6 +132,7 @@ export function selectSession(
     const options = question.skills.map((code) => ({ skill: skillByCode.get(code)!, state: states.get(code)! })).filter((o) => o.skill);
     const { skill, state } = options.reduce((best, o) => (urgency(o.state, skillByCode, states) > urgency(best.state, skillByCode, states) ? o : best));
     const working = workingBands[skill.strand] ?? startingBandFor(skill.strand);
+    const targetBand = Math.min(working, skillMaxBand.get(skill.code) ?? working);
     const band = question.difficulty.band;
     const last = lastByQuestion.get(question.id);
     const isConvention = question.skills.some((c) => skillByCode.get(c)?.isConvention);
@@ -120,7 +147,11 @@ export function selectSession(
       score = 100;
     } else if (state.status === "learning") {
       category = "practice";
-      score = 70 + state.recent.filter((r) => !r).length * 3;
+      // Prioritize skills with recent misses, and also nudge skills that are close to mastery (2-4 right answers in)
+      // so started skills finish cleanly instead of sitting half-done in learning.
+      const misses = state.recent.filter((r) => !r).length;
+      const nearMastery = state.recent.length >= 2 && state.recent.length < 5 && misses <= 1 ? 6 : 0;
+      score = 70 + misses * 3 + nearMastery;
     } else if (state.status === "new") {
       const ready = skill.prerequisites.every((p) => (states.get(p)?.attempts ?? 0) > 0);
       category = "new";
@@ -131,11 +162,11 @@ export function selectSession(
     }
 
     const isStretch = band === working + 1;
-    if (band === working) score += 10;
-    else if (band === working - 1) score += 5;
-    else if (band < working - 1) score -= 15;
+    if (band === targetBand) score += 10;
+    else if (band === targetBand - 1) score += 5;
+    else if (band < targetBand - 1) score -= 15;
     else if (band > working + 1) score -= 30;
-    score += random() * 8;
+    score += jitterFor(skill.code) + random() * 0.5;
 
     const answeredToday = last?.localDate === today;
     const recentlyRight = last?.isCorrect === true && daysBetween(last.localDate, today) < REPEAT_COOLDOWN_DAYS;
@@ -151,16 +182,23 @@ export function selectSession(
     picked.push(reasonOverride ? { ...c, reason: reasonOverride } : c);
     for (const code of c.question.skills) perSkill.set(code, (perSkill.get(code) ?? 0) + 1);
   };
+  const isThemed = (c: Candidate) => themeSkills !== undefined && c.question.skills.some((code) => themeSkills.has(code));
+  const isHumanities = (c: Candidate) => skillByCode.get(c.question.skills[0])?.strand === "HUMANITIES";
   const reviewsFull = () => picked.filter((p) => p.category === "review").length >= MAX_REVIEWS;
-  // The caps (per skill, reviews per session) keep room for practice and new skills; they relax only if the pool runs dry.
+  const retriesFull = () => picked.filter((p) => p.category === "retry").length >= MAX_RETRIES;
+  const humanitiesFull = () => !onlySkills && picked.filter(isHumanities).length >= MAX_HUMANITIES_ITEMS;
+  // The caps (per skill, reviews, retries, Humanities in ordinary sessions) keep room for balanced practice; they relax only if the pool runs dry.
   const available = (c: Candidate, allowBlocked = false, ignoreCaps = false) =>
     !picked.some((p) => p.question.id === c.question.id) &&
     (allowBlocked || !c.blocked) &&
     // One question per brand or country, so the first one cannot hand him the answer to the next.
     (allowBlocked || !c.question.topic || !picked.some((p) => p.question.topic === c.question.topic)) &&
-    (ignoreCaps || ((c.category !== "review" || !reviewsFull()) && c.question.skills.every((code) => (perSkill.get(code) ?? 0) < MAX_PER_SKILL)));
+    (ignoreCaps ||
+      ((c.category !== "review" || !reviewsFull()) &&
+        (c.category !== "retry" || !retriesFull()) &&
+        (!isHumanities(c) || !humanitiesFull()) &&
+        c.question.skills.every((code) => (perSkill.get(code) ?? 0) < MAX_PER_SKILL)));
   const byScore = [...candidates].sort((a, b) => b.score - a.score);
-  const isThemed = (c: Candidate) => themeSkills !== undefined && c.question.skills.some((code) => themeSkills.has(code));
   /**
    * The new-skill slot is given up while reviews are badly backed up. Starting something new when he already owes
    * more reviews than a session can serve twice over is the wrong lesson, and it is what lets the due queue grow.
@@ -176,9 +214,10 @@ export function selectSession(
     const start = picked.length;
     const slots = target - start;
     const mine = () => picked.slice(start);
+    const hasNewSkill = (c: Candidate) => c.question.skills.some((code) => states.get(code)?.status === "new");
     const conventionNeeded = () => Math.max(0, Math.min(quotas.convention, slots) - mine().filter((p) => p.isConvention).length);
     const themeNeeded = () => Math.max(0, Math.min(quotas.theme, slots) - mine().filter(isThemed).length);
-    const newNeeded = () => Math.max(0, Math.min(quotas.newSkill, slots) - mine().filter((p) => p.category === "new").length);
+    const newNeeded = () => Math.max(0, Math.min(quotas.newSkill, slots) - mine().filter(hasNewSkill).length);
     /**
      * Whether a pick that fills neither quota still fits. Retries and reviews come first by priority, but they must
      * not eat the slots the everyday-skills and new-skill quotas still need. A retry or review that happens to be an
@@ -198,7 +237,13 @@ export function selectSession(
       if (available(c) && !picked.some((p) => p.skill.code === c.skill.code)) take(c);
     }
     // 2. One skill he has not met yet, so new material keeps arriving while other skills are still in progress.
-    for (const c of pool.filter((c) => c.category === "new")) {
+    // Prefer candidates whose primary category is "new", then fall back to multi-skill questions carrying a new skill
+    // (e.g. CARS-ORIGIN questions that also tag WORLD-FLAGS while WORLD-FLAGS is learning or due for review).
+    const newCandidates = [
+      ...pool.filter((c) => c.category === "new"),
+      ...pool.filter((c) => c.category !== "new" && hasNewSkill(c)),
+    ];
+    for (const c of newCandidates) {
       if (newNeeded() === 0 || picked.length >= target - conventionNeeded()) break;
       if (available(c)) take(c);
     }
@@ -294,7 +339,14 @@ export function computeWorkingBands(questions: Question[], skills: Map<string, S
       const right = recent.filter(Boolean).length;
       if (recent.length >= 3 && right / recent.length >= 2 / 3) passed = band;
     }
-    result[strand] = Math.min(5, Math.max(startingBandFor(strand), passed + 1));
+    let working = Math.min(5, Math.max(startingBandFor(strand), passed + 1));
+    // If he has struggled repeatedly on the current working band (fewer than 1 in 3 right across 3+ recent attempts),
+    // step down one band instead of keeping him pinned there because an earlier lower band passed.
+    const currentRecent = (history.get(`${strand}|${working}`) ?? []).slice(-WORKING_BAND_WINDOW);
+    if (currentRecent.length >= 3 && currentRecent.filter(Boolean).length / currentRecent.length < 1 / 3) {
+      working = Math.max(1, working - 1);
+    }
+    result[strand] = working;
   }
   return result;
 }

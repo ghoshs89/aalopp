@@ -8,7 +8,7 @@ Adaptive learning and cognitive reasoning practice app built for one learner (Ai
 - **Soft gates only:** everyday applied-convention skills (time, money, measuring, graphs, calendars) are mixed into every session without locking reasoning content.
 - **Event-sourced adaptive engine:** skill mastery and spaced review intervals (1, 3, 7, 14, 30 days) are replayed deterministically from the append-only attempt log in `src/lib/engine/`.
 - **Verified content:** mathematical and logic answers are computed by deterministic solvers in `scripts/generate/`, validated by Zod schemas (`src/content/schema.ts`), and checked by independent blind solves or primary-source fact checks logged in `content/REVIEW.md`.
-- **Privacy first:** Row Level Security is enabled on every table with no public policies, sign-in is restricted by `ALLOWED_EMAILS`, and scratchpad drawings and speech audio are never uploaded.
+- **Privacy first:** Row Level Security is enabled on every table with no public policies, sign-in is restricted by `ALLOWED_EMAILS`, and scratchpad drawings and speech audio are never stored or uploaded to AALOPP's servers (optional voice answers use the device browser's built-in speech recognition service).
 
 ## Tech stack
 

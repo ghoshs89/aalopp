@@ -1,5 +1,28 @@
 # Content review log
 
+## 2026-11-24: Phase 11 IXL-targeted & cognitive-reasoning batches (82 new questions) + 3 factual fixes
+
+**New generated files (82 questions total, all `"reviewed"` after independent blind solve):**
+- `generated-ixl-targeted.json` (56 questions across 9 generators in `scripts/generate/ixl-targeted.ts`): two-object inch/cm ruler comparisons (5), Bar Graphs II multi-step car/book charts (5), analog-to-digital clock matching (5), rounding on a number line to nearest 10/100 (8), equivalent fraction strips (5), quadrilateral identification and classification (6), multiplication/division through 10 and two-step problems (6), prefixes/suffixes and verbal analogies (8), and Lexile 320L-470L independent reading plus opinion-evidence items (8).
+- `generated-cognitive.json` (26 questions across 3 generators in `scripts/generate/cognitive.ts`): 2x2 and 3x3 SVG visual pattern matrices with SVG `choiceVisuals` (10), symbolic balance scales (5) and number analogies (5), and solver-verified interactive `order` puzzles (6).
+
+**Independent blind-solve results (2026-11-24):**
+- Two independent `research` subagents solved all 82 questions strictly from a stripped export (`id`, `prompt`, `passage`, `visual`, `hint`, and choices/items only; no answer keys, values, `correctOrder`, or explanations).
+- Agreement: **56/56** on `generated-ixl-targeted.json` and **26/26** on `generated-cognitive.json` (82/82 total, 0 factual errors, 0 SVG mismatches, 0 alternate valid answers).
+- Six minor quality notes caught by the blind solvers were fixed in the generators and regenerated before committing:
+  - `ixl-quad-not-a-quad`: removed `(4 sides)` / `(5 sides)` from the four choice labels so the child counts sides on the SVG instead of reading the side count in the label.
+  - `ixl-bar2-laps-fewest-to-most`: changed `"the fastest bar (Green)"` to `"the tallest bar (Green)"`.
+  - `ixl-round10-85` and `ixl-round100-550`: replaced the tautological / giveaway halfway hints with a general halfway-rule hint that does not state the final rounded number.
+  - `ixl-ela-analogy-thermometer` renamed to `ixl-ela-analogy-clock`, and `ixl-read-opinion-recess` renamed to `ixl-read-opinion-robotics` to match their prompts.
+  - `cog-ord-sphero-4`: named all four robots (`Bolt, Dash, Nova and Spark`) in the prompt text so read-aloud mentions Dash too.
+
+**Three existing-bank fixes (from independent peer review on 2026-11-24):**
+- `scripts/generate/world.ts` (`ma` Morocco): added `"Spain"` to Morocco's `neighbours` list (Ceuta and Melilla share land borders with Morocco; verified against sovereign border facts) so `"Spain"` can never be selected as a wrong decoy in `world-neighbour-ma`.
+- `scripts/generate/world.ts` (`id` Indonesia): corrected the teach-card fact from claiming Indonesia has "more islands than any other country" (Sweden, Norway and Finland have far more counted islands) to "Indonesia is the world's largest island country, spread across more than seventeen thousand islands."
+- `scripts/generate/debugging.ts` (`dbg-us-coin-values`): reordered steps so `"A nickel is 5 cents."` is Step 2 (`index 1`) before the false Step 3 `"A dime is 5 cents."` (`bugIndex: 2`), eliminating the misleading `"look earlier"` feedback that previously followed a true step placed after the bug.
+
+**Parent spot-check suggestions**: `ixl-cmp-truck-car-offset-in`, `ixl-round10-85`, `ixl-eqf-twothirds-sixths`, `ixl-quad-not-a-quad`, `cog-mat-3x3-rotate-arrows`, `cog-bal-three-scales`, `cog-ord-grand-prix-4`, `world-neighbour-ma`, `dbg-us-coin-values`.
+
 ## 2026-10-03: World knowledge batch 2, 22 new countries (324 world questions total)
 
 New countries: Nepal, Bangladesh, Sri Lanka, Pakistan, Bhutan (India's neighbours); Egypt, Kenya, South Africa,

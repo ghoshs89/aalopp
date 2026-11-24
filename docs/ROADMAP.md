@@ -2,7 +2,7 @@
 
 The living plan. It replaces the original planning file at `~/.claude/plans/what-do-you-think-melodic-harp.md`, which exists only on the parent's Mac and still describes phases that are now done. Decisions and their reasons are in `docs/DEVLOG.md`; the latest session state is in `docs/HANDOFF.md`.
 
-Last updated: 2026-11-24. All planned phases are built; phases 6 to 10 are tuning, content, and cleanup work done since. See the table below and `docs/HANDOFF.md` for what is live versus next.
+Last updated: 2026-11-24. All planned phases are built; phases 6 to 11 are tuning, content, cleanup, and cognitive-puzzle work done since. See the table below and `docs/HANDOFF.md` for what is live versus next.
 
 ## Goal
 A practice app for one learner, Aishik (age 6, MAP Math and Reading RIT 186 / 99th percentile, IXL Math 310 with OA 350 and Measurement and Data 280, IXL ELA 300+). He uses it on laptops, tablets and phones around the house. Source material: `../Aishik-Support-Plan.md` (one folder above the repo).
@@ -41,6 +41,7 @@ These come from the support plan and the review of the original AALOPP specifica
 | 8. Tuning from the first themed week | 3 core questions in every themed session, one question per brand or country, no ownership lines on teach cards, a "look earlier" nudge in Find the Bug | Done 2026-10-01 at the parent's request (commit 067f23b); live on Vercel |
 | 9. World knowledge batch 2 | Picture answer choices (flags, logos, maps) never show a name until the answer is checked; 22 more countries (India's neighbours, Africa, more of the Americas, Europe and Asia-Pacific); real locator maps rendered from Natural Earth data (India point of view); big cities, landmarks and land neighbours as new question kinds; "Did you know?" after an answer | Done 2026-10-03 at the parent's request (commit a31b212); live on Vercel |
 | 10. Cleanup and friction reduction | Drop confidence prompt in Player; fix hidden HUMANITIES strand and stale review copy in Skills tab; fix Skill Map sort order; rolling working-band window and per-strand starting bands (OA/NBT band 3); root-level batched offline sync; peppered parent PIN signing and lockout; real README and contributor credits | Done 2026-11-24 |
+| 11. Data integrity, IXL targets, and Brain Gym puzzles | Choice-text grading, append-only `sessionEnd`, awaited IndexedDB saves, sign-out PIN cleanup, listening fallback, safe TrueNAS backup script; selector retry cap, slump step-down, per-skill jitter, and `MAX_HUMANITIES_ITEMS = 2`; Morocco/Indonesia/nickel content fixes; 4 new visuals (`RulerVisual` compare, `NumberLineVisual`, `FractionStripVisual`, `BalanceVisual`), `OrderBoard`, 1-tap `hint`, Brain Gym theme, 6 new skills, and 82 blind-solved questions | Done 2026-11-24 |
 
 Order confirmed by the parent on 2026-09-13: Phase 4 before Phase 3, because the dashboard needs real usage data and the scratchpad is useful immediately.
 

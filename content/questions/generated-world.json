@@ -5133,7 +5133,7 @@
       "type": "choice",
       "choices": [
         "South Africa has three capital cities: Pretoria, Cape Town and Bloemfontein.",
-        "Indonesia is made up of more islands than any other country, between thirteen and seventeen thousand of them.",
+        "Indonesia is the world's largest island country, spread across more than seventeen thousand islands.",
         "Germany builds many famous cars, including BMW, Audi and Volkswagen.",
         "Most of the Amazon rainforest is in Brazil."
       ],
@@ -10067,7 +10067,7 @@
     "answer": {
       "type": "choice",
       "choices": [
-        "Indonesia is made up of more islands than any other country, between thirteen and seventeen thousand of them.",
+        "Indonesia is the world's largest island country, spread across more than seventeen thousand islands.",
         "Germany builds many famous cars, including BMW, Audi and Volkswagen.",
         "People in Spain speak Spanish.",
         "The Maasai Mara reserve in Kenya is famous for lions, elephants and the wildebeest migration."
@@ -11474,10 +11474,10 @@
     "answer": {
       "type": "choice",
       "choices": [
-        "Spain",
+        "Sweden",
         "Peru",
         "Algeria",
-        "Indonesia"
+        "Russia"
       ],
       "correctIndex": 2
     },
@@ -15550,7 +15550,7 @@
       "lines": [
         "Two stripes lying down: red on top, white on the bottom.",
         "The capital city is Jakarta.",
-        "Indonesia is made up of more islands than any other country, between thirteen and seventeen thousand of them."
+        "Indonesia is the world's largest island country, spread across more than seventeen thousand islands."
       ],
       "visual": {
         "kind": "image",
@@ -15598,7 +15598,7 @@
       "lines": [
         "Two stripes lying down: red on top, white on the bottom.",
         "The capital city is Jakarta.",
-        "Indonesia is made up of more islands than any other country, between thirteen and seventeen thousand of them."
+        "Indonesia is the world's largest island country, spread across more than seventeen thousand islands."
       ],
       "visual": {
         "kind": "image",
@@ -15672,7 +15672,7 @@
       "lines": [
         "Two stripes lying down: red on top, white on the bottom.",
         "The capital city is Jakarta.",
-        "Indonesia is made up of more islands than any other country, between thirteen and seventeen thousand of them."
+        "Indonesia is the world's largest island country, spread across more than seventeen thousand islands."
       ],
       "visual": {
         "kind": "image",
@@ -15724,7 +15724,7 @@
       "lines": [
         "Two stripes lying down: red on top, white on the bottom.",
         "The capital city is Jakarta.",
-        "Indonesia is made up of more islands than any other country, between thirteen and seventeen thousand of them."
+        "Indonesia is the world's largest island country, spread across more than seventeen thousand islands."
       ],
       "visual": {
         "kind": "image",
@@ -15776,7 +15776,7 @@
       "lines": [
         "Two stripes lying down: red on top, white on the bottom.",
         "The capital city is Jakarta.",
-        "Indonesia is made up of more islands than any other country, between thirteen and seventeen thousand of them."
+        "Indonesia is the world's largest island country, spread across more than seventeen thousand islands."
       ],
       "visual": {
         "kind": "image",
@@ -15827,7 +15827,7 @@
       "lines": [
         "Two stripes lying down: red on top, white on the bottom.",
         "The capital city is Jakarta.",
-        "Indonesia is made up of more islands than any other country, between thirteen and seventeen thousand of them."
+        "Indonesia is the world's largest island country, spread across more than seventeen thousand islands."
       ],
       "visual": {
         "kind": "image",
@@ -15846,12 +15846,12 @@
       "choices": [
         "Volvo cars come from Sweden.",
         "Argentina stretches so far south that it reaches close to Antarctica.",
-        "Indonesia is made up of more islands than any other country, between thirteen and seventeen thousand of them.",
+        "Indonesia is the world's largest island country, spread across more than seventeen thousand islands.",
         "Switzerland has four official languages: German, French, Italian and Romansh."
       ],
       "correctIndex": 2
     },
-    "explanation": "Indonesia is made up of more islands than any other country, between thirteen and seventeen thousand of them.",
+    "explanation": "Indonesia is the world's largest island country, spread across more than seventeen thousand islands.",
     "difficulty": {
       "band": 3,
       "basis": "author-estimate"
@@ -15874,7 +15874,7 @@
       "lines": [
         "Two stripes lying down: red on top, white on the bottom.",
         "The capital city is Jakarta.",
-        "Indonesia is made up of more islands than any other country, between thirteen and seventeen thousand of them."
+        "Indonesia is the world's largest island country, spread across more than seventeen thousand islands."
       ],
       "visual": {
         "kind": "image",
@@ -15921,7 +15921,7 @@
       "lines": [
         "Two stripes lying down: red on top, white on the bottom.",
         "The capital city is Jakarta.",
-        "Indonesia is made up of more islands than any other country, between thirteen and seventeen thousand of them."
+        "Indonesia is the world's largest island country, spread across more than seventeen thousand islands."
       ],
       "visual": {
         "kind": "image",
@@ -15968,7 +15968,7 @@
       "lines": [
         "Two stripes lying down: red on top, white on the bottom.",
         "The capital city is Jakarta.",
-        "Indonesia is made up of more islands than any other country, between thirteen and seventeen thousand of them."
+        "Indonesia is the world's largest island country, spread across more than seventeen thousand islands."
       ],
       "visual": {
         "kind": "image",

@@ -1,0 +1,1929 @@
+[
+  {
+    "id": "ixl-cmp-bus-car-in",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/ixl-targeted.ts"
+    },
+    "skills": [
+      "MATH-MD-LENGTH",
+      "MATH-OA-ADD-SUB"
+    ],
+    "language": "en",
+    "prompt": "How many inches longer is the bus than the car?",
+    "visual": {
+      "kind": "ruler",
+      "unit": "in",
+      "length": 10,
+      "start": 0,
+      "end": 8,
+      "object": "bus",
+      "compare": {
+        "start": 0,
+        "end": 5,
+        "object": "car"
+      }
+    },
+    "hint": "Measure the bus first (0 to 8), then measure the car (0 to 5), then subtract.",
+    "answer": {
+      "type": "numeric",
+      "value": 3,
+      "unit": "inches"
+    },
+    "explanation": "The bus is 8 - 0 = 8 inches long. The car is 5 - 0 = 5 inches long. 8 - 5 = 3 inches longer.",
+    "difficulty": {
+      "band": 2,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "ixl-cmp-truck-car-offset-in",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/ixl-targeted.ts"
+    },
+    "skills": [
+      "MATH-MD-LENGTH",
+      "MATH-OA-ADD-SUB"
+    ],
+    "language": "en",
+    "prompt": "How many inches longer is the truck than the car?",
+    "visual": {
+      "kind": "ruler",
+      "unit": "in",
+      "length": 10,
+      "start": 1,
+      "end": 9,
+      "object": "truck",
+      "compare": {
+        "start": 2,
+        "end": 6,
+        "object": "car"
+      }
+    },
+    "hint": "Measure the truck first (1 to 9), then measure the car (2 to 6), then subtract.",
+    "answer": {
+      "type": "numeric",
+      "value": 4,
+      "unit": "inches"
+    },
+    "explanation": "The truck is 9 - 1 = 8 inches long. The car is 6 - 2 = 4 inches long. 8 - 4 = 4 inches longer.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "ixl-cmp-pencil-crayon-in",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/ixl-targeted.ts"
+    },
+    "skills": [
+      "MATH-MD-LENGTH",
+      "MATH-OA-ADD-SUB"
+    ],
+    "language": "en",
+    "prompt": "How many inches longer is the pencil than the crayon?",
+    "visual": {
+      "kind": "ruler",
+      "unit": "in",
+      "length": 9,
+      "start": 1,
+      "end": 8,
+      "object": "pencil",
+      "compare": {
+        "start": 3,
+        "end": 7,
+        "object": "crayon"
+      }
+    },
+    "hint": "Measure the pencil first (1 to 8), then measure the crayon (3 to 7), then subtract.",
+    "answer": {
+      "type": "numeric",
+      "value": 3,
+      "unit": "inches"
+    },
+    "explanation": "The pencil is 8 - 1 = 7 inches long. The crayon is 7 - 3 = 4 inches long. 7 - 4 = 3 inches longer.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "ixl-cmp-bus-truck-offset-in",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/ixl-targeted.ts"
+    },
+    "skills": [
+      "MATH-MD-LENGTH",
+      "MATH-OA-ADD-SUB"
+    ],
+    "language": "en",
+    "prompt": "How many inches longer is the bus than the truck?",
+    "visual": {
+      "kind": "ruler",
+      "unit": "in",
+      "length": 10,
+      "start": 2,
+      "end": 10,
+      "object": "bus",
+      "compare": {
+        "start": 1,
+        "end": 6,
+        "object": "truck"
+      }
+    },
+    "hint": "Measure the bus first (2 to 10), then measure the truck (1 to 6), then subtract.",
+    "answer": {
+      "type": "numeric",
+      "value": 3,
+      "unit": "inches"
+    },
+    "explanation": "The bus is 10 - 2 = 8 inches long. The truck is 6 - 1 = 5 inches long. 8 - 5 = 3 inches longer.",
+    "difficulty": {
+      "band": 4,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "ixl-cmp-pencil-key-cm",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/ixl-targeted.ts"
+    },
+    "skills": [
+      "MATH-MD-LENGTH",
+      "MATH-OA-ADD-SUB"
+    ],
+    "language": "en",
+    "prompt": "How many centimeters longer is the pencil than the key?",
+    "visual": {
+      "kind": "ruler",
+      "unit": "cm",
+      "length": 14,
+      "start": 2,
+      "end": 13,
+      "object": "pencil",
+      "compare": {
+        "start": 4,
+        "end": 9,
+        "object": "key"
+      }
+    },
+    "hint": "Measure the pencil first (2 to 13), then measure the key (4 to 9), then subtract.",
+    "answer": {
+      "type": "numeric",
+      "value": 6,
+      "unit": "centimeters"
+    },
+    "explanation": "The pencil is 13 - 2 = 11 centimeters long. The key is 9 - 4 = 5 centimeters long. 11 - 5 = 6 centimeters longer.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "ixl-bar2-laps-combined",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/ixl-targeted.ts"
+    },
+    "skills": [
+      "MATH-MD-BAR-GRAPH",
+      "MATH-OA-ADD-SUB"
+    ],
+    "language": "en",
+    "prompt": "How many more laps did Red and Blue drive together than Green?",
+    "visual": {
+      "kind": "barChart",
+      "title": "Race laps driven",
+      "unit": "laps",
+      "bars": [
+        {
+          "label": "Red",
+          "value": 14
+        },
+        {
+          "label": "Blue",
+          "value": 10
+        },
+        {
+          "label": "Green",
+          "value": 18
+        },
+        {
+          "label": "Yellow",
+          "value": 8
+        }
+      ]
+    },
+    "hint": "Add Red and Blue first, then subtract Green.",
+    "answer": {
+      "type": "numeric",
+      "value": 6,
+      "unit": "laps"
+    },
+    "explanation": "Red drove 14 and Blue drove 10, so together they drove 24 laps. Green drove 18. 24 - 18 = 6 more laps.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "ixl-bar2-laps-total",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/ixl-targeted.ts"
+    },
+    "skills": [
+      "MATH-MD-BAR-GRAPH",
+      "MATH-OA-ADD-SUB"
+    ],
+    "language": "en",
+    "prompt": "How many laps did all four race cars drive altogether?",
+    "visual": {
+      "kind": "barChart",
+      "title": "Race laps driven",
+      "unit": "laps",
+      "bars": [
+        {
+          "label": "Red",
+          "value": 14
+        },
+        {
+          "label": "Blue",
+          "value": 10
+        },
+        {
+          "label": "Green",
+          "value": 18
+        },
+        {
+          "label": "Yellow",
+          "value": 8
+        }
+      ]
+    },
+    "hint": "Read each bar on the scale, then add them in pairs.",
+    "answer": {
+      "type": "numeric",
+      "value": 50,
+      "unit": "laps"
+    },
+    "explanation": "Add all four bars: 14 + 10 + 18 + 8 = 50 laps.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "ixl-bar2-laps-fewest-to-most",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/ixl-targeted.ts"
+    },
+    "skills": [
+      "MATH-MD-BAR-GRAPH",
+      "MATH-OA-ADD-SUB"
+    ],
+    "language": "en",
+    "prompt": "How many more laps did the tallest bar (Green) have than the shortest bar (Yellow)?",
+    "visual": {
+      "kind": "barChart",
+      "title": "Race laps driven",
+      "unit": "laps",
+      "bars": [
+        {
+          "label": "Red",
+          "value": 14
+        },
+        {
+          "label": "Blue",
+          "value": 10
+        },
+        {
+          "label": "Green",
+          "value": 18
+        },
+        {
+          "label": "Yellow",
+          "value": 8
+        }
+      ]
+    },
+    "answer": {
+      "type": "numeric",
+      "value": 10,
+      "unit": "laps"
+    },
+    "explanation": "Green has 18 laps and Yellow has 8 laps. 18 - 8 = 10 laps.",
+    "difficulty": {
+      "band": 2,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "ixl-bar2-books-two-groups",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/ixl-targeted.ts"
+    },
+    "skills": [
+      "MATH-MD-BAR-GRAPH",
+      "MATH-OA-ADD-SUB"
+    ],
+    "language": "en",
+    "prompt": "How many more books are about Robots and Cars together than about Maps and Space together?",
+    "visual": {
+      "kind": "barChart",
+      "title": "Library books checked out",
+      "unit": "books",
+      "bars": [
+        {
+          "label": "Cars",
+          "value": 16
+        },
+        {
+          "label": "Maps",
+          "value": 12
+        },
+        {
+          "label": "Robots",
+          "value": 20
+        },
+        {
+          "label": "Space",
+          "value": 10
+        }
+      ]
+    },
+    "hint": "Find Robots + Cars first, then Maps + Space, then subtract.",
+    "answer": {
+      "type": "numeric",
+      "value": 14,
+      "unit": "books"
+    },
+    "explanation": "Robots (20) + Cars (16) = 36. Maps (12) + Space (10) = 22. 36 - 22 = 14 more books.",
+    "difficulty": {
+      "band": 4,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "ixl-bar2-books-equalize",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/ixl-targeted.ts"
+    },
+    "skills": [
+      "MATH-MD-BAR-GRAPH",
+      "MATH-OA-ADD-SUB"
+    ],
+    "language": "en",
+    "prompt": "How many more Maps books need to be checked out to match the Robots bar?",
+    "visual": {
+      "kind": "barChart",
+      "title": "Library books checked out",
+      "unit": "books",
+      "bars": [
+        {
+          "label": "Cars",
+          "value": 16
+        },
+        {
+          "label": "Maps",
+          "value": 12
+        },
+        {
+          "label": "Robots",
+          "value": 20
+        },
+        {
+          "label": "Space",
+          "value": 10
+        }
+      ]
+    },
+    "answer": {
+      "type": "numeric",
+      "value": 8,
+      "unit": "books"
+    },
+    "explanation": "Robots has 20 books and Maps has 12 books. 20 - 12 = 8 more books.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "ixl-clk-3-45",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/ixl-targeted.ts"
+    },
+    "skills": [
+      "MATH-MD-TIME-5MIN"
+    ],
+    "language": "en",
+    "prompt": "Which digital clock shows the exact same time as this analog clock?",
+    "visual": {
+      "kind": "clock",
+      "hour": 3,
+      "minute": 45
+    },
+    "hint": "Check which hour number the short hand has already passed, then count by 5s to the long hand.",
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "4:45",
+        "3:09",
+        "9:15",
+        "3:45"
+      ],
+      "correctIndex": 3
+    },
+    "explanation": "The short hand has passed 3 (not reached 4 yet), and the long hand points to 9, which is 45 minutes. On a digital clock that is 3:45.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "ixl-clk-7-15",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/ixl-targeted.ts"
+    },
+    "skills": [
+      "MATH-MD-TIME-5MIN"
+    ],
+    "language": "en",
+    "prompt": "Which digital clock shows the exact same time as this analog clock?",
+    "visual": {
+      "kind": "clock",
+      "hour": 7,
+      "minute": 15
+    },
+    "hint": "Check which hour number the short hand has already passed, then count by 5s to the long hand.",
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "7:03",
+        "3:35",
+        "7:15",
+        "8:15"
+      ],
+      "correctIndex": 2
+    },
+    "explanation": "The short hand has passed 7 (not reached 8 yet), and the long hand points to 3, which is 15 minutes. On a digital clock that is 7:15.",
+    "difficulty": {
+      "band": 2,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "ixl-clk-11-55",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/ixl-targeted.ts"
+    },
+    "skills": [
+      "MATH-MD-TIME-5MIN"
+    ],
+    "language": "en",
+    "prompt": "Which digital clock shows the exact same time as this analog clock?",
+    "visual": {
+      "kind": "clock",
+      "hour": 11,
+      "minute": 55
+    },
+    "hint": "Check which hour number the short hand has already passed, then count by 5s to the long hand.",
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "12:55",
+        "11:11",
+        "12:11",
+        "11:55"
+      ],
+      "correctIndex": 3
+    },
+    "explanation": "The short hand has passed 11 (not reached 12 yet), and the long hand points to 11, which is 55 minutes. On a digital clock that is 11:55.",
+    "difficulty": {
+      "band": 4,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "ixl-clk-6-35",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/ixl-targeted.ts"
+    },
+    "skills": [
+      "MATH-MD-TIME-5MIN"
+    ],
+    "language": "en",
+    "prompt": "Which digital clock shows the exact same time as this analog clock?",
+    "visual": {
+      "kind": "clock",
+      "hour": 6,
+      "minute": 35
+    },
+    "hint": "Check which hour number the short hand has already passed, then count by 5s to the long hand.",
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "7:35",
+        "6:35",
+        "6:07",
+        "7:06"
+      ],
+      "correctIndex": 1
+    },
+    "explanation": "The short hand has passed 6 (not reached 7 yet), and the long hand points to 7, which is 35 minutes. On a digital clock that is 6:35.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "ixl-clk-8-05",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/ixl-targeted.ts"
+    },
+    "skills": [
+      "MATH-MD-TIME-5MIN"
+    ],
+    "language": "en",
+    "prompt": "Which digital clock shows the exact same time as this analog clock?",
+    "visual": {
+      "kind": "clock",
+      "hour": 8,
+      "minute": 5
+    },
+    "hint": "Check which hour number the short hand has already passed, then count by 5s to the long hand.",
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "8:05",
+        "8:01",
+        "1:40",
+        "8:50"
+      ],
+      "correctIndex": 0
+    },
+    "explanation": "The short hand has passed 8 (not reached 9 yet), and the long hand points to 1, which is 5 minutes. On a digital clock that is 8:05.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "ixl-round10-43",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/ixl-targeted.ts"
+    },
+    "skills": [
+      "MATH-NBT-ROUNDING",
+      "MATH-NBT-PLACE-VALUE"
+    ],
+    "language": "en",
+    "prompt": "A race car stops at mile 43. Round 43 to the nearest ten.",
+    "visual": {
+      "kind": "numberLine",
+      "min": 40,
+      "max": 50,
+      "step": 1,
+      "mark": 43,
+      "label": "🏎️ 43"
+    },
+    "hint": "Look at the halfway mark (45). Is 43 below 45, or at/above 45?",
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "50",
+        "43",
+        "40",
+        "30"
+      ],
+      "correctIndex": 2
+    },
+    "explanation": "On the number line, 43 is closer to 40 than to 50, so it rounds to 40.",
+    "difficulty": {
+      "band": 2,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "ixl-round10-68",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/ixl-targeted.ts"
+    },
+    "skills": [
+      "MATH-NBT-ROUNDING",
+      "MATH-NBT-PLACE-VALUE"
+    ],
+    "language": "en",
+    "prompt": "A race car stops at mile 68. Round 68 to the nearest ten.",
+    "visual": {
+      "kind": "numberLine",
+      "min": 60,
+      "max": 70,
+      "step": 1,
+      "mark": 68,
+      "label": "🏎️ 68"
+    },
+    "hint": "Look at the halfway mark (65). Is 68 below 65, or at/above 65?",
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "60",
+        "70",
+        "68",
+        "50"
+      ],
+      "correctIndex": 1
+    },
+    "explanation": "On the number line, 68 is closer to 70 than to 60, so it rounds to 70.",
+    "difficulty": {
+      "band": 2,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "ixl-round10-85",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/ixl-targeted.ts"
+    },
+    "skills": [
+      "MATH-NBT-ROUNDING",
+      "MATH-NBT-PLACE-VALUE"
+    ],
+    "language": "en",
+    "prompt": "A race car stops at mile 85. Round 85 to the nearest ten.",
+    "visual": {
+      "kind": "numberLine",
+      "min": 80,
+      "max": 90,
+      "step": 1,
+      "mark": 85,
+      "label": "🏎️ 85"
+    },
+    "hint": "Look at the halfway mark (85). When a number lands right on the halfway mark, it rounds up to the next ten.",
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "90",
+        "80",
+        "85",
+        "70"
+      ],
+      "correctIndex": 0
+    },
+    "explanation": "85 is right at the halfway point 85. By the rounding rule, halfway numbers round up to 90.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "ixl-round10-124",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/ixl-targeted.ts"
+    },
+    "skills": [
+      "MATH-NBT-ROUNDING",
+      "MATH-NBT-PLACE-VALUE"
+    ],
+    "language": "en",
+    "prompt": "A race car stops at mile 124. Round 124 to the nearest ten.",
+    "visual": {
+      "kind": "numberLine",
+      "min": 120,
+      "max": 130,
+      "step": 1,
+      "mark": 124,
+      "label": "🏎️ 124"
+    },
+    "hint": "Look at the halfway mark (125). Is 124 below 125, or at/above 125?",
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "120",
+        "130",
+        "124",
+        "110"
+      ],
+      "correctIndex": 0
+    },
+    "explanation": "On the number line, 124 is closer to 120 than to 130, so it rounds to 120.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "ixl-round100-240",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/ixl-targeted.ts"
+    },
+    "skills": [
+      "MATH-NBT-ROUNDING",
+      "MATH-NBT-PLACE-VALUE"
+    ],
+    "language": "en",
+    "prompt": "A rally route is 240 kilometers long. Round 240 to the nearest hundred.",
+    "visual": {
+      "kind": "numberLine",
+      "min": 200,
+      "max": 300,
+      "step": 10,
+      "mark": 240,
+      "label": "240 km"
+    },
+    "hint": "Find 250 in the middle of the number line. Is 240 closer to 200 or 300?",
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "300",
+        "250",
+        "400",
+        "200"
+      ],
+      "correctIndex": 3
+    },
+    "explanation": "On the number line, 240 is closer to 200 than to 300, so 240 rounds to 200.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "ixl-round100-370",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/ixl-targeted.ts"
+    },
+    "skills": [
+      "MATH-NBT-ROUNDING",
+      "MATH-NBT-PLACE-VALUE"
+    ],
+    "language": "en",
+    "prompt": "A rally route is 370 kilometers long. Round 370 to the nearest hundred.",
+    "visual": {
+      "kind": "numberLine",
+      "min": 300,
+      "max": 400,
+      "step": 10,
+      "mark": 370,
+      "label": "370 km"
+    },
+    "hint": "Find 350 in the middle of the number line. Is 370 closer to 300 or 400?",
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "300",
+        "350",
+        "500",
+        "400"
+      ],
+      "correctIndex": 3
+    },
+    "explanation": "On the number line, 370 is closer to 400 than to 300, so 370 rounds to 400.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "ixl-round100-550",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/ixl-targeted.ts"
+    },
+    "skills": [
+      "MATH-NBT-ROUNDING",
+      "MATH-NBT-PLACE-VALUE"
+    ],
+    "language": "en",
+    "prompt": "A rally route is 550 kilometers long. Round 550 to the nearest hundred.",
+    "visual": {
+      "kind": "numberLine",
+      "min": 500,
+      "max": 600,
+      "step": 10,
+      "mark": 550,
+      "label": "550 km"
+    },
+    "hint": "Find 550 in the middle of the number line. When a number lands right on the halfway mark, it rounds up to the next hundred.",
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "500",
+        "550",
+        "700",
+        "600"
+      ],
+      "correctIndex": 3
+    },
+    "explanation": "550 is right at the halfway point 550, and halfway numbers round up to 600.",
+    "difficulty": {
+      "band": 4,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "ixl-round100-785",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/ixl-targeted.ts"
+    },
+    "skills": [
+      "MATH-NBT-ROUNDING",
+      "MATH-NBT-PLACE-VALUE"
+    ],
+    "language": "en",
+    "prompt": "A rally route is 785 kilometers long. Round 785 to the nearest hundred.",
+    "visual": {
+      "kind": "numberLine",
+      "min": 700,
+      "max": 800,
+      "step": 10,
+      "mark": 785,
+      "label": "785 km"
+    },
+    "hint": "Find 750 in the middle of the number line. Is 785 closer to 700 or 800?",
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "700",
+        "750",
+        "900",
+        "800"
+      ],
+      "correctIndex": 3
+    },
+    "explanation": "On the number line, 785 is closer to 800 than to 700, so 785 rounds to 800.",
+    "difficulty": {
+      "band": 4,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "ixl-eqf-half-quarters",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/ixl-targeted.ts"
+    },
+    "skills": [
+      "MATH-NF-FRACTIONS"
+    ],
+    "language": "en",
+    "prompt": "Look at the two fraction strips. Which fraction matches 1/2 on the bottom strip?",
+    "visual": {
+      "kind": "fractionStrip",
+      "strips": [
+        {
+          "parts": 2,
+          "shaded": 1,
+          "label": "1/2"
+        },
+        {
+          "parts": 4,
+          "shaded": 2,
+          "label": "?"
+        }
+      ]
+    },
+    "hint": "Count how many shaded pieces are on the bottom strip, and how many equal pieces make the whole bottom strip.",
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "1/4",
+        "2/4",
+        "3/4",
+        "2/2"
+      ],
+      "correctIndex": 1
+    },
+    "explanation": "Both shaded bars reach the exact same spot. The bottom strip has 4 equal pieces and 2 are shaded, so 1/2 equals 2/4.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "ixl-eqf-half-sixths",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/ixl-targeted.ts"
+    },
+    "skills": [
+      "MATH-NF-FRACTIONS"
+    ],
+    "language": "en",
+    "prompt": "Look at the two fraction strips. Which fraction matches 1/2 on the bottom strip?",
+    "visual": {
+      "kind": "fractionStrip",
+      "strips": [
+        {
+          "parts": 2,
+          "shaded": 1,
+          "label": "1/2"
+        },
+        {
+          "parts": 6,
+          "shaded": 3,
+          "label": "?"
+        }
+      ]
+    },
+    "hint": "Count how many shaded pieces are on the bottom strip, and how many equal pieces make the whole bottom strip.",
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "2/6",
+        "3/6",
+        "4/6",
+        "1/6"
+      ],
+      "correctIndex": 1
+    },
+    "explanation": "Both shaded bars reach the exact same spot. The bottom strip has 6 equal pieces and 3 are shaded, so 1/2 equals 3/6.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "ixl-eqf-twothirds-sixths",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/ixl-targeted.ts"
+    },
+    "skills": [
+      "MATH-NF-FRACTIONS"
+    ],
+    "language": "en",
+    "prompt": "Look at the two fraction strips. Which fraction matches 2/3 on the bottom strip?",
+    "visual": {
+      "kind": "fractionStrip",
+      "strips": [
+        {
+          "parts": 3,
+          "shaded": 2,
+          "label": "2/3"
+        },
+        {
+          "parts": 6,
+          "shaded": 4,
+          "label": "?"
+        }
+      ]
+    },
+    "hint": "Count how many shaded pieces are on the bottom strip, and how many equal pieces make the whole bottom strip.",
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "2/6",
+        "3/6",
+        "4/6",
+        "5/6"
+      ],
+      "correctIndex": 2
+    },
+    "explanation": "Both shaded bars reach the exact same spot. The bottom strip has 6 equal pieces and 4 are shaded, so 2/3 equals 4/6.",
+    "difficulty": {
+      "band": 4,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "ixl-eqf-onethird-sixths",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/ixl-targeted.ts"
+    },
+    "skills": [
+      "MATH-NF-FRACTIONS"
+    ],
+    "language": "en",
+    "prompt": "Look at the two fraction strips. Which fraction matches 1/3 on the bottom strip?",
+    "visual": {
+      "kind": "fractionStrip",
+      "strips": [
+        {
+          "parts": 3,
+          "shaded": 1,
+          "label": "1/3"
+        },
+        {
+          "parts": 6,
+          "shaded": 2,
+          "label": "?"
+        }
+      ]
+    },
+    "hint": "Count how many shaded pieces are on the bottom strip, and how many equal pieces make the whole bottom strip.",
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "1/6",
+        "2/6",
+        "3/6",
+        "4/6"
+      ],
+      "correctIndex": 1
+    },
+    "explanation": "Both shaded bars reach the exact same spot. The bottom strip has 6 equal pieces and 2 are shaded, so 1/3 equals 2/6.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "ixl-eqf-threequarters-eighths",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/ixl-targeted.ts"
+    },
+    "skills": [
+      "MATH-NF-FRACTIONS"
+    ],
+    "language": "en",
+    "prompt": "Look at the two fraction strips. Which fraction matches 3/4 on the bottom strip?",
+    "visual": {
+      "kind": "fractionStrip",
+      "strips": [
+        {
+          "parts": 4,
+          "shaded": 3,
+          "label": "3/4"
+        },
+        {
+          "parts": 8,
+          "shaded": 6,
+          "label": "?"
+        }
+      ]
+    },
+    "hint": "Count how many shaded pieces are on the bottom strip, and how many equal pieces make the whole bottom strip.",
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "4/8",
+        "5/8",
+        "6/8",
+        "7/8"
+      ],
+      "correctIndex": 2
+    },
+    "explanation": "Both shaded bars reach the exact same spot. The bottom strip has 8 equal pieces and 6 are shaded, so 3/4 equals 6/8.",
+    "difficulty": {
+      "band": 4,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "ixl-quad-trapezoid",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/ixl-targeted.ts"
+    },
+    "skills": [
+      "MATH-GEO-QUADRILATERALS",
+      "MATH-GEO-SHAPES"
+    ],
+    "language": "en",
+    "prompt": "This 4-sided shape has only one pair of parallel sides (top and bottom). What is it called?",
+    "visual": {
+      "kind": "svg",
+      "alt": "A trapezoid with a shorter top edge parallel to a longer bottom edge.",
+      "svg": "<svg viewBox=\"0 0 220 140\" width=\"220\" height=\"140\" xmlns=\"http://www.w3.org/2000/svg\"><polygon points=\"65,25 155,25 190,115 30,115\" fill=\"#b7d3f6\" stroke=\"#1d2f4b\" stroke-width=\"4\" stroke-linejoin=\"round\"/></svg>"
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "Square",
+        "Trapezoid",
+        "Triangle",
+        "Pentagon"
+      ],
+      "correctIndex": 1
+    },
+    "explanation": "A trapezoid is a quadrilateral (4-sided shape) with one pair of parallel sides.",
+    "difficulty": {
+      "band": 2,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "ixl-quad-rhombus",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/ixl-targeted.ts"
+    },
+    "skills": [
+      "MATH-GEO-QUADRILATERALS",
+      "MATH-GEO-SHAPES"
+    ],
+    "language": "en",
+    "prompt": "All 4 sides of this shape are the same length, and its corners are slanted (not square corners). What is it called?",
+    "visual": {
+      "kind": "svg",
+      "alt": "A slanted diamond-like rhombus with four equal sides.",
+      "svg": "<svg viewBox=\"0 0 220 140\" width=\"220\" height=\"140\" xmlns=\"http://www.w3.org/2000/svg\"><polygon points=\"110,18 185,70 110,122 35,70\" fill=\"#ffe08a\" stroke=\"#1d2f4b\" stroke-width=\"4\" stroke-linejoin=\"round\"/></svg>"
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "Rectangle",
+        "Rhombus",
+        "Pentagon",
+        "Hexagon"
+      ],
+      "correctIndex": 1
+    },
+    "explanation": "A rhombus is a 4-sided shape where all 4 sides have equal length.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "ixl-quad-parallelogram",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/ixl-targeted.ts"
+    },
+    "skills": [
+      "MATH-GEO-QUADRILATERALS",
+      "MATH-GEO-SHAPES"
+    ],
+    "language": "en",
+    "prompt": "Both pairs of opposite sides are parallel and equal in length, and the shape leans sideways. What is it called?",
+    "visual": {
+      "kind": "svg",
+      "alt": "A leaning parallelogram with two pairs of parallel sides.",
+      "svg": "<svg viewBox=\"0 0 220 140\" width=\"220\" height=\"140\" xmlns=\"http://www.w3.org/2000/svg\"><polygon points=\"60,28 190,28 160,112 30,112\" fill=\"#c8f2dc\" stroke=\"#1d2f4b\" stroke-width=\"4\" stroke-linejoin=\"round\"/></svg>"
+    },
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "Triangle",
+        "Circle",
+        "Parallelogram",
+        "Pentagon"
+      ],
+      "correctIndex": 2
+    },
+    "explanation": "A parallelogram is a quadrilateral whose opposite sides are parallel and equal in length.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "ixl-quad-not-a-quad",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/ixl-targeted.ts"
+    },
+    "skills": [
+      "MATH-GEO-QUADRILATERALS",
+      "MATH-GEO-SHAPES"
+    ],
+    "language": "en",
+    "prompt": "A quadrilateral has exactly 4 straight sides. Which shape is NOT a quadrilateral?",
+    "visual": {
+      "kind": "svg",
+      "alt": "Four shapes labeled A through D: a square, a trapezoid, a pentagon with 5 sides, and a rectangle.",
+      "svg": "<svg viewBox=\"0 0 360 110\" width=\"360\" height=\"110\" xmlns=\"http://www.w3.org/2000/svg\"><g transform=\"translate(0, 0)\"><rect x=\"6\" y=\"6\" width=\"78\" height=\"98\" rx=\"10\" fill=\"#ffffff\" stroke=\"#1d2f4b\" stroke-opacity=\"0.2\" stroke-width=\"2\"/><rect x=\"22\" y=\"22\" width=\"46\" height=\"46\" fill=\"#b7d3f6\" stroke=\"#1d2f4b\" stroke-width=\"3\"/><text x=\"45\" y=\"96\" text-anchor=\"middle\" font-family=\"sans-serif\" font-size=\"14\" font-weight=\"800\" fill=\"#1d2f4b\">A</text></g><g transform=\"translate(90, 0)\"><rect x=\"6\" y=\"6\" width=\"78\" height=\"98\" rx=\"10\" fill=\"#ffffff\" stroke=\"#1d2f4b\" stroke-opacity=\"0.2\" stroke-width=\"2\"/><polygon points=\"28,24 62,24 72,68 18,68\" fill=\"#ffe08a\" stroke=\"#1d2f4b\" stroke-width=\"3\"/><text x=\"45\" y=\"96\" text-anchor=\"middle\" font-family=\"sans-serif\" font-size=\"14\" font-weight=\"800\" fill=\"#1d2f4b\">B</text></g><g transform=\"translate(180, 0)\"><rect x=\"6\" y=\"6\" width=\"78\" height=\"98\" rx=\"10\" fill=\"#ffffff\" stroke=\"#1d2f4b\" stroke-opacity=\"0.2\" stroke-width=\"2\"/><polygon points=\"45,16 72,36 62,68 28,68 18,36\" fill=\"#f7b7be\" stroke=\"#1d2f4b\" stroke-width=\"3\"/><text x=\"45\" y=\"96\" text-anchor=\"middle\" font-family=\"sans-serif\" font-size=\"14\" font-weight=\"800\" fill=\"#1d2f4b\">C</text></g><g transform=\"translate(270, 0)\"><rect x=\"6\" y=\"6\" width=\"78\" height=\"98\" rx=\"10\" fill=\"#ffffff\" stroke=\"#1d2f4b\" stroke-opacity=\"0.2\" stroke-width=\"2\"/><rect x=\"16\" y=\"30\" width=\"58\" height=\"36\" fill=\"#c8f2dc\" stroke=\"#1d2f4b\" stroke-width=\"3\"/><text x=\"45\" y=\"96\" text-anchor=\"middle\" font-family=\"sans-serif\" font-size=\"14\" font-weight=\"800\" fill=\"#1d2f4b\">D</text></g></svg>"
+    },
+    "hint": "Count the straight sides on each shape. Which one does not have 4?",
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "Shape A",
+        "Shape B",
+        "Shape C",
+        "Shape D"
+      ],
+      "correctIndex": 2
+    },
+    "explanation": "Shapes A, B and D each have 4 sides, so they are quadrilaterals. Shape C is a pentagon with 5 sides, so it is not a quadrilateral.",
+    "difficulty": {
+      "band": 2,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "ixl-quad-all-square-corners",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/ixl-targeted.ts"
+    },
+    "skills": [
+      "MATH-GEO-QUADRILATERALS",
+      "MATH-GEO-SHAPES"
+    ],
+    "language": "en",
+    "prompt": "Which statement is ALWAYS true about every square and every rectangle?",
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "All 4 sides must be the same length",
+        "They have 4 straight sides and 4 square corners",
+        "They have 3 corners",
+        "They have no parallel sides"
+      ],
+      "correctIndex": 1
+    },
+    "explanation": "Both squares and rectangles have 4 straight sides and 4 square (right-angle) corners. A rectangle can have two longer sides and two shorter sides, so its sides do not all have to match.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "ixl-quad-classification-group",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/ixl-targeted.ts"
+    },
+    "skills": [
+      "MATH-GEO-QUADRILATERALS",
+      "LOGIC-PATTERN"
+    ],
+    "language": "en",
+    "prompt": "Square, Rectangle and Rhombus all belong to the same shape family. Which shape belongs in their group too?",
+    "hint": "Ask what a square, a rectangle and a rhombus all have in common: how many sides?",
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "Hexagon",
+        "Trapezoid",
+        "Triangle",
+        "Octagon"
+      ],
+      "correctIndex": 1
+    },
+    "explanation": "Squares, rectangles, rhombuses and trapezoids all have 4 sides, so they are all quadrilaterals. Triangles (3), hexagons (6) and octagons (8) have a different number of sides.",
+    "difficulty": {
+      "band": 4,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "ixl-oa-mult-7x8",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/ixl-targeted.ts"
+    },
+    "skills": [
+      "MATH-OA-MULT",
+      "MATH-OA-ARRAYS"
+    ],
+    "language": "en",
+    "prompt": "A racing garage has 7 rows with 8 cars in each row. How many cars are in the garage?",
+    "hint": "7 groups of 8 is 5 groups of 8 (40) plus 2 more groups of 8 (16).",
+    "answer": {
+      "type": "numeric",
+      "value": 56,
+      "unit": "cars"
+    },
+    "explanation": "7 × 8 = 56. You can split it as (5 × 8) + (2 × 8) = 40 + 16 = 56 cars.",
+    "difficulty": {
+      "band": 4,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "ixl-oa-mult-9x6",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/ixl-targeted.ts"
+    },
+    "skills": [
+      "MATH-OA-MULT"
+    ],
+    "language": "en",
+    "prompt": "A pit crew stacks 9 piles of tires with 6 tires in each pile. How many tires is that?",
+    "hint": "10 piles of 6 would be 60. Take away 1 pile of 6.",
+    "answer": {
+      "type": "numeric",
+      "value": 54,
+      "unit": "tires"
+    },
+    "explanation": "9 × 6 = 54. Ten 6s is 60, minus one 6 is 54 tires.",
+    "difficulty": {
+      "band": 4,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "ixl-oa-mult-8x8",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/ixl-targeted.ts"
+    },
+    "skills": [
+      "MATH-OA-MULT",
+      "MATH-OA-ARRAYS"
+    ],
+    "language": "en",
+    "prompt": "A chessboard has 8 rows with 8 squares in each row. How many squares are on a chessboard?",
+    "answer": {
+      "type": "numeric",
+      "value": 64,
+      "unit": "squares"
+    },
+    "explanation": "8 rows of 8 is 8 × 8 = 64 squares.",
+    "difficulty": {
+      "band": 4,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "ixl-oa-div-54-by-6",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/ixl-targeted.ts"
+    },
+    "skills": [
+      "MATH-OA-DIVIDE",
+      "MATH-OA-EQUAL-GROUPS"
+    ],
+    "language": "en",
+    "prompt": "54 race cars line up in equal heats of 6 cars each. How many heats are there?",
+    "hint": "Ask yourself: 6 times what number equals 54?",
+    "answer": {
+      "type": "numeric",
+      "value": 9,
+      "unit": "heats"
+    },
+    "explanation": "54 ÷ 6 = 9, because 9 groups of 6 make 54. There are 9 heats.",
+    "difficulty": {
+      "band": 4,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "ixl-oa-div-63-by-9",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/ixl-targeted.ts"
+    },
+    "skills": [
+      "MATH-OA-DIVIDE",
+      "MATH-OA-MULT"
+    ],
+    "language": "en",
+    "prompt": "63 flag stickers are shared equally across 9 album pages. How many stickers go on each page?",
+    "hint": "Think of the 9s facts: 9 × ? = 63.",
+    "answer": {
+      "type": "numeric",
+      "value": 7,
+      "unit": "stickers"
+    },
+    "explanation": "63 ÷ 9 = 7, because 9 × 7 = 63. Each page gets 7 stickers.",
+    "difficulty": {
+      "band": 4,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "ixl-oa-twostep-garage",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/ixl-targeted.ts"
+    },
+    "skills": [
+      "MATH-OA-MULT",
+      "MATH-OA-ADD-SUB"
+    ],
+    "language": "en",
+    "prompt": "A toy store has 4 shelves with 8 race cars on each shelf, plus 5 more race cars in the window. How many race cars are there in all?",
+    "hint": "Multiply 4 × 8 first, then add the 5 cars in the window.",
+    "answer": {
+      "type": "numeric",
+      "value": 37,
+      "unit": "cars"
+    },
+    "explanation": "4 shelves of 8 cars is 4 × 8 = 32 cars. Adding the 5 window cars gives 32 + 5 = 37 cars.",
+    "difficulty": {
+      "band": 5,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "ixl-ela-prefix-re",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/ixl-targeted.ts"
+    },
+    "skills": [
+      "LANG-EN-WORD-PARTS"
+    ],
+    "language": "en",
+    "prompt": "The words \"rebuild\", \"replay\" and \"reread\" all start with \"re-\". What does the prefix \"re-\" mean?",
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "Not",
+        "Before",
+        "Do again",
+        "Very small"
+      ],
+      "correctIndex": 2
+    },
+    "explanation": "Rebuild means build again, replay means play again, and reread means read again. The prefix \"re-\" means again.",
+    "difficulty": {
+      "band": 2,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "ixl-ela-prefix-un",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/ixl-targeted.ts"
+    },
+    "skills": [
+      "LANG-EN-WORD-PARTS"
+    ],
+    "language": "en",
+    "prompt": "Which word uses the prefix \"un-\" to mean \"not\" or \"the opposite of\"?",
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "Unfair",
+        "Under",
+        "Uncle",
+        "Unit"
+      ],
+      "correctIndex": 0
+    },
+    "explanation": "Unfair means not fair (\"un-\" + \"fair\"). In under, uncle and unit, \"un\" is just part of the root word, not a prefix.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "ixl-ela-prefix-pre",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/ixl-targeted.ts"
+    },
+    "skills": [
+      "LANG-EN-WORD-PARTS"
+    ],
+    "language": "en",
+    "prompt": "A \"preview\" lets you view a movie early, and you \"preheat\" an oven early. What does the prefix \"pre-\" mean?",
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "Before",
+        "After",
+        "Without",
+        "Together"
+      ],
+      "correctIndex": 0
+    },
+    "explanation": "Preview means view before, and preheat means heat before. The prefix \"pre-\" means before.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "ixl-ela-suffix-less",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/ixl-targeted.ts"
+    },
+    "skills": [
+      "LANG-EN-WORD-PARTS"
+    ],
+    "language": "en",
+    "prompt": "\"Fearless\" means having no fear, and \"cloudless\" means having no clouds. What does \"wireless\" mean?",
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "Full of wires",
+        "Without wires",
+        "Made of wire",
+        "A tiny wire"
+      ],
+      "correctIndex": 1
+    },
+    "explanation": "The suffix \"-less\" means without, so wireless means without wires.",
+    "difficulty": {
+      "band": 2,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "ixl-ela-suffix-ful",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/ixl-targeted.ts"
+    },
+    "skills": [
+      "LANG-EN-WORD-PARTS"
+    ],
+    "language": "en",
+    "prompt": "Which pair of words BOTH use the suffix \"-ful\" to mean \"full of\"?",
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "Colorful and fell",
+        "Helpful and full",
+        "Playful and pull",
+        "Careful and cheerful"
+      ],
+      "correctIndex": 3
+    },
+    "explanation": "Careful (full of care) and cheerful (full of cheer) both add \"-ful\" to a base word.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "ixl-ela-analogy-car",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/ixl-targeted.ts"
+    },
+    "skills": [
+      "LANG-EN-WORD-PARTS",
+      "LOGIC-ANALOGY"
+    ],
+    "language": "en",
+    "prompt": "Handlebars are to a bicycle as a steering wheel is to a ___.",
+    "hint": "What do handlebars do for a bicycle? What vehicle uses a steering wheel the same way?",
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "Car",
+        "Road",
+        "Helmet",
+        "Garage"
+      ],
+      "correctIndex": 0
+    },
+    "explanation": "Handlebars steer a bicycle, and a steering wheel steers a car.",
+    "difficulty": {
+      "band": 2,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "ixl-ela-analogy-pilot",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/ixl-targeted.ts"
+    },
+    "skills": [
+      "LANG-EN-WORD-PARTS",
+      "LOGIC-ANALOGY"
+    ],
+    "language": "en",
+    "prompt": "Pilot is to airplane as captain is to ___.",
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "Ship",
+        "Ocean",
+        "Compass",
+        "Anchor"
+      ],
+      "correctIndex": 0
+    },
+    "explanation": "A pilot is in charge of an airplane, and a captain is in charge of a ship.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "ixl-ela-analogy-clock",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/ixl-targeted.ts"
+    },
+    "skills": [
+      "LANG-EN-WORD-PARTS",
+      "LOGIC-ANALOGY"
+    ],
+    "language": "en",
+    "prompt": "Ruler is to length as clock is to ___.",
+    "hint": "Think about what each tool measures.",
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "Time",
+        "Numbers",
+        "Hands",
+        "Wall"
+      ],
+      "correctIndex": 0
+    },
+    "explanation": "A ruler measures length, and a clock measures time.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "ixl-read-ev-why-hum",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/ixl-targeted.ts"
+    },
+    "skills": [
+      "LANG-EN-READ-DETAIL"
+    ],
+    "language": "en",
+    "prompt": "Why do some electric cars play a gentle hum at low speeds?",
+    "passage": "Electric cars run on big batteries instead of burning gas. Because they have no tailpipe, they do not puff exhaust smoke into the street. Their motors are very quiet, so some electric cars play a gentle hum at low speeds to help walkers hear them coming. Drivers charge them at home overnight or at fast charging stations along the highway.",
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "To charge the battery faster",
+        "So walkers can hear them coming",
+        "Because the engine is broken",
+        "To scare birds off the highway"
+      ],
+      "correctIndex": 1
+    },
+    "explanation": "The passage says electric motors are very quiet, so some play a gentle hum at low speeds to help walkers hear them coming.",
+    "difficulty": {
+      "band": 2,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "ixl-read-ev-opinion",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/ixl-targeted.ts"
+    },
+    "skills": [
+      "LANG-EN-OPINION-EVIDENCE"
+    ],
+    "language": "en",
+    "prompt": "Maya says, \"Electric cars help keep city air cleaner.\" Which reason from the passage best supports her opinion?",
+    "passage": "Electric cars run on big batteries instead of burning gas. Because they have no tailpipe, they do not puff exhaust smoke into the street. Their motors are very quiet, so some electric cars play a gentle hum at low speeds to help walkers hear them coming. Drivers charge them at home overnight or at fast charging stations along the highway.",
+    "hint": "Look for a sentence about air or smoke.",
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "Drivers can charge them overnight at home",
+        "Some play a gentle hum at low speeds",
+        "They have no tailpipe and do not puff exhaust smoke into the street",
+        "They have big batteries"
+      ],
+      "correctIndex": 2
+    },
+    "explanation": "Not puffing exhaust smoke into the street directly explains why electric cars help keep city air cleaner.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "ixl-read-pit-opinion",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/ixl-targeted.ts"
+    },
+    "skills": [
+      "LANG-EN-OPINION-EVIDENCE"
+    ],
+    "language": "en",
+    "prompt": "Leo says, \"A Formula 1 pit stop needs careful teamwork.\" Which detail best supports his opinion?",
+    "passage": "During a Formula 1 race, a car pulls into the pit lane for fresh tires. More than twenty crew members wait in exact spots. One lifts the front of the car with a jack, while others remove the old wheels and lock on new ones with fast air guns. When all four tires are tight, a green light flashes and the driver zooms back out in about two seconds.",
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "Over twenty crew members wait in exact spots and work together to finish in about two seconds",
+        "The car drives down the pit lane",
+        "A green light flashes at the end",
+        "The old tires are removed"
+      ],
+      "correctIndex": 0
+    },
+    "explanation": "Over twenty people doing exact jobs together in two seconds is strong evidence of careful teamwork.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "ixl-read-pit-infer",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/ixl-targeted.ts"
+    },
+    "skills": [
+      "LANG-EN-READ-INFER"
+    ],
+    "language": "en",
+    "prompt": "Why does the driver wait for the green light before zooming out?",
+    "passage": "During a Formula 1 race, a car pulls into the pit lane for fresh tires. More than twenty crew members wait in exact spots. One lifts the front of the car with a jack, while others remove the old wheels and lock on new ones with fast air guns. When all four tires are tight, a green light flashes and the driver zooms back out in about two seconds.",
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "Because the track is closed",
+        "To let the engine cool down",
+        "To make sure all four tires are tight and safe first",
+        "Because it is raining"
+      ],
+      "correctIndex": 2
+    },
+    "explanation": "The passage says the green light flashes once all four tires are tight, telling the driver it is safe to leave.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "ixl-read-bridge-opinion",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/ixl-targeted.ts"
+    },
+    "skills": [
+      "LANG-EN-OPINION-EVIDENCE"
+    ],
+    "language": "en",
+    "prompt": "Ava says, \"Triangles are stronger than squares for building bridge frames.\" Which reason from the passage best supports her opinion?",
+    "passage": "Engineers love using triangles when they build bridges. If you push on the corner of a square made of sticks, it can lean over into a slanted shape. A triangle cannot lean unless a stick breaks, because its three sides lock each other in place. That is why many metal train bridges are full of triangle frames called trusses.",
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "A square can lean over when pushed, but a triangle's three sides lock each other in place",
+        "Many train bridges are made of metal",
+        "Triangle frames are called trusses",
+        "Engineers enjoy drawing shapes"
+      ],
+      "correctIndex": 0
+    },
+    "explanation": "The passage explains that pushing a square makes it lean, while a triangle's sides lock in place so it stays rigid.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "ixl-read-robot-opinion",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/ixl-targeted.ts"
+    },
+    "skills": [
+      "LANG-EN-OPINION-EVIDENCE"
+    ],
+    "language": "en",
+    "prompt": "Sam says, \"Delivery robots are built to travel safely on busy sidewalks.\" Which reason best supports his opinion?",
+    "passage": "A delivery robot rolls along sidewalks to bring groceries to people's doors. Cameras and sensors help it spot curbs, bikes and puddles before it gets too close. If a path is blocked, the robot pauses and plans a new route around the obstacle. People unlock the lid with a code on their phone when the robot arrives.",
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "People unlock the lid with a phone code",
+        "Cameras and sensors help it spot curbs, bikes and puddles and go around blocked paths",
+        "It carries groceries to doors",
+        "It rolls on wheels"
+      ],
+      "correctIndex": 1
+    },
+    "explanation": "Spotting hazards with cameras and sensors and planning around blocked paths directly supports the claim that it travels safely.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "ixl-read-opinion-robotics",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/ixl-targeted.ts"
+    },
+    "skills": [
+      "LANG-EN-OPINION-EVIDENCE"
+    ],
+    "language": "en",
+    "prompt": "Opinion: \"Every elementary school should have a robotics club.\" Which reason BEST supports this opinion?",
+    "hint": "Pick the reason that explains a real benefit of a robotics club, not just a random fact.",
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "Robots are often painted blue or gray",
+        "Some schools have red brick walls",
+        "Students learn to solve problems step by step and work together as a team",
+        "Recess happens after lunch"
+      ],
+      "correctIndex": 2
+    },
+    "explanation": "Learning step-by-step problem solving and teamwork is a strong, relevant reason to have a robotics club.",
+    "difficulty": {
+      "band": 3,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  },
+  {
+    "id": "ixl-read-opinion-helmets",
+    "source": {
+      "kind": "original",
+      "ref": "scripts/generate/ixl-targeted.ts"
+    },
+    "skills": [
+      "LANG-EN-OPINION-EVIDENCE"
+    ],
+    "language": "en",
+    "prompt": "Opinion: \"Kids should always wear a helmet when riding a bike.\" Which reason BEST supports this opinion?",
+    "answer": {
+      "type": "choice",
+      "choices": [
+        "Bicycles have two pedals and a chain",
+        "Helmets come in lots of cool colors",
+        "Some parks have smooth bike trails",
+        "A helmet protects your head if you fall off the bike"
+      ],
+      "correctIndex": 3
+    },
+    "explanation": "Protecting your head during a fall directly explains why wearing a helmet matters.",
+    "difficulty": {
+      "band": 2,
+      "basis": "author-estimate"
+    },
+    "reviewStatus": "reviewed"
+  }
+]

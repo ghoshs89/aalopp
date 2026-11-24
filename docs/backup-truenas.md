@@ -31,12 +31,16 @@ services:
       - |
         while true; do
           ts=$$(date +%Y-%m-%d_%H%M)
-          if pg_dump "$$DIRECT_URL" --format=custom --no-owner --schema=public --file=/backups/aalopp_$$ts.dump; then
+          tmp="/backups/aalopp_$$ts.dump.tmp"
+          out="/backups/aalopp_$$ts.dump"
+          if pg_dump "$$DIRECT_URL" --format=custom --no-owner --schema=public --file="$$tmp" && [ -s "$$tmp" ]; then
+            mv "$$tmp" "$$out"
             echo "backup ok $$ts"
+            ls -1t /backups/aalopp_*.dump | tail -n +31 | xargs -r rm --
           else
+            rm -f "$$tmp"
             echo "backup FAILED $$ts"
           fi
-          ls -1t /backups/aalopp_*.dump | tail -n +31 | xargs -r rm --
           sleep 86400
         done
 ```

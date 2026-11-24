@@ -20,8 +20,9 @@ type Phase = "ready" | "learning" | "answering" | "feedback" | "done";
 // Sessions end quietly after this long, even mid-list. Nothing on screen counts down.
 const SESSION_LIMIT_MS = 12 * 60 * 1000;
 
-// Find the Bug, when he taps a wrong step that comes after the first mistake.
-const NUDGE = "That step is wrong too, but the mistake started earlier. Look above it.";
+// Find the Bug, when he taps a step that comes after the first mistake. Never claim that step itself is false,
+// because an independent true premise can appear after an earlier wrong step.
+const NUDGE = "Not quite. The first mistake happened earlier. Look above that step.";
 const FOUND_WITH_NUDGE = "You found it! Next time, start checking from the top.";
 
 // Timing is only read inside tap handlers, never while rendering.
@@ -65,27 +66,33 @@ export function Player({ student, questions, reasons = {}, seen = [], save = tru
   // Find the Bug: the step he tapped first, when it came after the real bug and he was nudged to look earlier.
   const [firstTap, setFirstTap] = useState<number | null>(null);
   const [digits, setDigits] = useState("");
+  const [placedOrder, setPlacedOrder] = useState<string[]>([]);
+  const [showHint, setShowHint] = useState(false);
+  const [saveWarning, setSaveWarning] = useState(false);
   const [result, setResult] = useState<{ correct: boolean; foundWithNudge: boolean } | null>(null);
   const [showExplanation, setShowExplanation] = useState(false);
   const [pending, setPending] = useState(0);
   // How the child is working this question out. Reset for every question.
   const [scratch, setScratch] = useState({ open: false, strokes: 0, paper: false });
 
-  // endItemId stays the same for the whole session, so each new end marker replaces the last one in the upload queue.
-  const session = useRef({ id: "", endItemId: "", startedAt: "", startedMs: 0, active: false });
+  // Every sessionEnd gets its own UUID so the outbox stays append-only (avoids an in-flight upload deleting a newer end).
+  const session = useRef({ id: "", startedAt: "", startedMs: 0, active: false });
   const timing = useRef({ shownAt: 0, firstActionMs: null as number | null, listens: 0 });
+  const lastSave = useRef<Promise<void>>(Promise.resolve());
 
   const question = questions[index];
 
   const markSessionEnd = () => {
     if (!save || !session.current.active) return;
-    void enqueue({
+    lastSave.current = enqueue({
       kind: "sessionEnd",
-      id: session.current.endItemId,
+      id: crypto.randomUUID(),
       studentId: student.id,
       sessionId: session.current.id,
       sessionStartedAt: session.current.startedAt,
       endedAt: new Date().toISOString(),
+    }).catch(() => {
+      setSaveWarning(true);
     });
   };
   const markSessionEndRef = useRef(markSessionEnd);
@@ -113,6 +120,9 @@ export function Player({ student, questions, reasons = {}, seen = [], save = tru
     setChoice(null);
     setFirstTap(null);
     setDigits("");
+    setPlacedOrder([]);
+    setShowHint(false);
+    setSaveWarning(false);
     setResult(null);
     setShowExplanation(false);
     setScratch({ open: false, strokes: 0, paper: false });
@@ -138,7 +148,7 @@ export function Player({ student, questions, reasons = {}, seen = [], save = tru
   };
 
   const start = () => {
-    session.current = { id: crypto.randomUUID(), endItemId: crypto.randomUUID(), startedAt: new Date().toISOString(), startedMs: clock(), active: true };
+    session.current = { id: crypto.randomUUID(), startedAt: new Date().toISOString(), startedMs: clock(), active: true };
     results.current = [];
     breakSuggested.current = false;
     showQuestion(0);
@@ -159,19 +169,23 @@ export function Player({ student, questions, reasons = {}, seen = [], save = tru
       ? digits === ""
         ? null
         : { type: "numeric", value: Number(digits) }
-      : choice === null
-        ? null
-        : question.answer.type === "choice"
-          ? { type: "choice", index: choice }
-          : firstTap === null
-            ? { type: "step", index: choice }
-            : { type: "step", index: firstTap, secondIndex: choice };
+      : question.answer.type === "order"
+        ? placedOrder.length === question.answer.items.length
+          ? { type: "order", order: placedOrder }
+          : null
+        : choice === null
+          ? null
+          : question.answer.type === "choice"
+            ? { type: "choice", index: choice, value: question.answer.choices[choice] }
+            : firstTap === null
+              ? { type: "step", index: choice }
+              : { type: "step", index: firstTap, secondIndex: choice };
 
   const submit = () => {
     if (!response) return;
     stop();
     const { answer } = question;
-    // Tapping a step after the bug means he saw a wrong step but not where it started. Point him earlier once, and
+    // Tapping a step after the bug means he looked past where it started. Point him earlier once, and
     // keep the first tap: that is what gets graded, so finding it with help never counts toward mastery.
     if (answer.type === "findTheBug" && response.type === "step" && firstTap === null && response.index > answer.bugIndex) {
       setFirstTap(response.index);
@@ -192,7 +206,7 @@ export function Player({ student, questions, reasons = {}, seen = [], save = tru
     }
 
     if (save) {
-      void enqueue({
+      lastSave.current = enqueue({
         kind: "attempt",
         id: crypto.randomUUID(),
         studentId: student.id,
@@ -209,6 +223,8 @@ export function Player({ student, questions, reasons = {}, seen = [], save = tru
         selectionReason: reasons[question.id]?.slice(0, 200),
         scratchpad: scratch.strokes > 0 ? "DIGITAL" : scratch.paper ? "PAPER" : "NONE",
         scratchpadStrokes: scratch.strokes,
+      }).catch(() => {
+        setSaveWarning(true);
       });
     }
 
@@ -223,20 +239,23 @@ export function Player({ student, questions, reasons = {}, seen = [], save = tru
     }
   };
 
-  const next = () => {
+  const next = async () => {
+    await lastSave.current;
     const outOfTime = clock() - session.current.startedMs > SESSION_LIMIT_MS;
     if (index + 1 >= questions.length || outOfTime) {
-      finish();
+      await finish();
     } else {
       showQuestion(index + 1);
     }
   };
 
-  const finish = () => {
+  const finish = async () => {
     stop();
+    await lastSave.current;
     setPhase("done");
     autoSpeak(`Great work, ${student.name}! You tried ${index + 1} puzzles. Time for a break.`);
     markSessionEnd();
+    await lastSave.current;
     session.current.active = false;
   };
 
@@ -322,7 +341,9 @@ export function Player({ student, questions, reasons = {}, seen = [], save = tru
       ? answer.choices[answer.correctIndex]
       : answer.type === "findTheBug"
         ? `Step ${answer.bugIndex + 1}`
-        : `${answer.value}${answer.unit ? ` ${answer.unit}` : ""}`;
+        : answer.type === "order"
+          ? answer.correctOrder.join(" -> ")
+          : `${answer.value}${answer.unit ? ` ${answer.unit}` : ""}`;
 
   return (
     <Shell onLeave={markSessionEnd} voice={canSpeak ? { on: voiceOn, toggle: toggleVoice } : undefined} pending={pending} progress={{ current: index + 1, total: questions.length }}>
@@ -341,17 +362,22 @@ export function Player({ student, questions, reasons = {}, seen = [], save = tru
           )}
           <h1 className="text-2xl leading-snug font-extrabold sm:text-3xl">{question.prompt}</h1>
         </div>
-        {question.listen && canSpeak && (
-          <button
-            onClick={() => {
-              timing.current.listens += 1;
-              speak([{ text: question.listen!.text, lang: question.listen!.lang }]);
-            }}
-            className="mt-3 rounded-2xl bg-ink px-4 py-2 text-lg font-bold text-cream active:translate-y-0.5"
-          >
-            🔊 Hear it
-          </button>
-        )}
+        {question.listen &&
+          (canSpeak ? (
+            <button
+              onClick={() => {
+                timing.current.listens += 1;
+                speak([{ text: question.listen!.text, lang: question.listen!.lang }]);
+              }}
+              className="mt-3 rounded-2xl bg-ink px-4 py-2 text-lg font-bold text-cream active:translate-y-0.5"
+            >
+              🔊 Hear it
+            </button>
+          ) : (
+            <p className="mt-3 inline-block rounded-2xl border-2 border-ink/15 bg-white px-4 py-2 text-lg font-bold text-ink">
+              Word to read: &quot;{question.listen.text}&quot;
+            </p>
+          ))}
         {question.visual && (
           <div className="mt-4">
             <Visual visual={question.visual} />
@@ -374,6 +400,20 @@ export function Player({ student, questions, reasons = {}, seen = [], save = tru
         >
           📝 {scratch.paper ? "Using paper" : "I'm using paper"}
         </button>
+        {question.hint && phase === "answering" && (
+          <button
+            onClick={() => {
+              setShowHint((h) => {
+                if (!h) autoSpeak(`Hint: ${speakable(question.hint!)}`);
+                return true;
+              });
+            }}
+            aria-expanded={showHint}
+            className={`rounded-2xl border-2 px-4 py-2 text-lg font-bold ${showHint ? "border-gold bg-gold text-ink" : "border-white/15 bg-bg-hill"}`}
+          >
+            💡 {showHint ? "Hint shown" : "Need a hint?"}
+          </button>
+        )}
         {question.voiceAnswer && answer.type === "choice" && speechInput.supported && phase === "answering" && (
           <button
             onClick={() => {
@@ -395,6 +435,17 @@ export function Player({ student, questions, reasons = {}, seen = [], save = tru
           </button>
         )}
       </div>
+      {showHint && question.hint && phase === "answering" && (
+        <p className="mt-3 rounded-2xl border-2 border-gold/40 bg-bg-mid p-4 text-lg leading-relaxed" role="status">
+          <span className="font-extrabold text-gold">Hint: </span>
+          {question.hint}
+        </p>
+      )}
+      {saveWarning && (
+        <p className="mt-2 text-base text-gold" role="status">
+          Could not save on this device right now. Your answer was checked, and we will keep trying.
+        </p>
+      )}
       {heard && (
         <p className="mt-2 text-lg text-cream-dim" role="status">
           {heard.matched ? `I heard "${heard.text}". Is that your answer?` : heard.text ? `I heard "${heard.text}". Tap your answer, or try again.` : "I did not catch that. Tap your answer, or try again."}
@@ -485,6 +536,18 @@ export function Player({ student, questions, reasons = {}, seen = [], save = tru
             );
           })}
         </div>
+      ) : answer.type === "order" ? (
+        <OrderBoard
+          items={answer.items}
+          slots={answer.slots}
+          placed={placedOrder}
+          correctOrder={answer.correctOrder}
+          reveal={phase === "feedback"}
+          onChange={(nextOrder) => {
+            markAction();
+            setPlacedOrder(nextOrder);
+          }}
+        />
       ) : (
         <NumberPad
           value={digits}
@@ -635,18 +698,96 @@ function NumberPad({
           key === "" ? (
             <span key={i} />
           ) : (
-            <button
-              key={i}
-              disabled={disabled}
-              onClick={() => press(key)}
-              aria-label={key === "⌫" ? "Delete" : key}
-              className="h-16 rounded-2xl border-2 border-white/15 bg-bg-hill text-3xl font-extrabold active:translate-y-0.5 disabled:opacity-50"
-            >
-              {key}
-            </button>
-          ),
-        )}
+              <button
+                key={i}
+                disabled={disabled}
+                onClick={() => press(key)}
+                aria-label={key === "⌫" ? "Delete" : key}
+                className="h-16 rounded-2xl border-2 border-white/15 bg-bg-hill text-3xl font-extrabold active:translate-y-0.5 disabled:opacity-50"
+              >
+                {key}
+              </button>
+            ),
+          )}
       </div>
+    </div>
+  );
+}
+
+function OrderBoard({
+  items,
+  slots,
+  placed,
+  correctOrder,
+  reveal,
+  onChange,
+}: {
+  items: string[];
+  slots?: string[];
+  placed: string[];
+  correctOrder: string[];
+  reveal: boolean;
+  onChange: (order: string[]) => void;
+}) {
+  const remaining = items.filter((item) => !placed.includes(item));
+  const labels = slots ?? items.map((_, i) => `${i + 1}`);
+  const removeAt = (slotIdx: number) => {
+    if (reveal || slotIdx >= placed.length) return;
+    onChange(placed.filter((_, i) => i !== slotIdx));
+  };
+  const place = (item: string) => {
+    if (reveal || placed.includes(item) || placed.length >= items.length) return;
+    onChange([...placed, item]);
+  };
+  return (
+    <div className="mt-4 space-y-4">
+      <div className="grid gap-2 sm:grid-cols-2">
+        {labels.map((slotLabel, i) => {
+          const item = placed[i];
+          const tone = reveal
+            ? item === correctOrder[i]
+              ? "border-moss bg-moss/25"
+              : "border-danger/70 bg-danger/15"
+            : item
+              ? "border-gold bg-gold/20"
+              : "border-dashed border-white/25 bg-bg-mid/60";
+          return (
+            <button
+              key={slotLabel}
+              disabled={reveal || !item}
+              onClick={() => removeAt(i)}
+              className={`flex min-h-16 items-center gap-3 rounded-2xl border-4 px-4 py-3 text-left text-xl font-bold active:translate-y-0.5 ${tone}`}
+            >
+              <span className="shrink-0 rounded-full bg-cream px-3 py-1 text-base font-extrabold text-ink">{slotLabel}</span>
+              <span className={item ? "" : "text-cream-dim"}>{item ?? "Tap below"}</span>
+            </button>
+          );
+        })}
+      </div>
+      {!reveal && (
+        <div className="rounded-3xl bg-bg-mid p-4">
+          <div className="mb-2 flex items-center justify-between gap-2">
+            <p className="text-base font-bold text-cream-dim">Tap in order (tap a placed slot to take it back):</p>
+            {placed.length > 0 && (
+              <button onClick={() => onChange([])} className="rounded-xl bg-bg-hill px-3 py-1 text-sm font-bold">
+                Clear
+              </button>
+            )}
+          </div>
+          <div className="flex flex-wrap gap-2">
+            {remaining.map((item) => (
+              <button
+                key={item}
+                onClick={() => place(item)}
+                className="rounded-2xl border-2 border-white/20 bg-cream px-4 py-3 text-xl font-extrabold text-ink shadow active:translate-y-0.5"
+              >
+                {item}
+              </button>
+            ))}
+            {remaining.length === 0 && <p className="text-base text-moss-light">All slots filled. Tap Check answer below!</p>}
+          </div>
+        </div>
+      )}
     </div>
   );
 }

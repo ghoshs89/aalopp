@@ -1,4 +1,4 @@
-# Session Handoff  2026-11-24  Phase 10 cleanup, confidence prompt removed, and engine/sync hardening
+# Session Handoff  2026-11-24  Phase 11 data integrity, IXL-targeted skills, and Brain Gym cognitive puzzles
 
 > Read this fully before acting. It is the state of the work as of the end of the last session. Assume you have no memory of that session and may be a different model. This document plus the repository should be enough to resume.
 >
@@ -6,66 +6,69 @@
 
 ## How this was verified
 Commands run at handoff time on 2026-11-24 from the repo root (`/Users/soumalya/Documents/Aishik/aalopp`), all exit code 0:
-- `npm test`: pass. 22 test files, 135 tests (7 new: Skill Map `HUMANITIES` ordering, rolling working-band recovery and slump, per-strand starting bands, batched `/api/sync` writes and rejections, peppered parent PIN signing and 5-try lockout).
-- `npm run content:check`: pass. 60 skills, 792 questions, all reviewed. By primary strand: HUMANITIES 464, LOGIC_CS 98, MEASUREMENT_DATA 79, GEOMETRY_SPATIAL 42, LANGUAGE 42, OPERATIONS_ALGEBRA 34, NUMBER_BASE_TEN 33. By band: band 1 (85), band 2 (222), band 3 (427), band 4 (48), band 5 (10).
+- `npm run content:generate`: pass. Rebuilt all 11 generated files including `generated-ixl-targeted.json` (56) and `generated-cognitive.json` (26), plus factual fixes in `generated-world.json` and `generated-debugging.json`.
+- `npm test`: pass. 22 test files, 141 tests (6 new covering choice-text and order grading, retry cap enforcement, slump step-down, cold-start Humanities capping with OA reachability, and Brain Gym theme selection).
+- `npm run content:check`: pass. 66 skills, 874 questions, all reviewed. By primary strand: HUMANITIES 464, LOGIC_CS 124, MEASUREMENT_DATA 94, LANGUAGE 58, GEOMETRY_SPATIAL 48, NUMBER_BASE_TEN 46, OPERATIONS_ALGEBRA 40. By band: band 1 (85), band 2 (236), band 3 (467), band 4 (69), band 5 (17).
 - `npm run typecheck`: pass.
-- `npm run lint`: pass.
-- `rm -rf .next && npm run build`: pass (Prisma generate + Next.js 16.3.5 Turbopack production build + TypeScript check + 17/17 static pages).
+- `npm run lint`: pass (0 errors, 0 warnings).
+- `rm -rf .next && npm run build`: pass (Prisma generate + Next.js 16.3.5 Turbopack production build + TypeScript check + static pages).
+- Independent blind solve: two `research` subagents solved all 82 new questions without answer keys or explanations (56/56 IXL + 26/26 cognitive matched); 6 minor wording/hint polish notes were fixed and logged in `content/REVIEW.md`.
 
 ## 1. Current state
 - Works and verified locally:
-  - Grown-ups Skills tab (`src/components/parent/SkillProgress.tsx`) now includes `HUMANITIES` ("World knowledge") so summary badges match the listed rows, and its help copy reflects the live 1, 3, 7, 14, 30 day review intervals and drop-one-box rule.
-  - Skill Map (`src/lib/engine/insights.ts`) now orders `HUMANITIES` at the bottom of each column instead of sorting it to `-1` (top).
-  - Confidence prompt ("How sure are you?") is removed from `src/components/Player.tsx`, replaced with a direct "Check answer" button that submits `confidence: null`. Historical confidence rows stay visible on `/parent` and `/parent/report` only when earlier confidence records exist.
-  - Adaptive engine (`src/lib/engine/select-session.ts`) computes working bands over a rolling window of the most recent `WORKING_BAND_WINDOW` (8) chronological attempts per `(strand, band)` and starts `OPERATIONS_ALGEBRA` and `NUMBER_BASE_TEN` at Band 3 based on the 2026-11-24 IXL LevelUp Diagnostic (OA 350, NBT 320 vs. MD 280, Geometry 290).
-  - Offline sync: `src/components/BackgroundSync.tsx` is mounted in `src/app/layout.tsx` so queued answers flush on any route; `src/lib/outbox.ts` deletes acknowledged items in a single IndexedDB transaction; `src/lib/sync.ts` batches `PracticeSession` and `Attempt` writes with `createMany({ skipDuplicates: true })` and collapses `sessionEnd` updates per session.
-  - Parent PIN lock (`src/lib/parent-lock.ts`, `src/lib/parent-session.ts`, `src/app/parent/actions.ts`, `src/app/parent/page.tsx`) mixes `PARENT_LOCK_SECRET` or `CRON_SECRET` with `PARENT_PIN` in the HMAC key and enforces a signed 5-try / 5-minute lockout cookie.
-  - `README.md` replaced with real project documentation and `CONTRIBUTORS.md` added crediting Soumalya Ghosh, Google Gemini (Antigravity), Anthropic Claude, and OpenAI ChatGPT.
+  - **Step 1 (Data integrity, selector, privacy, factual fixes, and backup safety):**
+    - `src/lib/sync-schema.ts`, `src/lib/engine/grade.ts`, `src/components/Player.tsx`: choice responses now carry `value` (exact choice text) so `grade()` stays accurate if choices are shuffled; `order` responses are graded element-by-element; `sessionEnd` uses fresh UUIDs per enqueue (eliminating the slow-upload overwrite-delete race); `Player.tsx` awaits IndexedDB enqueues before advancing and surfaces a save warning on storage failure.
+    - `src/lib/engine/select-session.ts`, `content/skills.json`: `MAX_RETRIES = 2` enforced inside `available()`; slump step-down in `computeWorkingBands` when recent accuracy on the current working band is < 1/3 across 3+ attempts; per-skill jitter + `MAX_HUMANITIES_ITEMS = 2` in ordinary sessions + `MATH-OA-ADD-SUB` root prerequisite cleared so OA reaches cold-start sessions; `targetBand = Math.min(working, skillMaxBand)` + `nearMastery` nudge (+6) + multi-skill `hasNewSkill` fallback in Step 2 so no strand or dual-tagged skill is starved over 180 days.
+    - `src/app/parent/actions.ts`: `signOut()` deletes `PARENT_COOKIE` and `PIN_TRIES_COOKIE`.
+    - `src/components/Player.tsx`: visual fallback (`Word to read: "..."`) when `question.listen` is set on devices without speech synthesis; updated Find the Bug nudge text so it never calls a true step false.
+    - `scripts/generate/world.ts` and `scripts/generate/debugging.ts`: Morocco (`ma`) now includes `"Spain"` in `neighbours`; Indonesia (`id`) fact corrected to "the world's largest island country, spread across more than seventeen thousand islands"; `dbg-us-coin-values` reordered so `"A nickel is 5 cents."` sits before the false dime step.
+    - `README.md` speech privacy text clarified; `docs/backup-truenas.md` writes to `.tmp` and prunes old dumps only after verifying a non-empty dump succeeded.
+  - **Step 2 (IXL-aligned visuals and 56 targeted questions):**
+    - New visuals in `src/content/schema.ts`, `src/components/visuals/Visual.tsx`, and `src/components/visuals/MoreVisuals.tsx`: two-object `compare` mode on `RulerVisual`, `NumberLineVisual`, `FractionStripVisual`, and `BalanceVisual`.
+    - 6 new skills in `content/skills.json` (66 total): `MATH-NBT-ROUNDING`, `MATH-GEO-QUADRILATERALS`, `LOGIC-MATRIX`, `LOGIC-ANALOGY`, `LANG-EN-WORD-PARTS`, `LANG-EN-OPINION-EVIDENCE`.
+    - `scripts/generate/ixl-targeted.ts` -> `content/questions/generated-ixl-targeted.json` (56 reviewed questions): two-object inch/cm ruler comparisons, Bar Graphs II, analog-to-digital clocks, rounding on a number line, equivalent fraction strips, quadrilaterals, multiplication/division through 10 and two-step problems, prefixes/suffixes + verbal analogies, and 320L-470L independent reading + opinion-evidence items.
+  - **Step 3 (Interactive cognitive puzzles, 1-tap hints, and Brain Gym theme):**
+    - `src/components/Player.tsx`: 1-tap `Need a hint?` button (`Question.hint`, validated `hint !== explanation`) and interactive tap-to-place `OrderBoard` for `answer.type === "order"`.
+    - `content/themes.json`: 3rd theme `"puzzles"` (`"Brain Gym: Logic and matrices"`, skills `LOGIC-MATRIX`, `LOGIC-ANALOGY`, `LOGIC-ORDER`, `CS-DEBUG`).
+    - `scripts/generate/cognitive.ts` -> `content/questions/generated-cognitive.json` (26 reviewed questions): 10 SVG 2x2 and 3x3 pattern matrices with SVG `choiceVisuals`, 5 symbolic balance scales, 5 number analogies, and 6 solver-verified interactive ordering puzzles.
 - In progress: nothing.
 - Broken or known failing: none observed.
-- Assumed, not verified:
-  - Production Vercel deployment and live signed-in smoke test after pushing this commit.
-  - Real-device stylus/scratchpad behavior, offline Wi-Fi drop recovery on phone/tablet, and daily Vercel cron keeping Supabase awake (confirm no pause emails).
-  - Production attempt telemetry from October and November 2026 has not been queried yet; inspecting it before Phase 11 will pinpoint exact abandonment patterns.
+- Assumed, not verified yet (pending post-push check):
+  - Real-device visual check of the new SVG matrices, `OrderBoard`, `NumberLineVisual`, `FractionStripVisual`, and `BalanceVisual` on phone/tablet width during a signed-in session.
+  - TrueNAS backup setup and Wi-Fi drop recovery test on phone/tablet.
 
 ## 2. Decisions made this session
 All are in `docs/DEVLOG.md` with reasons and attribution. Treat as settled; do not reopen without new cause.
-- Parent: drop the per-question confidence prompt in `Player.tsx` (`confidence: null` on new attempts, no schema migration).
-- Parent approved: execute Phase 10 cleanup first before new puzzle engines (dashboard bugs, rolling working bands, per-strand starting bands, root-level batched sync, PIN lockout).
-- Parent: add Google Gemini (Antigravity), Anthropic Claude, and OpenAI ChatGPT as contributors in repo docs and commit metadata.
+- Parent approved Steps 1, 2, and 3 together (data-integrity/selector/factual/backup fixes, IXL-aligned visuals & skills, and Brain Gym cognitive puzzles with `OrderBoard` and 1-tap hints).
+- All 82 new questions passed an independent blind solve before shipping as `"reviewed"` (`content/REVIEW.md`).
+- No DB migrations needed (`Attempt.response` is already `Json`, `Attempt.confidence` is already nullable).
 
 ## 3. Constraints and invariants the next session must not violate
 Standing rules are in `CLAUDE.md`. Key invariants:
 - No em dashes anywhere in UI strings, logs, or content.
 - No `any`. Pure engine functions in `src/lib/engine/` with unit tests and 180-day `simulation.test.ts` checks.
-- No DB migrations needed for confidence removal (`Attempt.confidence` stays nullable for historical records).
 - `generated-*.json` files come from `scripts/generate/`; never edit them by hand.
 - Keep `HUMANITIES` fact-checked against primary sources in `content/REVIEW.md`; never describe colours of one-colour car marks; hide picture-choice names until checked.
-- Confirm before committing new work unless the parent explicitly authorizes it.
+- Every new non-humanities question requires an independent blind solve logged in `content/REVIEW.md` before `"reviewed"`.
+- Always include `Co-Authored-By: Gemini <200291788+gemini-code-assist@users.noreply.github.com>` when committing Gemini-authored work while keeping Soumalya as primary commit author.
 
 ## 4. Next steps, prioritized
-1. Inspect October-November production attempt telemetry (which questions/sessions Aishik abandons and how long he stays) to guide Phase 11.
-2. Build procedural and interactive cognitive-reasoning puzzles to eliminate trivia gravity and boredom:
-   - Seeded runtime/parametric templates for 2x2 and 3x3 visual matrices (CogAT Nonverbal / NNAT3 / Raven's), paper folding / hole punching, and symbolic balance scales (CogAT Quantitative / OA 350+), with fresh isomorphic twins on retries.
-   - Interactive puzzle mechanics embedded in his interests (car-themed matrices, drag/tap race podium ordering, car-weight seesaws, robot/rally code-path builder) plus a 1-tap progressive Hint ladder.
-3. Close the conceptual gaps from the 2026-11-24 IXL Action Plan:
-   - Two-object `RulerVisual` (length comparison) and multi-step scaled bar graphs (Measurement & Data 280).
-   - `NumberLineVisual` for rounding to nearest 10/100 and equivalent fraction strips (NBT 320).
-   - Quadrilateral attribute classification (Geometry 290 + CogAT Figural Classification).
-   - CogAT Verbal bridge: prefix/suffix root families, verbal analogies, "choose reasons to support an opinion", and 500L-650L reading inference passages (ELA 300+).
-4. Operations housekeeping: set up the TrueNAS backup (`docs/backup-truenas.md`) and consider a minimal Service Worker for offline session starts on flights/road trips.
+1. Have Aishik try the new **Brain Gym: Logic and matrices** theme and ordinary sessions on a phone/tablet, and inspect live attempt telemetry afterwards to see how hints, `OrderBoard`, matrices, and IXL skills perform.
+2. Spot-check the sample items listed at the top of `content/REVIEW.md` (`ixl-cmp-truck-car-offset-in`, `ixl-round10-85`, `ixl-eqf-twothirds-sixths`, `ixl-quad-not-a-quad`, `cog-mat-3x3-rotate-arrows`, `cog-bal-three-scales`, `cog-ord-grand-prix-4`, `world-neighbour-ma`, `dbg-us-coin-values`).
+3. If Aishik burns through the 26 cognitive puzzles quickly, add seeded procedural retry twins (fresh isomorphic matrices/scales/orderings generated per session) and paper-folding / hole-punching visual puzzles.
+4. Set up the nightly TrueNAS backup (`docs/backup-truenas.md`).
 
 ## 5. Open questions and blockers
-- Parent input: whether to keep 8 questions per session or add an optional "Bonus Challenge" / longer interactive puzzle mode once procedural puzzles land.
 - Parent action: TrueNAS backup is still not set up; live attempt data exists only in Supabase.
+- Parent input: after a week with Brain Gym + 1-tap hints, decide whether to add a longer "Bonus Challenge" mode or keep 8-question sessions.
 
 ## 6. Dead ends
-- Stale `.next` cache from an earlier Turbopack build failed on `next/font/google` (`nunito` CSS query error) until `rm -rf .next` was run; a clean build succeeded immediately.
+- `next/font/google` fails inside offline sandboxes after `rm -rf .next` because Turbopack fetches Baloo 2 and Nunito from `fonts.googleapis.com`; running `npm run build` with network access succeeds cleanly.
 
 ## 7. Orientation for a cold reader
-`CLAUDE.md` covers the stack, commands, and standing rules; `docs/ROADMAP.md` covers all phases 0 to 10; `README.md` and `CONTRIBUTORS.md` cover project overview and attribution. What changed this session:
-- `src/components/Player.tsx`: direct "Check answer" button, `confidence: null`, background sync moved out to `src/components/BackgroundSync.tsx` in `src/app/layout.tsx`.
-- `src/components/parent/SkillProgress.tsx` and `src/lib/engine/insights.ts`: `HUMANITIES` added to Skills tab and Skill Map `strandOrder`; stale review copy fixed.
-- `src/lib/engine/select-session.ts`: `WORKING_BAND_WINDOW = 8` rolling window and `startingBandFor()` (`OPERATIONS_ALGEBRA: 3`, `NUMBER_BASE_TEN: 3`).
-- `src/lib/outbox.ts` and `src/lib/sync.ts`: batched IndexedDB deletes and batched Prisma `createMany` / collapsed `sessionEnd` writes (tested in `src/lib/sync.test.ts`).
-- `src/lib/parent-lock.ts`, `src/lib/parent-session.ts`, `src/app/parent/actions.ts`, `src/app/parent/page.tsx`: peppered `signingSecret()` and 5-try / 5-minute signed lockout cookie.
+`CLAUDE.md` covers stack, commands, and standing rules; `docs/ROADMAP.md` covers phases 0 to 11; `docs/DEVLOG.md` has every decision; `content/REVIEW.md` logs the 82-question blind solve and 3 factual fixes. Key files added/changed in Phase 11:
+- `src/lib/sync-schema.ts`, `src/lib/engine/grade.ts`, `src/lib/engine/select-session.ts`, `src/app/parent/actions.ts`
+- `src/content/schema.ts`, `src/content/bank.ts`, `content/skills.json`, `content/themes.json`
+- `src/components/visuals/Visual.tsx`, `src/components/visuals/MoreVisuals.tsx`, `src/components/Player.tsx`, `src/lib/speech.ts`
+- `scripts/generate/ixl-targeted.ts`, `scripts/generate/cognitive.ts`, `scripts/generate/world.ts`, `scripts/generate/debugging.ts`, `scripts/generate/helpers.ts`, `scripts/generate/index.ts`
+- `README.md`, `docs/backup-truenas.md`, `content/REVIEW.md`

@@ -11,6 +11,8 @@ export type Draft = {
   voiceAnswer?: boolean;
   /** Language of the answer choices; defaults to English. */
   language?: Question["language"];
+  /** Optional 1-tap clue shown while answering so the child can work through a hard puzzle without giving up. */
+  hint?: string;
   answer: Question["answer"];
   explanation: string;
   band: 1 | 2 | 3 | 4 | 5;
@@ -43,6 +45,7 @@ export function question(file: string, d: Draft): Question {
     ...(d.didYouKnow ? { didYouKnow: d.didYouKnow } : {}),
     ...(d.listen ? { listen: d.listen } : {}),
     ...(d.voiceAnswer ? { voiceAnswer: true } : {}),
+    ...(d.hint ? { hint: d.hint } : {}),
     answer: d.answer,
     explanation: d.explanation,
     difficulty: { band: d.band, basis: "author-estimate" },

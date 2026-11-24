@@ -52,6 +52,9 @@ export async function lock() {
 }
 
 export async function signOut() {
+  const store = await cookies();
+  store.delete({ name: PARENT_COOKIE, path: "/parent" });
+  store.delete({ name: PIN_TRIES_COOKIE, path: "/parent" });
   const supabase = await createSupabaseServerClient();
   await supabase.auth.signOut();
   redirect("/login");
