@@ -5,10 +5,10 @@ import { computeWorkingBands } from "./engine/select-session";
 import { computeSkillStates } from "./engine/skill-state";
 import type { InsightAttempt } from "./engine/insights";
 import { householdToday } from "./household-time";
-import { isValidUnlockToken, PARENT_COOKIE } from "./parent-lock";
+import { isValidUnlockToken, PARENT_COOKIE, signingSecret } from "./parent-lock";
 
 export async function isParentUnlocked(): Promise<boolean> {
-  return isValidUnlockToken((await cookies()).get(PARENT_COOKIE)?.value, process.env.PARENT_PIN ?? "");
+  return isValidUnlockToken((await cookies()).get(PARENT_COOKIE)?.value, signingSecret(process.env.PARENT_PIN));
 }
 
 /** Everything the grown-ups views read for one student, computed from the attempt log. */

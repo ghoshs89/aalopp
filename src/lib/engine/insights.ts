@@ -112,7 +112,7 @@ export function skillMapLayout(skills: Skill[]): { nodes: MapNode[]; edges: { fr
     depth.set(code, d);
     return d;
   };
-  const strandOrder = ["MEASUREMENT_DATA", "OPERATIONS_ALGEBRA", "NUMBER_BASE_TEN", "GEOMETRY_SPATIAL", "LOGIC_CS", "LANGUAGE"];
+  const strandOrder = ["MEASUREMENT_DATA", "OPERATIONS_ALGEBRA", "NUMBER_BASE_TEN", "GEOMETRY_SPATIAL", "LOGIC_CS", "LANGUAGE", "HUMANITIES"];
   const layers = new Map<number, Skill[]>();
   for (const s of skills) {
     const d = depthOf(s.code);

@@ -96,20 +96,22 @@ export default async function ReportPage() {
           </table>
         </section>
 
-        <section className="mt-8 break-inside-avoid">
-          <h2 className="text-xl font-bold">Confidence</h2>
-          <p className="text-sm text-[#52514e]">Before each answer he taps how sure he is. Well calibrated means &quot;Very sure&quot; is usually right.</p>
-          <table className="mt-2 w-full border-collapse text-left text-sm">
-            <tbody>
-              {calibration.map((c) => (
-                <tr key={c.level} className="border-b border-[#e1e0d9]">
-                  <td className="py-1.5 pr-3">{CONFIDENCE_LABEL[c.level]}</td>
-                  <td className="py-1.5 tabular-nums">{pct(c)}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </section>
+        {calibration.some((c) => c.answered > 0) && (
+          <section className="mt-8 break-inside-avoid">
+            <h2 className="text-xl font-bold">Confidence</h2>
+            <p className="text-sm text-[#52514e]">From earlier sessions that asked how sure he felt.</p>
+            <table className="mt-2 w-full border-collapse text-left text-sm">
+              <tbody>
+                {calibration.map((c) => (
+                  <tr key={c.level} className="border-b border-[#e1e0d9]">
+                    <td className="py-1.5 pr-3">{CONFIDENCE_LABEL[c.level]}</td>
+                    <td className="py-1.5 tabular-nums">{pct(c)}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </section>
+        )}
 
         <section className="mt-8 grid gap-6 sm:grid-cols-2">
           <div className="break-inside-avoid">

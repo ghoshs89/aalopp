@@ -9,6 +9,7 @@ const STRANDS: { key: Skill["strand"]; label: string }[] = [
   { key: "GEOMETRY_SPATIAL", label: "Geometry and spatial reasoning" },
   { key: "LOGIC_CS", label: "Logic and computer science" },
   { key: "LANGUAGE", label: "Reading and languages" },
+  { key: "HUMANITIES", label: "World knowledge" },
 ];
 
 const STATUS: Record<SkillStatus, { label: string; className: string }> = {
@@ -49,8 +50,8 @@ export function SkillProgress({
         ))}
       </div>
       <p className="text-sm text-cream-dim">
-        Mastered means at least 4 of the last 5 answers right, on at least 2 different days. Mastered skills come back after 1, 3, 7, then 14 days, and
-        any wrong answer moves a skill back to learning.
+        Mastered means at least 4 of the last 5 answers right, on at least 2 different days. Mastered skills come back after 1, 3, 7, 14, then 30 days. A
+        missed review drops a skill one step, and only a miss at the first step moves it back to learning.
       </p>
       {STRANDS.map(({ key, label }) => {
         // Skills with something to look at first: due reviews, then learning, then mastered, then not started.

@@ -1,5 +1,15 @@
 import { describe, expect, it } from "vitest";
-import { createUnlockToken, isValidUnlockToken, pinMatches, UNLOCK_MINUTES } from "./parent-lock";
+import {
+  createUnlockToken,
+  isPinLockedOut,
+  isValidUnlockToken,
+  PIN_LOCKOUT_MINUTES,
+  PIN_MAX_ATTEMPTS,
+  pinMatches,
+  recordPinFailure,
+  signingSecret,
+  UNLOCK_MINUTES,
+} from "./parent-lock";
 
 describe("parent unlock token", () => {
   const now = Date.parse("2026-09-13T10:00:00Z");
@@ -16,6 +26,36 @@ describe("parent unlock token", () => {
     const [, sig] = token.split(".");
     expect(isValidUnlockToken(`${now + 999_999_999}.${sig}`, "1234", now)).toBe(false);
     expect(isValidUnlockToken(undefined, "1234", now)).toBe(false);
+  });
+
+  it("mixes a server pepper into the signing secret while still tying it to the PIN", () => {
+    expect(signingSecret("1234", "server-secret")).toBe("server-secret:1234");
+    expect(signingSecret("1234", "")).toBe("1234");
+    expect(signingSecret(undefined, "server-secret")).toBe("");
+  });
+});
+
+describe("pin lockout", () => {
+  const now = Date.parse("2026-11-24T12:00:00Z");
+  const secret = signingSecret("1234", "server-secret");
+
+  it("locks out after repeated wrong guesses and clears after the cooldown", () => {
+    let cookie: string | undefined;
+    for (let i = 1; i < PIN_MAX_ATTEMPTS; i++) {
+      const next = recordPinFailure(cookie, secret, now);
+      expect(next.locked).toBe(false);
+      cookie = next.token;
+      expect(isPinLockedOut(cookie, secret, now)).toBe(false);
+    }
+    const final = recordPinFailure(cookie, secret, now);
+    expect(final.locked).toBe(true);
+    expect(isPinLockedOut(final.token, secret, now + 60_000)).toBe(true);
+    expect(isPinLockedOut(final.token, secret, now + PIN_LOCKOUT_MINUTES * 60_000 + 1)).toBe(false);
+  });
+
+  it("ignores tampered lockout cookies", () => {
+    const { token } = recordPinFailure(undefined, secret, now);
+    expect(isPinLockedOut(`99.${now + 600_000}.${token.split(".")[2]}`, secret, now)).toBe(false);
   });
 });
 

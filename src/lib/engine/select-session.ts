@@ -27,8 +27,22 @@ const MAX_RETRIES = 2;
 const MAX_PER_SKILL = 2;
 /** A question answered right within this many days is not asked again unless the pool runs dry. */
 const REPEAT_COOLDOWN_DAYS = 14;
-/** Every child starts here: MAP and IXL place Aishik above the easiest band. */
+/** Default starting band when a strand has no higher baseline. */
 const STARTING_BAND = 2;
+/**
+ * Per-strand starting bands calibrated from outside diagnostics (MAP RIT 186, IXL Math 310 with OA 350 and NBT 320
+ * against Measurement & Data 280 and Geometry 290). Never learned from one child's app answers.
+ */
+const STRAND_STARTING_BAND: Partial<Record<Skill["strand"], number>> = {
+  OPERATIONS_ALGEBRA: 3,
+  NUMBER_BASE_TEN: 3,
+};
+/** Recent attempts per (strand, band) used to decide whether a band is passed, so old misses age out. */
+export const WORKING_BAND_WINDOW = 8;
+
+export function startingBandFor(strand: Skill["strand"]): number {
+  return STRAND_STARTING_BAND[strand] ?? STARTING_BAND;
+}
 
 export type Pick = { questionId: string; reason: string };
 export type SessionPlan = { picks: Pick[]; workingBands: Record<string, number> };
@@ -91,7 +105,7 @@ export function selectSession(
     // A question belongs to its most urgent skill.
     const options = question.skills.map((code) => ({ skill: skillByCode.get(code)!, state: states.get(code)! })).filter((o) => o.skill);
     const { skill, state } = options.reduce((best, o) => (urgency(o.state, skillByCode, states) > urgency(best.state, skillByCode, states) ? o : best));
-    const working = workingBands[skill.strand] ?? STARTING_BAND;
+    const working = workingBands[skill.strand] ?? startingBandFor(skill.strand);
     const band = question.difficulty.band;
     const last = lastByQuestion.get(question.id);
     const isConvention = question.skills.some((c) => skillByCode.get(c)?.isConvention);
@@ -255,31 +269,32 @@ function describe(category: Category, skill: Skill, state: SkillState, last: Att
 }
 
 /**
- * Working band per strand: one above the highest band where the child has at least 3 answers with at least 2 in 3
- * right, never below the starting band.
+ * Working band per strand: one above the highest band where at least 2 in 3 of the most recent WORKING_BAND_WINDOW
+ * answers (minimum 3) are right, never below that strand's starting band.
  */
 export function computeWorkingBands(questions: Question[], skills: Map<string, Skill>, attempts: AttemptRecord[]): Record<string, number> {
   const questionsById = new Map(questions.map((q) => [q.id, q]));
-  const tally = new Map<string, { right: number; total: number }>();
-  for (const a of attempts) {
+  const history = new Map<string, boolean[]>();
+  const ordered = [...attempts].sort((a, b) => a.answeredAt.getTime() - b.answeredAt.getTime());
+  for (const a of ordered) {
     const q = questionsById.get(a.questionId);
     const strand = q && skills.get(q.skills[0])?.strand;
     if (!q || !strand) continue;
     const key = `${strand}|${q.difficulty.band}`;
-    const t = tally.get(key) ?? { right: 0, total: 0 };
-    t.total += 1;
-    if (a.isCorrect) t.right += 1;
-    tally.set(key, t);
+    const list = history.get(key) ?? [];
+    list.push(a.isCorrect);
+    history.set(key, list);
   }
   const strands = new Set([...skills.values()].map((s) => s.strand));
   const result: Record<string, number> = {};
   for (const strand of strands) {
     let passed = 0;
     for (let band = 1; band <= 5; band++) {
-      const t = tally.get(`${strand}|${band}`);
-      if (t && t.total >= 3 && t.right / t.total >= 2 / 3) passed = band;
+      const recent = (history.get(`${strand}|${band}`) ?? []).slice(-WORKING_BAND_WINDOW);
+      const right = recent.filter(Boolean).length;
+      if (recent.length >= 3 && right / recent.length >= 2 / 3) passed = band;
     }
-    result[strand] = Math.min(5, Math.max(STARTING_BAND, passed + 1));
+    result[strand] = Math.min(5, Math.max(startingBandFor(strand), passed + 1));
   }
   return result;
 }

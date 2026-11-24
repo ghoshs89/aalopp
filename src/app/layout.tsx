@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Baloo_2, Nunito } from "next/font/google";
+import { BackgroundSync } from "@/components/BackgroundSync";
 import { TimeZoneCookie } from "@/components/TimeZoneCookie";
 import "./globals.css";
 
@@ -24,6 +25,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     <html lang="en" className={`${baloo.variable} ${nunito.variable} antialiased`}>
       <body>
         <TimeZoneCookie />
+        <BackgroundSync />
         {children}
       </body>
     </html>

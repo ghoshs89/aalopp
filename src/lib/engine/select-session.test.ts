@@ -168,4 +168,38 @@ describe("computeWorkingBands", () => {
     const history = qs.map((q, i) => attempt(q.id, i === 0, "2026-09-10"));
     expect(computeWorkingBands(reviewed, skillByCode, history).LOGIC_CS).toBe(2);
   });
+
+  it("uses per-strand starting bands calibrated to outside diagnostics", () => {
+    const bands = computeWorkingBands(reviewed, skillByCode, []);
+    expect(bands.OPERATIONS_ALGEBRA).toBe(3);
+    expect(bands.NUMBER_BASE_TEN).toBe(3);
+    expect(bands.MEASUREMENT_DATA).toBe(2);
+    expect(bands.GEOMETRY_SPATIAL).toBe(2);
+  });
+
+  it("uses a rolling window so early misses age out and recent slumps step back down", () => {
+    const qs = reviewed.filter((q) => skillByCode.get(q.skills[0])!.strand === "LOGIC_CS" && q.difficulty.band === 3);
+    const recovered = [
+      attempt(qs[0].id, false, "2026-09-01"),
+      attempt(qs[1].id, false, "2026-09-02"),
+      attempt(qs[2].id, false, "2026-09-03"),
+      attempt(qs[3].id, true, "2026-09-10"),
+      attempt(qs[4].id, true, "2026-09-11"),
+      attempt(qs[5].id, true, "2026-09-12"),
+      attempt(qs[6].id, true, "2026-09-13"),
+      attempt(qs[7].id, true, "2026-09-14"),
+      attempt(qs[8].id, true, "2026-09-15"),
+    ];
+    expect(computeWorkingBands(reviewed, skillByCode, recovered).LOGIC_CS).toBe(4);
+
+    const slumped = [
+      attempt(qs[0].id, true, "2026-09-01"),
+      attempt(qs[1].id, true, "2026-09-02"),
+      attempt(qs[2].id, true, "2026-09-03"),
+      attempt(qs[3].id, false, "2026-09-10"),
+      attempt(qs[4].id, false, "2026-09-11"),
+      attempt(qs[5].id, false, "2026-09-12"),
+    ];
+    expect(computeWorkingBands(reviewed, skillByCode, slumped).LOGIC_CS).toBe(2);
+  });
 });

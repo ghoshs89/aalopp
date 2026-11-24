@@ -26,7 +26,7 @@ type Tab = (typeof TABS)[number][0];
 
 export default async function ParentPage({ searchParams }: PageProps<"/parent">) {
   const user = await requireFamilyUser();
-  const { wrong, view } = await searchParams;
+  const { wrong, locked, view } = await searchParams;
   const pin = process.env.PARENT_PIN;
 
   if (!(await isParentUnlocked())) {
@@ -45,7 +45,11 @@ export default async function ParentPage({ searchParams }: PageProps<"/parent">)
               aria-label="PIN"
               className="rounded-2xl bg-cream px-4 py-4 text-center text-3xl tracking-[0.5em] text-ink"
             />
-            {wrong && <p className="text-danger">That PIN did not match.</p>}
+            {locked ? (
+              <p className="text-danger">Too many tries. Wait a few minutes and try again.</p>
+            ) : (
+              wrong && <p className="text-danger">That PIN did not match.</p>
+            )}
             <button className="big-button bg-gold text-ink">Unlock</button>
           </form>
         ) : (
@@ -116,6 +120,7 @@ async function OverviewTab({ studentId }: { studentId: string }) {
   const strands = accuracyByStrand(attempts, questionsById, skills).map((s) => ({ ...s, label: STRAND_LABEL[s.strand] }));
   const split = everydayVsReasoning(attempts, questionsById, skills);
   const calibration = confidenceCalibration(attempts).map((c) => ({ ...c, label: CONFIDENCE_LABEL[c.level] }));
+  const hasConfidence = calibration.some((c) => c.answered > 0);
   const mastered = [...states.values()].filter((s) => s.status === "mastered" || s.status === "review-due").length;
   const weekPct = percent(summary.lastWeek);
 
@@ -132,7 +137,7 @@ async function OverviewTab({ studentId }: { studentId: string }) {
         />
       </div>
 
-      <div className="grid gap-4 lg:grid-cols-2">
+      <div className={`grid gap-4 ${hasConfidence ? "lg:grid-cols-2" : ""}`}>
         <ChartCard title="Everyday skills and reasoning" subtitle="Percent right. Everyday skills are time, money, measuring, graphs and calendars.">
           <PercentBars
             rows={[
@@ -149,10 +154,12 @@ async function OverviewTab({ studentId }: { studentId: string }) {
             ]}
           />
         </ChartCard>
-        <ChartCard title="How sure, and how right" subtitle={`When he taps a face, how often he is right. ${summary.sureButWrongLastWeek} "Very sure" answers were wrong this week.`}>
-          <PercentBars rows={calibration} />
-          <TableView caption="Confidence and accuracy" headers={["Face", "Answered", "Right", "Percent"]} rows={calibration.map((c) => [c.label, c.answered, c.correct, `${percent(c) ?? "-"}%`])} />
-        </ChartCard>
+        {hasConfidence && (
+          <ChartCard title="How sure, and how right" subtitle="From earlier sessions that asked how sure he felt.">
+            <PercentBars rows={calibration} />
+            <TableView caption="Confidence and accuracy" headers={["Face", "Answered", "Right", "Percent"]} rows={calibration.map((c) => [c.label, c.answered, c.correct, `${percent(c) ?? "-"}%`])} />
+          </ChartCard>
+        )}
       </div>
 
       <ChartCard title="Questions answered per day" subtitle="Last 14 days">

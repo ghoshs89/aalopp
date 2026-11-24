@@ -27,6 +27,20 @@ function run<T>(mode: IDBTransactionMode, work: (store: IDBObjectStore) => IDBRe
   );
 }
 
+function deleteMany(ids: string[]): Promise<void> {
+  if (ids.length === 0) return Promise.resolve();
+  return openDb().then(
+    (db) =>
+      new Promise<void>((resolve, reject) => {
+        const tx = db.transaction(STORE, "readwrite");
+        const store = tx.objectStore(STORE);
+        for (const id of ids) store.delete(id);
+        tx.oncomplete = () => resolve();
+        tx.onerror = () => reject(tx.error);
+      }),
+  );
+}
+
 export async function enqueue(item: SyncItem): Promise<void> {
   await run("readwrite", (store) => store.put(item));
   void flush();
@@ -52,8 +66,8 @@ export function flush(): Promise<void> {
         });
         if (!res.ok) return;
         const { saved, rejected } = (await res.json()) as { saved: string[]; rejected: { id: string }[] };
-        // Rejected items (unknown student or question) will never succeed, so drop them too.
-        for (const id of [...saved, ...rejected.map((r) => r.id)]) await run("readwrite", (store) => store.delete(id));
+        // Rejected items (unknown student or question) will never succeed, so drop them in one transaction.
+        await deleteMany([...saved, ...rejected.map((r) => r.id)]);
       }
     } catch {
       // Offline or server unreachable: keep the items for the next attempt.

@@ -1,79 +1,71 @@
-# Session Handoff  2026-09-22  Engine tuning and both themes live in production
+# Session Handoff  2026-11-24  Phase 10 cleanup, confidence prompt removed, and engine/sync hardening
 
 > Read this fully before acting. It is the state of the work as of the end of the last session. Assume you have no memory of that session and may be a different model. This document plus the repository should be enough to resume.
 >
 > Before trusting any claim below, the previous session should have verified it against the repo, not the conversation. If a section says "assumed", treat it as unconfirmed.
 
 ## How this was verified
-Commands run at handoff time on 2026-09-21 from the repo root (`aalopp/`), all exit code 0:
-- `npm test`: pass. 20 test files, 115 tests (5 new: a 180 day review-queue run at two accuracies, every servable skill getting served, the new-skill slot, and a miss dropping one box).
-- `npm run content:check`: pass. 58 skills, 549 questions, all reviewed. By primary strand: LOGIC_CS 98, MEASUREMENT_DATA 79, HUMANITIES 221, GEOMETRY_SPATIAL 42, LANGUAGE 42, OPERATIONS_ALGEBRA 34, NUMBER_BASE_TEN 33.
-- `npm run typecheck`: pass. `npm run lint`: pass.
-- Both new engine tests were confirmed to fail when the change they cover is reverted, and the picture check was confirmed to fail on a deliberately broken path.
-
-Repo state: `main` level with `origin/main`. Everything from this session is committed and deployed as `2b9781b`; Vercel reported "Deployment has completed".
+Commands run at handoff time on 2026-11-24 from the repo root (`/Users/soumalya/Documents/Aishik/aalopp`), all exit code 0:
+- `npm test`: pass. 22 test files, 135 tests (7 new: Skill Map `HUMANITIES` ordering, rolling working-band recovery and slump, per-strand starting bands, batched `/api/sync` writes and rejections, peppered parent PIN signing and 5-try lockout).
+- `npm run content:check`: pass. 60 skills, 792 questions, all reviewed. By primary strand: HUMANITIES 464, LOGIC_CS 98, MEASUREMENT_DATA 79, GEOMETRY_SPATIAL 42, LANGUAGE 42, OPERATIONS_ALGEBRA 34, NUMBER_BASE_TEN 33. By band: band 1 (85), band 2 (222), band 3 (427), band 4 (48), band 5 (10).
+- `npm run typecheck`: pass.
+- `npm run lint`: pass.
+- `rm -rf .next && npm run build`: pass (Prisma generate + Next.js 16.3.5 Turbopack production build + TypeScript check + 17/17 static pages).
 
 ## 1. Current state
-- Works and verified:
-  - Live at `https://aalopp.vercel.app` on `2b9781b`. Checked after deploying: `/login` 200, `/`, `/parent`, `/parent/report` and `/choose/abc` 307 to login when signed out, `/dev/dashboard` 404, `/api/health` 200 with the secret. The flag and logo files serve without sign-in, as the `src/proxy.ts` matcher intends.
-  - Real usage since the 2026-09-13 reset: 36 attempts across 5 played sessions on 3 days (09-14, 09-15, 09-20), 28 right, 78%. Sessions ran 4.5 to 9 minutes. Upload lag 0 to 2 seconds on every attempt.
-  - Engine fixes: a reserved new-skill slot, `MAX_REVIEWS` 3 to 4, a fifth review box at 30 days, a miss dropping one box instead of resetting, and a specific Find the Bug message when he taps a step after the real bug.
-  - Themes: `content/themes.json`, a `/choose/[studentId]` screen, teach cards, an `image` visual, picture answer choices, 45 committed artwork files, 221 draft questions.
-- In progress: nothing. The fact-checking pass is done and recorded in `content/REVIEW.md`; six wrong claims were found and corrected, and all 221 questions are now `"reviewed"`. Both themes appear on the choose screen. Verified by simulation: a cars session and a world session each drew 400 picks with zero off-theme questions, and all 200 sampled ordinary sessions contained a themed question.
+- Works and verified locally:
+  - Grown-ups Skills tab (`src/components/parent/SkillProgress.tsx`) now includes `HUMANITIES` ("World knowledge") so summary badges match the listed rows, and its help copy reflects the live 1, 3, 7, 14, 30 day review intervals and drop-one-box rule.
+  - Skill Map (`src/lib/engine/insights.ts`) now orders `HUMANITIES` at the bottom of each column instead of sorting it to `-1` (top).
+  - Confidence prompt ("How sure are you?") is removed from `src/components/Player.tsx`, replaced with a direct "Check answer" button that submits `confidence: null`. Historical confidence rows stay visible on `/parent` and `/parent/report` only when earlier confidence records exist.
+  - Adaptive engine (`src/lib/engine/select-session.ts`) computes working bands over a rolling window of the most recent `WORKING_BAND_WINDOW` (8) chronological attempts per `(strand, band)` and starts `OPERATIONS_ALGEBRA` and `NUMBER_BASE_TEN` at Band 3 based on the 2026-11-24 IXL LevelUp Diagnostic (OA 350, NBT 320 vs. MD 280, Geometry 290).
+  - Offline sync: `src/components/BackgroundSync.tsx` is mounted in `src/app/layout.tsx` so queued answers flush on any route; `src/lib/outbox.ts` deletes acknowledged items in a single IndexedDB transaction; `src/lib/sync.ts` batches `PracticeSession` and `Attempt` writes with `createMany({ skipDuplicates: true })` and collapses `sessionEnd` updates per session.
+  - Parent PIN lock (`src/lib/parent-lock.ts`, `src/lib/parent-session.ts`, `src/app/parent/actions.ts`, `src/app/parent/page.tsx`) mixes `PARENT_LOCK_SECRET` or `CRON_SECRET` with `PARENT_PIN` in the HMAC key and enforces a signed 5-try / 5-minute lockout cookie.
+  - `README.md` replaced with real project documentation and `CONTRIBUTORS.md` added crediting Soumalya Ghosh, Google Gemini (Antigravity), Anthropic Claude, and OpenAI ChatGPT.
+- In progress: nothing.
 - Broken or known failing: none observed.
 - Assumed, not verified:
-  - Everything from the 2026-09-13 handoff that still stands: the parent dashboard in a real signed-in session, the scratchpad with a real stylus, voice quality on family devices, speech recognition of a child's voice, the offline queue after a real Wi-Fi drop.
-  - The daily Vercel cron calling `/api/health`. The runtime logs API returns 403 on this plan, so cron runs could not be confirmed from the command line. Check the Vercel dashboard, project `aalopp`, Cron Jobs tab.
-  - Every screen in this session was checked in headless Chrome at 384 px, never on a real device. Nobody has played a themed session on production yet.
+  - Production Vercel deployment and live signed-in smoke test after pushing this commit.
+  - Real-device stylus/scratchpad behavior, offline Wi-Fi drop recovery on phone/tablet, and daily Vercel cron keeping Supabase awake (confirm no pause emails).
+  - Production attempt telemetry from October and November 2026 has not been queried yet; inspecting it before Phase 11 will pinpoint exact abandonment patterns.
 
 ## 2. Decisions made this session
 All are in `docs/DEVLOG.md` with reasons and attribution. Treat as settled; do not reopen without new cause.
-- Parent: a missed review drops a skill one box instead of resetting it to learning.
-- Parent: one session slot is reserved for a skill he has not met yet.
-- Parent: knowledge questions teach first, with a card before the question.
-- Parent: picking a theme fills the whole session, and ordinary sessions also mix in a themed item.
-- Parent: the first world batch covers flags, capitals and maps, culture and daily life, and numbers about countries.
-- Parent: "Take logos from company websites. This is not a commercial product, only used for at home learning."
-- Parent: car logos double as shape and symmetry practice.
-- Assistant, parent not asked: the fifth review box at 30 days, and extending the downloaded-artwork approach from logos to flags.
+- Parent: drop the per-question confidence prompt in `Player.tsx` (`confidence: null` on new attempts, no schema migration).
+- Parent approved: execute Phase 10 cleanup first before new puzzle engines (dashboard bugs, rolling working bands, per-strand starting bands, root-level batched sync, PIN lockout).
+- Parent: add Google Gemini (Antigravity), Anthropic Claude, and OpenAI ChatGPT as contributors in repo docs and commit metadata.
 
 ## 3. Constraints and invariants the next session must not violate
-Standing rules are in `CLAUDE.md`, which gained three sections this session: knowledge-content review, Pictures, and Themes. The ones easiest to break:
-- Knowledge content stays `"draft"` until an independent pass checks each fact against a source and records it in `content/REVIEW.md`. A wrong puzzle answer is a bad question; a wrong fact is something Aishik learns and repeats.
-- A teach card must never describe a logo's colours. The logos are one-colour marks, so the card and the picture would contradict each other. This already happened once with Ferrari.
-- Country of origin means where a brand was founded, never who owns it now. `scripts/generate/cars.ts` keeps `country` and `ownerNote` in separate fields for exactly this reason.
-- Never hand draw a flag or a logo, and never hotlink one. Add it to `content/assets.json` and run `npm run assets:fetch`.
-- The top review interval is load-bearing. N skills demand N/30 reviews a day against the 4 a session can serve; at the old 14 day top box the due queue grew without bound. Rerun `simulation.test.ts` after touching any cap or interval.
-- Everything from the previous handoff still holds: never edit `generated-*.json` by hand, a new question file must be imported in `src/content/bank.ts`, migrations stay compatible with the previous deployment, `Attempt.localDate` stays nullable.
-- The autonomous commit-and-push authorization covered finishing the original phases, and the parent authorized this session's push separately. Confirm again before committing new work.
+Standing rules are in `CLAUDE.md`. Key invariants:
+- No em dashes anywhere in UI strings, logs, or content.
+- No `any`. Pure engine functions in `src/lib/engine/` with unit tests and 180-day `simulation.test.ts` checks.
+- No DB migrations needed for confidence removal (`Attempt.confidence` stays nullable for historical records).
+- `generated-*.json` files come from `scripts/generate/`; never edit them by hand.
+- Keep `HUMANITIES` fact-checked against primary sources in `content/REVIEW.md`; never describe colours of one-colour car marks; hide picture-choice names until checked.
+- Confirm before committing new work unless the parent explicitly authorizes it.
 
 ## 4. Next steps, prioritized
-- Parent walkthrough on a real device | a session on a tablet and a phone, both themes, every grown-ups tab, a note saved and the report printed | collect issues into section 5.
-- Two weak logo files | Mahindra and Jaguar came through as wordmarks rather than marks, which are poor for "guess the logo" | replace the `sourceUrl` in `content/assets.json` and rerun `npm run assets:fetch -- --force`.
-- Device checks, TrueNAS backup, engine tuning from more data | unchanged from the previous handoff | `docs/backup-truenas.md` needs the parent at the NAS.
+1. Inspect October-November production attempt telemetry (which questions/sessions Aishik abandons and how long he stays) to guide Phase 11.
+2. Build procedural and interactive cognitive-reasoning puzzles to eliminate trivia gravity and boredom:
+   - Seeded runtime/parametric templates for 2x2 and 3x3 visual matrices (CogAT Nonverbal / NNAT3 / Raven's), paper folding / hole punching, and symbolic balance scales (CogAT Quantitative / OA 350+), with fresh isomorphic twins on retries.
+   - Interactive puzzle mechanics embedded in his interests (car-themed matrices, drag/tap race podium ordering, car-weight seesaws, robot/rally code-path builder) plus a 1-tap progressive Hint ladder.
+3. Close the conceptual gaps from the 2026-11-24 IXL Action Plan:
+   - Two-object `RulerVisual` (length comparison) and multi-step scaled bar graphs (Measurement & Data 280).
+   - `NumberLineVisual` for rounding to nearest 10/100 and equivalent fraction strips (NBT 320).
+   - Quadrilateral attribute classification (Geometry 290 + CogAT Figural Classification).
+   - CogAT Verbal bridge: prefix/suffix root families, verbal analogies, "choose reasons to support an opinion", and 500L-650L reading inference passages (ELA 300+).
+4. Operations housekeeping: set up the TrueNAS backup (`docs/backup-truenas.md`) and consider a minimal Service Worker for offline session starts on flights/road trips.
 
 ## 5. Open questions and blockers
-- Parent input: is 8 questions the right session length? Asked 2026-09-13, still unanswered, and now the most consequential open question. An 8 slot session reserves 3 everyday-skill items, 1 new skill and 1 themed item, and one new-skill slot has to serve more than 25 unstarted skills across two strands. LANGUAGE fell from 96 to 29 slots per 1600 in ordinary sessions once the themes went live. It is not starved, but a longer session is the real lever.
-- Parent input: the four brands with no usable logo file are Mercedes-Benz (resolved from Commons, fine), Alfa Romeo (dropped, only model wordmarks found), plus the two weak files above. Does he want Alfa Romeo?
-- Parent action: TrueNAS backup still not set up. Answer data exists only in Supabase.
-- Parent action: Wi-Fi drop test on a phone.
-- Parent spot-check suggestions: `car-from-ferrari`, `car-flag-tata`, `car-shape-audi-rings`, `car-sym-vw`, `car-fact-f1`, `world-flag-detail-in`, `world-capital-ca`, `world-continent-au`, `world-culture-ca`. The six general `CARS-FACTS` questions are the ones not taken from a source, so they are worth a look first.
+- Parent input: whether to keep 8 questions per session or add an optional "Bonus Challenge" / longer interactive puzzle mode once procedural puzzles land.
+- Parent action: TrueNAS backup is still not set up; live attempt data exists only in Supabase.
 
 ## 6. Dead ends
-Also in `docs/DEVLOG.md` where durable.
-- Everything in the previous handoff still applies: deployment detection via `/_next/static/chunks/`, `prisma migrate diff --from-migrations`, Python one-off scripts with escaped apostrophes, queued speech stalling headless Chrome, reading pixels from a hidden canvas.
-- Trusting a lead summary as a fact check. Wikipedia's `summary` endpoint confirmed only about half the prose claims; the rest needed the full article via `prop=extracts&explaintext=1`, which is where the Mazda, Hyundai and Canada errors surfaced.
-- Wikidata's `action=wbsearchentities` and `wbgetentities` API. It rate limits an anonymous burst within a handful of requests and returns plain text, not JSON, when it does. The REST endpoint `\`/w/rest.php/wikibase/v1/entities/items/<QID>\`` is fine, and Wikipedia's `summary` endpoint hands over the QID.
-- Guessing a company's own logo URL. Press pages are JavaScript driven with no stable direct file URLs; `https://www.toyota.com/.../logo.svg` returns an HTML 404 page. The MediaWiki `pageimages` API is no better, returning headquarters photographs for Toyota, Audi and Ferrari. Use Simple Icons for a predictable URL, or resolve an exact Commons file title.
-- Counting broken images in a page whose `onerror` handler rewrites the element. The images leave `document.images`, so the count comes back zero and everything looks fine. Set a data attribute instead and count that.
-- Top-level `await` in a `scripts/*.ts` file. `tsx` builds them as CommonJS here, so wrap it in a `main()`.
+- Stale `.next` cache from an earlier Turbopack build failed on `next/font/google` (`nunito` CSS query error) until `rm -rf .next` was run; a clean build succeeded immediately.
 
 ## 7. Orientation for a cold reader
-`CLAUDE.md` covers the stack, commands and standing rules; `docs/ROADMAP.md` covers the plan. This section is only what matters for resuming. Everything in the previous handoff's orientation still applies. What is new:
-- Choosing what to play: `src/app/page.tsx` (who is playing) links to `src/app/choose/[studentId]/page.tsx` (today's puzzles, or a theme), which links to `/play/[studentId]?theme=<id>`.
-- Themed selection: `selectSession` takes a `SessionOptions` with `themeSkills` (the mix-in quota) and `onlySkills` (a themed session). Skill states are always computed from the whole bank, so picking a theme never distorts what the engine believes.
-- Teach cards: `teach` on a question, rendered by the `learning` phase in `src/components/Player.tsx`. The play page passes `seen`, the ids he has already answered, so a card shows once. The answer timer starts in `beginQuestion`, not when the card appears.
-- Pictures: the `image` visual kind, rendered by `Picture` in `src/components/visuals/Visual.tsx` on a white tile. Files in `public/flags` and `public/logos`, manifest `content/assets.json`, fetched by `npm run assets:fetch`. `src/proxy.ts` excludes both folders from the auth matcher.
-- Picture answer choices: `choiceVisuals` on a choice answer, one per choice in the same order.
-- Generators: `scripts/generate/cars.ts` and `scripts/generate/world.ts`. `pickSpread` in `helpers.ts` varies the wrong answers; without it every logo question offered the same three decoys and he would have learned to spot the odd one out.
-- A throwaway harness for driving the app in headless Chrome lives in the session scratchpad with `puppeteer-core`, not in the repo. Stub `window.speechSynthesis` before the page loads.
+`CLAUDE.md` covers the stack, commands, and standing rules; `docs/ROADMAP.md` covers all phases 0 to 10; `README.md` and `CONTRIBUTORS.md` cover project overview and attribution. What changed this session:
+- `src/components/Player.tsx`: direct "Check answer" button, `confidence: null`, background sync moved out to `src/components/BackgroundSync.tsx` in `src/app/layout.tsx`.
+- `src/components/parent/SkillProgress.tsx` and `src/lib/engine/insights.ts`: `HUMANITIES` added to Skills tab and Skill Map `strandOrder`; stale review copy fixed.
+- `src/lib/engine/select-session.ts`: `WORKING_BAND_WINDOW = 8` rolling window and `startingBandFor()` (`OPERATIONS_ALGEBRA: 3`, `NUMBER_BASE_TEN: 3`).
+- `src/lib/outbox.ts` and `src/lib/sync.ts`: batched IndexedDB deletes and batched Prisma `createMany` / collapsed `sessionEnd` writes (tested in `src/lib/sync.test.ts`).
+- `src/lib/parent-lock.ts`, `src/lib/parent-session.ts`, `src/app/parent/actions.ts`, `src/app/parent/page.tsx`: peppered `signingSecret()` and 5-try / 5-minute signed lockout cookie.

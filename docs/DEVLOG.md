@@ -16,6 +16,30 @@ Attribution convention used below: "Parent decision" means the parent chose it; 
 
 ---
 
+## 2026-11-24  Milestone  Phase 10 cleanup and friction reduction built and verified
+What: Dropped the confidence prompt in `Player.tsx`, fixed `HUMANITIES` visibility and ordering on `/parent`, switched working bands to an 8-attempt rolling window with Band 3 starting baselines for `OPERATIONS_ALGEBRA` and `NUMBER_BASE_TEN`, mounted root-level batched offline sync, hardened parent PIN signing with a 5-try lockout cookie, updated `README.md` / `CONTRIBUTORS.md` / `docs/ROADMAP.md` / `docs/HANDOFF.md` / `CLAUDE.md`, and pushed to `main`.
+Verified by: `npm test` (22 files, 135 tests passed), `npm run content:check` (60 skills, 792 reviewed questions), `npm run typecheck`, `npm run lint`, and clean `rm -rf .next && npm run build` all exited 0.
+
+## 2026-11-24  Decision  Drop the per-question confidence prompt in Player
+What: Removed the three-face "How sure are you?" step from `src/components/Player.tsx`, replacing it with a single "Check answer" button that submits `confidence: null`. Existing confidence data remains readable on `/parent` and `/parent/report` (rendered only when historical confidence records exist).
+Reason: Parent decision ("Drop the confidence prompt") after observing that Aishik was tapping "Very sure" on 93 of 119 attempts and growing bored / giving up on non-trivia sessions. Removing the extra tap lowers friction on every question and eliminates the Find the Bug second-tap confidence mismatch without requiring a database migration (`Attempt.confidence` is already nullable).
+Alternatives rejected: Keeping the prompt only on Band 3+ reasoning items (parent preferred removing it outright).
+
+## 2026-11-24  Decision  Rolling working-band window and per-strand starting bands
+What: Updated `computeWorkingBands` in `src/lib/engine/select-session.ts` to evaluate the most recent `WORKING_BAND_WINDOW` (8) chronological attempts per `(strand, band)` instead of all-time cumulative totals, and added per-strand starting bands (`OPERATIONS_ALGEBRA: 3`, `NUMBER_BASE_TEN: 3`; all other strands stay at `2`).
+Reason: Assistant recommendation, parent approved ("Cleanup first"). Under all-time cumulative tallies, early misses in a harder band permanently dragged down the ratio, while early lucky passes locked a high band permanently. Meanwhile, the 2026-11-24 IXL LevelUp Diagnostic places Aishik at Math 310 overall with Operations & Algebraic Thinking at 350 and Number & Base Ten at 320, against Measurement & Data at 280 and Geometry at 290; starting OA and NBT at Band 3 avoids Band 1 to 2 grind while keeping MD and Geometry grounded at Band 2.
+Alternatives rejected: Raising `LANGUAGE` to Band 3 (deferred until Band 4 to 5 reading and verbal-reasoning content exists, since `LANGUAGE` currently has only 4 Band 3 items and 0 Band 4 items).
+
+## 2026-11-24  Decision  Phase 10 cleanup: dashboard fixes, root-level batched sync, and PIN lockout
+What:
+1. Added `HUMANITIES` to `STRANDS` in `src/components/parent/SkillProgress.tsx` (previously omitted, causing summary badge totals to disagree with listed rows) and updated the stale `1, 3, 7, 14` / reset-to-learning help copy to match the live `1, 3, 7, 14, 30` / drop-one-box engine.
+2. Added `HUMANITIES` to `strandOrder` in `src/lib/engine/insights.ts` so World knowledge skills sort at the bottom of each Skill Map column rather than `-1` (the top).
+3. Mounted `BackgroundSync` (`src/components/BackgroundSync.tsx`) in `src/app/layout.tsx` so queued offline answers flush from any route; batched IndexedDB deletes into one transaction in `src/lib/outbox.ts`; batched `PracticeSession` and `Attempt` writes with `createMany({ skipDuplicates: true })` and collapsed `sessionEnd` updates in `src/lib/sync.ts`.
+4. Hardened `src/lib/parent-lock.ts` by combining `PARENT_PIN` with `PARENT_LOCK_SECRET` or `CRON_SECRET` in `signingSecret` and adding a signed 5-try / 5-minute lockout cookie (`PIN_TRIES_COOKIE`) in `src/app/parent/actions.ts`.
+5. Replaced the default Next.js `README.md` and added `CONTRIBUTORS.md` crediting Soumalya Ghosh, Google Gemini (Antigravity), Anthropic Claude, and OpenAI ChatGPT.
+Reason: Assistant review findings, parent approved ("Cleanup first", plus explicit request to add Google Gemini, Claude, and OpenAI ChatGPT as contributors).
+Alternatives rejected: In-memory PIN rate limiting (resets across serverless cold starts on Vercel).
+
 ## 2026-10-28  Milestone  Data API health check deployed
 What: Commit b36f2fb pushed to `main` at the parent's request.
 Verified by: GitHub commit status from Vercel for b36f2fb reported "Deployment has completed" (21:03 UTC). On

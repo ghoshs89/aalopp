@@ -6,7 +6,7 @@ import type { Question } from "@/content/schema";
 import { shouldSuggestBreak } from "@/lib/engine/breaks";
 import { localDateOf } from "@/lib/engine/dates";
 import { isCorrect, type Response } from "@/lib/engine/grade";
-import { enqueue, pendingCount, startBackgroundSync } from "@/lib/outbox";
+import { enqueue, pendingCount } from "@/lib/outbox";
 import { questionSpeechParts, speakable, teachSpeechParts } from "@/lib/speech";
 import { useSpeech } from "@/lib/use-speech";
 import { useSpeechInput } from "@/lib/use-speech-input";
@@ -15,7 +15,6 @@ import { matchSpokenChoice } from "@/lib/voices";
 import { Scratchpad } from "./Scratchpad";
 import { Visual } from "./visuals/Visual";
 
-type Confidence = "LOW" | "MEDIUM" | "HIGH";
 type Phase = "ready" | "learning" | "answering" | "feedback" | "done";
 
 // Sessions end quietly after this long, even mid-list. Nothing on screen counts down.
@@ -27,12 +26,6 @@ const FOUND_WITH_NUDGE = "You found it! Next time, start checking from the top."
 
 // Timing is only read inside tap handlers, never while rendering.
 const clock = () => performance.now();
-
-const FACES: { value: Confidence; face: string; label: string }[] = [
-  { value: "LOW", face: "😟", label: "Not sure" },
-  { value: "MEDIUM", face: "🙂", label: "Kind of sure" },
-  { value: "HIGH", face: "😄", label: "Very sure" },
-];
 
 type Props = {
   student: { id: string; name: string; avatar: string };
@@ -72,7 +65,7 @@ export function Player({ student, questions, reasons = {}, seen = [], save = tru
   // Find the Bug: the step he tapped first, when it came after the real bug and he was nudged to look earlier.
   const [firstTap, setFirstTap] = useState<number | null>(null);
   const [digits, setDigits] = useState("");
-  const [result, setResult] = useState<{ correct: boolean; confidence: Confidence; foundWithNudge: boolean } | null>(null);
+  const [result, setResult] = useState<{ correct: boolean; foundWithNudge: boolean } | null>(null);
   const [showExplanation, setShowExplanation] = useState(false);
   const [pending, setPending] = useState(0);
   // How the child is working this question out. Reset for every question.
@@ -109,10 +102,8 @@ export function Player({ student, questions, reasons = {}, seen = [], save = tru
 
   useEffect(() => {
     if (!save) return;
-    const stopSync = startBackgroundSync();
     const timer = window.setInterval(() => pendingCount().then(setPending).catch(() => {}), 3000);
     return () => {
-      stopSync();
       window.clearInterval(timer);
     };
   }, [save]);
@@ -176,7 +167,7 @@ export function Player({ student, questions, reasons = {}, seen = [], save = tru
             ? { type: "step", index: choice }
             : { type: "step", index: firstTap, secondIndex: choice };
 
-  const submit = (confidence: Confidence) => {
+  const submit = () => {
     if (!response) return;
     stop();
     const { answer } = question;
@@ -190,7 +181,7 @@ export function Player({ student, questions, reasons = {}, seen = [], save = tru
     }
     const correct = isCorrect(question, response);
     const foundWithNudge = answer.type === "findTheBug" && response.type === "step" && response.secondIndex === answer.bugIndex;
-    setResult({ correct, confidence, foundWithNudge });
+    setResult({ correct, foundWithNudge });
     setPhase("feedback");
     speechInput.cancel();
     // Finding it after a nudge is not the kind of run a break is for.
@@ -209,7 +200,7 @@ export function Player({ student, questions, reasons = {}, seen = [], save = tru
         sessionStartedAt: session.current.startedAt,
         questionId: question.id,
         response,
-        confidence,
+        confidence: null,
         firstActionMs: timing.current.firstActionMs,
         totalMs: Math.round(clock() - timing.current.shownAt),
         listenCount: timing.current.listens,
@@ -228,8 +219,7 @@ export function Player({ student, questions, reasons = {}, seen = [], save = tru
       autoSpeak(`${FOUND_WITH_NUDGE}${didYouKnow}`);
     } else {
       setShowExplanation(true);
-      const opener = confidence === "HIGH" ? "You felt really sure. Let's look at it together." : "Let's check it together.";
-      autoSpeak(`${opener} ${speakable(question.explanation)}${didYouKnow}`);
+      autoSpeak(`Let's check it together. ${speakable(question.explanation)}${didYouKnow}`);
     }
   };
 
@@ -508,17 +498,9 @@ export function Player({ student, questions, reasons = {}, seen = [], save = tru
       )}
 
       {phase === "answering" && response && (
-        <section className="mt-5 rounded-3xl bg-bg-mid p-4 text-center">
-          <p className="mb-3 text-xl font-extrabold">How sure are you?</p>
-          <div className="grid grid-cols-3 gap-3">
-            {FACES.map((f) => (
-              <button key={f.value} onClick={() => submit(f.value)} className="flex flex-col items-center gap-1 rounded-2xl bg-cream py-3 text-ink active:translate-y-0.5">
-                <span className="text-5xl">{f.face}</span>
-                <span className="text-base font-bold">{f.label}</span>
-              </button>
-            ))}
-          </div>
-        </section>
+        <button onClick={submit} className="big-button mt-5 w-full bg-gold text-ink">
+          Check answer ✓
+        </button>
       )}
 
       {phase === "feedback" && result && (
@@ -529,9 +511,7 @@ export function Player({ student, questions, reasons = {}, seen = [], save = tru
             <p className="font-display text-3xl font-extrabold text-moss-light">{FOUND_WITH_NUDGE} 🔍</p>
           ) : (
             <>
-              <p className="font-display text-3xl font-extrabold text-gold">
-                {result.confidence === "HIGH" ? "You felt really sure. Let's look at it together. 🔍" : "Let's check it together. 🔍"}
-              </p>
+              <p className="font-display text-3xl font-extrabold text-gold">Let&apos;s check it together. 🔍</p>
               <p className="mt-2 text-xl">
                 {tappedLaterStep && "So close. Something went wrong before that step. "}
                 {answer.type === "findTheBug" ? "The first mistake is in " : "The answer is "}

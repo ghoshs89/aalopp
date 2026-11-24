@@ -81,5 +81,9 @@ describe("insights", () => {
     for (const e of edges) expect(layerOf.get(e.from)!).toBeLessThan(layerOf.get(e.to)!);
     const positions = new Set(nodes.map((n) => `${n.layer}:${n.row}`));
     expect(positions.size).toBe(nodes.length);
+    const layerZero = nodes.filter((n) => n.layer === 0).sort((a, b) => a.row - b.row);
+    const firstHumanities = layerZero.findIndex((n) => n.strand === "HUMANITIES");
+    const lastCore = layerZero.findLastIndex((n) => n.strand !== "HUMANITIES");
+    expect(firstHumanities).toBeGreaterThan(lastCore);
   });
 });
