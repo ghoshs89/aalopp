@@ -74,6 +74,11 @@ export default async function ParentPage({ searchParams }: PageProps<"/parent">)
           <Link href="/parent/report" className="rounded-lg bg-gold px-3 py-2 font-bold text-ink">
             Printable report
           </Link>
+          {student && (
+            <a href="/api/parent/practice-history" download className="rounded-lg bg-bg-mid px-3 py-2">
+              Export practice history
+            </a>
+          )}
           <form action={lock}>
             <button className="rounded-lg bg-bg-mid px-3 py-2">Lock</button>
           </form>
