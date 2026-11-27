@@ -1,6 +1,8 @@
 import { createHmac, timingSafeEqual } from "node:crypto";
 
 // A 4-digit PIN keeps curious kids out of the grown-up page on a signed-in device. Google sign-in is the real gate.
+export const PARENT_COOKIE_PATH = "/parent";
+export const PRACTICE_HISTORY_PATH = `${PARENT_COOKIE_PATH}/practice-history`;
 export const PARENT_COOKIE = "parent_unlock";
 export const PIN_TRIES_COOKIE = "parent_pin_tries";
 export const UNLOCK_MINUTES = 30;

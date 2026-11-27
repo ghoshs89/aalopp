@@ -1,4 +1,5 @@
 import { beforeEach, describe, expect, it, vi } from "vitest";
+import { GET as followOldExportLink } from "@/app/api/parent/practice-history/route";
 import { getFamilyUser } from "@/lib/auth";
 import { db } from "@/lib/db";
 import { isParentUnlocked } from "@/lib/parent-session";
@@ -17,8 +18,18 @@ describe("practice history export", () => {
     vi.mocked(getFamilyUser).mockResolvedValueOnce(null).mockResolvedValueOnce(familyUser);
     vi.mocked(isParentUnlocked).mockResolvedValue(false);
     expect((await GET()).status).toBe(401);
-    expect((await GET()).status).toBe(403);
+    const locked = await GET();
+    expect(locked.status).toBe(303);
+    expect(locked.headers.get("Location")).toBe("/parent?export=unlock");
+    expect(locked.headers.get("Content-Disposition")).toBeNull();
     expect(db.$transaction).not.toHaveBeenCalled();
+  });
+
+  it("redirects the old link into the parent unlock cookie path", () => {
+    const response = followOldExportLink();
+    expect(response.status).toBe(307);
+    expect(response.headers.get("Location")).toBe("/parent/practice-history");
+    expect(response.headers.get("Content-Disposition")).toBeNull();
   });
 
   it("downloads private versioned JSON with the original stored answers and dates", async () => {

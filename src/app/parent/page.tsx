@@ -7,6 +7,7 @@ import { requireFamilyUser } from "@/lib/auth";
 import { db } from "@/lib/db";
 import { accuracyByStrand, confidenceCalibration, dailyActivity, everydayVsReasoning, percent, summarize, weeklyAccuracy } from "@/lib/engine/insights";
 import { STRAND_LABEL } from "@/lib/labels";
+import { PRACTICE_HISTORY_PATH } from "@/lib/parent-lock";
 import { isParentUnlocked, loadLearnerData } from "@/lib/parent-session";
 import { lock, signOut, unlock } from "./actions";
 import { addNote, deleteNote } from "./notes-actions";
@@ -26,13 +27,16 @@ type Tab = (typeof TABS)[number][0];
 
 export default async function ParentPage({ searchParams }: PageProps<"/parent">) {
   const user = await requireFamilyUser();
-  const { wrong, locked, view } = await searchParams;
+  const { wrong, locked, view, export: exportStatus } = await searchParams;
   const pin = process.env.PARENT_PIN;
 
   if (!(await isParentUnlocked())) {
     return (
       <main className="mx-auto flex min-h-dvh max-w-sm flex-col items-center justify-center gap-5 px-4 text-center">
         <h1 className="font-display text-3xl font-extrabold">Grown-ups only</h1>
+        {exportStatus === "unlock" && (
+          <p className="text-cream-dim">Unlock Grown-ups to export practice history.</p>
+        )}
         {pin ? (
           <form action={unlock} className="flex w-full flex-col gap-3">
             <input
@@ -75,7 +79,7 @@ export default async function ParentPage({ searchParams }: PageProps<"/parent">)
             Printable report
           </Link>
           {student && (
-            <a href="/api/parent/practice-history" download className="rounded-lg bg-bg-mid px-3 py-2">
+            <a href={PRACTICE_HISTORY_PATH} className="rounded-lg bg-bg-mid px-3 py-2">
               Export practice history
             </a>
           )}
